@@ -12,8 +12,8 @@ public class ConfirmOrderPo {
     private Integer mod;
     private Date arriveDate;
     private Date leaveDate;
-    private String timeEarly;
-    private String timeLate;
+    private Date timeEarly;
+    private Date timeLate;
     private String hotelId;
     private String hotelName;
     private String supplierId;
@@ -343,19 +343,19 @@ public class ConfirmOrderPo {
         this.supplierType = supplierType;
     }
 
-    public String getTimeEarly() {
+    public Date getTimeEarly() {
         return timeEarly;
     }
 
-    public void setTimeEarly(String timeEarly) {
+    public void setTimeEarly(Date timeEarly) {
         this.timeEarly = timeEarly;
     }
 
-    public String getTimeLate() {
+    public Date getTimeLate() {
         return timeLate;
     }
 
-    public void setTimeLate(String timeLate) {
+    public void setTimeLate(Date timeLate) {
         this.timeLate = timeLate;
     }
 

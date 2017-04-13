@@ -10,7 +10,7 @@ public class CompareOrder4GroupBo extends CompareEntityBase {
 
     private Integer orderId;
 
-    @CompareEntityAnnotations(name = "orderid")
+    @CompareEntityAnnotations(name = "orderstatus")
     private String orderStatus;
 
     @CompareEntityAnnotations(name = "shotelid")
@@ -20,6 +20,10 @@ public class CompareOrder4GroupBo extends CompareEntityBase {
     private String supplierId;
 
     public CompareOrder4GroupBo(ConfirmOrderBo confirmOrderBo){
+        this.orderId = confirmOrderBo.getReserNo();
+        this.orderStatus = confirmOrderBo.getReserStatus();
+        this.shotelId = confirmOrderBo.getHotelId();
+        this.supplierId = confirmOrderBo.getSupplierId();
     }
 
     public Integer getOrderId() {

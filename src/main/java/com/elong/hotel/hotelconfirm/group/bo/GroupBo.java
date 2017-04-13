@@ -10,7 +10,11 @@ public class GroupBo extends GroupBase {
     private String groupName;
 
     public GroupBo(GroupPo po){
-
+        this.setTags(po.getTags());
+        this.setId(po.getId());
+        this.setSort(po.getSort());
+        this.setGroupName(po.getGroupName());
+        this.setOpdate(po.getOpdate());
     }
 
     public String getGroupName() {

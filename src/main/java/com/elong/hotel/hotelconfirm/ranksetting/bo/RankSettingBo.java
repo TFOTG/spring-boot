@@ -18,8 +18,16 @@ public class RankSettingBo extends GroupBase {
 
     private Integer promiseTime;
 
-    public RankSettingBo(RankSettingPo rankSettingPo){
-
+    public RankSettingBo(RankSettingPo po){
+        this.setTags(po.getTags());
+        this.setId(po.getId());
+        this.setSort(po.getSort());
+        this.setOpdate(po.getOpdate());
+        this.setDelayTime(po.getDelayTime());
+        this.setIvrDelayTime(po.getIvrDelayTime());
+        this.setUseIvrService(po.getUseIvrService());
+        this.setUseEbkService(po.getUseEbkService());
+        this.setPromiseTime(po.getPromiseTime());
     }
 
     public Integer getDelayTime() {

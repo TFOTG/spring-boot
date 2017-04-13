@@ -38,13 +38,15 @@ public class ClassUtil {
                     // 判断是否是同一个接口
                     if (c.isAssignableFrom(classes)) {
                         // 本身不加入进去
-                        if (!c.equals(classes)) {
+                        if (!c.equals(classes) && !returnClassList.contains(classes)) {
                             returnClassList.add(classes);
                         }
                     }
                 }
             }
         }
+
+
 
         return returnClassList;
     }
