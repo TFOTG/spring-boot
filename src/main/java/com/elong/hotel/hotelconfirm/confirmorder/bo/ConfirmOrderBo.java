@@ -1,6 +1,7 @@
 package com.elong.hotel.hotelconfirm.confirmorder.bo;
 
 import com.elong.hotel.common.groupfilter.bo.CompareEntityBase;
+import com.elong.hotel.common.helper.DateHelper;
 import com.elong.hotel.hotelconfirm.confirmorder.po.ConfirmOrderPo;
 import com.elong.hotel.proxy.javaorder.getorder.Order;
 
@@ -13,12 +14,11 @@ public class ConfirmOrderBo extends CompareEntityBase {
 
     private Integer reserNo;
     private String reserStatus;
-    private String reserStatus2End;
     private Integer mod;
     private Date arriveDate;
     private Date leaveDate;
-    private String timeEarly;
-    private String timeLate;
+    private Date timeEarly;
+    private Date timeLate;
     private String hotelId;
     private String hotelName;
     private String supplierId;
@@ -38,11 +38,6 @@ public class ConfirmOrderBo extends CompareEntityBase {
     private String staffName;
     private Date distributeTime;
     private Date promiseTime;
-
-    private Date timeChange4PromiseTime;
-
-    private Date rankChange4PromiseTime;
-
     private Integer promiseChangeTimes;
     private String isFaxReturn;
     private String isLinked;
@@ -56,6 +51,9 @@ public class ConfirmOrderBo extends CompareEntityBase {
     private Date sortTime;
     private Date defaultSortTime;
     private Date firstRefusedTime;
+    private String reserStatus2End;
+    private Date timeChange4PromiseTime;
+    private Date rankChange4PromiseTime;
 
     public ConfirmOrderBo(ConfirmOrderPo po) {
         this(null, po);
@@ -67,30 +65,53 @@ public class ConfirmOrderBo extends CompareEntityBase {
 
     public ConfirmOrderBo(Order order, ConfirmOrderPo po) {
         if (order != null && po != null) {
-            this.reserNo = po.getReserNo();
             this.reserStatus = order.getStatus();
-            this.hotelId = order.getHotelId();
-            this.cityId = order.getCityId();
-            this.confirmType = order.getConfirmMethod();
-            this.supplierId = order.getSupplierId().toString();
-            this.supplierType = order.getSupplierType().toString();
-        } else if (order != null && po == null) {
             this.reserNo = po.getReserNo();
-            this.reserStatus = order.getStatus();
-            this.cityId = order.getCityId();
-            this.hotelId = order.getHotelId();
-            this.confirmType = order.getConfirmMethod();
-            this.supplierId = order.getSupplierId().toString();
-            this.supplierType = order.getSupplierType().toString();
-        } else if (order == null && po != null) {
-            this.reserNo = po.getReserNo();
-            this.reserStatus = po.getReserStatus();
-            this.priority = po.getPriority();
             this.hotelId = po.getHotelId();
             this.cityId = po.getCityId();
             this.confirmType = po.getConfirmType();
             this.supplierId = po.getSupplierId();
             this.supplierType = po.getSupplierType();
+            this.arriveDate = po.getArriveDate();
+            this.leaveDate = po.getLeaveDate();
+            this.proxyId = po.getProxyId();
+            this.timeEarly = po.getTimeEarly();
+            this.timeLate = po.getTimeLate();
+            this.amendTime = po.getAmendTime();
+            this.promiseTime = po.getPromiseTime();
+            this.staffName = po.getStaffName();
+        } else if (order != null && po == null) {
+            this.reserNo = order.getOrderId().intValue();
+            this.reserStatus = order.getStatus();
+            this.cityId = order.getCityId();
+            this.hotelId = order.getHotelId();
+            this.confirmType = order.getConfirmMethod();
+            this.supplierId = order.getSupplierId().toString();
+            this.supplierType = order.getSupplierType().toString();
+            this.arriveDate = order.getCheckInDate();
+            this.leaveDate = order.getCheckOutDate();
+            this.proxyId = order.getProxy();
+            this.timeEarly = order.getEarlyCheckInTime();
+            this.timeLate = order.getLateCheckInTime();
+            this.amendTime = order.getOrderTimestamp();
+            this.promiseTime = DateHelper.getMinDate();
+            this.staffName = "";
+        } else if (order == null && po != null) {
+            this.reserNo = po.getReserNo();
+            this.reserStatus = po.getReserStatus();
+            this.hotelId = po.getHotelId();
+            this.cityId = po.getCityId();
+            this.confirmType = po.getConfirmType();
+            this.supplierId = po.getSupplierId();
+            this.supplierType = po.getSupplierType();
+            this.arriveDate = po.getArriveDate();
+            this.leaveDate = po.getLeaveDate();
+            this.proxyId = po.getProxyId();
+            this.timeEarly = po.getTimeEarly();
+            this.timeLate = po.getTimeLate();
+            this.amendTime = po.getAmendTime();
+            this.promiseTime = po.getPromiseTime();
+            this.staffName = po.getStaffName();
         }
     }
 
@@ -382,19 +403,19 @@ public class ConfirmOrderBo extends CompareEntityBase {
         this.supplierType = supplierType;
     }
 
-    public String getTimeEarly() {
+    public Date getTimeEarly() {
         return timeEarly;
     }
 
-    public void setTimeEarly(String timeEarly) {
+    public void setTimeEarly(Date timeEarly) {
         this.timeEarly = timeEarly;
     }
 
-    public String getTimeLate() {
+    public Date getTimeLate() {
         return timeLate;
     }
 
-    public void setTimeLate(String timeLate) {
+    public void setTimeLate(Date timeLate) {
         this.timeLate = timeLate;
     }
 
