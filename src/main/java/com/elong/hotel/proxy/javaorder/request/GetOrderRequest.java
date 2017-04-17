@@ -124,21 +124,21 @@ public class GetOrderRequest implements Serializable  {
 		this.orderIds = orderIds;
 	}
 
-	@Override
-	public boolean equals(Object o) {
-		if (this == o) return true;
-		if (!(o instanceof GetOrderRequest)) return false;
-
-		GetOrderRequest request = (GetOrderRequest) o;
-
-		return orderId == request.orderId;
-
-	}
-
-	@Override
-	public int hashCode() {
-		return orderId;
-	}
+//	@Override
+//	public boolean equals(Object o) {
+//		if (this == o) return true;
+//		if (!(o instanceof GetOrderRequest)) return false;
+//
+//		GetOrderRequest request = (GetOrderRequest) o;
+//
+//		return orderId == request.orderId;
+//
+//	}
+//
+//	@Override
+//	public int hashCode() {
+//		return orderId;
+//	}
 
 	//
 //
