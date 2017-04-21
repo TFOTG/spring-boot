@@ -142,6 +142,9 @@ public class Order {
 
 	private String provinceName;
 
+    //预定距离
+    private Integer distanceFromHotelWhenBooking;
+
 	public Date getOrderTimestamp() {
 		return orderTimestamp;
 	}
@@ -653,4 +656,12 @@ public class Order {
 	public void setProvinceName(String provinceName) {
 		this.provinceName = provinceName;
 	}
+
+    public Integer getDistanceFromHotelWhenBooking() {
+        return distanceFromHotelWhenBooking;
+    }
+
+    public void setDistanceFromHotelWhenBooking(Integer distanceFromHotelWhenBooking) {
+        this.distanceFromHotelWhenBooking = distanceFromHotelWhenBooking;
+    }
 }

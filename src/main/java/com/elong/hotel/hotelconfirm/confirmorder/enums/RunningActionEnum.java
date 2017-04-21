@@ -38,7 +38,12 @@ public enum RunningActionEnum {
     /**
      * 延迟承诺时间
      */
-    DELAY_PROMISETIME("修改承诺时间", 6);
+    DELAY_PROMISETIME("修改承诺时间", 6),
+
+    /**
+     * 修改订单类型
+     */
+    CHANGE_ORDER_PRIORITY("修改订单优先级", 7);
 
     RunningActionEnum(String name, int actionIndex) {
         this.name = name;

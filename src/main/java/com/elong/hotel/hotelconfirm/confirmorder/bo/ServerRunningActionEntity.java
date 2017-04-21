@@ -5,10 +5,10 @@ package com.elong.hotel.hotelconfirm.confirmorder.bo;
  * 执行action操作的参数来源
  * 
  */
-public class ServerRuningActionEntity {
+public class ServerRunningActionEntity {
     ConfirmOrderBo confirmOrderBo;
 
-    public ServerRuningActionEntity(ConfirmOrderBo confirmOrderBo){
+    public ServerRunningActionEntity(ConfirmOrderBo confirmOrderBo){
         this.confirmOrderBo = confirmOrderBo;
     }
 
