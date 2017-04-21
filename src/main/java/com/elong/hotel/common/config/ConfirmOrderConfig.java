@@ -53,8 +53,8 @@ public class ConfirmOrderConfig {
     public ConfirmOrderConfig(){
         priority4HighMinute = 60;
         priority4HighDistance = 3000;
-        priority4NightBegin = "19:00";
-        priority4NightEnd = "8:30";
+        priority4NightBegin = "19:00:00";
+        priority4NightEnd = "08:30:00";
         overTime4V = 15;
         overTime4O = 15;
         delayTime4V = 30;
