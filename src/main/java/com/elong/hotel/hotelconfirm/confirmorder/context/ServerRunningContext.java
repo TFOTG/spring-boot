@@ -4,7 +4,7 @@ import com.elong.hotel.hotelconfirm.confirmorder.bo.ConfirmOrderBo;
 
 import java.io.Serializable;
 
-public class ServerRuningContext implements Serializable {
+public class ServerRunningContext implements Serializable {
 
 	private Integer reserNo;
 
@@ -12,7 +12,7 @@ public class ServerRuningContext implements Serializable {
 
 	private ConfirmOrderBo targetConfirmOrderBo;
 
-	public ServerRuningContext() {
+	public ServerRunningContext() {
 	}
 
 	public Integer getReserNo() {
