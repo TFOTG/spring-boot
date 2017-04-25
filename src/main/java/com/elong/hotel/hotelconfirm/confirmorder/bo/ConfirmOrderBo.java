@@ -4,8 +4,10 @@ import com.elong.hotel.common.groupfilter.bo.CompareEntityBase;
 import com.elong.hotel.common.helper.DateHelper;
 import com.elong.hotel.hotelconfirm.confirmorder.po.ConfirmOrderPo;
 import com.elong.hotel.proxy.javaorder.getorder.Order;
+import com.elong.hotel.proxy.javaorder.getorder.OrderHistory;
 
 import java.util.Date;
+import java.util.List;
 
 /**
  * Created by yangboyu on 17/4/4.
@@ -51,22 +53,23 @@ public class ConfirmOrderBo extends CompareEntityBase {
     private Date sortTime;
     private Date defaultSortTime;
     private Date firstRefusedTime;
+
     private String reserStatus2End;
     private Date timeChange4PromiseTime;
     private Date rankChange4PromiseTime;
 
     public ConfirmOrderBo(ConfirmOrderPo po) {
-        this(null, po);
+        this(null, po, null);
     }
 
-    public ConfirmOrderBo(Order order) {
-        this(order, null);
+    public ConfirmOrderBo(Order order, List<OrderHistory> orderHistoryList) {
+        this(order, null, orderHistoryList);
     }
 
-    public ConfirmOrderBo(Order order, ConfirmOrderPo po) {
-        if (order != null && po != null) {
-            this.reserStatus = order.getStatus();
+    public ConfirmOrderBo(Order order, ConfirmOrderPo po, List<OrderHistory> orderHistoryList) {
+        if (order != null && po != null) {      // 初始化 "目标数据", 此时订单在已审库
             this.reserNo = po.getReserNo();
+            this.reserStatus = order.getStatus();
             this.hotelId = po.getHotelId();
             this.cityId = po.getCityId();
             this.confirmType = po.getConfirmType();
@@ -80,11 +83,11 @@ public class ConfirmOrderBo extends CompareEntityBase {
             this.amendTime = po.getAmendTime();
             this.promiseTime = po.getPromiseTime();
             this.staffName = po.getStaffName();
-        } else if (order != null && po == null) {
+        } else if (order != null && po == null) {   // 初始化 "目标数据", 此时订单还未入已审库
             this.reserNo = order.getOrderId().intValue();
             this.reserStatus = order.getStatus();
-            this.cityId = order.getCityId();
             this.hotelId = order.getHotelId();
+            this.cityId = order.getCityId();
             this.confirmType = order.getConfirmMethod();
             this.supplierId = order.getSupplierId().toString();
             this.supplierType = order.getSupplierType().toString();
@@ -93,10 +96,10 @@ public class ConfirmOrderBo extends CompareEntityBase {
             this.proxyId = order.getProxy();
             this.timeEarly = order.getEarlyCheckInTime();
             this.timeLate = order.getLateCheckInTime();
-            this.amendTime = order.getOrderTimestamp();
+            this.amendTime = getAmendTimeFromHistory(orderHistoryList);
             this.promiseTime = DateHelper.getMinDate();
             this.staffName = "";
-        } else if (order == null && po != null) {
+        } else if (order == null && po != null) {       // 初始化"在库数据"
             this.reserNo = po.getReserNo();
             this.reserStatus = po.getReserStatus();
             this.hotelId = po.getHotelId();
@@ -113,6 +116,10 @@ public class ConfirmOrderBo extends CompareEntityBase {
             this.promiseTime = po.getPromiseTime();
             this.staffName = po.getStaffName();
         }
+    }
+
+    private Date getAmendTimeFromHistory(List<OrderHistory> historyList){
+        return new Date();
     }
 
     public Date getAmendTime() {
