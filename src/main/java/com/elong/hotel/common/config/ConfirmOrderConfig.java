@@ -36,6 +36,26 @@ public class ConfirmOrderConfig {
     private Integer delayTime4O;
 
     /**
+     * 自动延迟超时时间 已审
+     */
+    private Integer autoDelayOverTime4O;
+
+    /**
+     * 自动延迟超时时间 初拒
+     */
+    private Integer autoDelayOverTime4V;
+
+    /**
+     * 自动延迟时间 已审
+     */
+    private Integer autoDelayTime4O;
+
+    /**
+     * 自动延迟时间 初拒
+     */
+    private Integer autoDelayTime4V;
+
+    /**
      * 延迟次数
      */
     private Integer delayTimes;
@@ -55,10 +75,10 @@ public class ConfirmOrderConfig {
         priority4HighDistance = 3000;
         priority4NightBegin = "19:00:00";
         priority4NightEnd = "08:30:00";
-        overTime4V = 15;
-        overTime4O = 15;
+        overTime4V = 8;
+        overTime4O = 10;
         delayTime4V = 30;
-        delayTime4O = 30;
+        delayTime4O = 10;
         delayTimes = 1;
     }
 
@@ -132,5 +152,37 @@ public class ConfirmOrderConfig {
 
     public void setDelayTimes(Integer delayTimes) {
         this.delayTimes = delayTimes;
+    }
+
+    public Integer getAutoDelayOverTime4O() {
+        return autoDelayOverTime4O;
+    }
+
+    public void setAutoDelayOverTime4O(Integer autoDelayOverTime4O) {
+        this.autoDelayOverTime4O = autoDelayOverTime4O;
+    }
+
+    public Integer getAutoDelayOverTime4V() {
+        return autoDelayOverTime4V;
+    }
+
+    public void setAutoDelayOverTime4V(Integer autoDelayOverTime4V) {
+        this.autoDelayOverTime4V = autoDelayOverTime4V;
+    }
+
+    public Integer getAutoDelayTime4O() {
+        return autoDelayTime4O;
+    }
+
+    public void setAutoDelayTime4O(Integer autoDelayTime4O) {
+        this.autoDelayTime4O = autoDelayTime4O;
+    }
+
+    public Integer getAutoDelayTime4V() {
+        return autoDelayTime4V;
+    }
+
+    public void setAutoDelayTime4V(Integer autoDelayTime4V) {
+        this.autoDelayTime4V = autoDelayTime4V;
     }
 }

@@ -8,11 +8,11 @@ public class ConfirmOrderDomainContext implements Serializable {
 
     private Integer reserNo;
 
-    private ServerRunningDomainEnum serverRuningDomainEnum;
+    private ServerRunningDomainEnum serverRunningDomainEnum;
 
     public ConfirmOrderDomainContext(Integer reserNo, ServerRunningDomainEnum domainEnum) {
         this.reserNo = reserNo;
-        this.serverRuningDomainEnum = domainEnum;
+        this.serverRunningDomainEnum = domainEnum;
     }
 
     public Integer getReserNo() {
@@ -23,11 +23,11 @@ public class ConfirmOrderDomainContext implements Serializable {
         this.reserNo = reserNo;
     }
 
-    public ServerRunningDomainEnum getServerRuningDomainEnum() {
-        return serverRuningDomainEnum;
+    public ServerRunningDomainEnum getServerRunningDomainEnum() {
+        return serverRunningDomainEnum;
     }
 
-    public void setServerRuningDomainEnum(ServerRunningDomainEnum serverRuningDomainEnum) {
-        this.serverRuningDomainEnum = serverRuningDomainEnum;
+    public void setServerRunningDomainEnum(ServerRunningDomainEnum serverRunningDomainEnum) {
+        this.serverRunningDomainEnum = serverRunningDomainEnum;
     }
 }
