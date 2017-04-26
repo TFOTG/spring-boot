@@ -22,4 +22,11 @@ public class GetOrderHistoryRequest implements Serializable  {
 	public void setOrderID(Integer orderID) {
 		this.orderID = orderID;
 	}
+
+    public GetOrderHistoryRequest(Integer orderID) {
+        this.orderID = orderID;
+    }
+
+    public GetOrderHistoryRequest() {
+    }
 }

@@ -38,7 +38,7 @@ public enum RunningActionEnum {
     /**
      * 延迟承诺时间
      */
-    DELAY_PROMISETIME("修改承诺时间", 6),
+    DELAY_PROMISE_TIME("修改承诺时间", 6),
 
     /**
      * 修改订单类型

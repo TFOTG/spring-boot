@@ -114,8 +114,38 @@
 
         <dependency>
             <groupId>com.elong.hotel</groupId>
+            <artifactId>hotelmis-common</artifactId>
+            <version>1.1.0</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>com.elong.hotel</groupId>
+                    <artifactId>elong-util</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+        <dependency>
+            <groupId>com.elong.hotel</groupId>
             <artifactId>elong-util</artifactId>
             <version>1.16.0</version>
+        </dependency>
+
+        <!-- SOA proxy组件  -->
+        <dependency>
+            <groupId>com.elong</groupId>
+            <artifactId>hotel-soa-client</artifactId>
+            <version>1.13.1</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.elong</groupId>
+            <artifactId>hotswitch-client</artifactId>
+            <version>1.8.0</version>
+            <exclusions>
+                <exclusion>
+                    <artifactId>javax.servlet-api</artifactId>
+                    <groupId>javax.servlet</groupId>
+                </exclusion>
+            </exclusions>
         </dependency>
     </dependencies>
 </project>
