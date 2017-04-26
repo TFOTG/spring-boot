@@ -117,5 +117,23 @@
             <artifactId>elong-util</artifactId>
             <version>1.16.0</version>
         </dependency>
+
+        <dependency>
+            <groupId>com.elong</groupId>
+            <artifactId>hotel-soa-client</artifactId>
+            <version>1.13.1</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.elong</groupId>
+            <artifactId>hotswitch-client</artifactId>
+            <version>1.8.0</version>
+            <exclusions>
+                <exclusion>
+                    <artifactId>javax.servlet-api</artifactId>
+                    <groupId>javax.servlet</groupId>
+                </exclusion>
+            </exclusions>
+        </dependency>
     </dependencies>
 </project>
