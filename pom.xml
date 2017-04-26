@@ -114,6 +114,17 @@
 
         <dependency>
             <groupId>com.elong.hotel</groupId>
+            <artifactId>hotelmis-common</artifactId>
+            <version>1.1.0</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>com.elong.hotel</groupId>
+                    <artifactId>elong-util</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+        <dependency>
+            <groupId>com.elong.hotel</groupId>
             <artifactId>elong-util</artifactId>
             <version>1.16.0</version>
         </dependency>
