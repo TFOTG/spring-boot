@@ -118,6 +118,7 @@
             <version>1.16.0</version>
         </dependency>
 
+        <!-- SOA proxy组件  -->
         <dependency>
             <groupId>com.elong</groupId>
             <artifactId>hotel-soa-client</artifactId>
