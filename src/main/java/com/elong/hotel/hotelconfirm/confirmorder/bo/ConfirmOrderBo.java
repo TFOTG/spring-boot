@@ -99,7 +99,7 @@ public class ConfirmOrderBo extends CompareEntityBase {
             this.amendTime = getAmendTimeFromHistory(orderHistoryList);
             this.promiseTime = DateHelper.getMinDate();
             this.staffName = "";
-        } else if (order == null && po != null) {       // 初始化"在库数据"
+        } else if (order == null && po != null) {// 初始化"在库数据"
             this.reserNo = po.getReserNo();
             this.reserStatus = po.getReserStatus();
             this.hotelId = po.getHotelId();
@@ -115,6 +115,8 @@ public class ConfirmOrderBo extends CompareEntityBase {
             this.amendTime = po.getAmendTime();
             this.promiseTime = po.getPromiseTime();
             this.staffName = po.getStaffName();
+            this.priority=po.getPriority();
+            this.promiseChangeTimes=po.getPromiseChangeTimes();
         }
     }
 

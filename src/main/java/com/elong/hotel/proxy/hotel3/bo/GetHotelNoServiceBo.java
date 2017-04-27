@@ -19,6 +19,12 @@ public class GetHotelNoServiceBo {
     @JSONField(name = "CreateOrderTime")
     private String createOrderTime;
 
+    @JSONField(name = "NextServerTime")
+    private String nextServerTime;
+
+    @JSONField(name = "IsServer")
+    private int isServer;
+
     public String getOrderId() {
         return orderId;
     }
@@ -49,6 +55,22 @@ public class GetHotelNoServiceBo {
 
     public void setCreateOrderTime(String createOrderTime) {
         this.createOrderTime = createOrderTime;
+    }
+
+    public String getNextServerTime() {
+        return nextServerTime;
+    }
+
+    public void setNextServerTime(String nextServerTime) {
+        this.nextServerTime = nextServerTime;
+    }
+
+    public int getIsServer() {
+        return isServer;
+    }
+
+    public void setIsServer(int isServer) {
+        this.isServer = isServer;
     }
 
     public GetHotelNoServiceBo(String orderId, String hotelId, String rpId, String createOrderTime) {
