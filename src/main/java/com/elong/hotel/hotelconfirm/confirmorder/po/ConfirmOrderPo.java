@@ -1,5 +1,7 @@
 package com.elong.hotel.hotelconfirm.confirmorder.po;
 
+import com.elong.hotel.hotelconfirm.confirmorder.bo.ConfirmOrderBo;
+
 import java.util.Date;
 
 /**
@@ -46,6 +48,51 @@ public class ConfirmOrderPo {
     private Date sortTime;
     private Date defaultSortTime;
     private Date firstRefusedTime;
+
+    public ConfirmOrderPo() {
+    }
+
+    public ConfirmOrderPo(ConfirmOrderBo bo) {
+        this.reserNo = bo.getReserNo();
+        this.reserStatus = bo.getReserStatus();
+        this.mod = bo.getMod();
+        this.arriveDate = bo.getArriveDate();
+        this.leaveDate = bo.getLeaveDate();
+        this.timeEarly = bo.getTimeEarly();
+        this.timeLate = bo.getTimeLate();
+        this.hotelId = bo.getHotelId();
+        this.hotelName = bo.getHotelName();
+        this.supplierId = bo.getSupplierId();
+        this.supplierName = bo.getSupplierName();
+        this.supplierType = bo.getSupplierType();
+        this.supplierOtaType = bo.getSupplierOtaType();
+        this.proxyId = bo.getProxyId();
+        this.cityId = bo.getCityId();
+        this.distance = bo.getDistance();
+        this.confirmType = bo.getConfirmType();
+        this.bookingTime = bo.getBookingTime();
+        this.amendTime = bo.getAmendTime();
+        this.priority = bo.getPriority();
+        this.groupId = bo.getGroupId();
+        this.rankId = bo.getRankId();
+        this.ebkStrategyId = bo.getEbkStrategyId();
+        this.staffName = bo.getStaffName();
+        this.distributeTime = bo.getDistributeTime();
+        this.promiseTime = bo.getPromiseTime();
+        this.promiseChangeTimes = bo.getPromiseChangeTimes();
+        this.isFaxReturn = bo.getIsFaxReturn();
+        this.isLinked = bo.getIsLinked();
+        this.urge = bo.getUrge();
+        this.respiteTime = bo.getRespiteTime();
+        this.nextServiceTime = bo.getNextServiceTime();
+        this.ivrGuid = bo.getIvrGuid();
+        this.ivrStatus = bo.getIvrStatus();
+        this.ivrStartTime = bo.getIvrStartTime();
+        this.enterTime = bo.getEnterTime();
+        this.sortTime = bo.getSortTime();
+        this.defaultSortTime = bo.getDefaultSortTime();
+        this.firstRefusedTime = bo.getFirstRefusedTime();
+    }
 
     public Date getAmendTime() {
         return amendTime;
