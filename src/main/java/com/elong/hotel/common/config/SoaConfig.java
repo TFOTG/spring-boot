@@ -25,7 +25,21 @@ public class SoaConfig {
 
     private String getOrderHistory;
 
+    /**
+     * 调用ebk延迟接口service
+     */
+    private String ebkDelayOrderService;
+    
+    /**
+     * 调用ebk延迟接口方法
+     */
+    private String ebkDelayOrderMethod;
 
+    /**
+     * 调用ebk延迟接口方法  超时时间
+     */
+    private int ebkDelayOrderTimeOut;
+    
     public String getHotelProduct() {
         return hotelProduct;
     }
@@ -57,6 +71,30 @@ public class SoaConfig {
     public void setJavaOrderQueryTimeOut(int javaOrderQueryTimeOut) {
         this.javaOrderQueryTimeOut = javaOrderQueryTimeOut;
     }
+    
+    public String getEbkDelayOrderService() {
+		return ebkDelayOrderService;
+	}
+
+	public void setEbkDelayOrderService(String ebkDelayOrderService) {
+		this.ebkDelayOrderService = ebkDelayOrderService;
+	}
+
+	public String getEbkDelayOrderMethod() {
+		return ebkDelayOrderMethod;
+	}
+
+	public void setEbkDelayOrderMethod(String ebkDelayOrderMethod) {
+		this.ebkDelayOrderMethod = ebkDelayOrderMethod;
+	}
+
+	public int getEbkDelayOrderTimeOut() {
+		return ebkDelayOrderTimeOut;
+	}
+
+	public void setEbkDelayOrderTimeOut(int ebkDelayOrderTimeOut) {
+		this.ebkDelayOrderTimeOut = ebkDelayOrderTimeOut;
+	}
 
     public String getHotel3Service() {
         return hotel3Service;
