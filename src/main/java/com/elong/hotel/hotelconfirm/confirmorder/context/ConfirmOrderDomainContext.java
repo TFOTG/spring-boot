@@ -39,4 +39,12 @@ public class ConfirmOrderDomainContext implements Serializable {
     public void setServerRunningDomainEnum(ServerRunningDomainEnum serverRunningDomainEnum) {
         this.serverRunningDomainEnum = serverRunningDomainEnum;
     }
+
+    public Map<String, Object> getParams() {
+        return params;
+    }
+
+    public void setParams(Map<String, Object> params) {
+        this.params = params;
+    }
 }
