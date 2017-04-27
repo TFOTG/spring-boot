@@ -38,7 +38,7 @@ public interface ResponseCodeConst {
 
 	int ORDER_MESSAGENAME_VALIDATE_ERROR = 2;
 
-	int STORAGE_VALIDATE_ERROR = 1;
+	int STORAGE_VALIDATE_ERROR = 131;
 
 	/**
 	 * feedbackguid 重复
