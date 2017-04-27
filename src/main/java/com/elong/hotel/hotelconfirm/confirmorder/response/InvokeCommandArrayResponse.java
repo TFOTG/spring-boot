@@ -19,6 +19,8 @@ public class InvokeCommandArrayResponse extends ServiceResponseBase {
 	private long status;
 	// 批量执行的结果描述
 	private List<String> results;
+
+
 	
 
 	public InvokeCommandArrayResponse() {
