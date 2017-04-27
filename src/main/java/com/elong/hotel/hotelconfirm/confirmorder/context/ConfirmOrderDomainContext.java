@@ -9,18 +9,18 @@ public class ConfirmOrderDomainContext implements Serializable {
 
     private Integer reserNo;
 
-    private Map<String,Object> params;
+    private ServerRunningDomainEnum serverRunningDomainEnum;
 
-    private ServerRunningDomainEnum serverRuningDomainEnum;
+    private Map<String,Object> params;
 
     public ConfirmOrderDomainContext(Integer reserNo, ServerRunningDomainEnum domainEnum) {
         this.reserNo = reserNo;
-        this.serverRuningDomainEnum = domainEnum;
+        this.serverRunningDomainEnum = domainEnum;
     }
 
     public ConfirmOrderDomainContext(Integer reserNo, ServerRunningDomainEnum domainEnum,Map<String,Object> params) {
         this.reserNo = reserNo;
-        this.serverRuningDomainEnum = domainEnum;
+        this.serverRunningDomainEnum = domainEnum;
         this.params = params;
     }
 
@@ -32,19 +32,11 @@ public class ConfirmOrderDomainContext implements Serializable {
         this.reserNo = reserNo;
     }
 
-    public ServerRunningDomainEnum getServerRuningDomainEnum() {
-        return serverRuningDomainEnum;
+    public ServerRunningDomainEnum getServerRunningDomainEnum() {
+        return serverRunningDomainEnum;
     }
 
-    public void setServerRuningDomainEnum(ServerRunningDomainEnum serverRuningDomainEnum) {
-        this.serverRuningDomainEnum = serverRuningDomainEnum;
-    }
-
-    public Map<String, Object> getParams() {
-        return params;
-    }
-
-    public void setParams(Map<String, Object> params) {
-        this.params = params;
+    public void setServerRunningDomainEnum(ServerRunningDomainEnum serverRunningDomainEnum) {
+        this.serverRunningDomainEnum = serverRunningDomainEnum;
     }
 }
