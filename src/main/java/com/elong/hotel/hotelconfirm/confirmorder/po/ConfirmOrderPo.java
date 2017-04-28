@@ -49,6 +49,8 @@ public class ConfirmOrderPo {
     private Date defaultSortTime;
     private Date firstRefusedTime;
 
+    private Long orderTimestampLong;
+
     public ConfirmOrderPo() {
     }
 
@@ -92,6 +94,8 @@ public class ConfirmOrderPo {
         this.sortTime = bo.getSortTime();
         this.defaultSortTime = bo.getDefaultSortTime();
         this.firstRefusedTime = bo.getFirstRefusedTime();
+        this.orderTimestampLong = bo.getOrderTimestamp().getTime();
+
     }
 
     public Date getAmendTime() {
@@ -412,5 +416,13 @@ public class ConfirmOrderPo {
 
     public void setUrge(String urge) {
         this.urge = urge;
+    }
+
+    public Long getOrderTimestampLong() {
+        return orderTimestampLong;
+    }
+
+    public void setOrderTimestampLong(Long orderTimestampLong) {
+        this.orderTimestampLong = orderTimestampLong;
     }
 }
