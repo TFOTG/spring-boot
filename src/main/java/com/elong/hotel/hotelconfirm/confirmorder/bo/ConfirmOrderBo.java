@@ -1,5 +1,6 @@
 package com.elong.hotel.hotelconfirm.confirmorder.bo;
 
+import com.elong.hotel.common.enums.ElongOrderStatusEnum;
 import com.elong.hotel.common.groupfilter.bo.CompareEntityBase;
 import com.elong.hotel.common.helper.DateHelper;
 import com.elong.hotel.hotelconfirm.confirmorder.po.ConfirmOrderPo;
@@ -125,8 +126,22 @@ public class ConfirmOrderBo extends CompareEntityBase {
         }
     }
 
-    private Date getAmendTimeFromHistory(List<OrderHistory> historyList){
-        return new Date();
+    private Date getAmendTimeFromHistory(List<OrderHistory> orderHistoryList){
+
+        if (orderHistoryList != null) {
+            for (int i = orderHistoryList.size() - 1; i >= 0; i--) {
+                OrderHistory history = orderHistoryList.get(i);
+                if (history.getReserveStatus().equals(ElongOrderStatusEnum.V.getStatus())) {
+                    for (int j = i; j >= 0; j--) {
+                        OrderHistory orderHistory = orderHistoryList.get(j);
+                        if (!orderHistory.getReserveStatus().equals(ElongOrderStatusEnum.V.getStatus())) {
+                            return orderHistoryList.get(j + 1).getCreateTime();
+                        }
+                    }
+                }
+            }
+        }
+        return null;
     }
 
     public Date getAmendTime() {
