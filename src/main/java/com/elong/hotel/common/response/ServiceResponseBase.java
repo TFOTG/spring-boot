@@ -51,10 +51,6 @@ public class ServiceResponseBase implements Serializable {
 		return stackTrace;
 	}
 
-	public void setStackTrace(String stackTrace) {
-		this.stackTrace = stackTrace;
-	}
-
 	public Exception getException() {
 		return exception;
 	}
