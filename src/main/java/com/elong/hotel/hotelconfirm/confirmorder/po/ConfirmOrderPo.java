@@ -48,6 +48,7 @@ public class ConfirmOrderPo {
     private Date sortTime;
     private Date defaultSortTime;
     private Date firstRefusedTime;
+    private long orderTimeStampLong;
 
     public ConfirmOrderPo() {
     }
@@ -412,5 +413,13 @@ public class ConfirmOrderPo {
 
     public void setUrge(String urge) {
         this.urge = urge;
+    }
+
+    public long getOrderTimeStampLong() {
+        return orderTimeStampLong;
+    }
+
+    public void setOrderTimeStampLong(long orderTimeStampLong) {
+        this.orderTimeStampLong = orderTimeStampLong;
     }
 }
