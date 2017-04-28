@@ -1,7 +1,10 @@
 package com.elong.hotel.common.groupfilter.bo;
 
 import java.util.Date;
+import java.util.List;
 import java.util.Map;
+
+import com.elong.hotel.hotelconfirm.group.bo.GroupTagBo;
 
 public abstract class GroupBase{
 
@@ -13,11 +16,18 @@ public abstract class GroupBase{
 
     protected Integer id;
 
+    protected List<GroupTagBo> grouptags;
+    
     public Map<String, String> getTags() {
         return tags;
     }
 
     public void setTags(Map<String, String> tags) {
+    	for (GroupTagBo tag : grouptags) {
+			if(!tags.containsKey(tag.getTagkey())){
+				tags.put(tag.getTagkey(), tag.getTagvalue());
+			}
+		}
         this.tags = tags;
     }
 
@@ -44,4 +54,13 @@ public abstract class GroupBase{
     public void setId(Integer id) {
         this.id = id;
     }
+
+	public List<GroupTagBo> getGrouptags() {
+		return grouptags;
+	}
+
+	public void setGrouptags(List<GroupTagBo> grouptags) {
+		this.grouptags = grouptags;
+	}
+    
 }
