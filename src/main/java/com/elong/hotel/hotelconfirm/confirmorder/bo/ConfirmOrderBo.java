@@ -55,6 +55,8 @@ public class ConfirmOrderBo extends CompareEntityBase {
     private Date defaultSortTime;
     private Date firstRefusedTime;
 
+    private Date orderTimestamp;
+
     private String reserStatus2End;
     private Date timeChange4PromiseTime;
     private Date rankChange4PromiseTime;
@@ -84,6 +86,7 @@ public class ConfirmOrderBo extends CompareEntityBase {
             this.amendTime = po.getAmendTime();
             this.promiseTime = po.getPromiseTime();
             this.staffName = po.getStaffName();
+            this.orderTimestamp = order.getOrderTimestamp();
         } else if (order != null && po == null) {   // 初始化 "目标数据", 此时订单还未入已审库
             this.reserNo = order.getOrderId().intValue();
             this.reserStatus = order.getStatus();
@@ -100,6 +103,7 @@ public class ConfirmOrderBo extends CompareEntityBase {
             this.amendTime = getAmendTimeFromHistory(orderHistoryList);
             this.promiseTime = DateHelper.getMinDate();
             this.staffName = "";
+            this.orderTimestamp = order.getOrderTimestamp();
         } else if (order == null && po != null) {// 初始化"在库数据"
             this.reserNo = po.getReserNo();
             this.reserStatus = po.getReserStatus();
@@ -118,6 +122,7 @@ public class ConfirmOrderBo extends CompareEntityBase {
             this.staffName = po.getStaffName();
             this.priority=po.getPriority();
             this.promiseChangeTimes=po.getPromiseChangeTimes();
+
         }
     }
 
@@ -473,5 +478,13 @@ public class ConfirmOrderBo extends CompareEntityBase {
 
     public void setReserStatus2End(String reserStatus2End) {
         this.reserStatus2End = reserStatus2End;
+    }
+
+    public Date getOrderTimestamp() {
+        return orderTimestamp;
+    }
+
+    public void setOrderTimestamp(Date orderTimestamp) {
+        this.orderTimestamp = orderTimestamp;
     }
 }
