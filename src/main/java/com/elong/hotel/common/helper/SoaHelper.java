@@ -1,5 +1,6 @@
 package com.elong.hotel.common.helper;
 
+import com.elong.hotel.common.annotaitions.SoaLogAnnotations;
 import com.elong.hotel.common.consts.SOAMethodConst;
 import com.elong.hotel.common.enums.CommunicationEventTypeEnum;
 import com.elong.hotel.common.exception.SoaException;
@@ -26,6 +27,7 @@ public class SoaHelper {
      * @throws Exception
      * @author zouyufei
      */
+    @SoaLogAnnotations
     public String postWithLog(String productName, String serviceName, String methodName, String jsonData, int timeout, String logTag, CommunicationEventTypeEnum type) throws Exception {
         return post(productName, serviceName, methodName, jsonData, timeout);
     }
@@ -71,6 +73,7 @@ public class SoaHelper {
      * @return
      * @throws Exception
      */
+    @SoaLogAnnotations
     public String postFormWithLog(String productName, String serviceName, String methodName, Map<String, String> params, int timeout, String contentType, String logTag, CommunicationEventTypeEnum type) throws Exception {
         return postForm(productName, serviceName, methodName, params, timeout, contentType);
     }
@@ -133,6 +136,7 @@ public class SoaHelper {
      * @return
      * @throws Exception
      */
+    @SoaLogAnnotations
     public String getWithLog(String productName, String serviceName, String methodName, Map<String, String> params, int timeout, String contentType, String logTag, CommunicationEventTypeEnum type) throws Exception {
         return get(productName, serviceName, methodName, params, timeout, contentType);
     }
