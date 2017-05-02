@@ -16,18 +16,12 @@ public abstract class GroupBase{
 
     protected Integer id;
 
-    protected List<GroupTagBo> grouptags;
     
     public Map<String, String> getTags() {
         return tags;
     }
 
     public void setTags(Map<String, String> tags) {
-    	for (GroupTagBo tag : grouptags) {
-			if(!tags.containsKey(tag.getTagkey())){
-				tags.put(tag.getTagkey(), tag.getTagvalue());
-			}
-		}
         this.tags = tags;
     }
 
@@ -55,12 +49,4 @@ public abstract class GroupBase{
         this.id = id;
     }
 
-	public List<GroupTagBo> getGrouptags() {
-		return grouptags;
-	}
-
-	public void setGrouptags(List<GroupTagBo> grouptags) {
-		this.grouptags = grouptags;
-	}
-    
 }
