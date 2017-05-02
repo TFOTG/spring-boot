@@ -1,9 +1,11 @@
 package com.elong.hotel.hotelconfirm.group.po;
 
-import com.elong.hotel.common.groupfilter.bo.GroupBase;
-
 import java.util.Date;
+import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
+
+import com.elong.hotel.hotelconfirm.group.bo.GroupTagBo;
 
 /**
  * Created by yangboyu on 17/4/4.
@@ -19,6 +21,8 @@ public class GroupPo {
 
     private Integer id;
 
+    private List<GroupTagBo> grouptags;
+    
     public Integer getId() {
         return id;
     }
@@ -44,6 +48,13 @@ public class GroupPo {
     }
 
     public Map<String, String> getTags() {
+    	if(tags==null){
+        	for (GroupTagBo tag : grouptags) {
+    			if(!tags.containsKey(tag.getTagkey())){
+    				tags.put(tag.getTagkey(), tag.getTagvalue());
+    			}
+    		}
+    	}
         return tags;
     }
 
@@ -59,7 +70,15 @@ public class GroupPo {
         this.groupName = groupName;
     }
 
-    @Override
+    public List<GroupTagBo> getGrouptags() {
+		return grouptags;
+	}
+
+	public void setGrouptags(List<GroupTagBo> grouptags) {
+		this.grouptags = grouptags;
+	}
+
+	@Override
     public String toString() {
         return "Group{" +
                 "id=" + id +
