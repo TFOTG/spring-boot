@@ -13,6 +13,8 @@ import java.io.Serializable;
 public class CommandExecuteResponse extends ServiceResponseBase implements Serializable{
 	// 执行某个command 成功或失败的status
 	private long status;
+    //命令名称
+    private String commandName;
 	// 失败的原因
 	private String result;
 	// 扩展参数
@@ -57,4 +59,11 @@ public class CommandExecuteResponse extends ServiceResponseBase implements Seria
 		this.stringParameter1 = stringParameter1;
 	}
 
+    public String getCommandName() {
+        return commandName;
+    }
+
+    public void setCommandName(String commandName) {
+        this.commandName = commandName;
+    }
 }

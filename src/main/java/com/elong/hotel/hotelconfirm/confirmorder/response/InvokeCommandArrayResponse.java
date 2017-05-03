@@ -17,31 +17,27 @@ public class InvokeCommandArrayResponse extends ServiceResponseBase {
 
 	// 批量执行的结果status
 	private long status;
-	// 批量执行的结果描述
-	private List<String> results;
-
-
-	
+	// 批量执行的结果
+	private List<CommandExecuteResponse> results;
 
 	public InvokeCommandArrayResponse() {
 		status = 0;
 		this.results = new ArrayList<>();
 	}
 
-	public List<String> getResults() {
-		return results;
-	}
+    public long getStatus() {
+        return status;
+    }
 
-	public void setResults(List<String> results) {
-		this.results = results;
-	}
+    public void setStatus(long status) {
+        this.status = status;
+    }
 
-	public long getStatus() {
-		return status;
-	}
+    public List<CommandExecuteResponse> getResults() {
+        return results;
+    }
 
-	public void setStatus(long status) {
-		this.status = status;
-	}
-
+    public void setResults(List<CommandExecuteResponse> results) {
+        this.results = results;
+    }
 }
