@@ -1,8 +1,7 @@
 package com.elong.hotel.hotelconfirm.ranksetting.po;
 
-import com.elong.hotel.common.groupfilter.bo.GroupBase;
-
 import java.util.Date;
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -28,6 +27,8 @@ public class RankSettingPo{
 
     private Integer promiseTime;
 
+    private List<RankSettingTagPo> ranktags;
+    
     public Integer getDelayTime() {
         return delayTime;
     }
@@ -99,4 +100,13 @@ public class RankSettingPo{
     public void setTags(Map<String, String> tags) {
         this.tags = tags;
     }
+
+	public List<RankSettingTagPo> getRanktags() {
+		return ranktags;
+	}
+
+	public void setRanktags(List<RankSettingTagPo> ranktags) {
+		this.ranktags = ranktags;
+	}
+    
 }
