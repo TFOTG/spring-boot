@@ -1,6 +1,6 @@
-package com.elong.hotel.common.groupfilter.context;
+package com.elong.hotel.hotelconfirm.groupfilter.context;
 
-import com.elong.hotel.common.groupfilter.bo.CompareEntityBase;
+import com.elong.hotel.hotelconfirm.groupfilter.bo.CompareEntityBase;
 
 public class GroupFilterContext<T extends CompareEntityBase>  {
 

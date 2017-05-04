@@ -1,4 +1,4 @@
-package com.elong.hotel.common.groupfilter.enums;
+package com.elong.hotel.hotelconfirm.groupfilter.enums;
 
 /**
  * 

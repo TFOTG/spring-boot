@@ -1,6 +1,6 @@
 package com.elong.hotel.hotelconfirm.ranksetting.bo;
 
-import com.elong.hotel.common.groupfilter.bo.GroupBase;
+import com.elong.hotel.hotelconfirm.groupfilter.bo.GroupBase;
 import com.elong.hotel.hotelconfirm.ranksetting.po.RankSettingPo;
 
 /**

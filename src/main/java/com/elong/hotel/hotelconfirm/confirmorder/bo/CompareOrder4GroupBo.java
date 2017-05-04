@@ -1,7 +1,8 @@
 package com.elong.hotel.hotelconfirm.confirmorder.bo;
 
-import com.elong.hotel.common.groupfilter.bo.CompareEntityAnnotations;
-import com.elong.hotel.common.groupfilter.bo.CompareEntityBase;
+
+import com.elong.hotel.hotelconfirm.groupfilter.bo.CompareEntityAnnotations;
+import com.elong.hotel.hotelconfirm.groupfilter.bo.CompareEntityBase;
 
 /**
  * Created by yangboyu on 17/4/4.

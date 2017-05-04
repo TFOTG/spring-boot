@@ -1,7 +1,7 @@
-package com.elong.hotel.common.groupfilter.bo;
+package com.elong.hotel.hotelconfirm.groupfilter.bo;
 
-import com.elong.hotel.common.groupfilter.enums.CompareFieldEnum;
-import com.elong.hotel.common.groupfilter.enums.CompareResultEnum;
+import com.elong.hotel.hotelconfirm.groupfilter.enums.CompareFieldEnum;
+import com.elong.hotel.hotelconfirm.groupfilter.enums.CompareResultEnum;
 import edu.emory.mathcs.backport.java.util.Arrays;
 
 import java.lang.reflect.Field;

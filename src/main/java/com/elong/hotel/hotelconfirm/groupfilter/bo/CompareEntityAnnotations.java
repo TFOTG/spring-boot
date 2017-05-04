@@ -1,4 +1,4 @@
-package com.elong.hotel.common.groupfilter.bo;
+package com.elong.hotel.hotelconfirm.groupfilter.bo;
 
 import java.lang.annotation.*;
 
