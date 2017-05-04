@@ -126,6 +126,9 @@ public class ConfirmOrderBo extends CompareEntityBase {
         }
     }
 
+    public ConfirmOrderBo() {
+    }
+
     private Date getAmendTimeFromHistory(List<OrderHistory> orderHistoryList){
 
         if (orderHistoryList != null) {

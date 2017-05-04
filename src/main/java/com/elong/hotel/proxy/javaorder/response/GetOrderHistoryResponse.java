@@ -11,7 +11,7 @@ import java.util.List;
  * @author hualong.li
  *
  */
-public class GetOrderHistoryResponse extends ServiceResponseBase {
+public class GetOrderHistoryResponse extends OrderResponseBase {
 
 	// 订单数据
 	private List<OrderHistory> body;

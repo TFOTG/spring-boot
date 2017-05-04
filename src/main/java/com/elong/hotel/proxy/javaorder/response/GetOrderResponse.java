@@ -8,7 +8,7 @@ import com.elong.hotel.proxy.javaorder.getorder.Order;
  * @author zouyufei
  *
  */
-public class GetOrderResponse extends ServiceResponseBase {
+public class GetOrderResponse extends OrderResponseBase {
 
 	// 订单数据
 	private Order body;
