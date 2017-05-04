@@ -1,7 +1,7 @@
 package com.elong.hotel.hotelconfirm.group.bo;
 
-import com.elong.hotel.common.groupfilter.bo.GroupBase;
 import com.elong.hotel.hotelconfirm.group.po.GroupPo;
+import com.elong.hotel.hotelconfirm.groupfilter.bo.GroupBase;
 
 /**
  * Created by yangboyu on 17/4/4.

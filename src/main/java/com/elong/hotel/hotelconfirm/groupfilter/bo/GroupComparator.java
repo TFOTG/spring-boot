@@ -1,6 +1,6 @@
-package com.elong.hotel.common.groupfilter.bo;
+package com.elong.hotel.hotelconfirm.groupfilter.bo;
 
-import com.elong.hotel.common.groupfilter.enums.CompareResultEnum;
+import com.elong.hotel.hotelconfirm.groupfilter.enums.CompareResultEnum;
 
 import java.util.Comparator;
 

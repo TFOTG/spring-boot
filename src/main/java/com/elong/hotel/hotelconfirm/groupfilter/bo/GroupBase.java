@@ -1,10 +1,7 @@
-package com.elong.hotel.common.groupfilter.bo;
+package com.elong.hotel.hotelconfirm.groupfilter.bo;
 
 import java.util.Date;
-import java.util.List;
 import java.util.Map;
-
-import com.elong.hotel.hotelconfirm.group.bo.GroupTagBo;
 
 public abstract class GroupBase{
 

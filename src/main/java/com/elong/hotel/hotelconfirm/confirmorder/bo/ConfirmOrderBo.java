@@ -1,9 +1,9 @@
 package com.elong.hotel.hotelconfirm.confirmorder.bo;
 
 import com.elong.hotel.common.enums.ElongOrderStatusEnum;
-import com.elong.hotel.common.groupfilter.bo.CompareEntityBase;
 import com.elong.hotel.common.helper.DateHelper;
 import com.elong.hotel.hotelconfirm.confirmorder.po.ConfirmOrderPo;
+import com.elong.hotel.hotelconfirm.groupfilter.bo.CompareEntityBase;
 import com.elong.hotel.proxy.javaorder.getorder.Order;
 import com.elong.hotel.proxy.javaorder.getorder.OrderHistory;
 
