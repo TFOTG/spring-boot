@@ -21,6 +21,14 @@ public class SoaConfig {
 
     private String javaOrderQueryService;
 
+    private String javaOrderApiService;
+
+    private int javaOrderApiTimeOut;
+
+    private String rejectOrder;
+
+    private String confirmOrder;
+
     private int javaOrderQueryTimeOut;
 
     private String getOrderHistory;
@@ -126,6 +134,38 @@ public class SoaConfig {
 
     public void setHotel3GetOrderNightMode(String hotel3GetOrderNightMode) {
         this.hotel3GetOrderNightMode = hotel3GetOrderNightMode;
+    }
+
+    public String getJavaOrderApiService() {
+        return javaOrderApiService;
+    }
+
+    public void setJavaOrderApiService(String javaOrderApiService) {
+        this.javaOrderApiService = javaOrderApiService;
+    }
+
+    public int getJavaOrderApiTimeOut() {
+        return javaOrderApiTimeOut;
+    }
+
+    public void setJavaOrderApiTimeOut(int javaOrderApiTimeOut) {
+        this.javaOrderApiTimeOut = javaOrderApiTimeOut;
+    }
+
+    public String getRejectOrder() {
+        return rejectOrder;
+    }
+
+    public void setRejectOrder(String rejectOrder) {
+        this.rejectOrder = rejectOrder;
+    }
+
+    public String getConfirmOrder() {
+        return confirmOrder;
+    }
+
+    public void setConfirmOrder(String confirmOrder) {
+        this.confirmOrder = confirmOrder;
     }
 
     public static void main(String[] args) {

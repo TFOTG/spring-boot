@@ -5,7 +5,7 @@ package com.elong.hotel.proxy.javaorder.response;
  * @author zouyufei
  *
  */
-public class ServiceResponseBase {
+public class OrderResponseBase {
 
 	private int retcode;
 	private String retdesc;
