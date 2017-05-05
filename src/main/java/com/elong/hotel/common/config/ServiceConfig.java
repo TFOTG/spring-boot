@@ -15,6 +15,9 @@ public class ServiceConfig {
 	 * 调用订单接口超时时间
 	 */
 	private int getOrderTimeOut;
+
+
+    private String messageName;
 	
 	public int getConfirmOrderInDBTaskInterval() {
 		return confirmOrderInDBTaskInterval;
@@ -31,6 +34,12 @@ public class ServiceConfig {
 	public void setGetOrderTimeOut(int getOrderTimeOut) {
 		this.getOrderTimeOut = getOrderTimeOut;
 	}
-	
-	
+
+    public String getMessageName() {
+        return messageName;
+    }
+
+    public void setMessageName(String messageName) {
+        this.messageName = messageName;
+    }
 }

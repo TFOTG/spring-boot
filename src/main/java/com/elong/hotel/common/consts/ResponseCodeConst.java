@@ -16,8 +16,8 @@ public interface ResponseCodeConst {
 	 */
 	int ERROR = -1;
 	/**
-	 * 校验失败
+	 * 入库校验失败
 	 */
-	int CHECK_ERROR = 400;
+	int STORAGE_VALIDATE_ERROR = 400;
 	
 }

@@ -50,6 +50,7 @@ public class ConfirmOrderConfig {
      */
     private String priority4NightEnd;
 
+
     public ConfirmOrderConfig(){
         priority4HighMinute = 60;
         priority4HighDistance = 3000;
