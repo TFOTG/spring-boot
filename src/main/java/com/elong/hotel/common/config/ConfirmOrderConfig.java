@@ -1,5 +1,7 @@
 package com.elong.hotel.common.config;
 
+import com.alibaba.fastjson.JSON;
+
 /**
  * Created by peng.wang on 17/3/9.
  */
@@ -76,6 +78,10 @@ public class ConfirmOrderConfig {
         delayTime4V = 30;
         delayTime4O = 10;
         delayTimes = 1;
+        confirmOrderInDBTaskInterval=5;
+        getOrderTimeOut=3000;
+        messageName="OrderTimestampChange";
+
     }
 
     public String getPriority4NightEnd() {
@@ -172,5 +178,10 @@ public class ConfirmOrderConfig {
 
     public void setMessageName(String messageName) {
         this.messageName = messageName;
+    }
+
+    public static void main(String[] args) {
+        ConfirmOrderConfig config=new ConfirmOrderConfig();
+        System.out.println(JSON.toJSONString(config));
     }
 }

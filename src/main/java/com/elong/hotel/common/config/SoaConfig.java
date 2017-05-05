@@ -10,7 +10,6 @@ public class SoaConfig {
 
     private String hotelProduct;
 
-
     private String hotel3Service;
 
     private int hotel3TimeOut;
@@ -47,7 +46,7 @@ public class SoaConfig {
      * 调用ebk延迟接口方法  超时时间
      */
     private int ebkDelayOrderTimeOut;
-    
+
     public String getHotelProduct() {
         return hotelProduct;
     }
@@ -171,14 +170,23 @@ public class SoaConfig {
     public static void main(String[] args) {
         SoaConfig config=new SoaConfig();
         config.setHotelProduct("hotel");
-        config.setJavaOrderQueryService("");
+        config.setJavaOrderQueryService("jorder-query");
         config.setGetOrderHistory("data_historyInfoForRecheck");
         config.setJavaOrderQueryTimeOut(5000);
+        config.setJavaOrderApiService("jorder-api");
+        config.setJavaOrderApiTimeOut(5000);
+        config.setConfirmOrder("confirm");
+        config.setRejectOrder("reject");
         config.setHotel3Service("mis");
         config.setHotel3TimeOut(5000);
         config.setHotel3GetOrderServerTime("GetOrderServerTime");
         config.setHotel3GetOrderNightMode("GetOrderNightMode");
+        config.setEbkDelayOrderService("");
+        config.setEbkDelayOrderMethod("");
+        config.setEbkDelayOrderTimeOut(5000);
         System.out.println(JSON.toJSONString(config));
 
     }
+
+
 }
