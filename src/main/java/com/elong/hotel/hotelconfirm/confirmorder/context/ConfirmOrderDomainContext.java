@@ -13,6 +13,8 @@ public class ConfirmOrderDomainContext implements Serializable {
 
     private Map<String,Object> params;
 
+    public ConfirmOrderDomainContext(){}
+
     public ConfirmOrderDomainContext(Integer reserNo, ServerRunningDomainEnum domainEnum) {
         this.reserNo = reserNo;
         this.serverRunningDomainEnum = domainEnum;
