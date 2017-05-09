@@ -11,6 +11,7 @@ public class ConfirmOrderDomainContext implements Serializable {
 
     private ServerRunningDomainEnum serverRunningDomainEnum;
 
+    // todo:李华龙,如果是params 在后续中有关于order, orderHistory, operator 等类别的使用,直接定义为类比较好些.
     private Map<String,Object> params;
 
     public ConfirmOrderDomainContext(){}
