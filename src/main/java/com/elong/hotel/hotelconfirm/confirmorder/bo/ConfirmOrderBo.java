@@ -73,33 +73,46 @@ public class ConfirmOrderBo extends CompareEntityBase {
         if (order != null && po != null) {      // 初始化 "目标数据", 此时订单在已审库
             this.reserNo = po.getReserNo();
             this.reserStatus = order.getStatus();
-            this.hotelId = po.getHotelId();
-            this.cityId = po.getCityId();
-            this.confirmType = po.getConfirmType();
-            this.supplierId = po.getSupplierId();
-            this.supplierType = po.getSupplierType();
+            this.mod = this.reserNo % 10;
             this.arriveDate = po.getArriveDate();
             this.leaveDate = po.getLeaveDate();
-            this.proxyId = po.getProxyId();
             this.timeEarly = po.getTimeEarly();
             this.timeLate = po.getTimeLate();
             this.amendTime = po.getAmendTime();
+            this.hotelId = po.getHotelId();
+            this.supplierId = po.getSupplierId();
+            this.supplierType = po.getSupplierType();
+            this.distance = po.getDistance();   // 缺少
+            this.cityId = po.getCityId();
+            this.confirmType = po.getConfirmType();
+            this.amendTime = po.getAmendTime();     // 缺少
+            this.priority = po.getPriority();   // 缺少
+            this.proxyId = po.getProxyId();
             this.promiseTime = po.getPromiseTime();
+            this.promiseChangeTimes = po.getPromiseChangeTimes(); // 缺少
+            this.urge = po.getUrge();   // 缺少
             this.staffName = po.getStaffName();
             this.orderTimestamp = order.getOrderTimestamp();
         } else if (order != null && po == null) {   // 初始化 "目标数据", 此时订单还未入已审库
+            // todo:王朋 入库数据缺少字段 this.mod,this.hotelname,this.suppliername,this.supplierotatype,this.distance,this.bookingtime,
             this.reserNo = order.getOrderId().intValue();
             this.reserStatus = order.getStatus();
-            this.hotelId = order.getHotelId();
-            this.cityId = order.getCityId();
-            this.confirmType = order.getConfirmMethod();
-            this.supplierId = order.getSupplierId().toString();
-            this.supplierType = order.getSupplierType().toString();
+            this.mod = this.reserNo % 10; // 缺少
             this.arriveDate = order.getCheckInDate();
             this.leaveDate = order.getCheckOutDate();
-            this.proxyId = order.getProxy();
             this.timeEarly = order.getEarlyCheckInTime();
             this.timeLate = order.getLateCheckInTime();
+            this.hotelId = order.getHotelId();
+            this.hotelName = order.getHotelName(); // 缺少
+            this.supplierId = order.getSupplierId().toString();
+            this.supplierType = order.getSupplierType().toString();
+            this.supplierName = order.getSupplierName();
+            this.supplierOtaType = "0"; // 缺少?
+            this.proxyId = order.getProxy();
+            this.cityId = order.getCityId();
+            this.distance = order.getDistanceFromHotelWhenBooking();        // 缺少
+            this.confirmType = order.getConfirmMethod();
+            this.bookingTime = order.getCreateTime();                   // 缺少
             this.amendTime = getAmendTimeFromHistory(orderHistoryList);
             this.promiseTime = DateHelper.getMinDate();
             this.staffName = "";
@@ -120,16 +133,12 @@ public class ConfirmOrderBo extends CompareEntityBase {
             this.amendTime = po.getAmendTime();
             this.promiseTime = po.getPromiseTime();
             this.staffName = po.getStaffName();
-            this.priority=po.getPriority();
-            this.promiseChangeTimes=po.getPromiseChangeTimes();
-
+            this.priority = po.getPriority();
+            this.promiseChangeTimes = po.getPromiseChangeTimes();
         }
     }
 
-    public ConfirmOrderBo() {
-    }
-
-    private Date getAmendTimeFromHistory(List<OrderHistory> orderHistoryList){
+    private Date getAmendTimeFromHistory(List<OrderHistory> orderHistoryList) {
 
         if (orderHistoryList != null) {
             for (int i = orderHistoryList.size() - 1; i >= 0; i--) {
