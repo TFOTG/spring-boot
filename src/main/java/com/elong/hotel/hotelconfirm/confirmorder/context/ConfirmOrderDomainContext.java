@@ -28,11 +28,6 @@ public class ConfirmOrderDomainContext implements Serializable {
 
     public ConfirmOrderDomainContext(){}
 
-    public ConfirmOrderDomainContext(Integer reserNo, ServerRunningDomainEnum domainEnum) {
-        this.reserNo = reserNo;
-        this.serverRunningDomainEnum = domainEnum;
-    }
-
     public ConfirmOrderDomainContext(Integer reserNo, ServerRunningDomainEnum serverRunningDomainEnum, Order order,
             List<OrderHistory> orderHistories, ConfirmOrderPo confirmOrderPo, OperatorInfoBo operator) {
         this.reserNo = reserNo;
