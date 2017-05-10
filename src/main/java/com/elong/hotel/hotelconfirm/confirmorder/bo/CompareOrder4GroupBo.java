@@ -20,11 +20,18 @@ public class CompareOrder4GroupBo extends CompareEntityBase {
     @CompareEntityAnnotations(name = "supplierid")
     private String supplierId;
 
+    /**
+	 * 城市id
+	 */
+	@CompareEntityAnnotations(name = "cityid")
+	private String cityId;
+	
     public CompareOrder4GroupBo(ConfirmOrderBo confirmOrderBo){
         this.orderId = confirmOrderBo.getReserNo();
         this.orderStatus = confirmOrderBo.getReserStatus();
         this.shotelId = confirmOrderBo.getHotelId();
         this.supplierId = confirmOrderBo.getSupplierId();
+        this.cityId = confirmOrderBo.getCityId();
     }
 
     public Integer getOrderId() {
@@ -58,4 +65,13 @@ public class CompareOrder4GroupBo extends CompareEntityBase {
     public void setSupplierId(String supplierId) {
         this.supplierId = supplierId;
     }
+
+	public String getCityId() {
+		return cityId;
+	}
+
+	public void setCityId(String cityId) {
+		this.cityId = cityId;
+	}
+    
 }

@@ -1,6 +1,8 @@
 package com.elong.hotel.hotelconfirm.confirmorder.bo;
 
 
+import java.util.Date;
+
 import com.elong.hotel.hotelconfirm.groupfilter.bo.CompareEntityAnnotations;
 import com.elong.hotel.hotelconfirm.groupfilter.bo.CompareEntityBase;
 
@@ -40,7 +42,19 @@ public class CompareOrder4RankSettingBo extends CompareEntityBase {
      */
     @CompareEntityAnnotations(name = "confirmtype")
     private String confirmType;
+    
+    /**
+   	 * 城市id
+   	 */
+   	@CompareEntityAnnotations(name = "cityid")
+   	private String cityId;
 
+   	/**
+   	 * 到店时间
+   	 */
+   	@CompareEntityAnnotations(name = "arrivedate")
+   	private Date arriveDate;
+   	
     public CompareOrder4RankSettingBo(ConfirmOrderBo confirmOrderBo){
         this.orderId = confirmOrderBo.getReserNo();
         this.orderType = confirmOrderBo.getPriority();
@@ -48,6 +62,8 @@ public class CompareOrder4RankSettingBo extends CompareEntityBase {
         this.supplierId = confirmOrderBo.getSupplierId();
         this.supplierType = confirmOrderBo.getSupplierOtaType();
         this.confirmType = confirmOrderBo.getConfirmType();
+        this.cityId = confirmOrderBo.getCityId();
+        this.arriveDate = confirmOrderBo.getArriveDate();
     }
 
     public String getConfirmType() {
@@ -97,4 +113,21 @@ public class CompareOrder4RankSettingBo extends CompareEntityBase {
     public void setSupplierType(String supplierType) {
         this.supplierType = supplierType;
     }
+
+	public String getCityId() {
+		return cityId;
+	}
+
+	public void setCityId(String cityId) {
+		this.cityId = cityId;
+	}
+
+	public Date getArriveDate() {
+		return arriveDate;
+	}
+
+	public void setArriveDate(Date arriveDate) {
+		this.arriveDate = arriveDate;
+	}
+    
 }
