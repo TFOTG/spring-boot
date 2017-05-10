@@ -1,6 +1,6 @@
 package com.elong.hotel.log.hotelconfirm.po;
 
-import com.elong.hotel.hotelconfirm.confirmorder.po.ConfirmOrderPo;
+import com.elong.hotel.hotelconfirm.confirmorder.bo.ConfirmOrderBo;
 import com.elong.hotel.hotelconfirm.group.enums.DepartmentEnum;
 
 import java.util.Date;
@@ -31,17 +31,17 @@ public class ConfirmServiceLogPo {
     public ConfirmServiceLogPo() {
     }
 
-    public ConfirmServiceLogPo(ConfirmOrderPo po,String opType) {
-        this.reserNo = po.getReserNo();
-        this.groupId = po.getGroupId();
-        this.rankId = po.getRankId();
-        this.proxyId = po.getProxyId();
+    public ConfirmServiceLogPo(ConfirmOrderBo bo,String opType) {
+        this.reserNo = bo.getReserNo();
+        this.groupId = bo.getGroupId();
+        this.rankId = bo.getRankId();
+        this.proxyId = bo.getProxyId();
         this.department = DepartmentEnum.Confirm.getValue();
         this.info = info;
         this.opType = opType;
         this.sourceInfo = sourceInfo;
         this.opDate = new Date();
-        this.orderTimestampLong = po.getOrderTimestampLong();
+        this.orderTimestampLong = bo.getOrderTimestamp().getTime();
     }
 
     public Long getId() {
