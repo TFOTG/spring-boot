@@ -121,6 +121,7 @@ public class ConfirmOrderBo extends CompareEntityBase {
                 this.amendTime = getAmendTimeFromHistory(order,orderHistoryList);
 
                 //TODO hualong.li entertime
+                this.enterTime =
 
                 this.orderTimestamp = order.getOrderTimestamp();
 
@@ -154,23 +155,7 @@ public class ConfirmOrderBo extends CompareEntityBase {
             this.staffName = "";
             this.orderTimestamp = order.getOrderTimestamp();
         } else if (order == null && po != null) {// 初始化"在库数据"
-            this.reserNo = po.getReserNo();
-            this.reserStatus = po.getReserStatus();
-            this.hotelId = po.getHotelId();
-            this.cityId = po.getCityId();
-            this.confirmType = po.getConfirmType();
-            this.supplierId = po.getSupplierId();
-            this.supplierType = po.getSupplierType();
-            this.arriveDate = po.getArriveDate();
-            this.leaveDate = po.getLeaveDate();
-            this.proxyId = po.getProxyId();
-            this.timeEarly = po.getTimeEarly();
-            this.timeLate = po.getTimeLate();
-            this.amendTime = po.getAmendTime();
-            this.promiseTime = po.getPromiseTime();
-            this.staffName = po.getStaffName();
-            this.priority = po.getPriority();
-            this.promiseChangeTimes = po.getPromiseChangeTimes();
+            
         }
     }
 
