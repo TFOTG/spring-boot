@@ -73,48 +73,83 @@ public class ConfirmOrderBo extends CompareEntityBase {
         if (order != null && po != null) {      // 初始化 "目标数据", 此时订单在已审库
             this.reserNo = po.getReserNo();
             this.reserStatus = order.getStatus();
-            this.mod = this.reserNo % 10;
+            this.mod = po.getMod();
             this.arriveDate = po.getArriveDate();
             this.leaveDate = po.getLeaveDate();
             this.timeEarly = po.getTimeEarly();
             this.timeLate = po.getTimeLate();
-            this.amendTime = po.getAmendTime();
             this.hotelId = po.getHotelId();
+            this.hotelName = po.getHotelName();
             this.supplierId = po.getSupplierId();
             this.supplierType = po.getSupplierType();
-            this.distance = po.getDistance();   // 缺少
-            this.cityId = po.getCityId();
-            this.confirmType = po.getConfirmType();
-            this.amendTime = po.getAmendTime();     // 缺少
-            this.priority = po.getPriority();   // 缺少
+            this.supplierName = order.getSupplierName();
+            this.supplierOtaType = po.getSupplierOtaType();
             this.proxyId = po.getProxyId();
-            this.promiseTime = po.getPromiseTime();
-            this.promiseChangeTimes = po.getPromiseChangeTimes(); // 缺少
-            this.urge = po.getUrge();   // 缺少
-            this.staffName = po.getStaffName();
-            this.orderTimestamp = order.getOrderTimestamp();
+            this.cityId = po.getCityId();
+            this.distance = po.getDistance();
+            this.confirmType = po.getConfirmType();
+            this.bookingTime = po.getBookingTime();
+
+            if(po.getAmendTime() != null && po.getAmendTime().getTime() >= getAmendTimeFromHistory(orderHistoryList).getTime()) {
+
+                this.amendTime = po.getAmendTime();
+                this.priority = po.getPriority();
+                this.groupId = po.getGroupId();
+                this.rankId = po.getRankId();
+                this.ebkStrategyId = po.getEbkStrategyId();
+                this.staffName = po.getStaffName();
+                this.distributeTime = po.getDistributeTime();
+                this.promiseTime = po.getPromiseTime();
+                this.promiseChangeTimes = po.getPromiseChangeTimes();
+                this.isFaxReturn = po.getIsFaxReturn();
+                this.isLinked = po.getIsLinked();
+                this.urge = po.getUrge();
+                this.respiteTime = po.getRespiteTime();
+                this.nextServiceTime = po.getNextServiceTime();
+                this.ivrGuid = po.getIvrGuid();
+                this.ivrStatus = po.getIvrStatus();
+                this.ivrStartTime = po.getIvrStartTime();
+                this.enterTime = po.getEnterTime();
+                this.sortTime = po.getSortTime();
+                this.defaultSortTime = po.getDefaultSortTime();
+                this.firstRefusedTime = po.getFirstRefusedTime();
+                this.orderTimestamp = new Date(po.getOrderTimestampLong());
+
+            }else if(po.getAmendTime() != null && po.getAmendTime().getTime() < getAmendTimeFromHistory(orderHistoryList).getTime()) {
+
+                this.amendTime = getAmendTimeFromHistory(orderHistoryList);
+
+                //TODO hualong.li entertime
+
+                this.orderTimestamp = order.getOrderTimestamp();
+
+            }else {
+
+            }
         } else if (order != null && po == null) {   // 初始化 "目标数据", 此时订单还未入已审库
             // todo:王朋 入库数据缺少字段 this.mod,this.hotelname,this.suppliername,this.supplierotatype,this.distance,this.bookingtime,
             this.reserNo = order.getOrderId().intValue();
             this.reserStatus = order.getStatus();
-            this.mod = this.reserNo % 10; // 缺少
+            this.mod = this.reserNo%10;
             this.arriveDate = order.getCheckInDate();
             this.leaveDate = order.getCheckOutDate();
             this.timeEarly = order.getEarlyCheckInTime();
             this.timeLate = order.getLateCheckInTime();
             this.hotelId = order.getHotelId();
-            this.hotelName = order.getHotelName(); // 缺少
+            this.hotelName = order.getHotelName();
             this.supplierId = order.getSupplierId().toString();
             this.supplierType = order.getSupplierType().toString();
             this.supplierName = order.getSupplierName();
-            this.supplierOtaType = "0"; // 缺少?
+            this.supplierOtaType = order.getSupplierOtaType().toString();
+
             this.proxyId = order.getProxy();
             this.cityId = order.getCityId();
-            this.distance = order.getDistanceFromHotelWhenBooking();        // 缺少
+            this.distance = order.getDistanceFromHotelWhenBooking();
             this.confirmType = order.getConfirmMethod();
-            this.bookingTime = order.getCreateTime();                   // 缺少
+            this.bookingTime = order.getCreateTime();
             this.amendTime = getAmendTimeFromHistory(orderHistoryList);
             this.promiseTime = DateHelper.getMinDate();
+            this.promiseChangeTimes = 0;
             this.staffName = "";
             this.orderTimestamp = order.getOrderTimestamp();
         } else if (order == null && po != null) {// 初始化"在库数据"
