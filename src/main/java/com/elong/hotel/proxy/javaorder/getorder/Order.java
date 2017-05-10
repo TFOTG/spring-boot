@@ -142,6 +142,8 @@ public class Order {
 
 	private String provinceName;
 
+	private Integer supplierOtaType;
+
     //预定距离
     private Integer distanceFromHotelWhenBooking;
 
@@ -664,4 +666,12 @@ public class Order {
     public void setDistanceFromHotelWhenBooking(Integer distanceFromHotelWhenBooking) {
         this.distanceFromHotelWhenBooking = distanceFromHotelWhenBooking;
     }
+
+	public Integer getSupplierOtaType() {
+		return supplierOtaType;
+	}
+
+	public void setSupplierOtaType(Integer supplierOtaType) {
+		this.supplierOtaType = supplierOtaType;
+	}
 }
