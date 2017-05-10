@@ -90,6 +90,7 @@ public class ConfirmOrderBo extends CompareEntityBase {
             this.distance = po.getDistance();
             this.confirmType = po.getConfirmType();
             this.bookingTime = po.getBookingTime();
+            this.ratePlanId=order.getRatePlanId();
 
             if(po.getAmendTime() != null && po.getAmendTime().getTime() >= getAmendTimeFromHistory(order,orderHistoryList).getTime()) {
 
@@ -168,9 +169,11 @@ public class ConfirmOrderBo extends CompareEntityBase {
             this.timeLate = po.getTimeLate();
             this.amendTime = po.getAmendTime();
             this.promiseTime = po.getPromiseTime();
-            this.staffName = po.getStaffName();
-            this.priority = po.getPriority();
             this.promiseChangeTimes = po.getPromiseChangeTimes();
+            this.staffName = po.getStaffName();
+            this.distance=po.getDistance();
+            this.bookingTime=po.getBookingTime();
+            this.priority = po.getPriority();
         }
     }
 
