@@ -60,6 +60,7 @@ public class ConfirmOrderBo extends CompareEntityBase {
     private String reserStatus2End;
     private Date timeChange4PromiseTime;
     private Date rankChange4PromiseTime;
+    private String ratePlanId;
 
     public ConfirmOrderBo(ConfirmOrderPo po) {
         this(null, po, null);
@@ -90,7 +91,7 @@ public class ConfirmOrderBo extends CompareEntityBase {
             this.confirmType = po.getConfirmType();
             this.bookingTime = po.getBookingTime();
 
-            if(po.getAmendTime() != null && po.getAmendTime().getTime() >= getAmendTimeFromHistory(orderHistoryList).getTime()) {
+            if(po.getAmendTime() != null && po.getAmendTime().getTime() >= getAmendTimeFromHistory(order,orderHistoryList).getTime()) {
 
                 this.amendTime = po.getAmendTime();
                 this.priority = po.getPriority();
@@ -115,9 +116,9 @@ public class ConfirmOrderBo extends CompareEntityBase {
                 this.firstRefusedTime = po.getFirstRefusedTime();
                 this.orderTimestamp = new Date(po.getOrderTimestampLong());
 
-            }else if(po.getAmendTime() != null && po.getAmendTime().getTime() < getAmendTimeFromHistory(orderHistoryList).getTime()) {
+            }else if(po.getAmendTime() != null && po.getAmendTime().getTime() < getAmendTimeFromHistory(order,orderHistoryList).getTime()) {
 
-                this.amendTime = getAmendTimeFromHistory(orderHistoryList);
+                this.amendTime = getAmendTimeFromHistory(order,orderHistoryList);
 
                 //TODO hualong.li entertime
 
@@ -146,8 +147,8 @@ public class ConfirmOrderBo extends CompareEntityBase {
             this.cityId = order.getCityId();
             this.distance = order.getDistanceFromHotelWhenBooking();
             this.confirmType = order.getConfirmMethod();
-            this.bookingTime = order.getCreateTime();
-            this.amendTime = getAmendTimeFromHistory(orderHistoryList);
+            this.bookingTime = order.getCreateTime();                   // 缺少
+            this.amendTime = getAmendTimeFromHistory(order,orderHistoryList);
             this.promiseTime = DateHelper.getMinDate();
             this.promiseChangeTimes = 0;
             this.staffName = "";
@@ -173,9 +174,12 @@ public class ConfirmOrderBo extends CompareEntityBase {
         }
     }
 
-    private Date getAmendTimeFromHistory(List<OrderHistory> orderHistoryList) {
+    private Date getAmendTimeFromHistory(Order order,List<OrderHistory> orderHistoryList) {
 
         if (orderHistoryList != null) {
+            //补上当前订单，最后一条历史
+            OrderHistory lastHistory=new OrderHistory(order);
+            orderHistoryList.add(lastHistory);
             for (int i = orderHistoryList.size() - 1; i >= 0; i--) {
                 OrderHistory history = orderHistoryList.get(i);
                 if (history.getReserveStatus().equals(ElongOrderStatusEnum.V.getStatus())) {
@@ -533,5 +537,13 @@ public class ConfirmOrderBo extends CompareEntityBase {
 
     public void setOrderTimestamp(Date orderTimestamp) {
         this.orderTimestamp = orderTimestamp;
+    }
+
+    public String getRatePlanId() {
+        return ratePlanId;
+    }
+
+    public void setRatePlanId(String ratePlanId) {
+        this.ratePlanId = ratePlanId;
     }
 }

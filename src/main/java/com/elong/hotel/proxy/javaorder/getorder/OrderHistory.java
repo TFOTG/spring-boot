@@ -40,7 +40,20 @@ public class OrderHistory {
 	 */
 	private String modifier;
 
-	public Long getOrderID() {
+    public OrderHistory() {
+    }
+
+    public OrderHistory(Order order) {
+        this.orderID = order.getOrderId();
+        this.reserveStatus = order.getStatus();
+        this.arriveDate = order.getCheckInDate();
+        this.leaveDate = order.getCheckOutDate();
+        this.roomCount = order.getRoomCount();
+        this.createTime = order.getCreateTime();
+        this.modifier = order.getModifyName();
+    }
+
+    public Long getOrderID() {
 		return orderID;
 	}
 

@@ -122,7 +122,16 @@ public enum ElongOrderStatusEnum {
 		}
 		return "";
 	}
-	
+
+
+    public static ElongOrderStatusEnum getEnumStatus(String status){
+        for(ElongOrderStatusEnum item: ElongOrderStatusEnum.values()){
+            if(item.getStatus().equals(status)){
+                return item;
+            }
+        }
+        return null;
+    }
 	
 	public static boolean match(String src, ElongOrderStatusEnum status) {
 		return false;
