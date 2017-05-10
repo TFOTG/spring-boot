@@ -40,6 +40,12 @@ public class CompareOrder4RankSettingBo extends CompareEntityBase {
      */
     @CompareEntityAnnotations(name = "confirmtype")
     private String confirmType;
+    
+    /**
+   	 * 城市id
+   	 */
+   	@CompareEntityAnnotations(name = "cityid")
+   	protected String cityId;
 
     public CompareOrder4RankSettingBo(ConfirmOrderBo confirmOrderBo){
         this.orderId = confirmOrderBo.getReserNo();
@@ -48,6 +54,7 @@ public class CompareOrder4RankSettingBo extends CompareEntityBase {
         this.supplierId = confirmOrderBo.getSupplierId();
         this.supplierType = confirmOrderBo.getSupplierOtaType();
         this.confirmType = confirmOrderBo.getConfirmType();
+        this.cityId = confirmOrderBo.getCityId();
     }
 
     public String getConfirmType() {
@@ -97,4 +104,13 @@ public class CompareOrder4RankSettingBo extends CompareEntityBase {
     public void setSupplierType(String supplierType) {
         this.supplierType = supplierType;
     }
+
+	public String getCityId() {
+		return cityId;
+	}
+
+	public void setCityId(String cityId) {
+		this.cityId = cityId;
+	}
+    
 }
