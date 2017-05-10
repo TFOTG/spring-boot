@@ -22,7 +22,7 @@ public class GetHotelNoServiceBo {
     @JSONField(name = "NextServerTime")
     private String nextServerTime;
 
-    @JSONField(name = "IsServer")
+    @JSONField(name = "IsServer")//在服务时间为1，非服务时间为0
     private int isServer;
 
     public String getOrderId() {
