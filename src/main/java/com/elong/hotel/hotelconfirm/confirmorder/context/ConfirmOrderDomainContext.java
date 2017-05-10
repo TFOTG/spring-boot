@@ -16,8 +16,6 @@ public class ConfirmOrderDomainContext implements Serializable {
 
     private ServerRunningDomainEnum serverRunningDomainEnum;
 
-    // todo:李华龙,如果是params 在后续中有关于order, orderHistory, operator, confirmOrder 等类别的使用,直接定义为类比较好些.
-
     private Order order;
 
     private List<OrderHistory> orderHistories;
@@ -35,10 +33,14 @@ public class ConfirmOrderDomainContext implements Serializable {
         this.serverRunningDomainEnum = domainEnum;
     }
 
-    public ConfirmOrderDomainContext(Integer reserNo, ServerRunningDomainEnum domainEnum,Map<String,Object> params) {
+    public ConfirmOrderDomainContext(Integer reserNo, ServerRunningDomainEnum serverRunningDomainEnum, Order order,
+            List<OrderHistory> orderHistories, ConfirmOrderPo confirmOrderPo, OperatorInfoBo operator) {
         this.reserNo = reserNo;
-        this.serverRunningDomainEnum = domainEnum;
-        this.params = params;
+        this.serverRunningDomainEnum = serverRunningDomainEnum;
+        this.order = order;
+        this.orderHistories = orderHistories;
+        this.confirmOrderPo = confirmOrderPo;
+        this.operator = operator;
     }
 
     public Integer getReserNo() {
