@@ -13,8 +13,12 @@ public enum ServerRunningDomainEnum {
 	/**
 	 * 时间戳变化
 	 */
-	TIMESTAMP_CHANGE("时间戳变化", 2);
+	TIMESTAMP_CHANGE("时间戳变化", 2),
 
+	/**
+	 * 订单兜底任务
+	 */
+	ORDER_INDB_TASK("兜底任务", 3);
 	ServerRunningDomainEnum(String name, int actionIndex) {
 		this.name = name;
 		this.actionIndex = actionIndex;

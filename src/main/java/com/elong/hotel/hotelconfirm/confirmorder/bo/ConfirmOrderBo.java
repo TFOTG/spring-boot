@@ -90,6 +90,7 @@ public class ConfirmOrderBo extends CompareEntityBase {
             this.distance = po.getDistance();
             this.confirmType = po.getConfirmType();
             this.bookingTime = po.getBookingTime();
+            this.ratePlanId=order.getRatePlanId();
 
             if(po.getAmendTime() != null && po.getAmendTime().getTime() >= getAmendTimeFromHistory(order,orderHistoryList).getTime()) {
 
