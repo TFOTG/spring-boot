@@ -24,7 +24,7 @@ public class CompareOrder4GroupBo extends CompareEntityBase {
 	 * 城市id
 	 */
 	@CompareEntityAnnotations(name = "cityid")
-	protected String cityId;
+	private String cityId;
 	
     public CompareOrder4GroupBo(ConfirmOrderBo confirmOrderBo){
         this.orderId = confirmOrderBo.getReserNo();
