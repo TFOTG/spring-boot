@@ -1,5 +1,7 @@
 package com.elong.hotel.storage.bo;
 
+import com.elong.hotel.common.bo.OperatorInfoBo;
+
 import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
