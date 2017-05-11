@@ -16,37 +16,37 @@ public class CompareOrder4RankSettingBo extends CompareEntityBase {
     /**
      * name = 'ordertype' 订单类型 必须小写
      */
-    @CompareEntityAnnotations(name = "ordertype")
+    @CompareEntityAnnotations(name = "OrderType")
     private Integer orderType;
 
     /**
      * name = 'shotelid' 酒店id 必须小写
      */
-    @CompareEntityAnnotations(name = "shotelid")
+    @CompareEntityAnnotations(name = "hotelID")
     private String shotelId;
 
     /**
      * name = 'supplierid' 供应商id 必须小写
      */
-    @CompareEntityAnnotations(name = "supplierid")
+    @CompareEntityAnnotations(name = "SupplierID")
     private String supplierId;
 
-    /**
-     * name = 'suppliertype' 供应商类型 必须小写
-     */
-    @CompareEntityAnnotations(name = "suppliertype")
-    private String supplierType;
+//    /**
+//     * name = 'suppliertype' 供应商类型 必须小写
+//     */
+//    @CompareEntityAnnotations(name = "suppliertype")
+//    private String supplierType;
 
     /**
      * name = 'confirmtype' 确认方式,Ebooking,直连,人工 必须小写
      */
-    @CompareEntityAnnotations(name = "confirmtype")
+    @CompareEntityAnnotations(name = "ConfirmType")
     private String confirmType;
     
     /**
    	 * 城市id
    	 */
-   	@CompareEntityAnnotations(name = "cityid")
+   	@CompareEntityAnnotations(name = "CityID")
    	private String cityId;
 
    	/**
@@ -60,7 +60,6 @@ public class CompareOrder4RankSettingBo extends CompareEntityBase {
         this.orderType = confirmOrderBo.getPriority();
         this.shotelId = confirmOrderBo.getHotelId();
         this.supplierId = confirmOrderBo.getSupplierId();
-        this.supplierType = confirmOrderBo.getSupplierOtaType();
         this.confirmType = confirmOrderBo.getConfirmType();
         this.cityId = confirmOrderBo.getCityId();
         this.arriveDate = confirmOrderBo.getArriveDate();
@@ -104,14 +103,6 @@ public class CompareOrder4RankSettingBo extends CompareEntityBase {
 
     public void setSupplierId(String supplierId) {
         this.supplierId = supplierId;
-    }
-
-    public String getSupplierType() {
-        return supplierType;
-    }
-
-    public void setSupplierType(String supplierType) {
-        this.supplierType = supplierType;
     }
 
 	public String getCityId() {
