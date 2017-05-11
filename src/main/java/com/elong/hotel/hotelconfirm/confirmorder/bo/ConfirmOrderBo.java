@@ -156,7 +156,7 @@ public class ConfirmOrderBo extends CompareEntityBase {
             this.staffName = "";
             this.orderTimestamp = order.getOrderTimestamp();
         } else if (order == null && po != null) {// 初始化"在库数据"
-            
+
         }
     }
 
@@ -172,7 +172,7 @@ public class ConfirmOrderBo extends CompareEntityBase {
                     for (int j = i; j >= 0; j--) {
                         OrderHistory orderHistory = orderHistoryList.get(j);
                         if (!orderHistory.getReserveStatus().equals(ElongOrderStatusEnum.V.getStatus())) {
-                            return orderHistoryList.get(j + 1).getCreateTime();
+                            return orderHistoryList.get(j + 1).getModifyTime();
                         }
                     }
                 }
