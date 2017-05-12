@@ -11,8 +11,8 @@ public class CompareOrder4GroupBo extends CompareEntityBase {
 
     private Integer orderId;
 
-    @CompareEntityAnnotations(name = "orderstatus")
-    private String orderStatus;
+    @CompareEntityAnnotations(name = "reserstatus")
+    private String reserStatus;
 
     @CompareEntityAnnotations(name = "shotelid")
     private String shotelId;
@@ -28,7 +28,7 @@ public class CompareOrder4GroupBo extends CompareEntityBase {
 	
     public CompareOrder4GroupBo(ConfirmOrderBo confirmOrderBo){
         this.orderId = confirmOrderBo.getReserNo();
-        this.orderStatus = confirmOrderBo.getReserStatus();
+        this.reserStatus = confirmOrderBo.getReserStatus();
         this.shotelId = confirmOrderBo.getHotelId();
         this.supplierId = confirmOrderBo.getSupplierId();
         this.cityId = confirmOrderBo.getCityId();
@@ -42,15 +42,16 @@ public class CompareOrder4GroupBo extends CompareEntityBase {
         this.orderId = orderId;
     }
 
-    public String getOrderStatus() {
-        return orderStatus;
-    }
 
-    public void setOrderStatus(String orderStatus) {
-        this.orderStatus = orderStatus;
-    }
+    public String getReserStatus() {
+		return reserStatus;
+	}
 
-    public String getShotelId() {
+	public void setReserStatus(String reserStatus) {
+		this.reserStatus = reserStatus;
+	}
+
+	public String getShotelId() {
         return shotelId;
     }
 
