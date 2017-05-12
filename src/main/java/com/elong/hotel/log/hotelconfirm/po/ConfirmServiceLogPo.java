@@ -1,5 +1,6 @@
 package com.elong.hotel.log.hotelconfirm.po;
 
+import com.alibaba.fastjson.JSON;
 import com.elong.hotel.hotelconfirm.confirmorder.bo.ConfirmOrderBo;
 import com.elong.hotel.hotelconfirm.group.enums.DepartmentEnum;
 
@@ -37,10 +38,8 @@ public class ConfirmServiceLogPo {
         this.rankId = bo.getRankId();
         this.proxyId = bo.getProxyId();
         this.department = DepartmentEnum.Confirm.getValue();
-        this.info = info;
+        this.info = JSON.toJSONString(bo);
         this.opType = opType;
-        this.sourceInfo = sourceInfo;
-        this.opDate = new Date();
         this.orderTimestampLong = bo.getOrderTimestamp().getTime();
     }
 
