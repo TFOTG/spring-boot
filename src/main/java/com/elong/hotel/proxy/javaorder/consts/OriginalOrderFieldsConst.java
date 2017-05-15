@@ -14,7 +14,7 @@ public interface OriginalOrderFieldsConst {
 	String FIELDS_FOR_FIRSTVERIFY_SCHEDULE = "status,hotelId,payment,checkInDate,checkOutDate,otaType,orderFlag,supplierId,supplierType,supplierName,promotion,isUrgentVerify,modifyName,roomNo,groupId,additionalStatus,confirmNo,guestName,hotelName";
 
 
-	String FIELDS_FOR_STORAGE = "status,hotelId,payment,checkInDate,checkOutDate,otaType,orderFlag,supplierId,supplierType,supplierName,promotion,isUrgentVerify,modifyName,roomNo,groupId,additionalStatus,confirmNo,guestName,proxy,createTime,hotelName,gradeId,sumPrice,sumCost,confirmMethod,contactPhone,cardNo,contactMobile,orderFrom,mHotelName";
+	String FIELDS_FOR_STORAGE = "status,hotelId,payment,checkInDate,checkOutDate,otaType,orderFlag,supplierId,supplierType,supplierOtaType,supplierName,promotion,isUrgentVerify,modifyName,roomNo,groupId,additionalStatus,confirmNo,guestName,proxy,createTime,hotelName,gradeId,sumPrice,sumCost,confirmMethod,contactPhone,cardNo,contactMobile,orderFrom,mHotelName";
 
 	/**
 	 * NS通知DC
