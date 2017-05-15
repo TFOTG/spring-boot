@@ -154,8 +154,6 @@ public class ConfirmOrderBo extends CompareEntityBase {
             this.promiseChangeTimes = 0;
             this.staffName = "";
             this.orderTimestamp = order.getOrderTimestamp();
-        } else if (order == null && po != null) {// 初始化"在库数据"
-
         }
     }
 
