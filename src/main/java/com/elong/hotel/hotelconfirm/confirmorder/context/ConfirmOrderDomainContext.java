@@ -24,8 +24,6 @@ public class ConfirmOrderDomainContext implements Serializable {
 
     private OperatorInfoBo operator;
 
-    private Map<String,Object> params;
-
     public ConfirmOrderDomainContext(){}
 
     public ConfirmOrderDomainContext(Integer reserNo, ServerRunningDomainEnum serverRunningDomainEnum, Order order,
@@ -52,14 +50,6 @@ public class ConfirmOrderDomainContext implements Serializable {
 
     public void setServerRunningDomainEnum(ServerRunningDomainEnum serverRunningDomainEnum) {
         this.serverRunningDomainEnum = serverRunningDomainEnum;
-    }
-
-    public Map<String, Object> getParams() {
-        return params;
-    }
-
-    public void setParams(Map<String, Object> params) {
-        this.params = params;
     }
 
     public Order getOrder() {
