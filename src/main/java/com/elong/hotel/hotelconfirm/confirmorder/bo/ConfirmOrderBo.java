@@ -146,6 +146,7 @@ public class ConfirmOrderBo extends CompareEntityBase {
 
             this.proxyId = order.getProxy();
             this.cityId = order.getCityId();
+            this.ratePlanId=order.getRatePlanId();
             this.distance = order.getDistanceFromHotelWhenBooking();
             this.confirmType = order.getConfirmMethod();
             this.bookingTime = order.getCreateTime();
