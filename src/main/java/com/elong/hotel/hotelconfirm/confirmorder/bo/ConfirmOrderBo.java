@@ -130,7 +130,6 @@ public class ConfirmOrderBo extends CompareEntityBase {
 
             }
         } else if (order != null && po == null) {   // 初始化 "目标数据", 此时订单还未入已审库
-            // todo:王朋 入库数据缺少字段 this.mod,this.hotelname,this.suppliername,this.supplierotatype,this.distance,this.bookingtime,
             this.reserNo = order.getOrderId().intValue();
             this.reserStatus = order.getStatus();
             this.mod = this.reserNo%10;
@@ -149,14 +148,12 @@ public class ConfirmOrderBo extends CompareEntityBase {
             this.cityId = order.getCityId();
             this.distance = order.getDistanceFromHotelWhenBooking();
             this.confirmType = order.getConfirmMethod();
-            this.bookingTime = order.getCreateTime();                   // 缺少
+            this.bookingTime = order.getCreateTime();
             this.amendTime = getAmendTimeFromHistory(order,orderHistoryList);
             this.promiseTime = DateHelper.getMinDate();
             this.promiseChangeTimes = 0;
             this.staffName = "";
             this.orderTimestamp = order.getOrderTimestamp();
-        } else if (order == null && po != null) {// 初始化"在库数据"
-
         }
     }
 
