@@ -15,15 +15,11 @@ public class ConfirmServiceLogPo {
 
     private String department;
 
-    private String info;
-
     private String sourceInfo;
 
     private String opType;
 
     private Date opDate;
-
-    private Long orderTimestampLong;
 
     public Long getId() {
         return id;
@@ -73,14 +69,6 @@ public class ConfirmServiceLogPo {
         this.department = department == null ? null : department.trim();
     }
 
-    public String getInfo() {
-        return info;
-    }
-
-    public void setInfo(String info) {
-        this.info = info == null ? null : info.trim();
-    }
-
     public String getSourceInfo() {
         return sourceInfo;
     }
@@ -105,14 +93,6 @@ public class ConfirmServiceLogPo {
         this.opDate = opDate;
     }
 
-    public Long getOrderTimestampLong() {
-        return orderTimestampLong;
-    }
-
-    public void setOrderTimestampLong(Long orderTimestampLong) {
-        this.orderTimestampLong = orderTimestampLong;
-    }
-
     @Override
     public boolean equals(Object that) {
         if (this == that) {
@@ -131,11 +111,9 @@ public class ConfirmServiceLogPo {
             && (this.getRankId() == null ? other.getRankId() == null : this.getRankId().equals(other.getRankId()))
             && (this.getProxyId() == null ? other.getProxyId() == null : this.getProxyId().equals(other.getProxyId()))
             && (this.getDepartment() == null ? other.getDepartment() == null : this.getDepartment().equals(other.getDepartment()))
-            && (this.getInfo() == null ? other.getInfo() == null : this.getInfo().equals(other.getInfo()))
             && (this.getSourceInfo() == null ? other.getSourceInfo() == null : this.getSourceInfo().equals(other.getSourceInfo()))
             && (this.getOpType() == null ? other.getOpType() == null : this.getOpType().equals(other.getOpType()))
-            && (this.getOpDate() == null ? other.getOpDate() == null : this.getOpDate().equals(other.getOpDate()))
-            && (this.getOrderTimestampLong() == null ? other.getOrderTimestampLong() == null : this.getOrderTimestampLong().equals(other.getOrderTimestampLong()));
+            && (this.getOpDate() == null ? other.getOpDate() == null : this.getOpDate().equals(other.getOpDate()));
     }
 
     @Override
@@ -148,11 +126,9 @@ public class ConfirmServiceLogPo {
         result = prime * result + ((getRankId() == null) ? 0 : getRankId().hashCode());
         result = prime * result + ((getProxyId() == null) ? 0 : getProxyId().hashCode());
         result = prime * result + ((getDepartment() == null) ? 0 : getDepartment().hashCode());
-        result = prime * result + ((getInfo() == null) ? 0 : getInfo().hashCode());
         result = prime * result + ((getSourceInfo() == null) ? 0 : getSourceInfo().hashCode());
         result = prime * result + ((getOpType() == null) ? 0 : getOpType().hashCode());
         result = prime * result + ((getOpDate() == null) ? 0 : getOpDate().hashCode());
-        result = prime * result + ((getOrderTimestampLong() == null) ? 0 : getOrderTimestampLong().hashCode());
         return result;
     }
 
@@ -168,11 +144,9 @@ public class ConfirmServiceLogPo {
         sb.append(", rankId=").append(rankId);
         sb.append(", proxyId=").append(proxyId);
         sb.append(", department=").append(department);
-        sb.append(", info=").append(info);
         sb.append(", sourceInfo=").append(sourceInfo);
         sb.append(", opType=").append(opType);
         sb.append(", opDate=").append(opDate);
-        sb.append(", orderTimestampLong=").append(orderTimestampLong);
         sb.append("]");
         return sb.toString();
     }

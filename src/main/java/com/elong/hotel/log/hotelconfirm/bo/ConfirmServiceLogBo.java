@@ -19,16 +19,11 @@ public class ConfirmServiceLogBo {
 
     private String department;
 
-    private String info;
-
     private String sourceInfo;
 
     private String opType;
 
     private Date opDate;
-
-    private Long orderTimestampLong;
-
 
     public String getTableName() {
         return tableName;
@@ -78,13 +73,6 @@ public class ConfirmServiceLogBo {
         this.department = department == null ? null : department.trim();
     }
 
-    public String getInfo() {
-        return info;
-    }
-
-    public void setInfo(String info) {
-        this.info = info == null ? null : info.trim();
-    }
 
     public String getSourceInfo() {
         return sourceInfo;
@@ -108,14 +96,6 @@ public class ConfirmServiceLogBo {
 
     public void setOpDate(Date opDate) {
         this.opDate = opDate;
-    }
-
-    public Long getOrderTimestampLong() {
-        return orderTimestampLong;
-    }
-
-    public void setOrderTimestampLong(Long orderTimestampLong) {
-        this.orderTimestampLong = orderTimestampLong;
     }
 
 }
