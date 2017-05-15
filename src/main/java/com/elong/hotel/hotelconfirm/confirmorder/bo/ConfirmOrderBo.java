@@ -121,15 +121,10 @@ public class ConfirmOrderBo extends CompareEntityBase {
             }else if(po.getAmendTime() != null && po.getAmendTime().getTime() < getAmendTimeFromHistory(order,orderHistoryList).getTime()) {
 
                 this.amendTime = getAmendTimeFromHistory(order,orderHistoryList);
-
-                //TODO hualong.li entertime
                 this.enterTime = operator.getOperatorTime();
-
                 this.orderTimestamp = order.getOrderTimestamp();
-
-            }else {
-
             }
+
         } else if (order != null && po == null) {   // 初始化 "目标数据", 此时订单还未入已审库
             this.reserNo = order.getOrderId().intValue();
             this.reserStatus = order.getStatus();
@@ -144,7 +139,6 @@ public class ConfirmOrderBo extends CompareEntityBase {
             this.supplierType = order.getSupplierType().toString();
             this.supplierName = order.getSupplierName();
             this.supplierOtaType = order.getSupplierOtaType().toString();
-
             this.proxyId = order.getProxy();
             this.cityId = order.getCityId();
             this.distance = order.getDistanceFromHotelWhenBooking();
