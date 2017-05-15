@@ -1,5 +1,6 @@
 package com.elong.hotel.hotelconfirm.confirmorder.bo;
 
+import com.elong.hotel.common.bo.OperatorInfoBo;
 import com.elong.hotel.common.enums.ElongOrderStatusEnum;
 import com.elong.hotel.common.helper.DateHelper;
 import com.elong.hotel.hotelconfirm.confirmorder.po.ConfirmOrderPo;
@@ -63,14 +64,14 @@ public class ConfirmOrderBo extends CompareEntityBase {
     private String ratePlanId;
 
     public ConfirmOrderBo(ConfirmOrderPo po) {
-        this(null, po, null);
+        this(null, po, null,null);
     }
 
-    public ConfirmOrderBo(Order order, List<OrderHistory> orderHistoryList) {
-        this(order, null, orderHistoryList);
+    public ConfirmOrderBo(Order order, List<OrderHistory> orderHistoryList,OperatorInfoBo operator) {
+        this(order, null, orderHistoryList,operator);
     }
 
-    public ConfirmOrderBo(Order order, ConfirmOrderPo po, List<OrderHistory> orderHistoryList) {
+    public ConfirmOrderBo(Order order, ConfirmOrderPo po, List<OrderHistory> orderHistoryList,OperatorInfoBo operator) {
         if (order != null && po != null) {      // 初始化 "目标数据", 此时订单在已审库
             this.reserNo = po.getReserNo();
             this.reserStatus = order.getStatus();
@@ -122,7 +123,7 @@ public class ConfirmOrderBo extends CompareEntityBase {
                 this.amendTime = getAmendTimeFromHistory(order,orderHistoryList);
 
                 //TODO hualong.li entertime
-                this.enterTime =
+                this.enterTime = operator.getOperatorTime();
 
                 this.orderTimestamp = order.getOrderTimestamp();
 
@@ -150,13 +151,53 @@ public class ConfirmOrderBo extends CompareEntityBase {
             this.distance = order.getDistanceFromHotelWhenBooking();
             this.confirmType = order.getConfirmMethod();
             this.bookingTime = order.getCreateTime();                   // 缺少
-            this.amendTime = getAmendTimeFromHistory(order,orderHistoryList);
+            this.amendTime = getAmendTimeFromHistory(order, orderHistoryList);
             this.promiseTime = DateHelper.getMinDate();
             this.promiseChangeTimes = 0;
             this.staffName = "";
             this.orderTimestamp = order.getOrderTimestamp();
+            this.enterTime = operator.getOperatorTime();
         } else if (order == null && po != null) {// 初始化"在库数据"
-
+            this.reserNo = po.getReserNo();
+            this.reserStatus = po.getReserStatus();
+            this.mod = po.getMod();
+            this.arriveDate = po.getArriveDate();
+            this.leaveDate = po.getLeaveDate();
+            this.timeEarly = po.getTimeEarly();
+            this.timeLate = po.getTimeLate();
+            this.hotelId = po.getHotelId();
+            this.hotelName = po.getHotelName();
+            this.supplierId = po.getSupplierId();
+            this.supplierType = po.getSupplierType();
+            this.supplierOtaType = po.getSupplierOtaType();
+            this.supplierName = po.getSupplierName();
+            this.proxyId = po.getProxyId();
+            this.cityId = po.getCityId();
+            this.distance = po.getDistance();
+            this.confirmType = po.getConfirmType();
+            this.bookingTime = po.getBookingTime();
+            this.amendTime = po.getAmendTime();
+            this.priority=po.getPriority();
+            this.groupId = po.getGroupId();
+            this.rankId = po.getRankId();
+            this.ebkStrategyId = po.getEbkStrategyId();
+            this.staffName = po.getStaffName();
+            this.distributeTime = po.getDistributeTime();
+            this.promiseTime = po.getPromiseTime();
+            this.promiseChangeTimes = po.getPromiseChangeTimes();
+            this.isFaxReturn = po.getIsFaxReturn();
+            this.isLinked = po.getIsLinked();
+            this.urge = po.getUrge();
+            this.respiteTime = po.getRespiteTime();
+            this.nextServiceTime = po.getNextServiceTime();
+            this.ivrGuid = po.getIvrGuid();
+            this.ivrStatus = po.getIvrStatus();
+            this.ivrStartTime = po.getIvrStartTime();
+            this.enterTime = po.getEnterTime();
+            this.sortTime = po.getSortTime();
+            this.defaultSortTime = po.getDefaultSortTime();
+            this.firstRefusedTime = po.getFirstRefusedTime();
+            this.orderTimestamp = new Date(po.getOrderTimestampLong());
         }
     }
 
