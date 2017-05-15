@@ -78,7 +78,7 @@ public class SoaHelper {
         return postForm(productName, serviceName, methodName, params, timeout, contentType);
     }
 
-    public static String postForm(String productName, String serviceName, String methodName, Map<String, String> params, int timeout, String contentType) throws Exception {
+    public static String postForm(String productName, String serviceName, String methodName, Map<String, String> params, int timeout, String contentType) throws SoaException {
         // 参数
         Map<String, Object> optionMap = new HashMap<String, Object>();
         optionMap.put("timeout", timeout);
@@ -92,7 +92,7 @@ public class SoaHelper {
         if (StringUtils.equalsIgnoreCase(response.getRetcode(), "0")) {
             return response.getResponseBody();
         }
-        throw new Exception(String.format("SOA(%s) error. %s, %s", methodName, response.getRetcode(), response.getRetdesc()));
+        throw new SoaException(String.format("SOA(%s) error. %s, %s", methodName, response.getRetcode(), response.getRetdesc()));
     }
 
     /**
@@ -154,7 +154,7 @@ public class SoaHelper {
      * @return
      * @throws Exception
      */
-    public static String get(String productName, String serviceName, String methodName, Map<String, String> params, int timeout, String contentType) throws Exception {
+    public static String get(String productName, String serviceName, String methodName, Map<String, String> params, int timeout, String contentType) throws SoaException {
         // 参数
         Map<String, Object> optionMap = new HashMap<String, Object>();
         optionMap.put("timeout", timeout);
@@ -168,7 +168,7 @@ public class SoaHelper {
         if (StringUtils.equalsIgnoreCase(response.getRetcode(), "0")) {
             return response.getResponseBody();
         }
-        throw new Exception(String.format("SOA(%s) error. %s, %s", methodName, response.getRetcode(), response.getRetdesc()));
+        throw new SoaException(String.format("SOA(%s) error. %s, %s", methodName, response.getRetcode(), response.getRetdesc()));
     }
 
     /**
