@@ -1,9 +1,5 @@
 package com.elong.hotel.log.hotelconfirm.po;
 
-import com.alibaba.fastjson.JSON;
-import com.elong.hotel.hotelconfirm.confirmorder.bo.ConfirmOrderBo;
-import com.elong.hotel.hotelconfirm.group.enums.DepartmentEnum;
-
 import java.util.Date;
 
 public class ConfirmServiceLogPo {
@@ -28,20 +24,6 @@ public class ConfirmServiceLogPo {
     private Date opDate;
 
     private Long orderTimestampLong;
-
-    public ConfirmServiceLogPo() {
-    }
-
-    public ConfirmServiceLogPo(ConfirmOrderBo bo,String opType) {
-        this.reserNo = bo.getReserNo();
-        this.groupId = bo.getGroupId();
-        this.rankId = bo.getRankId();
-        this.proxyId = bo.getProxyId();
-        this.department = DepartmentEnum.Confirm.getValue();
-        this.info = JSON.toJSONString(bo);
-        this.opType = opType;
-        this.orderTimestampLong = bo.getOrderTimestamp().getTime();
-    }
 
     public Long getId() {
         return id;
