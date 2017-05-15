@@ -1,6 +1,7 @@
 package com.elong.hotel.hotelconfirm.ranksetting.po;
 
 import java.util.Date;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -8,8 +9,6 @@ import java.util.Map;
  * Created by yangboyu on 17/4/4.
  */
 public class RankSettingPo{
-
-    protected Map<String, String> tags;
 
     protected Integer sort;
 
@@ -93,14 +92,6 @@ public class RankSettingPo{
         this.sort = sort;
     }
 
-    public Map<String, String> getTags() {
-        return tags;
-    }
-
-    public void setTags(Map<String, String> tags) {
-        this.tags = tags;
-    }
-
 	public List<RankSettingTagPo> getRanktags() {
 		return ranktags;
 	}
@@ -108,5 +99,14 @@ public class RankSettingPo{
 	public void setRanktags(List<RankSettingTagPo> ranktags) {
 		this.ranktags = ranktags;
 	}
-    
+
+	public Map<String, String> findTags4Map() {
+		Map<String, String> map = new HashMap<String, String>();
+		for (RankSettingTagPo tag : ranktags) {
+			if (!map.containsKey(tag.getTagkey())) {
+				map.put(tag.getTagkey(), tag.getTagvalue());
+			}
+		}
+		return map;
+	}
 }
