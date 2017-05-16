@@ -18,4 +18,18 @@ public class ConfirmLogTaskResponse extends ServiceResponseBase{
 	 */
 	private static final long serialVersionUID = 1L;
 
+	
+	private int processSize;
+
+
+	public int getProcessSize() {
+		return processSize;
+	}
+
+
+	public void setProcessSize(int processSize) {
+		this.processSize = processSize;
+	}
+	
+	
 }
