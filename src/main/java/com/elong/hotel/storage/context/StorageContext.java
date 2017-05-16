@@ -1,5 +1,6 @@
 package com.elong.hotel.storage.context;
 
+import com.elong.hotel.hotelconfirm.confirmorder.enums.ServerRunningDomainEnum;
 import com.elong.hotel.hotelconfirm.confirmorder.po.ConfirmOrderPo;
 import com.elong.hotel.proxy.javaorder.getorder.Order;
 import com.elong.hotel.proxy.javaorder.getorder.OrderHistory;
@@ -39,6 +40,8 @@ public class StorageContext implements Serializable{
 	private List<OrderHistory> orderHistory;
 
 	private ConfirmOrderPo confirmOrderPo;
+
+	private ServerRunningDomainEnum runningDomainEnum;
 
 	public StorageTypeEnum getFromEnum() {
 		return fromEnum;
@@ -110,5 +113,13 @@ public class StorageContext implements Serializable{
 
 	public void setConfirmOrderPo(ConfirmOrderPo confirmOrderPo) {
 		this.confirmOrderPo = confirmOrderPo;
+	}
+
+	public ServerRunningDomainEnum getRunningDomainEnum() {
+		return runningDomainEnum;
+	}
+
+	public void setRunningDomainEnum(ServerRunningDomainEnum runningDomainEnum) {
+		this.runningDomainEnum = runningDomainEnum;
 	}
 }
