@@ -69,14 +69,10 @@ public class GroupFilterEntity<T extends GroupBase, Y extends CompareEntityBase>
                     tagStrings = new ArrayList<String>(Arrays.asList(tagValue.toLowerCase().split(",")));
                     field.setAccessible(true);
                     value = field.get(compareDate);
-                    if(null==value){
-                    	compareMetaDate.put(name, CompareResultEnum.On);
-                    	continue;
-                    }
                 } catch (Exception e) {
                     throw new Exception(name);
                 }
-                if (tagValue.equalsIgnoreCase(CompareFieldEnum.All.toString()) || tagStrings.contains(value.toString().toLowerCase())) {
+                if (tagValue.equalsIgnoreCase(CompareFieldEnum.All.toString()) || ( null!=value && tagStrings.contains(value.toString().toLowerCase()))) {
                     compareMetaDate.put(name, CompareResultEnum.On);
                 } else {
                     compareMetaDate.put(name, CompareResultEnum.Off);
