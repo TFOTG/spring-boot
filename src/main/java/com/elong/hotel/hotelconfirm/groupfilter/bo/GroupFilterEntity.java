@@ -62,9 +62,17 @@ public class GroupFilterEntity<T extends GroupBase, Y extends CompareEntityBase>
 
                     name = annotations.name();
                     tagValue = tags.get(name);
+                    if(null==tagValue){
+                    	compareMetaDate.put(name, CompareResultEnum.Off);
+                    	continue;
+                    }
                     tagStrings = new ArrayList<String>(Arrays.asList(tagValue.toLowerCase().split(",")));
                     field.setAccessible(true);
                     value = field.get(compareDate);
+                    if(null==value){
+                    	compareMetaDate.put(name, CompareResultEnum.On);
+                    	continue;
+                    }
                 } catch (Exception e) {
                     throw new Exception(name);
                 }
