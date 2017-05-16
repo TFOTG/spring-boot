@@ -32,7 +32,7 @@ public class ConfirmOrderBo extends CompareEntityBase {
     private String proxyId;
     private String cityId;
     private Integer distance;
-    private String confirmType;
+    private Integer confirmType;
     private Date bookingTime;
     private Date amendTime;
     private Integer priority;
@@ -88,7 +88,7 @@ public class ConfirmOrderBo extends CompareEntityBase {
             this.supplierOtaType = po.getSupplierOtaType();
             this.proxyId = po.getProxyId();
             this.cityId = po.getCityId();
-            this.distance = po.getDistance();
+            this.distance = order.getDistanceFromHotelWhenBooking();
             this.confirmType = po.getConfirmType();
             this.bookingTime = po.getBookingTime();
             this.ratePlanId=order.getRatePlanId();
@@ -143,7 +143,7 @@ public class ConfirmOrderBo extends CompareEntityBase {
             this.cityId = order.getCityId();
             this.ratePlanId=order.getRatePlanId();
             this.distance = order.getDistanceFromHotelWhenBooking();
-            this.confirmType = order.getConfirmMethod();
+            this.confirmType = order.getConfirmMethodCode();
             this.bookingTime = order.getCreateTime();                   // 缺少
             this.amendTime = getAmendTimeFromHistory(order, orderHistoryList);
             this.promiseTime = DateHelper.getMinDate();
@@ -248,11 +248,11 @@ public class ConfirmOrderBo extends CompareEntityBase {
         this.cityId = cityId;
     }
 
-    public String getConfirmType() {
+    public Integer getConfirmType() {
         return confirmType;
     }
 
-    public void setConfirmType(String confirmType) {
+    public void setConfirmType(Integer confirmType) {
         this.confirmType = confirmType;
     }
 
