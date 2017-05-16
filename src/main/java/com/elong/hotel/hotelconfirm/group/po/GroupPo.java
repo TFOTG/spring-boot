@@ -13,8 +13,6 @@ import com.elong.hotel.hotelconfirm.group.bo.GroupTagBo;
 public class GroupPo {
     private String groupName;
 
-    private Map<String, String> tags;
-
     private Integer sort;
 
     private Date opdate;
@@ -47,20 +45,15 @@ public class GroupPo {
         this.sort = sort;
     }
 
-    public Map<String, String> getTags() {
-    	if(tags==null){
-        	for (GroupTagBo tag : grouptags) {
-    			if(!tags.containsKey(tag.getTagkey())){
-    				tags.put(tag.getTagkey(), tag.getTagvalue());
-    			}
-    		}
-    	}
-        return tags;
-    }
-
-    public void setTags(Map<String, String> tags) {
-        this.tags = tags;
-    }
+    public Map<String, String> findTags4Map(){
+		Map<String, String> map = new HashMap<String, String>();
+		for (GroupTagBo tag : grouptags) {
+			if(!map.containsKey(tag.getTagkey())){
+				map.put(tag.getTagkey(), tag.getTagvalue());
+			}
+		}
+		return map;
+	}
 
     public String getGroupName() {
         return groupName;
@@ -84,7 +77,6 @@ public class GroupPo {
                 "id=" + id +
                 ", opdate=" + opdate +
                 ", sort=" + sort +
-                ", tags=" + tags +
                 ", groupName=" + groupName +
                 '}';
     }
