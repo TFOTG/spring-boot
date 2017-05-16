@@ -22,7 +22,7 @@ public class CompareOrder4RankSettingBo extends CompareEntityBase {
     /**
      * name = 'shotelid' 酒店id 必须小写
      */
-    @CompareEntityAnnotations(name = "hotelID")
+    @CompareEntityAnnotations(name = "HotelID")
     private String shotelId;
 
     /**
@@ -52,7 +52,7 @@ public class CompareOrder4RankSettingBo extends CompareEntityBase {
    	/**
    	 * 到店时间
    	 */
-   	@CompareEntityAnnotations(name = "arrivedate")
+   	@CompareEntityAnnotations(name = "ArriveDate")
    	private Date arriveDate;
    	
     public CompareOrder4RankSettingBo(ConfirmOrderBo confirmOrderBo){

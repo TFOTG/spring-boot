@@ -19,7 +19,7 @@ public class RankSettingBo extends GroupBase {
     private Integer promiseTime;
 
     public RankSettingBo(RankSettingPo po){
-        this.setTags(po.getTags());
+        this.setTags(po.findTags4Map());
         this.setId(po.getId());
         this.setSort(po.getSort());
         this.setOpdate(po.getOpdate());
