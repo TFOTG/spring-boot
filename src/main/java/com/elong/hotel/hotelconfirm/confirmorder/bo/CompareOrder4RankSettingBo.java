@@ -41,7 +41,7 @@ public class CompareOrder4RankSettingBo extends CompareEntityBase {
      * name = 'confirmtype' 确认方式,Ebooking,直连,人工 必须小写
      */
     @CompareEntityAnnotations(name = "ConfirmType")
-    private String confirmType;
+    private Integer confirmType;
     
     /**
    	 * 城市id
@@ -65,11 +65,11 @@ public class CompareOrder4RankSettingBo extends CompareEntityBase {
         this.arriveDate = confirmOrderBo.getArriveDate();
     }
 
-    public String getConfirmType() {
+    public Integer getConfirmType() {
         return confirmType;
     }
 
-    public void setConfirmType(String confirmType) {
+    public void setConfirmType(Integer confirmType) {
         this.confirmType = confirmType;
     }
 

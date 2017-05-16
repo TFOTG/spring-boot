@@ -25,7 +25,7 @@ public class ConfirmOrderPo {
     private String proxyId;
     private String cityId;
     private Integer distance;
-    private String confirmType;
+    private Integer confirmType;
     private Date bookingTime;
     private Date amendTime;
     private Integer priority;
@@ -130,11 +130,11 @@ public class ConfirmOrderPo {
         this.cityId = cityId;
     }
 
-    public String getConfirmType() {
+    public Integer getConfirmType() {
         return confirmType;
     }
 
-    public void setConfirmType(String confirmType) {
+    public void setConfirmType(Integer confirmType) {
         this.confirmType = confirmType;
     }
 
