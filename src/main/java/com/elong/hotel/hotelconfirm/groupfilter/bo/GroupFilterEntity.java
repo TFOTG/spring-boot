@@ -72,7 +72,7 @@ public class GroupFilterEntity<T extends GroupBase, Y extends CompareEntityBase>
                 } catch (Exception e) {
                     throw new Exception(name);
                 }
-                if (tagValue.equalsIgnoreCase(CompareFieldEnum.All.toString()) || ( null!=value && tagStrings.contains(value.toString().toLowerCase()))) {
+                if ((tagValue.equalsIgnoreCase(CompareFieldEnum.All.toString()) || tagValue.equalsIgnoreCase(CompareFieldEnum.NL.toString())) || ( null!=value && tagStrings.contains(value.toString().toLowerCase()))) {
                     compareMetaDate.put(name, CompareResultEnum.On);
                 } else {
                     compareMetaDate.put(name, CompareResultEnum.Off);
