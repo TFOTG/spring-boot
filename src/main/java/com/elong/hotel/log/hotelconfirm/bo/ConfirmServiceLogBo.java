@@ -7,8 +7,6 @@ import java.util.Date;
  */
 public class ConfirmServiceLogBo {
 
-    private String tableName;
-
     private Integer reserNo;
 
     private Integer groupId;
@@ -49,14 +47,6 @@ public class ConfirmServiceLogBo {
 
     public void setEndTime(String endTime) {
         this.endTime = endTime;
-    }
-
-    public String getTableName() {
-        return tableName;
-    }
-
-    public void setTableName(String tableName) {
-        this.tableName = tableName;
     }
 
     public Integer getReserNo() {
