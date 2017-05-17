@@ -7,8 +7,6 @@ import java.util.Date;
  */
 public class ConfirmServiceLogBo {
 
-    private String tableName;
-
     private Integer reserNo;
 
     private Integer groupId;
@@ -25,12 +23,30 @@ public class ConfirmServiceLogBo {
 
     private Date opDate;
 
-    public String getTableName() {
-        return tableName;
+    /**
+     * 查询开始时间
+     */
+    private String startTime;
+
+    /**
+     * 查询结束时间
+     */
+    private String endTime;
+
+    public String getStartTime() {
+        return startTime;
     }
 
-    public void setTableName(String tableName) {
-        this.tableName = tableName;
+    public void setStartTime(String startTime) {
+        this.startTime = startTime;
+    }
+
+    public String getEndTime() {
+        return endTime;
+    }
+
+    public void setEndTime(String endTime) {
+        this.endTime = endTime;
     }
 
     public Integer getReserNo() {
