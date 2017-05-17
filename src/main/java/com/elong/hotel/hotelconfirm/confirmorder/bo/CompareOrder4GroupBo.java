@@ -11,25 +11,28 @@ public class CompareOrder4GroupBo extends CompareEntityBase {
 
     private Integer orderId;
 
-    @CompareEntityAnnotations(name = "reserstatus")
+    /**
+     * 订单状态
+     */
+    @CompareEntityAnnotations(name = "OrderStatus")
     private String reserStatus;
 
-    @CompareEntityAnnotations(name = "shotelid")
-    private String shotelId;
 
-    @CompareEntityAnnotations(name = "supplierid")
+    /**
+     * 供应商id
+     */
+    @CompareEntityAnnotations(name = "SupplierID")
     private String supplierId;
 
     /**
 	 * 城市id
 	 */
-	@CompareEntityAnnotations(name = "cityid")
+	@CompareEntityAnnotations(name = "CityID")
 	private String cityId;
 	
     public CompareOrder4GroupBo(ConfirmOrderBo confirmOrderBo){
         this.orderId = confirmOrderBo.getReserNo();
         this.reserStatus = confirmOrderBo.getReserStatus();
-        this.shotelId = confirmOrderBo.getHotelId();
         this.supplierId = confirmOrderBo.getSupplierId();
         this.cityId = confirmOrderBo.getCityId();
     }
@@ -50,14 +53,6 @@ public class CompareOrder4GroupBo extends CompareEntityBase {
 	public void setReserStatus(String reserStatus) {
 		this.reserStatus = reserStatus;
 	}
-
-	public String getShotelId() {
-        return shotelId;
-    }
-
-    public void setShotelId(String shotelId) {
-        this.shotelId = shotelId;
-    }
 
     public String getSupplierId() {
         return supplierId;
