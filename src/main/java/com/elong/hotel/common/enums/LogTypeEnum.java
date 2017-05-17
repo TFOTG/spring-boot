@@ -17,21 +17,17 @@ package com.elong.hotel.common.enums;
  */
 public enum LogTypeEnum {
 	
-	VERIFYA(1,"verifyA"),
+	CONFIRMA(1,"confirmA"),
 	
-	VERIFYF(2,"verifyF"),
+	CONFIRMO(2,"confirmO"),
 
-	VERIFYS(3,"verifyS"),
+	CONFIRMU(3,"confirmU"),
 
-	VERIFYC(4,"verifyC"),
+	CONFIRMG(4,"confirmG"),
 
-	VERIFYFB1(5,"verifyB1"),
+	CONFIRMH(5,"confirmH"),
 
-	VERIFYB(6,"verifyB"),
-
-	VERIFYD(7,"verifyD"),
-
-	VERIFYE(8,"verifyE"),
+	CONFIRMV(6,"confirmV"),
 
 	/**
 	 * 临时添加状态
