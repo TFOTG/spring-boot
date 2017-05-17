@@ -8,7 +8,15 @@ import java.util.Date;
 public class ConfirmOpLogBo {
 
 
-    private String tableName;
+    /**
+     * 查询开始时间
+     */
+    private String startTime;
+
+    /**
+     * 查询结束时间
+     */
+    private String endTime;
 
     private Integer reserNo;
 
@@ -69,14 +77,6 @@ public class ConfirmOpLogBo {
     private Date bookingTime;
 
     private Date amendTime;
-
-    public String getTableName() {
-        return tableName;
-    }
-
-    public void setTableName(String tableName) {
-        this.tableName = tableName;
-    }
 
     public Integer getReserNo() {
         return reserNo;
@@ -316,5 +316,21 @@ public class ConfirmOpLogBo {
 
     public void setAmendTime(Date amendTime) {
         this.amendTime = amendTime;
+    }
+
+    public String getStartTime() {
+        return startTime;
+    }
+
+    public void setStartTime(String startTime) {
+        this.startTime = startTime;
+    }
+
+    public String getEndTime() {
+        return endTime;
+    }
+
+    public void setEndTime(String endTime) {
+        this.endTime = endTime;
     }
 }
