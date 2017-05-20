@@ -1,5 +1,6 @@
 package com.elong.hotel.log.hotelconfirm.bo;
 
+import com.elong.hotel.common.bo.OperatorInfoBo;
 import com.elong.hotel.common.helper.StringUtils;
 import com.elong.hotel.hotelconfirm.confirmorder.bo.ConfirmOrderBo;
 import com.elong.hotel.hotelconfirm.confirmorder.enums.ConfirmType;
@@ -84,7 +85,7 @@ public class ConfirmOpLogBo {
 
     private Date amendTime;
 
-    public ConfirmOpLogBo(ConfirmOrderBo confirmOrderBo, ConfirmOpType confirmOpType, String targetReserStatus, String operator){
+    public ConfirmOpLogBo(ConfirmOrderBo confirmOrderBo, ConfirmOpType confirmOpType, String targetReserStatus, OperatorInfoBo operator){
         this.reserNo = confirmOrderBo.getReserNo();
         this.hotelId = confirmOrderBo.getHotelId();
         this.hotelName = confirmOrderBo.getHotelName();
@@ -98,13 +99,13 @@ public class ConfirmOpLogBo {
         this.ebkStrategyId = confirmOrderBo.getEbkStrategyId();
         this.sourceReserStatus = confirmOrderBo.getReserStatus();
         this.targetReserStatus = targetReserStatus;
-        this.confirmType = getConfirmType(operator);                                // 重复字段
+        this.confirmType = getConfirmType(operator.getOperatorName());                                // 重复字段
         this.shouldConfirmType= confirmOrderBo.getConfirmType().longValue();        // 重复字段
 
         this.auditFrom = confirmOrderBo.getConfirmType() + "";                      // 重复字段
         this.shouldAuditFrom  = confirmOrderBo.getConfirmType() + "";               // 重复字段
         this.staffName = confirmOrderBo.getStaffName();
-        this.operator = operator;
+        this.operator = operator.getOperatorName();
         this.ivrStartTime = confirmOrderBo.getIvrStartTime();
         this.enterTime = confirmOrderBo.getEnterTime();
         this.respiteTime = confirmOrderBo.getRespiteTime();
