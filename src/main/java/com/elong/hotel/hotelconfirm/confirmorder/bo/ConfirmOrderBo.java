@@ -71,52 +71,52 @@ public class ConfirmOrderBo extends CompareEntityBase {
         this(order, null, orderHistoryList, operator);
     }
 
-    public ConfirmOrderBo(Order order, ConfirmOrderPo po, List<OrderHistory> orderHistoryList, OperatorInfoBo operator) {
+    public ConfirmOrderBo(Order order, ConfirmOrderPo confirmOrder, List<OrderHistory> orderHistoryList, OperatorInfoBo operator) {
         Date lastAmendTime = getAmendTimeFromHistory(order, orderHistoryList);
 
-        if (order != null && po != null) {      // 初始化 "目标数据", 此时订单在已审库
-            this.reserNo = po.getReserNo();
+        if (order != null && confirmOrder != null) {      // 初始化 "目标数据", 此时订单在已审库
+            this.reserNo = confirmOrder.getReserNo();
             this.reserStatus = order.getStatus();
-            this.mod = po.getMod();
-            this.arriveDate = po.getArriveDate();
-            this.leaveDate = po.getLeaveDate();
-            this.timeEarly = po.getTimeEarly();
-            this.timeLate = po.getTimeLate();
-            this.hotelId = po.getHotelId();
-            this.hotelName = po.getHotelName();
-            this.supplierId = po.getSupplierId();
-            this.supplierType = po.getSupplierType();
+            this.mod = confirmOrder.getMod();
+            this.arriveDate = confirmOrder.getArriveDate();
+            this.leaveDate = confirmOrder.getLeaveDate();
+            this.timeEarly = confirmOrder.getTimeEarly();
+            this.timeLate = confirmOrder.getTimeLate();
+            this.hotelId = confirmOrder.getHotelId();
+            this.hotelName = confirmOrder.getHotelName();
+            this.supplierId = confirmOrder.getSupplierId();
+            this.supplierType = confirmOrder.getSupplierType();
             this.supplierName = order.getSupplierName();
-            this.supplierOtaType = po.getSupplierOtaType();
-            this.proxyId = po.getProxyId();
-            this.cityId = po.getCityId();
+            this.supplierOtaType = confirmOrder.getSupplierOtaType();
+            this.proxyId = confirmOrder.getProxyId();
+            this.cityId = confirmOrder.getCityId();
             this.distance = order.getDistanceFromHotelWhenBooking();
-            this.confirmType = po.getConfirmType();
-            this.bookingTime = po.getBookingTime();
+            this.confirmType = confirmOrder.getConfirmType();
+            this.bookingTime = confirmOrder.getBookingTime();
             this.ratePlanId = order.getRatePlanId();
 
-            this.amendTime = po.getAmendTime();
-            this.priority = po.getPriority();
-            this.groupId = po.getGroupId();
-            this.rankId = po.getRankId();
-            this.ebkStrategyId = po.getEbkStrategyId();
-            this.staffName = po.getStaffName();
-            this.distributeTime = po.getDistributeTime();
-            this.promiseTime = po.getPromiseTime();
-            this.promiseChangeTimes = po.getPromiseChangeTimes();
-            this.isFaxReturn = po.getIsFaxReturn();
-            this.isLinked = po.getIsLinked();
-            this.urge = po.getUrge();
-            this.respiteTime = po.getRespiteTime();
-            this.nextServiceTime = po.getNextServiceTime();
-            this.ivrGuid = po.getIvrGuid();
-            this.ivrStatus = po.getIvrStatus();
-            this.ivrStartTime = po.getIvrStartTime();
-            this.enterTime = po.getEnterTime();
-            this.sortTime = po.getSortTime();
-            this.defaultSortTime = po.getDefaultSortTime();
-            this.firstRefusedTime = po.getFirstRefusedTime();
-            this.orderTimestamp = new Date(po.getOrderTimestampLong());
+            this.amendTime = confirmOrder.getAmendTime();
+            this.priority = confirmOrder.getPriority();
+            this.groupId = confirmOrder.getGroupId();
+            this.rankId = confirmOrder.getRankId();
+            this.ebkStrategyId = confirmOrder.getEbkStrategyId();
+            this.staffName = confirmOrder.getStaffName();
+            this.distributeTime = confirmOrder.getDistributeTime();
+            this.promiseTime = confirmOrder.getPromiseTime();
+            this.promiseChangeTimes = confirmOrder.getPromiseChangeTimes();
+            this.isFaxReturn = confirmOrder.getIsFaxReturn();
+            this.isLinked = confirmOrder.getIsLinked();
+            this.urge = confirmOrder.getUrge();
+            this.respiteTime = confirmOrder.getRespiteTime();
+            this.nextServiceTime = confirmOrder.getNextServiceTime();
+            this.ivrGuid = confirmOrder.getIvrGuid();
+            this.ivrStatus = confirmOrder.getIvrStatus();
+            this.ivrStartTime = confirmOrder.getIvrStartTime();
+            this.enterTime = confirmOrder.getEnterTime();
+            this.sortTime = confirmOrder.getSortTime();
+            this.defaultSortTime = confirmOrder.getDefaultSortTime();
+            this.firstRefusedTime = confirmOrder.getFirstRefusedTime();
+            this.orderTimestamp = new Date(confirmOrder.getOrderTimestampLong());
 
 //            if (po.getAmendTime() != null && lastAmendTime != null && po.getAmendTime().getTime() >= lastAmendTime.getTime()) {
 //
@@ -150,7 +150,7 @@ public class ConfirmOrderBo extends CompareEntityBase {
 //                this.orderTimestamp = order.getOrderTimestamp();
 //            }
 
-        } else if (order != null && po == null) {   // 初始化 "目标数据", 此时订单还未入已审库
+        } else if (order != null && confirmOrder == null) {   // 初始化 "目标数据", 此时订单还未入已审库
             this.reserNo = order.getOrderId().intValue();
             this.reserStatus = order.getStatus();
             this.mod = this.reserNo % 10;
@@ -176,47 +176,47 @@ public class ConfirmOrderBo extends CompareEntityBase {
             this.staffName = "";
             this.orderTimestamp = order.getOrderTimestamp();
             this.enterTime = operator.getOperatorTime();
-        } else if (order == null && po != null) {// 初始化"在库数据"
-            this.reserNo = po.getReserNo();
-            this.reserStatus = po.getReserStatus();
-            this.mod = po.getMod();
-            this.arriveDate = po.getArriveDate();
-            this.leaveDate = po.getLeaveDate();
-            this.timeEarly = po.getTimeEarly();
-            this.timeLate = po.getTimeLate();
-            this.hotelId = po.getHotelId();
-            this.hotelName = po.getHotelName();
-            this.supplierId = po.getSupplierId();
-            this.supplierType = po.getSupplierType();
-            this.supplierOtaType = po.getSupplierOtaType();
-            this.supplierName = po.getSupplierName();
-            this.proxyId = po.getProxyId();
-            this.cityId = po.getCityId();
-            this.distance = po.getDistance();
-            this.confirmType = po.getConfirmType();
-            this.bookingTime = po.getBookingTime();
-            this.amendTime = po.getAmendTime();
-            this.priority = po.getPriority();
-            this.groupId = po.getGroupId();
-            this.rankId = po.getRankId();
-            this.ebkStrategyId = po.getEbkStrategyId();
-            this.staffName = po.getStaffName();
-            this.distributeTime = po.getDistributeTime();
-            this.promiseTime = po.getPromiseTime();
-            this.promiseChangeTimes = po.getPromiseChangeTimes();
-            this.isFaxReturn = po.getIsFaxReturn();
-            this.isLinked = po.getIsLinked();
-            this.urge = po.getUrge();
-            this.respiteTime = po.getRespiteTime();
-            this.nextServiceTime = po.getNextServiceTime();
-            this.ivrGuid = po.getIvrGuid();
-            this.ivrStatus = po.getIvrStatus();
-            this.ivrStartTime = po.getIvrStartTime();
-            this.enterTime = po.getEnterTime();
-            this.sortTime = po.getSortTime();
-            this.defaultSortTime = po.getDefaultSortTime();
-            this.firstRefusedTime = po.getFirstRefusedTime();
-            this.orderTimestamp = new Date(po.getOrderTimestampLong());
+        } else if (order == null && confirmOrder != null) {// 初始化"在库数据"
+            this.reserNo = confirmOrder.getReserNo();
+            this.reserStatus = confirmOrder.getReserStatus();
+            this.mod = confirmOrder.getMod();
+            this.arriveDate = confirmOrder.getArriveDate();
+            this.leaveDate = confirmOrder.getLeaveDate();
+            this.timeEarly = confirmOrder.getTimeEarly();
+            this.timeLate = confirmOrder.getTimeLate();
+            this.hotelId = confirmOrder.getHotelId();
+            this.hotelName = confirmOrder.getHotelName();
+            this.supplierId = confirmOrder.getSupplierId();
+            this.supplierType = confirmOrder.getSupplierType();
+            this.supplierOtaType = confirmOrder.getSupplierOtaType();
+            this.supplierName = confirmOrder.getSupplierName();
+            this.proxyId = confirmOrder.getProxyId();
+            this.cityId = confirmOrder.getCityId();
+            this.distance = confirmOrder.getDistance();
+            this.confirmType = confirmOrder.getConfirmType();
+            this.bookingTime = confirmOrder.getBookingTime();
+            this.amendTime = confirmOrder.getAmendTime();
+            this.priority = confirmOrder.getPriority();
+            this.groupId = confirmOrder.getGroupId();
+            this.rankId = confirmOrder.getRankId();
+            this.ebkStrategyId = confirmOrder.getEbkStrategyId();
+            this.staffName = confirmOrder.getStaffName();
+            this.distributeTime = confirmOrder.getDistributeTime();
+            this.promiseTime = confirmOrder.getPromiseTime();
+            this.promiseChangeTimes = confirmOrder.getPromiseChangeTimes();
+            this.isFaxReturn = confirmOrder.getIsFaxReturn();
+            this.isLinked = confirmOrder.getIsLinked();
+            this.urge = confirmOrder.getUrge();
+            this.respiteTime = confirmOrder.getRespiteTime();
+            this.nextServiceTime = confirmOrder.getNextServiceTime();
+            this.ivrGuid = confirmOrder.getIvrGuid();
+            this.ivrStatus = confirmOrder.getIvrStatus();
+            this.ivrStartTime = confirmOrder.getIvrStartTime();
+            this.enterTime = confirmOrder.getEnterTime();
+            this.sortTime = confirmOrder.getSortTime();
+            this.defaultSortTime = confirmOrder.getDefaultSortTime();
+            this.firstRefusedTime = confirmOrder.getFirstRefusedTime();
+            this.orderTimestamp = new Date(confirmOrder.getOrderTimestampLong());
         }
     }
 
