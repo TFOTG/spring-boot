@@ -1,5 +1,12 @@
 package com.elong.hotel.log.hotelconfirm.bo;
 
+import com.elong.hotel.common.bo.OperatorInfoBo;
+import com.elong.hotel.common.helper.StringUtils;
+import com.elong.hotel.hotelconfirm.confirmorder.bo.ConfirmOrderBo;
+import com.elong.hotel.hotelconfirm.confirmorder.enums.ConfirmType;
+import com.elong.hotel.hotelconfirm.group.enums.DepartmentEnum;
+import com.elong.hotel.log.hotelconfirm.enums.ConfirmOpType;
+
 import java.util.Date;
 
 /**
@@ -77,6 +84,40 @@ public class ConfirmOpLogBo {
     private Date bookingTime;
 
     private Date amendTime;
+
+    public ConfirmOpLogBo(ConfirmOrderBo confirmOrderBo, ConfirmOpType confirmOpType, String targetReserStatus, OperatorInfoBo operator){
+        this.reserNo = confirmOrderBo.getReserNo();
+        this.hotelId = confirmOrderBo.getHotelId();
+        this.hotelName = confirmOrderBo.getHotelName();
+        this.supplierName = confirmOrderBo.getSupplierName();
+        this.opType = confirmOpType.getKey();
+        this.opDate = new Date();
+        this.department = DepartmentEnum.Confirm.getKey() + "";
+        this.groupId = confirmOrderBo.getGroupId();
+        this.rankId = confirmOrderBo.getRankId();
+        this.priority = confirmOrderBo.getPriority();
+        this.ebkStrategyId = confirmOrderBo.getEbkStrategyId();
+        this.sourceReserStatus = confirmOrderBo.getReserStatus();
+        this.targetReserStatus = targetReserStatus;
+        this.confirmType = getConfirmType(operator.getOperatorName());                                // 重复字段
+        this.shouldConfirmType= confirmOrderBo.getConfirmType().longValue();        // 重复字段
+
+        this.auditFrom = confirmOrderBo.getConfirmType() + "";                      // 重复字段
+        this.shouldAuditFrom  = confirmOrderBo.getConfirmType() + "";               // 重复字段
+        this.staffName = confirmOrderBo.getStaffName();
+        this.operator = operator.getOperatorName();
+        this.ivrStartTime = confirmOrderBo.getIvrStartTime();
+        this.enterTime = confirmOrderBo.getEnterTime();
+        this.respiteTime = confirmOrderBo.getRespiteTime();
+        this.sortTime = confirmOrderBo.getSortTime();
+        this.defaultSortTime = confirmOrderBo.getDefaultSortTime();
+        this.distributeTime = confirmOrderBo.getDistributeTime();
+        this.nextServiceTime = confirmOrderBo.getNextServiceTime();
+        this.promiseTime = confirmOrderBo.getPromiseTime();
+        this.firstRefusedTime = confirmOrderBo.getFirstRefusedTime();
+        this.bookingTime = confirmOrderBo.getBookingTime();
+        this.amendTime = confirmOrderBo.getAmendTime();
+    }
 
     public Integer getReserNo() {
         return reserNo;
@@ -332,5 +373,34 @@ public class ConfirmOpLogBo {
 
     public void setEndTime(String endTime) {
         this.endTime = endTime;
+    }
+
+    public long getConfirmType(String staffName){
+        long auditfrom = 0;
+        if(StringUtils.isBlank(staffName)){
+            auditfrom = ConfirmType.Manual.getKey();
+        } else if(staffName.toLowerCase().indexOf("pmsautouser") > -1) {
+            auditfrom = ConfirmType.DC.getKey();
+        } else if(staffName.toLowerCase().endsWith("h") || staffName.toLowerCase().endsWith("m") || staffName.toLowerCase().endsWith("w")) {
+            auditfrom = ConfirmType.EBooking.getKey();
+        } else if(staffName.indexOf("去哪儿投放状态") > -1 || staffName.toLowerCase().indexOf("dc4qunar") > -1) {
+            auditfrom = ConfirmType.Qunar.getKey();
+        } else if(staffName.toLowerCase().indexOf("web") > -1) {
+            auditfrom = ConfirmType.WEB.getKey();
+        } else if(staffName.toLowerCase().indexOf("app") > -1) {
+            auditfrom = ConfirmType.APP.getKey();
+        } else if(staffName.toLowerCase().indexOf("ivr") > -1) {
+            auditfrom = ConfirmType.IVR.getKey();
+        } else if(staffName.indexOf("携程投放状态") > -1 || staffName.toLowerCase().indexOf("dc4ctrip") > -1) {
+            auditfrom = ConfirmType.Ctrip.getKey();
+        } else if(staffName.indexOf("短信上行任务") > -1 || staffName.toLowerCase().indexOf("sms") > -1){
+            auditfrom = ConfirmType.ReviewSMS.getKey();
+        } else if(staffName.toLowerCase().indexOf("autonoshowtask") > -1){
+            auditfrom = ConfirmType.AutoNoshowTask.getKey();
+        } else {
+            auditfrom = ConfirmType.Manual.getKey();
+        }
+
+        return auditfrom;
     }
 }

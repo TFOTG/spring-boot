@@ -68,7 +68,17 @@ public class ConfirmOrderConfig {
      */
     private String messageName;
 
-    public ConfirmOrderConfig(){
+    /**
+     * 进出库服务,日志记录,是否记录ConfirmServiceLog
+     */
+    private Boolean log4ConfirmServiceLog;
+
+    /**
+     * 进出库服务,日志记录,是否记录ConfirmOpLog
+     */
+    private Boolean log4ConfirmOpLog;
+
+    public ConfirmOrderConfig() {
         priority4HighMinute = 60;
         priority4HighDistance = 3000;
         priority4NightBegin = "19:00:00";
@@ -78,10 +88,11 @@ public class ConfirmOrderConfig {
         delayTime4V = 30;
         delayTime4O = 10;
         delayTimes = 1;
-        confirmOrderInDBTaskInterval=5;
-        getOrderTimeOut=3000;
-        messageName="OrderTimestampChange";
-
+        confirmOrderInDBTaskInterval = 5;
+        getOrderTimeOut = 3000;
+        messageName = "OrderTimestampChange";
+        log4ConfirmOpLog = true;
+        log4ConfirmServiceLog = true;
     }
 
     public String getPriority4NightEnd() {
@@ -180,8 +191,24 @@ public class ConfirmOrderConfig {
         this.messageName = messageName;
     }
 
+    public Boolean getLog4ConfirmOpLog() {
+        return log4ConfirmOpLog;
+    }
+
+    public void setLog4ConfirmOpLog(Boolean log4ConfirmOpLog) {
+        this.log4ConfirmOpLog = log4ConfirmOpLog;
+    }
+
+    public Boolean getLog4ConfirmServiceLog() {
+        return log4ConfirmServiceLog;
+    }
+
+    public void setLog4ConfirmServiceLog(Boolean log4ConfirmServiceLog) {
+        this.log4ConfirmServiceLog = log4ConfirmServiceLog;
+    }
+
     public static void main(String[] args) {
-        ConfirmOrderConfig config=new ConfirmOrderConfig();
+        ConfirmOrderConfig config = new ConfirmOrderConfig();
         System.out.println(JSON.toJSONString(config));
     }
 }

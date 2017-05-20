@@ -1,5 +1,6 @@
 package com.elong.hotel.hotelconfirm.confirmorder.context;
 
+import com.elong.hotel.common.bo.OperatorInfoBo;
 import com.elong.hotel.hotelconfirm.confirmorder.bo.ConfirmOrderBo;
 
 import java.io.Serializable;
@@ -11,6 +12,8 @@ public class ServerRunningContext implements Serializable {
 	private ConfirmOrderBo originConfirmOrderBo;
 
 	private ConfirmOrderBo targetConfirmOrderBo;
+
+	private OperatorInfoBo operator;
 
 	public ServerRunningContext() {
 	}
@@ -37,5 +40,13 @@ public class ServerRunningContext implements Serializable {
 
 	public void setTargetConfirmOrderBo(ConfirmOrderBo targetConfirmOrderBo) {
 		this.targetConfirmOrderBo = targetConfirmOrderBo;
+	}
+
+	public OperatorInfoBo getOperator() {
+		return operator;
+	}
+
+	public void setOperator(OperatorInfoBo operator) {
+		this.operator = operator;
 	}
 }
