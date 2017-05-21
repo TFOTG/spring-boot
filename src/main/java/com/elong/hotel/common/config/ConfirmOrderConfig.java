@@ -78,6 +78,13 @@ public class ConfirmOrderConfig {
      */
     private Boolean log4ConfirmOpLog;
 
+    /**
+     * 异步执行最大时间
+     */
+    private Integer executorMaxTimeOut;
+
+    private Integer executorThreads;
+
     public ConfirmOrderConfig() {
         priority4HighMinute = 60;
         priority4HighDistance = 3000;
@@ -93,6 +100,8 @@ public class ConfirmOrderConfig {
         messageName = "OrderTimestampChange";
         log4ConfirmOpLog = true;
         log4ConfirmServiceLog = true;
+        executorMaxTimeOut = 30;
+        executorThreads = 10;
     }
 
     public String getPriority4NightEnd() {
@@ -205,6 +214,22 @@ public class ConfirmOrderConfig {
 
     public void setLog4ConfirmServiceLog(Boolean log4ConfirmServiceLog) {
         this.log4ConfirmServiceLog = log4ConfirmServiceLog;
+    }
+
+    public Integer getExecutorMaxTimeOut() {
+        return executorMaxTimeOut;
+    }
+
+    public void setExecutorMaxTimeOut(Integer executorMaxTimeOut) {
+        this.executorMaxTimeOut = executorMaxTimeOut;
+    }
+
+    public Integer getExecutorThreads() {
+        return executorThreads;
+    }
+
+    public void setExecutorThreads(Integer executorThreads) {
+        this.executorThreads = executorThreads;
     }
 
     public static void main(String[] args) {
