@@ -5,6 +5,8 @@
  */
 package com.elong.hotel.hotelconfirm.task.response;
 
+import java.util.List;
+
 import com.elong.hotel.common.response.ServiceResponseBase;
 
 /**
@@ -20,12 +22,21 @@ public class TimeStampChangeResponse extends ServiceResponseBase{
 
 	private int processCount;
 
+	private List<Integer> listOrderIds;
 	public int getProcessCount() {
 		return processCount;
 	}
 
 	public void setProcessCount(int processCount) {
 		this.processCount = processCount;
+	}
+
+	public List<Integer> getListOrderIds() {
+		return listOrderIds;
+	}
+
+	public void setListOrderIds(List<Integer> listOrderIds) {
+		this.listOrderIds = listOrderIds;
 	}
 	
 	
