@@ -83,7 +83,15 @@ public class ConfirmOrderConfig {
      */
     private Integer executorMaxTimeOut;
 
+    /**
+     * 异步并行线程数量
+     */
     private Integer executorThreads;
+
+    /**
+     * 异步并行线程队列大小
+     */
+    private Integer executorQueueSize;
 
     public ConfirmOrderConfig() {
         priority4HighMinute = 60;
@@ -102,6 +110,7 @@ public class ConfirmOrderConfig {
         log4ConfirmServiceLog = true;
         executorMaxTimeOut = 30;
         executorThreads = 10;
+        executorQueueSize = 500;
     }
 
     public String getPriority4NightEnd() {
@@ -230,6 +239,14 @@ public class ConfirmOrderConfig {
 
     public void setExecutorThreads(Integer executorThreads) {
         this.executorThreads = executorThreads;
+    }
+
+    public Integer getExecutorQueueSize() {
+        return executorQueueSize;
+    }
+
+    public void setExecutorQueueSize(Integer executorQueueSize) {
+        this.executorQueueSize = executorQueueSize;
     }
 
     public static void main(String[] args) {
