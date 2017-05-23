@@ -85,7 +85,7 @@ public class ConfirmOpLogBo {
 
     private Date amendTime;
 
-    public ConfirmOpLogBo(ConfirmOrderBo confirmOrderBo, ConfirmOpType confirmOpType, String targetReserStatus, OperatorInfoBo operator){
+    public ConfirmOpLogBo(ConfirmOrderBo confirmOrderBo, ConfirmOpType confirmOpType, String targetReserStatus, OperatorInfoBo operator) {
         this.reserNo = confirmOrderBo.getReserNo();
         this.hotelId = confirmOrderBo.getHotelId();
         this.hotelName = confirmOrderBo.getHotelName();
@@ -100,10 +100,10 @@ public class ConfirmOpLogBo {
         this.sourceReserStatus = confirmOrderBo.getReserStatus();
         this.targetReserStatus = targetReserStatus;
         this.confirmType = getConfirmType(operator.getOperatorName());                                // 重复字段
-        this.shouldConfirmType= confirmOrderBo.getConfirmType().longValue();        // 重复字段
+        this.shouldConfirmType = confirmOrderBo.getConfirmType().longValue();        // 重复字段
 
         this.auditFrom = confirmOrderBo.getConfirmType() + "";                      // 重复字段
-        this.shouldAuditFrom  = confirmOrderBo.getConfirmType() + "";               // 重复字段
+        this.shouldAuditFrom = confirmOrderBo.getConfirmType() + "";               // 重复字段
         this.staffName = confirmOrderBo.getStaffName();
         this.operator = operator.getOperatorName();
         this.ivrStartTime = confirmOrderBo.getIvrStartTime();
@@ -375,30 +375,22 @@ public class ConfirmOpLogBo {
         this.endTime = endTime;
     }
 
-    public long getConfirmType(String staffName){
+
+
+    public long getConfirmType(String staffName) {
         long auditfrom = 0;
-        if(StringUtils.isBlank(staffName)){
-            auditfrom = ConfirmType.Manual.getKey();
-        } else if(staffName.toLowerCase().indexOf("pmsautouser") > -1) {
+        if (StringUtils.isBlank(staffName)) {
+            auditfrom = ConfirmType.MIS.getKey();
+        } else if (staffName.toLowerCase().indexOf("pmsautouser") > -1) {
             auditfrom = ConfirmType.DC.getKey();
-        } else if(staffName.toLowerCase().endsWith("h") || staffName.toLowerCase().endsWith("m") || staffName.toLowerCase().endsWith("w")) {
+        } else if (staffName.toLowerCase().endsWith("h") || staffName.toLowerCase().endsWith("m") || staffName.toLowerCase().endsWith("w")) {
             auditfrom = ConfirmType.EBooking.getKey();
-        } else if(staffName.indexOf("去哪儿投放状态") > -1 || staffName.toLowerCase().indexOf("dc4qunar") > -1) {
-            auditfrom = ConfirmType.Qunar.getKey();
-        } else if(staffName.toLowerCase().indexOf("web") > -1) {
-            auditfrom = ConfirmType.WEB.getKey();
-        } else if(staffName.toLowerCase().indexOf("app") > -1) {
-            auditfrom = ConfirmType.APP.getKey();
-        } else if(staffName.toLowerCase().indexOf("ivr") > -1) {
+        } else if (staffName.toLowerCase().endsWith("confirmivr")) {
             auditfrom = ConfirmType.IVR.getKey();
-        } else if(staffName.indexOf("携程投放状态") > -1 || staffName.toLowerCase().indexOf("dc4ctrip") > -1) {
-            auditfrom = ConfirmType.Ctrip.getKey();
-        } else if(staffName.indexOf("短信上行任务") > -1 || staffName.toLowerCase().indexOf("sms") > -1){
-            auditfrom = ConfirmType.ReviewSMS.getKey();
-        } else if(staffName.toLowerCase().indexOf("autonoshowtask") > -1){
-            auditfrom = ConfirmType.AutoNoshowTask.getKey();
+        } else if (staffName.toLowerCase().indexOf("confirmivr") > -1) {
+            auditfrom = ConfirmType.CONFIRMTASK.getKey();
         } else {
-            auditfrom = ConfirmType.Manual.getKey();
+            auditfrom = ConfirmType.MIS.getKey();
         }
 
         return auditfrom;
