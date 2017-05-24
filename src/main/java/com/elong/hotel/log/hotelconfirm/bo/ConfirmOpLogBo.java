@@ -375,8 +375,6 @@ public class ConfirmOpLogBo {
         this.endTime = endTime;
     }
 
-
-
     public long getConfirmType(String staffName) {
         long auditfrom = 0;
         if (StringUtils.isBlank(staffName)) {
@@ -387,7 +385,7 @@ public class ConfirmOpLogBo {
             auditfrom = ConfirmType.EBooking.getKey();
         } else if (staffName.toLowerCase().endsWith("confirmivr")) {
             auditfrom = ConfirmType.IVR.getKey();
-        } else if (staffName.toLowerCase().indexOf("confirmivr") > -1) {
+        } else if (staffName.toLowerCase().indexOf("autoexaminetask") > -1) {
             auditfrom = ConfirmType.CONFIRMTASK.getKey();
         } else {
             auditfrom = ConfirmType.MIS.getKey();
