@@ -31,10 +31,7 @@ public class OperatorInfoBo implements Serializable {
     }
 
     public Date getOperatorTime() {
-        if (operatorTime != null)
-            return operatorTime;
-
-        return new Date();
+        return operatorTime;
     }
 
     public void setOperatorTime(Date operatorTime) {
