@@ -97,7 +97,7 @@ public class ConfirmOpLogBo {
         this.rankId = confirmOrderBo.getRankId();
         this.priority = confirmOrderBo.getPriority();
         this.ebkStrategyId = confirmOrderBo.getEbkStrategyId();
-        this.sourceReserStatus = confirmOpType.equals(ConfirmOpType.SERVICESTORAGE) ? preReserStatus : confirmOrderBo.getReserStatus();
+        this.sourceReserStatus = confirmOpType.equals(ConfirmOpType.STORAGE_IN) ? preReserStatus : confirmOrderBo.getReserStatus();
         this.targetReserStatus = targetReserStatus;
         this.confirmType = getConfirmType(operator.getOperatorName());                                // 重复字段
         this.shouldConfirmType = confirmOrderBo.getConfirmType().longValue();        // 重复字段
