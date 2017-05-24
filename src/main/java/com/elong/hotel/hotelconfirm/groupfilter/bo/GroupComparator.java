@@ -20,14 +20,14 @@ public class GroupComparator implements Comparator<GroupFilterEntity> {
             if (object1.getGroupInfo().getSort().equals(object2.getGroupInfo().getSort())) {
                 return object1.getGroupInfo().getOpdate().getTime() > object2.getGroupInfo().getOpdate().getTime() ? -10 : 10;
             } else {
-                return object1.getGroupInfo().getSort() > object2.getGroupInfo().getSort() ? 10 : -10;
+                return object2.getGroupInfo().getSort() > object1.getGroupInfo().getSort() ? 10 : -10;
             }
         } else if (object1.getAllCompareResult().equals(CompareResultEnum.On)) {
-            return -1;
+            return 1;
         } else if (object2.getAllCompareResult().equals(CompareResultEnum.On)) {
-            return 1;
+            return -1;
         } else {
-            return 1;
+            return -1;
         }
     }
 }
