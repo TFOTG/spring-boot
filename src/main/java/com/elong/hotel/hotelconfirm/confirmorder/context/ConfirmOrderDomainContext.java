@@ -5,6 +5,7 @@ import com.elong.hotel.hotelconfirm.confirmorder.enums.ServerRunningDomainEnum;
 import com.elong.hotel.hotelconfirm.confirmorder.po.ConfirmOrderPo;
 import com.elong.hotel.proxy.javaorder.getorder.Order;
 import com.elong.hotel.proxy.javaorder.getorder.OrderHistory;
+import com.elong.hotel.storage.bo.OrderConsumerInfoBo;
 
 import java.io.Serializable;
 import java.util.List;
@@ -22,18 +23,21 @@ public class ConfirmOrderDomainContext implements Serializable {
 
     private ConfirmOrderPo confirmOrderPo;
 
+    private OrderConsumerInfoBo orderConsumerInfoBo;
+
     private OperatorInfoBo operator;
 
     public ConfirmOrderDomainContext(){}
 
     public ConfirmOrderDomainContext(Integer reserNo, ServerRunningDomainEnum serverRunningDomainEnum, Order order,
-            List<OrderHistory> orderHistories, ConfirmOrderPo confirmOrderPo, OperatorInfoBo operator) {
+            List<OrderHistory> orderHistories, ConfirmOrderPo confirmOrderPo, OperatorInfoBo operator, OrderConsumerInfoBo orderConsumerInfoBo) {
         this.reserNo = reserNo;
         this.serverRunningDomainEnum = serverRunningDomainEnum;
         this.order = order;
         this.orderHistories = orderHistories;
         this.confirmOrderPo = confirmOrderPo;
         this.operator = operator;
+        this.orderConsumerInfoBo = orderConsumerInfoBo;
     }
 
     public Integer getReserNo() {
@@ -50,6 +54,14 @@ public class ConfirmOrderDomainContext implements Serializable {
 
     public void setServerRunningDomainEnum(ServerRunningDomainEnum serverRunningDomainEnum) {
         this.serverRunningDomainEnum = serverRunningDomainEnum;
+    }
+
+    public OrderConsumerInfoBo getOrderConsumerInfoBo() {
+        return orderConsumerInfoBo;
+    }
+
+    public void setOrderConsumerInfoBo(OrderConsumerInfoBo orderConsumerInfoBo) {
+        this.orderConsumerInfoBo = orderConsumerInfoBo;
     }
 
     public Order getOrder() {

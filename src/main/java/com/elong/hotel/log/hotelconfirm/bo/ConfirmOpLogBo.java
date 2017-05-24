@@ -85,7 +85,7 @@ public class ConfirmOpLogBo {
 
     private Date amendTime;
 
-    public ConfirmOpLogBo(ConfirmOrderBo confirmOrderBo, ConfirmOpType confirmOpType, String targetReserStatus, OperatorInfoBo operator) {
+    public ConfirmOpLogBo(ConfirmOrderBo confirmOrderBo, ConfirmOpType confirmOpType, String preReserStatus, String targetReserStatus, OperatorInfoBo operator) {
         this.reserNo = confirmOrderBo.getReserNo();
         this.hotelId = confirmOrderBo.getHotelId();
         this.hotelName = confirmOrderBo.getHotelName();
@@ -97,7 +97,7 @@ public class ConfirmOpLogBo {
         this.rankId = confirmOrderBo.getRankId();
         this.priority = confirmOrderBo.getPriority();
         this.ebkStrategyId = confirmOrderBo.getEbkStrategyId();
-        this.sourceReserStatus = confirmOrderBo.getReserStatus();
+        this.sourceReserStatus = confirmOpType.equals(ConfirmOpType.SERVICESTORAGE) ? preReserStatus : confirmOrderBo.getReserStatus();
         this.targetReserStatus = targetReserStatus;
         this.confirmType = getConfirmType(operator.getOperatorName());                                // 重复字段
         this.shouldConfirmType = confirmOrderBo.getConfirmType().longValue();        // 重复字段
@@ -375,8 +375,6 @@ public class ConfirmOpLogBo {
         this.endTime = endTime;
     }
 
-
-
     public long getConfirmType(String staffName) {
         long auditfrom = 0;
         if (StringUtils.isBlank(staffName)) {
@@ -387,7 +385,7 @@ public class ConfirmOpLogBo {
             auditfrom = ConfirmType.EBooking.getKey();
         } else if (staffName.toLowerCase().endsWith("confirmivr")) {
             auditfrom = ConfirmType.IVR.getKey();
-        } else if (staffName.toLowerCase().indexOf("confirmivr") > -1) {
+        } else if (staffName.toLowerCase().indexOf("autoexaminetask") > -1) {
             auditfrom = ConfirmType.CONFIRMTASK.getKey();
         } else {
             auditfrom = ConfirmType.MIS.getKey();
