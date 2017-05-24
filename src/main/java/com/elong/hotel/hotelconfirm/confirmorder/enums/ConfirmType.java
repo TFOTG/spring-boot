@@ -1,14 +1,10 @@
 package com.elong.hotel.hotelconfirm.confirmorder.enums;
 
 /**
- * Created by Hualong.Li on 17/4/28.
+ * 确认方式
  */
 public enum ConfirmType {
 
-	/**
-	 * DC
-	 */
-	DC(0,"DC"),
 
 	/**
 	 * EBooking
@@ -16,44 +12,24 @@ public enum ConfirmType {
 	EBooking(1,"EBooking"),
 
 	/**
-	 * WEB
+	 * DC
 	 */
-	WEB(2,"WEB"),
+	DC(2,"DC"),
 
 	/**
-	 * APP
+	 * 确认Task 执行出库
 	 */
-	APP(3,"APP"),
+	CONFIRMTASK(3, "CONFIRMTASK"),
+
+	/**
+	 * MIS
+	 */
+	MIS(4,"MIS"),
 
 	/**
 	 * IVR
 	 */
-	IVR(4,"IVR"),
-
-	/**
-	 * qunar
-	 */
-	Qunar(5,"Qunar"),
-
-	/**
-	 * ctrip
-	 */
-	Ctrip(6,"Ctrip"),
-
-	/**
-	 * manual
-	 */
-	Manual(7,"Manual"),
-
-	/**
-	 * 复审上行短信
-	 */
-	ReviewSMS(8,"ReviewSMS"),
-
-	/**
-	 * NoSHowTask
-	 */
-	AutoNoshowTask(9,"AutoNoshowTask");
+	IVR(5,"IVR");
 
 	private long key;
 	private String value;
