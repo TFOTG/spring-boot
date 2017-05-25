@@ -32,7 +32,7 @@ public class CompareOrder4GroupBo extends CompareEntityBase {
 	private String cityId;
 
     /**
-     * 城市id
+     * 是否及时
      */
     @CompareEntityAnnotations(name = "IsImmediately")
     private Integer instantConfirm;
