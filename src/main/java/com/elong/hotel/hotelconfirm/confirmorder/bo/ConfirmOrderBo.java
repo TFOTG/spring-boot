@@ -64,6 +64,10 @@ public class ConfirmOrderBo extends CompareEntityBase {
     private Date rankChange4PromiseTime;
     private String ratePlanId;
 
+    public ConfirmOrderBo(){
+
+    }
+
     public ConfirmOrderBo(ConfirmOrderPo po) {
         this(null, po, null, null);
     }
