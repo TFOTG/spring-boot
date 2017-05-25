@@ -125,6 +125,8 @@ public class Order {
 	private boolean isUrgentVerify;
 	// 修改人
 	private String modifyName;
+
+    private Date modifyTime;
 	// 支付状态
 	private Integer payStatus;
 	// 支付金额RMB
@@ -674,4 +676,12 @@ public class Order {
 	public void setSupplierOtaType(Integer supplierOtaType) {
 		this.supplierOtaType = supplierOtaType;
 	}
+
+    public Date getModifyTime() {
+        return modifyTime;
+    }
+
+    public void setModifyTime(Date modifyTime) {
+        this.modifyTime = modifyTime;
+    }
 }
