@@ -63,6 +63,11 @@ public class ConfirmOrderBo extends CompareEntityBase {
     private Date timeChange4PromiseTime;
     private Date rankChange4PromiseTime;
     private String ratePlanId;
+    private Long additionalStatus;
+
+    public ConfirmOrderBo(){
+
+    }
 
     public ConfirmOrderBo(ConfirmOrderPo po) {
         this(null, po, null, null);
@@ -95,6 +100,7 @@ public class ConfirmOrderBo extends CompareEntityBase {
             this.confirmType = confirmOrder.getConfirmType();
             this.bookingTime = confirmOrder.getBookingTime();
             this.ratePlanId = order.getRatePlanId();
+            this.additionalStatus = order.getAdditionalStatus();
 
             this.amendTime = confirmOrder.getAmendTime();
             this.priority = confirmOrder.getPriority();
@@ -593,6 +599,14 @@ public class ConfirmOrderBo extends CompareEntityBase {
 
     public void setRatePlanId(String ratePlanId) {
         this.ratePlanId = ratePlanId;
+    }
+
+    public Long getAdditionalStatus() {
+        return additionalStatus;
+    }
+
+    public void setAdditionalStatus(Long additionalStatus) {
+        this.additionalStatus = additionalStatus;
     }
 
     private Integer getConfirmType(long orderFlag) {
