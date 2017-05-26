@@ -50,6 +50,7 @@ public class OrderHistory {
         this.leaveDate = order.getCheckOutDate();
         this.roomCount = order.getRoomCount();
         this.createTime = order.getCreateTime();
+        this.modifyTime=order.getModifyTime();
         this.modifier = order.getModifyName();
     }
 
