@@ -178,11 +178,13 @@ public class ConfirmOrderBo extends CompareEntityBase {
             this.confirmType = getConfirmType(order.getOrderFlag());
             this.bookingTime = order.getCreateTime();                   // 缺少
             this.amendTime = lastAmendTime;
+            this.additionalStatus = order.getAdditionalStatus();
             this.promiseTime = DateHelper.getMinDate();
             this.promiseChangeTimes = 0;
             this.staffName = "";
             this.orderTimestamp = order.getOrderTimestamp();
             this.enterTime = operator.getOperatorTime();
+
         } else if (order == null && confirmOrder != null) {// 初始化"在库数据"
             this.reserNo = confirmOrder.getReserNo();
             this.reserStatus = confirmOrder.getReserStatus();
