@@ -24,7 +24,7 @@ public class DelayOrderResult {
 	/**
 	 * 承诺时间
 	 */
-	private String promiseTime;
+	private int promiseTime;
 	
 	/**
 	 * ebooking策略id
@@ -55,11 +55,11 @@ public class DelayOrderResult {
 		this.ivrTime = ivrTime;
 	}
 
-	public String getPromiseTime() {
+	public int getPromiseTime() {
 		return promiseTime;
 	}
 
-	public void setPromiseTime(String promiseTime) {
+	public void setPromiseTime(int promiseTime) {
 		this.promiseTime = promiseTime;
 	}
 
