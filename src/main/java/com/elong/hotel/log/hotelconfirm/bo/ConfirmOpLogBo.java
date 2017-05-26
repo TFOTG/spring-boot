@@ -4,6 +4,7 @@ import com.elong.hotel.common.bo.OperatorInfoBo;
 import com.elong.hotel.common.helper.StringUtils;
 import com.elong.hotel.hotelconfirm.confirmorder.bo.ConfirmOrderBo;
 import com.elong.hotel.hotelconfirm.confirmorder.enums.ConfirmType;
+import com.elong.hotel.hotelconfirm.confirmorder.po.ConfirmOrderPo;
 import com.elong.hotel.hotelconfirm.group.enums.DepartmentEnum;
 import com.elong.hotel.log.hotelconfirm.enums.ConfirmOpType;
 
@@ -117,6 +118,37 @@ public class ConfirmOpLogBo {
         this.firstRefusedTime = confirmOrderBo.getFirstRefusedTime();
         this.bookingTime = confirmOrderBo.getBookingTime();
         this.amendTime = confirmOrderBo.getAmendTime();
+    }
+
+    public ConfirmOpLogBo(ConfirmOrderPo po,DepartmentEnum departmentEnum, ConfirmOpType confirmOpType,  String operator) {
+        this.reserNo = po.getReserNo();
+        this.hotelId = po.getHotelId();
+        this.hotelName = po.getHotelName();
+        this.supplierName = po.getSupplierName();
+        this.opType = confirmOpType.getKey();
+        this.department = departmentEnum.getKey()+"";
+        this.groupId = po.getGroupId();
+        this.rankId = po.getRankId();
+        this.priority = po.getPriority();
+        this.ebkStrategyId = po.getEbkStrategyId();
+        this.sourceReserStatus = po.getReserStatus();
+        this.targetReserStatus = po.getReserStatus();
+        this.confirmType = po.getConfirmType().longValue();              // 重复字段
+        this.shouldConfirmType = po.getConfirmType().longValue();        // 重复字段
+
+        this.staffName = po.getStaffName();
+        this.operator = operator;
+        this.ivrStartTime = po.getIvrStartTime();
+        this.enterTime = po.getEnterTime();
+        this.respiteTime = po.getRespiteTime();
+        this.sortTime = po.getSortTime();
+        this.defaultSortTime = po.getDefaultSortTime();
+        this.distributeTime = po.getDistributeTime();
+        this.nextServiceTime = po.getNextServiceTime();
+        this.promiseTime = po.getPromiseTime();
+        this.firstRefusedTime = po.getFirstRefusedTime();
+        this.bookingTime = po.getBookingTime();
+        this.amendTime = po.getAmendTime();
     }
 
     public Integer getReserNo() {
