@@ -21,7 +21,7 @@ public class GroupComparator implements Comparator<GroupFilterEntity> {
             if (object1.getGroupInfo().getSort().equals(object2.getGroupInfo().getSort())) {
                 return object1.getGroupInfo().getOpdate().getTime() > object2.getGroupInfo().getOpdate().getTime() ? -10 : 10;
             } else {
-                return object1.getGroupInfo().getSort().compareTo(object2.getGroupInfo().getSort());
+                return object2.getGroupInfo().getSort().compareTo(object1.getGroupInfo().getSort());
             }
         } else if (object1.getAllCompareResult().equals(CompareResultEnum.On)) {
             return -1;
