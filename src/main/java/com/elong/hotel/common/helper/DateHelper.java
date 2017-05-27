@@ -60,6 +60,18 @@ public class DateHelper {
 	}
 
 	/**
+	 * 获取java中日期 因为date.getPromiseDate()2099-01-01
+	 *
+	 * @return 2099-01-01 00:00:01
+	 */
+	public static Date getPromiseDate() {
+		Calendar cal = Calendar.getInstance();
+		cal.set(2099, 0, 1, 0, 0, 0);
+		cal.set(Calendar.MILLISECOND, 0);
+		return cal.getTime();
+	}
+
+	/**
 	 *
 	 * @return 2000-01-01 00:00:00
 	 */
