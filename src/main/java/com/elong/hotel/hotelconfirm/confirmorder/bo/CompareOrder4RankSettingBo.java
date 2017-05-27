@@ -124,7 +124,7 @@ public class CompareOrder4RankSettingBo extends CompareEntityBase {
 		this.arriveDate = arriveDate;
 	}
 
-	public static int differentDays(Date arriveDate, Date now) {
+	public int differentDays(Date arriveDate, Date now) {
 		Calendar cal1 = Calendar.getInstance();
 		cal1.setTime(arriveDate);
 		Calendar cal2 = Calendar.getInstance();
