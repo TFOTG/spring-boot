@@ -31,10 +31,6 @@ public class ConfirmOpLogPo {
 
     private String sourceReserStatus;
 
-    private String auditFrom;
-
-    private String shouldAuditFrom;
-
     private Long confirmType;
 
     private Long shouldConfirmType;
@@ -175,22 +171,6 @@ public class ConfirmOpLogPo {
 
     public void setSourceReserStatus(String sourceReserStatus) {
         this.sourceReserStatus = sourceReserStatus == null ? null : sourceReserStatus.trim();
-    }
-
-    public String getAuditFrom() {
-        return auditFrom;
-    }
-
-    public void setAuditFrom(String auditFrom) {
-        this.auditFrom = auditFrom == null ? null : auditFrom.trim();
-    }
-
-    public String getShouldAuditFrom() {
-        return shouldAuditFrom;
-    }
-
-    public void setShouldAuditFrom(String shouldAuditFrom) {
-        this.shouldAuditFrom = shouldAuditFrom == null ? null : shouldAuditFrom.trim();
     }
 
     public Long getConfirmType() {
@@ -339,8 +319,6 @@ public class ConfirmOpLogPo {
             && (this.getEbkStrategyId() == null ? other.getEbkStrategyId() == null : this.getEbkStrategyId().equals(other.getEbkStrategyId()))
             && (this.getTargetReserStatus() == null ? other.getTargetReserStatus() == null : this.getTargetReserStatus().equals(other.getTargetReserStatus()))
             && (this.getSourceReserStatus() == null ? other.getSourceReserStatus() == null : this.getSourceReserStatus().equals(other.getSourceReserStatus()))
-            && (this.getAuditFrom() == null ? other.getAuditFrom() == null : this.getAuditFrom().equals(other.getAuditFrom()))
-            && (this.getShouldAuditFrom() == null ? other.getShouldAuditFrom() == null : this.getShouldAuditFrom().equals(other.getShouldAuditFrom()))
             && (this.getConfirmType() == null ? other.getConfirmType() == null : this.getConfirmType().equals(other.getConfirmType()))
             && (this.getShouldConfirmType() == null ? other.getShouldConfirmType() == null : this.getShouldConfirmType().equals(other.getShouldConfirmType()))
             && (this.getStaffName() == null ? other.getStaffName() == null : this.getStaffName().equals(other.getStaffName()))
@@ -376,8 +354,6 @@ public class ConfirmOpLogPo {
         result = prime * result + ((getEbkStrategyId() == null) ? 0 : getEbkStrategyId().hashCode());
         result = prime * result + ((getTargetReserStatus() == null) ? 0 : getTargetReserStatus().hashCode());
         result = prime * result + ((getSourceReserStatus() == null) ? 0 : getSourceReserStatus().hashCode());
-        result = prime * result + ((getAuditFrom() == null) ? 0 : getAuditFrom().hashCode());
-        result = prime * result + ((getShouldAuditFrom() == null) ? 0 : getShouldAuditFrom().hashCode());
         result = prime * result + ((getConfirmType() == null) ? 0 : getConfirmType().hashCode());
         result = prime * result + ((getShouldConfirmType() == null) ? 0 : getShouldConfirmType().hashCode());
         result = prime * result + ((getStaffName() == null) ? 0 : getStaffName().hashCode());
@@ -416,8 +392,6 @@ public class ConfirmOpLogPo {
         sb.append(", ebkStrategyId=").append(ebkStrategyId);
         sb.append(", targetReserStatus=").append(targetReserStatus);
         sb.append(", sourceReserStatus=").append(sourceReserStatus);
-        sb.append(", auditFrom=").append(auditFrom);
-        sb.append(", shouldAuditFrom=").append(shouldAuditFrom);
         sb.append(", confirmType=").append(confirmType);
         sb.append(", shouldConfirmType=").append(shouldConfirmType);
         sb.append(", staffName=").append(staffName);
