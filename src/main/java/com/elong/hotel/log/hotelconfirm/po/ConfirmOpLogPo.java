@@ -319,6 +319,7 @@ public class ConfirmOpLogPo {
             && (this.getEbkStrategyId() == null ? other.getEbkStrategyId() == null : this.getEbkStrategyId().equals(other.getEbkStrategyId()))
             && (this.getTargetReserStatus() == null ? other.getTargetReserStatus() == null : this.getTargetReserStatus().equals(other.getTargetReserStatus()))
             && (this.getSourceReserStatus() == null ? other.getSourceReserStatus() == null : this.getSourceReserStatus().equals(other.getSourceReserStatus()))
+
             && (this.getConfirmType() == null ? other.getConfirmType() == null : this.getConfirmType().equals(other.getConfirmType()))
             && (this.getShouldConfirmType() == null ? other.getShouldConfirmType() == null : this.getShouldConfirmType().equals(other.getShouldConfirmType()))
             && (this.getStaffName() == null ? other.getStaffName() == null : this.getStaffName().equals(other.getStaffName()))
@@ -354,6 +355,7 @@ public class ConfirmOpLogPo {
         result = prime * result + ((getEbkStrategyId() == null) ? 0 : getEbkStrategyId().hashCode());
         result = prime * result + ((getTargetReserStatus() == null) ? 0 : getTargetReserStatus().hashCode());
         result = prime * result + ((getSourceReserStatus() == null) ? 0 : getSourceReserStatus().hashCode());
+
         result = prime * result + ((getConfirmType() == null) ? 0 : getConfirmType().hashCode());
         result = prime * result + ((getShouldConfirmType() == null) ? 0 : getShouldConfirmType().hashCode());
         result = prime * result + ((getStaffName() == null) ? 0 : getStaffName().hashCode());
@@ -392,6 +394,7 @@ public class ConfirmOpLogPo {
         sb.append(", ebkStrategyId=").append(ebkStrategyId);
         sb.append(", targetReserStatus=").append(targetReserStatus);
         sb.append(", sourceReserStatus=").append(sourceReserStatus);
+
         sb.append(", confirmType=").append(confirmType);
         sb.append(", shouldConfirmType=").append(shouldConfirmType);
         sb.append(", staffName=").append(staffName);

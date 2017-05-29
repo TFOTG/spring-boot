@@ -31,7 +31,7 @@ public enum ConfirmType {
 	 */
 	IVR(5,"IVR");
 
-	private long key;
+	private int key;
 	private String value;
 
 	ConfirmType(int key, String value) {
@@ -39,7 +39,7 @@ public enum ConfirmType {
 		this.value = value;
 	}
 
-	public long getKey() {
+	public int getKey() {
 		return key;
 	}
 
