@@ -52,10 +52,6 @@ public class ConfirmOpLogBo {
 
     private String sourceReserStatus;
 
-//    private String auditFrom;
-//
-//    private String shouldAuditFrom;
-
     private Long confirmType;
 
     private Long shouldConfirmType;
@@ -103,8 +99,6 @@ public class ConfirmOpLogBo {
         this.confirmType = getConfirmType(operator.getOperatorName());                                // 重复字段
         this.shouldConfirmType = confirmOrderBo.getConfirmType().longValue();        // 重复字段
 
-//        this.auditFrom = confirmOrderBo.getConfirmType() + "";                      // 重复字段
-//        this.shouldAuditFrom = confirmOrderBo.getConfirmType() + "";               // 重复字段
         this.staffName = confirmOrderBo.getStaffName();
         this.operator = operator.getOperatorName();
         this.ivrStartTime = confirmOrderBo.getIvrStartTime();
@@ -135,7 +129,6 @@ public class ConfirmOpLogBo {
         this.targetReserStatus = po.getReserStatus();
         this.confirmType = po.getConfirmType().longValue();              // 重复字段
         this.shouldConfirmType = po.getConfirmType().longValue();        // 重复字段
-
         this.staffName = po.getStaffName();
         this.operator = operator;
         this.ivrStartTime = po.getIvrStartTime();
@@ -254,22 +247,6 @@ public class ConfirmOpLogBo {
     public void setSourceReserStatus(String sourceReserStatus) {
         this.sourceReserStatus = sourceReserStatus;
     }
-
-//    public String getAuditFrom() {
-//        return auditFrom;
-//    }
-//
-//    public void setAuditFrom(String auditFrom) {
-//        this.auditFrom = auditFrom;
-//    }
-//
-//    public String getShouldAuditFrom() {
-//        return shouldAuditFrom;
-//    }
-//
-//    public void setShouldAuditFrom(String shouldAuditFrom) {
-//        this.shouldAuditFrom = shouldAuditFrom;
-//    }
 
     public Long getConfirmType() {
         return confirmType;
