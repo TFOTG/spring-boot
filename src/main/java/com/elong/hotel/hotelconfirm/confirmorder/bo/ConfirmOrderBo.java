@@ -3,6 +3,7 @@ package com.elong.hotel.hotelconfirm.confirmorder.bo;
 import com.elong.hotel.common.bo.OperatorInfoBo;
 import com.elong.hotel.common.enums.ElongOrderStatusEnum;
 import com.elong.hotel.common.helper.DateHelper;
+import com.elong.hotel.hotelconfirm.confirmorder.enums.ConfirmType;
 import com.elong.hotel.hotelconfirm.confirmorder.po.ConfirmOrderPo;
 import com.elong.hotel.hotelconfirm.groupfilter.bo.CompareEntityBase;
 import com.elong.hotel.proxy.javaorder.consts.OrderFlagConst;
@@ -614,14 +615,14 @@ public class ConfirmOrderBo extends CompareEntityBase {
     private Integer getConfirmType(long orderFlag) {
         //直连确认
         if ((orderFlag & OrderFlagConst.SHOULD_CONFIRMED_BY_DC) == OrderFlagConst.SHOULD_CONFIRMED_BY_DC) {
-            return 2;
+            return ConfirmType.DC.getKey();
         }
         //EB确认
         else if ((orderFlag & OrderFlagConst.SHOULD_CONFIRMED_BY_EB) == OrderFlagConst.SHOULD_CONFIRMED_BY_EB) {
-            return 1;
+            return ConfirmType.EBooking.getKey();
         } else {
             //mis员工确认
-            return 4;
+            return ConfirmType.MIS.getKey();
         }
 
     }

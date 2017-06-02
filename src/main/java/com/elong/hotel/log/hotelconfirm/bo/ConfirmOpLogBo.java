@@ -52,10 +52,6 @@ public class ConfirmOpLogBo {
 
     private String sourceReserStatus;
 
-    private String auditFrom;
-
-    private String shouldAuditFrom;
-
     private Long confirmType;
 
     private Long shouldConfirmType;
@@ -103,8 +99,6 @@ public class ConfirmOpLogBo {
         this.confirmType = getConfirmType(operator.getOperatorName());                                // 重复字段
         this.shouldConfirmType = confirmOrderBo.getConfirmType().longValue();        // 重复字段
 
-        this.auditFrom = confirmOrderBo.getConfirmType() + "";                      // 重复字段
-        this.shouldAuditFrom = confirmOrderBo.getConfirmType() + "";               // 重复字段
         this.staffName = confirmOrderBo.getStaffName();
         this.operator = operator.getOperatorName();
         this.ivrStartTime = confirmOrderBo.getIvrStartTime();
@@ -135,7 +129,6 @@ public class ConfirmOpLogBo {
         this.targetReserStatus = po.getReserStatus();
         this.confirmType = po.getConfirmType().longValue();              // 重复字段
         this.shouldConfirmType = po.getConfirmType().longValue();        // 重复字段
-
         this.staffName = po.getStaffName();
         this.operator = operator;
         this.ivrStartTime = po.getIvrStartTime();
@@ -253,22 +246,6 @@ public class ConfirmOpLogBo {
 
     public void setSourceReserStatus(String sourceReserStatus) {
         this.sourceReserStatus = sourceReserStatus;
-    }
-
-    public String getAuditFrom() {
-        return auditFrom;
-    }
-
-    public void setAuditFrom(String auditFrom) {
-        this.auditFrom = auditFrom;
-    }
-
-    public String getShouldAuditFrom() {
-        return shouldAuditFrom;
-    }
-
-    public void setShouldAuditFrom(String shouldAuditFrom) {
-        this.shouldAuditFrom = shouldAuditFrom;
     }
 
     public Long getConfirmType() {
@@ -408,21 +385,21 @@ public class ConfirmOpLogBo {
     }
 
     public long getConfirmType(String staffName) {
-        long auditfrom = 0;
+        long confirmType = 0;
         if (StringUtils.isBlank(staffName)) {
-            auditfrom = ConfirmType.MIS.getKey();
+            confirmType = ConfirmType.MIS.getKey();
         } else if (staffName.toLowerCase().indexOf("pmsautouser") > -1) {
-            auditfrom = ConfirmType.DC.getKey();
+            confirmType = ConfirmType.DC.getKey();
         } else if (staffName.toLowerCase().endsWith("h") || staffName.toLowerCase().endsWith("m") || staffName.toLowerCase().endsWith("w")) {
-            auditfrom = ConfirmType.EBooking.getKey();
+            confirmType = ConfirmType.EBooking.getKey();
         } else if (staffName.toLowerCase().endsWith("confirmivr")) {
-            auditfrom = ConfirmType.IVR.getKey();
+            confirmType = ConfirmType.IVR.getKey();
         } else if (staffName.toLowerCase().indexOf("autoexaminetask") > -1) {
-            auditfrom = ConfirmType.CONFIRMTASK.getKey();
+            confirmType = ConfirmType.CONFIRMTASK.getKey();
         } else {
-            auditfrom = ConfirmType.MIS.getKey();
+            confirmType = ConfirmType.MIS.getKey();
         }
 
-        return auditfrom;
+        return confirmType;
     }
 }
