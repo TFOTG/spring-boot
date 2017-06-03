@@ -48,7 +48,7 @@ public class ConfirmOrderBo extends CompareEntityBase {
     private Integer promiseChangeTimes;
     private String isFaxReturn;
     private String isLinked;
-    private String urge;
+    private Integer urge;
     private Date respiteTime;
     private Date nextServiceTime;
     private String ivrGuid;
@@ -558,11 +558,11 @@ public class ConfirmOrderBo extends CompareEntityBase {
         this.timeLate = timeLate;
     }
 
-    public String getUrge() {
+    public Integer getUrge() {
         return urge;
     }
 
-    public void setUrge(String urge) {
+    public void setUrge(Integer urge) {
         this.urge = urge;
     }
 
