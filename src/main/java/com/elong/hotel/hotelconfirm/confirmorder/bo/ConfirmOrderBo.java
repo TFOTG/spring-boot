@@ -25,6 +25,7 @@ public class ConfirmOrderBo extends CompareEntityBase {
     private Date leaveDate;
     private Date timeEarly;
     private Date timeLate;
+    private Long cardNo;
     private String hotelId;
     private String hotelName;
     private String supplierId;
@@ -102,7 +103,7 @@ public class ConfirmOrderBo extends CompareEntityBase {
             this.bookingTime = confirmOrder.getBookingTime();
             this.ratePlanId = order.getRatePlanId();
             this.additionalStatus = order.getAdditionalStatus();
-
+            this.cardNo = order.getCardNo();
             this.amendTime = confirmOrder.getAmendTime();
             this.priority = confirmOrder.getPriority();
             this.groupId = confirmOrder.getGroupId();
@@ -168,6 +169,7 @@ public class ConfirmOrderBo extends CompareEntityBase {
             this.timeLate = order.getLateCheckInTime();
             this.hotelId = order.getHotelId();
             this.hotelName = order.getHotelName();
+            this.cardNo = order.getCardNo();
             this.supplierId = order.getSupplierId().toString();
             this.supplierType = order.getSupplierType().toString();
             this.supplierName = order.getSupplierName();
@@ -578,6 +580,14 @@ public class ConfirmOrderBo extends CompareEntityBase {
 
     public void setTimeChange4PromiseTime(Date timeChange4PromiseTime) {
         this.timeChange4PromiseTime = timeChange4PromiseTime;
+    }
+
+    public Long getCardNo() {
+        return cardNo;
+    }
+
+    public void setCardNo(Long cardNo) {
+        this.cardNo = cardNo;
     }
 
     public String getReserStatus2End() {
