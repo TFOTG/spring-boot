@@ -191,6 +191,7 @@ public class ConfirmOrderBo extends CompareEntityBase {
         } else if (order == null && confirmOrder != null) {// 初始化"在库数据"
             this.reserNo = confirmOrder.getReserNo();
             this.reserStatus = confirmOrder.getReserStatus();
+            this.cardNo = confirmOrder.getCardNo();
             this.mod = confirmOrder.getMod();
             this.arriveDate = confirmOrder.getArriveDate();
             this.leaveDate = confirmOrder.getLeaveDate();
