@@ -1,10 +1,17 @@
 package com.elong.hotel.proxy.ebooking.response;
 
+import java.io.Serializable;
+
 /**
  * Created by yangboyu on 17/4/16.
  */
-public class DelayOrderResult {
+public class DelayOrderResult implements Serializable{
 	
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 
 	/**
 	 * 订单ID
