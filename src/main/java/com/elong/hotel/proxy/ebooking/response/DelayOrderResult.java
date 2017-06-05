@@ -36,7 +36,7 @@ public class DelayOrderResult implements Serializable{
 	/**
 	 * ebooking策略id
 	 */
-	private int stragegyId;
+	private int strategyId;
 
 	public Integer getOrderId() {
 		return orderId;
@@ -70,11 +70,11 @@ public class DelayOrderResult implements Serializable{
 		this.promiseTime = promiseTime;
 	}
 
-	public int getStragegyId() {
-		return stragegyId;
+	public int getStrategyId() {
+		return strategyId;
 	}
 
-	public void setStragegyId(int stragegyId) {
-		this.stragegyId = stragegyId;
+	public void setStrategyId(int strategyId) {
+		this.strategyId = strategyId;
 	}
 }
