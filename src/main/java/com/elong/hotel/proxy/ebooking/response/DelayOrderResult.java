@@ -77,4 +77,5 @@ public class DelayOrderResult implements Serializable{
 	public void setStrategyId(int strategyId) {
 		this.strategyId = strategyId;
 	}
+
 }
