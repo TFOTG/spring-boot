@@ -28,7 +28,7 @@ public class RanksettingOperatePo {
 	private Date opdate;
 	private String opname;
 	private String opip;
-	private String _timestamp;
+	private String timestamp;
 	private List<RankSettingTagPo> ranktags;
 	public String getRankid() {
 		return rankid;
@@ -114,11 +114,11 @@ public class RanksettingOperatePo {
 	public void setOpip(String opip) {
 		this.opip = opip;
 	}
-	public String get_timestamp() {
-		return _timestamp;
+	public String getTimestamp() {
+		return timestamp;
 	}
-	public void set_timestamp(String _timestamp) {
-		this._timestamp = _timestamp;
+	public void setTimestamp(String timestamp) {
+		this.timestamp = timestamp;
 	}
 	public List<RankSettingTagPo> getRanktags() {
 		return ranktags;
