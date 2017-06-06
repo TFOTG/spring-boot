@@ -12,6 +12,7 @@ public class ConfirmOrderPo {
     private Integer reserNo;
     private String reserStatus;
     private Integer mod;
+    private Long cardNo;
     private Date arriveDate;
     private Date leaveDate;
     private Date timeEarly;
@@ -57,6 +58,7 @@ public class ConfirmOrderPo {
     public ConfirmOrderPo(ConfirmOrderBo bo) {
         this.reserNo = bo.getReserNo();
         this.reserStatus = bo.getReserStatus();
+        this.cardNo = bo.getCardNo();
         this.mod = bo.getMod();
         this.arriveDate = bo.getArriveDate();
         this.leaveDate = bo.getLeaveDate();
@@ -96,6 +98,14 @@ public class ConfirmOrderPo {
         this.firstRefusedTime = bo.getFirstRefusedTime();
         this.orderTimestampLong = bo.getOrderTimestamp().getTime();
 
+    }
+
+    public Long getCardNo() {
+        return cardNo;
+    }
+
+    public void setCardNo(Long cardNo) {
+        this.cardNo = cardNo;
     }
 
     public Date getAmendTime() {
