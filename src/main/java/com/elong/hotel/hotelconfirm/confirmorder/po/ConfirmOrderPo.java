@@ -27,13 +27,16 @@ public class ConfirmOrderPo {
     private String cityId;
     private Integer distance;
     private Integer confirmType;
+    //预定时间、订单创建时间
     private Date bookingTime;
+    //最后一次已审时间
     private Date amendTime;
     private Integer priority;
     private Integer groupId;
     private Integer rankId;
     private Integer ebkStrategyId;
     private String staffName;
+    //员工获取时间
     private Date distributeTime;
     private Date promiseTime;
     private Integer promiseChangeTimes;
@@ -46,6 +49,7 @@ public class ConfirmOrderPo {
     private String ivrStatus;
     private Date ivrStartTime;
     private Date enterTime;
+    //员工可获取时间
     private Date sortTime;
     private Date defaultSortTime;
     private Date firstRefusedTime;
