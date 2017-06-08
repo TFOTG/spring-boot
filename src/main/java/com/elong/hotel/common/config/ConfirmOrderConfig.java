@@ -93,6 +93,11 @@ public class ConfirmOrderConfig {
      */
     private Integer executorQueueSize;
 
+    /**
+     * 催确认增加的承诺时间
+     */
+    private Integer urgeAddMins;
+
     public ConfirmOrderConfig() {
         priority4HighMinute = 60;
         priority4HighDistance = 3000;
@@ -111,6 +116,7 @@ public class ConfirmOrderConfig {
         executorMaxTimeOut = 30;
         executorThreads = 10;
         executorQueueSize = 500;
+        urgeAddMins = 15;
     }
 
     public String getPriority4NightEnd() {
@@ -247,6 +253,14 @@ public class ConfirmOrderConfig {
 
     public void setExecutorQueueSize(Integer executorQueueSize) {
         this.executorQueueSize = executorQueueSize;
+    }
+
+    public Integer getUrgeAddMins() {
+        return urgeAddMins;
+    }
+
+    public void setUrgeAddMins(Integer urgeAddMins) {
+        this.urgeAddMins = urgeAddMins;
     }
 
     public static void main(String[] args) {
