@@ -1,5 +1,7 @@
 package com.elong.hotel.hotelconfirm.confirmorder.bo;
 
+import java.util.Date;
+
 /**
  * Created by peng.wang on 17/6/8.
  */
@@ -10,37 +12,42 @@ public class ChargeConfirmOrderBo {
 
     private String hotelName;
 
-    private String arriveDate;
-
-    private String fax;
+    private String timeEarly;
 
     private String groupName;
 
     private String staffName;
 
-    private String chargeName;
+    private String leaderName;
 
     //在屏时长，当前时间减去员工获取时间
-    private String getTime;
+    private String getTimeLength;
+
+    private Date distributeTime;
 
     //剩余，当前时间减去承诺时间
-    private String promiseLeftTime;
+    private String promiseTimeLength;
+
+    private Date promiseTime;
 
     //已审时长，当前时间减去最后一次已审时间
-    private String verifyTime;
+    private String amendTimeLength;
+
+    private Date amendTime;
 
     //初拒时长，当前时间减去初拒时间
-    private String firstRefuseTime;
+    private String firstRefuseTimeLength;
+
+    private Date firstRefusedTime;
 
     //预约时间
     private String respiteTime;
 
-    //获取时间
-    private String sortTime;
 
-    private String operator;
+    //可获取时间 当前时间减去订单获取时间
+    private String sortTimeLeft;
 
-    private String operateTime;
+    private Date sortTime;
 
 
     public String getOrderId() {
@@ -59,20 +66,12 @@ public class ChargeConfirmOrderBo {
         this.hotelName = hotelName;
     }
 
-    public String getArriveDate() {
-        return arriveDate;
+    public String getTimeEarly() {
+        return timeEarly;
     }
 
-    public void setArriveDate(String arriveDate) {
-        this.arriveDate = arriveDate;
-    }
-
-    public String getFax() {
-        return fax;
-    }
-
-    public void setFax(String fax) {
-        this.fax = fax;
+    public void setTimeEarly(String timeEarly) {
+        this.timeEarly = timeEarly;
     }
 
     public String getGroupName() {
@@ -91,52 +90,76 @@ public class ChargeConfirmOrderBo {
         this.staffName = staffName;
     }
 
-    public String getChargeName() {
-        return chargeName;
+    public String getLeaderName() {
+        return leaderName;
     }
 
-    public void setChargeName(String chargeName) {
-        this.chargeName = chargeName;
+    public void setLeaderName(String leaderName) {
+        this.leaderName = leaderName;
     }
 
-    public String getGetTime() {
-        return getTime;
+    public String getGetTimeLength() {
+        return getTimeLength;
     }
 
-    public void setGetTime(String getTime) {
-        this.getTime = getTime;
+    public void setGetTimeLength(String getTimeLength) {
+        this.getTimeLength = getTimeLength;
     }
 
-    public String getPromiseLeftTime() {
-        return promiseLeftTime;
+    public Date getDistributeTime() {
+        return distributeTime;
     }
 
-    public void setPromiseLeftTime(String promiseLeftTime) {
-        this.promiseLeftTime = promiseLeftTime;
+    public void setDistributeTime(Date distributeTime) {
+        this.distributeTime = distributeTime;
     }
 
-    public String getVerifyTime() {
-        return verifyTime;
+    public String getPromiseTimeLength() {
+        return promiseTimeLength;
     }
 
-    public void setVerifyTime(String verifyTime) {
-        this.verifyTime = verifyTime;
+    public void setPromiseTimeLength(String promiseTimeLength) {
+        this.promiseTimeLength = promiseTimeLength;
     }
 
-    public String getFirstRefuseTime() {
-        return firstRefuseTime;
+    public Date getPromiseTime() {
+        return promiseTime;
     }
 
-    public void setFirstRefuseTime(String firstRefuseTime) {
-        this.firstRefuseTime = firstRefuseTime;
+    public void setPromiseTime(Date promiseTime) {
+        this.promiseTime = promiseTime;
     }
 
-    public String getOperator() {
-        return operator;
+    public String getAmendTimeLength() {
+        return amendTimeLength;
     }
 
-    public void setOperator(String operator) {
-        this.operator = operator;
+    public void setAmendTimeLength(String amendTimeLength) {
+        this.amendTimeLength = amendTimeLength;
+    }
+
+    public Date getAmendTime() {
+        return amendTime;
+    }
+
+    public void setAmendTime(Date amendTime) {
+        this.amendTime = amendTime;
+    }
+
+    public String getFirstRefuseTimeLength() {
+        return firstRefuseTimeLength;
+    }
+
+    public void setFirstRefuseTimeLength(String firstRefuseTimeLength) {
+        this.firstRefuseTimeLength = firstRefuseTimeLength;
+    }
+
+    public Date getFirstRefusedTime() {
+        return firstRefusedTime;
+    }
+
+    public void setFirstRefusedTime(Date firstRefusedTime) {
+        this.firstRefusedTime = firstRefusedTime;
     }
 
     public String getRespiteTime() {
@@ -147,19 +170,19 @@ public class ChargeConfirmOrderBo {
         this.respiteTime = respiteTime;
     }
 
-    public String getSortTime() {
+    public String getSortTimeLeft() {
+        return sortTimeLeft;
+    }
+
+    public void setSortTimeLeft(String sortTimeLeft) {
+        this.sortTimeLeft = sortTimeLeft;
+    }
+
+    public Date getSortTime() {
         return sortTime;
     }
 
-    public void setSortTime(String sortTime) {
+    public void setSortTime(Date sortTime) {
         this.sortTime = sortTime;
-    }
-
-    public String getOperateTime() {
-        return operateTime;
-    }
-
-    public void setOperateTime(String operateTime) {
-        this.operateTime = operateTime;
     }
 }

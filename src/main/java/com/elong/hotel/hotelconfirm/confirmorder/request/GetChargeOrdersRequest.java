@@ -15,7 +15,7 @@ public class GetChargeOrdersRequest {
 
     private String staffName;
 
-    private String chargeName;
+    private String leaderName;
 
     private String orderType;
 
@@ -66,12 +66,12 @@ public class GetChargeOrdersRequest {
         this.staffName = staffName;
     }
 
-    public String getChargeName() {
-        return chargeName;
+    public String getLeaderName() {
+        return leaderName;
     }
 
-    public void setChargeName(String chargeName) {
-        this.chargeName = chargeName;
+    public void setLeaderName(String leaderName) {
+        this.leaderName = leaderName;
     }
 
     public String getOrderType() {
