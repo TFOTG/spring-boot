@@ -6,6 +6,7 @@
 package com.elong.hotel.hotelconfirm.ranksetting.po;
 
 import java.util.Date;
+import java.util.HashMap;
 import java.util.List;
 
 /**
@@ -30,6 +31,7 @@ public class RanksettingOperatePo {
 	private String opip;
 	private String timestamp;
 	private List<RankSettingTagPo> ranktags;
+	private List<HashMap<String,Object>> tagmaps;
 	public String getRankid() {
 		return rankid;
 	}
@@ -125,6 +127,12 @@ public class RanksettingOperatePo {
 	}
 	public void setRanktags(List<RankSettingTagPo> ranktags) {
 		this.ranktags = ranktags;
+	}
+	public List<HashMap<String, Object>> getTagmaps() {
+		return tagmaps;
+	}
+	public void setTagmaps(List<HashMap<String, Object>> tagmaps) {
+		this.tagmaps = tagmaps;
 	}
 	
 }
