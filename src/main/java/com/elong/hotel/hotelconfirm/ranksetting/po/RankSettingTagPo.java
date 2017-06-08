@@ -5,11 +5,18 @@
  */
 package com.elong.hotel.hotelconfirm.ranksetting.po;
 
+import java.io.Serializable;
+
 /**
  * @author jianjun.wang
  * @version 1.0.0
  */
-public class RankSettingTagPo {
+public class RankSettingTagPo implements Serializable{
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 
 	private Integer id;
 	
@@ -18,6 +25,18 @@ public class RankSettingTagPo {
 	private String tagvalue;
 	
 	private String tagkey;
+
+
+	public RankSettingTagPo() {
+		super();
+	}
+
+	public RankSettingTagPo(String rankid, String tagvalue, String tagkey) {
+		super();
+		this.rankid = rankid;
+		this.tagvalue = tagvalue;
+		this.tagkey = tagkey;
+	}
 
 	public Integer getId() {
 		return id;
