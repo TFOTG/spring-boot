@@ -93,6 +93,10 @@ public class ConfirmOrderConfig {
      */
     private Integer executorQueueSize;
 
+    private int groupEhCacheEnable;
+    
+    private int rankEnCacheEnable;
+    
     /**
      * 催确认增加的承诺时间
      */
@@ -116,6 +120,8 @@ public class ConfirmOrderConfig {
         executorMaxTimeOut = 30;
         executorThreads = 10;
         executorQueueSize = 500;
+        rankEnCacheEnable = 0;
+        groupEhCacheEnable = 0;
         urgeAddMins = 15;
     }
 
@@ -254,6 +260,22 @@ public class ConfirmOrderConfig {
     public void setExecutorQueueSize(Integer executorQueueSize) {
         this.executorQueueSize = executorQueueSize;
     }
+
+    public int getGroupEhCacheEnable() {
+		return groupEhCacheEnable;
+	}
+
+	public void setGroupEhCacheEnable(int groupEhCacheEnable) {
+		this.groupEhCacheEnable = groupEhCacheEnable;
+	}
+
+	public int getRankEnCacheEnable() {
+		return rankEnCacheEnable;
+	}
+
+	public void setRankEnCacheEnable(int rankEnCacheEnable) {
+		this.rankEnCacheEnable = rankEnCacheEnable;
+	}
 
     public Integer getUrgeAddMins() {
         return urgeAddMins;
