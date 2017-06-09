@@ -97,6 +97,11 @@ public class ConfirmOrderConfig {
     
     private int rankEnCacheEnable;
     
+    /**
+     * 催确认增加的承诺时间
+     */
+    private Integer urgeAddMins;
+
     public ConfirmOrderConfig() {
         priority4HighMinute = 60;
         priority4HighDistance = 3000;
@@ -117,6 +122,7 @@ public class ConfirmOrderConfig {
         executorQueueSize = 500;
         rankEnCacheEnable = 0;
         groupEhCacheEnable = 0;
+        urgeAddMins = 15;
     }
 
     public String getPriority4NightEnd() {
@@ -271,7 +277,15 @@ public class ConfirmOrderConfig {
 		this.rankEnCacheEnable = rankEnCacheEnable;
 	}
 
-	public static void main(String[] args) {
+    public Integer getUrgeAddMins() {
+        return urgeAddMins;
+    }
+
+    public void setUrgeAddMins(Integer urgeAddMins) {
+        this.urgeAddMins = urgeAddMins;
+    }
+
+    public static void main(String[] args) {
         ConfirmOrderConfig config = new ConfirmOrderConfig();
         System.out.println(JSON.toJSONString(config));
     }
