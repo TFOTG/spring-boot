@@ -1,0 +1,188 @@
+package com.elong.hotel.hotelconfirm.confirmorder.bo;
+
+import java.util.Date;
+
+/**
+ * Created by peng.wang on 17/6/8.
+ */
+public class ChargeConfirmOrderBo {
+
+
+    private String orderId;
+
+    private String hotelName;
+
+    private String timeEarly;
+
+    private String groupName;
+
+    private String staffName;
+
+    private String leaderName;
+
+    //在屏时长，当前时间减去员工获取时间
+    private String getTimeLength;
+
+    private Date distributeTime;
+
+    //剩余，当前时间减去承诺时间
+    private String promiseTimeLength;
+
+    private Date promiseTime;
+
+    //已审时长，当前时间减去最后一次已审时间
+    private String amendTimeLength;
+
+    private Date amendTime;
+
+    //初拒时长，当前时间减去初拒时间
+    private String firstRefuseTimeLength;
+
+    private Date firstRefusedTime;
+
+    //预约时间
+    private String respiteTime;
+
+
+    //可获取时间 当前时间减去订单获取时间
+    private String sortTimeLeft;
+
+    private Date sortTime;
+
+
+    public String getOrderId() {
+        return orderId;
+    }
+
+    public void setOrderId(String orderId) {
+        this.orderId = orderId;
+    }
+
+    public String getHotelName() {
+        return hotelName;
+    }
+
+    public void setHotelName(String hotelName) {
+        this.hotelName = hotelName;
+    }
+
+    public String getTimeEarly() {
+        return timeEarly;
+    }
+
+    public void setTimeEarly(String timeEarly) {
+        this.timeEarly = timeEarly;
+    }
+
+    public String getGroupName() {
+        return groupName;
+    }
+
+    public void setGroupName(String groupName) {
+        this.groupName = groupName;
+    }
+
+    public String getStaffName() {
+        return staffName;
+    }
+
+    public void setStaffName(String staffName) {
+        this.staffName = staffName;
+    }
+
+    public String getLeaderName() {
+        return leaderName;
+    }
+
+    public void setLeaderName(String leaderName) {
+        this.leaderName = leaderName;
+    }
+
+    public String getGetTimeLength() {
+        return getTimeLength;
+    }
+
+    public void setGetTimeLength(String getTimeLength) {
+        this.getTimeLength = getTimeLength;
+    }
+
+    public Date getDistributeTime() {
+        return distributeTime;
+    }
+
+    public void setDistributeTime(Date distributeTime) {
+        this.distributeTime = distributeTime;
+    }
+
+    public String getPromiseTimeLength() {
+        return promiseTimeLength;
+    }
+
+    public void setPromiseTimeLength(String promiseTimeLength) {
+        this.promiseTimeLength = promiseTimeLength;
+    }
+
+    public Date getPromiseTime() {
+        return promiseTime;
+    }
+
+    public void setPromiseTime(Date promiseTime) {
+        this.promiseTime = promiseTime;
+    }
+
+    public String getAmendTimeLength() {
+        return amendTimeLength;
+    }
+
+    public void setAmendTimeLength(String amendTimeLength) {
+        this.amendTimeLength = amendTimeLength;
+    }
+
+    public Date getAmendTime() {
+        return amendTime;
+    }
+
+    public void setAmendTime(Date amendTime) {
+        this.amendTime = amendTime;
+    }
+
+    public String getFirstRefuseTimeLength() {
+        return firstRefuseTimeLength;
+    }
+
+    public void setFirstRefuseTimeLength(String firstRefuseTimeLength) {
+        this.firstRefuseTimeLength = firstRefuseTimeLength;
+    }
+
+    public Date getFirstRefusedTime() {
+        return firstRefusedTime;
+    }
+
+    public void setFirstRefusedTime(Date firstRefusedTime) {
+        this.firstRefusedTime = firstRefusedTime;
+    }
+
+    public String getRespiteTime() {
+        return respiteTime;
+    }
+
+    public void setRespiteTime(String respiteTime) {
+        this.respiteTime = respiteTime;
+    }
+
+    public String getSortTimeLeft() {
+        return sortTimeLeft;
+    }
+
+    public void setSortTimeLeft(String sortTimeLeft) {
+        this.sortTimeLeft = sortTimeLeft;
+    }
+
+    public Date getSortTime() {
+        return sortTime;
+    }
+
+    public void setSortTime(Date sortTime) {
+        this.sortTime = sortTime;
+    }
+}
