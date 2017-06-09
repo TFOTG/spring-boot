@@ -14,20 +14,20 @@ import java.util.List;
  */
 public class RanksettingOperatePo {
 
-	private String rankid;
-	private String rankname;
-	private Integer deptment;
-	private Integer enable;
-	private int sort;
-	private int useivrservice;
-	private int ivrdelaytime;
-	private int useebkservice;
-	private int delaytime;
-	private int promisetime;
-	private int urgetime;
-	private Date opdate;
-	private String opname;
-	private String opip;
+	private String rankid;//排序设置ID
+	private String rankname;//排序名称
+	private Integer deptment;//部门 1确认
+	private Integer enable;//是否启用 1启用 0废弃
+	private int sort;//排序优先级  数字越大 优先级越高
+	private int useivrservice;// 是否启用ivr  0不启用 1启用
+	private int ivrdelaytime; //ivr 延迟时间
+	private int useebkservice; //是否使用ebking 0不使用  1使用
+	private int delaytime;//可获取时间
+	private int promisetime;//承诺时间
+	private int urgetime; //催可确认时间
+	private Date opdate; //操作时间
+	private String opname;//操作人
+	private String opip;//操作ip
 	private String timestamp;
 	private List<RankSettingTagPo> ranktags;
 	public String getRankid() {
