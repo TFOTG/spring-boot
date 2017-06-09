@@ -1,11 +1,15 @@
 package com.elong.hotel.hotelconfirm.confirmorder.request;
 
+import com.elong.hotel.common.bo.OperatorInfoBo;
+
 /**
  * Created by peng.wang on 17/6/6.
  */
 public class CanUrgeRequest {
 
     private Integer orderId;
+
+    private OperatorInfoBo operatorInfo;
 
     public Integer getOrderId() {
         return orderId;
@@ -15,4 +19,11 @@ public class CanUrgeRequest {
         this.orderId = orderId;
     }
 
+    public OperatorInfoBo getOperatorInfo() {
+        return operatorInfo;
+    }
+
+    public void setOperatorInfo(OperatorInfoBo operatorInfo) {
+        this.operatorInfo = operatorInfo;
+    }
 }
