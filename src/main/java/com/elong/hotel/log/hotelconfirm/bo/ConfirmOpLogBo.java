@@ -93,7 +93,7 @@ public class ConfirmOpLogBo {
         this.supplierName = confirmOrderBo.getSupplierName();
         this.cardNo = confirmOrderBo.getCardNo();
         this.arriveDate = confirmOrderBo.getTimeEarly();
-        this.opType = confirmOpType.getKey();
+        this.opType = confirmOpType.getKey()+"";
         this.opDate = new Date();
         this.department = DepartmentEnum.Confirm.getKey() + "";
         this.groupId = confirmOrderBo.getGroupId();
@@ -125,7 +125,7 @@ public class ConfirmOpLogBo {
         this.hotelId = po.getHotelId();
         this.hotelName = po.getHotelName();
         this.supplierName = po.getSupplierName();
-        this.opType = confirmOpType.getKey();
+        this.opType = confirmOpType.getKey()+"";
         this.department = departmentEnum.getKey()+"";
         this.groupId = po.getGroupId();
         this.rankId = po.getRankId();
