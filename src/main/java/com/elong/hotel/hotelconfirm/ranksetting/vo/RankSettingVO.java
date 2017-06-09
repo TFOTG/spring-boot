@@ -5,11 +5,13 @@
  */
 package com.elong.hotel.hotelconfirm.ranksetting.vo;
 
+import com.elong.hotel.common.parameter.PaginationParameter;
+
 /**
  * @author jianjun.wang
  * @version 1.0.0
  */
-public class RankSettingVO {
+public class RankSettingVO extends PaginationParameter{
 
 	private Integer deptment;
 	
@@ -17,6 +19,7 @@ public class RankSettingVO {
 	
 	private Integer rankid;
 
+	private int ehcacheEnbale;
 
 	public Integer getDeptment() {
 		return deptment;
@@ -42,10 +45,18 @@ public class RankSettingVO {
 		this.rankid = rankid;
 	}
 
-	public RankSettingVO(Integer deptment, Integer enable) {
-		super();
+	public RankSettingVO(Integer deptment, Integer enable, int ehcacheEnbale) {
 		this.deptment = deptment;
 		this.enable = enable;
+		this.ehcacheEnbale = ehcacheEnbale;
+	}
+
+	public int getEhcacheEnbale() {
+		return ehcacheEnbale;
+	}
+
+	public void setEhcacheEnbale(int ehcacheEnbale) {
+		this.ehcacheEnbale = ehcacheEnbale;
 	}
 
 	public RankSettingVO() {

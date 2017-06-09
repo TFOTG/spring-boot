@@ -93,6 +93,10 @@ public class ConfirmOrderConfig {
      */
     private Integer executorQueueSize;
 
+    private int groupEhCacheEnable;
+    
+    private int rankEnCacheEnable;
+    
     public ConfirmOrderConfig() {
         priority4HighMinute = 60;
         priority4HighDistance = 3000;
@@ -111,6 +115,8 @@ public class ConfirmOrderConfig {
         executorMaxTimeOut = 30;
         executorThreads = 10;
         executorQueueSize = 500;
+        rankEnCacheEnable = 0;
+        groupEhCacheEnable = 0;
     }
 
     public String getPriority4NightEnd() {
@@ -249,7 +255,23 @@ public class ConfirmOrderConfig {
         this.executorQueueSize = executorQueueSize;
     }
 
-    public static void main(String[] args) {
+    public int getGroupEhCacheEnable() {
+		return groupEhCacheEnable;
+	}
+
+	public void setGroupEhCacheEnable(int groupEhCacheEnable) {
+		this.groupEhCacheEnable = groupEhCacheEnable;
+	}
+
+	public int getRankEnCacheEnable() {
+		return rankEnCacheEnable;
+	}
+
+	public void setRankEnCacheEnable(int rankEnCacheEnable) {
+		this.rankEnCacheEnable = rankEnCacheEnable;
+	}
+
+	public static void main(String[] args) {
         ConfirmOrderConfig config = new ConfirmOrderConfig();
         System.out.println(JSON.toJSONString(config));
     }

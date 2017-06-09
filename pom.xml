@@ -139,7 +139,7 @@
         <dependency>
             <groupId>com.elong</groupId>
             <artifactId>hotswitch-client</artifactId>
-            <version>1.8.0</version>
+            <version>1.9.0</version>
             <exclusions>
                 <exclusion>
                     <artifactId>javax.servlet-api</artifactId>
