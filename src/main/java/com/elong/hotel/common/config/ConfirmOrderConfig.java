@@ -122,7 +122,7 @@ public class ConfirmOrderConfig {
         executorThreads = 10;
         executorQueueSize = 500;
         chargeReclaimPromise=10;
-
+        urgeAddMins=15;
     }
 
     public Integer getChargeReclaimPromise() {
