@@ -41,6 +41,25 @@ public class ConfigurationManager {
         }
     }
 
+    /**
+     * 获取HotSwitchConfig，如未获取到则返回默认值
+     * @param configName
+     * @param type
+     * @param defaultValue
+     * @param <T>
+     * @return
+     */
+    public static <T> T getHotSwitchConfig(String configName, Class<T> type,T defaultValue) {
+        try {
+            T config = hotSwitchConfigHelper.GetConfigValue(configName, type,defaultValue);
+            return config;
+        } catch (Exception e) {
+            return null;
+        }
+    }
+
+
+
     public static boolean updateConfigValue(String key,String value,String modifyUser){
     	try {
 			return hotSwitchConfigHelper.UpdateBaseConfigValue(key, value, modifyUser);

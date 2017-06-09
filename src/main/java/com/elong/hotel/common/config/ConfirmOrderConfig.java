@@ -98,6 +98,11 @@ public class ConfirmOrderConfig {
     private int rankEnCacheEnable;
     
     /**
+     * 主管回收承诺时间与当前时间差
+     */
+    private Integer chargeReclaimPromise;
+
+    /**
      * 催确认增加的承诺时间
      */
     private Integer urgeAddMins;
@@ -114,12 +119,22 @@ public class ConfirmOrderConfig {
         delayTimes = 1;
         confirmOrderInDBTaskInterval = 5;
         getOrderTimeOut = 3000;
-        messageName = "OrderTimestampChange";
+        messageName = "OrderUrgentVerifyTagChange,OrderAllChange,BaseOrderStatusChange,ProductChange,ReserveChange,SetDCProcessStatusForOTA,ConfirmOrderStorageIn,ConfirmOrderTimestamp,SetOTADCProcessStatus";
         log4ConfirmOpLog = true;
         log4ConfirmServiceLog = true;
         executorMaxTimeOut = 30;
         executorThreads = 10;
         executorQueueSize = 500;
+        chargeReclaimPromise=10;
+        urgeAddMins=15;
+    }
+
+    public Integer getChargeReclaimPromise() {
+        return chargeReclaimPromise;
+    }
+
+    public void setChargeReclaimPromise(Integer chargeReclaimPromise) {
+        this.chargeReclaimPromise = chargeReclaimPromise;
         rankEnCacheEnable = 0;
         groupEhCacheEnable = 0;
         urgeAddMins = 15;
