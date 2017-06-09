@@ -13,7 +13,7 @@ public class UpdateConfirmOrderRequest {
     //分配的员工姓名
     private String staffName;
 
-    //更新类型，0分配，1回收
+    //更新类型，6分配，7回收
     private Integer updateType;
 
     public List<Integer> getOrderIds() {
