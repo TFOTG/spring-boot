@@ -93,6 +93,11 @@ public class ConfirmOrderConfig {
      */
     private Integer executorQueueSize;
 
+    /**
+     * 主管回收承诺时间与当前时间差
+     */
+    private Integer chargeReclaimPromise;
+
     public ConfirmOrderConfig() {
         priority4HighMinute = 60;
         priority4HighDistance = 3000;
@@ -105,12 +110,22 @@ public class ConfirmOrderConfig {
         delayTimes = 1;
         confirmOrderInDBTaskInterval = 5;
         getOrderTimeOut = 3000;
-        messageName = "OrderTimestampChange";
+        messageName = "OrderUrgentVerifyTagChange,OrderAllChange,BaseOrderStatusChange,ProductChange,ReserveChange,SetDCProcessStatusForOTA,ConfirmOrderStorageIn,ConfirmOrderTimestamp,SetOTADCProcessStatus";
         log4ConfirmOpLog = true;
         log4ConfirmServiceLog = true;
         executorMaxTimeOut = 30;
         executorThreads = 10;
         executorQueueSize = 500;
+        chargeReclaimPromise=10;
+
+    }
+
+    public Integer getChargeReclaimPromise() {
+        return chargeReclaimPromise;
+    }
+
+    public void setChargeReclaimPromise(Integer chargeReclaimPromise) {
+        this.chargeReclaimPromise = chargeReclaimPromise;
     }
 
     public String getPriority4NightEnd() {
