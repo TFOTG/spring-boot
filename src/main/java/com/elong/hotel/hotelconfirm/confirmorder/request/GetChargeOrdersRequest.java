@@ -23,7 +23,7 @@ public class GetChargeOrdersRequest {
 
     private String hotelId;
 
-    private Date timeEarly;
+    private String timeEarly;
 
     private int urgeConfirm;
 
@@ -98,11 +98,11 @@ public class GetChargeOrdersRequest {
         this.hotelId = hotelId;
     }
 
-    public Date getTimeEarly() {
+    public String getTimeEarly() {
         return timeEarly;
     }
 
-    public void setTimeEarly(Date timeEarly) {
+    public void setTimeEarly(String timeEarly) {
         this.timeEarly = timeEarly;
     }
 
