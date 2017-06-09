@@ -93,6 +93,10 @@ public class ConfirmOrderConfig {
      */
     private Integer executorQueueSize;
 
+    private int groupEhCacheEnable;
+    
+    private int rankEnCacheEnable;
+    
     /**
      * 主管回收承诺时间与当前时间差
      */
@@ -131,6 +135,8 @@ public class ConfirmOrderConfig {
 
     public void setChargeReclaimPromise(Integer chargeReclaimPromise) {
         this.chargeReclaimPromise = chargeReclaimPromise;
+        rankEnCacheEnable = 0;
+        groupEhCacheEnable = 0;
         urgeAddMins = 15;
     }
 
@@ -269,6 +275,22 @@ public class ConfirmOrderConfig {
     public void setExecutorQueueSize(Integer executorQueueSize) {
         this.executorQueueSize = executorQueueSize;
     }
+
+    public int getGroupEhCacheEnable() {
+		return groupEhCacheEnable;
+	}
+
+	public void setGroupEhCacheEnable(int groupEhCacheEnable) {
+		this.groupEhCacheEnable = groupEhCacheEnable;
+	}
+
+	public int getRankEnCacheEnable() {
+		return rankEnCacheEnable;
+	}
+
+	public void setRankEnCacheEnable(int rankEnCacheEnable) {
+		this.rankEnCacheEnable = rankEnCacheEnable;
+	}
 
     public Integer getUrgeAddMins() {
         return urgeAddMins;

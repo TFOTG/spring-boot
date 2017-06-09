@@ -60,4 +60,11 @@ public class ConfigurationManager {
 
 
 
+    public static boolean updateConfigValue(String key,String value,String modifyUser){
+    	try {
+			return hotSwitchConfigHelper.UpdateBaseConfigValue(key, value, modifyUser);
+		} catch (HotSwitchClientException e) {
+			return false;
+		}
+    }
 }
