@@ -52,7 +52,6 @@ public class ConfirmOrderConfig {
      */
     private String priority4NightEnd;
 
-
     /**
      * 确认兜底任务时间间隔
      */
@@ -98,6 +97,17 @@ public class ConfirmOrderConfig {
      */
     private Integer urgeAddMins;
 
+    /**
+     * 初拒 - 10 分钟
+     * (当前时间 + 10分钟 > 给客人承诺时间) && 给客人延迟过承诺时间 直接投放终拒
+     */
+    private Integer firstRefuseTime;
+
+    /**
+     * 初拒供应商Ids
+     */
+    private String firstRefuseSupplierIds;
+
     public ConfirmOrderConfig() {
         priority4HighMinute = 60;
         priority4HighDistance = 3000;
@@ -117,6 +127,8 @@ public class ConfirmOrderConfig {
         executorThreads = 10;
         executorQueueSize = 500;
         urgeAddMins = 15;
+        firstRefuseTime = 10;
+        firstRefuseSupplierIds = "";
     }
 
     public String getPriority4NightEnd() {
@@ -261,6 +273,22 @@ public class ConfirmOrderConfig {
 
     public void setUrgeAddMins(Integer urgeAddMins) {
         this.urgeAddMins = urgeAddMins;
+    }
+
+    public Integer getFirstRefuseTime() {
+        return firstRefuseTime;
+    }
+
+    public void setFirstRefuseTime(Integer firstRefuseTime) {
+        this.firstRefuseTime = firstRefuseTime;
+    }
+
+    public String getFirstRefuseSupplierIds() {
+        return firstRefuseSupplierIds;
+    }
+
+    public void setFirstRefuseSupplierIds(String firstRefuseSupplierIds) {
+        this.firstRefuseSupplierIds = firstRefuseSupplierIds;
     }
 
     public static void main(String[] args) {
