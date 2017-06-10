@@ -17,7 +17,7 @@ public class UpdateOrderNotesRequest {
 	// 酒店备注
 	private String notesToHotel;
 	// 操作者信息
-	private OperatorInfo clientOperatorInfo;
+	private ClientOperatorInfo clientOperatorInfo;
 
 	public String getNotesToElong() {
 		return notesToElong;
@@ -43,11 +43,11 @@ public class UpdateOrderNotesRequest {
 		this.notesToHotel = notesToHotel;
 	}
 
-	public OperatorInfo getClientOperatorInfo() {
+	public ClientOperatorInfo getClientOperatorInfo() {
 		return clientOperatorInfo;
 	}
 
-	public void setClientOperatorInfo(OperatorInfo clientOperatorInfo) {
+	public void setClientOperatorInfo(ClientOperatorInfo clientOperatorInfo) {
 		this.clientOperatorInfo = clientOperatorInfo;
 	}
 
