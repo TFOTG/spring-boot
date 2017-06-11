@@ -34,6 +34,8 @@ public class ConfirmOrderActionLogPo {
 
     private Date opDate;
 
+    private String operatorName;
+
     private String operatorIp;
 
     public Long getHotelId() {
@@ -122,6 +124,14 @@ public class ConfirmOrderActionLogPo {
 
     public void setTargetStatus(String targetStatus) {
         this.targetStatus = targetStatus;
+    }
+
+    public String getOperatorName() {
+        return operatorName;
+    }
+
+    public void setOperatorName(String operatorName) {
+        this.operatorName = operatorName;
     }
 
     public Date getTargetTime() {
