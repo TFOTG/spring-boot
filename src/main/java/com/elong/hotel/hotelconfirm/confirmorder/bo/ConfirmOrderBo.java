@@ -67,6 +67,11 @@ public class ConfirmOrderBo extends CompareEntityBase {
     private String ratePlanId;
     private Long additionalStatus;
 
+    private String note2Elong;
+    private String note2Hotel;
+    private String note2Client;
+    private String confirmNo;
+
     public ConfirmOrderBo(){
 
     }
@@ -621,6 +626,38 @@ public class ConfirmOrderBo extends CompareEntityBase {
 
     public void setAdditionalStatus(Long additionalStatus) {
         this.additionalStatus = additionalStatus;
+    }
+
+    public String getNote2Client() {
+        return note2Client;
+    }
+
+    public void setNote2Client(String note2Client) {
+        this.note2Client = note2Client;
+    }
+
+    public String getNote2Elong() {
+        return note2Elong;
+    }
+
+    public void setNote2Elong(String note2Elong) {
+        this.note2Elong = note2Elong;
+    }
+
+    public String getNote2Hotel() {
+        return note2Hotel;
+    }
+
+    public void setNote2Hotel(String note2Hotel) {
+        this.note2Hotel = note2Hotel;
+    }
+
+    public String getConfirmNo() {
+        return confirmNo;
+    }
+
+    public void setConfirmNo(String confirmNo) {
+        this.confirmNo = confirmNo;
     }
 
     private Integer getConfirmType(long orderFlag) {
