@@ -19,7 +19,15 @@ public enum ActionLogTypeEnum {
     /**
      * 需担保/需同意
      */
-    SpecialStatus(4, "需担保/需同意");
+    SpecialStatus(4, "需担保/需同意"),
+    /**
+     * 催确认
+     */
+    Urge(5, "催确认"),
+    /**
+     * 手动修改承诺时间
+     */
+    ChangePromiseTimeWithMis(6,"手动修改承诺时间");
 
     private int key;
     private String value;
