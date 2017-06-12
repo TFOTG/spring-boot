@@ -8,22 +8,49 @@ package com.elong.hotel.hotelconfirm.ranksetting.po;
 import java.util.Date;
 import java.util.List;
 
+import javax.validation.constraints.Max;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotNull;
+
+import org.hibernate.validator.constraints.Length;
+import org.hibernate.validator.constraints.NotBlank;
+
+import com.elong.hotel.hotelconfirm.valid.FirstValid;
+import com.elong.hotel.hotelconfirm.valid.SecondValid;
+
 /**
  * @author jianjun.wang
  * @version 1.0.0
  */
 public class RanksettingOperatePo {
 
+	@NotNull(message="排序设置rankid不能为空",groups=SecondValid.class)
 	private String rankid;//排序设置ID
+	@NotBlank
+	@Length(min=0, max=20 , message="名称不要超过20个字",groups={FirstValid.class,SecondValid.class})
 	private String rankname;//排序名称
+	@NotNull(message="部门不能为空",groups=SecondValid.class)
+	@Min(1)
+	@Max(2)
 	private Integer deptment;//部门 1确认
+	@NotNull(message="是否启用不能为空",groups=SecondValid.class)
+	@Min(0)
+	@Max(1)
 	private Integer enable;//是否启用 1启用 0废弃
 	private int sort;//排序优先级  数字越大 优先级越高
+	@Min(0)
+	@Max(1)
 	private int useivrservice;// 是否启用ivr  0不启用 1启用
+	@Min(0)
 	private int ivrdelaytime; //ivr 延迟时间
+	@Min(0)
+	@Max(1)
 	private int useebkservice; //是否使用ebking 0不使用  1使用
+	@Min(0)
 	private int delaytime;//可获取时间
+	@Min(0)
 	private int promisetime;//承诺时间
+	@Min(0)
 	private int urgetime; //催可确认时间
 	private Date opdate; //操作时间
 	private String opname;//操作人
