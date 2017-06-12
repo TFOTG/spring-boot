@@ -56,4 +56,11 @@ public enum PriorityEnum {
         return value;
     }
 
+
+    public static void main(String[] args) {
+        for (PriorityEnum a : PriorityEnum.values()) {
+            System.out.print(a.getKey()+":"+a.getValue()+";");
+        }
+    }
+
 }

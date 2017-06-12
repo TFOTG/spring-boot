@@ -79,4 +79,10 @@ public enum ConfirmOrderStatusEnum {
     }
 
 
+
+    public static void main(String[] args) {
+        for (ConfirmOrderStatusEnum a : ConfirmOrderStatusEnum.values()) {
+            System.out.print(a.getStatus()+":"+a.getDescription()+";");
+        }
+    }
 }
