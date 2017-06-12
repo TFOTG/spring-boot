@@ -23,6 +23,8 @@ public class RejectSupplierIdConfig implements Serializable{
 	private String operatorTime;
 	
 	private String supplierIds;
+	
+	private String operatorIp;
 
 	public String getOperatorName() {
 		return operatorName;
@@ -46,6 +48,14 @@ public class RejectSupplierIdConfig implements Serializable{
 
 	public void setSupplierIds(String supplierIds) {
 		this.supplierIds = supplierIds;
+	}
+
+	public String getOperatorIp() {
+		return operatorIp;
+	}
+
+	public void setOperatorIp(String operatorIp) {
+		this.operatorIp = operatorIp;
 	}
 	
 	
