@@ -2,6 +2,7 @@ package com.elong.hotel.hotelconfirm.confirmorder.bo;
 
 
 import com.elong.hotel.common.bo.OperatorInfoBo;
+import com.elong.hotel.hotelconfirm.confirmorder.po.ConfirmOrderPo;
 import com.elong.hotel.proxy.javaorder.getorder.Order;
 
 /**
@@ -13,16 +14,19 @@ public class ServerRunningActionEntity {
 
     OperatorInfoBo operatorInfoBo;
 
+    ConfirmOrderPo confirmOrderPo;
+
     Order order;
 
     public ServerRunningActionEntity(ConfirmOrderBo confirmOrderBo){
         this.confirmOrderBo = confirmOrderBo;
     }
 
-    public ServerRunningActionEntity(ConfirmOrderBo confirmOrderBo, OperatorInfoBo operatorInfoBo, Order order) {
+    public ServerRunningActionEntity(ConfirmOrderBo confirmOrderBo, OperatorInfoBo operatorInfoBo, Order order, ConfirmOrderPo confirmOrderPo) {
         this.confirmOrderBo = confirmOrderBo;
         this.operatorInfoBo = operatorInfoBo;
         this.order = order;
+        this.confirmOrderPo = confirmOrderPo;
     }
 
     public ConfirmOrderBo getConfirmOrderBo() {
@@ -47,5 +51,13 @@ public class ServerRunningActionEntity {
 
     public void setOperatorInfoBo(OperatorInfoBo operatorInfoBo) {
         this.operatorInfoBo = operatorInfoBo;
+    }
+
+    public ConfirmOrderPo getConfirmOrderPo() {
+        return confirmOrderPo;
+    }
+
+    public void setConfirmOrderPo(ConfirmOrderPo confirmOrderPo) {
+        this.confirmOrderPo = confirmOrderPo;
     }
 }
