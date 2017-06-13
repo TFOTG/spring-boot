@@ -7,6 +7,9 @@ package com.elong.hotel.common.config;
 
 import java.io.Serializable;
 
+import org.hibernate.validator.constraints.Length;
+import org.hibernate.validator.constraints.NotBlank;
+
 /**
  * @author jianjun.wang
  * @version 1.0.0
@@ -22,6 +25,8 @@ public class RejectSupplierIdConfig implements Serializable{
 	
 	private String operatorTime;
 	
+	@NotBlank
+	@Length(min=1,message="供应商id不能为空")
 	private String supplierIds;
 	
 	private String operatorIp;

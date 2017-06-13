@@ -5,7 +5,15 @@
  */
 package com.elong.hotel.hotelconfirm.ranksetting.vo;
 
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotNull;
+
+import org.hibernate.validator.constraints.Range;
+
 import com.elong.hotel.common.parameter.PaginationParameter;
+import com.elong.hotel.hotelconfirm.valid.FirstValid;
+import com.elong.hotel.hotelconfirm.valid.SecondValid;
+import com.elong.hotel.hotelconfirm.valid.ThirdValid;
 
 /**
  * @author jianjun.wang
@@ -13,10 +21,16 @@ import com.elong.hotel.common.parameter.PaginationParameter;
  */
 public class RankSettingVO extends PaginationParameter{
 
+	@NotNull(message="deptment不能为空",groups=SecondValid.class)
+	@Min(1)
 	private Integer deptment;
 	
+	@NotNull(message="enable不能为空",groups=ThirdValid.class)
+	@Range(min=0,max=1,message="状态只能是0或1")
 	private Integer enable;
 	
+	@NotNull(message="排序rankid不能为空",groups={FirstValid.class,ThirdValid.class})
+	@Min(1)
 	private Integer rankid;
 
 	private int ehcacheEnbale;
