@@ -27,7 +27,7 @@ public enum ActionLogTypeEnum {
     /**
      * 手动修改承诺时间
      */
-    ChangePromiseTimeWithMis(6,"手动修改承诺时间");
+    ChangePromiseTime(6,"修改承诺时间");
 
     private int key;
     private String value;
