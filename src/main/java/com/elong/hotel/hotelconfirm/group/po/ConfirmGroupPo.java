@@ -22,14 +22,6 @@ public class ConfirmGroupPo {
 
     private Date opdate;
 
-    public Integer getDeptment() {
-        return deptment;
-    }
-
-    public void setDeptment(Integer deptment) {
-        this.deptment = deptment;
-    }
-
     private Integer deptment;
 
     private boolean enable;
@@ -42,7 +34,7 @@ public class ConfirmGroupPo {
 
     private String opip;
 
-    private List<GroupTagBo> grouptags;
+    private List<ConfirmGroupTagPo> grouptags;
 
     private List<GroupStaffBo> groupstaffs;
 
@@ -109,9 +101,17 @@ public class ConfirmGroupPo {
     public void setGroupname(String groupname) {
         this.groupname = groupname;
     }
+    public Integer getDeptment() {
+        return deptment;
+    }
+
+    public void setDeptment(Integer deptment) {
+        this.deptment = deptment;
+    }
+
     public Map<String, String> findTags4Map(){
         Map<String, String> map = new HashMap<String, String>();
-        for (GroupTagBo tag : grouptags) {
+        for (ConfirmGroupTagPo tag : grouptags) {
             if(!map.containsKey(tag.getTagkey())){
                 map.put(tag.getTagkey(), tag.getTagvalue());
             }
@@ -126,11 +126,11 @@ public class ConfirmGroupPo {
     public void setOpdate(Date opdate) {
         this.opdate = opdate;
     }
-    public List<GroupTagBo> getGrouptags() {
+    public List<ConfirmGroupTagPo> getGrouptags() {
         return grouptags;
     }
 
-    public void setGrouptags(List<GroupTagBo> grouptags) {
+    public void setGrouptags(List<ConfirmGroupTagPo> grouptags) {
         this.grouptags = grouptags;
     }
 
