@@ -1,6 +1,7 @@
 package com.elong.hotel.hotelconfirm.confirmorder.request;
 
 import com.elong.hotel.common.bo.OperatorInfoBo;
+import com.elong.hotel.proxy.javaorder.getorder.Order;
 
 import java.util.Date;
 
@@ -12,6 +13,8 @@ public class ChangePromiseTimeRequest {
     private Integer orderId;
 
     private Date promiseTime;
+
+    private Order order;
 
     private OperatorInfoBo operatorInfo;
 
@@ -37,5 +40,13 @@ public class ChangePromiseTimeRequest {
 
     public void setOperatorInfo(OperatorInfoBo operatorInfo) {
         this.operatorInfo = operatorInfo;
+    }
+
+    public Order getOrder() {
+        return order;
+    }
+
+    public void setOrder(Order order) {
+        this.order = order;
     }
 }
