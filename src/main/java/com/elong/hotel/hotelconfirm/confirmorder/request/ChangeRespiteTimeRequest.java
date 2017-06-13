@@ -1,6 +1,7 @@
 package com.elong.hotel.hotelconfirm.confirmorder.request;
 
 import com.elong.hotel.common.bo.OperatorInfoBo;
+import org.springframework.format.annotation.DateTimeFormat;
 
 import java.util.Date;
 
@@ -11,6 +12,7 @@ public class ChangeRespiteTimeRequest {
 
     private Integer orderId;
 
+    @DateTimeFormat(pattern="yyyy-MM-dd HH:mm:ss")
     private Date respiteTime;
 
     private OperatorInfoBo operatorInfo;
