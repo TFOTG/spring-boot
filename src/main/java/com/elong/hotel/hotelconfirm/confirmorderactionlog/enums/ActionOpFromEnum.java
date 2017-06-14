@@ -5,13 +5,17 @@ package com.elong.hotel.hotelconfirm.confirmorderactionlog.enums;
  */
 public enum ActionOpFromEnum {
     /**
-     * 已审
+     * Mis操作
      */
     Mis("mis", "Mis操作"),
     /**
-     * 已审
+     * Ebooking操作
      */
-    Ebooking("ebooking", "Ebooking操作");
+    Ebooking("ebooking", "Ebooking操作"),
+    /**
+     * App操作
+     */
+    App("app", "App操作");
 
     private String desc;
     private String key;

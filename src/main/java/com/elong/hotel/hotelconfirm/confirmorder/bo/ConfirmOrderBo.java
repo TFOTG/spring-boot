@@ -71,6 +71,7 @@ public class ConfirmOrderBo extends CompareEntityBase {
     private String note2Hotel;
     private String note2Client;
     private String confirmNo;
+    private String delayReason;
 
     public ConfirmOrderBo(){
 
@@ -658,6 +659,14 @@ public class ConfirmOrderBo extends CompareEntityBase {
 
     public void setConfirmNo(String confirmNo) {
         this.confirmNo = confirmNo;
+    }
+
+    public String getDelayReason() {
+        return delayReason;
+    }
+
+    public void setDelayReason(String delayReason) {
+        this.delayReason = delayReason;
     }
 
     private Integer getConfirmType(long orderFlag) {
