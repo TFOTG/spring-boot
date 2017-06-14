@@ -18,6 +18,8 @@ public class ServerAction4UrgeResponse extends ServerActionResponseBase implemen
 
 	Boolean isNightRange ;
 
+	Boolean canUrge;
+
 	public Boolean getIsNightRange() {
 		return isNightRange;
 	}
@@ -56,5 +58,13 @@ public class ServerAction4UrgeResponse extends ServerActionResponseBase implemen
 
 	public void setRankingImproveCount(int rankingImproveCount) {
 		this.rankingImproveCount = rankingImproveCount;
+	}
+
+	public Boolean getCanUrge() {
+		return canUrge;
+	}
+
+	public void setCanUrge(Boolean canUrge) {
+		this.canUrge = canUrge;
 	}
 }
