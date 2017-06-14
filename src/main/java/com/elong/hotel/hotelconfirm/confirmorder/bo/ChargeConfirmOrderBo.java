@@ -1,5 +1,7 @@
 package com.elong.hotel.hotelconfirm.confirmorder.bo;
 
+import com.alibaba.fastjson.annotation.JSONField;
+
 import java.util.Date;
 
 /**
@@ -12,7 +14,8 @@ public class ChargeConfirmOrderBo {
 
     private String hotelName;
 
-    private String timeEarly;
+    @JSONField(format = "yyyy-MM-dd HH:mm:ss")
+    private Date timeEarly;
 
     private String groupName;
 
@@ -41,7 +44,8 @@ public class ChargeConfirmOrderBo {
     private Date firstRefusedTime;
 
     //预约时间
-    private String respiteTime;
+    @JSONField(format = "yyyy-MM-dd HH:mm:ss")
+    private Date respiteTime;
 
 
     //可获取时间 当前时间减去订单获取时间
@@ -64,14 +68,6 @@ public class ChargeConfirmOrderBo {
 
     public void setHotelName(String hotelName) {
         this.hotelName = hotelName;
-    }
-
-    public String getTimeEarly() {
-        return timeEarly;
-    }
-
-    public void setTimeEarly(String timeEarly) {
-        this.timeEarly = timeEarly;
     }
 
     public String getGroupName() {
@@ -162,11 +158,11 @@ public class ChargeConfirmOrderBo {
         this.firstRefusedTime = firstRefusedTime;
     }
 
-    public String getRespiteTime() {
+    public Date getRespiteTime() {
         return respiteTime;
     }
 
-    public void setRespiteTime(String respiteTime) {
+    public void setRespiteTime(Date respiteTime) {
         this.respiteTime = respiteTime;
     }
 
@@ -184,5 +180,13 @@ public class ChargeConfirmOrderBo {
 
     public void setSortTime(Date sortTime) {
         this.sortTime = sortTime;
+    }
+
+    public Date getTimeEarly() {
+        return timeEarly;
+    }
+
+    public void setTimeEarly(Date timeEarly) {
+        this.timeEarly = timeEarly;
     }
 }
