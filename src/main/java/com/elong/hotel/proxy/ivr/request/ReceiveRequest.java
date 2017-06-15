@@ -24,10 +24,10 @@ public class ReceiveRequest extends ServiceRequestBase implements Serializable {
 	//酒店id
 	private String hotelId;
 	//模板数据
-	private String flowData;
+	private Object flowData;
 
 	public ReceiveRequest(String bussinessGuid, Integer flowTemplateNo, Integer priority, String productline, String mobile,
-			String extension, String orderIds, String hotelId, String flowData) {
+			String extension, String orderIds, String hotelId, Object flowData) {
 		this.bussinessGuid = bussinessGuid;
 		this.flowTemplateNo = flowTemplateNo;
 		this.priority = priority;
@@ -95,11 +95,11 @@ public class ReceiveRequest extends ServiceRequestBase implements Serializable {
 		this.hotelId = hotelId;
 	}
 
-	public String getFlowData() {
+	public Object getFlowData() {
 		return flowData;
 	}
 
-	public void setFlowData(String flowData) {
+	public void setFlowData(Object flowData) {
 		this.flowData = flowData;
 	}
 

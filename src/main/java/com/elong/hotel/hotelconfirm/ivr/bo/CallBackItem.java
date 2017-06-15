@@ -1,22 +1,28 @@
 package com.elong.hotel.hotelconfirm.ivr.bo;
 
+import com.alibaba.fastjson.annotation.JSONField;
 
-public class CallBackItem {
-private int OrderId;
+import java.io.Serializable;
 
-private String FeedBackStatus;
+public class CallBackItem implements Serializable {
+@JSONField(name = "OrderId")
+private int orderId;
+@JSONField(name = "FeedBackStatus")
+private String feedBackStatus;
 
-public void setOrderId(int OrderId){
-this.OrderId = OrderId;
-}
-public int getOrderId(){
-return this.OrderId;
-}
-public void setFeedBackStatus(String FeedBackStatus){
-this.FeedBackStatus = FeedBackStatus;
-}
-public String getFeedBackStatus(){
-return this.FeedBackStatus;
-}
+	public int getOrderId() {
+		return orderId;
+	}
 
+	public void setOrderId(int orderId) {
+		this.orderId = orderId;
+	}
+
+	public String getFeedBackStatus() {
+		return feedBackStatus;
+	}
+
+	public void setFeedBackStatus(String feedBackStatus) {
+		this.feedBackStatus = feedBackStatus;
+	}
 }

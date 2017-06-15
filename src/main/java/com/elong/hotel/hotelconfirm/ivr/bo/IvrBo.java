@@ -9,6 +9,9 @@ public class IvrBo implements Serializable{
 
 	private String hotelId;
 
+	public IvrBo() {
+	}
+
 	public IvrBo(String hotelId) {
 		this.hotelId = hotelId;
 	}
