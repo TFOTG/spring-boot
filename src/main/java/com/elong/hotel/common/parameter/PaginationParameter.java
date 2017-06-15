@@ -25,6 +25,8 @@ public class PaginationParameter {
 	
 	private String whereid;
 
+	private String selectColumns;//查询列
+
 	public Integer getStratItem() {
 		return stratItem;
 	}
@@ -89,4 +91,11 @@ public class PaginationParameter {
 		this.whereid = whereid;
 	}
 
+	public String getSelectColumns() {
+		return selectColumns;
+	}
+
+	public void setSelectColumns(String selectColumns) {
+		this.selectColumns = selectColumns;
+	}
 }
