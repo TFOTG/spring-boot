@@ -59,7 +59,7 @@ public class ConfirmOrderBo extends CompareEntityBase {
     private Date sortTime;
     private Date defaultSortTime;
     private Date firstRefusedTime;
-    private Integer isebrefuse;
+    private Integer isEbRefuse;
 
     private Date orderTimestamp;
 
@@ -227,7 +227,7 @@ public class ConfirmOrderBo extends CompareEntityBase {
             this.promiseChangeTimes = confirmOrder.getPromiseChangeTimes();
             this.isFaxReturn = confirmOrder.getIsFaxReturn();
             this.isLinked = confirmOrder.getIsLinked();
-            this.isebrefuse = confirmOrder.getIsebrefuse();
+            this.isEbRefuse = confirmOrder.getIsEbRefuse();
             this.urge = confirmOrder.getUrge();
             this.respiteTime = confirmOrder.getRespiteTime();
             this.nextServiceTime = confirmOrder.getNextServiceTime();
@@ -600,12 +600,12 @@ public class ConfirmOrderBo extends CompareEntityBase {
         this.cardNo = cardNo;
     }
 
-    public Integer getIsebrefuse() {
-        return isebrefuse;
+    public Integer getIsEbRefuse() {
+        return isEbRefuse;
     }
 
-    public void setIsebrefuse(Integer isebrefuse) {
-        this.isebrefuse = isebrefuse;
+    public void setIsEbRefuse(Integer isEbRefuse) {
+        this.isEbRefuse = isEbRefuse;
     }
 
     public String getReserStatus2End() {
@@ -679,6 +679,8 @@ public class ConfirmOrderBo extends CompareEntityBase {
     public void setDelayReason(String delayReason) {
         this.delayReason = delayReason;
     }
+
+
 
     private Integer getConfirmType(long orderFlag) {
         //直连确认
