@@ -53,6 +53,17 @@ public class ChargeConfirmOrderBo {
 
     private Date sortTime;
 
+    //传真是否回传
+    private int isFaxReturn;
+
+
+    public int getIsFaxReturn() {
+        return isFaxReturn;
+    }
+
+    public void setIsFaxReturn(int isFaxReturn) {
+        this.isFaxReturn = isFaxReturn;
+    }
 
     public String getOrderId() {
         return orderId;
