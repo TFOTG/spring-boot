@@ -32,6 +32,20 @@ public class SoaConfig {
 
     private String getOrderHistory;
 
+    private String ivrService;
+
+    private int ivrTimeOut;
+
+    private String ivrSend;
+
+    private String ivrBoundCount;
+
+    private String productService;
+
+    private int productTimeOut;
+
+    private String productGetHotelPhone;
+
     /**
      * 调用ebk延迟接口service
      */
@@ -53,6 +67,62 @@ public class SoaConfig {
 
     public void setHotelProduct(String hotelProduct) {
         this.hotelProduct = hotelProduct;
+    }
+
+    public String getIvrService() {
+        return ivrService;
+    }
+
+    public void setIvrService(String ivrService) {
+        this.ivrService = ivrService;
+    }
+
+    public int getIvrTimeOut() {
+        return ivrTimeOut;
+    }
+
+    public void setIvrTimeOut(int ivrTimeOut) {
+        this.ivrTimeOut = ivrTimeOut;
+    }
+
+    public String getIvrSend() {
+        return ivrSend;
+    }
+
+    public void setIvrSend(String ivrSend) {
+        this.ivrSend = ivrSend;
+    }
+
+    public String getIvrBoundCount() {
+        return ivrBoundCount;
+    }
+
+    public String getProductService() {
+        return productService;
+    }
+
+    public void setProductService(String productService) {
+        this.productService = productService;
+    }
+
+    public int getProductTimeOut() {
+        return productTimeOut;
+    }
+
+    public void setProductTimeOut(int productTimeOut) {
+        this.productTimeOut = productTimeOut;
+    }
+
+    public String getProductGetHotelPhone() {
+        return productGetHotelPhone;
+    }
+
+    public void setProductGetHotelPhone(String productGetHotelPhone) {
+        this.productGetHotelPhone = productGetHotelPhone;
+    }
+
+    public void setIvrBoundCount(String ivrBoundCount) {
+        this.ivrBoundCount = ivrBoundCount;
     }
 
     public String getJavaOrderQueryService() {

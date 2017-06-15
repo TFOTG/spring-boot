@@ -52,7 +52,7 @@ public class ConfirmOrderBo extends CompareEntityBase {
     private Date respiteTime;
     private Date nextServiceTime;
     private String ivrGuid;
-    private String ivrStatus;
+    private Integer ivrStatus;
     private Date ivrStartTime;
     private Date enterTime;
     private Date sortTime;
@@ -405,11 +405,11 @@ public class ConfirmOrderBo extends CompareEntityBase {
         this.ivrStartTime = ivrStartTime;
     }
 
-    public String getIvrStatus() {
+    public Integer getIvrStatus() {
         return ivrStatus;
     }
 
-    public void setIvrStatus(String ivrStatus) {
+    public void setIvrStatus(Integer ivrStatus) {
         this.ivrStatus = ivrStatus;
     }
 
