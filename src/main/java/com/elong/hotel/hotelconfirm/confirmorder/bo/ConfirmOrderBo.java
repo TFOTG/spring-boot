@@ -9,6 +9,7 @@ import com.elong.hotel.hotelconfirm.groupfilter.bo.CompareEntityBase;
 import com.elong.hotel.proxy.javaorder.consts.OrderFlagConst;
 import com.elong.hotel.proxy.javaorder.getorder.Order;
 import com.elong.hotel.proxy.javaorder.getorder.OrderHistory;
+import scala.Int;
 
 import java.util.Date;
 import java.util.List;
@@ -52,12 +53,13 @@ public class ConfirmOrderBo extends CompareEntityBase {
     private Date respiteTime;
     private Date nextServiceTime;
     private String ivrGuid;
-    private String ivrStatus;
+    private Integer ivrStatus;
     private Date ivrStartTime;
     private Date enterTime;
     private Date sortTime;
     private Date defaultSortTime;
     private Date firstRefusedTime;
+    private Integer isebrefuse;
 
     private Date orderTimestamp;
 
@@ -225,6 +227,7 @@ public class ConfirmOrderBo extends CompareEntityBase {
             this.promiseChangeTimes = confirmOrder.getPromiseChangeTimes();
             this.isFaxReturn = confirmOrder.getIsFaxReturn();
             this.isLinked = confirmOrder.getIsLinked();
+            this.isebrefuse = confirmOrder.getIsebrefuse();
             this.urge = confirmOrder.getUrge();
             this.respiteTime = confirmOrder.getRespiteTime();
             this.nextServiceTime = confirmOrder.getNextServiceTime();
@@ -405,11 +408,11 @@ public class ConfirmOrderBo extends CompareEntityBase {
         this.ivrStartTime = ivrStartTime;
     }
 
-    public String getIvrStatus() {
+    public Integer getIvrStatus() {
         return ivrStatus;
     }
 
-    public void setIvrStatus(String ivrStatus) {
+    public void setIvrStatus(Integer ivrStatus) {
         this.ivrStatus = ivrStatus;
     }
 
@@ -595,6 +598,14 @@ public class ConfirmOrderBo extends CompareEntityBase {
 
     public void setCardNo(Long cardNo) {
         this.cardNo = cardNo;
+    }
+
+    public Integer getIsebrefuse() {
+        return isebrefuse;
+    }
+
+    public void setIsebrefuse(Integer isebrefuse) {
+        this.isebrefuse = isebrefuse;
     }
 
     public String getReserStatus2End() {

@@ -46,13 +46,14 @@ public class ConfirmOrderPo {
     private Date respiteTime;
     private Date nextServiceTime;
     private String ivrGuid;
-    private String ivrStatus;
+    private Integer ivrStatus;
     private Date ivrStartTime;
     private Date enterTime;
     //员工可获取时间
     private Date sortTime;
     private Date defaultSortTime;
     private Date firstRefusedTime;
+    private Integer isebrefuse;
 
     private Long orderTimestampLong;
 
@@ -90,6 +91,7 @@ public class ConfirmOrderPo {
         this.promiseChangeTimes = bo.getPromiseChangeTimes();
         this.isFaxReturn = bo.getIsFaxReturn();
         this.isLinked = bo.getIsLinked();
+        this.isebrefuse = bo.getIsebrefuse();
         this.urge = bo.getUrge();
         this.respiteTime = bo.getRespiteTime();
         this.nextServiceTime = bo.getNextServiceTime();
@@ -248,6 +250,14 @@ public class ConfirmOrderPo {
         this.isLinked = isLinked;
     }
 
+    public Integer getIsebrefuse() {
+        return isebrefuse;
+    }
+
+    public void setIsebrefuse(Integer isebrefuse) {
+        this.isebrefuse = isebrefuse;
+    }
+
     public String getIvrGuid() {
         return ivrGuid;
     }
@@ -264,11 +274,11 @@ public class ConfirmOrderPo {
         this.ivrStartTime = ivrStartTime;
     }
 
-    public String getIvrStatus() {
+    public Integer getIvrStatus() {
         return ivrStatus;
     }
 
-    public void setIvrStatus(String ivrStatus) {
+    public void setIvrStatus(Integer ivrStatus) {
         this.ivrStatus = ivrStatus;
     }
 
