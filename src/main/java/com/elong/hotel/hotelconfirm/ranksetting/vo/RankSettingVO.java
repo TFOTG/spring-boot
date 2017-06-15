@@ -5,6 +5,8 @@
  */
 package com.elong.hotel.hotelconfirm.ranksetting.vo;
 
+import java.io.Serializable;
+
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
 
@@ -19,7 +21,12 @@ import com.elong.hotel.hotelconfirm.valid.ThirdValid;
  * @author jianjun.wang
  * @version 1.0.0
  */
-public class RankSettingVO extends PaginationParameter{
+public class RankSettingVO extends PaginationParameter implements Serializable{
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 
 	@NotNull(message="deptment不能为空",groups=SecondValid.class)
 	@Min(1)

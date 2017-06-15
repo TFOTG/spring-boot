@@ -258,7 +258,7 @@ public class ConfirmOrderBo extends CompareEntityBase {
             }
         }
 
-        return null;
+        return new Date();
     }
 
     public Date getAmendTime() {
