@@ -12,7 +12,7 @@ import com.elong.hotel.hotelconfirm.group.bo.GroupTagBo;
  */
 public class ConfirmOrderActionLogPo {
 
-    private Integer id;
+    private Long id;
 
     private Integer orderId;
 
@@ -46,11 +46,11 @@ public class ConfirmOrderActionLogPo {
         this.hotelId = hotelId;
     }
 
-    public Integer getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(Long id) {
         this.id = id;
     }
 

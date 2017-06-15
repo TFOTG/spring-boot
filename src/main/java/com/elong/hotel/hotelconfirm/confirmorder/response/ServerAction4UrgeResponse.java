@@ -1,5 +1,7 @@
 package com.elong.hotel.hotelconfirm.confirmorder.response;
 
+import com.alibaba.fastjson.annotation.JSONField;
+
 import java.io.Serializable;
 import java.util.Date;
 
@@ -8,8 +10,11 @@ import java.util.Date;
  */
 public class ServerAction4UrgeResponse extends ServerActionResponseBase implements Serializable{
 
+
+	@JSONField(format = "yyyy-MM-dd HH:mm:ss")
 	Date promiseTime ;
 
+	@JSONField(format = "yyyy-MM-dd HH:mm:ss")
 	Date originPromiseTime ;
 
 	int rankingImproveCount ;
@@ -17,6 +22,8 @@ public class ServerAction4UrgeResponse extends ServerActionResponseBase implemen
 	String orderType ;
 
 	Boolean isNightRange ;
+
+	Boolean canUrge;
 
 	public Boolean getIsNightRange() {
 		return isNightRange;
@@ -56,5 +63,13 @@ public class ServerAction4UrgeResponse extends ServerActionResponseBase implemen
 
 	public void setRankingImproveCount(int rankingImproveCount) {
 		this.rankingImproveCount = rankingImproveCount;
+	}
+
+	public Boolean getCanUrge() {
+		return canUrge;
+	}
+
+	public void setCanUrge(Boolean canUrge) {
+		this.canUrge = canUrge;
 	}
 }

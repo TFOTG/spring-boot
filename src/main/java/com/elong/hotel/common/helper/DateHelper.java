@@ -34,6 +34,20 @@ public class DateHelper {
 	}
 
 	/**
+	 *
+	 * @param toTime
+	 * @param fromTime
+     * @return
+     */
+	public static int getMinusCount(Date toTime, Date fromTime){
+		long from = fromTime.getTime();
+		long to = toTime.getTime();
+		int minutes = (int) ((to - from)/(1000 * 60));
+
+		return minutes;
+	}
+
+	/**
 	 * 获取时间的年月日部分
 	 * 
 	 * @param date
