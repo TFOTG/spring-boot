@@ -33,6 +33,8 @@ public class GetChargeOrdersRequest {
 
     private String orderBy;
 
+    private Date sortTime;
+
     @Min(value=1,message="页码从1开始")
     private int pageIndex;
 
@@ -162,5 +164,11 @@ public class GetChargeOrdersRequest {
         this.orderByField = orderByField;
     }
 
+    public Date getSortTime() {
+        return sortTime;
+    }
 
+    public void setSortTime(Date sortTime) {
+        this.sortTime = sortTime;
+    }
 }
