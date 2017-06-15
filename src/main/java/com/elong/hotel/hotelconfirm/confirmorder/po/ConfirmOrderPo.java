@@ -53,6 +53,7 @@ public class ConfirmOrderPo {
     private Date sortTime;
     private Date defaultSortTime;
     private Date firstRefusedTime;
+    private Integer isebrefuse;
 
     private Long orderTimestampLong;
 
@@ -90,6 +91,7 @@ public class ConfirmOrderPo {
         this.promiseChangeTimes = bo.getPromiseChangeTimes();
         this.isFaxReturn = bo.getIsFaxReturn();
         this.isLinked = bo.getIsLinked();
+        this.isebrefuse = bo.getIsebrefuse();
         this.urge = bo.getUrge();
         this.respiteTime = bo.getRespiteTime();
         this.nextServiceTime = bo.getNextServiceTime();
@@ -246,6 +248,14 @@ public class ConfirmOrderPo {
 
     public void setIsLinked(String isLinked) {
         this.isLinked = isLinked;
+    }
+
+    public Integer getIsebrefuse() {
+        return isebrefuse;
+    }
+
+    public void setIsebrefuse(Integer isebrefuse) {
+        this.isebrefuse = isebrefuse;
     }
 
     public String getIvrGuid() {
