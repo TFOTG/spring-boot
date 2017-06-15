@@ -25,9 +25,9 @@ public class GetChargeOrdersRequest {
 
     private String timeEarly;
 
-    private int urgeConfirm;
+    private Integer urgeConfirm;
 
-    private int ebRefuse;
+    private Integer ebRefuse;
 
     private String orderByField;
 
@@ -108,14 +108,6 @@ public class GetChargeOrdersRequest {
         this.timeEarly = timeEarly;
     }
 
-    public int getUrgeConfirm() {
-        return urgeConfirm;
-    }
-
-    public void setUrgeConfirm(int urgeConfirm) {
-        this.urgeConfirm = urgeConfirm;
-    }
-
     public String getOrderBy() {
         return orderBy;
     }
@@ -148,11 +140,19 @@ public class GetChargeOrdersRequest {
         this.startItem = startItem;
     }
 
-    public int getEbRefuse() {
+    public void setUrgeConfirm(Integer urgeConfirm) {
+        this.urgeConfirm = urgeConfirm;
+    }
+
+    public Integer getUrgeConfirm() {
+        return urgeConfirm;
+    }
+
+    public Integer getEbRefuse() {
         return ebRefuse;
     }
 
-    public void setEbRefuse(int ebRefuse) {
+    public void setEbRefuse(Integer ebRefuse) {
         this.ebRefuse = ebRefuse;
     }
 
