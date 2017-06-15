@@ -1,21 +1,23 @@
 package com.elong.hotel.hotelconfirm.ivr.request;
 
+import com.alibaba.fastjson.annotation.JSONField;
 import com.elong.hotel.hotelconfirm.ivr.bo.CallBackItem;
 
+import java.io.Serializable;
 import java.util.List;
 
-public class ConfirmIvrRequest {
+public class ConfirmIvrRequest implements Serializable {
 private String extension;
 
 private String guid;
 
 private String mobile;
-
-private String BussinessGuid;
-
-private int CallBackStatus;
-
-private List<CallBackItem> CallBackItemList ;
+@JSONField(name = "BussinessGuid")
+private String bussinessGuid;
+@JSONField(name = "CallBackStatus")
+private int callBackStatus;
+@JSONField(name = "CallBackItemList")
+private List<CallBackItem> callBackItemList ;
 
 public void setExtension(String extension){
 this.extension = extension;
@@ -35,23 +37,28 @@ this.mobile = mobile;
 public String getMobile(){
 return this.mobile;
 }
-public void setBussinessGuid(String BussinessGuid){
-this.BussinessGuid = BussinessGuid;
-}
-public String getBussinessGuid(){
-return this.BussinessGuid;
-}
-public void setCallBackStatus(int CallBackStatus){
-this.CallBackStatus = CallBackStatus;
-}
-public int getCallBackStatus(){
-return this.CallBackStatus;
-}
-public void setCallBackItemList(List<CallBackItem> CallBackItemList){
-this.CallBackItemList = CallBackItemList;
-}
-public List<CallBackItem> getCallBackItemList(){
-return this.CallBackItemList;
-}
 
+	public String getBussinessGuid() {
+		return bussinessGuid;
+	}
+
+	public void setBussinessGuid(String bussinessGuid) {
+		this.bussinessGuid = bussinessGuid;
+	}
+
+	public int getCallBackStatus() {
+		return callBackStatus;
+	}
+
+	public void setCallBackStatus(int callBackStatus) {
+		this.callBackStatus = callBackStatus;
+	}
+
+	public List<CallBackItem> getCallBackItemList() {
+		return callBackItemList;
+	}
+
+	public void setCallBackItemList(List<CallBackItem> callBackItemList) {
+		this.callBackItemList = callBackItemList;
+	}
 }

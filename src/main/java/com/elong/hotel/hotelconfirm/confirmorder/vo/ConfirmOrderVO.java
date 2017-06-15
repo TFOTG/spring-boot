@@ -11,13 +11,17 @@ public class ConfirmOrderVO  extends PaginationParameter {
 
 	private List<Integer> rankIds;
 
-	private String ivrStartTime;
+	private String ivrStartTimeL;
 
 	private String staffName;
 
 	private Integer reserNo;
 
 	private String hotelId;
+
+	private String bussinessGuid;
+
+	private String orderIds;
 
 	public List<Integer> getRankIds() {
 		return rankIds;
@@ -27,12 +31,12 @@ public class ConfirmOrderVO  extends PaginationParameter {
 		this.rankIds = rankIds;
 	}
 
-	public String getIvrStartTime() {
-		return ivrStartTime;
+	public String getIvrStartTimeL() {
+		return ivrStartTimeL;
 	}
 
-	public void setIvrStartTime(String ivrStartTime) {
-		this.ivrStartTime = ivrStartTime;
+	public void setIvrStartTimeL(String ivrStartTimeL) {
+		this.ivrStartTimeL = ivrStartTimeL;
 	}
 
 	public String getStaffName() {
@@ -57,5 +61,21 @@ public class ConfirmOrderVO  extends PaginationParameter {
 
 	public void setHotelId(String hotelId) {
 		this.hotelId = hotelId;
+	}
+
+	public String getBussinessGuid() {
+		return bussinessGuid;
+	}
+
+	public void setBussinessGuid(String bussinessGuid) {
+		this.bussinessGuid = bussinessGuid;
+	}
+
+	public String getOrderIds() {
+		return orderIds;
+	}
+
+	public void setOrderIds(String orderIds) {
+		this.orderIds = orderIds;
 	}
 }

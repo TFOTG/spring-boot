@@ -38,10 +38,10 @@ public class ConfirmIvrMenu implements Serializable {
 
 	private String orderType;
 
-	private Boolean isH;
+	private boolean hStatus;
 
 	public ConfirmIvrMenu(Integer orderId, List<Guest> guest, Date checkInDate, Date checkOutDate, String roomTypeName, int roomCount,
-			Date earlyCheckInTime, Date lateCheckInTime, List<RoomNight> roomNights, String notesToHotel, String orderType, Boolean isH) {
+			Date earlyCheckInTime, Date lateCheckInTime, List<RoomNight> roomNights, String notesToHotel, String orderType, Boolean hStatus) {
 		this.orderId = orderId;
 		this.guest = guest;
 		this.checkInDate = checkInDate;
@@ -53,10 +53,10 @@ public class ConfirmIvrMenu implements Serializable {
 		this.roomNights = roomNights;
 		this.notesToHotel = notesToHotel;
 		this.orderType = orderType;
-		this.isH = isH;
+		this.hStatus = hStatus;
 	}
 
-	public ConfirmIvrMenu(Order order, Boolean isH) {
+	public ConfirmIvrMenu(Order order, Boolean hStatus) {
 		this.orderId = order.getOrderId().intValue();
 		this.guest = order.getGuests();
 		this.checkInDate = order.getCheckInDate();
@@ -77,7 +77,7 @@ public class ConfirmIvrMenu implements Serializable {
 			orderType = "担保订单";
 		}
 		this.orderType = orderType;
-		this.isH = isH;
+		this.hStatus = hStatus;
 	}
 
 	public Integer getOrderId() {
@@ -168,11 +168,11 @@ public class ConfirmIvrMenu implements Serializable {
 		this.orderType = orderType;
 	}
 
-	public Boolean isH() {
-		return isH;
+	public boolean ishStatus() {
+		return hStatus;
 	}
 
-	public void setIsH(Boolean isH) {
-		this.isH = isH;
+	public void sethStatus(boolean hStatus) {
+		this.hStatus = hStatus;
 	}
 }
