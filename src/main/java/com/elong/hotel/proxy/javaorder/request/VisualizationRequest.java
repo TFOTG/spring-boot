@@ -1,5 +1,7 @@
 package com.elong.hotel.proxy.javaorder.request;
 
+import com.alibaba.fastjson.annotation.JSONField;
+
 /**
  * 订单可视化Request  数据
  * 
@@ -9,10 +11,11 @@ package com.elong.hotel.proxy.javaorder.request;
 public class VisualizationRequest {
 
 	// 操作者信息
+	@JSONField(name = "operatorInfo")
 	private OperatorInfo clientOperatorInfo;
 
 	// 订单号
-	private Long orderId;
+	private Integer orderId;
 
 	// 内部备注
 	private String templateNo;
@@ -47,11 +50,11 @@ public class VisualizationRequest {
 		this.needRecordClientStatus = needRecordClientStatus;
 	}
 
-	public Long getOrderId() {
+	public Integer getOrderId() {
 		return orderId;
 	}
 
-	public void setOrderId(Long orderId) {
+	public void setOrderId(Integer orderId) {
 		this.orderId = orderId;
 	}
 

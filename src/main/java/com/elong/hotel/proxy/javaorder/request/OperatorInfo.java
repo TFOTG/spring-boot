@@ -1,5 +1,7 @@
 package com.elong.hotel.proxy.javaorder.request;
 
+import com.elong.hotel.common.bo.OperatorInfoBo;
+
 import java.util.Date;
 
 /**
@@ -16,6 +18,16 @@ public class OperatorInfo {
 	private String operatorName;
 	// 操作时间
 	private Date operatorTime;
+
+	public OperatorInfo(){
+
+	}
+
+	public OperatorInfo(OperatorInfoBo bo){
+		this.operatorIP = bo.getOperatorIP();
+		this.operatorName = bo.getOperatorName();
+		this.operatorTime = bo.getOperatorTime();
+	}
 
 	public String getOperatorIP() {
 		return operatorIP;

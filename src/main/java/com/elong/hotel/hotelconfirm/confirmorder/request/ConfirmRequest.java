@@ -17,6 +17,8 @@ public class ConfirmRequest {
 
     private ConfirmOrderBo confirmOrderBo;
 
+    private ConfirmOrderBo targetConfirmOrderBo;
+
     private String orderStatus;
 
     private OperatorInfoBo operatorInfo;
@@ -31,6 +33,14 @@ public class ConfirmRequest {
 
     public ConfirmOrderBo getConfirmOrderBo() {
         return confirmOrderBo;
+    }
+
+    public ConfirmOrderBo getTargetConfirmOrderBo() {
+        return targetConfirmOrderBo;
+    }
+
+    public void setTargetConfirmOrderBo(ConfirmOrderBo targetConfirmOrderBo) {
+        this.targetConfirmOrderBo = targetConfirmOrderBo;
     }
 
     public ConfirmType getConfirmType() {
