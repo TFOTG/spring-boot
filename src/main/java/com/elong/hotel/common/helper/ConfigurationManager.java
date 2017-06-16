@@ -10,7 +10,7 @@ import org.springframework.stereotype.Component;
  *
  * @author yangboyu
  * @Title: ConfigurationManager
- * @Description: TODO
+ * @Description:
  * @date 2014年12月28日 下午1:38:25
  */
 @Component

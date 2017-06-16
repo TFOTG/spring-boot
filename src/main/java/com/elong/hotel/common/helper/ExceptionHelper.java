@@ -7,7 +7,7 @@ import java.io.StringWriter;
  * 异常处理工具
  * 
  * @Title: ExceptionHelper
- * @Description: TODO
+ * @Description:
  * @author bin.song
  * @date 2014年10月31日 下午2:23:02
  *
@@ -15,7 +15,7 @@ import java.io.StringWriter;
 public class ExceptionHelper {
 
 	/**
-	 * 获取堆栈信息 @Title: getStackInfo @Description: TODO @param exp @return
+	 * 获取堆栈信息 @Title: getStackInfo @Description:   @param exp @return
 	 * String @throws
 	 */
 	public static String getStackInfo(Exception exp) {
@@ -38,7 +38,7 @@ public class ExceptionHelper {
 	}
 	
 	/**
-	 * 获取堆栈信息 @Title: getStackInfo @Description: TODO @param exp @return
+	 * 获取堆栈信息 @Title: getStackInfo @Description: @param exp @return
 	 * String @throws
 	 */
 	public static String getStackInfo(Throwable exp) {
