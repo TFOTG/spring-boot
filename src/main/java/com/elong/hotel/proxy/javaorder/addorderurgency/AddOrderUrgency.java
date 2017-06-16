@@ -9,15 +9,15 @@ import java.util.Date;
  */
 public class AddOrderUrgency {
 
-    private Int addOrderUrgencyRecord;
+    private Integer addOrderUrgencyRecord;
 
     private Date lastChangeTime;
 
-    public Int getAddOrderUrgencyRecord() {
+    public Integer getAddOrderUrgencyRecord() {
         return addOrderUrgencyRecord;
     }
 
-    public void setAddOrderUrgencyRecord(Int addOrderUrgencyRecord) {
+    public void setAddOrderUrgencyRecord(Integer addOrderUrgencyRecord) {
         this.addOrderUrgencyRecord = addOrderUrgencyRecord;
     }
 
