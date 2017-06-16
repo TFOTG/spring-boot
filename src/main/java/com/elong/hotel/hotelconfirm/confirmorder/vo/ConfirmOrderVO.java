@@ -23,6 +23,12 @@ public class ConfirmOrderVO  extends PaginationParameter {
 
 	private String orderIds;
 
+	private String reserStatus;
+
+	private int ivrStatus;
+
+	private int sortTimeN;
+
 	public List<Integer> getRankIds() {
 		return rankIds;
 	}
@@ -77,5 +83,29 @@ public class ConfirmOrderVO  extends PaginationParameter {
 
 	public void setOrderIds(String orderIds) {
 		this.orderIds = orderIds;
+	}
+
+	public String getReserStatus() {
+		return reserStatus;
+	}
+
+	public void setReserStatus(String reserStatus) {
+		this.reserStatus = reserStatus;
+	}
+
+	public int getIvrStatus() {
+		return ivrStatus;
+	}
+
+	public void setIvrStatus(int ivrStatus) {
+		this.ivrStatus = ivrStatus;
+	}
+
+	public int getSortTimeN() {
+		return sortTimeN;
+	}
+
+	public void setSortTimeN(int sortTimeN) {
+		this.sortTimeN = sortTimeN;
 	}
 }
