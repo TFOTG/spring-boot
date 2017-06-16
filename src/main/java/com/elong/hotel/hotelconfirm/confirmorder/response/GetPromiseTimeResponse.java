@@ -1,5 +1,7 @@
 package com.elong.hotel.hotelconfirm.confirmorder.response;
 
+import com.alibaba.fastjson.annotation.JSONField;
+
 import java.io.Serializable;
 import java.util.Date;
 
@@ -8,6 +10,7 @@ import java.util.Date;
  */
 public class GetPromiseTimeResponse extends ServerActionResponseBase implements Serializable{
 
+	@JSONField(format = "yyyy-MM-dd HH:mm:ss")
 	private Date promiseTime;
 
 	public GetPromiseTimeResponse() {
