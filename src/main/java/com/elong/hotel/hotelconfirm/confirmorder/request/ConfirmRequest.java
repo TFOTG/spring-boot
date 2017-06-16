@@ -3,19 +3,31 @@ package com.elong.hotel.hotelconfirm.confirmorder.request;
 import com.elong.hotel.common.bo.OperatorInfoBo;
 import com.elong.hotel.hotelconfirm.confirmorder.bo.ConfirmOrderBo;
 import com.elong.hotel.hotelconfirm.confirmorder.enums.ConfirmType;
+import com.elong.hotel.hotelconfirm.confirmorderactionlog.enums.ActionOpFromEnum;
+import com.elong.hotel.proxy.javaorder.getorder.Order;
 
 /**
  * Created by peng.wang on 17/6/6.
  */
-public class FirstRefuseRequest {
+public class ConfirmRequest {
 
     private ConfirmType confirmType;
+
+    private Order order;
 
     private ConfirmOrderBo confirmOrderBo;
 
     private String orderStatus;
 
     private OperatorInfoBo operatorInfo;
+
+    public Order getOrder() {
+        return order;
+    }
+
+    public void setOrder(Order order) {
+        this.order = order;
+    }
 
     public ConfirmOrderBo getConfirmOrderBo() {
         return confirmOrderBo;
