@@ -9,7 +9,7 @@ import java.util.Date;
  */
 public class UrgeVisual {
 
-    @JSONField(name = "AdjustTime", format = "yyyy-MM-dd HH:mm:ss")
+    @JSONField(name = "AdjustTime", format = "yyyy-MM-dd HH:mm")
     private Date adjustTime;
 
     public UrgeVisual(Date adjustTime) {
