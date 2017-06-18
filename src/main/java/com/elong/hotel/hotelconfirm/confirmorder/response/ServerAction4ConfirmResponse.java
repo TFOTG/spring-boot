@@ -10,18 +10,7 @@ import java.util.Date;
  */
 public class ServerAction4ConfirmResponse extends ServerActionResponseBase implements Serializable{
 
-	@JSONField(format = "yyyy-MM-dd HH:mm:ss")
-	private Date promiseTime;
-
 	public ServerAction4ConfirmResponse() {
 
-	}
-
-	public Date getPromiseTime() {
-		return promiseTime;
-	}
-
-	public void setPromiseTime(Date promiseTime) {
-		this.promiseTime = promiseTime;
 	}
 }

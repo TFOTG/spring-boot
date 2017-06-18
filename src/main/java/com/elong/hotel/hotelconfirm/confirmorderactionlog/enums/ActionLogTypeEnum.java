@@ -5,6 +5,10 @@ package com.elong.hotel.hotelconfirm.confirmorderactionlog.enums;
  */
 public enum ActionLogTypeEnum {
     /**
+     *
+     */
+    NONE(0,"无"),
+    /**
      * Ebooking拒单
      */
     EbookingRefuse(1, "Ebooking拒单"),
@@ -27,7 +31,11 @@ public enum ActionLogTypeEnum {
     /**
      * 手动修改承诺时间
      */
-    ChangePromiseTime(6,"修改承诺时间");
+    ChangePromiseTime(6,"修改承诺时间"),
+    /**
+     * 手动修改暂缓时间
+     */
+    ChangeRespiteTime(7,"调整暂缓时间");
 
     private int key;
     private String value;
