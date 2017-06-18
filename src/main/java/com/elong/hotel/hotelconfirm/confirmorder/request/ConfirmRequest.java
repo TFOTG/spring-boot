@@ -21,6 +21,8 @@ public class ConfirmRequest {
 
     private String orderStatus;
 
+    private ActionOpFromEnum actionOpFromEnum;
+
     private OperatorInfoBo operatorInfo;
 
     public Order getOrder() {
@@ -69,5 +71,13 @@ public class ConfirmRequest {
 
     public void setOperatorInfo(OperatorInfoBo operatorInfo) {
         this.operatorInfo = operatorInfo;
+    }
+
+    public ActionOpFromEnum getActionOpFromEnum() {
+        return actionOpFromEnum;
+    }
+
+    public void setActionOpFromEnum(ActionOpFromEnum actionOpFromEnum) {
+        this.actionOpFromEnum = actionOpFromEnum;
     }
 }

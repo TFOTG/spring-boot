@@ -1,6 +1,7 @@
 package com.elong.hotel.hotelconfirm.confirmorder.request;
 
 import com.elong.hotel.common.bo.OperatorInfoBo;
+import com.elong.hotel.hotelconfirm.confirmorderactionlog.enums.ActionOpFromEnum;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import java.util.Date;
@@ -16,6 +17,8 @@ public class ChangeRespiteTimeRequest {
     private Date respiteTime;
 
     private OperatorInfoBo operatorInfo;
+
+    private ActionOpFromEnum actionOpFromEnum;
 
     public Integer getOrderId() {
         return orderId;
@@ -39,5 +42,13 @@ public class ChangeRespiteTimeRequest {
 
     public void setOperatorInfo(OperatorInfoBo operatorInfo) {
         this.operatorInfo = operatorInfo;
+    }
+
+    public ActionOpFromEnum getActionOpFromEnum() {
+        return actionOpFromEnum;
+    }
+
+    public void setActionOpFromEnum(ActionOpFromEnum actionOpFromEnum) {
+        this.actionOpFromEnum = actionOpFromEnum;
     }
 }
