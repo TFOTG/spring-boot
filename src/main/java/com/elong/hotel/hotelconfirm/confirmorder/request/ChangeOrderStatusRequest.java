@@ -1,6 +1,7 @@
 package com.elong.hotel.hotelconfirm.confirmorder.request;
 
 import com.elong.hotel.common.bo.OperatorInfoBo;
+import com.elong.hotel.hotelconfirm.confirmorderactionlog.enums.ActionOpFromEnum;
 
 import java.util.Date;
 
@@ -22,6 +23,8 @@ public class ChangeOrderStatusRequest {
     private String confirmNo;
 
     private OperatorInfoBo operatorInfo;
+
+    private ActionOpFromEnum actionOpFromEnum;
 
     public Integer getOrderId() {
         return orderId;
@@ -77,5 +80,13 @@ public class ChangeOrderStatusRequest {
 
     public void setNote2Hotel(String note2Hotel) {
         this.note2Hotel = note2Hotel;
+    }
+
+    public ActionOpFromEnum getActionOpFromEnum() {
+        return actionOpFromEnum;
+    }
+
+    public void setActionOpFromEnum(ActionOpFromEnum actionOpFromEnum) {
+        this.actionOpFromEnum = actionOpFromEnum;
     }
 }

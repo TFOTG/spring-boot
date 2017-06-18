@@ -2,6 +2,7 @@ package com.elong.hotel.hotelconfirm.confirmorder.request;
 
 import com.elong.hotel.common.bo.OperatorInfoBo;
 import com.elong.hotel.hotelconfirm.confirmorder.bo.ConfirmOrderBo;
+import com.elong.hotel.hotelconfirm.confirmorderactionlog.enums.ActionOpFromEnum;
 import com.elong.hotel.proxy.javaorder.getorder.Order;
 
 /**
@@ -12,6 +13,8 @@ public class UrgeRequest {
     private Integer orderId;
 
     private Order order;
+
+    private ActionOpFromEnum actionOpFromEnum;
 
     private ConfirmOrderBo confirmOrderBo;
 
@@ -47,5 +50,13 @@ public class UrgeRequest {
 
     public void setConfirmOrderBo(ConfirmOrderBo confirmOrderBo) {
         this.confirmOrderBo = confirmOrderBo;
+    }
+
+    public ActionOpFromEnum getActionOpFromEnum() {
+        return actionOpFromEnum;
+    }
+
+    public void setActionOpFromEnum(ActionOpFromEnum actionOpFromEnum) {
+        this.actionOpFromEnum = actionOpFromEnum;
     }
 }

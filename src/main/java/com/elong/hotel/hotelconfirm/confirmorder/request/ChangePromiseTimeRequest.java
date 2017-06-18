@@ -2,6 +2,7 @@ package com.elong.hotel.hotelconfirm.confirmorder.request;
 
 import com.elong.hotel.common.bo.OperatorInfoBo;
 import com.elong.hotel.hotelconfirm.confirmorder.po.ConfirmOrderPo;
+import com.elong.hotel.hotelconfirm.confirmorderactionlog.enums.ActionOpFromEnum;
 import com.elong.hotel.proxy.javaorder.getorder.Order;
 
 import java.util.Date;
@@ -20,6 +21,8 @@ public class ChangePromiseTimeRequest {
     private ConfirmOrderPo confirmOrderPo;
 
     private OperatorInfoBo operatorInfo;
+
+    private ActionOpFromEnum actionOpFromEnum;
 
     public Integer getOrderId() {
         return orderId;
@@ -59,5 +62,13 @@ public class ChangePromiseTimeRequest {
 
     public void setConfirmOrderPo(ConfirmOrderPo confirmOrderPo) {
         this.confirmOrderPo = confirmOrderPo;
+    }
+
+    public ActionOpFromEnum getActionOpFromEnum() {
+        return actionOpFromEnum;
+    }
+
+    public void setActionOpFromEnum(ActionOpFromEnum actionOpFromEnum) {
+        this.actionOpFromEnum = actionOpFromEnum;
     }
 }

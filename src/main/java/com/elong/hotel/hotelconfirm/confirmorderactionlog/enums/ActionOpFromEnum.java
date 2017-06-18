@@ -15,7 +15,11 @@ public enum ActionOpFromEnum {
     /**
      * App操作
      */
-    App("app", "App操作");
+    App("app", "App操作"),
+    /**
+     * ConfirmTask
+     */
+    ConfirmTask("ConfirmTask", "系统自动延迟");
 
     private String desc;
     private String key;
