@@ -19,7 +19,7 @@ public enum ActionOpFromEnum {
     /**
      * ConfirmTask
      */
-    ConfirmTask("ConfirmTask", "系统自动延迟");
+    Task("task", "系统自动延迟");
 
     private String desc;
     private String key;
