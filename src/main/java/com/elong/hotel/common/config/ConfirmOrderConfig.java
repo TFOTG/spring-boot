@@ -92,10 +92,10 @@ public class ConfirmOrderConfig {
      */
     private Integer executorQueueSize;
 
-    private int groupEhCacheEnable;
-    
-    private int rankEnCacheEnable;
-    
+//    private Integer groupEhCacheEnable;
+
+//    private Integer rankEnCacheEnable;
+
     /**
      * 主管回收承诺时间与当前时间差
      */
@@ -135,8 +135,10 @@ public class ConfirmOrderConfig {
         executorMaxTimeOut = 30;
         executorThreads = 10;
         executorQueueSize = 500;
-        chargeReclaimPromise=10;
-        urgeAddMins=15;
+        chargeReclaimPromise = 10;
+        urgeAddMins = 15;
+//        rankEnCacheEnable = 0;
+//        groupEhCacheEnable = 0;
     }
 
     public Integer getChargeReclaimPromise() {
@@ -145,8 +147,8 @@ public class ConfirmOrderConfig {
 
     public void setChargeReclaimPromise(Integer chargeReclaimPromise) {
         this.chargeReclaimPromise = chargeReclaimPromise;
-        rankEnCacheEnable = 0;
-        groupEhCacheEnable = 0;
+//        rankEnCacheEnable = 0;
+//        groupEhCacheEnable = 0;
         urgeAddMins = 15;
         firstRefuseTime = 10;
         firstRefuseSupplierIds = "";
@@ -288,21 +290,21 @@ public class ConfirmOrderConfig {
         this.executorQueueSize = executorQueueSize;
     }
 
-    public int getGroupEhCacheEnable() {
-		return groupEhCacheEnable;
-	}
-
-	public void setGroupEhCacheEnable(int groupEhCacheEnable) {
-		this.groupEhCacheEnable = groupEhCacheEnable;
-	}
-
-	public int getRankEnCacheEnable() {
-		return rankEnCacheEnable;
-	}
-
-	public void setRankEnCacheEnable(int rankEnCacheEnable) {
-		this.rankEnCacheEnable = rankEnCacheEnable;
-	}
+//    public Integer getGroupEhCacheEnable() {
+//        return groupEhCacheEnable;
+//    }
+//
+//    public void setGroupEhCacheEnable(Integer groupEhCacheEnable) {
+//        this.groupEhCacheEnable = groupEhCacheEnable;
+//    }
+//
+//    public Integer getRankEnCacheEnable() {
+//        return rankEnCacheEnable;
+//    }
+//
+//    public void setRankEnCacheEnable(Integer rankEnCacheEnable) {
+//        this.rankEnCacheEnable = rankEnCacheEnable;
+//    }
 
     public Integer getUrgeAddMins() {
         return urgeAddMins;
