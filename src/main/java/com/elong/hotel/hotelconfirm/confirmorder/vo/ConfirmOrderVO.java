@@ -2,14 +2,14 @@ package com.elong.hotel.hotelconfirm.confirmorder.vo;
 
 import com.elong.hotel.common.parameter.PaginationParameter;
 
-import java.util.List;
+import java.util.Set;
 
 /**
  * Created by Hualong.Li on 17/6/12.
  */
 public class ConfirmOrderVO  extends PaginationParameter {
 
-	private List<Integer> rankIds;
+	private Set<Integer> rankIds;
 
 	private String ivrStartTimeL;
 
@@ -25,15 +25,15 @@ public class ConfirmOrderVO  extends PaginationParameter {
 
 	private String reserStatus;
 
-	private int ivrStatus;
+	private Integer ivrStatus;
 
-	private int sortTimeN;
+	private Integer sortTimeN;
 
-	public List<Integer> getRankIds() {
+	public Set<Integer> getRankIds() {
 		return rankIds;
 	}
 
-	public void setRankIds(List<Integer> rankIds) {
+	public void setRankIds(Set<Integer> rankIds) {
 		this.rankIds = rankIds;
 	}
 
@@ -93,19 +93,19 @@ public class ConfirmOrderVO  extends PaginationParameter {
 		this.reserStatus = reserStatus;
 	}
 
-	public int getIvrStatus() {
+	public Integer getIvrStatus() {
 		return ivrStatus;
 	}
 
-	public void setIvrStatus(int ivrStatus) {
+	public void setIvrStatus(Integer ivrStatus) {
 		this.ivrStatus = ivrStatus;
 	}
 
-	public int getSortTimeN() {
+	public Integer getSortTimeN() {
 		return sortTimeN;
 	}
 
-	public void setSortTimeN(int sortTimeN) {
+	public void setSortTimeN(Integer sortTimeN) {
 		this.sortTimeN = sortTimeN;
 	}
 }
