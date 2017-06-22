@@ -13,7 +13,7 @@ import java.util.List;
 public class RoomInfo implements Serializable {
 
 	/**
-	 * @Fields serialVersionUID : TODO
+	 * @Fields serialVersionUID
 	 */
 	private static final long serialVersionUID = 4531469158124284459L;
 

@@ -15,7 +15,7 @@ import java.util.Map;
  *
  * @author yangboyu
  * @Title: GroupEntity
- * @Description: TODO
+ * @Description:
  * @date 2016年3月2日 上午9:27:57
  */
 public class GroupFilterEntity<T extends GroupBase, Y extends CompareEntityBase> {
@@ -94,7 +94,7 @@ public class GroupFilterEntity<T extends GroupBase, Y extends CompareEntityBase>
      *
      * @return
      * @Title: 整体比较结果
-     * @Description: TODO
+     * @Description:
      */
     public CompareResultEnum getAllCompareResult() {
         for (CompareResultEnum resultEnum : compareMetaDate.values()) {
