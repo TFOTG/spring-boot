@@ -6,7 +6,7 @@ import java.lang.annotation.*;
  * 
   * CompareEntityAnnotations
   * @Title: 分组比较自定义数据
-  * @Description: TODO
+  * @Description:
   * @author yangboyu
   * @date 2016年3月1日 下午8:39:50
   *
@@ -21,7 +21,7 @@ public @interface CompareEntityAnnotations {
 	 * 
 	  * name
 	  * @Title: 分组Tag表中Key 对应的名称
-	  * @Description: TODO
+	  * @Description:
 	  * @return
 	 */
 	String name();

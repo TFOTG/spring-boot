@@ -12,6 +12,7 @@ public class ConfirmOrderPo {
     private Integer reserNo;
     private String reserStatus;
     private Integer mod;
+    private Long cardNo;
     private Date arriveDate;
     private Date leaveDate;
     private Date timeEarly;
@@ -26,28 +27,33 @@ public class ConfirmOrderPo {
     private String cityId;
     private Integer distance;
     private Integer confirmType;
+    //预定时间、订单创建时间
     private Date bookingTime;
+    //最后一次已审时间
     private Date amendTime;
     private Integer priority;
     private Integer groupId;
     private Integer rankId;
     private Integer ebkStrategyId;
     private String staffName;
+    //员工获取时间
     private Date distributeTime;
     private Date promiseTime;
     private Integer promiseChangeTimes;
     private String isFaxReturn;
     private String isLinked;
-    private String urge;
+    private Integer urge;
     private Date respiteTime;
     private Date nextServiceTime;
     private String ivrGuid;
-    private String ivrStatus;
+    private Integer ivrStatus;
     private Date ivrStartTime;
     private Date enterTime;
+    //员工可获取时间
     private Date sortTime;
     private Date defaultSortTime;
     private Date firstRefusedTime;
+    private Integer isEbRefuse;
 
     private Long orderTimestampLong;
 
@@ -57,6 +63,7 @@ public class ConfirmOrderPo {
     public ConfirmOrderPo(ConfirmOrderBo bo) {
         this.reserNo = bo.getReserNo();
         this.reserStatus = bo.getReserStatus();
+        this.cardNo = bo.getCardNo();
         this.mod = bo.getMod();
         this.arriveDate = bo.getArriveDate();
         this.leaveDate = bo.getLeaveDate();
@@ -84,6 +91,7 @@ public class ConfirmOrderPo {
         this.promiseChangeTimes = bo.getPromiseChangeTimes();
         this.isFaxReturn = bo.getIsFaxReturn();
         this.isLinked = bo.getIsLinked();
+        this.isEbRefuse = bo.getIsEbRefuse();
         this.urge = bo.getUrge();
         this.respiteTime = bo.getRespiteTime();
         this.nextServiceTime = bo.getNextServiceTime();
@@ -96,6 +104,14 @@ public class ConfirmOrderPo {
         this.firstRefusedTime = bo.getFirstRefusedTime();
         this.orderTimestampLong = bo.getOrderTimestamp().getTime();
 
+    }
+
+    public Long getCardNo() {
+        return cardNo;
+    }
+
+    public void setCardNo(Long cardNo) {
+        this.cardNo = cardNo;
     }
 
     public Date getAmendTime() {
@@ -234,6 +250,14 @@ public class ConfirmOrderPo {
         this.isLinked = isLinked;
     }
 
+    public Integer getIsEbRefuse() {
+        return isEbRefuse;
+    }
+
+    public void setIsEbRefuse(Integer isEbRefuse) {
+        this.isEbRefuse = isEbRefuse;
+    }
+
     public String getIvrGuid() {
         return ivrGuid;
     }
@@ -250,11 +274,11 @@ public class ConfirmOrderPo {
         this.ivrStartTime = ivrStartTime;
     }
 
-    public String getIvrStatus() {
+    public Integer getIvrStatus() {
         return ivrStatus;
     }
 
-    public void setIvrStatus(String ivrStatus) {
+    public void setIvrStatus(Integer ivrStatus) {
         this.ivrStatus = ivrStatus;
     }
 
@@ -410,11 +434,11 @@ public class ConfirmOrderPo {
         this.timeLate = timeLate;
     }
 
-    public String getUrge() {
+    public Integer getUrge() {
         return urge;
     }
 
-    public void setUrge(String urge) {
+    public void setUrge(Integer urge) {
         this.urge = urge;
     }
 

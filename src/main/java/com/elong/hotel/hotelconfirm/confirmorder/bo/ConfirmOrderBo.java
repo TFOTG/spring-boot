@@ -9,6 +9,7 @@ import com.elong.hotel.hotelconfirm.groupfilter.bo.CompareEntityBase;
 import com.elong.hotel.proxy.javaorder.consts.OrderFlagConst;
 import com.elong.hotel.proxy.javaorder.getorder.Order;
 import com.elong.hotel.proxy.javaorder.getorder.OrderHistory;
+import scala.Int;
 
 import java.util.Date;
 import java.util.List;
@@ -25,6 +26,7 @@ public class ConfirmOrderBo extends CompareEntityBase {
     private Date leaveDate;
     private Date timeEarly;
     private Date timeLate;
+    private Long cardNo;
     private String hotelId;
     private String hotelName;
     private String supplierId;
@@ -47,16 +49,17 @@ public class ConfirmOrderBo extends CompareEntityBase {
     private Integer promiseChangeTimes;
     private String isFaxReturn;
     private String isLinked;
-    private String urge;
+    private Integer urge;
     private Date respiteTime;
     private Date nextServiceTime;
     private String ivrGuid;
-    private String ivrStatus;
+    private Integer ivrStatus;
     private Date ivrStartTime;
     private Date enterTime;
     private Date sortTime;
     private Date defaultSortTime;
     private Date firstRefusedTime;
+    private Integer isEbRefuse;
 
     private Date orderTimestamp;
 
@@ -65,6 +68,12 @@ public class ConfirmOrderBo extends CompareEntityBase {
     private Date rankChange4PromiseTime;
     private String ratePlanId;
     private Long additionalStatus;
+
+    private String note2Elong;
+    private String note2Hotel;
+    private String note2Client;
+    private String confirmNo;
+    private String delayReason;
 
     public ConfirmOrderBo(){
 
@@ -102,7 +111,7 @@ public class ConfirmOrderBo extends CompareEntityBase {
             this.bookingTime = confirmOrder.getBookingTime();
             this.ratePlanId = order.getRatePlanId();
             this.additionalStatus = order.getAdditionalStatus();
-
+            this.cardNo = order.getCardNo();
             this.amendTime = confirmOrder.getAmendTime();
             this.priority = confirmOrder.getPriority();
             this.groupId = confirmOrder.getGroupId();
@@ -168,6 +177,7 @@ public class ConfirmOrderBo extends CompareEntityBase {
             this.timeLate = order.getLateCheckInTime();
             this.hotelId = order.getHotelId();
             this.hotelName = order.getHotelName();
+            this.cardNo = order.getCardNo();
             this.supplierId = order.getSupplierId().toString();
             this.supplierType = order.getSupplierType().toString();
             this.supplierName = order.getSupplierName();
@@ -189,6 +199,7 @@ public class ConfirmOrderBo extends CompareEntityBase {
         } else if (order == null && confirmOrder != null) {// 初始化"在库数据"
             this.reserNo = confirmOrder.getReserNo();
             this.reserStatus = confirmOrder.getReserStatus();
+            this.cardNo = confirmOrder.getCardNo();
             this.mod = confirmOrder.getMod();
             this.arriveDate = confirmOrder.getArriveDate();
             this.leaveDate = confirmOrder.getLeaveDate();
@@ -216,6 +227,7 @@ public class ConfirmOrderBo extends CompareEntityBase {
             this.promiseChangeTimes = confirmOrder.getPromiseChangeTimes();
             this.isFaxReturn = confirmOrder.getIsFaxReturn();
             this.isLinked = confirmOrder.getIsLinked();
+            this.isEbRefuse = confirmOrder.getIsEbRefuse();
             this.urge = confirmOrder.getUrge();
             this.respiteTime = confirmOrder.getRespiteTime();
             this.nextServiceTime = confirmOrder.getNextServiceTime();
@@ -249,7 +261,7 @@ public class ConfirmOrderBo extends CompareEntityBase {
             }
         }
 
-        return null;
+        return new Date();
     }
 
     public Date getAmendTime() {
@@ -396,11 +408,11 @@ public class ConfirmOrderBo extends CompareEntityBase {
         this.ivrStartTime = ivrStartTime;
     }
 
-    public String getIvrStatus() {
+    public Integer getIvrStatus() {
         return ivrStatus;
     }
 
-    public void setIvrStatus(String ivrStatus) {
+    public void setIvrStatus(Integer ivrStatus) {
         this.ivrStatus = ivrStatus;
     }
 
@@ -556,11 +568,11 @@ public class ConfirmOrderBo extends CompareEntityBase {
         this.timeLate = timeLate;
     }
 
-    public String getUrge() {
+    public Integer getUrge() {
         return urge;
     }
 
-    public void setUrge(String urge) {
+    public void setUrge(Integer urge) {
         this.urge = urge;
     }
 
@@ -578,6 +590,22 @@ public class ConfirmOrderBo extends CompareEntityBase {
 
     public void setTimeChange4PromiseTime(Date timeChange4PromiseTime) {
         this.timeChange4PromiseTime = timeChange4PromiseTime;
+    }
+
+    public Long getCardNo() {
+        return cardNo;
+    }
+
+    public void setCardNo(Long cardNo) {
+        this.cardNo = cardNo;
+    }
+
+    public Integer getIsEbRefuse() {
+        return isEbRefuse;
+    }
+
+    public void setIsEbRefuse(Integer isEbRefuse) {
+        this.isEbRefuse = isEbRefuse;
     }
 
     public String getReserStatus2End() {
@@ -611,6 +639,48 @@ public class ConfirmOrderBo extends CompareEntityBase {
     public void setAdditionalStatus(Long additionalStatus) {
         this.additionalStatus = additionalStatus;
     }
+
+    public String getNote2Client() {
+        return note2Client;
+    }
+
+    public void setNote2Client(String note2Client) {
+        this.note2Client = note2Client;
+    }
+
+    public String getNote2Elong() {
+        return note2Elong;
+    }
+
+    public void setNote2Elong(String note2Elong) {
+        this.note2Elong = note2Elong;
+    }
+
+    public String getNote2Hotel() {
+        return note2Hotel;
+    }
+
+    public void setNote2Hotel(String note2Hotel) {
+        this.note2Hotel = note2Hotel;
+    }
+
+    public String getConfirmNo() {
+        return confirmNo;
+    }
+
+    public void setConfirmNo(String confirmNo) {
+        this.confirmNo = confirmNo;
+    }
+
+    public String getDelayReason() {
+        return delayReason;
+    }
+
+    public void setDelayReason(String delayReason) {
+        this.delayReason = delayReason;
+    }
+
+
 
     private Integer getConfirmType(long orderFlag) {
         //直连确认

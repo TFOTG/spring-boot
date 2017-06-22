@@ -33,12 +33,17 @@ public enum ServerActionEnum {
     /**
      * 订单确认
      */
-    CONFIRM("订单确认", 5),
+    MIS_CONFIRM("Mis员工操作订单确认", 5),
 
     /**
      * 初拒
      */
-    REFUSE("初拒", 6);
+    EBOOKING_REFUSE("Ebooking 执行拒单动作", 6),
+
+    /**
+     * 确认
+     */
+    CONFIRM("确认",7);
 
     ServerActionEnum(String name, int actionIndex) {
         this.name = name;

@@ -12,7 +12,7 @@ import java.io.Serializable;
  * JsonHelper
  * 
  * @Title: JsonHelper
- * @Description: TODO
+ * @Description:
  * @author yangboyu
  * @date 2014年12月28日 下午1:36:51
  * 
@@ -83,7 +83,7 @@ public class JsonHelper {
 	 * fromJson parseJsonString
 	 * 
 	 * @Title: parseJsonString
-	 * @Description: TODO
+	 * @Description:
 	 * @param json
 	 * @return
 	 */

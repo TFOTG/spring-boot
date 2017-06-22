@@ -4,7 +4,7 @@ package com.elong.hotel.hotelconfirm.groupfilter.enums;
  * 
   * FieldCompareEnum
   * @Title: 字段比较枚举
-  * @Description: TODO
+  * @Description
   * @author yangboyu
   *
  */

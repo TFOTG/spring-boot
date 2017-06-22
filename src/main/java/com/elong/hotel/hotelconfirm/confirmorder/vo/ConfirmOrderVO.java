@@ -1,0 +1,111 @@
+package com.elong.hotel.hotelconfirm.confirmorder.vo;
+
+import com.elong.hotel.common.parameter.PaginationParameter;
+
+import java.util.Set;
+
+/**
+ * Created by Hualong.Li on 17/6/12.
+ */
+public class ConfirmOrderVO  extends PaginationParameter {
+
+	private Set<Integer> rankIds;
+
+	private String ivrStartTimeL;
+
+	private String staffName;
+
+	private Integer reserNo;
+
+	private String hotelId;
+
+	private String bussinessGuid;
+
+	private String orderIds;
+
+	private String reserStatus;
+
+	private Integer ivrStatus;
+
+	private Integer sortTimeN;
+
+	public Set<Integer> getRankIds() {
+		return rankIds;
+	}
+
+	public void setRankIds(Set<Integer> rankIds) {
+		this.rankIds = rankIds;
+	}
+
+	public String getIvrStartTimeL() {
+		return ivrStartTimeL;
+	}
+
+	public void setIvrStartTimeL(String ivrStartTimeL) {
+		this.ivrStartTimeL = ivrStartTimeL;
+	}
+
+	public String getStaffName() {
+		return staffName;
+	}
+
+	public void setStaffName(String staffName) {
+		this.staffName = staffName;
+	}
+
+	public Integer getReserNo() {
+		return reserNo;
+	}
+
+	public void setReserNo(Integer reserNo) {
+		this.reserNo = reserNo;
+	}
+
+	public String getHotelId() {
+		return hotelId;
+	}
+
+	public void setHotelId(String hotelId) {
+		this.hotelId = hotelId;
+	}
+
+	public String getBussinessGuid() {
+		return bussinessGuid;
+	}
+
+	public void setBussinessGuid(String bussinessGuid) {
+		this.bussinessGuid = bussinessGuid;
+	}
+
+	public String getOrderIds() {
+		return orderIds;
+	}
+
+	public void setOrderIds(String orderIds) {
+		this.orderIds = orderIds;
+	}
+
+	public String getReserStatus() {
+		return reserStatus;
+	}
+
+	public void setReserStatus(String reserStatus) {
+		this.reserStatus = reserStatus;
+	}
+
+	public Integer getIvrStatus() {
+		return ivrStatus;
+	}
+
+	public void setIvrStatus(Integer ivrStatus) {
+		this.ivrStatus = ivrStatus;
+	}
+
+	public Integer getSortTimeN() {
+		return sortTimeN;
+	}
+
+	public void setSortTimeN(Integer sortTimeN) {
+		this.sortTimeN = sortTimeN;
+	}
+}

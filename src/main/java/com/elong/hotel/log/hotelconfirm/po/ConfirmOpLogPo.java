@@ -13,6 +13,10 @@ public class ConfirmOpLogPo {
 
     private String supplierName;
 
+    private Long cardNo;
+
+    private Date arriveDate;
+
     private String opType;
 
     private Date opDate;
@@ -99,6 +103,22 @@ public class ConfirmOpLogPo {
 
     public void setSupplierName(String supplierName) {
         this.supplierName = supplierName == null ? null : supplierName.trim();
+    }
+
+    public Date getArriveDate() {
+        return arriveDate;
+    }
+
+    public void setArriveDate(Date arriveDate) {
+        this.arriveDate = arriveDate;
+    }
+
+    public Long getCardNo() {
+        return cardNo;
+    }
+
+    public void setCardNo(Long cardNo) {
+        this.cardNo = cardNo;
     }
 
     public String getOpType() {

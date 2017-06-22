@@ -34,6 +34,10 @@ public class ConfirmOpLogBo {
 
     private String supplierName;
 
+    private Long cardNo;
+
+    private Date arriveDate;
+
     private String opType;
 
     private Date opDate;
@@ -87,7 +91,9 @@ public class ConfirmOpLogBo {
         this.hotelId = confirmOrderBo.getHotelId();
         this.hotelName = confirmOrderBo.getHotelName();
         this.supplierName = confirmOrderBo.getSupplierName();
-        this.opType = confirmOpType.getKey();
+        this.cardNo = confirmOrderBo.getCardNo();
+        this.arriveDate = confirmOrderBo.getTimeEarly();
+        this.opType = confirmOpType.getKey()+"";
         this.opDate = new Date();
         this.department = DepartmentEnum.Confirm.getKey() + "";
         this.groupId = confirmOrderBo.getGroupId();
@@ -114,12 +120,12 @@ public class ConfirmOpLogBo {
         this.amendTime = confirmOrderBo.getAmendTime();
     }
 
-    public ConfirmOpLogBo(ConfirmOrderPo po,DepartmentEnum departmentEnum, ConfirmOpType confirmOpType,  String operator) {
+    public ConfirmOpLogBo(ConfirmOrderPo po,DepartmentEnum departmentEnum, ConfirmOpType confirmOpType, String operator) {
         this.reserNo = po.getReserNo();
         this.hotelId = po.getHotelId();
         this.hotelName = po.getHotelName();
         this.supplierName = po.getSupplierName();
-        this.opType = confirmOpType.getKey();
+        this.opType = confirmOpType.getKey()+"";
         this.department = departmentEnum.getKey()+"";
         this.groupId = po.getGroupId();
         this.rankId = po.getRankId();
@@ -129,6 +135,8 @@ public class ConfirmOpLogBo {
         this.targetReserStatus = po.getReserStatus();
         this.confirmType = po.getConfirmType().longValue();              // 重复字段
         this.shouldConfirmType = po.getConfirmType().longValue();        // 重复字段
+        this.cardNo = 0L;
+        this.arriveDate = po.getTimeEarly();
         this.staffName = po.getStaffName();
         this.operator = operator;
         this.ivrStartTime = po.getIvrStartTime();
@@ -262,6 +270,22 @@ public class ConfirmOpLogBo {
 
     public void setShouldConfirmType(Long shouldConfirmType) {
         this.shouldConfirmType = shouldConfirmType;
+    }
+
+    public Date getArriveDate() {
+        return arriveDate;
+    }
+
+    public void setArriveDate(Date arriveDate) {
+        this.arriveDate = arriveDate;
+    }
+
+    public Long getCardNo() {
+        return cardNo;
+    }
+
+    public void setCardNo(Long cardNo) {
+        this.cardNo = cardNo;
     }
 
     public String getStaffName() {

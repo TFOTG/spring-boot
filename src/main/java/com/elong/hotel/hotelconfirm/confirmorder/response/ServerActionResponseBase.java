@@ -9,7 +9,6 @@ import java.io.Serializable;
  */
 public class ServerActionResponseBase extends ServiceResponseBase implements Serializable{
 
-
 	public ServerActionResponseBase() {
 	}
 }
