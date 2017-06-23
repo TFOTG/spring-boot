@@ -14,6 +14,8 @@ public class ChangePromiseTimeRequest {
 
     private Integer orderId;
 
+    private String delayReason;
+
     private Date promiseTime;
 
     private Order order;
@@ -62,6 +64,14 @@ public class ChangePromiseTimeRequest {
 
     public void setConfirmOrderPo(ConfirmOrderPo confirmOrderPo) {
         this.confirmOrderPo = confirmOrderPo;
+    }
+
+    public String getDelayReason() {
+        return delayReason;
+    }
+
+    public void setDelayReason(String delayReason) {
+        this.delayReason = delayReason;
     }
 
     public ActionOpFromEnum getActionOpFromEnum() {
