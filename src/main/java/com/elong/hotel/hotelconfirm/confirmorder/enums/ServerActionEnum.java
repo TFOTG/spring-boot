@@ -43,7 +43,9 @@ public enum ServerActionEnum {
     /**
      * 确认
      */
-    CONFIRM("确认",7);
+    CONFIRM("确认",7),
+
+    IVR_CONFIRM("ivr 确认",8);
 
     ServerActionEnum(String name, int actionIndex) {
         this.name = name;
