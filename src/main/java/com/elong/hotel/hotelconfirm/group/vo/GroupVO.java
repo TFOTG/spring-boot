@@ -26,6 +26,8 @@ public class GroupVO {
 	 */
 	private int ehcacheEnbale;
 
+	private String staffName;
+
 	public Integer getDeptment() {
 		return deptment;
 	}
@@ -58,5 +60,12 @@ public class GroupVO {
 
 	public GroupVO() {
 	}
-	
+
+	public String getStaffName() {
+		return staffName;
+	}
+
+	public void setStaffName(String staffName) {
+		this.staffName = staffName;
+	}
 }
