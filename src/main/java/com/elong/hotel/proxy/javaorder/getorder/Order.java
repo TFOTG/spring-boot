@@ -64,6 +64,8 @@ public class Order {
 	private String roomTypeId;
 	// 房型名称
 	private String roomTypeName;
+	// m房型id
+	private String mRoomTypeId;
 	// 订单日期数
 	private Integer roomNightsCount;
 	// 代理id
@@ -146,7 +148,17 @@ public class Order {
 
 	private Integer supplierOtaType;
 
-    //预定距离
+	private Integer cooperationType;
+
+	public String getmRoomTypeId() {
+		return mRoomTypeId;
+	}
+
+	public void setmRoomTypeId(String mRoomTypeId) {
+		this.mRoomTypeId = mRoomTypeId;
+	}
+
+	//预定距离
     private Integer distanceFromHotelWhenBooking;
 
 	public Date getOrderTimestamp() {
@@ -684,4 +696,12 @@ public class Order {
     public void setModifyTime(Date modifyTime) {
         this.modifyTime = modifyTime;
     }
+
+	public Integer getCooperationType() {
+		return cooperationType;
+	}
+
+	public void setCooperationType(Integer cooperationType) {
+		this.cooperationType = cooperationType;
+	}
 }

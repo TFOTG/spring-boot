@@ -8,7 +8,6 @@ package com.elong.hotel.proxy.javaorder.consts;
  */
 public interface OriginalOrderFieldsConst {
 
-
     /**
      * 入库
      */
@@ -18,5 +17,10 @@ public interface OriginalOrderFieldsConst {
 	 * 确认ivr
 	 */
 	String FIELDS_FOR_CONFIRMIVR = "status,hotelId,payment,checkInDate,roomCount,roomTypeName,checkOutDate,earlyCheckInTime,lateCheckInTime,additionalStatus,guestName,guestSex,hotelName,mHotelName,roomNightSalePrice,roomNightStayDate,roomNightBreakfastCount,notesToHotel";
+
+	/**
+	 * 初拒调用查询字段
+	 */
+	String FIELDS_FOR_FIRST_REFUSE = "hotelId,hotelName,mHotelId,mHotelName,cityId,cityName,provinceId,provinceName,cooperationType,createTime,modifyTime,roomCount,checkInDate,checkOutDate,earlyCheckInTime,lateCheckInTime,additionalStatus,additionalStatusI,notesToHotel,notesToGuest,notesToElong,roomNightsCount,orderFrom,createName,modifyName,roomTypeId,roomTypeName,ratePlanId,ratePlanName,mRoomTypeId,supplierId,supplierName,supplierType";
 
 }
