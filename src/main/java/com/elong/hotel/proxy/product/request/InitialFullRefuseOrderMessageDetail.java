@@ -1,5 +1,7 @@
 package com.elong.hotel.proxy.product.request;
 
+import com.alibaba.fastjson.annotation.JSONField;
+
 import java.util.Date;
 import java.util.List;
 
@@ -31,18 +33,23 @@ public class InitialFullRefuseOrderMessageDetail {
 
     int numRoom;
 
+    @JSONField(format = "yyyy-MM-dd HH:mm:ss")
     Date ArriveDate;
 
+    @JSONField(format = "yyyy-MM-dd HH:mm:ss")
     Date leaveDate;
 
+    @JSONField(format = "yyyy-MM-dd HH:mm:ss")
     Date bookTime;
 
     int isInstantConfirm;
 
+    @JSONField(format = "yyyy-MM-dd HH:mm:ss")
     Date operateTime;
 
     String operator;
 
+    @JSONField(format = "yyyy-MM-dd HH:mm:ss")
     Date refusedOrderTime;
 
     String refusedOrderReason;
