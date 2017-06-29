@@ -69,7 +69,7 @@ public enum FirstRefuseEnum {
     public static FirstRefuseEnum getValue(String key) {
         FirstRefuseEnum result = FirstRefuseEnum.None;
         for (FirstRefuseEnum confirmOrderPriority : FirstRefuseEnum.values()) {
-            if (confirmOrderPriority.getKey() == key) {
+            if (confirmOrderPriority.getKey().equalsIgnoreCase(key)) {
                 result = confirmOrderPriority;
                 break;
             }

@@ -128,6 +128,21 @@ public class ConfirmOrderConfig {
     //更新配置的时间
     private String operatorTime;
 
+    /**
+     * 获取订单时间间隔
+     */
+    private int getOrderInterval;
+
+    private int hotelSize;
+
+    private int hotelOrderSize;
+
+    private int supplierSize;
+
+    private int supplierOrderSize;
+
+
+
     public ConfirmOrderConfig() {
         priority4HighMinute = 60;
         priority4HighDistance = 3000;
@@ -368,5 +383,45 @@ public class ConfirmOrderConfig {
     public static void main(String[] args) {
         ConfirmOrderConfig config = new ConfirmOrderConfig();
         System.out.println(JSON.toJSONString(config));
+    }
+
+    public int getGetOrderInterval() {
+        return getOrderInterval;
+    }
+
+    public void setGetOrderInterval(int getOrderInterval) {
+        this.getOrderInterval = getOrderInterval;
+    }
+
+    public int getHotelSize() {
+        return hotelSize;
+    }
+
+    public void setHotelSize(int hotelSize) {
+        this.hotelSize = hotelSize;
+    }
+
+    public int getSupplierSize() {
+        return supplierSize;
+    }
+
+    public void setSupplierSize(int supplierSize) {
+        this.supplierSize = supplierSize;
+    }
+
+    public int getHotelOrderSize() {
+        return hotelOrderSize;
+    }
+
+    public void setHotelOrderSize(int hotelOrderSize) {
+        this.hotelOrderSize = hotelOrderSize;
+    }
+
+    public int getSupplierOrderSize() {
+        return supplierOrderSize;
+    }
+
+    public void setSupplierOrderSize(int supplierOrderSize) {
+        this.supplierOrderSize = supplierOrderSize;
     }
 }
