@@ -707,11 +707,11 @@ public class Order {
 		this.cooperationType = cooperationType;
 	}
 
-	public String getmRoomTypeName() {
+	public String getMRoomTypeName() {
 		return mRoomTypeName;
 	}
 
-	public void setmRoomTypeName(String mRoomTypeName) {
+	public void setMRoomTypeName(String mRoomTypeName) {
 		this.mRoomTypeName = mRoomTypeName;
 	}
 }
