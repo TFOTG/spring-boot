@@ -66,6 +66,7 @@ public class SoaConfig {
         this.confirmFaxTimeOut = confirmFaxTimeOut;
     }
 
+
     private String batchGetHotelContactRequest;
 
     /**
