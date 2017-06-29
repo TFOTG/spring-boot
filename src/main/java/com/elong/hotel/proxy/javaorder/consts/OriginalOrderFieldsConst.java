@@ -16,7 +16,7 @@ public interface OriginalOrderFieldsConst {
 	/**
 	 * 确认ivr
 	 */
-	String FIELDS_FOR_CONFIRMIVR = "status,hotelId,payment,checkInDate,roomCount,roomTypeName,checkOutDate,earlyCheckInTime,lateCheckInTime,additionalStatus,guestName,guestSex,hotelName,mHotelName,roomNightSalePrice,roomNightStayDate,roomNightBreakfastCount,notesToHotel";
+	String FIELDS_FOR_CONFIRMIVR = "status,hotelId,payment,checkInDate,roomCount,mRoomTypeName,checkOutDate,earlyCheckInTime,lateCheckInTime,additionalStatus,guestName,guestSex,hotelName,mHotelName,roomNightSalePrice,roomNightStayDate,roomNightBreakfastCount,notesToHotel";
 
 	/**
 	 * 初拒调用查询字段

@@ -41,7 +41,7 @@ public class ConfirmOrderPo {
     private Date promiseTime;
     private Integer promiseChangeTimes;
     private String isFaxReturn;
-    private String isLinked;
+    private Integer isLinked;
     private Integer urge;
     private Date respiteTime;
     private Date nextServiceTime;
@@ -242,11 +242,11 @@ public class ConfirmOrderPo {
         this.isFaxReturn = isFaxReturn;
     }
 
-    public String getIsLinked() {
+    public Integer getIsLinked() {
         return isLinked;
     }
 
-    public void setIsLinked(String isLinked) {
+    public void setIsLinked(Integer isLinked) {
         this.isLinked = isLinked;
     }
 
