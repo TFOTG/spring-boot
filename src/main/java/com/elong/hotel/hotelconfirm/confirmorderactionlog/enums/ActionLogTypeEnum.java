@@ -19,7 +19,7 @@ public enum ActionLogTypeEnum {
     /**
      * 暂缓
      */
-    Pause(3, "暂缓"),
+    IvrConfirm(3, "IVR操作确认"),
     /**
      * 需担保/需同意
      */
