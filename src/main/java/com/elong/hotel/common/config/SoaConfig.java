@@ -46,6 +46,26 @@ public class SoaConfig {
 
     private String productGetHotelPhone;
 
+    /**调用获取确认传真接口*/
+    private String confirmFax;
+    private int confirmFaxTimeOut;
+
+    public String getConfirmFax() {
+        return confirmFax;
+    }
+
+    public void setConfirmFax(String confirmFax) {
+        this.confirmFax = confirmFax;
+    }
+
+    public int getConfirmFaxTimeOut() {
+        return confirmFaxTimeOut;
+    }
+
+    public void setConfirmFaxTimeOut(int confirmFaxTimeOut) {
+        this.confirmFaxTimeOut = confirmFaxTimeOut;
+    }
+
     /**
      * 调用ebk延迟接口service
      */
