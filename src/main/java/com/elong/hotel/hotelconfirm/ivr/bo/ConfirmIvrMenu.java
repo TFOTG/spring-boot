@@ -66,7 +66,7 @@ public class ConfirmIvrMenu implements Serializable {
 		this.guest = order.getGuests();
 		this.checkInDate = order.getCheckInDate();
 		this.checkOutDate = order.getCheckOutDate();
-		this.roomTypeName = order.getmRoomTypeName();
+		this.roomTypeName = order.getMRoomTypeName();
 		this.roomCount = order.getRoomCount();
 		this.earlyCheckInTime = order.getEarlyCheckInTime();
 		this.lateCheckInTime = order.getLateCheckInTime();
@@ -136,7 +136,7 @@ public class ConfirmIvrMenu implements Serializable {
 	}
 
 	private String getRoomNight(RoomNight roomNight,DateFormat dateFormat) {
-		StringBuilder sb = new StringBuilder(dateFormat.format(roomNight.getStayDate())).append(roomNight.getSalePrice()).append("元，");
+		StringBuilder sb = new StringBuilder(dateFormat.format(roomNight.getStayDate())).append(roomNight.getSalePrice().intValue()).append("元，");
 		switch (roomNight.getBreakfastCount()) {
 		case 0:
 			sb.append("不含早");
