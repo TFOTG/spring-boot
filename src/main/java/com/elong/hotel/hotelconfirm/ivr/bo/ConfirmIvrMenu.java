@@ -66,7 +66,7 @@ public class ConfirmIvrMenu implements Serializable {
 		this.guest = order.getGuests();
 		this.checkInDate = order.getCheckInDate();
 		this.checkOutDate = order.getCheckOutDate();
-		this.roomTypeName = order.getmRoomTypeName();
+		this.roomTypeName = order.getMRoomTypeName();
 		this.roomCount = order.getRoomCount();
 		this.earlyCheckInTime = order.getEarlyCheckInTime();
 		this.lateCheckInTime = order.getLateCheckInTime();
