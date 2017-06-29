@@ -1,7 +1,5 @@
 package com.elong.hotel.hotelconfirm.staff.po;
 
-import com.elong.hotel.hotelconfirm.staff.bo.StaffBo;
-
 import java.util.Date;
 
 /**
