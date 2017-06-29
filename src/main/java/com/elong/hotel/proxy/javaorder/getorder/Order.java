@@ -66,6 +66,8 @@ public class Order {
 	private String roomTypeName;
 	// m房型id
 	private String mRoomTypeId;
+	// m房型名称
+	private String mRoomTypeName;
 	// 订单日期数
 	private Integer roomNightsCount;
 	// 代理id
@@ -703,5 +705,13 @@ public class Order {
 
 	public void setCooperationType(Integer cooperationType) {
 		this.cooperationType = cooperationType;
+	}
+
+	public String getmRoomTypeName() {
+		return mRoomTypeName;
+	}
+
+	public void setmRoomTypeName(String mRoomTypeName) {
+		this.mRoomTypeName = mRoomTypeName;
 	}
 }

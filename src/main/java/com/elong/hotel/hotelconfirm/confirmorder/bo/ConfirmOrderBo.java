@@ -9,7 +9,6 @@ import com.elong.hotel.hotelconfirm.groupfilter.bo.CompareEntityBase;
 import com.elong.hotel.proxy.javaorder.consts.OrderFlagConst;
 import com.elong.hotel.proxy.javaorder.getorder.Order;
 import com.elong.hotel.proxy.javaorder.getorder.OrderHistory;
-import scala.Int;
 
 import java.util.Date;
 import java.util.List;
@@ -48,7 +47,7 @@ public class ConfirmOrderBo extends CompareEntityBase {
     private Date promiseTime;
     private Integer promiseChangeTimes;
     private String isFaxReturn;
-    private String isLinked;
+    private Integer isLinked;
     private Integer urge;
     private Date respiteTime;
     private Date nextServiceTime;
@@ -384,11 +383,11 @@ public class ConfirmOrderBo extends CompareEntityBase {
         this.isFaxReturn = isFaxReturn;
     }
 
-    public String getIsLinked() {
+    public Integer getIsLinked() {
         return isLinked;
     }
 
-    public void setIsLinked(String isLinked) {
+    public void setIsLinked(Integer isLinked) {
         this.isLinked = isLinked;
     }
 
