@@ -136,7 +136,7 @@ public class ConfirmIvrMenu implements Serializable {
 	}
 
 	private String getRoomNight(RoomNight roomNight,DateFormat dateFormat) {
-		StringBuilder sb = new StringBuilder(dateFormat.format(roomNight.getStayDate())).append(roomNight.getSalePrice()).append("元，");
+		StringBuilder sb = new StringBuilder(dateFormat.format(roomNight.getStayDate())).append(roomNight.getSalePrice().intValue()).append("元，");
 		switch (roomNight.getBreakfastCount()) {
 		case 0:
 			sb.append("不含早");
