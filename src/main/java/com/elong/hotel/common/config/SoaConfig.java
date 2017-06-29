@@ -45,7 +45,6 @@ public class SoaConfig {
     private int productTimeOut;
 
     private String productGetHotelPhone;
--s
 
     /**调用获取确认传真接口*/
     private String confirmFax;
