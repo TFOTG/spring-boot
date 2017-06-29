@@ -1,38 +1,182 @@
 package com.elong.hotel.hotelconfirm.staff.bo;
 
+import com.alibaba.fastjson.annotation.JSONField;
+import com.elong.hotel.hotelconfirm.staff.po.StaffPo;
+
+import java.util.Date;
+import java.util.List;
+
 /**
- * Created by Hualong.Li on 17/6/26.
+ * Created by peng.wang on 17/6/27.
  */
 public class StaffBo {
 
-//	a.staffname,department,groupid
-	private String staffName;
+    private Integer staffId;
 
-	private int department;
+    private List<Integer> staffIds;
 
-	private String groupId;
+    private String staffName;
 
-	public String getStaffName() {
-		return staffName;
-	}
+    private String leaderName;
 
-	public void setStaffName(String staffName) {
-		this.staffName = staffName;
-	}
+    private Integer groupId;
 
-	public int getDepartment() {
-		return department;
-	}
+    private List<Integer> groupIds;
 
-	public void setDepartment(int department) {
-		this.department = department;
-	}
+    private String groupNames;
 
-	public String getGroupId() {
-		return groupId;
-	}
+    private Integer department;
 
-	public void setGroupId(String groupId) {
-		this.groupId = groupId;
-	}
+    private Integer enable;
+
+    private String operator;
+
+    private String operaterIp;
+
+    @JSONField(format = "yyyy-MM-dd HH:mm:ss")
+    private Date operaterTime;
+
+    private Integer pageIndex;
+
+    private Integer pageSize;
+
+    private Integer startItem;
+
+
+    public StaffBo() {}
+
+    public StaffBo(StaffPo po) {
+
+        this.staffId=po.getId();
+        this.staffName=po.getStaffName();
+        this.leaderName=po.getLeaderName();
+        this.operator=po.getOperator();
+        this.operaterTime=po.getOperaterTime();
+        this.enable=po.getIsEnable();
+    }
+
+
+
+
+    public String getLeaderName() {
+        return leaderName;
+    }
+
+    public void setLeaderName(String leaderName) {
+        this.leaderName = leaderName;
+    }
+
+
+    public Integer getEnable() {
+        return enable;
+    }
+
+    public void setEnable(Integer enable) {
+        this.enable = enable;
+    }
+
+    public String getOperator() {
+        return operator;
+    }
+
+    public void setOperator(String operator) {
+        this.operator = operator;
+    }
+
+    public String getOperaterIp() {
+        return operaterIp;
+    }
+
+    public void setOperaterIp(String operaterIp) {
+        this.operaterIp = operaterIp;
+    }
+
+    public Date getOperaterTime() {
+        return operaterTime;
+    }
+
+    public void setOperaterTime(Date operaterTime) {
+        this.operaterTime = operaterTime;
+    }
+
+    public List<Integer> getStaffIds() {
+        return staffIds;
+    }
+
+    public void setStaffIds(List<Integer> staffIds) {
+        this.staffIds = staffIds;
+    }
+
+
+    public String getStaffName() {
+        return staffName;
+    }
+
+    public void setStaffName(String staffName) {
+        this.staffName = staffName;
+    }
+
+    public List<Integer> getGroupIds() {
+        return groupIds;
+    }
+
+    public void setGroupIds(List<Integer> groupIds) {
+        this.groupIds = groupIds;
+    }
+
+    public Integer getGroupId() {
+        return groupId;
+    }
+
+    public void setGroupId(Integer groupId) {
+        this.groupId = groupId;
+    }
+
+    public Integer getStaffId() {
+        return staffId;
+    }
+
+    public void setStaffId(Integer staffId) {
+        this.staffId = staffId;
+    }
+
+    public Integer getDepartment() {
+        return department;
+    }
+
+    public void setDepartment(Integer department) {
+        this.department = department;
+    }
+
+    public Integer getPageIndex() {
+        return pageIndex;
+    }
+
+    public void setPageIndex(Integer pageIndex) {
+        this.pageIndex = pageIndex;
+    }
+
+    public Integer getPageSize() {
+        return pageSize;
+    }
+
+    public void setPageSize(Integer pageSize) {
+        this.pageSize = pageSize;
+    }
+
+    public Integer getStartItem() {
+        return startItem;
+    }
+
+    public void setStartItem(Integer startItem) {
+        this.startItem = startItem;
+    }
+
+    public String getGroupNames() {
+        return groupNames;
+    }
+
+    public void setGroupNames(String groupNames) {
+        this.groupNames = groupNames;
+    }
 }
