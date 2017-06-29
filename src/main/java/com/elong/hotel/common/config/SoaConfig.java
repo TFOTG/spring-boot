@@ -45,6 +45,7 @@ public class SoaConfig {
     private int productTimeOut;
 
     private String productGetHotelPhone;
+-s
 
     /**调用获取确认传真接口*/
     private String confirmFax;
@@ -65,6 +66,8 @@ public class SoaConfig {
     public void setConfirmFaxTimeOut(int confirmFaxTimeOut) {
         this.confirmFaxTimeOut = confirmFaxTimeOut;
     }
+
+    private String batchGetHotelContactRequest;
 
     /**
      * 调用ebk延迟接口service
@@ -255,6 +258,14 @@ public class SoaConfig {
 
     public void setConfirmOrder(String confirmOrder) {
         this.confirmOrder = confirmOrder;
+    }
+
+    public String getBatchGetHotelContactRequest() {
+        return batchGetHotelContactRequest;
+    }
+
+    public void setBatchGetHotelContactRequest(String batchGetHotelContactRequest) {
+        this.batchGetHotelContactRequest = batchGetHotelContactRequest;
     }
 
     public static void main(String[] args) {
