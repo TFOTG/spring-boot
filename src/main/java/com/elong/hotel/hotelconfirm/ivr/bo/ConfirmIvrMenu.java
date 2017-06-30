@@ -6,6 +6,7 @@ import com.elong.hotel.proxy.javaorder.getorder.Order;
 import com.elong.hotel.proxy.javaorder.getorder.RoomNight;
 
 import java.io.Serializable;
+import java.math.BigDecimal;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -78,7 +79,7 @@ public class ConfirmIvrMenu implements Serializable {
 
 		if(order.getRoomNights().size() == 1) {
 			RoomNight roomNight = order.getRoomNights().get(0);
-			nights.add(getRoomNight(roomNight,df));
+			nights.add(getRoomNight(roomNight,df,order.getPayment()));
 		}else{
 			if(order.getRoomNights().get(0).getStayDate().getYear() != order.getRoomNights().get(order.getRoomNights().size()-1).getStayDate().getYear()) {
 				df = new SimpleDateFormat("yyyy年M月d日");
@@ -98,21 +99,21 @@ public class ConfirmIvrMenu implements Serializable {
 					}else if(status == 1 && roomNight.getBreakfastCount().intValue() == roomNightNext.getBreakfastCount().intValue() && roomNight.getSalePrice().floatValue() == roomNightNext.getSalePrice().floatValue()) {
 						continue;
 					}else if(status == 1) {
-						sb.append("至").append(getRoomNight(roomNight,df));
+						sb.append("至").append(getRoomNight(roomNight,df,order.getPayment()));
 						nights.add(sb.toString());
 						sb.delete(0, sb.length());
 						status = 0;
 					}else {
-						nights.add(getRoomNight(roomNight,df));
+						nights.add(getRoomNight(roomNight,df,order.getPayment()));
 					}
 				}else {
 					if(status == 1) {
-						sb.append("至").append(getRoomNight(roomNight,df));
+						sb.append("至").append(getRoomNight(roomNight,df,order.getPayment()));
 						nights.add(sb.toString());
 						sb.delete(0, sb.length());
 						status = 0;
 					}else {
-						nights.add(getRoomNight(roomNight,df));
+						nights.add(getRoomNight(roomNight,df,order.getPayment()));
 					}
 				}
 			}
@@ -135,8 +136,16 @@ public class ConfirmIvrMenu implements Serializable {
 		this.hStatus = hStatus;
 	}
 
-	private String getRoomNight(RoomNight roomNight,DateFormat dateFormat) {
-		StringBuilder sb = new StringBuilder(dateFormat.format(roomNight.getStayDate())).append(roomNight.getSalePrice().intValue()).append("元，");
+	private String getRoomNight(RoomNight roomNight,DateFormat dateFormat,String payment) {
+
+		BigDecimal price;
+		if("D".equalsIgnoreCase(payment)) {
+			price = roomNight.getIsSpecial() ? roomNight.getRealCost() : roomNight.getCost();
+		}else {
+			price = roomNight.getRealSalePrice();
+		}
+
+		StringBuilder sb = new StringBuilder(dateFormat.format(roomNight.getStayDate())).append(price.intValue()).append("元，");
 		switch (roomNight.getBreakfastCount()) {
 		case 0:
 			sb.append("不含早");
