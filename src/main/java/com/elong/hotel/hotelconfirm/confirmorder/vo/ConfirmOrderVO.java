@@ -182,8 +182,8 @@ public class ConfirmOrderVO  extends PaginationParameter {
 	public ConfirmOrderVO(List<ConfirmOrderPo> confirmOrders,GroupGettingBo bo,ConfirmOrderConfig config) {
 		this.sortTimeL = 0;
 		this.respitetimeL = 0;
-		this.setOrderField("min(priority) asc,max(isfaxreturn) desc,max(urge) asc,max(isebrefuse) desc,min(sorttime) ");
-		this.setOrderFieldType("asc");
+
+
 		this.setStratItem(1);
 		this.setSelectColumns("id, reserno, reserstatus, cardno, `mod`, arrivedate, leavedate, timeearly, timelate, hotelid,\n"
 				+ "  hotelname, supplierid, suppliertype, suppliername, supplierotatype, proxyid, cityid,\n"
@@ -193,15 +193,28 @@ public class ConfirmOrderVO  extends PaginationParameter {
 				+ "  sorttime, defaultsorttime, firstrefusedtime, ordertimestamplong");
 		this.staffName = "";
 
+		StringBuilder idSB = new StringBuilder();
 		List<String> ids = new ArrayList<>();
 		for(ConfirmOrderPo po:confirmOrders) {
 			if(bo.getGettingtype() == GettingTypeEnum.Hotel.getKey()) {
 				ids.add(po.getHotelId());
+				idSB.append(",'").append(po.getHotelId()).append("'");
 
 			}else if (bo.getGettingtype() == GettingTypeEnum.Hotel.getKey()) {
 				ids.add(po.getSupplierId());
+				idSB.append(",'").append(po.getSupplierId()).append("'");
 			}
 		}
+
+		if(bo.getGettingtype() == GettingTypeEnum.Hotel.getKey()) {
+			this.setOrderField(String.format("FIELD(`hotelid` %s),priority asc,isfaxreturn desc,urge asc,isebrefuse desc,sorttime ",idSB.toString()));
+		}else if (bo.getGettingtype() == GettingTypeEnum.Hotel.getKey()) {
+			this.setOrderField(String.format("FIELD(`supplierid` %s),priority asc,isfaxreturn desc,urge asc,isebrefuse desc,sorttime ",idSB.toString()));
+		}
+
+
+
+		this.setOrderFieldType("asc");
 
 		if(bo.getGettingtype() == GettingTypeEnum.Hotel.getKey()) {
 			this.hotelIds = ids;
