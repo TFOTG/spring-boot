@@ -1,5 +1,7 @@
 package com.elong.hotel.proxy.javaorder.request;
 
+import com.elong.hotel.proxy.javaorder.getorder.Order;
+
 import java.util.Date;
 
 /**
@@ -65,5 +67,14 @@ public class ExistsRelationOrderRequest {
 
 	public void setHotelId(String hotelId) {
 		this.hotelId = hotelId;
+	}
+
+	public ExistsRelationOrderRequest(Order order) {
+		this.orderId = order.getOrderId();
+		this.cardNo = order.getCardNo();
+		this.phone = order.getContact().getMobile();
+		this.guestName = order.getGuests().get(0).getName();
+		this.checkoutDate = order.getCheckOutDate();
+		this.hotelId = order.getHotelId();
 	}
 }
