@@ -28,7 +28,7 @@ public class SoaHelper {
      * @author zouyufei
      */
     @SoaLogAnnotations
-    public String postWithLog(String productName, String serviceName, String methodName, String jsonData, int timeout, String logTag, CommunicationEventTypeEnum type) throws Exception {
+    public String postWithLog(String productName, String serviceName, String methodName, String jsonData, int timeout,String contentType, String logTag, CommunicationEventTypeEnum type) throws Exception {
         return post(productName, serviceName, methodName, jsonData, timeout);
     }
 

@@ -118,6 +118,17 @@ public class ConfirmOrderConfig {
     private String firstRefuseSupplierIds;
 
     /**
+     * 主管名称
+     */
+    private String managerName;
+
+    //更新配置人的姓名
+    private String operatorName;
+
+    //更新配置的时间
+    private String operatorTime;
+
+    /**
      * 获取订单时间间隔
      */
     private int getOrderInterval;
@@ -167,6 +178,14 @@ public class ConfirmOrderConfig {
         urgeAddMins = 15;
         firstRefuseTime = 10;
         firstRefuseSupplierIds = "";
+    }
+
+    public String getManagerName() {
+        return managerName;
+    }
+
+    public void setManagerName(String managerName) {
+        this.managerName = managerName;
     }
 
     public String getPriority4NightEnd() {
@@ -343,6 +362,22 @@ public class ConfirmOrderConfig {
 
     public void setFirstRefuseSupplierIds(String firstRefuseSupplierIds) {
         this.firstRefuseSupplierIds = firstRefuseSupplierIds;
+    }
+
+    public String getOperatorName() {
+        return operatorName;
+    }
+
+    public void setOperatorName(String operatorName) {
+        this.operatorName = operatorName;
+    }
+
+    public String getOperatorTime() {
+        return operatorTime;
+    }
+
+    public void setOperatorTime(String operatorTime) {
+        this.operatorTime = operatorTime;
     }
 
     public static void main(String[] args) {
