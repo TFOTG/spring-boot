@@ -45,6 +45,14 @@ public class SoaConfig {
     private int productTimeOut;
 
     private String productGetHotelPhone;
+    
+    private String productGetHotelContactMethod;
+    
+    private String xworkflowService;
+    
+    private String xworkflowMethod;
+    
+    private int xworkflowTimeout;
 
     /**
      * 调用ebk延迟接口service
@@ -237,7 +245,39 @@ public class SoaConfig {
         this.confirmOrder = confirmOrder;
     }
 
-    public static void main(String[] args) {
+    public String getXworkflowService() {
+		return xworkflowService;
+	}
+
+	public void setXworkflowService(String xworkflowService) {
+		this.xworkflowService = xworkflowService;
+	}
+
+	public String getXworkflowMethod() {
+		return xworkflowMethod;
+	}
+
+	public void setXworkflowMethod(String xworkflowMethod) {
+		this.xworkflowMethod = xworkflowMethod;
+	}
+
+	public int getXworkflowTimeout() {
+		return xworkflowTimeout;
+	}
+
+	public void setXworkflowTimeout(int xworkflowTimeout) {
+		this.xworkflowTimeout = xworkflowTimeout;
+	}
+
+	public String getProductGetHotelContactMethod() {
+		return productGetHotelContactMethod;
+	}
+
+	public void setProductGetHotelContactMethod(String productGetHotelContactMethod) {
+		this.productGetHotelContactMethod = productGetHotelContactMethod;
+	}
+
+	public static void main(String[] args) {
         SoaConfig config=new SoaConfig();
         config.setHotelProduct("hotel");
         config.setJavaOrderQueryService("jorder-query");

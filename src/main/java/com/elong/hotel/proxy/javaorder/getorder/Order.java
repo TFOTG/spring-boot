@@ -149,6 +149,10 @@ public class Order {
     //预定距离
     private Integer distanceFromHotelWhenBooking;
 
+    private Integer cooperationType;
+    
+    private String createName;
+    
 	public Date getOrderTimestamp() {
 		return orderTimestamp;
 	}
@@ -684,4 +688,21 @@ public class Order {
     public void setModifyTime(Date modifyTime) {
         this.modifyTime = modifyTime;
     }
+
+	public Integer getCooperationType() {
+		return cooperationType;
+	}
+
+	public void setCooperationType(Integer cooperationType) {
+		this.cooperationType = cooperationType;
+	}
+
+	public String getCreateName() {
+		return createName;
+	}
+
+	public void setCreateName(String createName) {
+		this.createName = createName;
+	}
+    
 }

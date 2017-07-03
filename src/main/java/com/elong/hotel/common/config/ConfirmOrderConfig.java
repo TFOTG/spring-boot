@@ -116,7 +116,9 @@ public class ConfirmOrderConfig {
      * 初拒供应商Ids
      */
     private String firstRefuseSupplierIds;
-
+    private String workflowTypes;
+    
+    private String workflowKeyType;
     public ConfirmOrderConfig() {
         priority4HighMinute = 60;
         priority4HighDistance = 3000;
@@ -330,7 +332,23 @@ public class ConfirmOrderConfig {
         this.firstRefuseSupplierIds = firstRefuseSupplierIds;
     }
 
-    public static void main(String[] args) {
+    public String getWorkflowTypes() {
+		return workflowTypes;
+	}
+
+	public void setWorkflowTypes(String workflowTypes) {
+		this.workflowTypes = workflowTypes;
+	}
+
+	public String getWorkflowKeyType() {
+		return workflowKeyType;
+	}
+
+	public void setWorkflowKeyType(String workflowKeyType) {
+		this.workflowKeyType = workflowKeyType;
+	}
+
+	public static void main(String[] args) {
         ConfirmOrderConfig config = new ConfirmOrderConfig();
         System.out.println(JSON.toJSONString(config));
     }

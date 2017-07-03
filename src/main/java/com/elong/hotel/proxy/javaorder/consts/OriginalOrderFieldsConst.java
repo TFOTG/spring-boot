@@ -19,4 +19,9 @@ public interface OriginalOrderFieldsConst {
 	 */
 	String FIELDS_FOR_CONFIRMIVR = "status,hotelId,payment,checkInDate,roomCount,roomTypeName,checkOutDate,earlyCheckInTime,lateCheckInTime,additionalStatus,guestName,guestSex,hotelName,mHotelName,roomNightSalePrice,roomNightStayDate,roomNightBreakfastCount,notesToHotel";
 
+	
+	/**
+	 * 待处理／暂缓
+	 */
+	String FIELDS_FOR_PENDING = "hotelId,cooperationType,additionalStatus,confirmNo,roomTypeName,roomCount,payment,guestName,roomNightBreakfastCount,notesToHotel,notesToGuest,notesToElong,sumPrice,sumCost,cardNo,gradeId,contactPhone,contactMobile,createName,orderKeyValues,createTime";
 }
