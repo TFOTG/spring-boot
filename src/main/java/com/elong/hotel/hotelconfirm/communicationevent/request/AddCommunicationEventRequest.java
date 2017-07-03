@@ -5,38 +5,39 @@ package com.elong.hotel.hotelconfirm.communicationevent.request;
  */
 public class AddCommunicationEventRequest {
     private String tag;
-    private String methodName;
-    private String request;
-    private String response;
+    private String eventtype;
+    private Object request;
+    private Object response;
 
-    public AddCommunicationEventRequest(String methodName, String request, String response, String tag) {
-        this.methodName = methodName;
+
+    public AddCommunicationEventRequest(String eventtype, Object request, Object response, String tag) {
+        this.eventtype = eventtype;
         this.request = request;
         this.response = response;
         this.tag = tag;
     }
 
-    public String getMethodName() {
-        return methodName;
+    public String getEventtype() {
+        return eventtype;
     }
 
-    public void setMethodName(String methodName) {
-        this.methodName = methodName;
+    public void setEventtype(String eventtype) {
+        this.eventtype = eventtype;
     }
 
-    public String getRequest() {
+    public Object getRequest() {
         return request;
     }
 
-    public void setRequest(String request) {
+    public void setRequest(Object request) {
         this.request = request;
     }
 
-    public String getResponse() {
+    public Object getResponse() {
         return response;
     }
 
-    public void setResponse(String response) {
+    public void setResponse(Object response) {
         this.response = response;
     }
 

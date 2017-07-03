@@ -1,83 +1,88 @@
-/**
- * ProjectName [confirm-entity]
- * FileName [com.elong.hotel.hotelconfirm.staff.vo.StaffVO.java]
- * Createion [2017年6月27日]
- */
 package com.elong.hotel.hotelconfirm.staff.vo;
 
-import javax.validation.constraints.NotNull;
-
-import org.hibernate.validator.constraints.NotBlank;
-
-import com.elong.hotel.hotelconfirm.valid.FirstValid;
-import com.elong.hotel.hotelconfirm.valid.SecondValid;
-
 /**
- * @author jianjun.wang
- * @version 1.0.0
+ * Created by Hualong.Li on 17/6/26.
  */
 public class StaffVO {
 
-	@NotBlank(message="员工姓名不能为空",groups={FirstValid.class,SecondValid.class})
-	private String staffname;
-	
-	private String lastlogintime;
-	
-	private String lastlogouttime;
-	
-	private String lastgettime;
-	
-	private Integer isonline ;
+	private String staffName;
 
-	@NotNull(message="订单类型不能为空",groups=FirstValid.class)
-	private Integer ordertype;
-	
-	public String getStaffname() {
-		return staffname;
+	private String leaderName;
+
+	private Integer department;
+
+	private Integer isEnable;
+
+	private Integer isOnline;
+
+	private Integer getOrderInterval;
+
+	private Integer groupId;
+
+	public StaffVO() {
 	}
 
-	public void setStaffname(String staffname) {
-		this.staffname = staffname;
+	public StaffVO(Integer isEnable, Integer isOnline, Integer getOrderInterval, String staffName,Integer department) {
+		this.isEnable = isEnable;
+		this.isOnline = isOnline;
+		this.getOrderInterval = getOrderInterval;
+		this.staffName = staffName;
+		this.department = department;
 	}
 
-	public String getLastlogintime() {
-		return lastlogintime;
+	public String getStaffName() {
+		return staffName;
 	}
 
-	public void setLastlogintime(String lastlogintime) {
-		this.lastlogintime = lastlogintime;
+	public void setStaffName(String staffName) {
+		this.staffName = staffName;
 	}
 
-	public String getLastlogouttime() {
-		return lastlogouttime;
+	public String getLeaderName() {
+		return leaderName;
 	}
 
-	public void setLastlogouttime(String lastlogouttime) {
-		this.lastlogouttime = lastlogouttime;
+	public void setLeaderName(String leaderName) {
+		this.leaderName = leaderName;
 	}
 
-	public String getLastgettime() {
-		return lastgettime;
+	public Integer getDepartment() {
+		return department;
 	}
 
-	public void setLastgettime(String lastgettime) {
-		this.lastgettime = lastgettime;
+	public void setDepartment(Integer department) {
+		this.department = department;
 	}
 
-	public Integer getIsonline() {
-		return isonline;
+	public Integer getIsEnable() {
+		return isEnable;
 	}
 
-	public void setIsonline(Integer isonline) {
-		this.isonline = isonline;
+	public void setIsEnable(Integer isEnable) {
+		this.isEnable = isEnable;
 	}
 
-	public Integer getOrdertype() {
-		return ordertype;
+	public Integer getIsOnline() {
+		return isOnline;
 	}
 
-	public void setOrdertype(Integer ordertype) {
-		this.ordertype = ordertype;
+	public void setIsOnline(Integer isOnline) {
+		this.isOnline = isOnline;
 	}
-	
+
+	public Integer getGetOrderInterval() {
+		return getOrderInterval;
+	}
+
+	public void setGetOrderInterval(Integer getOrderInterval) {
+		this.getOrderInterval = getOrderInterval;
+	}
+
+	public Integer getGroupId() {
+		return groupId;
+	}
+
+	public void setGroupId(Integer groupId) {
+		this.groupId = groupId;
+	}
 }
