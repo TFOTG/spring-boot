@@ -18,6 +18,8 @@ public class SoaConfig {
 
     private String hotel3GetOrderNightMode;
 
+    private String hotel3GetStaff;
+
     private String javaOrderQueryService;
 
     private String javaOrderApiService;
@@ -268,6 +270,14 @@ public class SoaConfig {
         this.batchGetHotelContactRequest = batchGetHotelContactRequest;
     }
 
+    public String getHotel3GetStaff() {
+        return hotel3GetStaff;
+    }
+
+    public void setHotel3GetStaff(String hotel3GetStaff) {
+        this.hotel3GetStaff = hotel3GetStaff;
+    }
+
     public static void main(String[] args) {
         SoaConfig config=new SoaConfig();
         config.setHotelProduct("hotel");
@@ -280,6 +290,7 @@ public class SoaConfig {
         config.setRejectOrder("reject");
         config.setHotel3Service("mis");
         config.setHotel3TimeOut(5000);
+        config.setHotel3GetStaff("GetStaffByStaffName");
         config.setHotel3GetOrderServerTime("GetOrderServerTime");
         config.setHotel3GetOrderNightMode("GetOrderNightMode");
         config.setEbkDelayOrderService("");
