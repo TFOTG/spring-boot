@@ -1,5 +1,6 @@
 package com.elong.hotel.hotelconfirm.confirmorder.response;
 
+import com.elong.hotel.common.config.ConfirmOrderConfig;
 import com.elong.hotel.common.response.ServiceResponseBase;
 import com.elong.hotel.hotelconfirm.confirmorder.bo.ConfirmHotelBo;
 import com.elong.hotel.hotelconfirm.group.po.GroupPo;
@@ -17,6 +18,26 @@ public class GetSelectInfoResponse extends ServiceResponseBase {
     private List<ConfirmHotelBo> hotelList;
 
     private List<StaffPo> staffList;
+
+    private List<String> leaderName;
+
+    private ConfirmOrderConfig config;
+
+    public ConfirmOrderConfig getConfig() {
+        return config;
+    }
+
+    public void setConfig(ConfirmOrderConfig config) {
+        this.config = config;
+    }
+
+    public List<String> getLeaderName() {
+        return leaderName;
+    }
+
+    public void setLeaderName(List<String> leaderName) {
+        this.leaderName = leaderName;
+    }
 
     public List<GroupPo> getGroupList() {
         return groupList;
