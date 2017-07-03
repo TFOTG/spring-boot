@@ -32,7 +32,7 @@ public class ReceiveRequest extends ServiceRequestBase implements Serializable {
 		this.flowTemplateNo = flowTemplateNo;
 		this.priority = priority;
 		this.productline = productline;
-		this.mobile = mobile;
+		this.mobile = mobile.replaceAll("-", "");
 		this.extension = extension;
 		this.orderIds = orderIds;
 		this.hotelId = hotelId;
