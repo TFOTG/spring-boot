@@ -46,6 +46,28 @@ public class SoaConfig {
 
     private String productGetHotelPhone;
     
+    /**调用获取确认传真接口*/
+    private String confirmFax;
+    private int confirmFaxTimeOut;
+
+    public String getConfirmFax() {
+        return confirmFax;
+    }
+
+    public void setConfirmFax(String confirmFax) {
+        this.confirmFax = confirmFax;
+    }
+
+    public int getConfirmFaxTimeOut() {
+        return confirmFaxTimeOut;
+    }
+
+    public void setConfirmFaxTimeOut(int confirmFaxTimeOut) {
+        this.confirmFaxTimeOut = confirmFaxTimeOut;
+    }
+
+
+    private String batchGetHotelContactRequest;
     private String productGetHotelContactMethod;
     
     private String xworkflowService;
@@ -276,7 +298,13 @@ public class SoaConfig {
 	public void setProductGetHotelContactMethod(String productGetHotelContactMethod) {
 		this.productGetHotelContactMethod = productGetHotelContactMethod;
 	}
+	public String getBatchGetHotelContactRequest() {
+        return batchGetHotelContactRequest;
+    }
 
+    public void setBatchGetHotelContactRequest(String batchGetHotelContactRequest) {
+        this.batchGetHotelContactRequest = batchGetHotelContactRequest;
+    }
 	public static void main(String[] args) {
         SoaConfig config=new SoaConfig();
         config.setHotelProduct("hotel");
