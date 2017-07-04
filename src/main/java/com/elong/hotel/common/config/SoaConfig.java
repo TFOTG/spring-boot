@@ -7,8 +7,8 @@ import com.alibaba.fastjson.JSON;
  *
  */
 public class SoaConfig {
-
-    private String hotelProduct;
+	
+	private String hotelProduct;
 
     private String hotel3Service;
 
@@ -17,6 +17,8 @@ public class SoaConfig {
     private String hotel3GetOrderServerTime;
 
     private String hotel3GetOrderNightMode;
+
+    private String hotel3GetStaff;
 
     private String javaOrderQueryService;
 
@@ -45,7 +47,7 @@ public class SoaConfig {
     private int productTimeOut;
 
     private String productGetHotelPhone;
-    
+
     /**调用获取确认传真接口*/
     private String confirmFax;
     private int confirmFaxTimeOut;
@@ -305,6 +307,15 @@ public class SoaConfig {
     public void setBatchGetHotelContactRequest(String batchGetHotelContactRequest) {
         this.batchGetHotelContactRequest = batchGetHotelContactRequest;
     }
+    
+	public String getHotel3GetStaff() {
+		return hotel3GetStaff;
+	}
+
+	public void setHotel3GetStaff(String hotel3GetStaff) {
+		this.hotel3GetStaff = hotel3GetStaff;
+	}
+
 	public static void main(String[] args) {
         SoaConfig config=new SoaConfig();
         config.setHotelProduct("hotel");
