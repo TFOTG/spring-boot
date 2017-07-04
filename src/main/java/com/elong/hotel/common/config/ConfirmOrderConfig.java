@@ -1,6 +1,7 @@
 package com.elong.hotel.common.config;
 
 import com.alibaba.fastjson.JSON;
+import com.alibaba.fastjson.annotation.JSONField;
 
 /**
  * Created by peng.wang on 17/3/9.
