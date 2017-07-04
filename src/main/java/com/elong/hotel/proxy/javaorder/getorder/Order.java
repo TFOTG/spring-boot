@@ -163,6 +163,8 @@ public class Order {
 	//预定距离
     private Integer distanceFromHotelWhenBooking;
 
+    private String createName;
+    
 	public Date getOrderTimestamp() {
 		return orderTimestamp;
 	}
@@ -707,6 +709,14 @@ public class Order {
 		this.cooperationType = cooperationType;
 	}
 
+	public String getCreateName() {
+		return createName;
+	}
+
+	public void setCreateName(String createName) {
+		this.createName = createName;
+	}
+    
 	public String getMRoomTypeName() {
 		return mRoomTypeName;
 	}

@@ -117,6 +117,9 @@ public class ConfirmOrderConfig {
      * 初拒供应商Ids
      */
     private String firstRefuseSupplierIds;
+    private String workflowTypes;
+    
+    private String workflowKeyType;
 
     /**
      * 主管名称
@@ -364,6 +367,22 @@ public class ConfirmOrderConfig {
     public void setFirstRefuseSupplierIds(String firstRefuseSupplierIds) {
         this.firstRefuseSupplierIds = firstRefuseSupplierIds;
     }
+
+    public String getWorkflowTypes() {
+		return workflowTypes;
+	}
+
+	public void setWorkflowTypes(String workflowTypes) {
+		this.workflowTypes = workflowTypes;
+	}
+
+	public String getWorkflowKeyType() {
+		return workflowKeyType;
+	}
+
+	public void setWorkflowKeyType(String workflowKeyType) {
+		this.workflowKeyType = workflowKeyType;
+	}
 
     public String getOperatorName() {
         return operatorName;
