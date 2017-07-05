@@ -46,6 +46,8 @@ public class ConfirmOrderVO  extends PaginationParameter {
 
 	private Integer respitetimeL;
 
+	private String respiteTime;
+
 	private Integer sortTimeN;
 
 	public Set<Integer> getRankIds() {
@@ -176,10 +178,18 @@ public class ConfirmOrderVO  extends PaginationParameter {
 		this.supplierIds = supplierIds;
 	}
 
+	public String getRespiteTime() {
+		return respiteTime;
+	}
+
+	public void setRespiteTime(String respiteTime) {
+		this.respiteTime = respiteTime;
+	}
+
 	public ConfirmOrderVO() {
 	}
 
-	public ConfirmOrderVO(List<ConfirmOrderPo> confirmOrders,GroupGettingBo bo,ConfirmOrderConfig config) {
+	public ConfirmOrderVO(List<ConfirmOrderPo> confirmOrders,GroupGettingBo bo,ConfirmOrderConfig config,int size) {
 		this.sortTimeL = 0;
 		this.respitetimeL = 0;
 
@@ -218,10 +228,10 @@ public class ConfirmOrderVO  extends PaginationParameter {
 
 		if(bo.getGettingtype() == GettingTypeEnum.Hotel.getKey()) {
 			this.hotelIds = ids;
-			this.setPageSize(config.getHotelOrderSize());
+			this.setPageSize(config.getHotelOrderSize()-size);
 		}else if (bo.getGettingtype() == GettingTypeEnum.Hotel.getKey()) {
 			this.supplierIds = ids;
-			this.setPageSize(config.getSupplierOrderSize());
+			this.setPageSize(config.getSupplierOrderSize()-size);
 		}
 	}
 
@@ -244,5 +254,10 @@ public class ConfirmOrderVO  extends PaginationParameter {
 			this.setSelectColumns("supplierid");
 			this.setPageSize(config.getSupplierSize());
 		}
+	}
+
+	public ConfirmOrderVO(String staffName, String respiteTime) {
+		this.staffName = staffName;
+		this.respiteTime = respiteTime;
 	}
 }
