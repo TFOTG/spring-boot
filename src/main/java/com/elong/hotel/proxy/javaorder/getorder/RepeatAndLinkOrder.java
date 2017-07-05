@@ -7,13 +7,33 @@ import java.util.List;
  */
 public class RepeatAndLinkOrder {
 
-	private List<String> orderId;
+	private List<Integer> relationOrderByCardNo;
 
-	public List<String> getOrderId() {
-		return orderId;
+	private List<Integer> relationOrderByGuestName;
+
+	private List<Integer> relationOrderByPhone;
+
+	public List<Integer> getRelationOrderByCardNo() {
+		return relationOrderByCardNo;
 	}
 
-	public void setOrderId(List<String> orderId) {
-		this.orderId = orderId;
+	public void setRelationOrderByCardNo(List<Integer> relationOrderByCardNo) {
+		this.relationOrderByCardNo = relationOrderByCardNo;
+	}
+
+	public List<Integer> getRelationOrderByGuestName() {
+		return relationOrderByGuestName;
+	}
+
+	public void setRelationOrderByGuestName(List<Integer> relationOrderByGuestName) {
+		this.relationOrderByGuestName = relationOrderByGuestName;
+	}
+
+	public List<Integer> getRelationOrderByPhone() {
+		return relationOrderByPhone;
+	}
+
+	public void setRelationOrderByPhone(List<Integer> relationOrderByPhone) {
+		this.relationOrderByPhone = relationOrderByPhone;
 	}
 }
