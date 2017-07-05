@@ -7,8 +7,8 @@ import com.alibaba.fastjson.JSON;
  *
  */
 public class SoaConfig {
-
-    private String hotelProduct;
+	
+	private String hotelProduct;
 
     private String hotel3Service;
 
@@ -17,6 +17,8 @@ public class SoaConfig {
     private String hotel3GetOrderServerTime;
 
     private String hotel3GetOrderNightMode;
+
+    private String hotel3GetStaff;
 
     private String javaOrderQueryService;
 
@@ -68,6 +70,13 @@ public class SoaConfig {
 
 
     private String batchGetHotelContactRequest;
+    private String productGetHotelContactMethod;
+    
+    private String xworkflowService;
+    
+    private String xworkflowMethod;
+    
+    private int xworkflowTimeout;
 
     /**
      * 调用ebk延迟接口service
@@ -260,15 +269,54 @@ public class SoaConfig {
         this.confirmOrder = confirmOrder;
     }
 
-    public String getBatchGetHotelContactRequest() {
+    public String getXworkflowService() {
+		return xworkflowService;
+	}
+
+	public void setXworkflowService(String xworkflowService) {
+		this.xworkflowService = xworkflowService;
+	}
+
+	public String getXworkflowMethod() {
+		return xworkflowMethod;
+	}
+
+	public void setXworkflowMethod(String xworkflowMethod) {
+		this.xworkflowMethod = xworkflowMethod;
+	}
+
+	public int getXworkflowTimeout() {
+		return xworkflowTimeout;
+	}
+
+	public void setXworkflowTimeout(int xworkflowTimeout) {
+		this.xworkflowTimeout = xworkflowTimeout;
+	}
+
+	public String getProductGetHotelContactMethod() {
+		return productGetHotelContactMethod;
+	}
+
+	public void setProductGetHotelContactMethod(String productGetHotelContactMethod) {
+		this.productGetHotelContactMethod = productGetHotelContactMethod;
+	}
+	public String getBatchGetHotelContactRequest() {
         return batchGetHotelContactRequest;
     }
 
     public void setBatchGetHotelContactRequest(String batchGetHotelContactRequest) {
         this.batchGetHotelContactRequest = batchGetHotelContactRequest;
     }
+    
+	public String getHotel3GetStaff() {
+		return hotel3GetStaff;
+	}
 
-    public static void main(String[] args) {
+	public void setHotel3GetStaff(String hotel3GetStaff) {
+		this.hotel3GetStaff = hotel3GetStaff;
+	}
+
+	public static void main(String[] args) {
         SoaConfig config=new SoaConfig();
         config.setHotelProduct("hotel");
         config.setJavaOrderQueryService("jorder-query");
