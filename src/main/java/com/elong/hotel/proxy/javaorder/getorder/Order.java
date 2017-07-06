@@ -83,6 +83,8 @@ public class Order {
 	// 内部备注
 	private String notesToElong;
 
+	private String notesToGuest;
+
 	private int otaType;
 
 	private long orderFlag;
