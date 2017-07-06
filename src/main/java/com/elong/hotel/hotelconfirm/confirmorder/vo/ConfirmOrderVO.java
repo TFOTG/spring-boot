@@ -26,6 +26,8 @@ public class ConfirmOrderVO  extends PaginationParameter {
 
 	private Integer reserNo;
 
+	private List<Integer> reserNos;
+
 	private String hotelId;
 
 	private List<String> hotelIds;
@@ -49,6 +51,8 @@ public class ConfirmOrderVO  extends PaginationParameter {
 	private String respiteTime;
 
 	private Integer sortTimeN;
+
+	private Integer isEbRefuse;
 
 	public Set<Integer> getRankIds() {
 		return rankIds;
@@ -256,8 +260,33 @@ public class ConfirmOrderVO  extends PaginationParameter {
 		}
 	}
 
+	public ConfirmOrderVO(List<Integer> reserNos, Integer isEbRefuse) {
+		this.reserNos = reserNos;
+		this.isEbRefuse = isEbRefuse;
+	}
+
+	public ConfirmOrderVO(String hotelId) {
+		this.hotelId = hotelId;
+	}
+
 	public ConfirmOrderVO(String staffName, String respiteTime) {
 		this.staffName = staffName;
 		this.respiteTime = respiteTime;
+	}
+
+	public Integer getIsEbRefuse() {
+		return isEbRefuse;
+	}
+
+	public void setIsEbRefuse(Integer isEbRefuse) {
+		this.isEbRefuse = isEbRefuse;
+	}
+
+	public List<Integer> getReserNos() {
+		return reserNos;
+	}
+
+	public void setReserNos(List<Integer> reserNos) {
+		this.reserNos = reserNos;
 	}
 }
