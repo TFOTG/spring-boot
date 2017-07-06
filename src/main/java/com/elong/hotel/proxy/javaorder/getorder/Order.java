@@ -153,8 +153,6 @@ public class Order {
 	private Integer supplierOtaType;
 
 	private Integer cooperationType;
-
-	private String notesToGuest;
 	
 	public String getmRoomTypeId() {
 		return mRoomTypeId;
