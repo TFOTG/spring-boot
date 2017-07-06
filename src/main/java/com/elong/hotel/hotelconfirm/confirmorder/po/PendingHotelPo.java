@@ -43,6 +43,22 @@ public class PendingHotelPo {
 	 */
 	private String specialnote;
 
+	
+	/**
+	 * 酒店订单数量
+	 */
+	private int orderCount;
+	
+	/**
+	 * 是否ebk在线
+	 */
+	private int ebonline;
+	
+	/**
+	 * 酒店传真号码
+	 */
+	private String shotelfax;
+	
 	private List<PendingConfirmOrderPo> orderlist;
 	
 	public String getHotelname() {
@@ -99,6 +115,30 @@ public class PendingHotelPo {
 
 	public void setOrderlist(List<PendingConfirmOrderPo> orderlist) {
 		this.orderlist = orderlist;
+	}
+
+	public int getOrderCount() {
+		return orderCount;
+	}
+
+	public void setOrderCount(int orderCount) {
+		this.orderCount = orderCount;
+	}
+
+	public int getEbonline() {
+		return ebonline;
+	}
+
+	public void setEbonline(int ebonline) {
+		this.ebonline = ebonline;
+	}
+
+	public String getShotelfax() {
+		return shotelfax;
+	}
+
+	public void setShotelfax(String shotelfax) {
+		this.shotelfax = shotelfax;
 	}
 	
 }
