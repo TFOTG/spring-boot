@@ -29,6 +29,9 @@ public class PendingStaffVO {
 	
 	private Integer isonline ;
 
+	@NotNull(message="员工部门不能为空",groups=SecondValid.class)
+	private Integer department;
+	
 	@NotNull(message="订单类型不能为空",groups=FirstValid.class)
 	private Integer ordertype;
 	
@@ -79,4 +82,13 @@ public class PendingStaffVO {
 	public void setOrdertype(Integer ordertype) {
 		this.ordertype = ordertype;
 	}
+
+	public Integer getDepartment() {
+		return department;
+	}
+
+	public void setDepartment(Integer department) {
+		this.department = department;
+	}
+	
 }

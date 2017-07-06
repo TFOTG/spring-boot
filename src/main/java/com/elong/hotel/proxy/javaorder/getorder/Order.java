@@ -152,6 +152,8 @@ public class Order {
 
 	private Integer cooperationType;
 
+	private String notesToGuest;
+	
 	public String getmRoomTypeId() {
 		return mRoomTypeId;
 	}
@@ -723,5 +725,13 @@ public class Order {
 
 	public void setMRoomTypeName(String mRoomTypeName) {
 		this.mRoomTypeName = mRoomTypeName;
+	}
+
+	public String getNotesToGuest() {
+		return notesToGuest;
+	}
+
+	public void setNotesToGuest(String notesToGuest) {
+		this.notesToGuest = notesToGuest;
 	}
 }
