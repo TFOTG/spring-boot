@@ -1,9 +1,9 @@
 package com.elong.hotel.hotelconfirm.confirmorder.enums;
 
 /**
- * Created by Hualong.Li on 17/6/29.
+ * Created by Hualong.Li on 17/7/7.
  */
-public enum LinkedEnum {
+public enum EbRefuseEnum {
 	/**
 	 * None
 	 */
@@ -11,12 +11,12 @@ public enum LinkedEnum {
 	/**
 	 *
 	 */
-	LINKED(1, "联单");
+	EbRefuse(1, "eb拒单");
 
 	private int key;
 	private String value;
 
-	LinkedEnum(int key, String value) {
+	EbRefuseEnum(int key, String value) {
 		this.key = key;
 		this.value = value;
 	}
@@ -25,11 +25,11 @@ public enum LinkedEnum {
 		return key;
 	}
 
-	public static LinkedEnum getValue(int key) {
-		LinkedEnum result = LinkedEnum.None;
-		for (LinkedEnum linkedEnum : LinkedEnum.values()) {
-			if (linkedEnum.getKey() == key) {
-				result = linkedEnum;
+	public static EbRefuseEnum getValue(int key) {
+		EbRefuseEnum result = EbRefuseEnum.None;
+		for (EbRefuseEnum obj : EbRefuseEnum.values()) {
+			if (obj.getKey() == key) {
+				result = obj;
 				break;
 			}
 		}
