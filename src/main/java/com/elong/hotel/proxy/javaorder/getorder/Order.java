@@ -153,6 +153,9 @@ public class Order {
 	private Integer supplierOtaType;
 
 	private Integer cooperationType;
+
+    private Integer cooperationOrderId;
+
 	
 	public String getmRoomTypeId() {
 		return mRoomTypeId;
@@ -734,4 +737,12 @@ public class Order {
 	public void setNotesToGuest(String notesToGuest) {
 		this.notesToGuest = notesToGuest;
 	}
+
+    public Integer getCooperationOrderId() {
+        return cooperationOrderId;
+    }
+
+    public void setCooperationOrderId(Integer cooperationOrderId) {
+        this.cooperationOrderId = cooperationOrderId;
+    }
 }
