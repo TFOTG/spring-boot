@@ -54,6 +54,10 @@ public class ConfirmOrderVO  extends PaginationParameter {
 
 	private Integer isEbRefuse;
 
+	private Integer mod;
+
+	private Integer islinked;
+
 	public Set<Integer> getRankIds() {
 		return rankIds;
 	}
@@ -288,5 +292,21 @@ public class ConfirmOrderVO  extends PaginationParameter {
 
 	public void setReserNos(List<Integer> reserNos) {
 		this.reserNos = reserNos;
+	}
+
+	public Integer getIslinked() {
+		return islinked;
+	}
+
+	public void setIslinked(Integer islinked) {
+		this.islinked = islinked;
+	}
+
+	public Integer getMod() {
+		return mod;
+	}
+
+	public void setMod(Integer mod) {
+		this.mod = mod;
 	}
 }
