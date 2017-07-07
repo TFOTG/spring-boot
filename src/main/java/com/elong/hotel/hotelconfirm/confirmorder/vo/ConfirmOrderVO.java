@@ -265,8 +265,8 @@ public class ConfirmOrderVO  extends PaginationParameter {
 		this.isEbRefuse = isEbRefuse;
 	}
 
-	public ConfirmOrderVO(String hotelId) {
-		this.hotelId = hotelId;
+	public ConfirmOrderVO(List<String> hotelIds) {
+		this.hotelIds = hotelIds;
 	}
 
 	public ConfirmOrderVO(String staffName, String respiteTime) {

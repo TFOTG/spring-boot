@@ -9,7 +9,7 @@ public class GetRefuse4EbookingRequest {
 
 	private List<Integer> reserNos;
 
-	private String hotelId;
+	private List<String> hotelIds;
 
 	public List<Integer> getReserNos() {
 		return reserNos;
@@ -19,11 +19,11 @@ public class GetRefuse4EbookingRequest {
 		this.reserNos = reserNos;
 	}
 
-	public String getHotelId() {
-		return hotelId;
+	public List<String> getHotelIds() {
+		return hotelIds;
 	}
 
-	public void setHotelId(String hotelId) {
-		this.hotelId = hotelId;
+	public void setHotelIds(List<String> hotelIds) {
+		this.hotelIds = hotelIds;
 	}
 }
