@@ -83,6 +83,8 @@ public class Order {
 	// 内部备注
 	private String notesToElong;
 
+	private String notesToGuest;
+
 	private int otaType;
 
 	private long orderFlag;
@@ -154,6 +156,7 @@ public class Order {
 
     private Integer cooperationOrderId;
 
+	
 	public String getmRoomTypeId() {
 		return mRoomTypeId;
 	}
@@ -725,6 +728,14 @@ public class Order {
 
 	public void setMRoomTypeName(String mRoomTypeName) {
 		this.mRoomTypeName = mRoomTypeName;
+	}
+
+	public String getNotesToGuest() {
+		return notesToGuest;
+	}
+
+	public void setNotesToGuest(String notesToGuest) {
+		this.notesToGuest = notesToGuest;
 	}
 
     public Integer getCooperationOrderId() {
