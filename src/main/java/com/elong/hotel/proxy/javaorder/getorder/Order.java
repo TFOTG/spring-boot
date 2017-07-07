@@ -152,6 +152,8 @@ public class Order {
 
 	private Integer cooperationType;
 
+    private Integer cooperationOrderId;
+
 	public String getmRoomTypeId() {
 		return mRoomTypeId;
 	}
@@ -724,4 +726,12 @@ public class Order {
 	public void setMRoomTypeName(String mRoomTypeName) {
 		this.mRoomTypeName = mRoomTypeName;
 	}
+
+    public Integer getCooperationOrderId() {
+        return cooperationOrderId;
+    }
+
+    public void setCooperationOrderId(Integer cooperationOrderId) {
+        this.cooperationOrderId = cooperationOrderId;
+    }
 }
