@@ -3,6 +3,7 @@ package com.elong.hotel.hotelconfirm.confirmorder.request;
 import com.elong.hotel.common.bo.OperatorInfoBo;
 import com.elong.hotel.hotelconfirm.confirmorder.bo.ConfirmOrderBo;
 import com.elong.hotel.hotelconfirm.confirmorder.enums.ConfirmType;
+import com.elong.hotel.hotelconfirm.confirmorderactionlog.enums.ActionOpFromEnum;
 
 import java.util.Date;
 import java.util.List;
@@ -58,7 +59,9 @@ public class Refuse4EbookingRequest {
     /// <summary>
     /// 酒店Id
     /// </summary>
-    public String hotelId;
+    private String opName;
+
+    private ActionOpFromEnum actionOpFromEnum;
 
     private ConfirmType confirmType;
 
@@ -164,11 +167,20 @@ public class Refuse4EbookingRequest {
         this.checkOutDate = checkOutDate;
     }
 
-    public String getHotelId() {
-        return hotelId;
+
+    public ActionOpFromEnum getActionOpFromEnum() {
+        return actionOpFromEnum;
     }
 
-    public void setHotelId(String hotelId) {
-        this.hotelId = hotelId;
+    public void setActionOpFromEnum(ActionOpFromEnum actionOpFromEnum) {
+        this.actionOpFromEnum = actionOpFromEnum;
+    }
+
+    public String getOpName() {
+        return opName;
+    }
+
+    public void setOpName(String opName) {
+        this.opName = opName;
     }
 }

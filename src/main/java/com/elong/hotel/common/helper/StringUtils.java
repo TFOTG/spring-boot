@@ -19,5 +19,17 @@ public class StringUtils extends com.elong.common.util.StringUtils {
 		}
 		return str;
 	}
+
+	/**
+	 * 拼接字符串
+	 * @param str1
+	 * @param str2
+	 * @return
+	 */
+	public static String concatWithOutNull(String str1,String str2) {
+		StringBuilder sb = new StringBuilder();
+		sb.append(str1 == null ? "" : str1).append(str2 == null ? "" : str2);
+		return sb.toString();
+	}
 	
 }
