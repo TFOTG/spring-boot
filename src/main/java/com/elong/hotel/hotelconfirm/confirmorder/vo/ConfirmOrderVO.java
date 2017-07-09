@@ -218,7 +218,7 @@ public class ConfirmOrderVO  extends PaginationParameter {
 				ids.add(po.getHotelId());
 				idSB.append(",'").append(po.getHotelId()).append("'");
 
-			}else if (bo.getGettingtype() == GettingTypeEnum.Hotel.getKey()) {
+			}else if (bo.getGettingtype() == GettingTypeEnum.Supplier.getKey()) {
 				ids.add(po.getSupplierId());
 				idSB.append(",'").append(po.getSupplierId()).append("'");
 			}
@@ -226,7 +226,7 @@ public class ConfirmOrderVO  extends PaginationParameter {
 
 		if(bo.getGettingtype() == GettingTypeEnum.Hotel.getKey()) {
 			this.setOrderField(String.format("FIELD(`hotelid` %s),priority asc,isfaxreturn desc,urge asc,isebrefuse desc,sorttime ",idSB.toString()));
-		}else if (bo.getGettingtype() == GettingTypeEnum.Hotel.getKey()) {
+		}else if (bo.getGettingtype() == GettingTypeEnum.Supplier.getKey()) {
 			this.setOrderField(String.format("FIELD(`supplierid` %s),priority asc,isfaxreturn desc,urge asc,isebrefuse desc,sorttime ",idSB.toString()));
 		}
 
@@ -237,7 +237,7 @@ public class ConfirmOrderVO  extends PaginationParameter {
 		if(bo.getGettingtype() == GettingTypeEnum.Hotel.getKey()) {
 			this.hotelIds = ids;
 			this.setPageSize(config.getHotelOrderSize()-size);
-		}else if (bo.getGettingtype() == GettingTypeEnum.Hotel.getKey()) {
+		}else if (bo.getGettingtype() == GettingTypeEnum.Supplier.getKey()) {
 			this.supplierIds = ids;
 			this.setPageSize(config.getSupplierOrderSize()-size);
 		}
@@ -257,7 +257,7 @@ public class ConfirmOrderVO  extends PaginationParameter {
 			this.setGroupby("hotelid");
 			this.setSelectColumns("hotelid");
 			this.setPageSize(config.getHotelSize());
-		}else if (bo.getGettingtype() == GettingTypeEnum.Hotel.getKey()) {
+		}else if (bo.getGettingtype() == GettingTypeEnum.Supplier.getKey()) {
 			this.setGroupby("supplierid");
 			this.setSelectColumns("supplierid");
 			this.setPageSize(config.getSupplierSize());
