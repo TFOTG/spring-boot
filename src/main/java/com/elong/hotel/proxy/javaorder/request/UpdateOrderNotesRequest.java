@@ -1,5 +1,7 @@
 package com.elong.hotel.proxy.javaorder.request;
 
+import java.util.List;
+
 /**
  * 
  * 更新订单备注request
@@ -10,6 +12,8 @@ package com.elong.hotel.proxy.javaorder.request;
 public class UpdateOrderNotesRequest {
 	// 订单号
 	private int orderId;
+    //订单id集合
+    private List<Integer> orderIds;
 	// 内部备注
 	private String notesToElong;
 	// 客人备注（存疑）
@@ -59,4 +63,11 @@ public class UpdateOrderNotesRequest {
 		this.orderId = orderId;
 	}
 
+    public List<Integer> getOrderIds() {
+        return orderIds;
+    }
+
+    public void setOrderIds(List<Integer> orderIds) {
+        this.orderIds = orderIds;
+    }
 }

@@ -10,6 +10,14 @@ public class SoaConfig {
 	
 	private String hotelProduct;
 
+    private String dcProduct;
+
+    private String dcOrderService;
+
+    private int dcOrderTimeOut;
+
+    private String urgeCtripOrder;
+
     private String hotel3Service;
 
     private int hotel3TimeOut;
@@ -92,6 +100,39 @@ public class SoaConfig {
      * 调用ebk延迟接口方法  超时时间
      */
     private int ebkDelayOrderTimeOut;
+
+
+    public String getDcProduct() {
+        return dcProduct;
+    }
+
+    public void setDcProduct(String dcProduct) {
+        this.dcProduct = dcProduct;
+    }
+
+    public String getDcOrderService() {
+        return dcOrderService;
+    }
+
+    public void setDcOrderService(String dcOrderService) {
+        this.dcOrderService = dcOrderService;
+    }
+
+    public int getDcOrderTimeOut() {
+        return dcOrderTimeOut;
+    }
+
+    public void setDcOrderTimeOut(int dcOrderTimeOut) {
+        this.dcOrderTimeOut = dcOrderTimeOut;
+    }
+
+    public String getUrgeCtripOrder() {
+        return urgeCtripOrder;
+    }
+
+    public void setUrgeCtripOrder(String urgeCtripOrder) {
+        this.urgeCtripOrder = urgeCtripOrder;
+    }
 
     public String getHotelProduct() {
         return hotelProduct;
@@ -319,6 +360,10 @@ public class SoaConfig {
 	public static void main(String[] args) {
         SoaConfig config=new SoaConfig();
         config.setHotelProduct("hotel");
+        config.setDcProduct("dc");
+        config.setDcOrderService("order");
+        config.setDcOrderTimeOut(5000);
+        config.setUrgeCtripOrder("urgeCtripOrder");
         config.setJavaOrderQueryService("jorder-query");
         config.setGetOrderHistory("data_historyInfoForRecheck");
         config.setJavaOrderQueryTimeOut(5000);
