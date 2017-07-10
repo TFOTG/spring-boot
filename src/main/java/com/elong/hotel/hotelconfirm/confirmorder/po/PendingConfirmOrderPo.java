@@ -9,6 +9,7 @@ import java.math.BigDecimal;
 import java.util.List;
 
 import com.elong.hotel.proxy.javaorder.getorder.Guest;
+import com.elong.hotel.proxy.javaorder.getorder.RoomNight;
 
 
 /**
@@ -58,16 +59,6 @@ public class PendingConfirmOrderPo {
 	private Integer supplierid;
 	
 	/**
-	 * 供应商类型
-	 */
-	private int suppliertype;
-	
-	/**
-	 * 优先级
-	 */
-	private int priority;
-	
-	/**
 	 * eb策略id
 	 */
 	private int ebkstrategyid;
@@ -78,26 +69,6 @@ public class PendingConfirmOrderPo {
 	private String promisetime;
 	
 	/**
-	 * 是否传真回传
-	 */
-	private int isfaxreturn;
-	
-	/**
-	 * 是否联单重单
-	 */
-	private int islinked;
-	
-	/**
-	 * 是否eb拒单
-	 */
-	private int isebrefuse;
-	
-	/**
-	 * 是否催确认
-	 */
-	private int urge;
-	
-	/**
 	 * 暂缓时间
 	 */
 	private String respitetime;
@@ -106,56 +77,6 @@ public class PendingConfirmOrderPo {
 	 * 获取时间
 	 */
 	private String distributetime;
-
-	/**
-	 * 是否变更单
-	 */
-	private Integer ischangeorder;
-	
-	/**
-	 * 签约
-	 */
-	private Integer signed;
-	
-	/**
-	 * 签约数量
-	 */
-	private Integer signedcount;
-	
-	/**
-	 * 添加
-	 */
-	private Integer increase;
-	
-	/**
-	 * 添加数量
-	 */
-	private Integer increasecount;
-	
-	/**
-	 * 买断
-	 */
-	private Integer buyout;
-	
-	/**
-	 * 直连失败
-	 */
-	private Integer dcfail;
-	
-	/**
-	 * 小时房
-	 */
-	private Integer hourroom;
-	
-	/**
-	 * 发送短信确认
-	 */
-	private Integer sendmessage;
-	
-	/**
-	 * 会员登记  钻石 龙萃
-	 */
-	private String gradeId;
 	
 	/**
 	 * 给酒店的备注
@@ -242,6 +163,29 @@ public class PendingConfirmOrderPo {
 	 */
 	private String createTime;
 	
+	/**
+	 * 货币
+	 */
+	private String currencyCode;
+	/**
+	 * 最后一次已申时间
+	 */
+	private String amendtime;
+	
+	/**
+	 * 订单图标
+	 */
+	private PendingOrderIconPo pendingOrderIconPo;
+	
+	
+	public PendingOrderIconPo getPendingOrderIconPo() {
+		return pendingOrderIconPo;
+	}
+
+	public void setPendingOrderIconPo(PendingOrderIconPo pendingOrderIconPo) {
+		this.pendingOrderIconPo = pendingOrderIconPo;
+	}
+
 	public Integer getReserno() {
 		return reserno;
 	}
@@ -306,22 +250,6 @@ public class PendingConfirmOrderPo {
 		this.supplierid = supplierid;
 	}
 
-	public int getSuppliertype() {
-		return suppliertype;
-	}
-
-	public void setSuppliertype(int suppliertype) {
-		this.suppliertype = suppliertype;
-	}
-
-	public int getPriority() {
-		return priority;
-	}
-
-	public void setPriority(int priority) {
-		this.priority = priority;
-	}
-
 	public int getEbkstrategyid() {
 		return ebkstrategyid;
 	}
@@ -336,38 +264,6 @@ public class PendingConfirmOrderPo {
 
 	public void setPromisetime(String promisetime) {
 		this.promisetime = promisetime;
-	}
-
-	public int getIsfaxreturn() {
-		return isfaxreturn;
-	}
-
-	public void setIsfaxreturn(int isfaxreturn) {
-		this.isfaxreturn = isfaxreturn;
-	}
-
-	public int getIslinked() {
-		return islinked;
-	}
-
-	public void setIslinked(int islinked) {
-		this.islinked = islinked;
-	}
-
-	public int getIsebrefuse() {
-		return isebrefuse;
-	}
-
-	public void setIsebrefuse(int isebrefuse) {
-		this.isebrefuse = isebrefuse;
-	}
-
-	public int getUrge() {
-		return urge;
-	}
-
-	public void setUrge(int urge) {
-		this.urge = urge;
 	}
 
 	public String getRespitetime() {
@@ -386,85 +282,6 @@ public class PendingConfirmOrderPo {
 		this.distributetime = distributetime;
 	}
 
-	public Integer getIschangeorder() {
-		return ischangeorder;
-	}
-
-	public void setIschangeorder(Integer ischangeorder) {
-		this.ischangeorder = ischangeorder;
-	}
-
-	public Integer getSigned() {
-		return signed;
-	}
-
-	public void setSigned(Integer signed) {
-		this.signed = signed;
-	}
-
-	public Integer getSignedcount() {
-		return signedcount;
-	}
-
-	public void setSignedcount(Integer signedcount) {
-		this.signedcount = signedcount;
-	}
-
-	public Integer getIncrease() {
-		return increase;
-	}
-
-	public void setIncrease(Integer increase) {
-		this.increase = increase;
-	}
-
-	public Integer getIncreasecount() {
-		return increasecount;
-	}
-
-	public void setIncreasecount(Integer increasecount) {
-		this.increasecount = increasecount;
-	}
-
-	public Integer getBuyout() {
-		return buyout;
-	}
-
-	public void setBuyout(Integer buyout) {
-		this.buyout = buyout;
-	}
-
-	public Integer getDcfail() {
-		return dcfail;
-	}
-
-	public void setDcfail(Integer dcfail) {
-		this.dcfail = dcfail;
-	}
-
-	public Integer getHourroom() {
-		return hourroom;
-	}
-
-	public void setHourroom(Integer hourroom) {
-		this.hourroom = hourroom;
-	}
-
-	public Integer getSendmessage() {
-		return sendmessage;
-	}
-
-	public void setSendmessage(Integer sendmessage) {
-		this.sendmessage = sendmessage;
-	}
-
-	public String getGradeId() {
-		return gradeId;
-	}
-
-	public void setGradeId(String gradeId) {
-		this.gradeId = gradeId;
-	}
 
 	public String getNotesToHotel() {
 		return notesToHotel;
@@ -600,6 +417,22 @@ public class PendingConfirmOrderPo {
 
 	public void setCreateTime(String createTime) {
 		this.createTime = createTime;
+	}
+
+	public String getAmendtime() {
+		return amendtime;
+	}
+
+	public void setAmendtime(String amendtime) {
+		this.amendtime = amendtime;
+	}
+
+	public String getCurrencyCode() {
+		return currencyCode;
+	}
+
+	public void setCurrencyCode(String currencyCode) {
+		this.currencyCode = currencyCode;
 	}
 
 }

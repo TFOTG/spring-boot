@@ -20,12 +20,24 @@ public class PendingResponse extends ServiceResponseBase{
 
 	private Object data;
 	
+	/**
+	 * 马上到店订单数量
+	 */
 	private int msCount;
 	
+	/**
+	 * 暂缓订单数量
+	 */
 	private int zhCount;
 	
+	/**
+	 * 暂缓到期订单数量
+	 */
 	private int djCount;
 	
+	/**
+	 * 待处理订单数量
+	 */
 	private int  dclCount;
 
 	public Object getData() {
