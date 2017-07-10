@@ -1,6 +1,6 @@
 package com.elong.hotel.proxy.javaorder.request;
 
-import java.util.List;
+import java.io.Serializable;
 
 /**
  * 
@@ -9,11 +9,9 @@ import java.util.List;
  * @author zouyufei
  *
  */
-public class UpdateOrderNotesRequest {
+public class UpdateOrderNotesRequest implements Serializable{
 	// 订单号
-	private int orderId;
-    //订单id集合
-    private List<Integer> orderIds;
+	private Integer orderId;
 	// 内部备注
 	private String notesToElong;
 	// 客人备注（存疑）
@@ -23,7 +21,7 @@ public class UpdateOrderNotesRequest {
 	// 操作者信息
 	private ClientOperatorInfo clientOperatorInfo;
 
-	public String getNotesToElong() {
+    public String getNotesToElong() {
 		return notesToElong;
 	}
 
@@ -55,19 +53,11 @@ public class UpdateOrderNotesRequest {
 		this.clientOperatorInfo = clientOperatorInfo;
 	}
 
-	public int getOrderId() {
-		return orderId;
-	}
-
-	public void setOrderId(int orderId) {
-		this.orderId = orderId;
-	}
-
-    public List<Integer> getOrderIds() {
-        return orderIds;
+    public Integer getOrderId() {
+        return orderId;
     }
 
-    public void setOrderIds(List<Integer> orderIds) {
-        this.orderIds = orderIds;
+    public void setOrderId(Integer orderId) {
+        this.orderId = orderId;
     }
 }
