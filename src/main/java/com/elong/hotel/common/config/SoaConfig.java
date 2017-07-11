@@ -7,222 +7,257 @@ import com.alibaba.fastjson.JSON;
  *
  */
 public class SoaConfig {
-	
+
 	private String hotelProduct;
 
-    private String dcProduct;
+	private String dcProduct;
 
-    private String dcOrderService;
+	private String dcOrderService;
 
-    private int dcOrderTimeOut;
+	private int dcOrderTimeOut;
 
-    private String urgeCtripOrder;
+	private String urgeCtripOrder;
 
-    private String hotel3Service;
+	private String hotel3Service;
 
-    private int hotel3TimeOut;
+	private int hotel3TimeOut;
 
-    private String hotel3GetOrderServerTime;
+	private String hotel3GetOrderServerTime;
 
-    private String hotel3GetOrderNightMode;
+	private String hotel3GetOrderNightMode;
 
-    private String hotel3GetStaff;
+	private String hotel3GetStaff;
 
-    private String javaOrderQueryService;
+	private String javaOrderQueryService;
 
-    private String javaOrderApiService;
+	private String javaOrderApiService;
 
-    private int javaOrderApiTimeOut;
+	private int javaOrderApiTimeOut;
 
-    private String rejectOrder;
+	private String rejectOrder;
 
-    private String confirmOrder;
+	private String confirmOrder;
 
-    private int javaOrderQueryTimeOut;
+	private int javaOrderQueryTimeOut;
 
-    private String getOrderHistory;
+	private String getOrderHistory;
 
-    private String ivrService;
+	private String ivrService;
 
-    private int ivrTimeOut;
+	private int ivrTimeOut;
 
-    private String ivrSend;
+	private String ivrSend;
 
-    private String ivrBoundCount;
+	private String ivrBoundCount;
 
-    private String productService;
+	private String productService;
 
-    private int productTimeOut;
+	private int productTimeOut;
 
-    private String productGetHotelPhone;
+	private String productGetHotelPhone;
 
-    /**调用获取确认传真接口*/
-    private String confirmFax;
-    private int confirmFaxTimeOut;
+	/**调用获取确认传真接口*/
+	private String confirmFax;
+	private int confirmFaxTimeOut;
 
-    public String getConfirmFax() {
-        return confirmFax;
-    }
+	public String getConfirmFax() {
+		return confirmFax;
+	}
 
-    public void setConfirmFax(String confirmFax) {
-        this.confirmFax = confirmFax;
-    }
+	public void setConfirmFax(String confirmFax) {
+		this.confirmFax = confirmFax;
+	}
 
-    public int getConfirmFaxTimeOut() {
-        return confirmFaxTimeOut;
-    }
+	public int getConfirmFaxTimeOut() {
+		return confirmFaxTimeOut;
+	}
 
-    public void setConfirmFaxTimeOut(int confirmFaxTimeOut) {
-        this.confirmFaxTimeOut = confirmFaxTimeOut;
-    }
+	public void setConfirmFaxTimeOut(int confirmFaxTimeOut) {
+		this.confirmFaxTimeOut = confirmFaxTimeOut;
+	}
 
+	private String platFormProduct;
+	private String identifyService;
+	private int identifyTimeOut;
+	private String identifyGetProxyInfo;
 
-    private String batchGetHotelContactRequest;
-    private String productGetHotelContactMethod;
-    
-    private String xworkflowService;
-    
-    private String xworkflowMethod;
-    
-    private int xworkflowTimeout;
+	public String getPlatFormProduct() {
+		return platFormProduct;
+	}
 
-    /**
-     * 调用ebk延迟接口service
-     */
-    private String ebkDelayOrderService;
-    
-    /**
-     * 调用ebk延迟接口方法
-     */
-    private String ebkDelayOrderMethod;
+	public void setPlatFormProduct(String platFormProduct) {
+		this.platFormProduct = platFormProduct;
+	}
 
-    /**
-     * 调用ebk延迟接口方法  超时时间
-     */
-    private int ebkDelayOrderTimeOut;
+	public String getIdentifyService() {
+		return identifyService;
+	}
 
+	public void setIdentifyService(String identifyService) {
+		this.identifyService = identifyService;
+	}
 
-    public String getDcProduct() {
-        return dcProduct;
-    }
+	public int getIdentifyTimeOut() {
+		return identifyTimeOut;
+	}
 
-    public void setDcProduct(String dcProduct) {
-        this.dcProduct = dcProduct;
-    }
+	public void setIdentifyTimeOut(int identifyTimeOut) {
+		this.identifyTimeOut = identifyTimeOut;
+	}
 
-    public String getDcOrderService() {
-        return dcOrderService;
-    }
+	public String getIdentifyGetProxyInfo() {
+		return identifyGetProxyInfo;
+	}
 
-    public void setDcOrderService(String dcOrderService) {
-        this.dcOrderService = dcOrderService;
-    }
+	public void setIdentifyGetProxyInfo(String identifyGetProxyInfo) {
+		this.identifyGetProxyInfo = identifyGetProxyInfo;
+	}
 
-    public int getDcOrderTimeOut() {
-        return dcOrderTimeOut;
-    }
+	private String batchGetHotelContactRequest;
+	private String productGetHotelContactMethod;
 
-    public void setDcOrderTimeOut(int dcOrderTimeOut) {
-        this.dcOrderTimeOut = dcOrderTimeOut;
-    }
+	private String xworkflowService;
 
-    public String getUrgeCtripOrder() {
-        return urgeCtripOrder;
-    }
+	private String xworkflowMethod;
 
-    public void setUrgeCtripOrder(String urgeCtripOrder) {
-        this.urgeCtripOrder = urgeCtripOrder;
-    }
+	private int xworkflowTimeout;
 
-    public String getHotelProduct() {
-        return hotelProduct;
-    }
+	/**
+	 * 调用ebk延迟接口service
+	 */
+	private String ebkDelayOrderService;
 
-    public void setHotelProduct(String hotelProduct) {
-        this.hotelProduct = hotelProduct;
-    }
+	/**
+	 * 调用ebk延迟接口方法
+	 */
+	private String ebkDelayOrderMethod;
 
-    public String getIvrService() {
-        return ivrService;
-    }
+	/**
+	 * 调用ebk延迟接口方法  超时时间
+	 */
+	private int ebkDelayOrderTimeOut;
 
-    public void setIvrService(String ivrService) {
-        this.ivrService = ivrService;
-    }
+	public String getDcProduct() {
+		return dcProduct;
+	}
 
-    public int getIvrTimeOut() {
-        return ivrTimeOut;
-    }
+	public void setDcProduct(String dcProduct) {
+		this.dcProduct = dcProduct;
+	}
 
-    public void setIvrTimeOut(int ivrTimeOut) {
-        this.ivrTimeOut = ivrTimeOut;
-    }
+	public String getDcOrderService() {
+		return dcOrderService;
+	}
 
-    public String getIvrSend() {
-        return ivrSend;
-    }
+	public void setDcOrderService(String dcOrderService) {
+		this.dcOrderService = dcOrderService;
+	}
 
-    public void setIvrSend(String ivrSend) {
-        this.ivrSend = ivrSend;
-    }
+	public int getDcOrderTimeOut() {
+		return dcOrderTimeOut;
+	}
 
-    public String getIvrBoundCount() {
-        return ivrBoundCount;
-    }
+	public void setDcOrderTimeOut(int dcOrderTimeOut) {
+		this.dcOrderTimeOut = dcOrderTimeOut;
+	}
 
-    public String getProductService() {
-        return productService;
-    }
+	public String getUrgeCtripOrder() {
+		return urgeCtripOrder;
+	}
 
-    public void setProductService(String productService) {
-        this.productService = productService;
-    }
+	public void setUrgeCtripOrder(String urgeCtripOrder) {
+		this.urgeCtripOrder = urgeCtripOrder;
+	}
 
-    public int getProductTimeOut() {
-        return productTimeOut;
-    }
+	public String getHotelProduct() {
+		return hotelProduct;
+	}
 
-    public void setProductTimeOut(int productTimeOut) {
-        this.productTimeOut = productTimeOut;
-    }
+	public void setHotelProduct(String hotelProduct) {
+		this.hotelProduct = hotelProduct;
+	}
 
-    public String getProductGetHotelPhone() {
-        return productGetHotelPhone;
-    }
+	public String getIvrService() {
+		return ivrService;
+	}
 
-    public void setProductGetHotelPhone(String productGetHotelPhone) {
-        this.productGetHotelPhone = productGetHotelPhone;
-    }
+	public void setIvrService(String ivrService) {
+		this.ivrService = ivrService;
+	}
 
-    public void setIvrBoundCount(String ivrBoundCount) {
-        this.ivrBoundCount = ivrBoundCount;
-    }
+	public int getIvrTimeOut() {
+		return ivrTimeOut;
+	}
 
-    public String getJavaOrderQueryService() {
-        return javaOrderQueryService;
-    }
+	public void setIvrTimeOut(int ivrTimeOut) {
+		this.ivrTimeOut = ivrTimeOut;
+	}
 
-    public void setJavaOrderQueryService(String javaOrderQueryService) {
-        this.javaOrderQueryService = javaOrderQueryService;
-    }
+	public String getIvrSend() {
+		return ivrSend;
+	}
 
-    public String getGetOrderHistory() {
-        return getOrderHistory;
-    }
+	public void setIvrSend(String ivrSend) {
+		this.ivrSend = ivrSend;
+	}
 
-    public void setGetOrderHistory(String getOrderHistory) {
-        this.getOrderHistory = getOrderHistory;
-    }
+	public String getIvrBoundCount() {
+		return ivrBoundCount;
+	}
 
-    public int getJavaOrderQueryTimeOut() {
-        return javaOrderQueryTimeOut;
-    }
+	public String getProductService() {
+		return productService;
+	}
 
-    public void setJavaOrderQueryTimeOut(int javaOrderQueryTimeOut) {
-        this.javaOrderQueryTimeOut = javaOrderQueryTimeOut;
-    }
-    
-    public String getEbkDelayOrderService() {
+	public void setProductService(String productService) {
+		this.productService = productService;
+	}
+
+	public int getProductTimeOut() {
+		return productTimeOut;
+	}
+
+	public void setProductTimeOut(int productTimeOut) {
+		this.productTimeOut = productTimeOut;
+	}
+
+	public String getProductGetHotelPhone() {
+		return productGetHotelPhone;
+	}
+
+	public void setProductGetHotelPhone(String productGetHotelPhone) {
+		this.productGetHotelPhone = productGetHotelPhone;
+	}
+
+	public void setIvrBoundCount(String ivrBoundCount) {
+		this.ivrBoundCount = ivrBoundCount;
+	}
+
+	public String getJavaOrderQueryService() {
+		return javaOrderQueryService;
+	}
+
+	public void setJavaOrderQueryService(String javaOrderQueryService) {
+		this.javaOrderQueryService = javaOrderQueryService;
+	}
+
+	public String getGetOrderHistory() {
+		return getOrderHistory;
+	}
+
+	public void setGetOrderHistory(String getOrderHistory) {
+		this.getOrderHistory = getOrderHistory;
+	}
+
+	public int getJavaOrderQueryTimeOut() {
+		return javaOrderQueryTimeOut;
+	}
+
+	public void setJavaOrderQueryTimeOut(int javaOrderQueryTimeOut) {
+		this.javaOrderQueryTimeOut = javaOrderQueryTimeOut;
+	}
+
+	public String getEbkDelayOrderService() {
 		return ebkDelayOrderService;
 	}
 
@@ -246,71 +281,71 @@ public class SoaConfig {
 		this.ebkDelayOrderTimeOut = ebkDelayOrderTimeOut;
 	}
 
-    public String getHotel3Service() {
-        return hotel3Service;
-    }
+	public String getHotel3Service() {
+		return hotel3Service;
+	}
 
-    public void setHotel3Service(String hotel3Service) {
-        this.hotel3Service = hotel3Service;
-    }
+	public void setHotel3Service(String hotel3Service) {
+		this.hotel3Service = hotel3Service;
+	}
 
-    public int getHotel3TimeOut() {
-        return hotel3TimeOut;
-    }
+	public int getHotel3TimeOut() {
+		return hotel3TimeOut;
+	}
 
-    public void setHotel3TimeOut(int hotel3TimeOut) {
-        this.hotel3TimeOut = hotel3TimeOut;
-    }
+	public void setHotel3TimeOut(int hotel3TimeOut) {
+		this.hotel3TimeOut = hotel3TimeOut;
+	}
 
-    public String getHotel3GetOrderServerTime() {
-        return hotel3GetOrderServerTime;
-    }
+	public String getHotel3GetOrderServerTime() {
+		return hotel3GetOrderServerTime;
+	}
 
-    public void setHotel3GetOrderServerTime(String hotel3GetOrderServerTime) {
-        this.hotel3GetOrderServerTime = hotel3GetOrderServerTime;
-    }
+	public void setHotel3GetOrderServerTime(String hotel3GetOrderServerTime) {
+		this.hotel3GetOrderServerTime = hotel3GetOrderServerTime;
+	}
 
-    public String getHotel3GetOrderNightMode() {
-        return hotel3GetOrderNightMode;
-    }
+	public String getHotel3GetOrderNightMode() {
+		return hotel3GetOrderNightMode;
+	}
 
-    public void setHotel3GetOrderNightMode(String hotel3GetOrderNightMode) {
-        this.hotel3GetOrderNightMode = hotel3GetOrderNightMode;
-    }
+	public void setHotel3GetOrderNightMode(String hotel3GetOrderNightMode) {
+		this.hotel3GetOrderNightMode = hotel3GetOrderNightMode;
+	}
 
-    public String getJavaOrderApiService() {
-        return javaOrderApiService;
-    }
+	public String getJavaOrderApiService() {
+		return javaOrderApiService;
+	}
 
-    public void setJavaOrderApiService(String javaOrderApiService) {
-        this.javaOrderApiService = javaOrderApiService;
-    }
+	public void setJavaOrderApiService(String javaOrderApiService) {
+		this.javaOrderApiService = javaOrderApiService;
+	}
 
-    public int getJavaOrderApiTimeOut() {
-        return javaOrderApiTimeOut;
-    }
+	public int getJavaOrderApiTimeOut() {
+		return javaOrderApiTimeOut;
+	}
 
-    public void setJavaOrderApiTimeOut(int javaOrderApiTimeOut) {
-        this.javaOrderApiTimeOut = javaOrderApiTimeOut;
-    }
+	public void setJavaOrderApiTimeOut(int javaOrderApiTimeOut) {
+		this.javaOrderApiTimeOut = javaOrderApiTimeOut;
+	}
 
-    public String getRejectOrder() {
-        return rejectOrder;
-    }
+	public String getRejectOrder() {
+		return rejectOrder;
+	}
 
-    public void setRejectOrder(String rejectOrder) {
-        this.rejectOrder = rejectOrder;
-    }
+	public void setRejectOrder(String rejectOrder) {
+		this.rejectOrder = rejectOrder;
+	}
 
-    public String getConfirmOrder() {
-        return confirmOrder;
-    }
+	public String getConfirmOrder() {
+		return confirmOrder;
+	}
 
-    public void setConfirmOrder(String confirmOrder) {
-        this.confirmOrder = confirmOrder;
-    }
+	public void setConfirmOrder(String confirmOrder) {
+		this.confirmOrder = confirmOrder;
+	}
 
-    public String getXworkflowService() {
+	public String getXworkflowService() {
 		return xworkflowService;
 	}
 
@@ -341,14 +376,15 @@ public class SoaConfig {
 	public void setProductGetHotelContactMethod(String productGetHotelContactMethod) {
 		this.productGetHotelContactMethod = productGetHotelContactMethod;
 	}
-	public String getBatchGetHotelContactRequest() {
-        return batchGetHotelContactRequest;
-    }
 
-    public void setBatchGetHotelContactRequest(String batchGetHotelContactRequest) {
-        this.batchGetHotelContactRequest = batchGetHotelContactRequest;
-    }
-    
+	public String getBatchGetHotelContactRequest() {
+		return batchGetHotelContactRequest;
+	}
+
+	public void setBatchGetHotelContactRequest(String batchGetHotelContactRequest) {
+		this.batchGetHotelContactRequest = batchGetHotelContactRequest;
+	}
+
 	public String getHotel3GetStaff() {
 		return hotel3GetStaff;
 	}
@@ -358,29 +394,28 @@ public class SoaConfig {
 	}
 
 	public static void main(String[] args) {
-        SoaConfig config=new SoaConfig();
-        config.setHotelProduct("hotel");
-        config.setDcProduct("dc");
-        config.setDcOrderService("order");
-        config.setDcOrderTimeOut(5000);
-        config.setUrgeCtripOrder("urgeCtripOrder");
-        config.setJavaOrderQueryService("jorder-query");
-        config.setGetOrderHistory("data_historyInfoForRecheck");
-        config.setJavaOrderQueryTimeOut(5000);
-        config.setJavaOrderApiService("jorder-api");
-        config.setJavaOrderApiTimeOut(5000);
-        config.setConfirmOrder("confirm");
-        config.setRejectOrder("reject");
-        config.setHotel3Service("mis");
-        config.setHotel3TimeOut(5000);
-        config.setHotel3GetOrderServerTime("GetOrderServerTime");
-        config.setHotel3GetOrderNightMode("GetOrderNightMode");
-        config.setEbkDelayOrderService("");
-        config.setEbkDelayOrderMethod("");
-        config.setEbkDelayOrderTimeOut(5000);
-        System.out.println(JSON.toJSONString(config));
+		SoaConfig config = new SoaConfig();
+		config.setHotelProduct("hotel");
+		config.setDcProduct("dc");
+		config.setDcOrderService("order");
+		config.setDcOrderTimeOut(5000);
+		config.setUrgeCtripOrder("urgeCtripOrder");
+		config.setJavaOrderQueryService("jorder-query");
+		config.setGetOrderHistory("data_historyInfoForRecheck");
+		config.setJavaOrderQueryTimeOut(5000);
+		config.setJavaOrderApiService("jorder-api");
+		config.setJavaOrderApiTimeOut(5000);
+		config.setConfirmOrder("confirm");
+		config.setRejectOrder("reject");
+		config.setHotel3Service("mis");
+		config.setHotel3TimeOut(5000);
+		config.setHotel3GetOrderServerTime("GetOrderServerTime");
+		config.setHotel3GetOrderNightMode("GetOrderNightMode");
+		config.setEbkDelayOrderService("");
+		config.setEbkDelayOrderMethod("");
+		config.setEbkDelayOrderTimeOut(5000);
+		System.out.println(JSON.toJSONString(config));
 
-    }
-
+	}
 
 }
