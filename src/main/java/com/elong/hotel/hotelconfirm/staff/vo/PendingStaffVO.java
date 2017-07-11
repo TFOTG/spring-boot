@@ -9,6 +9,7 @@ import javax.validation.constraints.NotNull;
 
 import org.hibernate.validator.constraints.NotBlank;
 
+import com.elong.hotel.common.parameter.PaginationParameter;
 import com.elong.hotel.hotelconfirm.valid.FirstValid;
 import com.elong.hotel.hotelconfirm.valid.SecondValid;
 
@@ -16,7 +17,7 @@ import com.elong.hotel.hotelconfirm.valid.SecondValid;
  * @author jianjun.wang
  * @version 1.0.0
  */
-public class PendingStaffVO {
+public class PendingStaffVO extends PaginationParameter{
 	
 	@NotBlank(message="员工姓名不能为空",groups={FirstValid.class,SecondValid.class})
 	private String staffname;
