@@ -1,7 +1,6 @@
 package com.elong.hotel.common.config;
 
 import com.alibaba.fastjson.JSON;
-import com.alibaba.fastjson.annotation.JSONField;
 
 /**
  * Created by peng.wang on 17/3/9.
@@ -93,9 +92,7 @@ public class ConfirmOrderConfig {
      */
     private Integer executorQueueSize;
 
-//    private Integer groupEhCacheEnable;
-
-//    private Integer rankEnCacheEnable;
+    private int citySwitch;
 
     /**
      * 主管回收承诺时间与当前时间差
@@ -167,8 +164,6 @@ public class ConfirmOrderConfig {
         executorQueueSize = 500;
         chargeReclaimPromise = 10;
         urgeAddMins = 15;
-//        rankEnCacheEnable = 0;
-//        groupEhCacheEnable = 0;
     }
 
     public Integer getChargeReclaimPromise() {
@@ -177,8 +172,6 @@ public class ConfirmOrderConfig {
 
     public void setChargeReclaimPromise(Integer chargeReclaimPromise) {
         this.chargeReclaimPromise = chargeReclaimPromise;
-//        rankEnCacheEnable = 0;
-//        groupEhCacheEnable = 0;
         urgeAddMins = 15;
         firstRefuseTime = 10;
         firstRefuseSupplierIds = "";
@@ -328,23 +321,15 @@ public class ConfirmOrderConfig {
         this.executorQueueSize = executorQueueSize;
     }
 
-//    public Integer getGroupEhCacheEnable() {
-//        return groupEhCacheEnable;
-//    }
-//
-//    public void setGroupEhCacheEnable(Integer groupEhCacheEnable) {
-//        this.groupEhCacheEnable = groupEhCacheEnable;
-//    }
-//
-//    public Integer getRankEnCacheEnable() {
-//        return rankEnCacheEnable;
-//    }
-//
-//    public void setRankEnCacheEnable(Integer rankEnCacheEnable) {
-//        this.rankEnCacheEnable = rankEnCacheEnable;
-//    }
+    public int getCitySwitch() {
+		return citySwitch;
+	}
 
-    public Integer getUrgeAddMins() {
+	public void setCitySwitch(int citySwitch) {
+		this.citySwitch = citySwitch;
+	}
+
+	public Integer getUrgeAddMins() {
         return urgeAddMins;
     }
 
