@@ -9,7 +9,6 @@ import java.math.BigDecimal;
 import java.util.List;
 
 import com.elong.hotel.proxy.javaorder.getorder.Guest;
-import com.elong.hotel.proxy.javaorder.getorder.RoomNight;
 
 
 /**

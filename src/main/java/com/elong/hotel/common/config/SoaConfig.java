@@ -100,7 +100,12 @@ public class SoaConfig {
      * 调用ebk延迟接口方法  超时时间
      */
     private int ebkDelayOrderTimeOut;
+    
+    private String ebCommonService;
 
+    private int ebTimeOut;
+
+    private String ebGetHotelOnline;
 
     public String getDcProduct() {
         return dcProduct;
@@ -355,6 +360,30 @@ public class SoaConfig {
 
 	public void setHotel3GetStaff(String hotel3GetStaff) {
 		this.hotel3GetStaff = hotel3GetStaff;
+	}
+
+	public String getEbCommonService() {
+		return ebCommonService;
+	}
+
+	public void setEbCommonService(String ebCommonService) {
+		this.ebCommonService = ebCommonService;
+	}
+
+	public int getEbTimeOut() {
+		return ebTimeOut;
+	}
+
+	public void setEbTimeOut(int ebTimeOut) {
+		this.ebTimeOut = ebTimeOut;
+	}
+
+	public String getEbGetHotelOnline() {
+		return ebGetHotelOnline;
+	}
+
+	public void setEbGetHotelOnline(String ebGetHotelOnline) {
+		this.ebGetHotelOnline = ebGetHotelOnline;
 	}
 
 	public static void main(String[] args) {
