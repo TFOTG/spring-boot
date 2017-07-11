@@ -7,13 +7,14 @@ package com.elong.hotel.proxy.product.response;
 
 import java.util.List;
 
+import com.elong.hotel.common.response.ServiceResponseBase;
 import com.elong.hotel.proxy.product.bo.ContactInfoListBo;
 
 /**
  * @author jianjun.wang
  * @version 1.0.0
  */
-public class BatchGetHotelContactInfoResponse extends ServiceResponseProductBase{
+public class BatchGetHotelContactInfoResponse extends ServiceResponseBase{
 
 	/**
 	 * 
