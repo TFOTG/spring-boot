@@ -1,4 +1,4 @@
-package com.elong.hotel.hotelconfirm.confirmorder.bo;
+package com.elong.hotel.proxy.platform.bo;
 
 public class ProxyContactBo {
 

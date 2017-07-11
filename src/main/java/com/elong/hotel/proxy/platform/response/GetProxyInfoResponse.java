@@ -1,9 +1,9 @@
-package com.elong.hotel.hotelconfirm.confirmorder.response;
+package com.elong.hotel.proxy.platform.response;
 
 import java.io.Serializable;
 import java.util.List;
 
-import com.elong.hotel.hotelconfirm.confirmorder.bo.ProxyInfoBo;
+import com.elong.hotel.proxy.platform.bo.ProxyInfoBo;
 
 public class GetProxyInfoResponse implements Serializable {
 
