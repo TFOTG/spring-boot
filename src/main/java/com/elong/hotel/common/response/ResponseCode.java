@@ -9,7 +9,7 @@ public class ResponseCode {
 	/**
 	 * 参数异常
 	 */
-	public static final Integer PARAMARTER_ERROR = 400;
+	public static final Integer PARAM_ERROR = 400;
 
 	/**
 	 * 业务逻辑异常
