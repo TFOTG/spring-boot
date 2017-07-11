@@ -22,13 +22,14 @@ public class StringUtils extends com.elong.common.util.StringUtils {
 
 	/**
 	 * 拼接字符串
-	 * @param str1
-	 * @param str2
+	 * @param str
 	 * @return
 	 */
-	public static String concatWithOutNull(String str1,String str2) {
+	public static String concatWithOutNull(String ... str) {
 		StringBuilder sb = new StringBuilder();
-		sb.append(str1 == null ? "" : str1).append(str2 == null ? "" : str2);
+		for(String s : str) {
+			sb.append(s == null ? "" : s);
+		}
 		return sb.toString();
 	}
 	

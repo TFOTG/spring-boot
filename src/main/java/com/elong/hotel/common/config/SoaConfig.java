@@ -173,6 +173,12 @@ public class SoaConfig {
 		return hotelProduct;
 	}
 
+    
+    private String ebCommonService;
+
+    private int ebTimeOut;
+
+    private String ebGetHotelOnline;
 	public void setHotelProduct(String hotelProduct) {
 		this.hotelProduct = hotelProduct;
 	}
@@ -391,6 +397,30 @@ public class SoaConfig {
 
 	public void setHotel3GetStaff(String hotel3GetStaff) {
 		this.hotel3GetStaff = hotel3GetStaff;
+	}
+
+	public String getEbCommonService() {
+		return ebCommonService;
+	}
+
+	public void setEbCommonService(String ebCommonService) {
+		this.ebCommonService = ebCommonService;
+	}
+
+	public int getEbTimeOut() {
+		return ebTimeOut;
+	}
+
+	public void setEbTimeOut(int ebTimeOut) {
+		this.ebTimeOut = ebTimeOut;
+	}
+
+	public String getEbGetHotelOnline() {
+		return ebGetHotelOnline;
+	}
+
+	public void setEbGetHotelOnline(String ebGetHotelOnline) {
+		this.ebGetHotelOnline = ebGetHotelOnline;
 	}
 
 	public static void main(String[] args) {
