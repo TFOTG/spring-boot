@@ -10,7 +10,7 @@ import java.util.Set;
 public class ConfirmOrderActionLogVO extends PaginationParameter {
 
 
-	private Integer reserNo;
+	private Integer orderId;
 
 	private Integer logType;
 
@@ -19,8 +19,8 @@ public class ConfirmOrderActionLogVO extends PaginationParameter {
 	public ConfirmOrderActionLogVO() {
 	}
 
-	public ConfirmOrderActionLogVO(Integer reserNo, Integer logType, Set<String> targetStatus,String selectColumns,String orderField,String orderFieldType,Integer stratItem,Integer pageSize) {
-		this.reserNo = reserNo;
+	public ConfirmOrderActionLogVO(Integer orderId, Integer logType, Set<String> targetStatus,String selectColumns,String orderField,String orderFieldType,Integer stratItem,Integer pageSize) {
+		this.orderId = orderId;
 		this.logType = logType;
 		this.targetStatus = targetStatus;
 		super.setOrderField(orderField);
@@ -30,12 +30,12 @@ public class ConfirmOrderActionLogVO extends PaginationParameter {
 		super.setSelectColumns(selectColumns);
 	}
 
-	public Integer getReserNo() {
-		return reserNo;
+	public Integer getOrderId() {
+		return orderId;
 	}
 
-	public void setReserNo(Integer reserNo) {
-		this.reserNo = reserNo;
+	public void setOrderId(Integer orderId) {
+		this.orderId = orderId;
 	}
 
 	public Integer getLogType() {
