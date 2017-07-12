@@ -176,6 +176,7 @@ public class PendingConfirmOrderPo {
 	 */
 	private PendingOrderIconPo pendingOrderIconPo;
 	
+	private String ratePlanId;
 	
 	public PendingOrderIconPo getPendingOrderIconPo() {
 		return pendingOrderIconPo;
@@ -432,6 +433,14 @@ public class PendingConfirmOrderPo {
 
 	public void setCurrencyCode(String currencyCode) {
 		this.currencyCode = currencyCode;
+	}
+
+	public String getRatePlanId() {
+		return ratePlanId;
+	}
+
+	public void setRatePlanId(String ratePlanId) {
+		this.ratePlanId = ratePlanId;
 	}
 
 }

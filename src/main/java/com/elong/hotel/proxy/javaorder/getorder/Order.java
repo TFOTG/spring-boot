@@ -154,7 +154,11 @@ public class Order {
 
 	private Integer cooperationType;
 
-
+	/**
+	 *  酒店传真号码
+	 */
+	private String sHotelFax;
+	
 	public String getmRoomTypeId() {
 		return mRoomTypeId;
 	}
@@ -734,6 +738,14 @@ public class Order {
 
 	public void setNotesToGuest(String notesToGuest) {
 		this.notesToGuest = notesToGuest;
+	}
+
+	public String getsHotelFax() {
+		return sHotelFax;
+	}
+
+	public void setsHotelFax(String sHotelFax) {
+		this.sHotelFax = sHotelFax;
 	}
 
 }
