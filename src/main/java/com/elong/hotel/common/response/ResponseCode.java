@@ -21,6 +21,13 @@ public class ResponseCode {
 	 */
 	public static final Integer DATA_ERROR = -500;
 
+
+    /**
+     * 系统异常
+     */
+    public static final Integer SYSTEM_ERROR = -1;
+
+
 	/**
 	 * 业务通用异常编码。
 	 */
