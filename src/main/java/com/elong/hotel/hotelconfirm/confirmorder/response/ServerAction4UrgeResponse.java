@@ -8,7 +8,7 @@ import java.util.Date;
 /**
  * 执行command的结果
  */
-public class ServerAction4UrgeResponse extends ServerActionResponseBase implements Serializable{
+public class  ServerAction4UrgeResponse extends ServerActionResponseBase implements Serializable{
 
 
 	@JSONField(format = "yyyy-MM-dd HH:mm:ss")
