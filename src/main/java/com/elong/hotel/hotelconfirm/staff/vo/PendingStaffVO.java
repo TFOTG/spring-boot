@@ -8,10 +8,12 @@ package com.elong.hotel.hotelconfirm.staff.vo;
 import javax.validation.constraints.NotNull;
 
 import org.hibernate.validator.constraints.NotBlank;
+import org.hibernate.validator.constraints.Range;
 
 import com.elong.hotel.common.parameter.PaginationParameter;
 import com.elong.hotel.hotelconfirm.valid.FirstValid;
 import com.elong.hotel.hotelconfirm.valid.SecondValid;
+import com.elong.hotel.hotelconfirm.valid.ThirdValid;
 
 /**
  * @author jianjun.wang
@@ -19,7 +21,7 @@ import com.elong.hotel.hotelconfirm.valid.SecondValid;
  */
 public class PendingStaffVO extends PaginationParameter{
 	
-	@NotBlank(message="员工姓名不能为空",groups={FirstValid.class,SecondValid.class})
+	@NotBlank(message="员工姓名不能为空",groups={FirstValid.class,SecondValid.class,ThirdValid.class})
 	private String staffname;
 	
 	private String lastlogintime;
@@ -28,9 +30,11 @@ public class PendingStaffVO extends PaginationParameter{
 	
 	private String lastgettime;
 	
+	@NotNull(message = "不能为空",groups=SecondValid.class)
+	@Range(min=0,max=1,message="参数不正确",groups=SecondValid.class)
 	private Integer isonline ;
 
-	@NotNull(message="员工部门不能为空",groups=SecondValid.class)
+	@NotNull(message="员工部门不能为空",groups={SecondValid.class,ThirdValid.class})
 	private Integer department;
 	
 	@NotNull(message="订单类型不能为空",groups=FirstValid.class)
