@@ -1,0 +1,79 @@
+package com.elong.hotel.hotelconfirm.confirmorder.vo;
+
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotNull;
+import java.io.Serializable;
+
+/**
+ * Created by yangboyu on 17/6/16.
+ */
+public class ChangeOrderStatusVo implements Serializable {
+
+    @NotNull
+    @Min(0L)
+    Integer orderid;
+    @NotNull
+    String orderstatus;
+    @NotNull
+    private String opname;
+    String confirmno;
+    String note2elong;
+    String note2hotel;
+    String note2client;
+
+    public String getConfirmno() {
+        return confirmno;
+    }
+
+    public void setConfirmno(String confirmno) {
+        this.confirmno = confirmno;
+    }
+
+    public String getNote2client() {
+        return note2client;
+    }
+
+    public void setNote2client(String note2client) {
+        this.note2client = note2client;
+    }
+
+    public String getNote2elong() {
+        return note2elong;
+    }
+
+    public void setNote2elong(String note2elong) {
+        this.note2elong = note2elong;
+    }
+
+    public String getNote2hotel() {
+        return note2hotel;
+    }
+
+    public void setNote2hotel(String note2hotel) {
+        this.note2hotel = note2hotel;
+    }
+
+    public Integer getOrderid() {
+        return orderid;
+    }
+
+    public void setOrderid(Integer orderid) {
+        this.orderid = orderid;
+    }
+
+    public String getOrderstatus() {
+        return orderstatus;
+    }
+
+    public void setOrderstatus(String orderstatus) {
+        this.orderstatus = orderstatus;
+    }
+
+    public String getOpname() {
+        return opname;
+    }
+
+    public void setOpname(String opname) {
+        this.opname = opname;
+    }
+}

@@ -1,9 +1,9 @@
 package com.elong.hotel.hotelconfirm.confirmorder.request;
 
 import com.elong.hotel.common.bo.OperatorInfoBo;
-import com.elong.hotel.hotelconfirm.confirmorder.bo.ConfirmOrderBo;
 import com.elong.hotel.hotelconfirm.confirmorder.enums.ConfirmType;
 import com.elong.hotel.hotelconfirm.confirmorderactionlog.enums.ActionOpFromEnum;
+import org.springframework.format.annotation.DateTimeFormat;
 
 import java.util.Date;
 import java.util.List;
@@ -18,10 +18,8 @@ public class Refuse4EbookingRequest {
     /// </summary>
     public int reserNo;
 
-    /// <summary>
     /// 设置据单状态
-    /// </summary>
-    public String confirmStatus;
+    private String orderStatus;
 
     /// <summary>
     /// 备注
@@ -44,16 +42,19 @@ public class Refuse4EbookingRequest {
     /// <summary>
     /// 满房日期
     /// </summary>
+    @DateTimeFormat(pattern="yyyy-MM-dd HH:mm:ss")
     public Date fullSingleDate;
 
     /// <summary>
     /// 入住日期
     /// </summary>
+    @DateTimeFormat(pattern="yyyy-MM-dd HH:mm:ss")
     public Date checkInDate;
 
     /// <summary>
     /// 离店日期
     /// </summary>
+    @DateTimeFormat(pattern="yyyy-MM-dd HH:mm:ss")
     public Date checkOutDate;
 
     /// <summary>
@@ -65,15 +66,7 @@ public class Refuse4EbookingRequest {
 
     private ConfirmType confirmType;
 
-    private ConfirmOrderBo confirmOrderBo;
-
-    private String orderStatus;
-
     private OperatorInfoBo operatorInfo;
-
-    public ConfirmOrderBo getConfirmOrderBo() {
-        return confirmOrderBo;
-    }
 
     public ConfirmType getConfirmType() {
         return confirmType;
@@ -81,10 +74,6 @@ public class Refuse4EbookingRequest {
 
     public void setConfirmType(ConfirmType confirmType) {
         this.confirmType = confirmType;
-    }
-
-    public void setConfirmOrderBo(ConfirmOrderBo confirmOrderBo) {
-        this.confirmOrderBo = confirmOrderBo;
     }
 
     public String getOrderStatus() {
@@ -109,14 +98,6 @@ public class Refuse4EbookingRequest {
 
     public void setReserNo(int reserNo) {
         this.reserNo = reserNo;
-    }
-
-    public String getConfirmStatus() {
-        return confirmStatus;
-    }
-
-    public void setConfirmStatus(String confirmStatus) {
-        this.confirmStatus = confirmStatus;
     }
 
     public String getNotes() {

@@ -81,6 +81,52 @@ public class SoaConfig {
 	private int identifyTimeOut;
 	private String identifyGetProxyInfo;
 
+	private String noticeService;
+	private String sendMethod;
+	private int noticeServiceTimeout;
+	private String channel;
+	private String messageId;
+
+	public String getChannel() {
+		return channel;
+	}
+
+	public void setChannel(String channel) {
+		this.channel = channel;
+	}
+
+	public String getMessageId() {
+		return messageId;
+	}
+
+	public void setMessageId(String messageId) {
+		this.messageId = messageId;
+	}
+
+	public String getNoticeService() {
+		return noticeService;
+	}
+
+	public void setNoticeService(String noticeService) {
+		this.noticeService = noticeService;
+	}
+
+	public String getSendMethod() {
+		return sendMethod;
+	}
+
+	public void setSendMethod(String sendMethod) {
+		this.sendMethod = sendMethod;
+	}
+
+	public int getNoticeServiceTimeout() {
+		return noticeServiceTimeout;
+	}
+
+	public void setNoticeServiceTimeout(int noticeServiceTimeout) {
+		this.noticeServiceTimeout = noticeServiceTimeout;
+	}
+
 	public String getPlatFormProduct() {
 		return platFormProduct;
 	}
