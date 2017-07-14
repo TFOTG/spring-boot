@@ -1,5 +1,7 @@
 package com.elong.hotel.proxy.javaorder.request;
 
+import com.elong.hotel.hotelconfirm.confirmorder.request.UpdateOrderNotesAndConfirmNoRequest;
+
 import java.io.Serializable;
 
 /**
@@ -19,7 +21,16 @@ public class UpdateOrderNotesRequest implements Serializable{
 	// 酒店备注
 	private String notesToHotel;
 	// 操作者信息
-	private ClientOperatorInfo clientOperatorInfo;
+	private OperatorInfo clientOperatorInfo;
+
+    public UpdateOrderNotesRequest() {
+    }
+
+    public UpdateOrderNotesRequest(UpdateOrderNotesAndConfirmNoRequest request) {
+        this.orderId = request.getOrderId();
+        this.notesToElong=request.getNotesToElong();
+        this.clientOperatorInfo=request.getClientOperatorInfo();
+    }
 
     public String getNotesToElong() {
 		return notesToElong;
@@ -45,13 +56,13 @@ public class UpdateOrderNotesRequest implements Serializable{
 		this.notesToHotel = notesToHotel;
 	}
 
-	public ClientOperatorInfo getClientOperatorInfo() {
-		return clientOperatorInfo;
-	}
+    public OperatorInfo getClientOperatorInfo() {
+        return clientOperatorInfo;
+    }
 
-	public void setClientOperatorInfo(ClientOperatorInfo clientOperatorInfo) {
-		this.clientOperatorInfo = clientOperatorInfo;
-	}
+    public void setClientOperatorInfo(OperatorInfo clientOperatorInfo) {
+        this.clientOperatorInfo = clientOperatorInfo;
+    }
 
     public Integer getOrderId() {
         return orderId;
@@ -60,4 +71,5 @@ public class UpdateOrderNotesRequest implements Serializable{
     public void setOrderId(Integer orderId) {
         this.orderId = orderId;
     }
+
 }
