@@ -5,6 +5,7 @@ import com.elong.hotel.hotelconfirm.confirmorderactionlog.enums.ActionOpFromEnum
 import org.springframework.format.annotation.DateTimeFormat;
 
 import java.util.Date;
+import java.util.List;
 
 /**
  * Created by peng.wang on 17/6/6.
@@ -12,6 +13,8 @@ import java.util.Date;
 public class ChangeRespiteTimeRequest {
 
     private Integer orderId;
+
+    private List<Integer> orderIdList;
 
     @DateTimeFormat(pattern="yyyy-MM-dd HH:mm:ss")
     private Date respiteTime;
@@ -50,5 +53,13 @@ public class ChangeRespiteTimeRequest {
 
     public void setActionOpFromEnum(ActionOpFromEnum actionOpFromEnum) {
         this.actionOpFromEnum = actionOpFromEnum;
+    }
+
+    public List<Integer> getOrderIdList() {
+        return orderIdList;
+    }
+
+    public void setOrderIdList(List<Integer> orderIdList) {
+        this.orderIdList = orderIdList;
     }
 }

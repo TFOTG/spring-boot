@@ -3,7 +3,7 @@ package com.elong.hotel.proxy.product.request;
 import java.io.Serializable;
 import java.util.Map;
 
-public class GetShotelAuditRequest implements Serializable {
+public class GethotelBaseRequest implements Serializable {
 
 	private static final long serialVersionUID = 699131546204192753L;
 	private String from;

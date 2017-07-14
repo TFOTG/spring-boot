@@ -64,6 +64,10 @@ public class Order {
 	private String roomTypeId;
 	// 房型名称
 	private String roomTypeName;
+	// m房型id
+	private String mRoomTypeId;
+	// m房型名称
+	private String mRoomTypeName;
 	// 订单日期数
 	private Integer roomNightsCount;
 	// 代理id
@@ -78,6 +82,8 @@ public class Order {
 	private Date createTime;
 	// 内部备注
 	private String notesToElong;
+
+	private String notesToGuest;
 
 	private int otaType;
 
@@ -146,9 +152,26 @@ public class Order {
 
 	private Integer supplierOtaType;
 
-    //预定距离
+	private Integer cooperationType;
+
+	/**
+	 *  酒店传真号码
+	 */
+	private String sHotelFax;
+	
+	public String getmRoomTypeId() {
+		return mRoomTypeId;
+	}
+
+	public void setmRoomTypeId(String mRoomTypeId) {
+		this.mRoomTypeId = mRoomTypeId;
+	}
+
+	//预定距离
     private Integer distanceFromHotelWhenBooking;
 
+    private String createName;
+    
 	public Date getOrderTimestamp() {
 		return orderTimestamp;
 	}
@@ -684,4 +707,45 @@ public class Order {
     public void setModifyTime(Date modifyTime) {
         this.modifyTime = modifyTime;
     }
+
+	public Integer getCooperationType() {
+		return cooperationType;
+	}
+
+	public void setCooperationType(Integer cooperationType) {
+		this.cooperationType = cooperationType;
+	}
+
+	public String getCreateName() {
+		return createName;
+	}
+
+	public void setCreateName(String createName) {
+		this.createName = createName;
+	}
+    
+	public String getMRoomTypeName() {
+		return mRoomTypeName;
+	}
+
+	public void setMRoomTypeName(String mRoomTypeName) {
+		this.mRoomTypeName = mRoomTypeName;
+	}
+
+	public String getNotesToGuest() {
+		return notesToGuest;
+	}
+
+	public void setNotesToGuest(String notesToGuest) {
+		this.notesToGuest = notesToGuest;
+	}
+
+	public String getsHotelFax() {
+		return sHotelFax;
+	}
+
+	public void setsHotelFax(String sHotelFax) {
+		this.sHotelFax = sHotelFax;
+	}
+
 }

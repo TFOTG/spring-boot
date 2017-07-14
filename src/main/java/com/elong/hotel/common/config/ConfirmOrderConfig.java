@@ -92,9 +92,7 @@ public class ConfirmOrderConfig {
      */
     private Integer executorQueueSize;
 
-//    private Integer groupEhCacheEnable;
-
-//    private Integer rankEnCacheEnable;
+    private int citySwitch;
 
     /**
      * 主管回收承诺时间与当前时间差
@@ -116,6 +114,35 @@ public class ConfirmOrderConfig {
      * 初拒供应商Ids
      */
     private String firstRefuseSupplierIds;
+    private String workflowTypes;
+    
+    private String workflowKeyType;
+
+    /**
+     * 主管名称
+     */
+    private String managerName;
+
+    //更新配置人的姓名
+    private String operatorName;
+
+    //更新配置的时间
+    private String operatorTime;
+
+    /**
+     * 获取订单时间间隔
+     */
+    private int getOrderInterval;
+
+    private int hotelSize;
+
+    private int hotelOrderSize;
+
+    private int supplierSize;
+
+    private int supplierOrderSize;
+
+
 
     public ConfirmOrderConfig() {
         priority4HighMinute = 60;
@@ -137,8 +164,6 @@ public class ConfirmOrderConfig {
         executorQueueSize = 500;
         chargeReclaimPromise = 10;
         urgeAddMins = 15;
-//        rankEnCacheEnable = 0;
-//        groupEhCacheEnable = 0;
     }
 
     public Integer getChargeReclaimPromise() {
@@ -147,11 +172,17 @@ public class ConfirmOrderConfig {
 
     public void setChargeReclaimPromise(Integer chargeReclaimPromise) {
         this.chargeReclaimPromise = chargeReclaimPromise;
-//        rankEnCacheEnable = 0;
-//        groupEhCacheEnable = 0;
         urgeAddMins = 15;
         firstRefuseTime = 10;
         firstRefuseSupplierIds = "";
+    }
+
+    public String getManagerName() {
+        return managerName;
+    }
+
+    public void setManagerName(String managerName) {
+        this.managerName = managerName;
     }
 
     public String getPriority4NightEnd() {
@@ -290,23 +321,15 @@ public class ConfirmOrderConfig {
         this.executorQueueSize = executorQueueSize;
     }
 
-//    public Integer getGroupEhCacheEnable() {
-//        return groupEhCacheEnable;
-//    }
-//
-//    public void setGroupEhCacheEnable(Integer groupEhCacheEnable) {
-//        this.groupEhCacheEnable = groupEhCacheEnable;
-//    }
-//
-//    public Integer getRankEnCacheEnable() {
-//        return rankEnCacheEnable;
-//    }
-//
-//    public void setRankEnCacheEnable(Integer rankEnCacheEnable) {
-//        this.rankEnCacheEnable = rankEnCacheEnable;
-//    }
+    public int getCitySwitch() {
+		return citySwitch;
+	}
 
-    public Integer getUrgeAddMins() {
+	public void setCitySwitch(int citySwitch) {
+		this.citySwitch = citySwitch;
+	}
+
+	public Integer getUrgeAddMins() {
         return urgeAddMins;
     }
 
@@ -330,8 +353,80 @@ public class ConfirmOrderConfig {
         this.firstRefuseSupplierIds = firstRefuseSupplierIds;
     }
 
+    public String getWorkflowTypes() {
+		return workflowTypes;
+	}
+
+	public void setWorkflowTypes(String workflowTypes) {
+		this.workflowTypes = workflowTypes;
+	}
+
+	public String getWorkflowKeyType() {
+		return workflowKeyType;
+	}
+
+	public void setWorkflowKeyType(String workflowKeyType) {
+		this.workflowKeyType = workflowKeyType;
+	}
+
+    public String getOperatorName() {
+        return operatorName;
+    }
+
+    public void setOperatorName(String operatorName) {
+        this.operatorName = operatorName;
+    }
+
+    public String getOperatorTime() {
+        return operatorTime;
+    }
+
+    public void setOperatorTime(String operatorTime) {
+        this.operatorTime = operatorTime;
+    }
+
     public static void main(String[] args) {
         ConfirmOrderConfig config = new ConfirmOrderConfig();
         System.out.println(JSON.toJSONString(config));
+    }
+
+    public int getGetOrderInterval() {
+        return getOrderInterval;
+    }
+
+    public void setGetOrderInterval(int getOrderInterval) {
+        this.getOrderInterval = getOrderInterval;
+    }
+
+    public int getHotelSize() {
+        return hotelSize;
+    }
+
+    public void setHotelSize(int hotelSize) {
+        this.hotelSize = hotelSize;
+    }
+
+    public int getSupplierSize() {
+        return supplierSize;
+    }
+
+    public void setSupplierSize(int supplierSize) {
+        this.supplierSize = supplierSize;
+    }
+
+    public int getHotelOrderSize() {
+        return hotelOrderSize;
+    }
+
+    public void setHotelOrderSize(int hotelOrderSize) {
+        this.hotelOrderSize = hotelOrderSize;
+    }
+
+    public int getSupplierOrderSize() {
+        return supplierOrderSize;
+    }
+
+    public void setSupplierOrderSize(int supplierOrderSize) {
+        this.supplierOrderSize = supplierOrderSize;
     }
 }

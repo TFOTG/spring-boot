@@ -11,8 +11,17 @@ public class Room {
 	private String confirmNo;
 	private Long id;
 	private String roomNo;
+    private Integer cooperationOrderId;
 
-	public String getConfirmNo() {
+    public Integer getCooperationOrderId() {
+        return cooperationOrderId;
+    }
+
+    public void setCooperationOrderId(Integer cooperationOrderId) {
+        this.cooperationOrderId = cooperationOrderId;
+    }
+
+    public String getConfirmNo() {
 		return confirmNo;
 	}
 

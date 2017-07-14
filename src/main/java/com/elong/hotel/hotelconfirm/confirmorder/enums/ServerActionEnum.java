@@ -45,6 +45,9 @@ public enum ServerActionEnum {
      */
     CONFIRM("确认",7),
 
+    /**
+     * ivr 操作确认
+     */
     IVR_CONFIRM("ivr 确认",8);
 
     ServerActionEnum(String name, int actionIndex) {
