@@ -1,5 +1,11 @@
 package com.elong.hotel.proxy.javaorder.request;
 
+import com.elong.hotel.common.helper.StringUtils;
+import com.elong.hotel.proxy.javaorder.consts.StringFieldLengthConst;
+import com.elong.hotel.proxy.javaorder.getorder.Guest;
+import com.elong.hotel.proxy.javaorder.getorder.Order;
+import com.elong.hotel.proxy.javaorder.getorder.Room;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -24,7 +30,40 @@ public class UpdateRoomInfoRequest {
 		this.rooms = new ArrayList<>();
 	}
 
-	public OperatorInfo getClientOperatorInfo() {
+    public UpdateRoomInfoRequest(OperatorInfo operatorInfo, String confirmNo, String notesToElong, Order order) {
+        this.clientOperatorInfo = operatorInfo;
+        this.orderId = Integer.valueOf(order.getOrderId().toString());
+        if(StringUtils.isNotEmpty(notesToElong)){
+            this.notesToElong=StringUtils.subStringFromEnd(notesToElong, StringFieldLengthConst.NOTES_TO_ELONG);
+        }
+        List<UpdateRoomInfoRequest.Room> rooms = new ArrayList<>();
+        for (com.elong.hotel.proxy.javaorder.getorder.Room item : order.getRooms()) {
+            UpdateRoomInfoRequest.Room room = new Room();
+            room.setId(item.getId());// 房间id
+            room.setRoomNo(item.getRoomNo()); // 房号
+            room.setConfirmNo(confirmNo);  // 确认号
+            room.setGuests(findGuest(item.getId(),order));
+            rooms.add(room);
+        }
+        this.rooms = rooms;
+    }
+
+    public List<UpdateRoomInfoRequest.Guest> findGuest(Long roomId,Order order) {
+        UpdateRoomInfoRequest request = new UpdateRoomInfoRequest();
+        List<UpdateRoomInfoRequest.Guest> list = new ArrayList<>();
+        for (com.elong.hotel.proxy.javaorder.getorder.Guest item : order.getGuests()) {
+            if (item.getRoomId().equals(roomId)) {
+                UpdateRoomInfoRequest.Guest guest = request.new Guest();
+                guest.setId(item.getId());
+                guest.setName(item.getName());
+
+                list.add(guest);
+            }
+        }
+        return list;
+    }
+
+    public OperatorInfo getClientOperatorInfo() {
 		return clientOperatorInfo;
 	}
 
