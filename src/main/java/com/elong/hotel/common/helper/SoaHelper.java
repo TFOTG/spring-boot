@@ -20,6 +20,8 @@ import java.util.Map;
 public class SoaHelper {
 
     /**
+     * post调用方法并记录日志
+     * 使用注入方式
      * @param timeout
      * @param logTag         记录communicationevent的tag
      * @param type           communicationevent 类型
@@ -62,6 +64,8 @@ public class SoaHelper {
 
 
     /**
+     * post调用方法并记录日志
+     * 使用注入方式
      * @param productName
      * @param serviceName
      * @param methodName
@@ -125,6 +129,8 @@ public class SoaHelper {
     }
 
     /**
+     * get调用方法并记录日志
+     * 使用注入方式
      * @param productName
      * @param serviceName
      * @param methodName
@@ -137,7 +143,7 @@ public class SoaHelper {
      * @throws Exception
      */
     @SoaLogAnnotations
-    public String getWithLog(String productName, String serviceName, String methodName, Map<String, String> params, int timeout, String contentType, String logTag, CommunicationEventTypeEnum type) throws Exception {
+    public String getWithLog(String productName, String serviceName, String methodName, Map<String, String> params, int timeout, String contentType, String logTag, CommunicationEventTypeEnum type) throws SoaException {
         return get(productName, serviceName, methodName, params, timeout, contentType);
     }
 

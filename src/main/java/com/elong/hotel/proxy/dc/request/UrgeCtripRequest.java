@@ -26,7 +26,7 @@ public class UrgeCtripRequest {
 
     }
 
-    private class RealRequest{
+    public class RealRequest{
 
         private List<UrgeCtripBo> orderIdList;
 

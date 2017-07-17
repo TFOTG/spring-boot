@@ -28,6 +28,10 @@ public class SoaConfig {
 
 	private String hotel3GetStaff;
 
+    private String hotel3CloseRoomType;
+
+    private String hotel3CloseFirstProduct;
+
 	private String javaOrderQueryService;
 
 	private String javaOrderApiService;
@@ -423,7 +427,23 @@ public class SoaConfig {
 		this.ebGetHotelOnline = ebGetHotelOnline;
 	}
 
-	public static void main(String[] args) {
+    public String getHotel3CloseRoomType() {
+        return hotel3CloseRoomType;
+    }
+
+    public void setHotel3CloseRoomType(String hotel3CloseRoomType) {
+        this.hotel3CloseRoomType = hotel3CloseRoomType;
+    }
+
+    public String getHotel3CloseFirstProduct() {
+        return hotel3CloseFirstProduct;
+    }
+
+    public void setHotel3CloseFirstProduct(String hotel3CloseFirstProduct) {
+        this.hotel3CloseFirstProduct = hotel3CloseFirstProduct;
+    }
+
+    public static void main(String[] args) {
 		SoaConfig config = new SoaConfig();
 		config.setHotelProduct("hotel");
 		config.setDcProduct("dc");
