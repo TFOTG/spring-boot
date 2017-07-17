@@ -37,4 +37,9 @@ public interface OriginalOrderFieldsConst {
      * 联单，重单
      */
     String REPEAT_AND_LINKED = "hotelName,orderFrom,status,additionalStatus,payment,guestName,roomCount,checkInDate,checkOutDate,roomTypeName,mRoomTypeName,proxy";
+
+	/**
+	 * 发短信
+	 */
+	String SEND_MSG = "cardNo,contactPhone";
 }
