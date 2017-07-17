@@ -32,6 +32,17 @@ public enum CommunicationEventTypeEnum{
 	 * 更新订单OrderFlag标记
 	 */
 	SAVEORDERFLAG("SAVEORDERFLAG","更新订单OrderFlag标记"),
+
+    /**
+     * 关房
+     */
+    CLOSEROOM("CLOSEROOM","关房"),
+
+
+    /**
+     * 催携程
+     */
+    URGECTRIP("URGECTRIP","催携程"),
 	/**
 	 * 订单操作初拒,操作库存
 	 */
