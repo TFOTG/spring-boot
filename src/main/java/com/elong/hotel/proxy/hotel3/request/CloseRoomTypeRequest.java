@@ -54,6 +54,8 @@ public class CloseRoomTypeRequest {
 
     private List<String> roomTypeList ;
 
+    //此字段用来做日志标识
+    private Long orderId;
 
     public CloseRoomTypeRequest() {}
 
@@ -81,6 +83,7 @@ public class CloseRoomTypeRequest {
         List<String> roomTypeIds=new ArrayList<>();
         roomTypeIds.add(order.getRoomTypeId());
         this.roomTypeList=roomTypeIds;
+        this.orderId=order.getOrderId();
 
     }
 
@@ -197,4 +200,11 @@ public class CloseRoomTypeRequest {
         this.operateTime = operateTime;
     }
 
+    public Long getOrderId() {
+        return orderId;
+    }
+
+    public void setOrderId(Long orderId) {
+        this.orderId = orderId;
+    }
 }

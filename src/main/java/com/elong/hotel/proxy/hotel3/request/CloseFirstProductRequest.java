@@ -42,6 +42,8 @@ public class CloseFirstProductRequest {
     @JSONField(name = "Weeks")
     private int[] weeks;
 
+    //此字段用来做日志标识
+    private Long orderId;
 
     public CloseFirstProductRequest() {
 
@@ -63,7 +65,7 @@ public class CloseFirstProductRequest {
         roomTypeIds.add(order.getRoomTypeId());
         this.ratePlanIds=ratePlanIds;
         this.roomTypeIds=roomTypeIds;
-
+        this.orderId=order.getOrderId();
     }
 
 
@@ -145,5 +147,13 @@ public class CloseFirstProductRequest {
 
     public void setWeeks(int[] weeks) {
         this.weeks = weeks;
+    }
+
+    public Long getOrderId() {
+        return orderId;
+    }
+
+    public void setOrderId(Long orderId) {
+        this.orderId = orderId;
     }
 }
