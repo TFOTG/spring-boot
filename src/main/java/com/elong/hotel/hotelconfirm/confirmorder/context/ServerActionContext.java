@@ -16,6 +16,7 @@ public class ServerActionContext implements Serializable {
 	OperatorInfoBo operatorInfo;
 	ServerActionEnum actionEnum;
 	ActionOpFromEnum actionOpFromEnum;
+	String Msg2Customer;
 
 	public ServerActionEnum getActionEnum() {
 		return actionEnum;
@@ -63,5 +64,13 @@ public class ServerActionContext implements Serializable {
 
 	public void setTargetConfirmOrderBo(ConfirmOrderBo targetConfirmOrderBo) {
 		this.targetConfirmOrderBo = targetConfirmOrderBo;
+	}
+
+	public String getMsg2Customer() {
+		return Msg2Customer;
+	}
+
+	public void setMsg2Customer(String msg2Customer) {
+		Msg2Customer = msg2Customer;
 	}
 }

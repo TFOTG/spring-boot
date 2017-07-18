@@ -11,6 +11,10 @@ public class GetRefuse4EbookingRequest {
 
 	private List<String> hotelIds;
 
+	private Integer pageIndex;
+
+	private Integer pageSize;
+
 	public List<Integer> getReserNos() {
 		return reserNos;
 	}
@@ -25,5 +29,21 @@ public class GetRefuse4EbookingRequest {
 
 	public void setHotelIds(List<String> hotelIds) {
 		this.hotelIds = hotelIds;
+	}
+
+	public Integer getPageIndex() {
+		return pageIndex;
+	}
+
+	public void setPageIndex(Integer pageIndex) {
+		this.pageIndex = pageIndex;
+	}
+
+	public Integer getPageSize() {
+		return pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
 	}
 }

@@ -3,8 +3,6 @@ package com.elong.hotel.hotelconfirm.confirmorder.request;
 import com.elong.hotel.common.bo.OperatorInfoBo;
 import com.elong.hotel.hotelconfirm.confirmorderactionlog.enums.ActionOpFromEnum;
 
-import java.util.Date;
-
 /**
  * Created by peng.wang on 17/6/6.
  */
@@ -19,6 +17,8 @@ public class ChangeOrderStatusRequest {
     private String note2Hotel;
 
     private String note2Client;
+
+    private String msg2Customer;
 
     private String confirmNo;
 
@@ -88,5 +88,13 @@ public class ChangeOrderStatusRequest {
 
     public void setActionOpFromEnum(ActionOpFromEnum actionOpFromEnum) {
         this.actionOpFromEnum = actionOpFromEnum;
+    }
+
+    public String getMsg2Customer() {
+        return msg2Customer;
+    }
+
+    public void setMsg2Customer(String msg2Customer) {
+        this.msg2Customer = msg2Customer;
     }
 }

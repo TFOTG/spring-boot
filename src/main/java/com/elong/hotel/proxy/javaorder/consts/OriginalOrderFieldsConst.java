@@ -41,6 +41,7 @@ public interface OriginalOrderFieldsConst {
 	/**
 	 * 发短信
 	 */
+	String SEND_MSG = "cardNo,contactPhone,contactMobile";
 	String SEND_MSG = "cardNo,contactPhone";
 
     /**

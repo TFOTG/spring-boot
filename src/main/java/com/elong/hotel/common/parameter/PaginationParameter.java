@@ -31,9 +31,21 @@ public class PaginationParameter {
 		return stratItem;
 	}
 
+	/**
+	 * 传入页数
+	 * @param stratItem
+	 */
 	public void setStratItem(Integer stratItem) {
 		this.stratItem = stratItem;
 		setStartIndex();
+	}
+
+	/**
+	 * 传入limit 起始数
+	 * @param startItem
+	 */
+	public void setStartItem(Integer startItem) {
+		this.stratItem = startItem;
 	}
 
 	public Integer getPageSize() {

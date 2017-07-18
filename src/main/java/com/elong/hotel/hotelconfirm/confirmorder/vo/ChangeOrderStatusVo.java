@@ -21,6 +21,8 @@ public class ChangeOrderStatusVo implements Serializable {
     String note2hotel;
     String note2client;
 
+    String msg2customer;
+
     public String getConfirmno() {
         return confirmno;
     }
@@ -75,5 +77,13 @@ public class ChangeOrderStatusVo implements Serializable {
 
     public void setOpname(String opname) {
         this.opname = opname;
+    }
+
+    public String getMsg2customer() {
+        return msg2customer;
+    }
+
+    public void setMsg2customer(String msg2customer) {
+        this.msg2customer = msg2customer;
     }
 }
