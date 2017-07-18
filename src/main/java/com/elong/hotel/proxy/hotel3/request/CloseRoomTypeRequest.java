@@ -1,7 +1,13 @@
 package com.elong.hotel.proxy.hotel3.request;
 
+import com.alibaba.fastjson.JSON;
+import com.alibaba.fastjson.annotation.JSONField;
+import com.elong.hotel.proxy.javaorder.getorder.Order;
 import org.codehaus.jackson.annotate.JsonProperty;
 
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -10,10 +16,12 @@ import java.util.List;
 public class CloseRoomTypeRequest {
 
     @JsonProperty(value = "ArriveDate")
-    private String arriveDate;
+    @JSONField(format = "yyyy-MM-dd HH:mm:ss")
+    private Date arriveDate;
 
     @JsonProperty(value = "LeaveDate")
-    private String leaveDate;
+    @JSONField(format = "yyyy-MM-dd HH:mm:ss")
+    private Date leaveDate;
 
     @JsonProperty(value = "CloseRoomType")
     private int closeRoomType;
@@ -34,7 +42,8 @@ public class CloseRoomTypeRequest {
     private String operateIP;
 
     @JsonProperty(value = "OperateTime")
-    private String operateTime;
+    @JSONField(format = "yyyy-MM-dd HH:mm:ss")
+    private Date operateTime;
 
     @JsonProperty(value = "OperationType")
     private int operationType;
@@ -50,20 +59,34 @@ public class CloseRoomTypeRequest {
 
     private List<String> roomTypeList ;
 
-    public String getArriveDate() {
-        return arriveDate;
-    }
 
-    public void setArriveDate(String arriveDate) {
-        this.arriveDate = arriveDate;
-    }
+    public CloseRoomTypeRequest() {}
 
-    public String getLeaveDate() {
-        return leaveDate;
-    }
+    public CloseRoomTypeRequest(CloseRoomRequest closeRoomRequest,Order order) {
 
-    public void setLeaveDate(String leaveDate) {
-        this.leaveDate = leaveDate;
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+        this.closeRoomType=301;
+        this.ignoreInventorySummary=false;
+        List<Integer> inventoryType=new ArrayList<>();
+        inventoryType.add(0);
+        inventoryType.add(1);
+        inventoryType.add(2);
+        inventoryType.add(3);
+        this.inventoryType=inventoryType;
+        this.operationType=1;
+        this.priceFrom=0;
+        this.overTime=sdf.format(new Date())+" 23:59:59";
+        this.operateTime=new Date();
+        this.arriveDate=closeRoomRequest.getArriveDate();
+        this.leaveDate=closeRoomRequest.getLeaveDate();
+        this.operateIP=closeRoomRequest.getOperatorInfo().getOperatorIP();
+        this.operator=closeRoomRequest.getOperatorInfo().getOperatorName();
+        this.operateComments=closeRoomRequest.getOrderId().toString();
+        this.hotelID=order.getHotelId();
+        List<String> roomTypeIds=new ArrayList<>();
+        roomTypeIds.add(order.getRoomTypeId());
+        this.roomTypeList=roomTypeIds;
+
     }
 
     public int getCloseRoomType() {
@@ -114,13 +137,6 @@ public class CloseRoomTypeRequest {
         this.operateIP = operateIP;
     }
 
-    public String getOperateTime() {
-        return operateTime;
-    }
-
-    public void setOperateTime(String operateTime) {
-        this.operateTime = operateTime;
-    }
 
     public int getOperationType() {
         return operationType;
@@ -161,4 +177,29 @@ public class CloseRoomTypeRequest {
     public void setRoomTypeList(List<String> roomTypeList) {
         this.roomTypeList = roomTypeList;
     }
+
+    public Date getArriveDate() {
+        return arriveDate;
+    }
+
+    public void setArriveDate(Date arriveDate) {
+        this.arriveDate = arriveDate;
+    }
+
+    public Date getLeaveDate() {
+        return leaveDate;
+    }
+
+    public void setLeaveDate(Date leaveDate) {
+        this.leaveDate = leaveDate;
+    }
+
+    public Date getOperateTime() {
+        return operateTime;
+    }
+
+    public void setOperateTime(Date operateTime) {
+        this.operateTime = operateTime;
+    }
+
 }

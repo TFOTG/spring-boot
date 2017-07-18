@@ -42,4 +42,9 @@ public interface OriginalOrderFieldsConst {
 	 * 发短信
 	 */
 	String SEND_MSG = "cardNo,contactPhone";
+
+    /**
+     * 关房
+     */
+    String CLOSE_ROOM = "roomTypeId,hotelId,ratePlanId";
 }
