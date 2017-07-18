@@ -1,20 +1,24 @@
 package com.elong.hotel.proxy.hotel3.request;
 
+import com.alibaba.fastjson.annotation.JSONField;
 import com.elong.hotel.proxy.javaorder.request.OperatorInfo;
 
 import javax.validation.constraints.Max;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
+import java.io.Serializable;
 import java.util.Date;
 
 /**
  * Created by peng.wang on 2017/7/18.
  */
-public class CloseRoomRequest {
+public class CloseRoomRequest implements Serializable{
 
+    @JSONField(format = "yyyy-MM-dd HH:mm:ss")
     @NotNull(message="入住日期不能为空")
     private Date arriveDate;
 
+    @JSONField(format = "yyyy-MM-dd HH:mm:ss")
     @NotNull(message="离店日期不能为空")
     private Date leaveDate;
 

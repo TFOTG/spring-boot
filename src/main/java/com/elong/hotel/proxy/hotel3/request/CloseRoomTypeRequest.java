@@ -1,9 +1,7 @@
 package com.elong.hotel.proxy.hotel3.request;
 
-import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.annotation.JSONField;
 import com.elong.hotel.proxy.javaorder.getorder.Order;
-import org.codehaus.jackson.annotate.JsonProperty;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -15,46 +13,43 @@ import java.util.List;
  */
 public class CloseRoomTypeRequest {
 
-    @JsonProperty(value = "ArriveDate")
-    @JSONField(format = "yyyy-MM-dd HH:mm:ss")
+    @JSONField(format = "yyyy-MM-dd HH:mm:ss",name = "ArriveDate")
     private Date arriveDate;
 
-    @JsonProperty(value = "LeaveDate")
-    @JSONField(format = "yyyy-MM-dd HH:mm:ss")
+    @JSONField(format = "yyyy-MM-dd HH:mm:ss" ,name = "LeaveDate")
     private Date leaveDate;
 
-    @JsonProperty(value = "CloseRoomType")
+    @JSONField(name = "CloseRoomType")
     private int closeRoomType;
 
-    @JsonProperty(value = "HotelID")
+    @JSONField(name = "HotelID")
     private String hotelID;
 
-    @JsonProperty(value = "IgnoreInventorySummary")
+    @JSONField(name = "IgnoreInventorySummary")
     private boolean ignoreInventorySummary;
 
-    @JsonProperty(value = "InventoryType")
+    @JSONField(name = "InventoryType")
     private List<Integer> inventoryType ;
 
-    @JsonProperty(value = "OperateComments")
+    @JSONField(name = "OperateComments")
     private String operateComments;
 
-    @JsonProperty(value = "OperateIP")
+    @JSONField(name = "OperateIP")
     private String operateIP;
 
-    @JsonProperty(value = "OperateTime")
-    @JSONField(format = "yyyy-MM-dd HH:mm:ss")
+    @JSONField(format = "yyyy-MM-dd HH:mm:ss",name = "OperateTime")
     private Date operateTime;
 
-    @JsonProperty(value = "OperationType")
+    @JSONField(name = "OperationType")
     private int operationType;
 
-    @JsonProperty(value = "Operator")
+    @JSONField(name = "Operator")
     private String operator;
 
-    @JsonProperty(value = "OverTime")
+    @JSONField(name = "OverTime")
     private String overTime;
 
-    @JsonProperty(value = "PriceFrom")
+    @JSONField(name = "PriceFrom")
     private int priceFrom;
 
     private List<String> roomTypeList ;

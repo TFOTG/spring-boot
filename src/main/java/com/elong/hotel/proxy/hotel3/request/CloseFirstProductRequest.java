@@ -2,7 +2,6 @@ package com.elong.hotel.proxy.hotel3.request;
 
 import com.alibaba.fastjson.annotation.JSONField;
 import com.elong.hotel.proxy.javaorder.getorder.Order;
-import org.codehaus.jackson.annotate.JsonProperty;
 
 import java.util.ArrayList;
 import java.util.Date;
@@ -13,36 +12,34 @@ import java.util.List;
  */
 public class CloseFirstProductRequest {
 
-    @JsonProperty(value = "ArriveDate")
-    @JSONField(format = "yyyy-MM-dd HH:mm:ss")
+    @JSONField(format = "yyyy-MM-dd HH:mm:ss",name = "ArriveDate")
     private Date arriveDate;
 
-    @JsonProperty(value = "LeaveDate")
-    @JSONField(format = "yyyy-MM-dd HH:mm:ss")
+    @JSONField(format = "yyyy-MM-dd HH:mm:ss" ,name = "LeaveDate")
     private Date leaveDate;
 
-    @JsonProperty(value = "HotelID")
+    @JSONField(name = "HotelID")
     private String hotelID;
 
-    @JsonProperty(value = "Notes")
+    @JSONField(name = "Notes")
     private String notes;
 
-    @JsonProperty(value = "OpType")
+    @JSONField(name = "OpType")
     private int opType;
 
-    @JsonProperty(value = "OperateIP")
+    @JSONField(name = "OperateIP")
     private String operateIP;
 
-    @JsonProperty(value = "Operator")
+    @JSONField(name = "Operator")
     private String operator;
 
-    @JsonProperty(value = "RatePlanIds")
+    @JSONField(name = "RatePlanIds")
     private List<Integer> ratePlanIds;
 
-    @JsonProperty(value = "RoomTypeIds")
+    @JSONField(name = "RoomTypeIds")
     private List<String> roomTypeIds;
 
-    @JsonProperty(value = "Weeks")
+    @JSONField(name = "Weeks")
     private int[] weeks;
 
 
