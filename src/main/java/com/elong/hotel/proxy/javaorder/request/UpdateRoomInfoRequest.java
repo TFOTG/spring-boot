@@ -23,7 +23,7 @@ public class UpdateRoomInfoRequest {
 	private Integer orderId;
 	// 内部备注
 	private String notesToElong;
-	// 房间信息，如果订单三间房，只传了一间房，则只修改这间房信息，没有传的2间房不动
+	// 房间信息
 	private List<Room> rooms;
 
 	public UpdateRoomInfoRequest() {
