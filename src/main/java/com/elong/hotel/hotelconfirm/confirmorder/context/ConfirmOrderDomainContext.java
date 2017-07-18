@@ -9,7 +9,6 @@ import com.elong.hotel.storage.bo.OrderConsumerInfoBo;
 
 import java.io.Serializable;
 import java.util.List;
-import java.util.Map;
 
 public class ConfirmOrderDomainContext implements Serializable {
 
@@ -26,6 +25,8 @@ public class ConfirmOrderDomainContext implements Serializable {
     private OrderConsumerInfoBo orderConsumerInfoBo;
 
     private OperatorInfoBo operator;
+
+    private String msg2customer;
 
     public ConfirmOrderDomainContext(){}
 
@@ -94,5 +95,13 @@ public class ConfirmOrderDomainContext implements Serializable {
 
     public void setOperator(OperatorInfoBo operator) {
         this.operator = operator;
+    }
+
+    public String getMsg2customer() {
+        return msg2customer;
+    }
+
+    public void setMsg2customer(String msg2customer) {
+        this.msg2customer = msg2customer;
     }
 }
