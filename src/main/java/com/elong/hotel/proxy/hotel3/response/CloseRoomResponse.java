@@ -1,19 +1,19 @@
 package com.elong.hotel.proxy.hotel3.response;
 
-import org.codehaus.jackson.annotate.JsonProperty;
+import com.alibaba.fastjson.annotation.JSONField;
 
 /**
  * Created by peng.wang on 2017/7/17.
  */
 public class CloseRoomResponse {
 
-    @JsonProperty(value = "ErrMsg")
+    @JSONField(name = "ErrMsg")
     private String errMsg;
 
-    @JsonProperty(value = "Result")
+    @JSONField(name = "Result")
     private String result;
 
-    @JsonProperty(value = "ResultCode")
+    @JSONField(name = "ResultCode")
     private int resultCode;
 
     public String getErrMsg() {

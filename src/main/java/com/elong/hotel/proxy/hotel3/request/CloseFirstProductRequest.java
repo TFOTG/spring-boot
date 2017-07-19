@@ -1,56 +1,88 @@
 package com.elong.hotel.proxy.hotel3.request;
 
-import org.codehaus.jackson.annotate.JsonProperty;
+import com.alibaba.fastjson.annotation.JSONField;
+import com.elong.hotel.proxy.javaorder.getorder.Order;
+
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
 
 /**
  * Created by peng.wang on 2017/7/17.
  */
 public class CloseFirstProductRequest {
 
-    @JsonProperty(value = "BeginDate")
-    private String beginDate;
+    @JSONField(format = "yyyy-MM-dd HH:mm:ss",name = "ArriveDate")
+    private Date arriveDate;
 
-    @JsonProperty(value = "EndDate")
-    private String endDate;
+    @JSONField(format = "yyyy-MM-dd HH:mm:ss" ,name = "LeaveDate")
+    private Date leaveDate;
 
-    @JsonProperty(value = "HotelID")
+    @JSONField(name = "HotelID")
     private String hotelID;
 
-    @JsonProperty(value = "Notes")
+    @JSONField(name = "Notes")
     private String notes;
 
-    @JsonProperty(value = "OpType")
+    @JSONField(name = "OpType")
     private int opType;
 
-    @JsonProperty(value = "OperateIP")
+    @JSONField(name = "OperateIP")
     private String operateIP;
 
-    @JsonProperty(value = "Operator")
+    @JSONField(name = "Operator")
     private String operator;
 
-    @JsonProperty(value = "RatePlanIds")
-    private int[] ratePlanIds;
+    @JSONField(name = "RatePlanIds")
+    private List<Integer> ratePlanIds;
 
-    @JsonProperty(value = "RoomTypeIds")
-    private String[] roomTypeIds;
+    @JSONField(name = "RoomTypeIds")
+    private List<String> roomTypeIds;
 
-    @JsonProperty(value = "Weeks")
+    @JSONField(name = "Weeks")
     private int[] weeks;
 
-    public String getBeginDate() {
-        return beginDate;
+    //此字段用来做日志标识
+    private Long orderId;
+
+    public CloseFirstProductRequest() {
+
     }
 
-    public void setBeginDate(String beginDate) {
-        this.beginDate = beginDate;
+    public CloseFirstProductRequest(CloseRoomRequest closeRoomRequest,Order order) {
+        this.opType=2;
+        int[] weeks={0,1,2,3,4,5,6};
+        this.weeks=weeks;
+        this.arriveDate=closeRoomRequest.getArriveDate();
+        this.leaveDate=closeRoomRequest.getLeaveDate();
+        this.operateIP=closeRoomRequest.getOperatorInfo().getOperatorIP();
+        this.operator=closeRoomRequest.getOperatorInfo().getOperatorName();
+        this.notes="已审库订单："+closeRoomRequest.getOrderId();
+        this.hotelID=order.getHotelId();
+        List<Integer> ratePlanIds=new ArrayList<>();
+        ratePlanIds.add(Integer.valueOf(order.getRatePlanId()));
+        List<String> roomTypeIds=new ArrayList<>();
+        roomTypeIds.add(order.getRoomTypeId());
+        this.ratePlanIds=ratePlanIds;
+        this.roomTypeIds=roomTypeIds;
+        this.orderId=order.getOrderId();
     }
 
-    public String getEndDate() {
-        return endDate;
+
+    public Date getArriveDate() {
+        return arriveDate;
     }
 
-    public void setEndDate(String endDate) {
-        this.endDate = endDate;
+    public void setArriveDate(Date arriveDate) {
+        this.arriveDate = arriveDate;
+    }
+
+    public Date getLeaveDate() {
+        return leaveDate;
+    }
+
+    public void setLeaveDate(Date leaveDate) {
+        this.leaveDate = leaveDate;
     }
 
     public String getHotelID() {
@@ -93,19 +125,19 @@ public class CloseFirstProductRequest {
         this.operator = operator;
     }
 
-    public int[] getRatePlanIds() {
+    public List<Integer> getRatePlanIds() {
         return ratePlanIds;
     }
 
-    public void setRatePlanIds(int[] ratePlanIds) {
+    public void setRatePlanIds(List<Integer> ratePlanIds) {
         this.ratePlanIds = ratePlanIds;
     }
 
-    public String[] getRoomTypeIds() {
+    public List<String> getRoomTypeIds() {
         return roomTypeIds;
     }
 
-    public void setRoomTypeIds(String[] roomTypeIds) {
+    public void setRoomTypeIds(List<String> roomTypeIds) {
         this.roomTypeIds = roomTypeIds;
     }
 
@@ -115,5 +147,13 @@ public class CloseFirstProductRequest {
 
     public void setWeeks(int[] weeks) {
         this.weeks = weeks;
+    }
+
+    public Long getOrderId() {
+        return orderId;
+    }
+
+    public void setOrderId(Long orderId) {
+        this.orderId = orderId;
     }
 }

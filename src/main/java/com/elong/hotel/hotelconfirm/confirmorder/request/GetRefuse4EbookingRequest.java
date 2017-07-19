@@ -11,7 +11,7 @@ public class GetRefuse4EbookingRequest {
 
 	private List<String> hotelIds;
 
-	private Integer startItem;
+	private Integer pageIndex;
 
 	private Integer pageSize;
 
@@ -31,12 +31,12 @@ public class GetRefuse4EbookingRequest {
 		this.hotelIds = hotelIds;
 	}
 
-	public Integer getStartItem() {
-		return startItem;
+	public Integer getPageIndex() {
+		return pageIndex;
 	}
 
-	public void setStartItem(Integer startItem) {
-		this.startItem = startItem;
+	public void setPageIndex(Integer pageIndex) {
+		this.pageIndex = pageIndex;
 	}
 
 	public Integer getPageSize() {
