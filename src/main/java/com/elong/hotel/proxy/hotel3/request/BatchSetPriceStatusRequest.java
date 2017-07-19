@@ -10,7 +10,7 @@ import java.util.List;
 /**
  * Created by peng.wang on 2017/7/17.
  */
-public class CloseFirstProductRequest {
+public class BatchSetPriceStatusRequest {
 
     @JSONField(format = "yyyy-MM-dd HH:mm:ss",name = "ArriveDate")
     private Date arriveDate;
@@ -45,11 +45,11 @@ public class CloseFirstProductRequest {
     //此字段用来做日志标识
     private Long orderId;
 
-    public CloseFirstProductRequest() {
+    public BatchSetPriceStatusRequest() {
 
     }
 
-    public CloseFirstProductRequest(CloseRoomRequest closeRoomRequest,Order order) {
+    public BatchSetPriceStatusRequest(CloseRoomRequest closeRoomRequest, Order order) {
         this.opType=2;
         int[] weeks={0,1,2,3,4,5,6};
         this.weeks=weeks;

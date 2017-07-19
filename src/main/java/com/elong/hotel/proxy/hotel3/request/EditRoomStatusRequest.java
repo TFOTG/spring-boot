@@ -1,6 +1,8 @@
 package com.elong.hotel.proxy.hotel3.request;
 
 import com.alibaba.fastjson.annotation.JSONField;
+import com.elong.hotel.proxy.hotel3.enums.CloseRoomTypeEnum;
+import com.elong.hotel.proxy.hotel3.enums.InventoryTypeEnum;
 import com.elong.hotel.proxy.javaorder.getorder.Order;
 
 import java.text.SimpleDateFormat;
@@ -11,7 +13,7 @@ import java.util.List;
 /**
  * Created by peng.wang on 2017/7/17.
  */
-public class CloseRoomTypeRequest {
+public class EditRoomStatusRequest {
 
     @JSONField(format = "yyyy-MM-dd HH:mm:ss",name = "ArriveDate")
     private Date arriveDate;
@@ -57,18 +59,18 @@ public class CloseRoomTypeRequest {
     //此字段用来做日志标识
     private Long orderId;
 
-    public CloseRoomTypeRequest() {}
+    public EditRoomStatusRequest() {}
 
-    public CloseRoomTypeRequest(CloseRoomRequest closeRoomRequest,Order order) {
+    public EditRoomStatusRequest(CloseRoomRequest closeRoomRequest, Order order) {
 
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
-        this.closeRoomType=301;
+        this.closeRoomType= CloseRoomTypeEnum.Mis.getType();
         this.ignoreInventorySummary=false;
         List<Integer> inventoryType=new ArrayList<>();
-        inventoryType.add(0);
-        inventoryType.add(1);
-        inventoryType.add(2);
-        inventoryType.add(3);
+        inventoryType.add(InventoryTypeEnum.OverSale.getType());
+        inventoryType.add(InventoryTypeEnum.Add.getType());
+        inventoryType.add(InventoryTypeEnum.Contract.getType());
+        inventoryType.add(InventoryTypeEnum.Buyout.getType());
         this.inventoryType=inventoryType;
         this.operationType=1;
         this.priceFrom=0;

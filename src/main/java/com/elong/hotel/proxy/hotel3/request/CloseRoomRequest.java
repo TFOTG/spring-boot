@@ -23,15 +23,15 @@ public class CloseRoomRequest implements Serializable{
     private Date leaveDate;
 
     /**
-     * 操作类型:1关当前,2关全部,3关首晚产品
+     * 操作类型:1房型,2关首晚产品
      */
 
     @Min(value = 1,message = "无效的操作类型")
-    @Max(value = 3,message = "无效的操作类型")
+    @Max(value = 2,message = "无效的操作类型")
     @NotNull(message="操作类型不能为空")
     private Integer operatorType;
 
-    @Min(value = 0,message = "无效的订单号")
+    @Min(value = 10000,message = "无效的订单号")
     @NotNull(message="订单ID不能为空")
     private Integer orderId;
 
