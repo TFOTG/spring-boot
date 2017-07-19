@@ -1,7 +1,7 @@
 package com.elong.hotel.proxy.hotel3.request;
 
-import com.alibaba.fastjson.annotation.JSONField;
 import com.elong.hotel.proxy.javaorder.request.OperatorInfo;
+import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.validation.constraints.Max;
 import javax.validation.constraints.Min;
@@ -14,11 +14,11 @@ import java.util.Date;
  */
 public class CloseRoomRequest implements Serializable{
 
-    @JSONField(format = "yyyy-MM-dd HH:mm:ss")
+    @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     @NotNull(message="入住日期不能为空")
     private Date arriveDate;
 
-    @JSONField(format = "yyyy-MM-dd HH:mm:ss")
+    @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     @NotNull(message="离店日期不能为空")
     private Date leaveDate;
 
@@ -26,11 +26,12 @@ public class CloseRoomRequest implements Serializable{
      * 操作类型:1关当前,2关全部,3关首晚产品
      */
 
-    @Min(1)
-    @Max(3)
+    @Min(value = 1,message = "无效的操作类型")
+    @Max(value = 3,message = "无效的操作类型")
     @NotNull(message="操作类型不能为空")
     private Integer operatorType;
 
+    @Min(value = 0,message = "无效的订单号")
     @NotNull(message="订单ID不能为空")
     private Integer orderId;
 
