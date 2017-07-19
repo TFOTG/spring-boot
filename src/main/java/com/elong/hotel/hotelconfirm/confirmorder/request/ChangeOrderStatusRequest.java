@@ -18,6 +18,8 @@ public class ChangeOrderStatusRequest {
 
     private String note2Client;
 
+    private String note2Action;
+
     private String msg2Customer;
 
     private String confirmNo;
@@ -96,5 +98,13 @@ public class ChangeOrderStatusRequest {
 
     public void setMsg2Customer(String msg2Customer) {
         this.msg2Customer = msg2Customer;
+    }
+
+    public String getNote2Action() {
+        return note2Action;
+    }
+
+    public void setNote2Action(String note2Action) {
+        this.note2Action = note2Action;
     }
 }

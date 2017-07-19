@@ -1,6 +1,7 @@
 package com.elong.hotel.hotelconfirm.confirmorder.context;
 
 import com.elong.hotel.common.bo.OperatorInfoBo;
+import com.elong.hotel.hotelconfirm.confirmorder.bo.EBRefuseBo;
 import com.elong.hotel.hotelconfirm.confirmorder.enums.ServerRunningDomainEnum;
 import com.elong.hotel.hotelconfirm.confirmorder.po.ConfirmOrderPo;
 import com.elong.hotel.proxy.javaorder.getorder.Order;
@@ -27,6 +28,10 @@ public class ConfirmOrderDomainContext implements Serializable {
     private OperatorInfoBo operator;
 
     private String msg2customer;
+
+    private String note2Action;
+
+    private EBRefuseBo ebRefuseBo;
 
     public ConfirmOrderDomainContext(){}
 
@@ -103,5 +108,21 @@ public class ConfirmOrderDomainContext implements Serializable {
 
     public void setMsg2customer(String msg2customer) {
         this.msg2customer = msg2customer;
+    }
+
+    public EBRefuseBo getEbRefuseBo() {
+        return ebRefuseBo;
+    }
+
+    public void setEbRefuseBo(EBRefuseBo ebRefuseBo) {
+        this.ebRefuseBo = ebRefuseBo;
+    }
+
+    public String getNote2Action() {
+        return note2Action;
+    }
+
+    public void setNote2Action(String note2Action) {
+        this.note2Action = note2Action;
     }
 }
