@@ -1,6 +1,8 @@
 package com.elong.hotel.proxy.hotel3.request;
 
 import com.alibaba.fastjson.annotation.JSONField;
+import com.elong.hotel.hotelconfirm.confirmorder.bo.EBRefuseBo;
+import com.elong.hotel.hotelconfirm.confirmorder.context.ServerActionContext;
 import com.elong.hotel.proxy.hotel3.enums.CloseRoomTypeEnum;
 import com.elong.hotel.proxy.hotel3.enums.InventoryTypeEnum;
 import com.elong.hotel.proxy.javaorder.getorder.Order;
@@ -86,6 +88,41 @@ public class EditRoomStatusRequest {
         roomTypeIds.add(order.getRoomTypeId());
         this.roomTypeList=roomTypeIds;
         this.orderId=order.getOrderId();
+
+    }
+
+    public EditRoomStatusRequest(ServerActionContext serverActionContext,Order order) {
+        EBRefuseBo bo = serverActionContext.getEbRefuseBo();
+        this.roomTypeList = bo.getRoomTypeList();
+
+        if(bo.getFullType() == 1) {
+            this.arriveDate = bo.getFullSingleDate();
+            this.leaveDate = bo.getFullSingleDate();
+        }else if(bo.getFullType() == 2) {
+            this.arriveDate = bo.getCheckInDate();
+            this.leaveDate = bo.getCheckOutDate();
+        }else if(bo.getFullType() == 4) {
+            List<String> roomTypeIds=new ArrayList<>();
+            roomTypeIds.add(order.getRoomTypeId());
+            this.roomTypeList=roomTypeIds;
+            this.arriveDate = bo.getCheckInDate();
+            this.leaveDate = bo.getCheckOutDate();
+        }
+
+        this.closeRoomType = CloseRoomTypeEnum.Ebooking.getType();
+        this.ignoreInventorySummary=false;
+        List<Integer> inventoryType=new ArrayList<>();
+        inventoryType.add(InventoryTypeEnum.OverSale.getType());
+        inventoryType.add(InventoryTypeEnum.Add.getType());
+        inventoryType.add(InventoryTypeEnum.Contract.getType());
+        this.inventoryType=inventoryType;
+        this.operationType=1;
+        this.priceFrom=0;
+        this.operateTime=new Date();
+        this.operateIP=serverActionContext.getOperatorInfo().getOperatorIP();
+        this.operator=serverActionContext.getOperatorInfo().getOperatorName();
+        this.operateComments=bo.getNotes();
+        this.hotelID = order.getHotelId();
 
     }
 
