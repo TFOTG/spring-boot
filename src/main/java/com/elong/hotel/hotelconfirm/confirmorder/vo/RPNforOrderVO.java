@@ -31,8 +31,9 @@ public class RPNforOrderVO {
 	@JSONField(format="yyyy-MM-dd HH:mm:ss")
 	private Date promiseTime;
 
-	@NotBlank(message="短信内容不能为空")
 	private String msg;
+
+	private String note2Action;
 
 	public String getNotesToElong() {
 		return notesToElong;
@@ -72,5 +73,13 @@ public class RPNforOrderVO {
 
 	public void setMsg(String msg) {
 		this.msg = msg;
+	}
+
+	public String getNote2Action() {
+		return note2Action;
+	}
+
+	public void setNote2Action(String note2Action) {
+		this.note2Action = note2Action;
 	}
 }
