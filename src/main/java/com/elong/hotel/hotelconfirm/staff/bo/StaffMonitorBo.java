@@ -63,6 +63,10 @@ public class StaffMonitorBo implements Serializable, Comparable<StaffMonitorBo> 
 	private int confirmCount;
 
 	/**
+	 * 4:00 - 5:00 下午4-5点在线时长
+	 */
+	private int pm4Topm5OnlineTime;
+	/**
 	 * 当天获取量
 	 */
 	private int todayFetchCount;
@@ -211,6 +215,14 @@ public class StaffMonitorBo implements Serializable, Comparable<StaffMonitorBo> 
 
 	public void setSort(int sort) {
 		this.sort = sort;
+	}
+
+	public int getPm4Topm5OnlineTime() {
+		return pm4Topm5OnlineTime;
+	}
+
+	public void setPm4Topm5OnlineTime(int pm4Topm5OnlineTime) {
+		this.pm4Topm5OnlineTime = pm4Topm5OnlineTime;
 	}
 
 	@Override
