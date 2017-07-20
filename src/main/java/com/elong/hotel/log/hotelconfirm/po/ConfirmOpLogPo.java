@@ -1,5 +1,7 @@
 package com.elong.hotel.log.hotelconfirm.po;
 
+import com.alibaba.fastjson.annotation.JSONField;
+
 import java.util.Date;
 
 public class ConfirmOpLogPo {
@@ -15,10 +17,12 @@ public class ConfirmOpLogPo {
 
     private Long cardNo;
 
+    @JSONField(format = "yyyy-MM-dd HH:mm:ss")
     private Date arriveDate;
 
     private String opType;
 
+    @JSONField(format = "yyyy-MM-dd HH:mm:ss")
     private Date opDate;
 
     private String department;
@@ -43,26 +47,32 @@ public class ConfirmOpLogPo {
 
     private String operator;
 
+    @JSONField(format = "yyyy-MM-dd HH:mm:ss")
     private Date ivrStartTime;
 
+    @JSONField(format = "yyyy-MM-dd HH:mm:ss")
     private Date enterTime;
 
+    @JSONField(format = "yyyy-MM-dd HH:mm:ss")
     private Date respiteTime;
-
+    @JSONField(format = "yyyy-MM-dd HH:mm:ss")
     private Date sortTime;
-
+    @JSONField(format = "yyyy-MM-dd HH:mm:ss")
     private Date defaultSortTime;
-
+    @JSONField(format = "yyyy-MM-dd HH:mm:ss")
     private Date distributeTime;
-
+    @JSONField(format = "yyyy-MM-dd HH:mm:ss")
     private Date nextServiceTime;
 
+    @JSONField(format = "yyyy-MM-dd HH:mm:ss")
     private Date promiseTime;
 
+    @JSONField(format = "yyyy-MM-dd HH:mm:ss")
     private Date firstRefusedTime;
 
+    @JSONField(format = "yyyy-MM-dd HH:mm:ss")
     private Date bookingTime;
-
+    @JSONField(format = "yyyy-MM-dd HH:mm:ss")
     private Date amendTime;
 
     public Long getId() {

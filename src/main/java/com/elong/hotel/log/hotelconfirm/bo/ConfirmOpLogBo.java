@@ -15,6 +15,10 @@ import java.util.Date;
  */
 public class ConfirmOpLogBo {
 
+    /**
+     * 所查数据库名称（有可能查归档库）
+     */
+    private String logDBName;
 
     /**
      * 查询开始时间
@@ -150,6 +154,17 @@ public class ConfirmOpLogBo {
         this.firstRefusedTime = po.getFirstRefusedTime();
         this.bookingTime = po.getBookingTime();
         this.amendTime = po.getAmendTime();
+    }
+
+    public ConfirmOpLogBo()
+    {}
+
+    public String getLogDBName() {
+        return logDBName;
+    }
+
+    public void setLogDBName(String logDBName) {
+        this.logDBName = logDBName;
     }
 
     public Integer getReserNo() {
