@@ -22,6 +22,9 @@ public class RPNforOrderVO {
 	
 	@NotNull(message="订单号不能为空")
 	private Integer orderId;
+
+	@NotNull(message="酒店id不能为空")
+	private String hotelId;
 	
 	@NotBlank(message="暂缓时间不能为空")
 	@JSONField(format="yyyy-MM-dd HH:mm:ss")
@@ -81,5 +84,13 @@ public class RPNforOrderVO {
 
 	public void setNote2Action(String note2Action) {
 		this.note2Action = note2Action;
+	}
+
+	public String getHotelId() {
+		return hotelId;
+	}
+
+	public void setHotelId(String hotelId) {
+		this.hotelId = hotelId;
 	}
 }
