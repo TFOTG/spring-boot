@@ -10,4 +10,6 @@ public class ConfirmOrderMessageConst {
      */
     public static final String CLOSE_ROOM="ConfirmCloseRoom";
 
+    public static final String SEND_MSG="ConfirmSendMsg";
+
 }

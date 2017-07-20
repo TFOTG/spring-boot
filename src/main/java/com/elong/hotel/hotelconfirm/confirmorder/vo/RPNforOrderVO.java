@@ -5,13 +5,11 @@
  */
 package com.elong.hotel.hotelconfirm.confirmorder.vo;
 
-import java.util.Date;
-
-import javax.validation.constraints.NotNull;
-
+import com.alibaba.fastjson.annotation.JSONField;
 import org.hibernate.validator.constraints.NotBlank;
 
-import com.alibaba.fastjson.annotation.JSONField;
+import javax.validation.constraints.NotNull;
+import java.util.Date;
 
 /**
  * @author jianjun.wang
@@ -32,6 +30,10 @@ public class RPNforOrderVO {
 	@NotBlank(message="承诺时间不能为空")
 	@JSONField(format="yyyy-MM-dd HH:mm:ss")
 	private Date promiseTime;
+
+	private String msg;
+
+	private String note2Action;
 
 	public String getNotesToElong() {
 		return notesToElong;
@@ -65,4 +67,19 @@ public class RPNforOrderVO {
 		this.promiseTime = promiseTime;
 	}
 
+	public String getMsg() {
+		return msg;
+	}
+
+	public void setMsg(String msg) {
+		this.msg = msg;
+	}
+
+	public String getNote2Action() {
+		return note2Action;
+	}
+
+	public void setNote2Action(String note2Action) {
+		this.note2Action = note2Action;
+	}
 }

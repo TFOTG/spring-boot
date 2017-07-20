@@ -2,6 +2,7 @@ package com.elong.hotel.hotelconfirm.confirmorder.context;
 
 import com.elong.hotel.common.bo.OperatorInfoBo;
 import com.elong.hotel.hotelconfirm.confirmorder.bo.ConfirmOrderBo;
+import com.elong.hotel.hotelconfirm.confirmorder.bo.EBRefuseBo;
 import com.elong.hotel.hotelconfirm.confirmorder.enums.ServerActionEnum;
 import com.elong.hotel.hotelconfirm.confirmorderactionlog.enums.ActionOpFromEnum;
 import com.elong.hotel.proxy.javaorder.getorder.Order;
@@ -17,6 +18,8 @@ public class ServerActionContext implements Serializable {
 	ServerActionEnum actionEnum;
 	ActionOpFromEnum actionOpFromEnum;
 	String Msg2Customer;
+	String note2Action;
+	EBRefuseBo ebRefuseBo;
 
 	public ServerActionEnum getActionEnum() {
 		return actionEnum;
@@ -72,5 +75,21 @@ public class ServerActionContext implements Serializable {
 
 	public void setMsg2Customer(String msg2Customer) {
 		Msg2Customer = msg2Customer;
+	}
+
+	public String getNote2Action() {
+		return note2Action;
+	}
+
+	public void setNote2Action(String note2Action) {
+		this.note2Action = note2Action;
+	}
+
+	public EBRefuseBo getEbRefuseBo() {
+		return ebRefuseBo;
+	}
+
+	public void setEbRefuseBo(EBRefuseBo ebRefuseBo) {
+		this.ebRefuseBo = ebRefuseBo;
 	}
 }

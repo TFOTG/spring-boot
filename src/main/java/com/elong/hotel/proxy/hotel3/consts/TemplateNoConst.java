@@ -114,4 +114,9 @@ public interface TemplateNoConst {
      * 延迟确认短信(新-20160506)
      */
     String  PROMISESMSNEW = "1030";
+
+    /**
+     * 延迟确认短信(新-20170720)
+     */
+    String  SENDMSG = "1033";
 }
