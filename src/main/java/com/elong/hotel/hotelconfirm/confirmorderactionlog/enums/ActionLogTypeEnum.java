@@ -35,7 +35,15 @@ public enum ActionLogTypeEnum {
     /**
      * 手动修改暂缓时间
      */
-    ChangeRespiteTime(7,"调整暂缓时间");
+    ChangeRespiteTime(7,"调整暂缓时间"),
+    /**
+     * mis确认短信
+     */
+    MsgMisConfirm(8,"mis确认短信"),
+    /**
+     * 延迟承诺时间短信
+     */
+    MsgPromiseTime(9,"延迟承诺时间短信");
 
     private int key;
     private String value;
