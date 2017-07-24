@@ -38,6 +38,8 @@ public class RPNforOrderVO {
 
 	private String note2Action;
 
+	private Integer minutes;
+
 	public String getNotesToElong() {
 		return notesToElong;
 	}
@@ -92,5 +94,13 @@ public class RPNforOrderVO {
 
 	public void setHotelId(String hotelId) {
 		this.hotelId = hotelId;
+	}
+
+	public Integer getMinutes() {
+		return minutes;
+	}
+
+	public void setMinutes(Integer minutes) {
+		this.minutes = minutes;
 	}
 }
