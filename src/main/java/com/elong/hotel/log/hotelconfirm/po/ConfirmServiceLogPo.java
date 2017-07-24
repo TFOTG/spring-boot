@@ -1,5 +1,7 @@
 package com.elong.hotel.log.hotelconfirm.po;
 
+import com.alibaba.fastjson.annotation.JSONField;
+
 import java.util.Date;
 
 public class ConfirmServiceLogPo {
@@ -19,6 +21,7 @@ public class ConfirmServiceLogPo {
 
     private String opType;
 
+    @JSONField(format = "yyyy-MM-dd HH:mm:ss")
     private Date opDate;
 
     public Long getId() {
