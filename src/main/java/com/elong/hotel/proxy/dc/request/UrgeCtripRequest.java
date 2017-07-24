@@ -16,7 +16,7 @@ public class UrgeCtripRequest {
 
     private RealRequest realRequest;
 
-    public UrgeCtripRequest(Integer ctripOrderId,Integer elongOrderId) {
+    public UrgeCtripRequest(String ctripOrderId,Integer elongOrderId) {
 
         this.realRequest=new RealRequest(ctripOrderId,elongOrderId);
 
@@ -30,7 +30,7 @@ public class UrgeCtripRequest {
 
         private List<UrgeCtripBo> orderIdList;
 
-        public RealRequest(Integer ctripOrderId,Integer elongOrderId) {
+        public RealRequest(String ctripOrderId,Integer elongOrderId) {
             List<UrgeCtripBo> list=new ArrayList<>();
             UrgeCtripBo bo=new UrgeCtripBo();
             bo.setCtripOrderId(ctripOrderId);

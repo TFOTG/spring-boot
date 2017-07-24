@@ -11,13 +11,13 @@ public class Room {
 	private String confirmNo;
 	private Long id;
 	private String roomNo;
-    private Integer cooperationOrderId;
+    private String cooperationOrderId;
 
-    public Integer getCooperationOrderId() {
+    public String getCooperationOrderId() {
         return cooperationOrderId;
     }
 
-    public void setCooperationOrderId(Integer cooperationOrderId) {
+    public void setCooperationOrderId(String cooperationOrderId) {
         this.cooperationOrderId = cooperationOrderId;
     }
 
