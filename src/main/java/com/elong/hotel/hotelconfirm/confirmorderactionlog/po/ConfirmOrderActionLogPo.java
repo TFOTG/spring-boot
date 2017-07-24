@@ -5,6 +5,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import com.alibaba.fastjson.annotation.JSONField;
 import com.elong.hotel.hotelconfirm.group.bo.GroupTagBo;
 
 /**
@@ -22,6 +23,7 @@ public class ConfirmOrderActionLogPo {
 
     private String targetStatus;
 
+    @JSONField(format = "yyyy-MM-dd HH:mm:ss")
     private Date targetTime;
 
     private String targetReason;
@@ -32,6 +34,7 @@ public class ConfirmOrderActionLogPo {
 
     private String opFrom;
 
+    @JSONField(format = "yyyy-MM-dd HH:mm:ss")
     private Date opDate;
 
     private String operatorName;
