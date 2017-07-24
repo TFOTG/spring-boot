@@ -9,6 +9,7 @@ import java.math.BigDecimal;
 import java.util.List;
 
 import com.elong.hotel.proxy.javaorder.getorder.Guest;
+import com.elong.hotel.proxy.javaorder.getorder.RoomNight;
 
 
 /**
@@ -171,6 +172,10 @@ public class PendingConfirmOrderPo {
 	 */
 	private String amendtime;
 	
+	/**
+	 * 房间信息
+	 */
+	private List<RoomNight> roomNights;
 	/**
 	 * 订单图标
 	 */
@@ -441,6 +446,14 @@ public class PendingConfirmOrderPo {
 
 	public void setRatePlanId(String ratePlanId) {
 		this.ratePlanId = ratePlanId;
+	}
+
+	public List<RoomNight> getRoomNights() {
+		return roomNights;
+	}
+
+	public void setRoomNights(List<RoomNight> roomNights) {
+		this.roomNights = roomNights;
 	}
 
 }
