@@ -7,6 +7,11 @@ import java.util.Date;
  */
 public class ConfirmServiceLogBo {
 
+    /**
+     * 所查数据库名称（有可能查归档库）
+     */
+    private String logDBName;
+
     private Integer reserNo;
 
     private Integer groupId;
@@ -32,6 +37,14 @@ public class ConfirmServiceLogBo {
      * 查询结束时间
      */
     private String endTime;
+
+    public String getLogDBName() {
+        return logDBName;
+    }
+
+    public void setLogDBName(String logDBName) {
+        this.logDBName = logDBName;
+    }
 
     public String getStartTime() {
         return startTime;
