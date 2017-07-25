@@ -12,6 +12,10 @@ public class CountNeedHandleAndSuspensionPo implements Serializable {
 	private String staffName;
 
 	/**
+	 * 领导名称
+	 */
+	private String leaderName;
+	/**
 	 * 待处理量
 	 */
 	private int needHandleCount;
@@ -27,6 +31,14 @@ public class CountNeedHandleAndSuspensionPo implements Serializable {
 
 	public void setStaffName(String staffName) {
 		this.staffName = staffName;
+	}
+
+	public String getLeaderName() {
+		return leaderName;
+	}
+
+	public void setLeaderName(String leaderName) {
+		this.leaderName = leaderName;
 	}
 
 	public int getNeedHandleCount() {
