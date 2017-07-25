@@ -90,11 +90,12 @@ public class StaffMonitorBo implements Serializable, Comparable<StaffMonitorBo> 
 		super();
 	}
 
-	public StaffMonitorBo(String leaderName, String staffName, int sort) {
+	public StaffMonitorBo(String leaderName, String staffName, Integer online, int sort) {
 		super();
 		this.leaderName = leaderName;
 		this.staffName = staffName;
 		this.groupName = "";
+		this.online = online;
 		this.sort = sort;
 	}
 
@@ -232,7 +233,7 @@ public class StaffMonitorBo implements Serializable, Comparable<StaffMonitorBo> 
 		if (this.sort == 0) {
 			try {
 				String s1 = new String(this.leaderName.getBytes("GB2312"), "ISO-8859-1");
-				String s2 = new String(o.getLeaderName().getBytes("GB2312"), "ISO-8859-1");
+				String s2 = new String(o.leaderName.getBytes("GB2312"), "ISO-8859-1");
 				return s1.compareTo(s2);
 			} catch (UnsupportedEncodingException e) {
 				e.printStackTrace();
