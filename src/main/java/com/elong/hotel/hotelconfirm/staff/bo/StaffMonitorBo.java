@@ -94,6 +94,7 @@ public class StaffMonitorBo implements Serializable, Comparable<StaffMonitorBo> 
 		super();
 		this.leaderName = leaderName;
 		this.staffName = staffName;
+		this.groupName = "";
 		this.sort = sort;
 	}
 

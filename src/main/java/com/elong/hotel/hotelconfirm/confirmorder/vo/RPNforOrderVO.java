@@ -26,11 +26,9 @@ public class RPNforOrderVO {
 	@NotNull(message="酒店id不能为空")
 	private String hotelId;
 	
-	@NotBlank(message="暂缓时间不能为空")
 	@JSONField(format="yyyy-MM-dd HH:mm:ss")
 	private Date respitetime;
 	
-	@NotBlank(message="承诺时间不能为空")
 	@JSONField(format="yyyy-MM-dd HH:mm:ss")
 	private Date promiseTime;
 
@@ -40,6 +38,8 @@ public class RPNforOrderVO {
 
 	private Integer minutes;
 
+	private String timepoint;
+	
 	public String getNotesToElong() {
 		return notesToElong;
 	}
@@ -103,4 +103,13 @@ public class RPNforOrderVO {
 	public void setMinutes(Integer minutes) {
 		this.minutes = minutes;
 	}
+
+	public String getTimepoint() {
+		return timepoint;
+	}
+
+	public void setTimepoint(String timepoint) {
+		this.timepoint = timepoint;
+	}
+	
 }

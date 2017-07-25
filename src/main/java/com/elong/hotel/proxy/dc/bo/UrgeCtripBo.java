@@ -5,7 +5,7 @@ package com.elong.hotel.proxy.dc.bo;
  */
 public class UrgeCtripBo {
 
-    private Integer ctripOrderId;
+    private String ctripOrderId;
     private Integer elongOrderId;
 
     private int dateChanged;
@@ -48,11 +48,11 @@ public class UrgeCtripBo {
         this.resultMsg = resultMsg;
     }
 
-    public Integer getCtripOrderId() {
+    public String getCtripOrderId() {
         return ctripOrderId;
     }
 
-    public void setCtripOrderId(Integer ctripOrderId) {
+    public void setCtripOrderId(String ctripOrderId) {
         this.ctripOrderId = ctripOrderId;
     }
 
