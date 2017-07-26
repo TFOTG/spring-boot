@@ -1,12 +1,12 @@
 package com.elong.hotel.hotelconfirm.confirmorderactionlog.po;
 
-import java.util.Date;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-
 import com.alibaba.fastjson.annotation.JSONField;
-import com.elong.hotel.hotelconfirm.group.bo.GroupTagBo;
+import com.elong.hotel.common.bo.OperatorInfoBo;
+import com.elong.hotel.hotelconfirm.confirmorderactionlog.enums.ActionLogTypeEnum;
+import com.elong.hotel.hotelconfirm.confirmorderactionlog.enums.ActionOpFromEnum;
+import com.elong.hotel.proxy.javaorder.getorder.Order;
+
+import java.util.Date;
 
 /**
  * Created by yangboyu on 17/4/4.
@@ -143,5 +143,21 @@ public class ConfirmOrderActionLogPo {
 
     public void setTargetTime(Date targetTime) {
         this.targetTime = targetTime;
+    }
+
+    public ConfirmOrderActionLogPo() {
+    }
+
+    public ConfirmOrderActionLogPo( Order order,String targetStatus,OperatorInfoBo operatorInfoBo,ActionLogTypeEnum logTypeEnum,ActionOpFromEnum opFromEnum) {
+        this.orderId = order.getOrderId().intValue();
+        this.hotelId = Long.getLong(order.getHotelId());
+        this.logType = logTypeEnum.getKey();
+        this.targetStatus = targetStatus;
+        this.targetReason = targetReason;
+
+        this.opFrom = opFromEnum.getKey();
+        this.opDate = operatorInfoBo.getOperatorTime();
+        this.operatorName = operatorInfoBo.getOperatorName();
+        this.operatorIp = operatorInfoBo.getOperatorIP();
     }
 }
