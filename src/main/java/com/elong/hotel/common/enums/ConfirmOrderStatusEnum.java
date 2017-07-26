@@ -84,7 +84,19 @@ public enum ConfirmOrderStatusEnum {
     /**
      * 特殊满房
      */
-    U9("U9", "其他");
+    U9("U9", "其他"),
+    /**
+     *
+     */
+    G1("G1","变价"),
+    /**
+     *
+     */
+    G2("G2","暂不接受预订"),
+    /**
+     *
+     */
+    G3("G3","价格未出");
 
 
     ConfirmOrderStatusEnum(String status, String description) {
