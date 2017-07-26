@@ -148,13 +148,14 @@ public class ConfirmOrderActionLogPo {
     public ConfirmOrderActionLogPo() {
     }
 
-    public ConfirmOrderActionLogPo( Order order,String targetStatus,OperatorInfoBo operatorInfoBo,ActionLogTypeEnum logTypeEnum,ActionOpFromEnum opFromEnum) {
+    public ConfirmOrderActionLogPo( Order order,String targetStatus,OperatorInfoBo operatorInfoBo,ActionLogTypeEnum logTypeEnum,ActionOpFromEnum opFromEnum,String targetReason,Integer messageStatus,Integer messageType) {
         this.orderId = order.getOrderId().intValue();
         this.hotelId = Long.getLong(order.getHotelId());
         this.logType = logTypeEnum.getKey();
         this.targetStatus = targetStatus;
         this.targetReason = targetReason;
-
+        this.messageStatus = messageStatus;
+        this.messageType = messageType;
         this.opFrom = opFromEnum.getKey();
         this.opDate = operatorInfoBo.getOperatorTime();
         this.operatorName = operatorInfoBo.getOperatorName();
