@@ -12,10 +12,10 @@ import java.util.List;
  */
 public class BatchSetPriceStatusRequest {
 
-    @JSONField(format = "yyyy-MM-dd HH:mm:ss",name = "ArriveDate")
+    @JSONField(format = "yyyy-MM-dd HH:mm:ss",name = "BeginDate")
     private Date arriveDate;
 
-    @JSONField(format = "yyyy-MM-dd HH:mm:ss" ,name = "LeaveDate")
+    @JSONField(format = "yyyy-MM-dd HH:mm:ss" ,name = "EndDate")
     private Date leaveDate;
 
     @JSONField(name = "HotelID")

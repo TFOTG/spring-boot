@@ -23,11 +23,11 @@ public class CloseRoomRequest implements Serializable{
     private Date leaveDate;
 
     /**
-     * 操作类型:1房型,2关首晚产品
+     * 操作类型:1关首晚产品,2.关当前房型,3.关全部房型
      */
 
     @Min(value = 1,message = "无效的操作类型")
-    @Max(value = 2,message = "无效的操作类型")
+    @Max(value = 3,message = "无效的操作类型")
     @NotNull(message="操作类型不能为空")
     private Integer operatorType;
 
