@@ -47,6 +47,10 @@ public enum ConfirmOrderStatusEnum {
      */
     O5("O5", "不合作"),
     /**
+     * eb满房
+     */
+    O6("O6", "eb满房"),
+    /**
      * 需担保
      */
     U1("U1", "需担保"),
