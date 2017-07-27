@@ -99,4 +99,12 @@ public class ChangeOrderStatusVo implements Serializable {
     public void setNote2Action(String note2Action) {
         this.note2Action = note2Action;
     }
+
+    public Integer getMsg2Id() {
+        return msg2Id;
+    }
+
+    public void setMsg2Id(Integer msg2Id) {
+        this.msg2Id = msg2Id;
+    }
 }
