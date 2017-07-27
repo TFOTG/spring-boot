@@ -34,6 +34,8 @@ public class RPNforOrderVO {
 
 	private String msg;
 
+	private Integer msgId;
+
 	private String note2Action;
 
 	private Integer minutes;
@@ -111,5 +113,12 @@ public class RPNforOrderVO {
 	public void setTimepoint(String timepoint) {
 		this.timepoint = timepoint;
 	}
-	
+
+	public Integer getMsgId() {
+		return msgId;
+	}
+
+	public void setMsgId(Integer msgId) {
+		this.msgId = msgId;
+	}
 }

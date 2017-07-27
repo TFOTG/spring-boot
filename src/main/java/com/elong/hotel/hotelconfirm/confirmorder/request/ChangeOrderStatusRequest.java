@@ -22,6 +22,8 @@ public class ChangeOrderStatusRequest {
 
     private String msg2Customer;
 
+    private Integer msgId;
+
     private String confirmNo;
 
     private OperatorInfoBo operatorInfo;
@@ -106,5 +108,13 @@ public class ChangeOrderStatusRequest {
 
     public void setNote2Action(String note2Action) {
         this.note2Action = note2Action;
+    }
+
+    public Integer getMsgId() {
+        return msgId;
+    }
+
+    public void setMsgId(Integer msgId) {
+        this.msgId = msgId;
     }
 }

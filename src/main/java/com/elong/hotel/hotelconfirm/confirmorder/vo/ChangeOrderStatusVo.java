@@ -26,6 +26,8 @@ public class ChangeOrderStatusVo implements Serializable {
 
     String msg2customer;
 
+    Integer msg2Id;
+
     public String getConfirmno() {
         return confirmno;
     }
