@@ -84,9 +84,6 @@ public class EditRoomStatusRequest {
         this.operator=closeRoomRequest.getOperatorInfo().getOperatorName();
         this.operateComments=closeRoomRequest.getOrderId().toString();
         this.hotelID=order.getHotelId();
-        List<String> roomTypeIds=new ArrayList<>();
-        roomTypeIds.add(order.getRoomTypeId());
-        this.roomTypeList=roomTypeIds;
         this.orderId=order.getOrderId();
 
     }

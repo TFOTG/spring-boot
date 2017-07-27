@@ -9,10 +9,10 @@ import com.elong.hotel.mis.common.model.response.ResponseBase;
 
 public class GetStaffMonitorResponse extends ResponseBase {
 
-	@JSONField(format = "hh:mm")
+	@JSONField(format = "HH:mm")
 	private Date lastBeginTime;
 
-	@JSONField(format = "hh:mm")
+	@JSONField(format = "HH:mm")
 	private Date lastEndTime;
 
 	private List<StaffMonitorBo> list;
