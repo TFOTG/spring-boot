@@ -28,7 +28,7 @@ public class ChargeConfirmOrderBo {
 
     private Date distributeTime;
 
-    //剩余，当前时间减去承诺时间
+    //剩余，承诺时间减去当前时间
     private String promiseTimeLength;
 
     private Date promiseTime;
@@ -47,10 +47,8 @@ public class ChargeConfirmOrderBo {
     @JSONField(format = "yyyy-MM-dd HH:mm:ss")
     private Date respiteTime;
 
-
-    //可获取时间 当前时间减去订单获取时间
-    private String sortTimeLeft;
-
+    //可获取时间
+    @JSONField(format = "yyyy-MM-dd HH:mm:ss")
     private Date sortTime;
 
     //传真是否回传
@@ -175,14 +173,6 @@ public class ChargeConfirmOrderBo {
 
     public void setRespiteTime(Date respiteTime) {
         this.respiteTime = respiteTime;
-    }
-
-    public String getSortTimeLeft() {
-        return sortTimeLeft;
-    }
-
-    public void setSortTimeLeft(String sortTimeLeft) {
-        this.sortTimeLeft = sortTimeLeft;
     }
 
     public Date getSortTime() {
