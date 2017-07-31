@@ -2,8 +2,6 @@ package com.elong.hotel.proxy.javaorder.visualizationentity;
 
 import com.alibaba.fastjson.annotation.JSONField;
 
-import java.util.Date;
-
 /**
  * Created by yangboyu on 17/6/16.
  */
@@ -59,4 +57,5 @@ public class RefuseOrderVisualzation {
     public void setSpecialStatus(String specialStatus) {
         this.specialStatus = specialStatus;
     }
+
 }
