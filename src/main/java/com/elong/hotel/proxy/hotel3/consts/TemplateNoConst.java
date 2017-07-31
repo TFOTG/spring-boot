@@ -122,5 +122,5 @@ public interface TemplateNoConst {
     /**
      * 拒单
      */
-    String  REFUSEORDERTEMPLATENO_NEW = "1014";
+    String  REFUSEORDERTEMPLATENO_NEW = "1034";
 }
