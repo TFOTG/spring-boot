@@ -119,4 +119,8 @@ public interface TemplateNoConst {
      * 延迟确认短信(新-20170720)
      */
     String  SENDMSG = "1033";
+    /**
+     * 拒单
+     */
+    String  REFUSEORDERTEMPLATENO_NEW = "1034";
 }
