@@ -41,10 +41,10 @@ public class Order {
 	// 离店日期
 	private Date checkOutDate;
 	// 最早到店日期
-	@JSONField(format = "yyyy-MM-dd HH:mm:dd")
+	@JSONField(format = "yyyy-MM-dd HH:mm:ss")
 	private Date earlyCheckInTime;
 	// 最晚到店日期
-	@JSONField(format = "yyyy-MM-dd HH:mm:dd")
+	@JSONField(format = "yyyy-MM-dd HH:mm:ss")
 	private Date lateCheckInTime;
 	// 酒店备注
 	private String notesToHotel;
