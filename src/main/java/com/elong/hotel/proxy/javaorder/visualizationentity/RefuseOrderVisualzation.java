@@ -26,12 +26,12 @@ public class RefuseOrderVisualzation {
         this.specialStatus = specialStatus;
     }
 
-    public Boolean getNeedInstantConfirm() {
+    public Boolean isNeedInstantConfirm() {
         return isNeedInstantConfirm;
     }
 
-    public void setNeedInstantConfirm(Boolean needInstantConfirm) {
-        isNeedInstantConfirm = needInstantConfirm;
+    public void setIsNeedInstantConfirm(Boolean isNeedInstantConfirm) {
+        this.isNeedInstantConfirm = isNeedInstantConfirm;
     }
 
     public String getNotes() {
