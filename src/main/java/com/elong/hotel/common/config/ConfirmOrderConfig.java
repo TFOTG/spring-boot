@@ -142,6 +142,11 @@ public class ConfirmOrderConfig {
 
     private int supplierOrderSize;
 
+    /**
+     * ivr外呼在员工获取前多少s
+     */
+    private int ivrBeforeSort;
+
 
 
     public ConfirmOrderConfig() {
@@ -164,6 +169,7 @@ public class ConfirmOrderConfig {
         executorQueueSize = 500;
         chargeReclaimPromise = 10;
         urgeAddMins = 15;
+        ivrBeforeSort = 3*60;
     }
 
     public Integer getChargeReclaimPromise() {
@@ -428,5 +434,13 @@ public class ConfirmOrderConfig {
 
     public void setSupplierOrderSize(int supplierOrderSize) {
         this.supplierOrderSize = supplierOrderSize;
+    }
+
+    public int getIvrBeforeSort() {
+        return ivrBeforeSort;
+    }
+
+    public void setIvrBeforeSort(int ivrBeforeSort) {
+        this.ivrBeforeSort = ivrBeforeSort;
     }
 }
