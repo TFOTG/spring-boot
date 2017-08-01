@@ -5,7 +5,6 @@ import com.elong.hotel.common.bo.OperatorInfoBo;
 import com.elong.hotel.hotelconfirm.confirmorderactionlog.enums.ActionLogTypeEnum;
 import com.elong.hotel.hotelconfirm.confirmorderactionlog.enums.ActionOpFromEnum;
 import com.elong.hotel.proxy.javaorder.getorder.Order;
-import com.elong.hotel.proxy.javaorder.request.OperatorInfo;
 
 import java.util.Date;
 
@@ -164,7 +163,7 @@ public class ConfirmOrderActionLogPo {
     }
 
     public ConfirmOrderActionLogPo(Integer orderId, Long hotelId, int logType, String targetStatus, Date targetTime, String targetReason,
-            Integer messageStatus, Integer messageType, String opFrom, OperatorInfo operatorInfo) {
+            Integer messageStatus, Integer messageType, String opFrom, OperatorInfoBo operatorInfo) {
         this.orderId = orderId;
         this.hotelId = hotelId;
         this.logType = logType;
