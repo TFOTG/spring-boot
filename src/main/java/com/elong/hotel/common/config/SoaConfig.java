@@ -32,6 +32,9 @@ public class SoaConfig {
 
     private String hotel3CloseFirstProduct;
 
+    /**调用获取确认传真接口*/
+    private String hotel3ConfirmFax;
+
 	private String javaOrderQueryService;
 
 	private String javaOrderApiService;
@@ -60,25 +63,7 @@ public class SoaConfig {
 
 	private String productGetHotelPhone;
 
-	/**调用获取确认传真接口*/
-	private String confirmFax;
-	private int confirmFaxTimeOut;
-
-	public String getConfirmFax() {
-		return confirmFax;
-	}
-
-	public void setConfirmFax(String confirmFax) {
-		this.confirmFax = confirmFax;
-	}
-
-	public int getConfirmFaxTimeOut() {
-		return confirmFaxTimeOut;
-	}
-
-	public void setConfirmFaxTimeOut(int confirmFaxTimeOut) {
-		this.confirmFaxTimeOut = confirmFaxTimeOut;
-	}
+    private String productGetRoomType;
 
 	private String platFormProduct;
 	private String identifyService;
@@ -489,29 +474,19 @@ public class SoaConfig {
         this.hotel3CloseFirstProduct = hotel3CloseFirstProduct;
     }
 
-    public static void main(String[] args) {
-		SoaConfig config = new SoaConfig();
-		config.setHotelProduct("hotel");
-		config.setDcProduct("dc");
-		config.setDcOrderService("order");
-		config.setDcOrderTimeOut(5000);
-		config.setUrgeCtripOrder("urgeCtripOrder");
-		config.setJavaOrderQueryService("jorder-query");
-		config.setGetOrderHistory("data_historyInfoForRecheck");
-		config.setJavaOrderQueryTimeOut(5000);
-		config.setJavaOrderApiService("jorder-api");
-		config.setJavaOrderApiTimeOut(5000);
-		config.setConfirmOrder("confirm");
-		config.setRejectOrder("reject");
-		config.setHotel3Service("mis");
-		config.setHotel3TimeOut(5000);
-		config.setHotel3GetOrderServerTime("GetOrderServerTime");
-		config.setHotel3GetOrderNightMode("GetOrderNightMode");
-		config.setEbkDelayOrderService("");
-		config.setEbkDelayOrderMethod("");
-		config.setEbkDelayOrderTimeOut(5000);
-		System.out.println(JSON.toJSONString(config));
+    public String getProductGetRoomType() {
+        return productGetRoomType;
+    }
 
-	}
+    public void setProductGetRoomType(String productGetRoomType) {
+        this.productGetRoomType = productGetRoomType;
+    }
 
+    public String getHotel3ConfirmFax() {
+        return hotel3ConfirmFax;
+    }
+
+    public void setHotel3ConfirmFax(String hotel3ConfirmFax) {
+        this.hotel3ConfirmFax = hotel3ConfirmFax;
+    }
 }
