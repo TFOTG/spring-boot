@@ -1,5 +1,7 @@
 package com.elong.hotel.proxy.hotel3.bo;
 
+import com.alibaba.fastjson.annotation.JSONField;
+
 import java.util.Date;
 
 /**
@@ -50,10 +52,12 @@ public class ConfirmFaxBo {
     /**
      *收发传真结束时间
      */
+    @JSONField(format = "yyyy-MM-dd HH:mm:ss")
     private Date EndTime;
     /**
      *收发传真开始时间
      */
+    @JSONField(format = "yyyy-MM-dd HH:mm:ss")
     private Date StartTime;
     /**
      *是否移动文件
