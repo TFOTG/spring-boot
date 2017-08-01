@@ -161,4 +161,20 @@ public class ConfirmOrderActionLogPo {
         this.operatorName = operatorInfoBo.getOperatorName();
         this.operatorIp = operatorInfoBo.getOperatorIP();
     }
+
+    public ConfirmOrderActionLogPo(Integer orderId, Long hotelId, int logType, String targetStatus, Date targetTime, String targetReason,
+            Integer messageStatus, Integer messageType, String opFrom, OperatorInfoBo operatorInfo) {
+        this.orderId = orderId;
+        this.hotelId = hotelId;
+        this.logType = logType;
+        this.targetStatus = targetStatus;
+        this.targetTime = targetTime;
+        this.targetReason = targetReason;
+        this.messageStatus = messageStatus;
+        this.messageType = messageType;
+        this.opFrom = opFrom;
+        this.opDate = operatorInfo.getOperatorTime();
+        this.operatorName = operatorInfo.getOperatorName();
+        this.operatorIp = operatorInfo.getOperatorIP();
+    }
 }

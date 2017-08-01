@@ -18,6 +18,7 @@ public class ServerActionContext implements Serializable {
 	ServerActionEnum actionEnum;
 	ActionOpFromEnum actionOpFromEnum;
 	String Msg2Customer;
+	Integer msdId;
 	String note2Action;
 	EBRefuseBo ebRefuseBo;
 
@@ -91,5 +92,13 @@ public class ServerActionContext implements Serializable {
 
 	public void setEbRefuseBo(EBRefuseBo ebRefuseBo) {
 		this.ebRefuseBo = ebRefuseBo;
+	}
+
+	public Integer getMsdId() {
+		return msdId;
+	}
+
+	public void setMsdId(Integer msdId) {
+		this.msdId = msdId;
 	}
 }
