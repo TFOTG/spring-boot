@@ -22,7 +22,7 @@ public class ChangeOrderStatusVo implements Serializable {
     String note2client;
 
     //可视化消息
-    String note2Action;
+    String note2action;
 
     String msg2customer;
 
@@ -92,12 +92,12 @@ public class ChangeOrderStatusVo implements Serializable {
         this.msg2customer = msg2customer;
     }
 
-    public String getNote2Action() {
-        return note2Action;
+    public String getNote2action() {
+        return note2action;
     }
 
-    public void setNote2Action(String note2Action) {
-        this.note2Action = note2Action;
+    public void setNote2action(String note2action) {
+        this.note2action = note2action;
     }
 
     public Integer getMsg2Id() {
