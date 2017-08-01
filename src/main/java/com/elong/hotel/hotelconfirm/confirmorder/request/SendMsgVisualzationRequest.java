@@ -1,5 +1,6 @@
 package com.elong.hotel.hotelconfirm.confirmorder.request;
 
+import com.elong.hotel.common.bo.OperatorInfoBo;
 import com.elong.hotel.proxy.javaorder.request.OperatorInfo;
 
 import java.io.Serializable;
@@ -27,8 +28,8 @@ public class SendMsgVisualzationRequest implements Serializable {
 		return clientOperatorInfo;
 	}
 
-	public void setClientOperatorInfo(OperatorInfo clientOperatorInfo) {
-		this.clientOperatorInfo = clientOperatorInfo;
+	public void setClientOperatorInfo(OperatorInfoBo clientOperatorInfo) {
+		this.clientOperatorInfo = new OperatorInfo(clientOperatorInfo);
 	}
 
 	public Integer getOrderId() {
