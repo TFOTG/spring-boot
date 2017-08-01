@@ -1,5 +1,7 @@
 package com.elong.hotel.common.bo;
 
+import com.elong.hotel.proxy.javaorder.request.OperatorInfo;
+
 import java.io.Serializable;
 import java.util.Date;
 
@@ -13,6 +15,15 @@ public class OperatorInfoBo implements Serializable {
     private String operatorIP;
 
     private Date operatorTime;
+
+    public OperatorInfoBo(OperatorInfo bo){
+        this.operatorIP = bo.getOperatorIP();
+        this.operatorName = bo.getOperatorName();
+        this.operatorTime = bo.getOperatorTime();
+    }
+
+    public OperatorInfoBo() {
+    }
 
     public String getOperatorName() {
         return operatorName;
