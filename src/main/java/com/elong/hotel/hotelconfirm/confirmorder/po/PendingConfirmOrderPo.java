@@ -6,6 +6,7 @@
 package com.elong.hotel.hotelconfirm.confirmorder.po;
 
 import java.math.BigDecimal;
+import java.util.Date;
 import java.util.List;
 
 import com.elong.hotel.proxy.javaorder.getorder.Guest;
@@ -53,6 +54,7 @@ public class PendingConfirmOrderPo {
 	 */
 	private String hotelid;
 	
+	private String mhotelId;
 	/**
 	 * 供应商id
 	 */
@@ -112,6 +114,8 @@ public class PendingConfirmOrderPo {
 	 * 房型
 	 */
 	private String roomTypeName;
+	
+	private  String roomTypeId;
 	
 	/**
 	 * 房量
@@ -181,6 +185,8 @@ public class PendingConfirmOrderPo {
 	 */
 	private PendingOrderIconPo pendingOrderIconPo;
 	
+	private Date checkInDate;
+	private Date checkOutDate;
 	private String ratePlanId;
 	
 	public PendingOrderIconPo getPendingOrderIconPo() {
@@ -454,6 +460,38 @@ public class PendingConfirmOrderPo {
 
 	public void setRoomNights(List<RoomNight> roomNights) {
 		this.roomNights = roomNights;
+	}
+
+	public String getMhotelId() {
+		return mhotelId;
+	}
+
+	public void setMhotelId(String mhotelId) {
+		this.mhotelId = mhotelId;
+	}
+
+	public String getRoomTypeId() {
+		return roomTypeId;
+	}
+
+	public Date getCheckInDate() {
+		return checkInDate;
+	}
+
+	public void setCheckInDate(Date checkInDate) {
+		this.checkInDate = checkInDate;
+	}
+
+	public Date getCheckOutDate() {
+		return checkOutDate;
+	}
+
+	public void setCheckOutDate(Date checkOutDate) {
+		this.checkOutDate = checkOutDate;
+	}
+
+	public void setRoomTypeId(String roomTypeId) {
+		this.roomTypeId = roomTypeId;
 	}
 
 }
