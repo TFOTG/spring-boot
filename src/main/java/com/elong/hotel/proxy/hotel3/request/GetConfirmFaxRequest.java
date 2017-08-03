@@ -10,16 +10,12 @@ import java.util.List;
 public class GetConfirmFaxRequest {
 	
 	@CollectionNotBlank(message="订单id不能为空")
-    private List<String> orderIds;
+    private List<Integer> orderIds;
 
-    public void setOrderIds(List<String> orderIds){
+    public void setOrderIds(List<Integer> orderIds){
         this.orderIds=orderIds;
     }
-    public List<String> getOrderIds(){
+    public List<Integer> getOrderIds(){
         return this.orderIds;
-    }
-
-    public static void main(String[] args) {
-        System.out.println("#minute#前酒店通知结果".replaceAll("#minute#","30"));
     }
 }
