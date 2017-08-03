@@ -120,7 +120,7 @@ public class ConfirmOrderBo extends CompareEntityBase {
             this.distributeTime = confirmOrder.getDistributeTime();
             this.promiseTime = confirmOrder.getPromiseTime();
             this.promiseChangeTimes = confirmOrder.getPromiseChangeTimes();
-            this.isFaxReturn = confirmOrder.getIsFaxReturn();
+            this.isFaxReturn = String.valueOf(confirmOrder.getIsFaxReturn());
             this.isLinked = confirmOrder.getIsLinked();
             this.urge = confirmOrder.getUrge();
             this.respiteTime = confirmOrder.getRespiteTime();
@@ -224,7 +224,7 @@ public class ConfirmOrderBo extends CompareEntityBase {
             this.distributeTime = confirmOrder.getDistributeTime();
             this.promiseTime = confirmOrder.getPromiseTime();
             this.promiseChangeTimes = confirmOrder.getPromiseChangeTimes();
-            this.isFaxReturn = confirmOrder.getIsFaxReturn();
+            this.isFaxReturn = String.valueOf(confirmOrder.getIsFaxReturn());
             this.isLinked = confirmOrder.getIsLinked();
             this.isEbRefuse = confirmOrder.getIsEbRefuse();
             this.urge = confirmOrder.getUrge();
