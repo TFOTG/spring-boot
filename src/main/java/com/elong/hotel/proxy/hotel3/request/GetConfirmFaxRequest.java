@@ -1,8 +1,8 @@
 package com.elong.hotel.proxy.hotel3.request;
 
-import java.util.List;
-
 import com.elong.hotel.common.annotaitions.CollectionNotBlank;
+
+import java.util.List;
 
 /**
  * Created by user on 17/6/23.
@@ -17,5 +17,9 @@ public class GetConfirmFaxRequest {
     }
     public List<String> getOrderIds(){
         return this.orderIds;
+    }
+
+    public static void main(String[] args) {
+        System.out.println("#minute#前酒店通知结果".replaceAll("#minute#","30"));
     }
 }

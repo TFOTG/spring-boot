@@ -40,7 +40,7 @@ public class ConfirmOrderPo {
     private Date distributeTime;
     private Date promiseTime;
     private Integer promiseChangeTimes;
-    private String isFaxReturn;
+    private Integer isFaxReturn;
     private Integer isLinked;
     private Integer urge;
     private Date respiteTime;
@@ -89,7 +89,7 @@ public class ConfirmOrderPo {
         this.distributeTime = bo.getDistributeTime();
         this.promiseTime = bo.getPromiseTime();
         this.promiseChangeTimes = bo.getPromiseChangeTimes();
-        this.isFaxReturn = bo.getIsFaxReturn();
+        this.isFaxReturn = Integer.parseInt(bo.getIsFaxReturn());
         this.isLinked = bo.getIsLinked();
         this.isEbRefuse = bo.getIsEbRefuse();
         this.urge = bo.getUrge();
@@ -234,11 +234,11 @@ public class ConfirmOrderPo {
         this.id = id;
     }
 
-    public String getIsFaxReturn() {
+    public Integer getIsFaxReturn() {
         return isFaxReturn;
     }
 
-    public void setIsFaxReturn(String isFaxReturn) {
+    public void setIsFaxReturn(Integer isFaxReturn) {
         this.isFaxReturn = isFaxReturn;
     }
 
