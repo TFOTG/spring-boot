@@ -46,7 +46,7 @@ public class ConfirmOrderBo extends CompareEntityBase {
     private Date distributeTime;
     private Date promiseTime;
     private Integer promiseChangeTimes;
-    private String isFaxReturn;
+    private Integer isFaxReturn;
     private Integer isLinked;
     private Integer urge;
     private Date respiteTime;
@@ -120,7 +120,7 @@ public class ConfirmOrderBo extends CompareEntityBase {
             this.distributeTime = confirmOrder.getDistributeTime();
             this.promiseTime = confirmOrder.getPromiseTime();
             this.promiseChangeTimes = confirmOrder.getPromiseChangeTimes();
-            this.isFaxReturn = String.valueOf(confirmOrder.getIsFaxReturn());
+            this.isFaxReturn = confirmOrder.getIsFaxReturn();
             this.isLinked = confirmOrder.getIsLinked();
             this.urge = confirmOrder.getUrge();
             this.respiteTime = confirmOrder.getRespiteTime();
@@ -224,7 +224,7 @@ public class ConfirmOrderBo extends CompareEntityBase {
             this.distributeTime = confirmOrder.getDistributeTime();
             this.promiseTime = confirmOrder.getPromiseTime();
             this.promiseChangeTimes = confirmOrder.getPromiseChangeTimes();
-            this.isFaxReturn = String.valueOf(confirmOrder.getIsFaxReturn());
+            this.isFaxReturn = confirmOrder.getIsFaxReturn();
             this.isLinked = confirmOrder.getIsLinked();
             this.isEbRefuse = confirmOrder.getIsEbRefuse();
             this.urge = confirmOrder.getUrge();
@@ -375,11 +375,11 @@ public class ConfirmOrderBo extends CompareEntityBase {
         this.hotelName = hotelName;
     }
 
-    public String getIsFaxReturn() {
+    public Integer getIsFaxReturn() {
         return isFaxReturn;
     }
 
-    public void setIsFaxReturn(String isFaxReturn) {
+    public void setIsFaxReturn(Integer isFaxReturn) {
         this.isFaxReturn = isFaxReturn;
     }
 
