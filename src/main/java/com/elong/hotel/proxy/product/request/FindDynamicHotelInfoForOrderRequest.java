@@ -5,22 +5,25 @@
  */
 package com.elong.hotel.proxy.product.request;
 
+import javax.validation.constraints.NotNull;
+
 /**
  * @author jianjun.wang
  * @version 1.0.0
  */
 public class FindDynamicHotelInfoForOrderRequest {
-
-	private String mhotelId;
 	
+	@NotNull(message="m酒店id不能为空")
+	private String mhotelId;
+	@NotNull(message="s酒店id不能为空")
 	private String shotelId;
 	
 	private Integer ratePlanId;
-	
+	@NotNull(message="房型id不能为空")
 	private String roomTypeId;
-	
+	@NotNull(message="入店日期不能为空")
 	private String checkInDate;
-	
+	@NotNull(message="离店日期不能为空")
 	private String checkOutDate;
 
 	public String getMhotelId() {
