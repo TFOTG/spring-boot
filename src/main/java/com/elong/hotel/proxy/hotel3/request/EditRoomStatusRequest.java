@@ -122,6 +122,7 @@ public class EditRoomStatusRequest {
         this.operator=serverActionContext.getOperatorInfo().getOperatorName();
         this.operateComments=bo.getNotes();
         this.hotelID = order.getHotelId();
+        this.orderId = order.getOrderId();
 
     }
 
