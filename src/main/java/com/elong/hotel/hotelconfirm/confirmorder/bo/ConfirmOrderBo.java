@@ -7,11 +7,10 @@ import com.elong.hotel.hotelconfirm.confirmorder.enums.ConfirmType;
 import com.elong.hotel.hotelconfirm.confirmorder.po.ConfirmOrderPo;
 import com.elong.hotel.hotelconfirm.groupfilter.bo.CompareEntityBase;
 import com.elong.hotel.proxy.javaorder.consts.OrderFlagConst;
+import com.elong.hotel.proxy.javaorder.getorder.GetOrderStatusChangeTimeBo;
 import com.elong.hotel.proxy.javaorder.getorder.Order;
-import com.elong.hotel.proxy.javaorder.getorder.OrderHistory;
 
 import java.util.Date;
-import java.util.List;
 
 /**
  * Created by yangboyu on 17/4/4.
@@ -73,6 +72,7 @@ public class ConfirmOrderBo extends CompareEntityBase {
     private String note2Client;
     private String confirmNo;
     private String delayReason;
+    private Integer isChangeOrder;
 
     public ConfirmOrderBo(){
 
@@ -82,13 +82,11 @@ public class ConfirmOrderBo extends CompareEntityBase {
         this(null, po, null, null);
     }
 
-    public ConfirmOrderBo(Order order, List<OrderHistory> orderHistoryList, OperatorInfoBo operator) {
-        this(order, null, orderHistoryList, operator);
+    public ConfirmOrderBo(Order order, GetOrderStatusChangeTimeBo orderStatusChange, OperatorInfoBo operator) {
+        this(order, null, orderStatusChange, operator);
     }
 
-    public ConfirmOrderBo(Order order, ConfirmOrderPo confirmOrder, List<OrderHistory> orderHistoryList, OperatorInfoBo operator) {
-        Date lastAmendTime = getAmendTimeFromHistory(order, orderHistoryList);
-
+    public ConfirmOrderBo(Order order, ConfirmOrderPo confirmOrder, GetOrderStatusChangeTimeBo orderStatusChange, OperatorInfoBo operator) {
         if (order != null && confirmOrder != null) {      // 初始化 "目标数据", 此时订单在已审库
             this.reserNo = confirmOrder.getReserNo();
             this.reserStatus = order.getStatus();
@@ -134,39 +132,13 @@ public class ConfirmOrderBo extends CompareEntityBase {
             this.firstRefusedTime = confirmOrder.getFirstRefusedTime();
             this.orderTimestamp = new Date(confirmOrder.getOrderTimestampLong());
 
-//            if (po.getAmendTime() != null && lastAmendTime != null && po.getAmendTime().getTime() >= lastAmendTime.getTime()) {
-//
-//                this.amendTime = po.getAmendTime();
-//                this.priority = po.getPriority();
-//                this.groupId = po.getGroupId();
-//                this.rankId = po.getRankId();
-//                this.ebkStrategyId = po.getEbkStrategyId();
-//                this.staffName = po.getStaffName();
-//                this.distributeTime = po.getDistributeTime();
-//                this.promiseTime = po.getPromiseTime();
-//                this.promiseChangeTimes = po.getPromiseChangeTimes();
-//                this.isFaxReturn = po.getIsFaxReturn();
-//                this.isLinked = po.getIsLinked();
-//                this.urge = po.getUrge();
-//                this.respiteTime = po.getRespiteTime();
-//                this.nextServiceTime = po.getNextServiceTime();
-//                this.ivrGuid = po.getIvrGuid();
-//                this.ivrStatus = po.getIvrStatus();
-//                this.ivrStartTime = po.getIvrStartTime();
-//                this.enterTime = po.getEnterTime();
-//                this.sortTime = po.getSortTime();
-//                this.defaultSortTime = po.getDefaultSortTime();
-//                this.firstRefusedTime = po.getFirstRefusedTime();
-//                this.orderTimestamp = new Date(po.getOrderTimestampLong());
-//
-//            } else if (po.getAmendTime() != null && lastAmendTime != null && po.getAmendTime().getTime() < lastAmendTime.getTime()) {
-//
-//                this.amendTime = lastAmendTime;
-//                this.enterTime = operator.getOperatorTime();
-//                this.orderTimestamp = order.getOrderTimestamp();
-//            }
-
         } else if (order != null && confirmOrder == null) {   // 初始化 "目标数据", 此时订单还未入已审库
+            if(orderStatusChange!=null){
+                this.amendTime=orderStatusChange.getOperatorTime();
+                if(orderStatusChange.getPreStatus().equalsIgnoreCase(ElongOrderStatusEnum.H.getStatus())){
+                    this.isChangeOrder=1;
+                }
+            }
             this.reserNo = order.getOrderId().intValue();
             this.reserStatus = order.getStatus();
             this.mod = this.reserNo % 10;
@@ -186,8 +158,7 @@ public class ConfirmOrderBo extends CompareEntityBase {
             this.ratePlanId = order.getRatePlanId();
             this.distance = order.getDistanceFromHotelWhenBooking();
             this.confirmType = getConfirmType(order.getOrderFlag());
-            this.bookingTime = order.getCreateTime();                   // 缺少
-            this.amendTime = lastAmendTime;
+            this.bookingTime = order.getCreateTime();
             this.additionalStatus = order.getAdditionalStatus();
             this.promiseTime = DateHelper.getMinDate();
             this.promiseChangeTimes = 0;
@@ -239,28 +210,6 @@ public class ConfirmOrderBo extends CompareEntityBase {
             this.firstRefusedTime = confirmOrder.getFirstRefusedTime();
             this.orderTimestamp = new Date(confirmOrder.getOrderTimestampLong());
         }
-    }
-
-    private Date getAmendTimeFromHistory(Order order, List<OrderHistory> orderHistoryList) {
-
-        if (orderHistoryList != null) {
-            //补上当前订单，最后一条历史
-            OrderHistory lastHistory = new OrderHistory(order);
-            orderHistoryList.add(lastHistory);
-            for (int i = orderHistoryList.size() - 1; i >= 0; i--) {
-                OrderHistory history = orderHistoryList.get(i);
-                if (history.getReserveStatus().equals(ElongOrderStatusEnum.V.getStatus())) {
-                    for (int j = i; j >= 0; j--) {
-                        OrderHistory orderHistory = orderHistoryList.get(j);
-                        if (!orderHistory.getReserveStatus().equals(ElongOrderStatusEnum.V.getStatus())) {
-                            return orderHistoryList.get(j + 1).getModifyTime();
-                        }
-                    }
-                }
-            }
-        }
-
-        return new Date();
     }
 
     public Date getAmendTime() {
@@ -679,7 +628,13 @@ public class ConfirmOrderBo extends CompareEntityBase {
         this.delayReason = delayReason;
     }
 
+    public Integer getIsChangeOrder() {
+        return isChangeOrder;
+    }
 
+    public void setIsChangeOrder(Integer isChangeOrder) {
+        this.isChangeOrder = isChangeOrder;
+    }
 
     private Integer getConfirmType(long orderFlag) {
         //直连确认

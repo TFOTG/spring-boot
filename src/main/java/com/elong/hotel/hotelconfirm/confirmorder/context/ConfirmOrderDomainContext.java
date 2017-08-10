@@ -4,6 +4,7 @@ import com.elong.hotel.common.bo.OperatorInfoBo;
 import com.elong.hotel.hotelconfirm.confirmorder.bo.EBRefuseBo;
 import com.elong.hotel.hotelconfirm.confirmorder.enums.ServerRunningDomainEnum;
 import com.elong.hotel.hotelconfirm.confirmorder.po.ConfirmOrderPo;
+import com.elong.hotel.proxy.javaorder.getorder.GetOrderStatusChangeTimeBo;
 import com.elong.hotel.proxy.javaorder.getorder.Order;
 import com.elong.hotel.proxy.javaorder.getorder.OrderHistory;
 import com.elong.hotel.storage.bo.OrderConsumerInfoBo;
@@ -19,11 +20,11 @@ public class ConfirmOrderDomainContext implements Serializable {
 
     private Order order;
 
-    private List<OrderHistory> orderHistories;
-
     private ConfirmOrderPo confirmOrderPo;
 
     private OrderConsumerInfoBo orderConsumerInfoBo;
+
+    private GetOrderStatusChangeTimeBo orderStatusChange;
 
     private OperatorInfoBo operator;
 
@@ -38,14 +39,14 @@ public class ConfirmOrderDomainContext implements Serializable {
     public ConfirmOrderDomainContext(){}
 
     public ConfirmOrderDomainContext(Integer reserNo, ServerRunningDomainEnum serverRunningDomainEnum, Order order,
-            List<OrderHistory> orderHistories, ConfirmOrderPo confirmOrderPo, OperatorInfoBo operator, OrderConsumerInfoBo orderConsumerInfoBo) {
+             ConfirmOrderPo confirmOrderPo, OperatorInfoBo operator, OrderConsumerInfoBo orderConsumerInfoBo,GetOrderStatusChangeTimeBo orderStatusChange) {
         this.reserNo = reserNo;
         this.serverRunningDomainEnum = serverRunningDomainEnum;
         this.order = order;
-        this.orderHistories = orderHistories;
         this.confirmOrderPo = confirmOrderPo;
         this.operator = operator;
         this.orderConsumerInfoBo = orderConsumerInfoBo;
+        this.orderStatusChange=orderStatusChange;
     }
 
     public Integer getReserNo() {
@@ -78,14 +79,6 @@ public class ConfirmOrderDomainContext implements Serializable {
 
     public void setOrder(Order order) {
         this.order = order;
-    }
-
-    public List<OrderHistory> getOrderHistories() {
-        return orderHistories;
-    }
-
-    public void setOrderHistories(List<OrderHistory> orderHistories) {
-        this.orderHistories = orderHistories;
     }
 
     public ConfirmOrderPo getConfirmOrderPo() {
@@ -134,5 +127,13 @@ public class ConfirmOrderDomainContext implements Serializable {
 
     public void setMsgId(Integer msgId) {
         this.msgId = msgId;
+    }
+
+    public GetOrderStatusChangeTimeBo getOrderStatusChange() {
+        return orderStatusChange;
+    }
+
+    public void setOrderStatusChange(GetOrderStatusChangeTimeBo orderStatusChange) {
+        this.orderStatusChange = orderStatusChange;
     }
 }
