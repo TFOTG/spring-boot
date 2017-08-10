@@ -1,7 +1,5 @@
 package com.elong.hotel.common.config;
 
-import com.alibaba.fastjson.JSON;
-
 /**
  * Created by peng.wang on 17/3/9.
  *
@@ -48,6 +46,8 @@ public class SoaConfig {
 	private int javaOrderQueryTimeOut;
 
 	private String getOrderHistory;
+
+	private String getOrderStatusChangeTime;
 
 	private String ivrService;
 
@@ -489,4 +489,12 @@ public class SoaConfig {
     public void setHotel3ConfirmFax(String hotel3ConfirmFax) {
         this.hotel3ConfirmFax = hotel3ConfirmFax;
     }
+
+	public String getGetOrderStatusChangeTime() {
+		return getOrderStatusChangeTime;
+	}
+
+	public void setGetOrderStatusChangeTime(String getOrderStatusChangeTime) {
+		this.getOrderStatusChangeTime = getOrderStatusChangeTime;
+	}
 }
