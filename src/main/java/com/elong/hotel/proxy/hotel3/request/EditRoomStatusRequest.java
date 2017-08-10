@@ -90,22 +90,22 @@ public class EditRoomStatusRequest {
 
     public EditRoomStatusRequest(ServerActionContext serverActionContext,Order order,List<String> roomTypes) {
         EBRefuseBo bo = serverActionContext.getEbRefuseBo();
-        this.roomTypeList = bo.getRoomTypeList();
-
+//        this.roomTypeList = bo.getRoomTypeList();
+        this.roomTypeList=roomTypes;
         if(bo.getFullType() == 1) {
             this.arriveDate = bo.getFullSingleDate();
             this.leaveDate = bo.getFullSingleDate();
+            this.operationType=2;
         }else if(bo.getFullType() == 2) {
             this.arriveDate = bo.getCheckInDate();
             this.leaveDate = bo.getCheckOutDate();
+            this.operationType=2;
         }else if(bo.getFullType() == 4) {
 //            List<String> roomTypeIds=new ArrayList<>();
 //            roomTypeIds.add(order.getRoomTypeId());
-            this.roomTypeList=roomTypes;
             this.arriveDate = bo.getCheckInDate();
             this.leaveDate = bo.getCheckOutDate();
-
-
+            this.operationType=3;
         }
 
         this.closeRoomType = CloseRoomTypeEnum.Ebooking.getType();
@@ -115,7 +115,6 @@ public class EditRoomStatusRequest {
         inventoryType.add(InventoryTypeEnum.Add.getType());
         inventoryType.add(InventoryTypeEnum.Contract.getType());
         this.inventoryType=inventoryType;
-        this.operationType=1;
         this.priceFrom=0;
         this.operateTime=new Date();
         this.operateIP=serverActionContext.getOperatorInfo().getOperatorIP();
