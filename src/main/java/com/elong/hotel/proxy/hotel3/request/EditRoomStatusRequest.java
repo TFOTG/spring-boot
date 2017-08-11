@@ -95,19 +95,18 @@ public class EditRoomStatusRequest {
         if(bo.getFullType() == 1) {
             this.arriveDate = bo.getFullSingleDate();
             this.leaveDate = bo.getFullSingleDate();
-            this.operationType=2;
         }else if(bo.getFullType() == 2) {
             this.arriveDate = bo.getCheckInDate();
             this.leaveDate = bo.getCheckOutDate();
-            this.operationType=2;
         }else if(bo.getFullType() == 4) {
 //            List<String> roomTypeIds=new ArrayList<>();
 //            roomTypeIds.add(order.getRoomTypeId());
             this.arriveDate = bo.getCheckInDate();
             this.leaveDate = bo.getCheckOutDate();
-            this.operationType=3;
         }
-
+        this.operationType=1;
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+        this.overTime=sdf.format(new Date())+" 23:59:59";
         this.closeRoomType = CloseRoomTypeEnum.Ebooking.getType();
         this.ignoreInventorySummary=false;
         List<Integer> inventoryType=new ArrayList<>();
