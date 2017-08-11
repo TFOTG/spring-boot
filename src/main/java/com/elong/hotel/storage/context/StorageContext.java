@@ -4,13 +4,11 @@ import com.elong.hotel.hotelconfirm.confirmorder.enums.ServerRunningDomainEnum;
 import com.elong.hotel.hotelconfirm.confirmorder.po.ConfirmOrderPo;
 import com.elong.hotel.proxy.javaorder.getorder.GetOrderStatusChangeTimeBo;
 import com.elong.hotel.proxy.javaorder.getorder.Order;
-import com.elong.hotel.proxy.javaorder.getorder.OrderHistory;
 import com.elong.hotel.storage.bo.OrderConsumerInfoBo;
 import com.elong.hotel.storage.enums.StorageTypeEnum;
 
 import java.io.Serializable;
 import java.util.Date;
-import java.util.List;
 
 /**
  * Created by Hualong.Li on 17/4/24.
@@ -37,8 +35,6 @@ public class StorageContext implements Serializable{
 	private Date opDate;
 
 	private String tableName;
-
-	private List<OrderHistory> orderHistory;
 
 	private GetOrderStatusChangeTimeBo orderStatusChange;
 
@@ -100,14 +96,6 @@ public class StorageContext implements Serializable{
 
 	public void setTableName(String tableName) {
 		this.tableName = tableName;
-	}
-
-	public List<OrderHistory> getOrderHistory() {
-		return orderHistory;
-	}
-
-	public void setOrderHistory(List<OrderHistory> orderHistory) {
-		this.orderHistory = orderHistory;
 	}
 
 	public ConfirmOrderPo getConfirmOrderPo() {

@@ -5,6 +5,10 @@
  */
 package com.elong.hotel.hotelconfirm.staff.vo;
 
+import javax.validation.constraints.NotNull;
+
+import org.hibernate.validator.constraints.Range;
+
 /**
  * @author jianjun.wang
  * @version 1.0.0
@@ -19,7 +23,9 @@ public class StaffLogVO {
 	/**
 	 * 0 登录 1登出
 	 */
-	private int logflag;
+	@NotNull(message="logflag不能为空")
+	@Range(min=0,max=1,message="参数不合法")
+	private Integer logflag;
 	
 	/**
 	 * 时间
@@ -34,11 +40,11 @@ public class StaffLogVO {
 		this.staffname = staffname;
 	}
 
-	public int getLogflag() {
+	public Integer getLogflag() {
 		return logflag;
 	}
 
-	public void setLogflag(int logflag) {
+	public void setLogflag(Integer logflag) {
 		this.logflag = logflag;
 	}
 
