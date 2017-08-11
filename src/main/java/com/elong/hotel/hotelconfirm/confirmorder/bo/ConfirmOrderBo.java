@@ -88,6 +88,15 @@ public class ConfirmOrderBo extends CompareEntityBase {
 
     public ConfirmOrderBo(Order order, ConfirmOrderPo confirmOrder, GetOrderStatusChangeTimeBo orderStatusChange, OperatorInfoBo operator) {
         if (order != null && confirmOrder != null) {      // 初始化 "目标数据", 此时订单在已审库
+            if(orderStatusChange!=null){
+                this.amendTime=orderStatusChange.getOperatorTime();
+                if(orderStatusChange.getPreStatus().equalsIgnoreCase(ElongOrderStatusEnum.H.getStatus())){
+                    this.isChangeOrder=1;
+                }
+            }else{
+                this.amendTime = confirmOrder.getAmendTime();
+                this.isChangeOrder=confirmOrder.getIsChangeOrder();
+            }
             this.reserNo = confirmOrder.getReserNo();
             this.reserStatus = order.getStatus();
             this.mod = confirmOrder.getMod();
@@ -138,6 +147,8 @@ public class ConfirmOrderBo extends CompareEntityBase {
                 if(orderStatusChange.getPreStatus().equalsIgnoreCase(ElongOrderStatusEnum.H.getStatus())){
                     this.isChangeOrder=1;
                 }
+            }else{
+                this.amendTime=order.getModifyTime();
             }
             this.reserNo = order.getOrderId().intValue();
             this.reserStatus = order.getStatus();
