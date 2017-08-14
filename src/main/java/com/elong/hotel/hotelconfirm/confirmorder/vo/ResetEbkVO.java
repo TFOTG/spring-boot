@@ -7,8 +7,6 @@ package com.elong.hotel.hotelconfirm.confirmorder.vo;
 
 import javax.validation.constraints.NotNull;
 
-import com.elong.common.validator.annotion.NotEmpty;
-
 /**
  * @author jianjun.wang
  * @version 1.0.0
@@ -18,7 +16,7 @@ public class ResetEbkVO {
 	@NotNull(message="订单号不能为空")
 	private Integer reserno;
 	
-	@NotEmpty(message="备注不能为空")
+	@NotNull(message="备注不能为空")
 	private String notesToHotel;
 
 	public Integer getReserno() {
