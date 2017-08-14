@@ -33,7 +33,12 @@ public enum ConfirmOpType {
 	/**
 	 * Ebooking拒单
 	 */
-	EBOOKING_REFUSE(9, "Ebooking拒单");
+	EBOOKING_REFUSE(9, "Ebooking拒单"),
+	
+	/**
+	 * ebk重发
+	 */
+	CALLEBOOKING_REFUSE(10,"取消Ebooking拒单");
 
 	private int key;
 
