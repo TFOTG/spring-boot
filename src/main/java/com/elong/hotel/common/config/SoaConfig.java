@@ -33,6 +33,11 @@ public class SoaConfig {
     /**调用获取确认传真接口*/
     private String hotel3ConfirmFax;
 
+	/**
+	 * 获取订单变更信息
+	 */
+	private String hotel3GetOrderChangeItem;
+
 	private String javaOrderQueryService;
 
 	private String javaOrderApiService;
@@ -75,6 +80,17 @@ public class SoaConfig {
 	private int noticeServiceTimeout;
 	private String channel;
 	private String messageId;
+
+	private String hotel3RoomInfoForQr;
+	
+
+	public String getHotel3RoomInfoForQr() {
+		return hotel3RoomInfoForQr;
+	}
+
+	public void setHotel3RoomInfoForQr(String hotel3RoomInfoForQr) {
+		this.hotel3RoomInfoForQr = hotel3RoomInfoForQr;
+	}
 
 	public String getChannel() {
 		return channel;
@@ -496,5 +512,13 @@ public class SoaConfig {
 
 	public void setGetOrderStatusChangeTime(String getOrderStatusChangeTime) {
 		this.getOrderStatusChangeTime = getOrderStatusChangeTime;
+	}
+
+	public String getHotel3GetOrderChangeItem() {
+		return hotel3GetOrderChangeItem;
+	}
+
+	public void setHotel3GetOrderChangeItem(String hotel3GetOrderChangeItem) {
+		this.hotel3GetOrderChangeItem = hotel3GetOrderChangeItem;
 	}
 }
