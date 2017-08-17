@@ -81,6 +81,17 @@ public class SoaConfig {
 	private String channel;
 	private String messageId;
 
+	private String hotel3RoomInfoForQr;
+	
+
+	public String getHotel3RoomInfoForQr() {
+		return hotel3RoomInfoForQr;
+	}
+
+	public void setHotel3RoomInfoForQr(String hotel3RoomInfoForQr) {
+		this.hotel3RoomInfoForQr = hotel3RoomInfoForQr;
+	}
+
 	public String getChannel() {
 		return channel;
 	}
