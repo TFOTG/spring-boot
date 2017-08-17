@@ -1,5 +1,6 @@
 package com.elong.hotel.hotelconfirm.group.bo;
 
+import com.elong.common.util.StringUtils;
 import com.elong.hotel.common.enums.ConfirmOrderStatusEnum;
 import com.elong.hotel.hotelconfirm.group.enums.GettingTypeEnum;
 import com.elong.hotel.hotelconfirm.group.enums.GroupOrderStatusEnum;
@@ -283,7 +284,11 @@ public class ConfirmGroupBo {
         if(baseStr.equals("ALL")){
             return "全部";
         }
-        return String.valueOf(baseStr.split(delimier).length);
+        if(StringUtils.isBlank(baseStr)){
+            return "0";
+        }
+        Integer count=baseStr.split(delimier).length;
+        return count.toString();
     }
 
 }
