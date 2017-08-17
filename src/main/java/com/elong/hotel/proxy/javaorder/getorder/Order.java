@@ -82,7 +82,7 @@ public class Order {
 	private Date createTime;
 	// 内部备注
 	private String notesToElong;
-
+    // 客人备注,该字段已废弃
 	private String notesToGuest;
 
 	private int otaType;
@@ -94,6 +94,8 @@ public class Order {
 	private String supplierName;
 
 	private Integer supplierType;
+
+    private List<OrderAction> orderActionList;
 
 	// orderKeyValue
 	private List<OrderKeyValue> orderKeyValues;
@@ -748,4 +750,11 @@ public class Order {
 		this.sHotelFax = sHotelFax;
 	}
 
+    public List<OrderAction> getOrderActionList() {
+        return orderActionList;
+    }
+
+    public void setOrderActionList(List<OrderAction> orderActionList) {
+        this.orderActionList = orderActionList;
+    }
 }

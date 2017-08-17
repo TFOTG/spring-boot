@@ -47,4 +47,7 @@ public interface OriginalOrderFieldsConst {
      * 关房
      */
     String CLOSE_ROOM = "roomTypeId,hotelId,ratePlanId";
+
+
+    String FIELDS_FOR_NOTES = "notesToElong,notesToHotel,actionStrExt1,actionType";
 }
