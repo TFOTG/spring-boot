@@ -25,6 +25,8 @@ public class GetInOutHistoryDataRequest {
 
     private Integer operate;
 
+    private String orderStatus;
+
     /*
     * 年月  2017-7
     * */
@@ -102,6 +104,11 @@ public class GetInOutHistoryDataRequest {
         this.timeSelect = timeSelect;
     }
 
+    public String getOrderStatus() {
+        return orderStatus;
+    }
 
-
+    public void setOrderStatus(String orderStatus) {
+        this.orderStatus = orderStatus;
+    }
 }
