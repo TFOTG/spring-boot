@@ -1,15 +1,6 @@
 package com.elong.hotel.common.helper;
 
-import java.io.BufferedInputStream;
-import java.io.BufferedOutputStream;
-import java.io.ByteArrayOutputStream;
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.OutputStream;
-import java.io.OutputStreamWriter;
+import java.io.*;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
@@ -51,6 +42,54 @@ public class HttpHelper {
 	public enum Method {
 		GET, POST, DELETE, PUT
 	}
+
+
+    /**
+     * @param paraJson
+     * @param postUrl
+     * @param timeout
+     * @return
+     * @throws Exception
+     */
+    public static String postJson(String paraJson, URL postUrl, int timeout) throws IOException {
+        DataOutputStream out = null;
+        BufferedReader reader = null;
+        try {
+            HttpURLConnection connection = (HttpURLConnection) postUrl.openConnection();
+            connection.setDoOutput(true);
+            connection.setDoInput(true);
+            connection.setRequestMethod("POST");
+            connection.setUseCaches(false);
+            connection.setInstanceFollowRedirects(true);
+            connection.setRequestProperty("Content-Type", "application/json");
+            connection.setConnectTimeout(timeout);
+            out = new DataOutputStream(connection.getOutputStream());
+            out.write(paraJson.getBytes());
+            reader = new BufferedReader(new InputStreamReader(connection.getInputStream(), "UTF-8"));
+            String result = "";
+            String line;
+            while ((line = reader.readLine()) != null) {
+                result += line;
+            }
+            return result;
+        } catch (IOException ex) {
+            throw ex;
+        } finally {
+            if (out != null) {
+                try {
+                    out.flush();
+                    out.close(); // flush and close
+                } catch (Exception e2) {
+                }
+            }
+            if (reader != null) {
+                try {
+                    reader.close();
+                } catch (IOException e) {
+                }
+            }
+        }
+    }
 
 	/**
 	 * 添加URL地址

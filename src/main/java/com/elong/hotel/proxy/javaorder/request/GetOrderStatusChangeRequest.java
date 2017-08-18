@@ -13,7 +13,20 @@ public class GetOrderStatusChangeRequest {
 
 	private String targetStatus;
 
-	public Integer getOrderId() {
+    /**
+     * 默认0查alwayson,1为主库
+     */
+    private int dataSource;
+
+    public int getDataSource() {
+        return dataSource;
+    }
+
+    public void setDataSource(int dataSource) {
+        this.dataSource = dataSource;
+    }
+
+    public Integer getOrderId() {
 		return orderId;
 	}
 
