@@ -1,6 +1,5 @@
 package com.elong.hotel.proxy.javaorder.response;
 
-import com.elong.hotel.common.response.ServiceResponseBase;
 import com.elong.hotel.proxy.javaorder.getorder.Order;
 
 import java.util.List;

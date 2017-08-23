@@ -12,12 +12,24 @@ public class OrderComment {
 	// 内部备注
 	private String notesToElong;
 
-	public OrderComment() {
-		this.notesToHotel = "";
-		this.notesToElong = "";
-	}
+    //客人备注
+    private String notesToGuest;
 
-	public long getOrderId() {
+    public OrderComment() {
+        this.notesToHotel = "";
+        this.notesToElong = "";
+        this.notesToGuest = "";
+    }
+
+    public String getNotesToGuest() {
+        return notesToGuest;
+    }
+
+    public void setNotesToGuest(String notesToGuest) {
+        this.notesToGuest = notesToGuest;
+    }
+
+    public long getOrderId() {
 		return orderId;
 	}
 

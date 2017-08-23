@@ -148,6 +148,9 @@ public class ConfirmOrderConfig {
     private int ivrBeforeSort;
 
 
+    private String orderHistoryURL;
+
+
 
     public ConfirmOrderConfig() {
         priority4HighMinute = 60;
@@ -181,6 +184,14 @@ public class ConfirmOrderConfig {
         urgeAddMins = 15;
         firstRefuseTime = 10;
         firstRefuseSupplierIds = "";
+    }
+
+    public String getOrderHistoryURL() {
+        return orderHistoryURL;
+    }
+
+    public void setOrderHistoryURL(String orderHistoryURL) {
+        this.orderHistoryURL = orderHistoryURL;
     }
 
     public String getManagerName() {
