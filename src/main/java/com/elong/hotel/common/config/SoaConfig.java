@@ -38,6 +38,11 @@ public class SoaConfig {
 	 */
 	private String hotel3GetOrderChangeItem;
 
+	/**
+	 * 订单是否发送传真成功
+	 */
+	private String hotel3IsFaxSent;
+
 	private String javaOrderQueryService;
 
 	private String javaOrderApiService;
@@ -520,5 +525,13 @@ public class SoaConfig {
 
 	public void setHotel3GetOrderChangeItem(String hotel3GetOrderChangeItem) {
 		this.hotel3GetOrderChangeItem = hotel3GetOrderChangeItem;
+	}
+
+	public String getHotel3IsFaxSent() {
+		return hotel3IsFaxSent;
+	}
+
+	public void setHotel3IsFaxSent(String hotel3IsFaxSent) {
+		this.hotel3IsFaxSent = hotel3IsFaxSent;
 	}
 }
