@@ -20,6 +20,10 @@ public class DataBackUpResponse extends ServiceResponseBase{
 	
 	private int proSize ;
 
+	private String failId;
+
+	private String failReason;
+
 	public int getProSize() {
 		return proSize;
 	}
@@ -27,7 +31,20 @@ public class DataBackUpResponse extends ServiceResponseBase{
 	public void setProSize(int proSize) {
 		this.proSize = proSize;
 	}
-	
-	
 
+	public String getFailId() {
+		return failId;
+	}
+
+	public void setFailId(String failId) {
+		this.failId = failId;
+	}
+
+	public String getFailReason() {
+		return failReason;
+	}
+
+	public void setFailReason(String failReason) {
+		this.failReason = failReason;
+	}
 }
