@@ -24,6 +24,8 @@ public class DataBackUpResponse extends ServiceResponseBase{
 
 	private String failReason;
 
+	private String sql;
+
 	public int getProSize() {
 		return proSize;
 	}
@@ -46,5 +48,13 @@ public class DataBackUpResponse extends ServiceResponseBase{
 
 	public void setFailReason(String failReason) {
 		this.failReason = failReason;
+	}
+
+	public String getSql() {
+		return sql;
+	}
+
+	public void setSql(String sql) {
+		this.sql = sql;
 	}
 }
