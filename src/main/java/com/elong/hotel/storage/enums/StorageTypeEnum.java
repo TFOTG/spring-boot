@@ -5,7 +5,9 @@ package com.elong.hotel.storage.enums;
  */
 public enum StorageTypeEnum {
 
-	CONFIRM(1);
+	CONFIRM(1),
+
+	NOROOM(2);
 
 	private int value;
 
