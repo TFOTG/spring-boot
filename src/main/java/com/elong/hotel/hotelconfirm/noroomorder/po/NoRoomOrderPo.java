@@ -1,5 +1,7 @@
 package com.elong.hotel.hotelconfirm.noroomorder.po;
 
+import com.elong.hotel.proxy.javaorder.getorder.Order;
+
 import java.util.Date;
 
 /**
@@ -51,6 +53,18 @@ public class NoRoomOrderPo {
 	 */
 	private String hotelName;
 
+
+    /**
+     * 马上到店
+     */
+    private Integer immediately;
+
+
+    /**
+     * 处理类型
+     */
+    private Integer dealType;
+
 	/**
 	 * ivr外呼状态
 	 */
@@ -86,7 +100,25 @@ public class NoRoomOrderPo {
 	 */
 	private long orderTimestampLong;
 
-	public long getId() {
+
+    public NoRoomOrderPo() {
+    }
+
+
+    public NoRoomOrderPo(Order order) {
+
+        this.reserNo=order.getOrderId().intValue();
+        this.reserStatus=order.getStatus();
+        this.arriveDate=order.getCheckInDate();
+        this.leaveDate=order.getCheckOutDate();
+        this.hotelId=order.getHotelId();
+        this.hotelName=order.getHotelName();
+        this.orderTimestampLong=order.getOrderTimestamp().getTime();
+
+    }
+
+
+    public long getId() {
 		return id;
 	}
 
@@ -197,4 +229,20 @@ public class NoRoomOrderPo {
 	public void setOrderTimestampLong(long orderTimestampLong) {
 		this.orderTimestampLong = orderTimestampLong;
 	}
+
+    public Integer getImmediately() {
+        return immediately;
+    }
+
+    public void setImmediately(Integer immediately) {
+        this.immediately = immediately;
+    }
+
+    public Integer getDealType() {
+        return dealType;
+    }
+
+    public void setDealType(Integer dealType) {
+        this.dealType = dealType;
+    }
 }

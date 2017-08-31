@@ -147,6 +147,11 @@ public class ConfirmOrderConfig {
      */
     private int ivrBeforeSort;
 
+    /**
+     * 到店无房ivr最大发送次数
+     */
+    private int noRoomIVRSendMaxCount;
+
 
     public ConfirmOrderConfig() {
         priority4HighMinute = 60;
@@ -441,5 +446,13 @@ public class ConfirmOrderConfig {
 
     public void setIvrBeforeSort(int ivrBeforeSort) {
         this.ivrBeforeSort = ivrBeforeSort;
+    }
+
+    public int getNoRoomIVRSendMaxCount() {
+        return noRoomIVRSendMaxCount;
+    }
+
+    public void setNoRoomIVRSendMaxCount(int noRoomIVRSendMaxCount) {
+        this.noRoomIVRSendMaxCount = noRoomIVRSendMaxCount;
     }
 }
