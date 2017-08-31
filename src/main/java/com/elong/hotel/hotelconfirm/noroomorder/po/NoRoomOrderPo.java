@@ -91,6 +91,11 @@ public class NoRoomOrderPo {
 	private Date operateTime;
 
 	/**
+	 * 入库时间
+	 */
+	private Date enterTime;
+
+	/**
 	 * 订单时间戳
 	 */
 	private long orderTimestampLong;
@@ -207,6 +212,14 @@ public class NoRoomOrderPo {
 
 	public void setOperateTime(Date operateTime) {
 		this.operateTime = operateTime;
+	}
+
+	public Date getEnterTime() {
+		return enterTime;
+	}
+
+	public void setEnterTime(Date enterTime) {
+		this.enterTime = enterTime;
 	}
 
 	public long getOrderTimestampLong() {

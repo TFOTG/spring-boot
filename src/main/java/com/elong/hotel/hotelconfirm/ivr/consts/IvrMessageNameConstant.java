@@ -6,4 +6,6 @@ package com.elong.hotel.hotelconfirm.ivr.consts;
 public interface IvrMessageNameConstant {
 
 	String CONFIRM_IVR = "confirmivr";
+
+	String NOROOM_IVR = "noroomivr";
 }
