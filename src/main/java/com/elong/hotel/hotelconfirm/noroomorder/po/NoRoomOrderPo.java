@@ -61,9 +61,15 @@ public class NoRoomOrderPo {
 
 
     /**
-     * 处理类型
+     * eb处理状态
      */
-    private Integer dealType;
+    private Integer ebookingStatus;
+
+
+    /**
+     * 员工处理状态
+     */
+    private Integer staffStatus;
 
 	/**
 	 * ivr外呼状态
@@ -113,6 +119,9 @@ public class NoRoomOrderPo {
         this.leaveDate=order.getCheckOutDate();
         this.hotelId=order.getHotelId();
         this.hotelName=order.getHotelName();
+        this.ivrStartTime=new Date();
+        this.enterTime=new Date();
+        this.operator="system";
         this.orderTimestampLong=order.getOrderTimestamp().getTime();
 
     }
@@ -238,11 +247,19 @@ public class NoRoomOrderPo {
         this.immediately = immediately;
     }
 
-    public Integer getDealType() {
-        return dealType;
+    public Integer getEbookingStatus() {
+        return ebookingStatus;
     }
 
-    public void setDealType(Integer dealType) {
-        this.dealType = dealType;
+    public void setEbookingStatus(Integer ebookingStatus) {
+        this.ebookingStatus = ebookingStatus;
+    }
+
+    public Integer getStaffStatus() {
+        return staffStatus;
+    }
+
+    public void setStaffStatus(Integer staffStatus) {
+        this.staffStatus = staffStatus;
     }
 }
