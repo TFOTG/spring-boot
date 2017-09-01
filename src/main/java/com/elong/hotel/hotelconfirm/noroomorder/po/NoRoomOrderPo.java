@@ -113,6 +113,9 @@ public class NoRoomOrderPo {
         this.leaveDate=order.getCheckOutDate();
         this.hotelId=order.getHotelId();
         this.hotelName=order.getHotelName();
+        this.ivrStartTime=new Date();
+        this.enterTime=new Date();
+        this.operator="system";
         this.orderTimestampLong=order.getOrderTimestamp().getTime();
 
     }
