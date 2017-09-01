@@ -152,6 +152,11 @@ public class ConfirmOrderConfig {
      */
     private int noRoomIVRSendMaxCount;
 
+    /**
+     * 到店无房ivr延迟分钟
+     */
+    private int noRoomIVRDelayMinute;
+
 
     public ConfirmOrderConfig() {
         priority4HighMinute = 60;
@@ -454,5 +459,13 @@ public class ConfirmOrderConfig {
 
     public void setNoRoomIVRSendMaxCount(int noRoomIVRSendMaxCount) {
         this.noRoomIVRSendMaxCount = noRoomIVRSendMaxCount;
+    }
+
+    public int getNoRoomIVRDelayMinute() {
+        return noRoomIVRDelayMinute;
+    }
+
+    public void setNoRoomIVRDelayMinute(int noRoomIVRDelayMinute) {
+        this.noRoomIVRDelayMinute = noRoomIVRDelayMinute;
     }
 }
