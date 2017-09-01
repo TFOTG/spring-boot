@@ -9,13 +9,15 @@ public enum NoRoomIVRStatusEnum {
 
     PROCESS(1,"处理中"),
 
-    SUCCEED(2,"成功"),
+    SUCCEED_FULL(2,"成功反馈满房"),
 
-    FAIL(3,"失败"),
+    SUCCEED_NOFUll(3,"成功反馈未满房"),
 
-    FAIL_SPECIAL(4,"失败并且不外呼"),
+    FAIL(4,"失败"),
 
-    FAIL_VALIDATION(5,"校验失败");
+    FAIL_SPECIAL(5,"失败并且不外呼"),
+
+    FAIL_VALIDATION(6,"校验失败");
 
     private int type;
 
