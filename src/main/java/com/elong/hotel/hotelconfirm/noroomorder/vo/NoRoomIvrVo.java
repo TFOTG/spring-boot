@@ -45,6 +45,21 @@ public class NoRoomIvrVo implements Serializable {
 	 */
 	private Integer ivrCount;
 
+	/**
+	 * 检查能否开始外呼
+	 */
+	private Integer checkEnableCalling;
+
+	/**
+	 * 检查EB是否处理
+	 */
+	private Integer checkEBStatus;
+
+	/**
+	 * 检查人工是否处理
+	 */
+	private Integer checkStaffStatus;
+
 	public List<Integer> getIvrStatus() {
 		return ivrStatus;
 	}
@@ -83,6 +98,30 @@ public class NoRoomIvrVo implements Serializable {
 
 	public void setIvrCount(Integer ivrCount) {
 		this.ivrCount = ivrCount;
+	}
+
+	public Integer getCheckEnableCalling() {
+		return checkEnableCalling;
+	}
+
+	public void setCheckEnableCalling(Integer checkEnableCalling) {
+		this.checkEnableCalling = checkEnableCalling;
+	}
+
+	public Integer getCheckEBStatus() {
+		return checkEBStatus;
+	}
+
+	public void setCheckEBStatus(Integer checkEBStatus) {
+		this.checkEBStatus = checkEBStatus;
+	}
+
+	public Integer getCheckStaffStatus() {
+		return checkStaffStatus;
+	}
+
+	public void setCheckStaffStatus(Integer checkStaffStatus) {
+		this.checkStaffStatus = checkStaffStatus;
 	}
 
 }
