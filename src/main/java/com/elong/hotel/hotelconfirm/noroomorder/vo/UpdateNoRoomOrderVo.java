@@ -71,6 +71,11 @@ public class UpdateNoRoomOrderVo implements Serializable {
 	 */
 	private Integer ivrCount;
 
+	/**
+	 * 延时时间（单位：分钟）
+	 */
+	private Integer delayTime;
+
 	public UpdateNoRoomOrderVo() {
 		super();
 	}
@@ -83,7 +88,7 @@ public class UpdateNoRoomOrderVo implements Serializable {
 	 * @param delayCount
 	 */
 	public UpdateNoRoomOrderVo(List<Integer> orderIds, Integer hotelId, Date currentTime, Integer delayCount, Date startTime, Date endTime,
-			List<Integer> ivrStatuses, Integer ivrCount) {
+			List<Integer> ivrStatuses, Integer ivrCount, Integer delayTime) {
 		super();
 		this.orderIds = orderIds;
 		this.hotelId = hotelId;
@@ -93,6 +98,7 @@ public class UpdateNoRoomOrderVo implements Serializable {
 		this.endTime = endTime;
 		this.ivrStatuses = ivrStatuses;
 		this.ivrCount = ivrCount;
+		this.delayTime = delayTime;
 	}
 
 	/**
@@ -186,6 +192,14 @@ public class UpdateNoRoomOrderVo implements Serializable {
 
 	public void setIvrCount(Integer ivrCount) {
 		this.ivrCount = ivrCount;
+	}
+
+	public Integer getDelayTime() {
+		return delayTime;
+	}
+
+	public void setDelayTime(Integer delayTime) {
+		this.delayTime = delayTime;
 	}
 
 }
