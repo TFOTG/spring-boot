@@ -26,6 +26,11 @@ public class NoRoomOrderVo implements Serializable {
 	private String hotelId;
 
 	/**
+	 * 订单状态集合
+	 */
+	private List<String> reserStatuses;
+
+	/**
 	 * ivr外呼状态
 	 */
 	private List<Integer> ivrStatuses;
@@ -59,6 +64,14 @@ public class NoRoomOrderVo implements Serializable {
 	 * 查询总数
 	 */
 	private int size;
+
+	public List<String> getReserStatuses() {
+		return reserStatuses;
+	}
+
+	public void setReserStatuses(List<String> reserStatuses) {
+		this.reserStatuses = reserStatuses;
+	}
 
 	public String getHotelId() {
 		return hotelId;
