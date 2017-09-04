@@ -1,8 +1,8 @@
 package com.elong.hotel.hotelconfirm.noroomorder.po;
 
-import com.elong.hotel.proxy.javaorder.getorder.Order;
-
 import java.util.Date;
+
+import com.elong.hotel.proxy.javaorder.getorder.Order;
 
 /**
  * 
@@ -53,23 +53,20 @@ public class NoRoomOrderPo {
 	 */
 	private String hotelName;
 
+	/**
+	 * 马上到店
+	 */
+	private Integer immediately;
 
-    /**
-     * 马上到店
-     */
-    private Integer immediately;
+	/**
+	 * eb处理状态
+	 */
+	private Integer ebookingStatus;
 
-
-    /**
-     * eb处理状态
-     */
-    private Integer ebookingStatus;
-
-
-    /**
-     * 员工处理状态
-     */
-    private Integer staffStatus;
+	/**
+	 * 员工处理状态
+	 */
+	private Integer staffStatus;
 
 	/**
 	 * ivr外呼状态
@@ -111,28 +108,30 @@ public class NoRoomOrderPo {
 	 */
 	private long orderTimestampLong;
 
+	/**
+	 * 延时次数
+	 */
+	private Integer delayCount;
 
-    public NoRoomOrderPo() {
-    }
+	public NoRoomOrderPo() {
+	}
 
+	public NoRoomOrderPo(Order order) {
 
-    public NoRoomOrderPo(Order order) {
+		this.reserNo = order.getOrderId().intValue();
+		this.reserStatus = order.getStatus();
+		this.arriveDate = order.getCheckInDate();
+		this.leaveDate = order.getCheckOutDate();
+		this.hotelId = order.getHotelId();
+		this.hotelName = order.getHotelName();
+		this.enterTime = new Date();
+		this.operateTime = new Date();
+		this.operator = "system";
+		this.orderTimestampLong = order.getOrderTimestamp().getTime();
 
-        this.reserNo=order.getOrderId().intValue();
-        this.reserStatus=order.getStatus();
-        this.arriveDate=order.getCheckInDate();
-        this.leaveDate=order.getCheckOutDate();
-        this.hotelId=order.getHotelId();
-        this.hotelName=order.getHotelName();
-        this.enterTime=new Date();
-        this.operateTime=new Date();
-        this.operator="system";
-        this.orderTimestampLong=order.getOrderTimestamp().getTime();
+	}
 
-    }
-
-
-    public long getId() {
+	public long getId() {
 		return id;
 	}
 
@@ -244,25 +243,25 @@ public class NoRoomOrderPo {
 		this.orderTimestampLong = orderTimestampLong;
 	}
 
-    public Integer getImmediately() {
-        return immediately;
-    }
+	public Integer getImmediately() {
+		return immediately;
+	}
 
-    public void setImmediately(Integer immediately) {
-        this.immediately = immediately;
-    }
+	public void setImmediately(Integer immediately) {
+		this.immediately = immediately;
+	}
 
-    public Integer getEbookingStatus() {
-        return ebookingStatus;
-    }
+	public Integer getEbookingStatus() {
+		return ebookingStatus;
+	}
 
-    public void setEbookingStatus(Integer ebookingStatus) {
-        this.ebookingStatus = ebookingStatus;
-    }
+	public void setEbookingStatus(Integer ebookingStatus) {
+		this.ebookingStatus = ebookingStatus;
+	}
 
-    public Integer getStaffStatus() {
-        return staffStatus;
-    }
+	public Integer getStaffStatus() {
+		return staffStatus;
+	}
 
     public void setStaffStatus(Integer staffStatus) {
         this.staffStatus = staffStatus;
@@ -275,4 +274,16 @@ public class NoRoomOrderPo {
     public void setIvrGuid(String ivrGuid) {
         this.ivrGuid = ivrGuid;
     }
+	public void setStaffStatus(Integer staffStatus) {
+		this.staffStatus = staffStatus;
+	}
+
+	public Integer getDelayCount() {
+		return delayCount;
+	}
+
+	public void setDelayCount(Integer delayCount) {
+		this.delayCount = delayCount;
+	}
+
 }
