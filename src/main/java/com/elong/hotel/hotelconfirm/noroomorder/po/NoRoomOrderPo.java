@@ -73,6 +73,11 @@ public class NoRoomOrderPo {
 	 */
 	private Integer ivrStatus;
 
+    /**
+     * ivr外呼guid
+     */
+    private String ivrGuid;
+
 	/**
 	 * 外呼开始时间
 	 */
@@ -126,148 +131,155 @@ public class NoRoomOrderPo {
 
 	}
 
-	public long getId() {
-		return id;
-	}
+    public long getId() {
+        return id;
+    }
 
-	public void setId(long id) {
-		this.id = id;
-	}
+    public void setId(long id) {
+        this.id = id;
+    }
 
-	public Integer getReserNo() {
-		return reserNo;
-	}
+    public Integer getReserNo() {
+        return reserNo;
+    }
 
-	public void setReserNo(Integer reserNo) {
-		this.reserNo = reserNo;
-	}
+    public void setReserNo(Integer reserNo) {
+        this.reserNo = reserNo;
+    }
 
-	public String getReserStatus() {
-		return reserStatus;
-	}
+    public String getReserStatus() {
+        return reserStatus;
+    }
 
-	public void setReserStatus(String reserStatus) {
-		this.reserStatus = reserStatus;
-	}
+    public void setReserStatus(String reserStatus) {
+        this.reserStatus = reserStatus;
+    }
 
-	public Date getArriveDate() {
-		return arriveDate;
-	}
+    public Date getArriveDate() {
+        return arriveDate;
+    }
 
-	public void setArriveDate(Date arriveDate) {
-		this.arriveDate = arriveDate;
-	}
+    public void setArriveDate(Date arriveDate) {
+        this.arriveDate = arriveDate;
+    }
 
-	public Date getLeaveDate() {
-		return leaveDate;
-	}
+    public Date getLeaveDate() {
+        return leaveDate;
+    }
 
-	public void setLeaveDate(Date leaveDate) {
-		this.leaveDate = leaveDate;
-	}
+    public void setLeaveDate(Date leaveDate) {
+        this.leaveDate = leaveDate;
+    }
 
-	public String getHotelId() {
-		return hotelId;
-	}
+    public String getHotelId() {
+        return hotelId;
+    }
 
-	public void setHotelId(String hotelId) {
-		this.hotelId = hotelId;
-	}
+    public void setHotelId(String hotelId) {
+        this.hotelId = hotelId;
+    }
 
-	public String getHotelName() {
-		return hotelName;
-	}
+    public String getHotelName() {
+        return hotelName;
+    }
 
-	public void setHotelName(String hotelName) {
-		this.hotelName = hotelName;
-	}
+    public void setHotelName(String hotelName) {
+        this.hotelName = hotelName;
+    }
 
-	public Integer getIvrStatus() {
-		return ivrStatus;
-	}
+    public Integer getImmediately() {
+        return immediately;
+    }
 
-	public void setIvrStatus(Integer ivrStatus) {
-		this.ivrStatus = ivrStatus;
-	}
+    public void setImmediately(Integer immediately) {
+        this.immediately = immediately;
+    }
 
-	public Date getIvrStartTime() {
-		return ivrStartTime;
-	}
+    public Integer getEbookingStatus() {
+        return ebookingStatus;
+    }
 
-	public void setIvrStartTime(Date ivrStartTime) {
-		this.ivrStartTime = ivrStartTime;
-	}
+    public void setEbookingStatus(Integer ebookingStatus) {
+        this.ebookingStatus = ebookingStatus;
+    }
 
-	public Integer getIvrCount() {
-		return ivrCount;
-	}
+    public Integer getStaffStatus() {
+        return staffStatus;
+    }
 
-	public void setIvrCount(Integer ivrCount) {
-		this.ivrCount = ivrCount;
-	}
+    public void setStaffStatus(Integer staffStatus) {
+        this.staffStatus = staffStatus;
+    }
 
-	public String getOperator() {
-		return operator;
-	}
+    public Integer getIvrStatus() {
+        return ivrStatus;
+    }
 
-	public void setOperator(String operator) {
-		this.operator = operator;
-	}
+    public void setIvrStatus(Integer ivrStatus) {
+        this.ivrStatus = ivrStatus;
+    }
 
-	public Date getOperateTime() {
-		return operateTime;
-	}
+    public String getIvrGuid() {
+        return ivrGuid;
+    }
 
-	public void setOperateTime(Date operateTime) {
-		this.operateTime = operateTime;
-	}
+    public void setIvrGuid(String ivrGuid) {
+        this.ivrGuid = ivrGuid;
+    }
 
-	public Date getEnterTime() {
-		return enterTime;
-	}
+    public Date getIvrStartTime() {
+        return ivrStartTime;
+    }
 
-	public void setEnterTime(Date enterTime) {
-		this.enterTime = enterTime;
-	}
+    public void setIvrStartTime(Date ivrStartTime) {
+        this.ivrStartTime = ivrStartTime;
+    }
 
-	public long getOrderTimestampLong() {
-		return orderTimestampLong;
-	}
+    public Integer getIvrCount() {
+        return ivrCount;
+    }
 
-	public void setOrderTimestampLong(long orderTimestampLong) {
-		this.orderTimestampLong = orderTimestampLong;
-	}
+    public void setIvrCount(Integer ivrCount) {
+        this.ivrCount = ivrCount;
+    }
 
-	public Integer getImmediately() {
-		return immediately;
-	}
+    public String getOperator() {
+        return operator;
+    }
 
-	public void setImmediately(Integer immediately) {
-		this.immediately = immediately;
-	}
+    public void setOperator(String operator) {
+        this.operator = operator;
+    }
 
-	public Integer getEbookingStatus() {
-		return ebookingStatus;
-	}
+    public Date getOperateTime() {
+        return operateTime;
+    }
 
-	public void setEbookingStatus(Integer ebookingStatus) {
-		this.ebookingStatus = ebookingStatus;
-	}
+    public void setOperateTime(Date operateTime) {
+        this.operateTime = operateTime;
+    }
 
-	public Integer getStaffStatus() {
-		return staffStatus;
-	}
+    public Date getEnterTime() {
+        return enterTime;
+    }
 
-	public void setStaffStatus(Integer staffStatus) {
-		this.staffStatus = staffStatus;
-	}
+    public void setEnterTime(Date enterTime) {
+        this.enterTime = enterTime;
+    }
 
-	public Integer getDelayCount() {
-		return delayCount;
-	}
+    public long getOrderTimestampLong() {
+        return orderTimestampLong;
+    }
 
-	public void setDelayCount(Integer delayCount) {
-		this.delayCount = delayCount;
-	}
+    public void setOrderTimestampLong(long orderTimestampLong) {
+        this.orderTimestampLong = orderTimestampLong;
+    }
 
+    public Integer getDelayCount() {
+        return delayCount;
+    }
+
+    public void setDelayCount(Integer delayCount) {
+        this.delayCount = delayCount;
+    }
 }
