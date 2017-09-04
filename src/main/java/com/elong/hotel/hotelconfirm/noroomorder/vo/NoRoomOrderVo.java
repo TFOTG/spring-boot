@@ -26,9 +26,31 @@ public class NoRoomOrderVo implements Serializable {
 	private String hotelId;
 
 	/**
-	 * ivr外呼状态
+	 * ivr外呼状态集合
 	 */
 	private List<Integer> ivrStatuses;
+
+
+    /**
+     * 订单id
+     */
+    private List<Integer> orderIds;
+
+
+    /**
+     * ivr外呼状态
+     */
+    private Integer ivrStatus;
+
+    /**
+     * ivr外呼次数
+     */
+    private Integer ivrAddCount;
+
+    /**
+     * ivr外呼guid
+     */
+    private String ivrGuid;
 
 	/**
 	 * 是否校验EB处理状态
@@ -60,7 +82,18 @@ public class NoRoomOrderVo implements Serializable {
 	 */
 	private int size;
 
-	public String getHotelId() {
+    /**
+     * 操作人
+     */
+    private String operator;
+
+    /**
+     * 操作时间
+     */
+    private Date operateTime;
+
+
+    public String getHotelId() {
 		return hotelId;
 	}
 
@@ -124,4 +157,53 @@ public class NoRoomOrderVo implements Serializable {
 		this.ivrCount = ivrCount;
 	}
 
+    public Integer getIvrStatus() {
+        return ivrStatus;
+    }
+
+    public void setIvrStatus(Integer ivrStatus) {
+        this.ivrStatus = ivrStatus;
+    }
+
+    public String getIvrGuid() {
+        return ivrGuid;
+    }
+
+    public void setIvrGuid(String ivrGuid) {
+        this.ivrGuid = ivrGuid;
+    }
+
+    public List<Integer> getOrderIds() {
+        return orderIds;
+    }
+
+    public void setOrderIds(List<Integer> orderIds) {
+        this.orderIds = orderIds;
+    }
+
+    public Integer getIvrAddCount() {
+        return ivrAddCount;
+    }
+
+    public void setIvrAddCount(Integer ivrAddCount) {
+        this.ivrAddCount = ivrAddCount;
+    }
+
+    public String getOperator() {
+        return operator;
+    }
+
+    public void setOperator(String operator) {
+        this.operator = operator;
+    }
+
+    public Date getOperateTime() {
+        return operateTime;
+    }
+
+    public void setOperateTime(Date operateTime) {
+        this.operateTime = operateTime;
+    }
 }
+
+

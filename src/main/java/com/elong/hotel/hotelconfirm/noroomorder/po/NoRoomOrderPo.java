@@ -76,6 +76,11 @@ public class NoRoomOrderPo {
 	 */
 	private Integer ivrStatus;
 
+    /**
+     * ivr外呼guid
+     */
+    private String ivrGuid;
+
 	/**
 	 * 外呼开始时间
 	 */
@@ -261,5 +266,13 @@ public class NoRoomOrderPo {
 
     public void setStaffStatus(Integer staffStatus) {
         this.staffStatus = staffStatus;
+    }
+
+    public String getIvrGuid() {
+        return ivrGuid;
+    }
+
+    public void setIvrGuid(String ivrGuid) {
+        this.ivrGuid = ivrGuid;
     }
 }
