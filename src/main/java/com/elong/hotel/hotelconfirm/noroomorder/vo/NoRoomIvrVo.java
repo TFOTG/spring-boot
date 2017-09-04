@@ -65,6 +65,24 @@ public class NoRoomIvrVo implements Serializable {
 	 */
 	private Integer checkStaffStatus;
 
+	public NoRoomIvrVo() {
+		super();
+	}
+
+	public NoRoomIvrVo(List<String> reserStatuses, List<Integer> ivrStatus, Integer size, Date startTime, Date endTime, Integer ivrCount,
+			Integer checkEnableCalling, Integer checkEBStatus, Integer checkStaffStatus) {
+		super();
+		this.reserStatuses = reserStatuses;
+		this.ivrStatus = ivrStatus;
+		this.size = size;
+		this.startTime = startTime;
+		this.endTime = endTime;
+		this.ivrCount = ivrCount;
+		this.checkEnableCalling = checkEnableCalling;
+		this.checkEBStatus = checkEBStatus;
+		this.checkStaffStatus = checkStaffStatus;
+	}
+
 	public List<String> getReserStatuses() {
 		return reserStatuses;
 	}

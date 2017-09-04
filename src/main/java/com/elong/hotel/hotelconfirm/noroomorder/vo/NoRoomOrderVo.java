@@ -70,6 +70,26 @@ public class NoRoomOrderVo implements Serializable {
 	 */
 	private Integer checkEnableCalling;
 
+	public NoRoomOrderVo() {
+		super();
+	}
+
+	public NoRoomOrderVo(String hotelId, List<String> reserStatuses, List<Integer> ivrStatuses, Integer checkEBStatus,
+			Integer checkStaffDealedStatus, Integer ivrCount, Date arriveStartTime, Date arriveEndTime, int size,
+			Integer checkEnableCalling) {
+		super();
+		this.hotelId = hotelId;
+		this.reserStatuses = reserStatuses;
+		this.ivrStatuses = ivrStatuses;
+		this.checkEBStatus = checkEBStatus;
+		this.checkStaffDealedStatus = checkStaffDealedStatus;
+		this.ivrCount = ivrCount;
+		this.arriveStartTime = arriveStartTime;
+		this.arriveEndTime = arriveEndTime;
+		this.size = size;
+		this.checkEnableCalling = checkEnableCalling;
+	}
+
 	public List<String> getReserStatuses() {
 		return reserStatuses;
 	}
