@@ -21,6 +21,11 @@ public class NoRoomIvrVo implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	/**
+	 * 订单状态集合
+	 */
+	private List<String> reserStatuses;
+
+	/**
 	 * ivr外呼状态(in)
 	 */
 	private List<Integer> ivrStatus;
@@ -59,6 +64,14 @@ public class NoRoomIvrVo implements Serializable {
 	 * 检查人工是否处理
 	 */
 	private Integer checkStaffStatus;
+
+	public List<String> getReserStatuses() {
+		return reserStatuses;
+	}
+
+	public void setReserStatuses(List<String> reserStatuses) {
+		this.reserStatuses = reserStatuses;
+	}
 
 	public List<Integer> getIvrStatus() {
 		return ivrStatus;
