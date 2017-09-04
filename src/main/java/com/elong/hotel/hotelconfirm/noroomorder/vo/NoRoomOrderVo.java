@@ -65,6 +65,11 @@ public class NoRoomOrderVo implements Serializable {
 	 */
 	private int size;
 
+	/**
+	 * 检查能否外呼
+	 */
+	private Integer checkEnableCalling;
+
 	public List<String> getReserStatuses() {
 		return reserStatuses;
 	}
@@ -135,6 +140,14 @@ public class NoRoomOrderVo implements Serializable {
 
 	public void setIvrCount(Integer ivrCount) {
 		this.ivrCount = ivrCount;
+	}
+
+	public Integer getCheckEnableCalling() {
+		return checkEnableCalling;
+	}
+
+	public void setCheckEnableCalling(Integer checkEnableCalling) {
+		this.checkEnableCalling = checkEnableCalling;
 	}
 
 }
