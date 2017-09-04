@@ -76,6 +76,7 @@ public class UpdateNoRoomOrderVo implements Serializable {
 	 */
 	private Integer delayTime;
 
+
 	public UpdateNoRoomOrderVo() {
 		super();
 	}
@@ -114,7 +115,7 @@ public class UpdateNoRoomOrderVo implements Serializable {
 		this.isUpdateCount = isUpdateCount;
 	}
 
-	public List<Integer> getOrderIds() {
+    public List<Integer> getOrderIds() {
 		return orderIds;
 	}
 
