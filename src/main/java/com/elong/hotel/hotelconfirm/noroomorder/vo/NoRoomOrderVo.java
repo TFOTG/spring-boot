@@ -36,19 +36,22 @@ public class NoRoomOrderVo implements Serializable {
 	private List<Integer> ivrStatuses;
 
 	/**
-	 * 订单id
-	 */
-	private List<Integer> orderIds;
-
-	/**
 	 * ivr外呼状态
 	 */
 	private Integer ivrStatus;
-
+	/**
+	 * 订单id集合
+	 */
+	private List<Integer> orderIds;
 	/**
 	 * ivr外呼次数
 	 */
 	private Integer ivrAddCount;
+
+	/**
+	 * 订单id
+	 */
+	private Integer orderId;
 
 	/**
 	 * ivr外呼guid
@@ -59,6 +62,8 @@ public class NoRoomOrderVo implements Serializable {
 	 * 是否校验EB处理状态
 	 */
 	private Integer checkEBStatus;
+
+	private Integer ebookingStatus;
 
 	/**
 	 * 是否校验人工处理状态
@@ -261,4 +266,19 @@ public class NoRoomOrderVo implements Serializable {
 		this.checkImmedatelies = checkImmedatelies;
 	}
 
+	public Integer getOrderId() {
+		return orderId;
+	}
+
+	public void setOrderId(Integer orderId) {
+		this.orderId = orderId;
+	}
+
+	public Integer getEbookingStatus() {
+		return ebookingStatus;
+	}
+
+	public void setEbookingStatus(Integer ebookingStatus) {
+		this.ebookingStatus = ebookingStatus;
+	}
 }
