@@ -18,6 +18,8 @@ import java.util.List;
  */
 public class NoRoomOrderVo implements Serializable {
 
+	private static final long serialVersionUID = 1L;
+
 	/**
 	 * 酒店ID
 	 */
@@ -29,32 +31,29 @@ public class NoRoomOrderVo implements Serializable {
 	private List<String> reserStatuses;
 
 	/**
-	 * ivr外呼状态
 	 * ivr外呼状态集合
 	 */
 	private List<Integer> ivrStatuses;
 
+	/**
+	 * 订单id
+	 */
+	private List<Integer> orderIds;
 
-    /**
-     * 订单id
-     */
-    private List<Integer> orderIds;
+	/**
+	 * ivr外呼状态
+	 */
+	private Integer ivrStatus;
 
+	/**
+	 * ivr外呼次数
+	 */
+	private Integer ivrAddCount;
 
-    /**
-     * ivr外呼状态
-     */
-    private Integer ivrStatus;
-
-    /**
-     * ivr外呼次数
-     */
-    private Integer ivrAddCount;
-
-    /**
-     * ivr外呼guid
-     */
-    private String ivrGuid;
+	/**
+	 * ivr外呼guid
+	 */
+	private String ivrGuid;
 
 	/**
 	 * 是否校验EB处理状态
@@ -91,15 +90,20 @@ public class NoRoomOrderVo implements Serializable {
 	 */
 	private Integer checkEnableCalling;
 
-    /**
-     * 操作人
-     */
-    private String operator;
+	/**
+	 * 操作人
+	 */
+	private String operator;
 
-    /**
-     * 操作时间
-     */
-    private Date operateTime;
+	/**
+	 * 操作时间
+	 */
+	private Date operateTime;
+
+	/**
+	 * 是否为马上到店
+	 */
+	private Integer checkImmedatelies;
 
 	public NoRoomOrderVo() {
 		super();
@@ -121,133 +125,140 @@ public class NoRoomOrderVo implements Serializable {
 		this.checkEnableCalling = checkEnableCalling;
 	}
 
-    public String getHotelId() {
-        return hotelId;
-    }
+	public String getHotelId() {
+		return hotelId;
+	}
 
-    public void setHotelId(String hotelId) {
-        this.hotelId = hotelId;
-    }
+	public void setHotelId(String hotelId) {
+		this.hotelId = hotelId;
+	}
 
-    public List<String> getReserStatuses() {
-        return reserStatuses;
-    }
+	public List<String> getReserStatuses() {
+		return reserStatuses;
+	}
 
-    public void setReserStatuses(List<String> reserStatuses) {
-        this.reserStatuses = reserStatuses;
-    }
+	public void setReserStatuses(List<String> reserStatuses) {
+		this.reserStatuses = reserStatuses;
+	}
 
-    public List<Integer> getIvrStatuses() {
-        return ivrStatuses;
-    }
+	public List<Integer> getIvrStatuses() {
+		return ivrStatuses;
+	}
 
-    public void setIvrStatuses(List<Integer> ivrStatuses) {
-        this.ivrStatuses = ivrStatuses;
-    }
+	public void setIvrStatuses(List<Integer> ivrStatuses) {
+		this.ivrStatuses = ivrStatuses;
+	}
 
-    public List<Integer> getOrderIds() {
-        return orderIds;
-    }
+	public List<Integer> getOrderIds() {
+		return orderIds;
+	}
 
-    public void setOrderIds(List<Integer> orderIds) {
-        this.orderIds = orderIds;
-    }
+	public void setOrderIds(List<Integer> orderIds) {
+		this.orderIds = orderIds;
+	}
 
-    public Integer getIvrStatus() {
-        return ivrStatus;
-    }
+	public Integer getIvrStatus() {
+		return ivrStatus;
+	}
 
-    public void setIvrStatus(Integer ivrStatus) {
-        this.ivrStatus = ivrStatus;
-    }
+	public void setIvrStatus(Integer ivrStatus) {
+		this.ivrStatus = ivrStatus;
+	}
 
-    public Integer getIvrAddCount() {
-        return ivrAddCount;
-    }
+	public Integer getIvrAddCount() {
+		return ivrAddCount;
+	}
 
-    public void setIvrAddCount(Integer ivrAddCount) {
-        this.ivrAddCount = ivrAddCount;
-    }
+	public void setIvrAddCount(Integer ivrAddCount) {
+		this.ivrAddCount = ivrAddCount;
+	}
 
-    public String getIvrGuid() {
-        return ivrGuid;
-    }
+	public String getIvrGuid() {
+		return ivrGuid;
+	}
 
-    public void setIvrGuid(String ivrGuid) {
-        this.ivrGuid = ivrGuid;
-    }
+	public void setIvrGuid(String ivrGuid) {
+		this.ivrGuid = ivrGuid;
+	}
 
-    public Integer getCheckEBStatus() {
-        return checkEBStatus;
-    }
+	public Integer getCheckEBStatus() {
+		return checkEBStatus;
+	}
 
-    public void setCheckEBStatus(Integer checkEBStatus) {
-        this.checkEBStatus = checkEBStatus;
-    }
+	public void setCheckEBStatus(Integer checkEBStatus) {
+		this.checkEBStatus = checkEBStatus;
+	}
 
-    public Integer getCheckStaffDealedStatus() {
-        return checkStaffDealedStatus;
-    }
+	public Integer getCheckStaffDealedStatus() {
+		return checkStaffDealedStatus;
+	}
 
-    public void setCheckStaffDealedStatus(Integer checkStaffDealedStatus) {
-        this.checkStaffDealedStatus = checkStaffDealedStatus;
-    }
+	public void setCheckStaffDealedStatus(Integer checkStaffDealedStatus) {
+		this.checkStaffDealedStatus = checkStaffDealedStatus;
+	}
 
-    public Integer getIvrCount() {
-        return ivrCount;
-    }
+	public Integer getIvrCount() {
+		return ivrCount;
+	}
 
-    public void setIvrCount(Integer ivrCount) {
-        this.ivrCount = ivrCount;
-    }
+	public void setIvrCount(Integer ivrCount) {
+		this.ivrCount = ivrCount;
+	}
 
-    public Date getArriveStartTime() {
-        return arriveStartTime;
-    }
+	public Date getArriveStartTime() {
+		return arriveStartTime;
+	}
 
-    public void setArriveStartTime(Date arriveStartTime) {
-        this.arriveStartTime = arriveStartTime;
-    }
+	public void setArriveStartTime(Date arriveStartTime) {
+		this.arriveStartTime = arriveStartTime;
+	}
 
-    public Date getArriveEndTime() {
-        return arriveEndTime;
-    }
+	public Date getArriveEndTime() {
+		return arriveEndTime;
+	}
 
-    public void setArriveEndTime(Date arriveEndTime) {
-        this.arriveEndTime = arriveEndTime;
-    }
+	public void setArriveEndTime(Date arriveEndTime) {
+		this.arriveEndTime = arriveEndTime;
+	}
 
-    public int getSize() {
-        return size;
-    }
+	public int getSize() {
+		return size;
+	}
 
-    public void setSize(int size) {
-        this.size = size;
-    }
+	public void setSize(int size) {
+		this.size = size;
+	}
 
-    public Integer getCheckEnableCalling() {
-        return checkEnableCalling;
-    }
+	public Integer getCheckEnableCalling() {
+		return checkEnableCalling;
+	}
 
-    public void setCheckEnableCalling(Integer checkEnableCalling) {
-        this.checkEnableCalling = checkEnableCalling;
-    }
+	public void setCheckEnableCalling(Integer checkEnableCalling) {
+		this.checkEnableCalling = checkEnableCalling;
+	}
 
-    public String getOperator() {
-        return operator;
-    }
+	public String getOperator() {
+		return operator;
+	}
 
-    public void setOperator(String operator) {
-        this.operator = operator;
-    }
+	public void setOperator(String operator) {
+		this.operator = operator;
+	}
 
-    public Date getOperateTime() {
-        return operateTime;
-    }
+	public Date getOperateTime() {
+		return operateTime;
+	}
 
-    public void setOperateTime(Date operateTime) {
-        this.operateTime = operateTime;
-    }
+	public void setOperateTime(Date operateTime) {
+		this.operateTime = operateTime;
+	}
+
+	public Integer getCheckImmedatelies() {
+		return checkImmedatelies;
+	}
+
+	public void setCheckImmedatelies(Integer checkImmedatelies) {
+		this.checkImmedatelies = checkImmedatelies;
+	}
+
 }
-
-
