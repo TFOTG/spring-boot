@@ -5,27 +5,37 @@ package com.elong.hotel.hotelconfirm.noroomorder.enums;
  */
 public enum NoRoomEbStatusEnum {
 
-    NoDeal(0,"Eb未处理"),
+	NoDeal(0, "Eb未处理"),
 
-    DealFull(1,"Eb处理满房"),
+	DealFull(1, "Eb处理满房"),
 
-    DealNoFull(2,"Eb处理未满房");
+	DealNoFull(2, "Eb处理未满房");
 
-    private int status;
+	private int status;
 
-    private String desc;
+	private String desc;
 
-    public int getStatus() {
-        return status;
-    }
+	public int getStatus() {
+		return status;
+	}
 
-    public String getDesc() {
-        return desc;
-    }
+	public String getDesc() {
+		return desc;
+	}
 
-    NoRoomEbStatusEnum(int status, String desc) {
-        this.status = status;
-        this.desc = desc;
-    }
+	NoRoomEbStatusEnum(int status, String desc) {
+		this.status = status;
+		this.desc = desc;
+	}
 
+	public static String getDescByStatus(int key) {
+		String result = "";
+		for (NoRoomEbStatusEnum noRoomEbStatusEnum : NoRoomEbStatusEnum.values()) {
+			if (noRoomEbStatusEnum.getStatus() == key) {
+				result = noRoomEbStatusEnum.getDesc();
+				break;
+			}
+		}
+		return result;
+	}
 }

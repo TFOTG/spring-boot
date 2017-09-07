@@ -110,6 +110,16 @@ public class NoRoomOrderVo implements Serializable {
 	 */
 	private Integer checkImmedatelies;
 
+	/**
+	 * 起始数
+	 */
+	private int start;
+
+	/**
+	 * 酒店ID集合
+	 */
+	private List<String> hotelIds;
+
 	public NoRoomOrderVo() {
 		super();
 	}
@@ -281,4 +291,21 @@ public class NoRoomOrderVo implements Serializable {
 	public void setEbookingStatus(Integer ebookingStatus) {
 		this.ebookingStatus = ebookingStatus;
 	}
+
+	public int getStart() {
+		return start;
+	}
+
+	public void setStart(int start) {
+		this.start = start;
+	}
+
+	public List<String> getHotelIds() {
+		return hotelIds;
+	}
+
+	public void setHotelIds(List<String> hotelIds) {
+		this.hotelIds = hotelIds;
+	}
+
 }
