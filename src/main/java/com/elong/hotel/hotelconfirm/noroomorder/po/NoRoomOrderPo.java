@@ -68,6 +68,11 @@ public class NoRoomOrderPo {
 	 */
 	private Integer staffStatus;
 
+    /**
+     * 员工处理时间
+      */
+    private Date staffResolveTime;
+
 	/**
 	 * ivr外呼状态
 	 */
@@ -281,5 +286,13 @@ public class NoRoomOrderPo {
 
     public void setDelayCount(Integer delayCount) {
         this.delayCount = delayCount;
+    }
+
+    public Date getStaffResolveTime() {
+        return staffResolveTime;
+    }
+
+    public void setStaffResolveTime(Date staffResolveTime) {
+        this.staffResolveTime = staffResolveTime;
     }
 }
