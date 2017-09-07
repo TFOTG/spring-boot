@@ -7,23 +7,25 @@ public enum NoRoomIVRStatusEnum {
 
 	NEW(0, "新建"),
 
-	PROCESS(1, "处理中"),
+    PROCESS(1,"处理中"),//中间状态
 
 	SUCCEED_FULL(2, "成功反馈满房"),
 
 	SUCCEED_NOFUll(3, "成功反馈未满房"),
 
-	FAIL_TIMEOUT(4, "失败超时"),
+    FAIL_NEED_IVR(4,"外呼失败需要重试"),//中间状态
 
-	FAIL_NO_FEEDBACK(5, "失败无反馈"),
+    FAIL_TIMEOUT(5,"失败超时"),
 
-	FAIL_NO_IVR(6, "失败并且不外呼"),
+    FAIL_NO_FEEDBACK(6,"失败无反馈"),
 
-	FAIL_VALIDATION(7, "校验失败");
+    FAIL_CONNECT_NO_FEEDBACK(7,"失败接通无反馈"),
 
-	private int status;
+    FAIL_VALIDATION(8,"校验失败");
 
-	private String desc;
+    private int status;
+
+    private String desc;
 
 	public int getStatus() {
 		return status;
