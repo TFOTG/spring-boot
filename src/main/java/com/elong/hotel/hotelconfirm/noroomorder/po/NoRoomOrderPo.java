@@ -5,15 +5,15 @@ import java.util.Date;
 import com.elong.hotel.proxy.javaorder.getorder.Order;
 
 /**
- * 
+ *
  * 到店无房PO类
  *
  * <p>
  * 2017年8月30日 下午1:54:59   张大鹏     1.0    	初始化创建<br>
- * </p> 
+ * </p>
  *
- * @author		张大鹏 
- * @version		1.0  
+ * @author		张大鹏
+ * @version		1.0
  * @since		JDK1.7
  */
 public class NoRoomOrderPo {
@@ -291,5 +291,22 @@ public class NoRoomOrderPo {
 
     public void setDelayCount(Integer delayCount) {
         this.delayCount = delayCount;
+    }
+
+
+    public Date getStaffResolveTime() {
+        return staffResolveTime;
+    }
+
+    public void setStaffResolveTime(Date staffResolveTime) {
+        this.staffResolveTime = staffResolveTime;
+    }
+
+    public String getHotelPhone() {
+        return hotelPhone;
+    }
+
+    public void setHotelPhone(String hotelPhone) {
+        this.hotelPhone = hotelPhone;
     }
 }
