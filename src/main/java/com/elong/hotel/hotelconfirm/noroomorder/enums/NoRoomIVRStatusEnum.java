@@ -5,13 +5,13 @@ package com.elong.hotel.hotelconfirm.noroomorder.enums;
  */
 public enum NoRoomIVRStatusEnum {
 
-    NEW(0,"新建"),
+	NEW(0, "新建"),
 
     PROCESS(1,"处理中"),//中间状态
 
-    SUCCEED_FULL(2,"成功反馈满房"),
+	SUCCEED_FULL(2, "成功反馈满房"),
 
-    SUCCEED_NOFUll(3,"成功反馈未满房"),
+	SUCCEED_NOFUll(3, "成功反馈未满房"),
 
     FAIL_NEED_IVR(4,"外呼失败需要重试"),//中间状态
 
@@ -27,17 +27,27 @@ public enum NoRoomIVRStatusEnum {
 
     private String desc;
 
+	public int getStatus() {
+		return status;
+	}
 
-    public int getStatus() {
-        return status;
-    }
+	public String getDesc() {
+		return desc;
+	}
 
-    public String getDesc() {
-        return desc;
-    }
+	NoRoomIVRStatusEnum(int status, String desc) {
+		this.status = status;
+		this.desc = desc;
+	}
 
-    NoRoomIVRStatusEnum(int status, String desc) {
-        this.status = status;
-        this.desc = desc;
-    }
+	public static String getDescByStatus(int key) {
+		String result = "";
+		for (NoRoomIVRStatusEnum noRoomIVRStatusEnum : NoRoomIVRStatusEnum.values()) {
+			if (noRoomIVRStatusEnum.getStatus() == key) {
+				result = noRoomIVRStatusEnum.getDesc();
+				break;
+			}
+		}
+		return result;
+	}
 }

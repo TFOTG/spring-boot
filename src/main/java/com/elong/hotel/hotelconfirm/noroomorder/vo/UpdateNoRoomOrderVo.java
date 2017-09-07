@@ -76,6 +76,15 @@ public class UpdateNoRoomOrderVo implements Serializable {
 	 */
 	private Integer delayTime;
 
+	/**
+	 * ivr外呼GUID
+	 */
+	private String ivrGuid;
+
+	/**
+	 * 外呼酒店电话
+	 */
+	private String callingHotelPhone;
 
 	public UpdateNoRoomOrderVo() {
 		super();
@@ -108,14 +117,16 @@ public class UpdateNoRoomOrderVo implements Serializable {
 	 * @param ivrStatus
 	 * @param isUpdateCount
 	 */
-	public UpdateNoRoomOrderVo(List<Integer> orderIds, Integer ivrStatus, Integer isUpdateCount) {
+	public UpdateNoRoomOrderVo(List<Integer> orderIds, Integer ivrStatus, Integer isUpdateCount, String ivrGuid, String callingHotelPhone) {
 		super();
 		this.orderIds = orderIds;
 		this.ivrStatus = ivrStatus;
 		this.isUpdateCount = isUpdateCount;
+		this.ivrGuid = ivrGuid;
+		this.callingHotelPhone = callingHotelPhone;
 	}
 
-    public List<Integer> getOrderIds() {
+	public List<Integer> getOrderIds() {
 		return orderIds;
 	}
 
@@ -201,6 +212,22 @@ public class UpdateNoRoomOrderVo implements Serializable {
 
 	public void setDelayTime(Integer delayTime) {
 		this.delayTime = delayTime;
+	}
+
+	public String getIvrGuid() {
+		return ivrGuid;
+	}
+
+	public void setIvrGuid(String ivrGuid) {
+		this.ivrGuid = ivrGuid;
+	}
+
+	public String getCallingHotelPhone() {
+		return callingHotelPhone;
+	}
+
+	public void setCallingHotelPhone(String callingHotelPhone) {
+		this.callingHotelPhone = callingHotelPhone;
 	}
 
 }

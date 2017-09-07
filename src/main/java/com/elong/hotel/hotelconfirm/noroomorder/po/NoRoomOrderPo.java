@@ -78,10 +78,10 @@ public class NoRoomOrderPo {
 	 */
 	private Integer ivrStatus;
 
-    /**
-     * ivr外呼guid
-     */
-    private String ivrGuid;
+	/**
+	 * ivr外呼guid
+	 */
+	private String ivrGuid;
 
 	/**
 	 * 外呼开始时间
@@ -117,6 +117,11 @@ public class NoRoomOrderPo {
 	 * 延时次数
 	 */
 	private Integer delayCount;
+
+	/**
+	 * 外呼酒店电话
+	 */
+	private String hotelPhone;
 
 	public NoRoomOrderPo() {
 	}
@@ -286,13 +291,5 @@ public class NoRoomOrderPo {
 
     public void setDelayCount(Integer delayCount) {
         this.delayCount = delayCount;
-    }
-
-    public Date getStaffResolveTime() {
-        return staffResolveTime;
-    }
-
-    public void setStaffResolveTime(Date staffResolveTime) {
-        this.staffResolveTime = staffResolveTime;
     }
 }
