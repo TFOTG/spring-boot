@@ -49,6 +49,11 @@ public class GetNoRoomOrderVo implements Serializable {
 	 */
 	private Integer orderId;
 
+	/**
+	 * 检查是否马上到店
+	 */
+	private Integer checkImmedatelies;
+
 	public int getPage() {
 		return page;
 	}
@@ -95,6 +100,14 @@ public class GetNoRoomOrderVo implements Serializable {
 
 	public void setOrderId(Integer orderId) {
 		this.orderId = orderId;
+	}
+
+	public Integer getCheckImmedatelies() {
+		return checkImmedatelies;
+	}
+
+	public void setCheckImmedatelies(Integer checkImmedatelies) {
+		this.checkImmedatelies = checkImmedatelies;
 	}
 
 }
