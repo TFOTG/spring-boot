@@ -3,6 +3,11 @@ package com.elong.hotel.hotelconfirm.noroomorder.bo;
 import java.io.Serializable;
 import java.util.Date;
 
+import com.elong.hotel.common.enums.ElongOrderStatusEnum;
+import com.elong.hotel.hotelconfirm.noroomorder.enums.NoRoomEbStatusEnum;
+import com.elong.hotel.hotelconfirm.noroomorder.enums.NoRoomIVRStatusEnum;
+import com.elong.hotel.hotelconfirm.noroomorder.po.NoRoomOrderPo;
+
 /**
  * <p>
  * 修改历史:											<br>  
@@ -22,7 +27,7 @@ public class StaffPendingNoRoomOrderBo implements Serializable {
 	/**
 	 * 主键ID
 	 */
-	private Integer noRoomOrderId;
+	private Long noRoomOrderId;
 
 	/**
 	 * 订单ID
@@ -84,11 +89,30 @@ public class StaffPendingNoRoomOrderBo implements Serializable {
 	 */
 	private String ivrStatusName;
 
-	public Integer getNoRoomOrderId() {
+	public StaffPendingNoRoomOrderBo() {
+		super();
+	}
+
+	public StaffPendingNoRoomOrderBo(NoRoomOrderPo po) {
+		super();
+		this.noRoomOrderId = po.getId();
+		this.orderId = po.getReserNo();
+		this.hotelId = po.getHotelId();
+		this.hotelName = po.getHotelName();
+		this.hotelPhone = po.getHotelPhone();
+		this.orderStatus = po.getReserStatus();
+		this.orderStatusName = ElongOrderStatusEnum.getDescriptionByStatus(po.getReserStatus());
+		this.arriveDate = po.getArriveDate();
+		this.leaveDate = po.getLeaveDate();
+		this.EBStatus = NoRoomEbStatusEnum.getDescByStatus(po.getEbookingStatus());
+		this.ivrStatusName = NoRoomIVRStatusEnum.getDescByStatus(po.getIvrStatus());
+	}
+
+	public Long getNoRoomOrderId() {
 		return noRoomOrderId;
 	}
 
-	public void setNoRoomOrderId(Integer noRoomOrderId) {
+	public void setNoRoomOrderId(Long noRoomOrderId) {
 		this.noRoomOrderId = noRoomOrderId;
 	}
 

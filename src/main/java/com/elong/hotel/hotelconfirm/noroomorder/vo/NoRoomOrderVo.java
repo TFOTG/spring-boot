@@ -120,6 +120,11 @@ public class NoRoomOrderVo implements Serializable {
 	 */
 	private List<String> hotelIds;
 
+	/**
+	 * 当前页
+	 */
+	private int page;
+
 	public NoRoomOrderVo() {
 		super();
 	}
@@ -138,6 +143,34 @@ public class NoRoomOrderVo implements Serializable {
 		this.arriveEndTime = arriveEndTime;
 		this.size = size;
 		this.checkEnableCalling = checkEnableCalling;
+	}
+
+	/**
+	 * 员工待处理页面查询请求参数
+	 * @param startTime 查询开始时间
+	 * @param endTime 查询结束时间
+	 * @param ivrStutases ivr状态集合
+	 * @param ebookingStatus EB状态
+	 * @param hotelIds 酒店ID集合
+	 * @param orderId 订单ID
+	 * @param ivrStatus ivr状态
+	 * @param checkImmedatelies 是否到店
+	 * @param page 页码
+	 * @param size 每页条数（酒店数）
+	 */
+	public NoRoomOrderVo(Date startTime, Date endTime, List<Integer> ivrStutases, Integer ebookingStatus, List<String> hotelIds,
+			Integer orderId, Integer ivrStatus, Integer checkImmedatelies, int page, int size) {
+		super();
+		this.arriveStartTime = startTime;
+		this.arriveEndTime = endTime;
+		this.ivrStatuses = ivrStutases;
+		this.ebookingStatus = ebookingStatus;
+		this.hotelIds = hotelIds;
+		this.orderId = orderId;
+		this.ivrStatus = ivrStatus;
+		this.checkImmedatelies = checkImmedatelies;
+		this.page = page;
+		this.size = size;
 	}
 
 	public String getHotelId() {
@@ -306,6 +339,14 @@ public class NoRoomOrderVo implements Serializable {
 
 	public void setHotelIds(List<String> hotelIds) {
 		this.hotelIds = hotelIds;
+	}
+
+	public int getPage() {
+		return page;
+	}
+
+	public void setPage(int page) {
+		this.page = page;
 	}
 
 }
