@@ -3,6 +3,7 @@ package com.elong.hotel.hotelconfirm.noroomorder.bo;
 import java.io.Serializable;
 import java.util.Date;
 
+import com.alibaba.fastjson.annotation.JSONField;
 import com.elong.hotel.common.enums.ElongOrderStatusEnum;
 import com.elong.hotel.hotelconfirm.noroomorder.enums.NoRoomEbStatusEnum;
 import com.elong.hotel.hotelconfirm.noroomorder.enums.NoRoomIVRStatusEnum;
@@ -62,11 +63,13 @@ public class StaffPendingNoRoomOrderBo implements Serializable {
 	/**
 	 * 到店日期
 	 */
+	@JSONField(format = "yyyy-MM-dd")
 	private Date arriveDate;
 
 	/**
 	 * 离店日期
 	 */
+	@JSONField(format = "yyyy-MM-dd")
 	private Date leaveDate;
 
 	/**
@@ -89,6 +92,11 @@ public class StaffPendingNoRoomOrderBo implements Serializable {
 	 */
 	private String ivrStatusName;
 
+	/**
+	 * 是否马上到店
+	 */
+	private Integer immdiately;
+
 	public StaffPendingNoRoomOrderBo() {
 		super();
 	}
@@ -106,6 +114,7 @@ public class StaffPendingNoRoomOrderBo implements Serializable {
 		this.leaveDate = po.getLeaveDate();
 		this.EBStatus = NoRoomEbStatusEnum.getDescByStatus(po.getEbookingStatus());
 		this.ivrStatusName = NoRoomIVRStatusEnum.getDescByStatus(po.getIvrStatus());
+		this.immdiately = po.getImmediately();
 	}
 
 	public Long getNoRoomOrderId() {
@@ -210,6 +219,14 @@ public class StaffPendingNoRoomOrderBo implements Serializable {
 
 	public void setIvrStatusName(String ivrStatusName) {
 		this.ivrStatusName = ivrStatusName;
+	}
+
+	public Integer getImmdiately() {
+		return immdiately;
+	}
+
+	public void setImmdiately(Integer immdiately) {
+		this.immdiately = immdiately;
 	}
 
 }
