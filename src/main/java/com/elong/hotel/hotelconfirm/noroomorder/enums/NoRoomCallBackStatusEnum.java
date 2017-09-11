@@ -5,15 +5,15 @@ package com.elong.hotel.hotelconfirm.noroomorder.enums;
  */
 public enum NoRoomCallBackStatusEnum {
 
-    NOT_FULL(1,"未满房"),
+    NOT_FULL("1","未满房"),
 
-    FULL(2,"满房");
+    FULL("2","满房");
 
-    private int status;
+    private String status;
 
     private String desc;
 
-    public int getStatus() {
+    public String getStatus() {
         return status;
     }
 
@@ -21,7 +21,7 @@ public enum NoRoomCallBackStatusEnum {
         return desc;
     }
 
-    NoRoomCallBackStatusEnum(int status, String desc) {
+    NoRoomCallBackStatusEnum(String status, String desc) {
         this.status = status;
         this.desc = desc;
     }
