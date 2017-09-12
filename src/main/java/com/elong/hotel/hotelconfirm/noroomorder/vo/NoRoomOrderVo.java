@@ -135,6 +135,11 @@ public class NoRoomOrderVo implements Serializable {
 	 */
 	private Integer selectEbookingStatus;
 
+	/**
+	 * 筛选条件
+	 */
+	private String selectOrderStatus;
+
 	public NoRoomOrderVo() {
 		super();
 	}
@@ -169,7 +174,8 @@ public class NoRoomOrderVo implements Serializable {
 	 * @param size 每页条数（酒店数）
 	 */
 	public NoRoomOrderVo(Date startTime, Date endTime, List<Integer> ivrStutases, Integer ebookingStatus, List<String> hotelIds,
-			Integer orderId, List<Integer> selectIvrStatuses, Integer checkImmedatelies, Integer selectEbookingStatus, int page, int size) {
+			Integer orderId, List<Integer> selectIvrStatuses, Integer checkImmedatelies, Integer selectEbookingStatus,
+			String selectOrderStatus, int page, int size) {
 		super();
 		this.arriveStartTime = startTime;
 		this.arriveEndTime = endTime;
@@ -180,6 +186,7 @@ public class NoRoomOrderVo implements Serializable {
 		this.selectIvrStatuses = selectIvrStatuses;
 		this.checkImmedatelies = checkImmedatelies;
 		this.selectEbookingStatus = selectEbookingStatus;
+		this.selectOrderStatus = selectOrderStatus;
 		this.page = page;
 		this.size = size;
 
@@ -375,6 +382,14 @@ public class NoRoomOrderVo implements Serializable {
 
 	public void setSelectEbookingStatus(Integer selectEbookingStatus) {
 		this.selectEbookingStatus = selectEbookingStatus;
+	}
+
+	public String getSelectOrderStatus() {
+		return selectOrderStatus;
+	}
+
+	public void setSelectOrderStatus(String selectOrderStatus) {
+		this.selectOrderStatus = selectOrderStatus;
 	}
 
 }
