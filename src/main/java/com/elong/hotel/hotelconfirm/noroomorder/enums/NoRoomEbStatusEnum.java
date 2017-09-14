@@ -9,7 +9,9 @@ public enum NoRoomEbStatusEnum {
 
 	DealFull(1, "Eb处理满房"),
 
-	DealNoFull(2, "Eb处理未满房");
+	DealNoFull(2, "Eb处理未满房"),
+
+    DealSuccess(3, "协调解决");
 
 	private int status;
 
