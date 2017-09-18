@@ -17,30 +17,12 @@ public class SwitchConfig {
 
 	private Integer misConfirmVisualizationEnable;
 
-	/**
-	 * 到店无房外呼次数
-	 */
-	private Integer noRoomIvrCallingCount;
-
-	/**
-	 * 到店无房外呼延迟时间（单位：分钟）
-	 */
-	private Integer noRoomIvrDelayTime;
-
-	/**
-	 * 到店无房外呼延迟次数
-	 */
-	private Integer noRoomIvrDelayCount;
-
 	public SwitchConfig() {
 		groupEhCacheEnable = 0;
 		rankEnCacheEnable = 0;
 		urgeVisualizationEnable = 0;
 		changePromiseTimeVisualizationEnable = 0;
 		misConfirmVisualizationEnable = 0;
-		noRoomIvrCallingCount = 0;
-		noRoomIvrDelayTime = 0;
-		noRoomIvrDelayCount = 0;
 	}
 
 	public Integer getGroupEhCacheEnable() {
@@ -87,29 +69,4 @@ public class SwitchConfig {
 	public void setUrgeVisualizationEnable(Integer urgeVisualizationEnable) {
 		this.urgeVisualizationEnable = urgeVisualizationEnable;
 	}
-
-	public Integer getNoRoomIvrCallingCount() {
-		return noRoomIvrCallingCount;
-	}
-
-	public void setNoRoomIvrCallingCount(Integer noRoomIvrCallingCount) {
-		this.noRoomIvrCallingCount = noRoomIvrCallingCount;
-	}
-
-	public Integer getNoRoomIvrDelayTime() {
-		return noRoomIvrDelayTime;
-	}
-
-	public void setNoRoomIvrDelayTime(Integer noRoomIvrDelayTime) {
-		this.noRoomIvrDelayTime = noRoomIvrDelayTime;
-	}
-
-	public Integer getNoRoomIvrDelayCount() {
-		return noRoomIvrDelayCount;
-	}
-
-	public void setNoRoomIvrDelayCount(Integer noRoomIvrDelayCount) {
-		this.noRoomIvrDelayCount = noRoomIvrDelayCount;
-	}
-
 }
