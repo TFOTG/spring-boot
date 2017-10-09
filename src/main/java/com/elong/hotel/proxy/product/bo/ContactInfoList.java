@@ -12,8 +12,9 @@ private boolean hotelIsVaild;
 
 private String hotelPhone;
 
-	private String hotelLobbyTel;
+private String hotelLobbyTel;
 
+private String roomContact;
 	public List<HotelContactList> getHotelContactList() {
 		return hotelContactList;
 	}
@@ -61,4 +62,13 @@ private String hotelPhone;
 	public void setHotelLobbyTel(String hotelLobbyTel) {
 		this.hotelLobbyTel = hotelLobbyTel;
 	}
+
+	public String getRoomContact() {
+		return roomContact;
+	}
+
+	public void setRoomContact(String roomContact) {
+		this.roomContact = roomContact;
+	}
+	
 }
