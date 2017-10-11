@@ -25,6 +25,8 @@ public class SearchResultBo implements Serializable {
 
 	private String supplierName;
 
+	private String supplier;
+
 	public Integer getConfirmType() {
 		return confirmType;
 	}
@@ -47,6 +49,14 @@ public class SearchResultBo implements Serializable {
 
 	public void setSupplierName(String supplierName) {
 		this.supplierName = supplierName;
+	}
+
+	public String getSupplier() {
+		return supplier;
+	}
+
+	public void setSupplier(String supplier) {
+		this.supplier = supplier;
 	}
 
 }
