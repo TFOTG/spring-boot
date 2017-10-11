@@ -167,6 +167,11 @@ public class ConfirmOrderConfig {
 	 */
 	private int noRoomIVRSecondDelayCount;
 
+	/**
+	 * 指标库：已审待处理量
+	 */
+	private String targetDataCollectGroupIDs;
+
 	public ConfirmOrderConfig() {
 		priority4HighMinute = 60;
 		priority4HighDistance = 3000;
@@ -188,6 +193,7 @@ public class ConfirmOrderConfig {
 		chargeReclaimPromise = 10;
 		urgeAddMins = 15;
 		ivrBeforeSort = 3 * 60;
+		targetDataCollectGroupIDs = "7,11";
 	}
 
 	public Integer getChargeReclaimPromise() {
@@ -492,6 +498,14 @@ public class ConfirmOrderConfig {
 
 	public void setNoRoomIVRSecondDelayCount(int noRoomIVRSecondDelayCount) {
 		this.noRoomIVRSecondDelayCount = noRoomIVRSecondDelayCount;
+	}
+
+	public String getTargetDataCollectGroupIDs() {
+		return targetDataCollectGroupIDs;
+	}
+
+	public void setTargetDataCollectGroupIDs(String targetDataCollectGroupIDs) {
+		this.targetDataCollectGroupIDs = targetDataCollectGroupIDs;
 	}
 
 }
