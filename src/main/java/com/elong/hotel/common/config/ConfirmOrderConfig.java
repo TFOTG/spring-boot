@@ -193,7 +193,7 @@ public class ConfirmOrderConfig {
 		chargeReclaimPromise = 10;
 		urgeAddMins = 15;
 		ivrBeforeSort = 3 * 60;
-		targetDataCollectGroupIDs = "7,11";
+		targetDataCollectGroupIDs = "1,2,3,6,10,11,12,13,14";
 	}
 
 	public Integer getChargeReclaimPromise() {
