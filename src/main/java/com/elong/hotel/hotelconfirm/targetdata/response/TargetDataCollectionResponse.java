@@ -1,10 +1,8 @@
 package com.elong.hotel.hotelconfirm.targetdata.response;
 
 import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.List;
 
-import com.elong.hotel.hotelconfirm.targetdata.bo.TargetDataValueBo;
+import com.elong.hotel.hotelconfirm.targetdata.bo.TargetDataBodyBo;
 
 /**
  * 指标：已审待处理量
@@ -29,17 +27,7 @@ public class TargetDataCollectionResponse implements Serializable {
 
 	private String serverIp;
 
-	private String collectTime;
-
-	private List<TargetDataValueBo> tagValues;
-
-	public void addTagValue(TargetDataValueBo bo) {
-		if (tagValues == null) {
-			tagValues = new ArrayList<>();
-		}
-
-		tagValues.add(bo);
-	}
+	private TargetDataBodyBo body;
 
 	public int getRetcode() {
 		return retcode;
@@ -65,20 +53,12 @@ public class TargetDataCollectionResponse implements Serializable {
 		this.serverIp = serverIp;
 	}
 
-	public String getCollectTime() {
-		return collectTime;
+	public TargetDataBodyBo getBody() {
+		return body;
 	}
 
-	public void setCollectTime(String collectTime) {
-		this.collectTime = collectTime;
-	}
-
-	public List<TargetDataValueBo> getTagValues() {
-		return tagValues;
-	}
-
-	public void setTagValues(List<TargetDataValueBo> tagValues) {
-		this.tagValues = tagValues;
+	public void setBody(TargetDataBodyBo body) {
+		this.body = body;
 	}
 
 }
