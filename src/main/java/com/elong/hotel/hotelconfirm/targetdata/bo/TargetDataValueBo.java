@@ -23,7 +23,7 @@ public class TargetDataValueBo implements Serializable {
 
 	private Map<String, String> tagMap;
 
-	private Integer[] values;
+	private Object[] values;
 
 	public TargetDataValueBo() {
 		super();
@@ -44,6 +44,17 @@ public class TargetDataValueBo implements Serializable {
 		this.values = values;
 	}
 
+	public TargetDataValueBo(String key, Double[] values, String type) {
+		tagMap = new HashMap<>();
+		if ("confirmSupplier".equalsIgnoreCase(type)) {
+			tagMap.put("confirmSupplier", key);
+		} else if ("confirmChannel".equalsIgnoreCase(type)) {
+			tagMap.put("confirmChannel", key);
+		}
+
+		this.values = values;
+	}
+
 	public Map<String, String> getTagMap() {
 		return tagMap;
 	}
@@ -52,11 +63,11 @@ public class TargetDataValueBo implements Serializable {
 		this.tagMap = tagMap;
 	}
 
-	public Integer[] getValues() {
+	public Object[] getValues() {
 		return values;
 	}
 
-	public void setValues(Integer[] values) {
+	public void setValues(Object[] values) {
 		this.values = values;
 	}
 
