@@ -27,6 +27,8 @@ public class SearchResultBo implements Serializable {
 
 	private String supplier;
 
+	private Double handledTime;
+
 	public Integer getConfirmType() {
 		return confirmType;
 	}
@@ -57,6 +59,14 @@ public class SearchResultBo implements Serializable {
 
 	public void setSupplier(String supplier) {
 		this.supplier = supplier;
+	}
+
+	public Double getHandledTime() {
+		return handledTime;
+	}
+
+	public void setHandledTime(Double handledTime) {
+		this.handledTime = handledTime;
 	}
 
 }
