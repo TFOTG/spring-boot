@@ -44,11 +44,13 @@ public class TargetDataValueBo implements Serializable {
 		this.values = values;
 	}
 
-	public TargetDataValueBo(String[] keys, Double[] values) {
+	public TargetDataValueBo(String key, Double[] values, String type) {
 		tagMap = new HashMap<>();
-
-		tagMap.put("confirmType", keys[1]);
-		tagMap.put("confirmSupplier", keys[0]);
+		if ("confirmSupplier".equalsIgnoreCase(type)) {
+			tagMap.put("confirmSupplier", key);
+		} else if ("confirmChannel".equalsIgnoreCase(type)) {
+			tagMap.put("confirmChannel", key);
+		}
 
 		this.values = values;
 	}
