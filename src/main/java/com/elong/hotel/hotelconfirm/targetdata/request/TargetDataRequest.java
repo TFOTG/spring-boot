@@ -2,6 +2,8 @@ package com.elong.hotel.hotelconfirm.targetdata.request;
 
 import java.io.Serializable;
 
+import com.elong.hotel.hotelconfirm.targetdata.bo.TargetDataParamBodyBo;
+
 /**
  * 
  * <p>
@@ -19,16 +21,25 @@ public class TargetDataRequest implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 
-	private String collectTime;
-
 	private String sourceCode;
 
-	public String getCollectTime() {
-		return collectTime;
+	private TargetDataParamBodyBo body;
+
+	public TargetDataRequest() {
+		super();
 	}
 
-	public void setCollectTime(String collectTime) {
-		this.collectTime = collectTime;
+	public TargetDataRequest(TargetDataParamBodyBo body, String sourceCode) {
+		this.body = body;
+		this.sourceCode = sourceCode;
+	}
+
+	public TargetDataParamBodyBo getBody() {
+		return body;
+	}
+
+	public void setBody(TargetDataParamBodyBo body) {
+		this.body = body;
 	}
 
 	public String getSourceCode() {
