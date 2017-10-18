@@ -168,6 +168,11 @@ public class ConfirmOrderConfig {
 	private int noRoomIVRSecondDelayCount;
 
 	/**
+	 * 放量确认人联系方式显示开关 0 显示非结构化  1显示结构化
+	 */
+	private int roomContactSwitch;
+	
+	/**
 	 * 指标库：已审待处理量
 	 */
 	private String targetDataCollectGroupIDs;
@@ -500,6 +505,13 @@ public class ConfirmOrderConfig {
 		this.noRoomIVRSecondDelayCount = noRoomIVRSecondDelayCount;
 	}
 
+	public int getRoomContactSwitch() {
+		return roomContactSwitch;
+	}
+
+	public void setRoomContactSwitch(int roomContactSwitch) {
+		this.roomContactSwitch = roomContactSwitch;
+	}
 	public String getTargetDataCollectGroupIDs() {
 		return targetDataCollectGroupIDs;
 	}
