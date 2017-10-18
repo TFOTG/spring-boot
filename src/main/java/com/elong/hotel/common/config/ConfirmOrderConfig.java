@@ -167,6 +167,11 @@ public class ConfirmOrderConfig {
 	 */
 	private int noRoomIVRSecondDelayCount;
 
+	/**
+	 * 放量确认人联系方式显示开关 0 显示非结构化  1显示结构化
+	 */
+	private int roomContactSwitch;
+	
 	public ConfirmOrderConfig() {
 		priority4HighMinute = 60;
 		priority4HighDistance = 3000;
@@ -492,6 +497,14 @@ public class ConfirmOrderConfig {
 
 	public void setNoRoomIVRSecondDelayCount(int noRoomIVRSecondDelayCount) {
 		this.noRoomIVRSecondDelayCount = noRoomIVRSecondDelayCount;
+	}
+
+	public int getRoomContactSwitch() {
+		return roomContactSwitch;
+	}
+
+	public void setRoomContactSwitch(int roomContactSwitch) {
+		this.roomContactSwitch = roomContactSwitch;
 	}
 
 }

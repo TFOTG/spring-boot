@@ -61,6 +61,8 @@ public class PendingHotelPo {
 	
 	private List<PendingConfirmOrderPo> orderlist;
 	
+	private int roomContactSwitch;
+	
 	public String getHotelname() {
 		return hotelname;
 	}
@@ -139,6 +141,14 @@ public class PendingHotelPo {
 
 	public void setShotelfax(String shotelfax) {
 		this.shotelfax = shotelfax;
+	}
+
+	public int getRoomContactSwitch() {
+		return roomContactSwitch;
+	}
+
+	public void setRoomContactSwitch(int roomContactSwitch) {
+		this.roomContactSwitch = roomContactSwitch;
 	}
 	
 }
