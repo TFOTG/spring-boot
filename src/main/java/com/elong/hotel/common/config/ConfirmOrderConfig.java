@@ -172,6 +172,11 @@ public class ConfirmOrderConfig {
 	 */
 	private int roomContactSwitch;
 	
+	/**
+	 * 指标库：已审待处理量
+	 */
+	private String targetDataCollectGroupIDs;
+
 	public ConfirmOrderConfig() {
 		priority4HighMinute = 60;
 		priority4HighDistance = 3000;
@@ -193,6 +198,7 @@ public class ConfirmOrderConfig {
 		chargeReclaimPromise = 10;
 		urgeAddMins = 15;
 		ivrBeforeSort = 3 * 60;
+		targetDataCollectGroupIDs = "1,2,3,6,10,11,12,13,14";
 	}
 
 	public Integer getChargeReclaimPromise() {
@@ -505,6 +511,13 @@ public class ConfirmOrderConfig {
 
 	public void setRoomContactSwitch(int roomContactSwitch) {
 		this.roomContactSwitch = roomContactSwitch;
+	}
+	public String getTargetDataCollectGroupIDs() {
+		return targetDataCollectGroupIDs;
+	}
+
+	public void setTargetDataCollectGroupIDs(String targetDataCollectGroupIDs) {
+		this.targetDataCollectGroupIDs = targetDataCollectGroupIDs;
 	}
 
 }
