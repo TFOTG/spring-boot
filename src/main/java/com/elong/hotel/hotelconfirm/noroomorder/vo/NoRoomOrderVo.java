@@ -164,23 +164,19 @@ public class NoRoomOrderVo implements Serializable {
 	 * 员工待处理页面查询请求参数
 	 * @param startTime 查询开始时间
 	 * @param endTime 查询结束时间
-	 * @param ivrStutases ivr状态集合
-	 * @param ebookingStatus EB状态
 	 * @param hotelIds 酒店ID集合
 	 * @param orderId 订单ID
-	 * @param ivrStatus ivr状态
+	 * @param selectIvrStatuses ivr状态
 	 * @param checkImmedatelies 是否到店
 	 * @param page 页码
 	 * @param size 每页条数（酒店数）
 	 */
-	public NoRoomOrderVo(Date startTime, Date endTime, List<Integer> ivrStutases, Integer ebookingStatus, List<String> hotelIds,
+	public NoRoomOrderVo(Date startTime, Date endTime, List<String> hotelIds,
 			Integer orderId, List<Integer> selectIvrStatuses, Integer checkImmedatelies, Integer selectEbookingStatus,
 			String selectOrderStatus, int page, int size) {
 		super();
 		this.arriveStartTime = startTime;
 		this.arriveEndTime = endTime;
-		this.ivrStatuses = ivrStutases;
-		this.ebookingStatus = ebookingStatus;
 		this.hotelIds = hotelIds;
 		this.orderId = orderId;
 		this.selectIvrStatuses = selectIvrStatuses;
