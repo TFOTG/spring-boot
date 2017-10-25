@@ -10,6 +10,7 @@ import com.elong.hotel.proxy.javaorder.consts.OrderFlagConst;
 import com.elong.hotel.proxy.javaorder.getorder.GetOrderStatusChangeTimeBo;
 import com.elong.hotel.proxy.javaorder.getorder.Order;
 
+import java.math.BigDecimal;
 import java.util.Date;
 
 /**
@@ -74,6 +75,11 @@ public class ConfirmOrderBo extends CompareEntityBase {
     private String delayReason;
     private Integer isChangeOrder;
 
+    /**
+     * 预测满房概率
+     */
+    private BigDecimal fullRoomRate;
+    
     public ConfirmOrderBo(){
 
     }
@@ -661,4 +667,13 @@ public class ConfirmOrderBo extends CompareEntityBase {
         }
 
     }
+
+	public BigDecimal getFullRoomRate() {
+		return fullRoomRate;
+	}
+
+	public void setFullRoomRate(BigDecimal fullRoomRate) {
+		this.fullRoomRate = fullRoomRate;
+	}
+    
 }
