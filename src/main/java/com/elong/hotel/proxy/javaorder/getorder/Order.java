@@ -157,6 +157,11 @@ public class Order {
 	private Integer cooperationType;
 
 	/**
+	 * 预测满房概率
+	 */
+	private BigDecimal fullRoomRate;
+	
+	/**
 	 *  酒店传真号码
 	 */
 	private String sHotelFax;
@@ -757,4 +762,13 @@ public class Order {
     public void setOrderActionList(List<OrderAction> orderActionList) {
         this.orderActionList = orderActionList;
     }
+
+	public BigDecimal getFullRoomRate() {
+		return fullRoomRate;
+	}
+
+	public void setFullRoomRate(BigDecimal fullRoomRate) {
+		this.fullRoomRate = fullRoomRate;
+	}
+    
 }
