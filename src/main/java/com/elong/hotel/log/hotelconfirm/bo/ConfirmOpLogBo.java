@@ -456,4 +456,43 @@ public class ConfirmOpLogBo {
 
         return confirmType;
     }
+
+    @Override public String toString() {
+        return "ConfirmOpLogBo{" +
+                "logDBName='" + logDBName + '\'' +
+                ", startTime='" + startTime + '\'' +
+                ", endTime='" + endTime + '\'' +
+                ", reserNo=" + reserNo +
+                ", hotelId='" + hotelId + '\'' +
+                ", hotelName='" + hotelName + '\'' +
+                ", supplierName='" + supplierName + '\'' +
+                ", cardNo=" + cardNo +
+                ", arriveDate=" + arriveDate +
+                ", opType='" + opType + '\'' +
+                ", opDate=" + opDate +
+                ", department='" + department + '\'' +
+                ", groupId=" + groupId +
+                ", rankId=" + rankId +
+                ", priority=" + priority +
+                ", ebkStrategyId=" + ebkStrategyId +
+                ", targetReserStatus='" + targetReserStatus + '\'' +
+                ", sourceReserStatus='" + sourceReserStatus + '\'' +
+                ", confirmType=" + confirmType +
+                ", shouldConfirmType=" + shouldConfirmType +
+                ", staffName='" + staffName + '\'' +
+                ", operator='" + operator + '\'' +
+                ", ivrStartTime=" + ivrStartTime +
+                ", enterTime=" + enterTime +
+                ", respiteTime=" + respiteTime +
+                ", sortTime=" + sortTime +
+                ", defaultSortTime=" + defaultSortTime +
+                ", distributeTime=" + distributeTime +
+                ", nextServiceTime=" + nextServiceTime +
+                ", promiseTime=" + promiseTime +
+                ", firstRefusedTime=" + firstRefusedTime +
+                ", bookingTime=" + bookingTime +
+                ", amendTime=" + amendTime +
+                ", fullRoomRates='" + fullRoomRates + '\'' +
+                '}';
+    }
 }
