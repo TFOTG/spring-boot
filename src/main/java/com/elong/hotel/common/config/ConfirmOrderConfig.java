@@ -110,6 +110,8 @@ public class ConfirmOrderConfig {
 	 */
 	private Integer firstRefuseTime;
 
+
+	private Integer refuseGroupId;
 	/**
 	 * 初拒供应商Ids
 	 */
@@ -199,6 +201,7 @@ public class ConfirmOrderConfig {
 		urgeAddMins = 15;
 		ivrBeforeSort = 3 * 60;
 		targetDataCollectGroupIDs = "1,2,3,6,10,11,12,13,14";
+
 	}
 
 	public Integer getChargeReclaimPromise() {
@@ -520,4 +523,11 @@ public class ConfirmOrderConfig {
 		this.targetDataCollectGroupIDs = targetDataCollectGroupIDs;
 	}
 
+	public Integer getRefuseGroupId() {
+		return refuseGroupId;
+	}
+
+	public void setRefuseGroupId(Integer refuseGroupId) {
+		this.refuseGroupId = refuseGroupId;
+	}
 }
