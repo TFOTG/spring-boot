@@ -88,6 +88,11 @@ public class DBDataConnectionBo implements Serializable{
 	 * 保留多少天前的数据
 	 */
 	private Integer dayBefore;
+	
+	/**
+	 * 索引检索字段 默认null  使用_timestamp
+	 */
+	private String indexfield;
 	public DBDataConnectionBo() {
 		this.driverName = "org.logicalcobwebs.proxool.ProxoolDriver";
 	}
@@ -206,6 +211,14 @@ public class DBDataConnectionBo implements Serializable{
 
 	public void setDayBefore(Integer dayBefore) {
 		this.dayBefore = dayBefore;
+	}
+
+	public String getIndexfield() {
+		return indexfield;
+	}
+
+	public void setIndexfield(String indexfield) {
+		this.indexfield = indexfield;
 	}
 	
 }
