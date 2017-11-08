@@ -3,6 +3,7 @@ package com.elong.hotel.hotelconfirm.confirmorderactionlog.bo;
 import com.alibaba.fastjson.annotation.JSONField;
 
 import java.sql.Date;
+import java.util.List;
 
 /**
  * Created by liujunjie on 2017/7/20.
@@ -26,6 +27,16 @@ public class ConfirmOrderActionLogBo {
     private Integer logType;
 
     private String targetStatus;
+
+    private List<String> logStatusList;
+
+    public List<String> getLogStatusList() {
+        return logStatusList;
+    }
+
+    public void setLogStatusList(List<String> logStatusList) {
+        this.logStatusList = logStatusList;
+    }
 
     private Date targetTime;
 
