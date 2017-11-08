@@ -51,9 +51,20 @@ public class ChargeConfirmOrderBo {
     @JSONField(format = "yyyy-MM-dd HH:mm:ss")
     private Date sortTime;
 
+    //订单优先级别
+    private int priority;
+
     //传真是否回传
     private int isFaxReturn;
 
+
+    public int getPriority() {
+        return priority;
+    }
+
+    public void setPriority(int priority) {
+        this.priority = priority;
+    }
 
     public int getIsFaxReturn() {
         return isFaxReturn;
