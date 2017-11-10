@@ -1,8 +1,8 @@
 package com.elong.hotel.hotelconfirm.confirmorder.po;
 
-import com.elong.hotel.hotelconfirm.confirmorder.bo.ConfirmOrderBo;
-
 import java.util.Date;
+
+import com.elong.hotel.hotelconfirm.confirmorder.bo.ConfirmOrderBo;
 
 /**
  * Created by yangboyu on 17/4/6.
@@ -58,6 +58,8 @@ public class ConfirmOrderPo {
 
     private Long orderTimestampLong;
 
+    private String fullRoomRates;
+    
     public ConfirmOrderPo() {
     }
 
@@ -459,4 +461,13 @@ public class ConfirmOrderPo {
     public void setIsChangeOrder(Integer isChangeOrder) {
         this.isChangeOrder = isChangeOrder;
     }
+
+	public String getFullRoomRates() {
+		return fullRoomRates;
+	}
+
+	public void setFullRoomRates(String fullRoomRates) {
+		this.fullRoomRates = fullRoomRates;
+	}
+    
 }
