@@ -7,6 +7,10 @@ package com.elong.hotel.common.config;
 
 import java.math.BigDecimal;
 
+import javax.validation.constraints.NotNull;
+
+import org.hibernate.validator.constraints.Range;
+
 
 /**
  * 预测满房模型接入配置
@@ -34,17 +38,21 @@ public class FullRoomRateConfig {
 	/**
 	 * 最小百分比
 	 */
+	@NotNull(message="最小满房率不能为空")
 	private BigDecimal minrate;
 	
 	/**
 	 * 最大百分比
 	 */
+	@NotNull(message="最大满房率不能为空")
 	private BigDecimal maxrate;
 	
 	/**
 	 * 是否启用 0 废弃  1启用
 	 */
-	private int enable;
+	@NotNull(message="开关不能为空")
+	@Range(min=0,max=1,message="开关参数不合法")
+	private Integer enable;
 
 	public String getOperatorName() {
 		return operatorName;
@@ -86,11 +94,11 @@ public class FullRoomRateConfig {
 		this.operatorIp = operatorIp;
 	}
 
-	public int getEnable() {
+	public Integer getEnable() {
 		return enable;
 	}
 
-	public void setEnable(int enable) {
+	public void setEnable(Integer enable) {
 		this.enable = enable;
 	}
 

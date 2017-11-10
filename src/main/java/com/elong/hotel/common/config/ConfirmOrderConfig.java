@@ -179,6 +179,8 @@ public class ConfirmOrderConfig {
 	 */
 	private String targetDataCollectGroupIDs;
 
+    private String actionLogReserStatus;
+
 	public ConfirmOrderConfig() {
 		priority4HighMinute = 60;
 		priority4HighDistance = 3000;
@@ -201,6 +203,7 @@ public class ConfirmOrderConfig {
 		urgeAddMins = 15;
 		ivrBeforeSort = 3 * 60;
 		targetDataCollectGroupIDs = "1,2,3,6,10,11,12,13,14";
+        actionLogReserStatus = "O1,O2,O6,G1,G2,G3";
 
 	}
 
@@ -215,7 +218,15 @@ public class ConfirmOrderConfig {
 		firstRefuseSupplierIds = "";
 	}
 
-	public String getManagerName() {
+    public String getActionLogReserStatus() {
+        return actionLogReserStatus;
+    }
+
+    public void setActionLogReserStatus(String actionLogReserStatus) {
+        this.actionLogReserStatus = actionLogReserStatus;
+    }
+
+    public String getManagerName() {
 		return managerName;
 	}
 
