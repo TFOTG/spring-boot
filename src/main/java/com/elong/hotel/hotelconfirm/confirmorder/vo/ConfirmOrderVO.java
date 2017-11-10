@@ -200,7 +200,7 @@ public class ConfirmOrderVO  extends PaginationParameter {
 	public ConfirmOrderVO(List<ConfirmOrderPo> confirmOrders,GroupGettingBo bo,ConfirmOrderConfig config,int size) {
 		this.sortTimeL = 0;
 		this.respitetimeL = 0;
-
+		this.groupIds = Arrays.asList(bo.getGroupIds().split(","));
 
 		this.setStratItem(1);
 		this.setSelectColumns("id, reserno, reserstatus, cardno, `mod`, arrivedate, leavedate, timeearly, timelate, hotelid,\n"
