@@ -1,5 +1,7 @@
 package com.elong.hotel.hotelconfirm.confirmorder.bo;
 
+import java.util.Date;
+
 import com.elong.hotel.common.bo.OperatorInfoBo;
 import com.elong.hotel.common.enums.ElongOrderStatusEnum;
 import com.elong.hotel.common.helper.DateHelper;
@@ -9,9 +11,6 @@ import com.elong.hotel.hotelconfirm.groupfilter.bo.CompareEntityBase;
 import com.elong.hotel.proxy.javaorder.consts.OrderFlagConst;
 import com.elong.hotel.proxy.javaorder.getorder.GetOrderStatusChangeTimeBo;
 import com.elong.hotel.proxy.javaorder.getorder.Order;
-
-import java.math.BigDecimal;
-import java.util.Date;
 
 /**
  * Created by yangboyu on 17/4/4.
@@ -78,7 +77,7 @@ public class ConfirmOrderBo extends CompareEntityBase {
     /**
      * 预测满房概率
      */
-    private BigDecimal fullRoomRate;
+    private String fullRoomRate;
     
     public ConfirmOrderBo(){
 
@@ -668,11 +667,11 @@ public class ConfirmOrderBo extends CompareEntityBase {
 
     }
 
-	public BigDecimal getFullRoomRate() {
+	public String getFullRoomRate() {
 		return fullRoomRate;
 	}
 
-	public void setFullRoomRate(BigDecimal fullRoomRate) {
+	public void setFullRoomRate(String fullRoomRate) {
 		this.fullRoomRate = fullRoomRate;
 	}
     
