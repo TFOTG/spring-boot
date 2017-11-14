@@ -3,7 +3,7 @@
     <groupId>com.elong.hotel</groupId>
     <artifactId>confirm-entity</artifactId>
     <packaging>jar</packaging>
-    <version>1.0.1</version>
+    <version>1.0.1-SNAPSHOT</version>
     <name>confirm-entity</name>
     <url>http://maven.apache.org</url>
     <!-- scm git trunk -->
@@ -11,7 +11,7 @@
         <connection>scm:git:git@code.corp.elong.com:hotel_mis/confirm-entity.git</connection>
         <developerConnection>scm:git:git@code.corp.elong.com:hotel_mis/confirm-entity.git</developerConnection>
         <url>git@code.corp.elong.com:hotel_mis/confirm-entity.git</url>
-      <tag>confirm-entity_1.0.1</tag>
+      <tag>confirm-entity_1.0.0</tag>
   </scm>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
