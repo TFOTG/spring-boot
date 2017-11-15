@@ -225,9 +225,9 @@ public class ConfirmOrderVO  extends PaginationParameter {
 		}
 
 		if(bo.getGettingtype() == GettingTypeEnum.Hotel.getKey()) {
-			this.setOrderField(String.format("FIELD(`hotelid` %s),priority asc,isfaxreturn desc,urge asc,isebrefuse desc,sorttime ",idSB.toString()));
+			this.setOrderField(String.format("FIELD(`hotelid` %s),priority asc,isfaxreturn desc,urge desc,isebrefuse desc,sorttime ",idSB.toString()));
 		}else if (bo.getGettingtype() == GettingTypeEnum.Supplier.getKey()) {
-			this.setOrderField(String.format("FIELD(`supplierid` %s),priority asc,isfaxreturn desc,urge asc,isebrefuse desc,sorttime ",idSB.toString()));
+			this.setOrderField(String.format("FIELD(`supplierid` %s),priority asc,isfaxreturn desc,urge desc,isebrefuse desc,sorttime ",idSB.toString()));
 		}
 
 
@@ -249,7 +249,7 @@ public class ConfirmOrderVO  extends PaginationParameter {
 		this.respitetimeL = 0;
 		this.staffName = "";
 
-		this.setOrderField("min(priority) asc,max(isfaxreturn) desc,max(urge) asc,max(isebrefuse) desc,min(sorttime) ");
+		this.setOrderField("min(priority) asc,max(isfaxreturn) desc,max(urge) desc,max(isebrefuse) desc,min(sorttime) ");
 		this.setOrderFieldType("asc");
 
 		this.setStratItem(1);
