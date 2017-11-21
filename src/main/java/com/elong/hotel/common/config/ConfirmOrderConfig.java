@@ -181,6 +181,11 @@ public class ConfirmOrderConfig {
 
     private String actionLogReserStatus;
 
+	/**
+	 * 待处理页 暂缓库分页参数
+	 */
+	private Integer pendOrderPageSize;
+
 	public ConfirmOrderConfig() {
 		priority4HighMinute = 60;
 		priority4HighDistance = 3000;
@@ -204,6 +209,7 @@ public class ConfirmOrderConfig {
 		ivrBeforeSort = 3 * 60;
 		targetDataCollectGroupIDs = "1,2,3,6,10,11,12,13,14";
         actionLogReserStatus = "O1,O2,O6,G1,G2,G3";
+		pendOrderPageSize = 30;
 
 	}
 
@@ -540,5 +546,13 @@ public class ConfirmOrderConfig {
 
 	public void setRefuseGroupId(Integer refuseGroupId) {
 		this.refuseGroupId = refuseGroupId;
+	}
+
+	public Integer getPendOrderPageSize() {
+		return pendOrderPageSize;
+	}
+
+	public void setPendOrderPageSize(Integer pendOrderPageSize) {
+		this.pendOrderPageSize = pendOrderPageSize;
 	}
 }
