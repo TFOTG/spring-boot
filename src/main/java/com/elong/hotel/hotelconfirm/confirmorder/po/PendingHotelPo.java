@@ -58,6 +58,11 @@ public class PendingHotelPo {
 	 * 酒店传真号码
 	 */
 	private String shotelfax;
+
+	/**
+	 * 供应商订单号
+	 */
+	private String cooperationOrderId;
 	
 	private List<PendingConfirmOrderPo> orderlist;
 	
@@ -150,5 +155,12 @@ public class PendingHotelPo {
 	public void setRoomContactSwitch(int roomContactSwitch) {
 		this.roomContactSwitch = roomContactSwitch;
 	}
-	
+
+	public String getCooperationOrderId() {
+		return cooperationOrderId;
+	}
+
+	public void setCooperationOrderId(String cooperationOrderId) {
+		this.cooperationOrderId = cooperationOrderId;
+	}
 }
