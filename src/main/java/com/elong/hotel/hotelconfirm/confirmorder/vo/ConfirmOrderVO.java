@@ -32,9 +32,13 @@ public class ConfirmOrderVO  extends PaginationParameter {
 
 	private List<String> hotelIds;
 
+	private List<String> withOutHotelIds;
+
 	private String supplierId;
 
 	private List<String> supplierIds;
+
+	private List<String> withOutSupplierIds;
 
 	private String bussinessGuid;
 
@@ -197,7 +201,7 @@ public class ConfirmOrderVO  extends PaginationParameter {
 	public ConfirmOrderVO() {
 	}
 
-	public ConfirmOrderVO(List<ConfirmOrderPo> confirmOrders,GroupGettingBo bo,ConfirmOrderConfig config,int size) {
+	public ConfirmOrderVO(List<ConfirmOrderPo> confirmOrders,GroupGettingBo bo,ConfirmOrderConfig config,int size,List<String> sid) {
 		this.sortTimeL = 0;
 		this.respitetimeL = 0;
 		this.groupIds = Arrays.asList(bo.getGroupIds().split(","));
@@ -213,6 +217,7 @@ public class ConfirmOrderVO  extends PaginationParameter {
 
 		StringBuilder idSB = new StringBuilder();
 		List<String> ids = new ArrayList<>();
+		ids.addAll(sid);
 		for(ConfirmOrderPo po:confirmOrders) {
 			if(bo.getGettingtype() == GettingTypeEnum.Hotel.getKey()) {
 				ids.add(po.getHotelId());
@@ -224,13 +229,17 @@ public class ConfirmOrderVO  extends PaginationParameter {
 			}
 		}
 
-		if(bo.getGettingtype() == GettingTypeEnum.Hotel.getKey()) {
-			this.setOrderField(String.format("FIELD(`hotelid` %s),priority asc,isfaxreturn desc,urge asc,isebrefuse desc,sorttime ",idSB.toString()));
-		}else if (bo.getGettingtype() == GettingTypeEnum.Supplier.getKey()) {
-			this.setOrderField(String.format("FIELD(`supplierid` %s),priority asc,isfaxreturn desc,urge asc,isebrefuse desc,sorttime ",idSB.toString()));
+		for(String s : sid) {
+			idSB.append(",'").append(s).append("'");
 		}
 
-
+		if(bo.getGettingtype() == GettingTypeEnum.Hotel.getKey()) {
+//			this.setOrderField(String.format("FIELD(`hotelid` %s),priority asc,isfaxreturn desc,urge desc,isebrefuse desc,sorttime ",idSB.toString()));
+			this.setOrderField(" priority asc,isfaxreturn desc,urge desc,isebrefuse desc,sorttime ");
+		}else if (bo.getGettingtype() == GettingTypeEnum.Supplier.getKey()) {
+//			this.setOrderField(String.format("FIELD(`supplierid` %s),priority asc,isfaxreturn desc,urge desc,isebrefuse desc,sorttime ",idSB.toString()));
+			this.setOrderField(" priority asc,isfaxreturn desc,urge desc,isebrefuse desc,sorttime ");
+		}
 
 		this.setOrderFieldType("asc");
 
@@ -243,24 +252,28 @@ public class ConfirmOrderVO  extends PaginationParameter {
 		}
 	}
 
-	public ConfirmOrderVO(GroupGettingBo bo,ConfirmOrderConfig config) {
+	public ConfirmOrderVO(GroupGettingBo bo,ConfirmOrderConfig config,List<String> sid) {
 		this.groupIds = Arrays.asList(bo.getGroupIds().split(","));
 		this.sortTimeL = 0;
 		this.respitetimeL = 0;
 		this.staffName = "";
 
-		this.setOrderField("min(priority) asc,max(isfaxreturn) desc,max(urge) asc,max(isebrefuse) desc,min(sorttime) ");
+		this.setOrderField("min(priority) asc,max(isfaxreturn) desc,max(urge) desc,max(isebrefuse) desc,min(sorttime) ");
+
 		this.setOrderFieldType("asc");
 
 		this.setStratItem(1);
+		int size = sid == null ? 0 : sid.size();
 		if(bo.getGettingtype() == GettingTypeEnum.Hotel.getKey()) {
 			this.setGroupby("hotelid");
 			this.setSelectColumns("hotelid");
-			this.setPageSize(config.getHotelSize());
+			this.setWithOutHotelIds( (sid == null || sid.size() == 0)?null:sid );
+			this.setPageSize((config.getHotelSize()-size) > 0 ?(config.getHotelSize()-size): 0);
 		}else if (bo.getGettingtype() == GettingTypeEnum.Supplier.getKey()) {
 			this.setGroupby("supplierid");
 			this.setSelectColumns("supplierid");
-			this.setPageSize(config.getSupplierSize());
+			this.setWithOutSupplierIds( (sid == null || sid.size() == 0)?null:sid );
+			this.setPageSize((config.getSupplierSize()-size) > 0 ? (config.getSupplierSize()-size) : 0);
 		}
 	}
 
@@ -308,5 +321,21 @@ public class ConfirmOrderVO  extends PaginationParameter {
 
 	public void setMod(Integer mod) {
 		this.mod = mod;
+	}
+
+	public List<String> getWithOutHotelIds() {
+		return withOutHotelIds;
+	}
+
+	public void setWithOutHotelIds(List<String> withOutHotelIds) {
+		this.withOutHotelIds = withOutHotelIds;
+	}
+
+	public List<String> getWithOutSupplierIds() {
+		return withOutSupplierIds;
+	}
+
+	public void setWithOutSupplierIds(List<String> withOutSupplierIds) {
+		this.withOutSupplierIds = withOutSupplierIds;
 	}
 }

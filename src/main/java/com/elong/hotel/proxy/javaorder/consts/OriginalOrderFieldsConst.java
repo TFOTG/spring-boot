@@ -31,7 +31,7 @@ public interface OriginalOrderFieldsConst {
 	/**
 	 * 待处理／暂缓
 	 */
-	String FIELDS_FOR_PENDING = "hotelId,cooperationType,additionalStatus,confirmNo,roomTypeName,roomCount,payment,guestName,roomNightBreakfastCount,notesToHotel,notesToGuest,notesToElong,sumPrice,sumCost,cardNo,gradeId,contactPhone,contactMobile,createName,orderKeyValues,createTime,currencyCode,roomNo,roomNightInventoryType,ratePlanId,hotelfax,roomNightRealCost,roomNightRealSalePrice,status,roomNightStayDate,mHotelId,roomTypeId,checkInDate,checkOutDate";
+	String FIELDS_FOR_PENDING = "hotelId,cooperationType,additionalStatus,confirmNo,roomTypeName,roomCount,payment,guestName,roomNightBreakfastCount,notesToHotel,notesToGuest,notesToElong,sumPrice,sumCost,cardNo,gradeId,contactPhone,contactMobile,createName,orderKeyValues,createTime,currencyCode,roomNo,roomNightInventoryType,ratePlanId,hotelfax,roomNightRealCost,roomNightRealSalePrice,status,roomNightStayDate,mHotelId,roomTypeId,checkInDate,checkOutDate,cooperationOrderId,proxy";
 
 	/**
 	 * 联单，重单

@@ -165,6 +165,11 @@ public class Order {
 	 *  酒店传真号码
 	 */
 	private String sHotelFax;
+
+	/**
+	 * 供应商订单号
+	 */
+	private String cooperationOrderId;
 	
 	public String getmRoomTypeId() {
 		return mRoomTypeId;
@@ -770,5 +775,12 @@ public class Order {
 	public void setFullRoomRate(BigDecimal fullRoomRate) {
 		this.fullRoomRate = fullRoomRate;
 	}
-    
+
+	public String getCooperationOrderId() {
+		return cooperationOrderId;
+	}
+
+	public void setCooperationOrderId(String cooperationOrderId) {
+		this.cooperationOrderId = cooperationOrderId;
+	}
 }
