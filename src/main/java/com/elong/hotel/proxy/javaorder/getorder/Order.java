@@ -159,12 +159,17 @@ public class Order {
 	/**
 	 * 预测满房概率
 	 */
-	private BigDecimal fullRoomRate;
+	private String fullRoomRate;
 	
 	/**
 	 *  酒店传真号码
 	 */
 	private String sHotelFax;
+
+	/**
+	 * 供应商订单号
+	 */
+	private String cooperationOrderId;
 	
 	public String getmRoomTypeId() {
 		return mRoomTypeId;
@@ -763,12 +768,19 @@ public class Order {
         this.orderActionList = orderActionList;
     }
 
-	public BigDecimal getFullRoomRate() {
+	public String getFullRoomRate() {
 		return fullRoomRate;
 	}
 
-	public void setFullRoomRate(BigDecimal fullRoomRate) {
+	public void setFullRoomRate(String fullRoomRate) {
 		this.fullRoomRate = fullRoomRate;
 	}
-    
+
+	public String getCooperationOrderId() {
+		return cooperationOrderId;
+	}
+
+	public void setCooperationOrderId(String cooperationOrderId) {
+		this.cooperationOrderId = cooperationOrderId;
+	}
 }
