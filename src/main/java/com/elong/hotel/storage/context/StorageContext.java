@@ -6,6 +6,7 @@ import com.elong.hotel.proxy.javaorder.getorder.GetOrderStatusChangeTimeBo;
 import com.elong.hotel.proxy.javaorder.getorder.Order;
 import com.elong.hotel.storage.bo.OrderConsumerInfoBo;
 import com.elong.hotel.storage.enums.StorageTypeEnum;
+import com.elong.hotel.storage.request.OrderStatusChangeRequest;
 
 import java.io.Serializable;
 import java.util.Date;
@@ -41,6 +42,8 @@ public class StorageContext implements Serializable{
 	private ConfirmOrderPo confirmOrderPo;
 
 	private ServerRunningDomainEnum runningDomainEnum;
+
+	private OrderStatusChangeRequest request;
 
 	public StorageTypeEnum getFromEnum() {
 		return fromEnum;
@@ -120,5 +123,13 @@ public class StorageContext implements Serializable{
 
 	public void setOrderStatusChange(GetOrderStatusChangeTimeBo orderStatusChange) {
 		this.orderStatusChange = orderStatusChange;
+	}
+
+	public OrderStatusChangeRequest getRequest() {
+		return request;
+	}
+
+	public void setRequest(OrderStatusChangeRequest request) {
+		this.request = request;
 	}
 }
