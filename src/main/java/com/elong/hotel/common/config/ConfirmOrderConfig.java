@@ -190,6 +190,8 @@ public class ConfirmOrderConfig {
 	 */
 	private Integer pendOrderPageSize;
 
+    private String opLogReserStatus;
+
 	public ConfirmOrderConfig() {
 		priority4HighMinute = 60;
 		priority4HighDistance = 3000;
