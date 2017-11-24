@@ -129,6 +129,8 @@ public class ConfirmOpLogBo {
         this.firstRefusedTime = confirmOrderBo.getFirstRefusedTime();
         this.bookingTime = confirmOrderBo.getBookingTime();
         this.amendTime = confirmOrderBo.getAmendTime();
+        FullRoomRateConfig fullRoomRateConfig = ConfigurationManager.getHotSwitchConfig("FullRoomRateConfig", FullRoomRateConfig.class);
+        this.fullRoomRates = confirmOrderBo.getFullRoomRate() + "," + fullRoomRateConfig.getMinrate() + "," + fullRoomRateConfig.getMaxrate() + "," + fullRoomRateConfig.getEnable();
     }
 
     public ConfirmOpLogBo(ConfirmOrderPo po,DepartmentEnum departmentEnum, ConfirmOpType confirmOpType, String operator) {
