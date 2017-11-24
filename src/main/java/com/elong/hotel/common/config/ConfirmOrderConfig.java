@@ -560,7 +560,7 @@ public class ConfirmOrderConfig {
 	public void setChangeMinutes(int changeMinutes) {
 		this.changeMinutes = changeMinutes;
 	}
-	
+
 	public Integer getPendOrderPageSize() {
 		return pendOrderPageSize;
 	}
