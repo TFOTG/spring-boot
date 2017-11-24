@@ -145,7 +145,7 @@ public class ConfirmOrderBo extends CompareEntityBase {
             this.defaultSortTime = confirmOrder.getDefaultSortTime();
             this.firstRefusedTime = confirmOrder.getFirstRefusedTime();
             this.orderTimestamp = new Date(confirmOrder.getOrderTimestampLong());
-
+            this.fullRoomRate = order.getFullRoomRate();
         } else if (order != null && confirmOrder == null) {   // 初始化 "目标数据", 此时订单还未入已审库
             if(orderStatusChange!=null){
                 this.amendTime=orderStatusChange.getOperatorTime();
@@ -181,7 +181,7 @@ public class ConfirmOrderBo extends CompareEntityBase {
             this.staffName = "";
             this.orderTimestamp = order.getOrderTimestamp();
             this.enterTime = operator.getOperatorTime();
-
+            this.fullRoomRate = order.getFullRoomRate();
         } else if (order == null && confirmOrder != null) {// 初始化"在库数据"
             this.reserNo = confirmOrder.getReserNo();
             this.reserStatus = confirmOrder.getReserStatus();
@@ -225,6 +225,7 @@ public class ConfirmOrderBo extends CompareEntityBase {
             this.defaultSortTime = confirmOrder.getDefaultSortTime();
             this.firstRefusedTime = confirmOrder.getFirstRefusedTime();
             this.orderTimestamp = new Date(confirmOrder.getOrderTimestampLong());
+            this.fullRoomRate = confirmOrder.getFullRoomRates();
         }
     }
 
