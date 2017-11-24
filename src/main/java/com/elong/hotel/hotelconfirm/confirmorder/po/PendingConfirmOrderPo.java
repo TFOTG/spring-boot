@@ -188,7 +188,16 @@ public class PendingConfirmOrderPo {
 	private Date checkInDate;
 	private Date checkOutDate;
 	private String ratePlanId;
-	
+	/**
+	 * 供应商订单号
+	 */
+	private String cooperationOrderId;
+
+	/**
+	 * 代理id
+	 */
+	private String proxy;
+
 	public PendingOrderIconPo getPendingOrderIconPo() {
 		return pendingOrderIconPo;
 	}
@@ -494,4 +503,19 @@ public class PendingConfirmOrderPo {
 		this.roomTypeId = roomTypeId;
 	}
 
+	public String getCooperationOrderId() {
+		return cooperationOrderId;
+	}
+
+	public void setCooperationOrderId(String cooperationOrderId) {
+		this.cooperationOrderId = cooperationOrderId;
+	}
+
+	public String getProxy() {
+		return proxy;
+	}
+
+	public void setProxy(String proxy) {
+		this.proxy = proxy;
+	}
 }

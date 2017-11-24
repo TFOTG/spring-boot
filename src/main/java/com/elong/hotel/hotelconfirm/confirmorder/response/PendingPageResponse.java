@@ -38,6 +38,10 @@ public class PendingPageResponse {
 	 */
 	private int  dclCount;
 
+	/**
+	 * 待处理页分页配置
+	 */
+	private int pendPageSize ;
 	public List<PendingHotelPo> getRslist() {
 		return rslist;
 	}
@@ -77,5 +81,12 @@ public class PendingPageResponse {
 	public void setDclCount(int dclCount) {
 		this.dclCount = dclCount;
 	}
-	
+
+	public int getPendPageSize() {
+		return pendPageSize;
+	}
+
+	public void setPendPageSize(int pendPageSize) {
+		this.pendPageSize = pendPageSize;
+	}
 }

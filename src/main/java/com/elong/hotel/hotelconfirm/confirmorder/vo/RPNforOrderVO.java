@@ -41,7 +41,12 @@ public class RPNforOrderVO {
 	private Integer minutes;
 
 	private String timepoint;
-	
+
+	/**
+	 * 代理id
+	 */
+	private String proxy;
+
 	public String getNotesToElong() {
 		return notesToElong;
 	}
@@ -120,5 +125,13 @@ public class RPNforOrderVO {
 
 	public void setMsgId(Integer msgId) {
 		this.msgId = msgId;
+	}
+
+	public String getProxy() {
+		return proxy;
+	}
+
+	public void setProxy(String proxy) {
+		this.proxy = proxy;
 	}
 }

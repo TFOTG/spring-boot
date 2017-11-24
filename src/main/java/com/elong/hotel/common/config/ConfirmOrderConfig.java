@@ -181,6 +181,11 @@ public class ConfirmOrderConfig {
 
     private String actionLogReserStatus;
 
+	/**
+	 * 待处理页 暂缓库分页参数
+	 */
+	private Integer pendOrderPageSize;
+
     private String opLogReserStatus;
 
 	public ConfirmOrderConfig() {
@@ -206,7 +211,6 @@ public class ConfirmOrderConfig {
 		ivrBeforeSort = 3 * 60;
 		targetDataCollectGroupIDs = "1,2,3,6,10,11,12,13,14";
         actionLogReserStatus = "O1,O2,O6,G1,G2,G3";
-        opLogReserStatus = "O,U,G,O1,O2,O3,O4,O5,O6,U1,U2,U3,U4,U5,U6,U7,U8,U9,G1,G2,G3";
 
 	}
 
@@ -214,15 +218,7 @@ public class ConfirmOrderConfig {
 		return chargeReclaimPromise;
 	}
 
-    public String getOpLogReserStatus() {
-        return opLogReserStatus;
-    }
-
-    public void setOpLogReserStatus(String opLogReserStatus) {
-        this.opLogReserStatus = opLogReserStatus;
-    }
-
-    public void setChargeReclaimPromise(Integer chargeReclaimPromise) {
+	public void setChargeReclaimPromise(Integer chargeReclaimPromise) {
 		this.chargeReclaimPromise = chargeReclaimPromise;
 		urgeAddMins = 15;
 		firstRefuseTime = 10;
