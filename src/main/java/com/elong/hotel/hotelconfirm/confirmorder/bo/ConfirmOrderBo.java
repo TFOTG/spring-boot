@@ -1,9 +1,9 @@
 package com.elong.hotel.hotelconfirm.confirmorder.bo;
 
-import java.util.Date;
-
 import com.elong.hotel.common.bo.OperatorInfoBo;
+import com.elong.hotel.common.config.ConfirmOrderConfig;
 import com.elong.hotel.common.enums.ElongOrderStatusEnum;
+import com.elong.hotel.common.helper.ConfigurationManager;
 import com.elong.hotel.common.helper.DateHelper;
 import com.elong.hotel.hotelconfirm.confirmorder.enums.ConfirmType;
 import com.elong.hotel.hotelconfirm.confirmorder.po.ConfirmOrderPo;
@@ -11,6 +11,8 @@ import com.elong.hotel.hotelconfirm.groupfilter.bo.CompareEntityBase;
 import com.elong.hotel.proxy.javaorder.consts.OrderFlagConst;
 import com.elong.hotel.proxy.javaorder.getorder.GetOrderStatusChangeTimeBo;
 import com.elong.hotel.proxy.javaorder.getorder.Order;
+
+import java.util.Date;
 
 /**
  * Created by yangboyu on 17/4/4.
@@ -78,6 +80,8 @@ public class ConfirmOrderBo extends CompareEntityBase {
      * 预测满房概率
      */
     private String fullRoomRate;
+
+    private Boolean isStorageOutAndIn = false;
     
     public ConfirmOrderBo(){
 
@@ -93,17 +97,26 @@ public class ConfirmOrderBo extends CompareEntityBase {
 
     public ConfirmOrderBo(Order order, ConfirmOrderPo confirmOrder, GetOrderStatusChangeTimeBo orderStatusChange, OperatorInfoBo operator) {
         if (order != null && confirmOrder != null) {      // 初始化 "目标数据", 此时订单在已审库
+
+            this.reserStatus = order.getStatus();
+
             if(orderStatusChange!=null){
                 this.amendTime=orderStatusChange.getOperatorTime();
                 if(orderStatusChange.getPreStatus().equalsIgnoreCase(ElongOrderStatusEnum.H.getStatus())){
                     this.isChangeOrder=1;
+                    ConfirmOrderConfig serviceConfig = ConfigurationManager
+                            .getHotSwitchConfig("ConfirmOrderConfig", ConfirmOrderConfig.class);
+                    if(Math.abs(orderStatusChange.getOperatorTime().getTime() / 1000 - confirmOrder.getAmendTime().getTime() / 1000) > serviceConfig.getChangeMinutes() ) {
+                        this.isStorageOutAndIn = true;
+                        this.reserStatus = ElongOrderStatusEnum.H.toString();
+                    }
                 }
             }else{
                 this.amendTime = confirmOrder.getAmendTime();
                 this.isChangeOrder=confirmOrder.getIsChangeOrder();
             }
             this.reserNo = confirmOrder.getReserNo();
-            this.reserStatus = order.getStatus();
+
             this.mod = confirmOrder.getMod();
             this.arriveDate = confirmOrder.getArriveDate();
             this.leaveDate = confirmOrder.getLeaveDate();
@@ -145,7 +158,7 @@ public class ConfirmOrderBo extends CompareEntityBase {
             this.defaultSortTime = confirmOrder.getDefaultSortTime();
             this.firstRefusedTime = confirmOrder.getFirstRefusedTime();
             this.orderTimestamp = new Date(confirmOrder.getOrderTimestampLong());
-
+            this.fullRoomRate = order.getFullRoomRate();
         } else if (order != null && confirmOrder == null) {   // 初始化 "目标数据", 此时订单还未入已审库
             if(orderStatusChange!=null){
                 this.amendTime=orderStatusChange.getOperatorTime();
@@ -181,7 +194,7 @@ public class ConfirmOrderBo extends CompareEntityBase {
             this.staffName = "";
             this.orderTimestamp = order.getOrderTimestamp();
             this.enterTime = operator.getOperatorTime();
-
+            this.fullRoomRate = order.getFullRoomRate();
         } else if (order == null && confirmOrder != null) {// 初始化"在库数据"
             this.reserNo = confirmOrder.getReserNo();
             this.reserStatus = confirmOrder.getReserStatus();
@@ -225,6 +238,7 @@ public class ConfirmOrderBo extends CompareEntityBase {
             this.defaultSortTime = confirmOrder.getDefaultSortTime();
             this.firstRefusedTime = confirmOrder.getFirstRefusedTime();
             this.orderTimestamp = new Date(confirmOrder.getOrderTimestampLong());
+            this.fullRoomRate = confirmOrder.getFullRoomRates();
         }
     }
 
@@ -674,5 +688,12 @@ public class ConfirmOrderBo extends CompareEntityBase {
 	public void setFullRoomRate(String fullRoomRate) {
 		this.fullRoomRate = fullRoomRate;
 	}
-    
+
+    public Boolean isStorageOutAndIn() {
+        return isStorageOutAndIn;
+    }
+
+    public void setIsStorageOutAndIn(Boolean isStorageOutAndIn) {
+        this.isStorageOutAndIn = isStorageOutAndIn;
+    }
 }

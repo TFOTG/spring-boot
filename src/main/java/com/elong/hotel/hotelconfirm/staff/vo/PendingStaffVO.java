@@ -39,7 +39,12 @@ public class PendingStaffVO extends PaginationParameter{
 	
 	@NotNull(message="订单类型不能为空",groups=FirstValid.class)
 	private Integer ordertype;
-	
+
+	/**
+	 * 待处理页分页 页码
+	 */
+	private Integer pendPageNum;
+
 	public String getStaffname() {
 		return staffname;
 	}
@@ -95,5 +100,12 @@ public class PendingStaffVO extends PaginationParameter{
 	public void setDepartment(Integer department) {
 		this.department = department;
 	}
-	
+
+	public Integer getPendPageNum() {
+		return pendPageNum;
+	}
+
+	public void setPendPageNum(Integer pendPageNum) {
+		this.pendPageNum = pendPageNum;
+	}
 }
