@@ -128,7 +128,12 @@ public enum ConfirmOrderStatusEnum {
     /**
      *
      */
-    G3("G3","价格未出");
+    G3("G3","价格未出"),
+
+    /*
+    *变更
+    */
+    H("H","变更");
 
 
     ConfirmOrderStatusEnum(String status, String description) {
