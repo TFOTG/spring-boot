@@ -182,9 +182,15 @@ public class ConfirmOrderConfig {
     private String actionLogReserStatus;
 
 	/**
+	 * 消息丢失兜底逻辑，如果超过changeMinutes 秒则认为不是同一次入库
+	 */
+	private int changeMinutes;
+	/**
 	 * 待处理页 暂缓库分页参数
 	 */
 	private Integer pendOrderPageSize;
+
+    private String opLogReserStatus;
 
 	public ConfirmOrderConfig() {
 		priority4HighMinute = 60;
@@ -209,6 +215,7 @@ public class ConfirmOrderConfig {
 		ivrBeforeSort = 3 * 60;
 		targetDataCollectGroupIDs = "1,2,3,6,10,11,12,13,14";
         actionLogReserStatus = "O1,O2,O6,G1,G2,G3";
+		changeMinutes = 2;
 		pendOrderPageSize = 30;
 
 	}
@@ -546,6 +553,14 @@ public class ConfirmOrderConfig {
 
 	public void setRefuseGroupId(Integer refuseGroupId) {
 		this.refuseGroupId = refuseGroupId;
+	}
+
+	public int getChangeMinutes() {
+		return changeMinutes;
+	}
+
+	public void setChangeMinutes(int changeMinutes) {
+		this.changeMinutes = changeMinutes;
 	}
 
 	public Integer getPendOrderPageSize() {

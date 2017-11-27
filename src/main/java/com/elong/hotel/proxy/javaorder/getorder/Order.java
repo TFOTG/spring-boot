@@ -159,7 +159,7 @@ public class Order {
 	/**
 	 * 预测满房概率
 	 */
-	private BigDecimal fullRoomRate;
+	private String fullRoomRate;
 	
 	/**
 	 *  酒店传真号码
@@ -768,11 +768,11 @@ public class Order {
         this.orderActionList = orderActionList;
     }
 
-	public BigDecimal getFullRoomRate() {
+	public String getFullRoomRate() {
 		return fullRoomRate;
 	}
 
-	public void setFullRoomRate(BigDecimal fullRoomRate) {
+	public void setFullRoomRate(String fullRoomRate) {
 		this.fullRoomRate = fullRoomRate;
 	}
 

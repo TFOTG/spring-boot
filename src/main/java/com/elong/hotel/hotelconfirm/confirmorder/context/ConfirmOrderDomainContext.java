@@ -6,11 +6,10 @@ import com.elong.hotel.hotelconfirm.confirmorder.enums.ServerRunningDomainEnum;
 import com.elong.hotel.hotelconfirm.confirmorder.po.ConfirmOrderPo;
 import com.elong.hotel.proxy.javaorder.getorder.GetOrderStatusChangeTimeBo;
 import com.elong.hotel.proxy.javaorder.getorder.Order;
-import com.elong.hotel.proxy.javaorder.getorder.OrderHistory;
 import com.elong.hotel.storage.bo.OrderConsumerInfoBo;
+import com.elong.hotel.storage.request.OrderStatusChangeRequest;
 
 import java.io.Serializable;
-import java.util.List;
 
 public class ConfirmOrderDomainContext implements Serializable {
 
@@ -36,10 +35,12 @@ public class ConfirmOrderDomainContext implements Serializable {
 
     private EBRefuseBo ebRefuseBo;
 
+    private OrderStatusChangeRequest request;
+
     public ConfirmOrderDomainContext(){}
 
     public ConfirmOrderDomainContext(Integer reserNo, ServerRunningDomainEnum serverRunningDomainEnum, Order order,
-             ConfirmOrderPo confirmOrderPo, OperatorInfoBo operator, OrderConsumerInfoBo orderConsumerInfoBo,GetOrderStatusChangeTimeBo orderStatusChange) {
+             ConfirmOrderPo confirmOrderPo, OperatorInfoBo operator, OrderConsumerInfoBo orderConsumerInfoBo,GetOrderStatusChangeTimeBo orderStatusChange, OrderStatusChangeRequest request) {
         this.reserNo = reserNo;
         this.serverRunningDomainEnum = serverRunningDomainEnum;
         this.order = order;
@@ -47,6 +48,7 @@ public class ConfirmOrderDomainContext implements Serializable {
         this.operator = operator;
         this.orderConsumerInfoBo = orderConsumerInfoBo;
         this.orderStatusChange=orderStatusChange;
+        this.request = request;
     }
 
     public Integer getReserNo() {
@@ -135,5 +137,13 @@ public class ConfirmOrderDomainContext implements Serializable {
 
     public void setOrderStatusChange(GetOrderStatusChangeTimeBo orderStatusChange) {
         this.orderStatusChange = orderStatusChange;
+    }
+
+    public OrderStatusChangeRequest getRequest() {
+        return request;
+    }
+
+    public void setRequest(OrderStatusChangeRequest request) {
+        this.request = request;
     }
 }
