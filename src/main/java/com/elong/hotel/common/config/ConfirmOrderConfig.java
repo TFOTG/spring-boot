@@ -179,6 +179,14 @@ public class ConfirmOrderConfig {
 	 */
 	private String targetDataCollectGroupIDs;
 
+    public String getOpLogReserStatus() {
+        return opLogReserStatus;
+    }
+
+    public void setOpLogReserStatus(String opLogReserStatus) {
+        this.opLogReserStatus = opLogReserStatus;
+    }
+
     private String actionLogReserStatus;
 
 	/**
