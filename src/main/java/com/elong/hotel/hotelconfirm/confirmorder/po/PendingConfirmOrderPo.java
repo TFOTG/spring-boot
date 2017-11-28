@@ -10,8 +10,8 @@ import java.util.Date;
 import java.util.List;
 
 import com.elong.hotel.proxy.javaorder.getorder.Guest;
+import com.elong.hotel.proxy.javaorder.getorder.OrderVouchRule;
 import com.elong.hotel.proxy.javaorder.getorder.RoomNight;
-
 
 /**
  * @author jianjun.wang
@@ -23,150 +23,150 @@ public class PendingConfirmOrderPo {
 	 * 订单号
 	 */
 	private Integer reserno;
-	
+
 	/**
 	 * 订单状态
 	 */
 	private String reserstatus;
-	
+
 	/**
 	 * 到店时间
 	 */
 	private String arrivedate;
-	
+
 	/**
 	 * 离店时间
 	 */
 	private String leavedate;
-	
+
 	/**
 	 * 最早到店时间
 	 */
 	private String timeearly;
-	
+
 	/**
 	 * 最晚到店时间
 	 */
 	private String timelate;
-	
+
 	/**
 	 * 酒店id
 	 */
 	private String hotelid;
-	
+
 	private String mhotelId;
 	/**
 	 * 供应商id
 	 */
 	private Integer supplierid;
-	
+
 	/**
 	 * eb策略id
 	 */
 	private int ebkstrategyid;
-	
+
 	/**
 	 * 承诺时间
 	 */
 	private String promisetime;
-	
+
 	/**
 	 * 暂缓时间
 	 */
 	private String respitetime;
-	
+
 	/**
 	 * 获取时间
 	 */
 	private String distributetime;
-	
+
 	/**
 	 * 给酒店的备注
 	 */
 	private String notesToHotel;
-	
+
 	/**
 	 * 给客人的备注
 	 */
 	private String notesToGuest;
-	
+
 	/**
 	 * 艺龙内部备注
 	 */
 	private String notesToElong;
-	
+
 	/**
 	 * 是否直签
 	 */
 	private Integer cooperationType;
-	
+
 	/**
 	 * 订单支付类型
 	 */
 	private Long additionalStatus;
-	
+
 	/**
 	 * 确认号
 	 */
 	private String confirmNo;
-	
+
 	/**
 	 * 房型
 	 */
 	private String roomTypeName;
-	
-	private  String roomTypeId;
-	
+
+	private String roomTypeId;
+
 	/**
 	 * 房量
 	 */
 	private int roomCount;
-	
+
 	/**
 	 * 支付类型
 	 */
 	private String payment;
-	
+
 	/**
 	 * 支付类型
 	 */
 	private List<Guest> guests;
-	
+
 	/**
 	 * 早餐
 	 */
 	private String roomNightBreakfastCount;
-	
+
 	/**
 	 * 总价格
 	 */
 	private BigDecimal sumPrice;
-	
+
 	/**
 	 * 总花费
 	 */
 	private BigDecimal sumCost;
-	
+
 	/**
 	 * 联系电话
 	 */
 	private String contactPhone;
-	
+
 	/**
 	 * 联系手机
 	 */
 	private String contactMobile;
-	
+
 	/**
 	 * 预定人
 	 */
 	private String createName;
-	
+
 	/**
 	 * 创建时间
 	 */
 	private String createTime;
-	
+
 	/**
 	 * 货币
 	 */
@@ -175,7 +175,7 @@ public class PendingConfirmOrderPo {
 	 * 最后一次已申时间
 	 */
 	private String amendtime;
-	
+
 	/**
 	 * 房间信息
 	 */
@@ -184,7 +184,7 @@ public class PendingConfirmOrderPo {
 	 * 订单图标
 	 */
 	private PendingOrderIconPo pendingOrderIconPo;
-	
+
 	private Date checkInDate;
 	private Date checkOutDate;
 	private String ratePlanId;
@@ -197,6 +197,11 @@ public class PendingConfirmOrderPo {
 	 * 代理id
 	 */
 	private String proxy;
+
+	/**
+	 * 担保信息
+	 */
+	private OrderVouchRule baseVouchRule;
 
 	public PendingOrderIconPo getPendingOrderIconPo() {
 		return pendingOrderIconPo;
@@ -301,7 +306,6 @@ public class PendingConfirmOrderPo {
 	public void setDistributetime(String distributetime) {
 		this.distributetime = distributetime;
 	}
-
 
 	public String getNotesToHotel() {
 		return notesToHotel;
@@ -518,4 +522,13 @@ public class PendingConfirmOrderPo {
 	public void setProxy(String proxy) {
 		this.proxy = proxy;
 	}
+
+	public OrderVouchRule getBaseVouchRule() {
+		return baseVouchRule;
+	}
+
+	public void setBaseVouchRule(OrderVouchRule baseVouchRule) {
+		this.baseVouchRule = baseVouchRule;
+	}
+
 }
