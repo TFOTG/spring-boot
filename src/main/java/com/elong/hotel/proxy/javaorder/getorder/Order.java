@@ -1,10 +1,10 @@
 package com.elong.hotel.proxy.javaorder.getorder;
 
-import com.alibaba.fastjson.annotation.JSONField;
-
 import java.math.BigDecimal;
 import java.util.Date;
 import java.util.List;
+
+import com.alibaba.fastjson.annotation.JSONField;
 
 /**
  * 调取java getorder接口返回的实体
@@ -34,7 +34,7 @@ public class Order {
 	private Long additionalStatus;
 	// 会员卡号
 	private Long cardNo;
-	//会员级别
+	// 会员级别
 	private String gradeId;
 	// 入住日期
 	private Date checkInDate;
@@ -72,9 +72,9 @@ public class Order {
 	private Integer roomNightsCount;
 	// 代理id
 	private String proxy;
-	//总卖价
+	// 总卖价
 	private BigDecimal sumPrice;
-	//总底价
+	// 总底价
 	private BigDecimal sumCost;
 	// 订单时间戳
 	private Date orderTimestamp;
@@ -82,7 +82,7 @@ public class Order {
 	private Date createTime;
 	// 内部备注
 	private String notesToElong;
-    // 客人备注,该字段已废弃
+	// 客人备注,该字段已废弃
 	private String notesToGuest;
 
 	private int otaType;
@@ -95,7 +95,7 @@ public class Order {
 
 	private Integer supplierType;
 
-    private List<OrderAction> orderActionList;
+	private List<OrderAction> orderActionList;
 
 	// orderKeyValue
 	private List<OrderKeyValue> orderKeyValues;
@@ -134,7 +134,7 @@ public class Order {
 	// 修改人
 	private String modifyName;
 
-    private Date modifyTime;
+	private Date modifyTime;
 	// 支付状态
 	private Integer payStatus;
 	// 支付金额RMB
@@ -160,7 +160,7 @@ public class Order {
 	 * 预测满房概率
 	 */
 	private String fullRoomRate;
-	
+
 	/**
 	 *  酒店传真号码
 	 */
@@ -170,7 +170,12 @@ public class Order {
 	 * 供应商订单号
 	 */
 	private String cooperationOrderId;
-	
+
+	/**
+	 * 担保信息
+	 */
+	private OrderVouchRule baseVouchRule;
+
 	public String getmRoomTypeId() {
 		return mRoomTypeId;
 	}
@@ -179,11 +184,11 @@ public class Order {
 		this.mRoomTypeId = mRoomTypeId;
 	}
 
-	//预定距离
-    private Integer distanceFromHotelWhenBooking;
+	// 预定距离
+	private Integer distanceFromHotelWhenBooking;
 
-    private String createName;
-    
+	private String createName;
+
 	public Date getOrderTimestamp() {
 		return orderTimestamp;
 	}
@@ -696,13 +701,13 @@ public class Order {
 		this.provinceName = provinceName;
 	}
 
-    public Integer getDistanceFromHotelWhenBooking() {
-        return distanceFromHotelWhenBooking;
-    }
+	public Integer getDistanceFromHotelWhenBooking() {
+		return distanceFromHotelWhenBooking;
+	}
 
-    public void setDistanceFromHotelWhenBooking(Integer distanceFromHotelWhenBooking) {
-        this.distanceFromHotelWhenBooking = distanceFromHotelWhenBooking;
-    }
+	public void setDistanceFromHotelWhenBooking(Integer distanceFromHotelWhenBooking) {
+		this.distanceFromHotelWhenBooking = distanceFromHotelWhenBooking;
+	}
 
 	public Integer getSupplierOtaType() {
 		return supplierOtaType;
@@ -712,13 +717,13 @@ public class Order {
 		this.supplierOtaType = supplierOtaType;
 	}
 
-    public Date getModifyTime() {
-        return modifyTime;
-    }
+	public Date getModifyTime() {
+		return modifyTime;
+	}
 
-    public void setModifyTime(Date modifyTime) {
-        this.modifyTime = modifyTime;
-    }
+	public void setModifyTime(Date modifyTime) {
+		this.modifyTime = modifyTime;
+	}
 
 	public Integer getCooperationType() {
 		return cooperationType;
@@ -735,7 +740,7 @@ public class Order {
 	public void setCreateName(String createName) {
 		this.createName = createName;
 	}
-    
+
 	public String getMRoomTypeName() {
 		return mRoomTypeName;
 	}
@@ -760,13 +765,13 @@ public class Order {
 		this.sHotelFax = sHotelFax;
 	}
 
-    public List<OrderAction> getOrderActionList() {
-        return orderActionList;
-    }
+	public List<OrderAction> getOrderActionList() {
+		return orderActionList;
+	}
 
-    public void setOrderActionList(List<OrderAction> orderActionList) {
-        this.orderActionList = orderActionList;
-    }
+	public void setOrderActionList(List<OrderAction> orderActionList) {
+		this.orderActionList = orderActionList;
+	}
 
 	public String getFullRoomRate() {
 		return fullRoomRate;
@@ -783,4 +788,13 @@ public class Order {
 	public void setCooperationOrderId(String cooperationOrderId) {
 		this.cooperationOrderId = cooperationOrderId;
 	}
+
+	public OrderVouchRule getBaseVouchRule() {
+		return baseVouchRule;
+	}
+
+	public void setBaseVouchRule(OrderVouchRule baseVouchRule) {
+		this.baseVouchRule = baseVouchRule;
+	}
+
 }
