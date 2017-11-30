@@ -203,6 +203,8 @@ public class PendingConfirmOrderPo {
 	 */
 	private OrderVouchRule baseVouchRule;
 
+	private long orderFlag;
+
 	public PendingOrderIconPo getPendingOrderIconPo() {
 		return pendingOrderIconPo;
 	}
@@ -529,6 +531,14 @@ public class PendingConfirmOrderPo {
 
 	public void setBaseVouchRule(OrderVouchRule baseVouchRule) {
 		this.baseVouchRule = baseVouchRule;
+	}
+
+	public long getOrderFlag() {
+		return orderFlag;
+	}
+
+	public void setOrderFlag(long orderFlag) {
+		this.orderFlag = orderFlag;
 	}
 
 }
