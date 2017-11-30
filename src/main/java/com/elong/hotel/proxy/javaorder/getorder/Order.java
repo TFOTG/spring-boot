@@ -86,7 +86,7 @@ public class Order {
 	private String notesToGuest;
 
 	private int otaType;
-
+	// orderflag&18014398509481984L=18014398509481984L:新单
 	private long orderFlag;
 
 	private Integer supplierId;
