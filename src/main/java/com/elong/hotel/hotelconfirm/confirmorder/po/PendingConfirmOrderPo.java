@@ -203,7 +203,10 @@ public class PendingConfirmOrderPo {
 	 */
 	private OrderVouchRule baseVouchRule;
 
-	private long orderFlag;
+	/**
+	 * 新订单（新担保）：1，旧订单：0
+	 */
+	private int orderType;
 
 	public PendingOrderIconPo getPendingOrderIconPo() {
 		return pendingOrderIconPo;
@@ -533,12 +536,12 @@ public class PendingConfirmOrderPo {
 		this.baseVouchRule = baseVouchRule;
 	}
 
-	public long getOrderFlag() {
-		return orderFlag;
+	public int getOrderType() {
+		return orderType;
 	}
 
-	public void setOrderFlag(long orderFlag) {
-		this.orderFlag = orderFlag;
+	public void setOrderType(int orderType) {
+		this.orderType = orderType;
 	}
 
 }
