@@ -1,4 +1,4 @@
-package com.elong.hotel.hotelconfirm.monitordata.po;
+package com.elong.hotel.log.monitordata.po;
 
 import java.io.Serializable;
 import java.util.Date;
