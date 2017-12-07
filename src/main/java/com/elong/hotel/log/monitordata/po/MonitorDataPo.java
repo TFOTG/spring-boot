@@ -18,7 +18,7 @@ import java.util.Date;
  */
 public class MonitorDataPo implements Serializable {
 
-	/** 
+	/** w
 	 * long MonitorDataPo.java serialVersionUID
 	 */
 	private static final long serialVersionUID = 1L;
@@ -51,12 +51,12 @@ public class MonitorDataPo implements Serializable {
 	/**
 	 * 已审待分配量（普通当日）
 	 */
-	private int oridinaryToday;
+	private int ordinaryToday;
 
 	/**
 	 * 已审待分配量（普通非当日）
 	 */
-	private int oridinary;
+	private int ordinary;
 
 	/**
 	 * 已审人工触碰订单量
@@ -91,7 +91,7 @@ public class MonitorDataPo implements Serializable {
 	/**
 	 * 直连处理量
 	 */
-	private int dirctHandled;
+	private int directHandled;
 
 	/**
 	 * 其他处理量
@@ -143,20 +143,20 @@ public class MonitorDataPo implements Serializable {
 		this.immediately = immediately;
 	}
 
-	public int getOridinaryToday() {
-		return oridinaryToday;
+	public int getOrdinaryToday() {
+		return ordinaryToday;
 	}
 
-	public void setOridinaryToday(int oridinaryToday) {
-		this.oridinaryToday = oridinaryToday;
+	public void setOridinaryToday(int ordinaryToday) {
+		this.ordinaryToday = ordinaryToday;
 	}
 
 	public int getOridinary() {
-		return oridinary;
+		return ordinary;
 	}
 
-	public void setOridinary(int oridinary) {
-		this.oridinary = oridinary;
+	public void setOridinary(int ordinary) {
+		this.ordinary = ordinary;
 	}
 
 	public int getTouched() {
@@ -207,12 +207,12 @@ public class MonitorDataPo implements Serializable {
 		this.ebkHandled = ebkHandled;
 	}
 
-	public int getDirctHandled() {
-		return dirctHandled;
+	public int getDirectHandled() {
+		return directHandled;
 	}
 
-	public void setDirctHandled(int dirctHandled) {
-		this.dirctHandled = dirctHandled;
+	public void setDirectHandled(int directHandled) {
+		this.directHandled = directHandled;
 	}
 
 	public int getOtherHandled() {
