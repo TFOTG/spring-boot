@@ -231,4 +231,13 @@ public class MonitorDataPo implements Serializable {
 		this.timeStamp = timeStamp;
 	}
 
+	@Override
+	public String toString() {
+		return "MonitorDataPo [id=" + id + ", collectTime=" + collectTime + ", hotelReserve=" + hotelReserve + ", storage=" + storage
+				+ ", immediately=" + immediately + ", oridinaryToday=" + oridinaryToday + ", oridinary=" + oridinary + ", touched="
+				+ touched + ", untouched=" + untouched + ", unfetched=" + unfetched + ", staffHandled=" + staffHandled + ", ivrHandled="
+				+ ivrHandled + ", ebkHandled=" + ebkHandled + ", dirctHandled=" + dirctHandled + ", otherHandled=" + otherHandled
+				+ ", timeStamp=" + timeStamp + "]";
+	}
+
 }
