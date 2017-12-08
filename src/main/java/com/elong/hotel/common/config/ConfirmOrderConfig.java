@@ -110,7 +110,6 @@ public class ConfirmOrderConfig {
 	 */
 	private Integer firstRefuseTime;
 
-
 	private Integer refuseGroupId;
 	/**
 	 * 初拒供应商Ids
@@ -173,21 +172,21 @@ public class ConfirmOrderConfig {
 	 * 放量确认人联系方式显示开关 0 显示非结构化  1显示结构化
 	 */
 	private int roomContactSwitch;
-	
+
 	/**
 	 * 指标库：已审待处理量
 	 */
 	private String targetDataCollectGroupIDs;
 
-    public String getOpLogReserStatus() {
-        return opLogReserStatus;
-    }
+	public String getOpLogReserStatus() {
+		return opLogReserStatus;
+	}
 
-    public void setOpLogReserStatus(String opLogReserStatus) {
-        this.opLogReserStatus = opLogReserStatus;
-    }
+	public void setOpLogReserStatus(String opLogReserStatus) {
+		this.opLogReserStatus = opLogReserStatus;
+	}
 
-    private String actionLogReserStatus;
+	private String actionLogReserStatus;
 
 	/**
 	 * 消息丢失兜底逻辑，如果超过changeMinutes 秒则认为不是同一次入库
@@ -198,7 +197,9 @@ public class ConfirmOrderConfig {
 	 */
 	private Integer pendOrderPageSize;
 
-    private String opLogReserStatus;
+	private String opLogReserStatus;
+
+	private Integer monitorIntervalTime;
 
 	public ConfirmOrderConfig() {
 		priority4HighMinute = 60;
@@ -222,9 +223,10 @@ public class ConfirmOrderConfig {
 		urgeAddMins = 15;
 		ivrBeforeSort = 3 * 60;
 		targetDataCollectGroupIDs = "1,2,3,6,10,11,12,13,14";
-        actionLogReserStatus = "O1,O2,O6,G1,G2,G3";
+		actionLogReserStatus = "O1,O2,O6,G1,G2,G3";
 		changeMinutes = 2;
 		pendOrderPageSize = 30;
+		monitorIntervalTime = 30;
 
 	}
 
@@ -239,15 +241,15 @@ public class ConfirmOrderConfig {
 		firstRefuseSupplierIds = "";
 	}
 
-    public String getActionLogReserStatus() {
-        return actionLogReserStatus;
-    }
+	public String getActionLogReserStatus() {
+		return actionLogReserStatus;
+	}
 
-    public void setActionLogReserStatus(String actionLogReserStatus) {
-        this.actionLogReserStatus = actionLogReserStatus;
-    }
+	public void setActionLogReserStatus(String actionLogReserStatus) {
+		this.actionLogReserStatus = actionLogReserStatus;
+	}
 
-    public String getManagerName() {
+	public String getManagerName() {
 		return managerName;
 	}
 
@@ -547,6 +549,7 @@ public class ConfirmOrderConfig {
 	public void setRoomContactSwitch(int roomContactSwitch) {
 		this.roomContactSwitch = roomContactSwitch;
 	}
+
 	public String getTargetDataCollectGroupIDs() {
 		return targetDataCollectGroupIDs;
 	}
@@ -578,4 +581,13 @@ public class ConfirmOrderConfig {
 	public void setPendOrderPageSize(Integer pendOrderPageSize) {
 		this.pendOrderPageSize = pendOrderPageSize;
 	}
+
+	public Integer getMonitorIntervalTime() {
+		return monitorIntervalTime;
+	}
+
+	public void setMonitorIntervalTime(Integer monitorIntervalTime) {
+		this.monitorIntervalTime = monitorIntervalTime;
+	}
+
 }
