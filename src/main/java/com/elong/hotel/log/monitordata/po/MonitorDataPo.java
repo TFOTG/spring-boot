@@ -231,6 +231,18 @@ public class MonitorDataPo implements Serializable {
 		this.timeStamp = timeStamp;
 	}
 
+	public int getOrdinary() {
+		return ordinary;
+	}
+
+	public void setOrdinary(int ordinary) {
+		this.ordinary = ordinary;
+	}
+
+	public void setOrdinaryToday(int ordinaryToday) {
+		this.ordinaryToday = ordinaryToday;
+	}
+
 	@Override
 	public String toString() {
 		return "MonitorDataPo [id=" + id + ", collectTime=" + collectTime + ", hotelReserve=" + hotelReserve + ", storage=" + storage
