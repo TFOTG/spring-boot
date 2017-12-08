@@ -37,6 +37,11 @@ public class CountAllocatedDataBo implements Serializable {
 	 */
 	private int oridinary;
 
+	/**
+	 * 待分配总量
+	 */
+	private int unallocated;
+
 	public int getImmediately() {
 		return immediately;
 	}
@@ -59,6 +64,14 @@ public class CountAllocatedDataBo implements Serializable {
 
 	public void setOridinary(int oridinary) {
 		this.oridinary = oridinary;
+	}
+
+	public int getUnallocated() {
+		return unallocated;
+	}
+
+	public void setUnallocated(int unallocated) {
+		this.unallocated = unallocated;
 	}
 
 }
