@@ -1,7 +1,6 @@
 package com.elong.hotel.log.monitordata.vo;
 
 import com.elong.hotel.common.parameter.PaginationParameter;
-import com.sun.tools.corba.se.idl.StringGen;
 
 import java.util.Date;
 
