@@ -7,7 +7,9 @@ public enum StorageTypeEnum {
 
 	CONFIRM(1),
 
-	NOROOM(2);
+	NOROOM(2),
+
+	CREATEORDER(3);
 
 	private int value;
 

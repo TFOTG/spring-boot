@@ -103,6 +103,11 @@ public class MonitorDataPo implements Serializable {
 	 */
 	private Date timeStamp;
 
+	/**
+	 * 待分配总量
+	 */
+	private int unallocated;
+
 	public Long getId() {
 		return id;
 	}
@@ -229,6 +234,35 @@ public class MonitorDataPo implements Serializable {
 
 	public void setTimeStamp(Date timeStamp) {
 		this.timeStamp = timeStamp;
+	}
+
+	public int getOrdinary() {
+		return ordinary;
+	}
+
+	public void setOrdinary(int ordinary) {
+		this.ordinary = ordinary;
+	}
+
+	public void setOrdinaryToday(int ordinaryToday) {
+		this.ordinaryToday = ordinaryToday;
+	}
+
+	public int getUnallocated() {
+		return unallocated;
+	}
+
+	public void setUnallocated(int unallocated) {
+		this.unallocated = unallocated;
+	}
+
+	@Override
+	public String toString() {
+		return "MonitorDataPo [id=" + id + ", collectTime=" + collectTime + ", hotelReserve=" + hotelReserve + ", storage=" + storage
+				+ ", immediately=" + immediately + ", ordinaryToday=" + ordinaryToday + ", ordinary=" + ordinary + ", touched=" + touched
+				+ ", untouched=" + untouched + ", unfetched=" + unfetched + ", staffHandled=" + staffHandled + ", ivrHandled=" + ivrHandled
+				+ ", ebkHandled=" + ebkHandled + ", directHandled=" + directHandled + ", otherHandled=" + otherHandled + ", timeStamp="
+				+ timeStamp + ", unallocated=" + unallocated + "]";
 	}
 
 }
