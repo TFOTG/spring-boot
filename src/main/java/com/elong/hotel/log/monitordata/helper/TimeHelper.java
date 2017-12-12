@@ -65,7 +65,7 @@ public class TimeHelper {
 
 		int times = (minute % intervalMinute) > 0 ? ((minute / intervalMinute) + 1) : (minute % intervalMinute);
 
-		Date date = formatDate(time, "yyyy-MM-dd hh");
+		Date date = formatDate(time, "yyyy-MM-dd HH");
 
 		return new Date((date.getTime() + times * intervalMinute * sec * mills));
 	}
