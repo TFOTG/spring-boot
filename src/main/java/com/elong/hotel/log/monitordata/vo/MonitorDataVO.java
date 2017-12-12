@@ -1,53 +1,50 @@
 package com.elong.hotel.log.monitordata.vo;
 
-import java.util.Date;
-
 import com.elong.hotel.common.parameter.PaginationParameter;
+import com.sun.tools.corba.se.idl.StringGen;
+
+import java.util.Date;
 
 /**
  * @outhor jianjun.wang
  * @create 2017-12-05 下午4:50
  */
 
-public class MonitorDataVO extends PaginationParameter {
+public class MonitorDataVO extends PaginationParameter{
 
-	/**
-	 * 获取数据类型
-	 */
-	private Integer dataType;
 
-	/**
-	 *时间轴参数 start
-	 */
-	private Date startCollectTime;
 
-	/**
-	 * 时间轴参数 end
-	 */
-	private Date endCollectTime;
+    /**
+     *时间轴参数 start
+     */
+    private Date startCollectTime;
 
-	public Date getStartCollectTime() {
-		return startCollectTime;
-	}
+    /**
+     * 时间轴参数 end
+     */
+    private Date endCollectTime;
 
-	public void setStartCollectTime(Date startCollectTime) {
-		this.startCollectTime = startCollectTime;
-	}
+    public Date getStartCollectTime() {
+        return startCollectTime;
+    }
 
-	public Date getEndCollectTime() {
-		return endCollectTime;
-	}
+    public void setStartCollectTime(Date startCollectTime) {
+        this.startCollectTime = startCollectTime;
+    }
 
-	public void setEndCollectTime(Date endCollectTime) {
-		this.endCollectTime = endCollectTime;
-	}
+    public Date getEndCollectTime() {
+        return endCollectTime;
+    }
 
-	public Integer getDataType() {
-		return dataType;
-	}
+    public void setEndCollectTime(Date endCollectTime) {
+        this.endCollectTime = endCollectTime;
+    }
 
-	public void setDataType(Integer dataType) {
-		this.dataType = dataType;
-	}
+    public MonitorDataVO(Date startCollectTime, Date endCollectTime) {
+        this.startCollectTime = startCollectTime;
+        this.endCollectTime = endCollectTime;
+    }
 
+    public MonitorDataVO() {
+    }
 }

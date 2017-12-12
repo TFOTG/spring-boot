@@ -1,11 +1,14 @@
 package com.elong.hotel.log.monitordata.bo;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+
 /**
  * @outhor jianjun.wang
  * @create 2017-12-05 下午4:41
  */
 
-public class MonitorDataBo {
+public class MonitorDataBo{
     /**
      * 采集时间
      */
@@ -76,6 +79,11 @@ public class MonitorDataBo {
      */
     private int otherHandled;
 
+    /**
+     * 待分配订单总量
+     */
+    private int unallocated;
+
     public String getCollectTime() {
         return collectTime;
     }
@@ -112,7 +120,7 @@ public class MonitorDataBo {
         return ordinaryToday;
     }
 
-    public void setOrdinaryToday(int oridinaryToday) {
+    public void setOrdinaryToday(int ordinaryToday) {
         this.ordinaryToday = ordinaryToday;
     }
 
@@ -186,5 +194,13 @@ public class MonitorDataBo {
 
     public void setOtherHandled(int otherHandled) {
         this.otherHandled = otherHandled;
+    }
+
+    public int getUnallocated() {
+        return unallocated;
+    }
+
+    public void setUnallocated(int unallocated) {
+        this.unallocated = unallocated;
     }
 }
