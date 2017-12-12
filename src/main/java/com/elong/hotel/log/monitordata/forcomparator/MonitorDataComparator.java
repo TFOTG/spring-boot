@@ -13,10 +13,6 @@ public class MonitorDataComparator implements Comparator<MonitorDataBo> {
 
     @Override
     public int compare(MonitorDataBo o1, MonitorDataBo o2) {
-        if (o1.getCollectTime().compareTo(o2.getCollectTime()) < 0) {
-            return 1;
-        }else {
-            return 1;
-        }
+        return o1.getCollectTime().compareTo(o2.getCollectTime());
     }
 }
