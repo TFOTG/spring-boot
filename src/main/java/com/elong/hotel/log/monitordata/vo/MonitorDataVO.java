@@ -13,10 +13,6 @@ import java.util.Date;
 public class MonitorDataVO extends PaginationParameter{
 
 
-    /**
-     * 获取数据类型
-     */
-    private Integer dataType;
 
     /**
      *时间轴参数 start
@@ -44,12 +40,11 @@ public class MonitorDataVO extends PaginationParameter{
         this.endCollectTime = endCollectTime;
     }
 
-    public Integer getDataType() {
-        return dataType;
+    public MonitorDataVO(Date startCollectTime, Date endCollectTime) {
+        this.startCollectTime = startCollectTime;
+        this.endCollectTime = endCollectTime;
     }
 
-    public void setDataType(Integer dataType) {
-        this.dataType = dataType;
+    public MonitorDataVO() {
     }
-
 }
