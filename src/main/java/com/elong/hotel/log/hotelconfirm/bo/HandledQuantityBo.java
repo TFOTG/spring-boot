@@ -52,6 +52,16 @@ public class HandledQuantityBo implements Serializable {
 	 */
 	private int storage;
 
+	/**
+	 * 员工获取超过调配时间订单量
+	 */
+	private int fetched;
+
+	/**
+	 * 出库历史中超过调配时间未被员工获取的订单量
+	 */
+	private int unfetched;
+
 	public int getStaffHandled() {
 		return staffHandled;
 	}
@@ -98,6 +108,22 @@ public class HandledQuantityBo implements Serializable {
 
 	public void setStorage(int storage) {
 		this.storage = storage;
+	}
+
+	public int getFetched() {
+		return fetched;
+	}
+
+	public void setFetched(int fetched) {
+		this.fetched = fetched;
+	}
+
+	public int getUnfetched() {
+		return unfetched;
+	}
+
+	public void setUnfetched(int unfetched) {
+		this.unfetched = unfetched;
 	}
 
 }
