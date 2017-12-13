@@ -39,9 +39,13 @@ public class MonitorDataVO extends PaginationParameter{
         this.endCollectTime = endCollectTime;
     }
 
-    public MonitorDataVO(Date startCollectTime, Date endCollectTime) {
+    public MonitorDataVO(Date startCollectTime, Date endCollectTime,int startItem, int pageSize,String orderField ,String orderFieldType) {
         this.startCollectTime = startCollectTime;
         this.endCollectTime = endCollectTime;
+        this.setStartItem(startItem);
+        this.setPageSize(pageSize);
+        this.setOrderField(orderField);
+        this.setOrderFieldType(orderFieldType);
     }
 
     public MonitorDataVO() {
