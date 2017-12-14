@@ -21,6 +21,8 @@ public class ConfirmOrderActionLogPo {
 
     private int logType;
 
+    private String sourceStatus;
+
     private String targetStatus;
 
     @JSONField(format = "yyyy-MM-dd HH:mm:ss")
@@ -145,13 +147,22 @@ public class ConfirmOrderActionLogPo {
         this.targetTime = targetTime;
     }
 
+    public String getSourceStatus() {
+        return sourceStatus;
+    }
+
+    public void setSourceStatus(String sourceStatus) {
+        this.sourceStatus = sourceStatus;
+    }
+
     public ConfirmOrderActionLogPo() {
     }
 
-    public ConfirmOrderActionLogPo( Order order,String targetStatus,OperatorInfoBo operatorInfoBo,ActionLogTypeEnum logTypeEnum,ActionOpFromEnum opFromEnum,String targetReason,Integer messageStatus,Integer messageType) {
+    public ConfirmOrderActionLogPo( Order order,String sourceStatus,String targetStatus,OperatorInfoBo operatorInfoBo,ActionLogTypeEnum logTypeEnum,ActionOpFromEnum opFromEnum,String targetReason,Integer messageStatus,Integer messageType) {
         this.orderId = order.getOrderId().intValue();
         this.hotelId = Long.getLong(order.getHotelId());
         this.logType = logTypeEnum.getKey();
+        this.sourceStatus = sourceStatus;
         this.targetStatus = targetStatus;
         this.targetReason = targetReason;
         this.messageStatus = messageStatus;
@@ -162,11 +173,12 @@ public class ConfirmOrderActionLogPo {
         this.operatorIp = operatorInfoBo.getOperatorIP();
     }
 
-    public ConfirmOrderActionLogPo(Integer orderId, Long hotelId, int logType, String targetStatus, Date targetTime, String targetReason,
+    public ConfirmOrderActionLogPo(Integer orderId, Long hotelId, int logType,String sourceStatus, String targetStatus, Date targetTime, String targetReason,
             Integer messageStatus, Integer messageType, String opFrom, OperatorInfoBo operatorInfo) {
         this.orderId = orderId;
         this.hotelId = hotelId;
         this.logType = logType;
+        this.sourceStatus = sourceStatus;
         this.targetStatus = targetStatus;
         this.targetTime = targetTime;
         this.targetReason = targetReason;
