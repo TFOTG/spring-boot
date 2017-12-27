@@ -54,4 +54,9 @@ public interface OriginalOrderFieldsConst {
 	 * 无房风险订单
 	 */
 	String NO_ROOM_ORDER = "roomCount,roomTypeName,checkInDate,checkOutDate";
+
+	/**
+	 * 代理订单 确认方式 短信确认 还是email  或不允许确认
+	 */
+	String ORDER_CONFIRMMETHOD = "confirmMethod";
 }
