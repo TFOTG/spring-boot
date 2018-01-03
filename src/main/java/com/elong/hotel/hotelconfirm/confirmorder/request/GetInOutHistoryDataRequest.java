@@ -1,13 +1,14 @@
 package com.elong.hotel.hotelconfirm.confirmorder.request;
 
-import com.alibaba.fastjson.annotation.JSONField;
-
 import java.util.Date;
 
 /**
  * Created by liujunjie on 2017/7/18.
  */
 public class GetInOutHistoryDataRequest {
+
+    //0默认页面，1actionLog页面
+    private int flag;
 
     private Integer orderId;
 
@@ -31,6 +32,14 @@ public class GetInOutHistoryDataRequest {
     * 年月  2017-7
     * */
     private String timeSelect;
+
+    public int getFlag() {
+        return flag;
+    }
+
+    public void setFlag(int flag) {
+        this.flag = flag;
+    }
 
     public Date getStartTimeDate() {
         return startTimeDate;

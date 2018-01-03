@@ -10,6 +10,12 @@ import java.util.List;
  */
 public class ConfirmOrderActionLogBo {
 
+
+    /**
+     * 所查数据库名称（有可能查归档库）
+     */
+    private String logDBName;
+
     /**
      * 查询开始时间
      */
@@ -30,14 +36,6 @@ public class ConfirmOrderActionLogBo {
 
     private List<String> logStatusList;
 
-    public List<String> getLogStatusList() {
-        return logStatusList;
-    }
-
-    public void setLogStatusList(List<String> logStatusList) {
-        this.logStatusList = logStatusList;
-    }
-
     private Date targetTime;
 
     private String targetReason;
@@ -54,6 +52,14 @@ public class ConfirmOrderActionLogBo {
     private String operatorName;
 
     private String operatorIp;
+
+    public List<String> getLogStatusList() {
+        return logStatusList;
+    }
+
+    public void setLogStatusList(List<String> logStatusList) {
+        this.logStatusList = logStatusList;
+    }
 
     public String getStartTime() {
         return startTime;
@@ -165,5 +171,13 @@ public class ConfirmOrderActionLogBo {
 
     public void setOperatorIp(String operatorIp) {
         this.operatorIp = operatorIp;
+    }
+
+    public String getLogDBName() {
+        return logDBName;
+    }
+
+    public void setLogDBName(String logDBName) {
+        this.logDBName = logDBName;
     }
 }
