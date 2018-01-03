@@ -223,7 +223,7 @@ public class ConfirmOrderConfig {
 		urgeAddMins = 15;
 		ivrBeforeSort = 3 * 60;
 		targetDataCollectGroupIDs = "1,2,3,6,10,11,12,13,14";
-		actionLogReserStatus = "O1,O2,O6,G1,G2,G3";
+		actionLogReserStatus = "O1,O2,O6,G1,G2,G3,O7,O8";//2017-12-20 wjj 添加O7 O8 两个状态  confirmorderConfig 对应字段actionLogReserStatus 添加O7 O8
 		changeMinutes = 2;
 		pendOrderPageSize = 30;
 		monitorIntervalTime = 30;
