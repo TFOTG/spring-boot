@@ -94,7 +94,7 @@ public class DBDataConnectionBo implements Serializable{
 	 */
 	private String indexfield;
 	public DBDataConnectionBo() {
-		this.driverName = "org.logicalcobwebs.proxool.ProxoolDriver";
+		this.driverName = "com.alibaba.druid.proxy.DruidDriver";
 	}
 
 	public String getOriginDBUrl() {
