@@ -48,6 +48,7 @@ public class OrderPropertyHelper {
                 break;
             default:
                 result = 6;
+                break;
         }
         return result;
     }
