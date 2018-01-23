@@ -25,6 +25,12 @@ public class OrderPropertyHelper {
             case 1:
                 result = 4;
                 break;
+            case 2:
+                result = 6;
+                break;
+            case 3:
+                result = 6;
+                break;
             case 4:
                 if (appClientType != null && appClientType.equals(1)) {
                     result = 1;
