@@ -1,10 +1,10 @@
 package com.elong.hotel.proxy.javaorder.getorder;
 
+import com.alibaba.fastjson.annotation.JSONField;
+
 import java.math.BigDecimal;
 import java.util.Date;
 import java.util.List;
-
-import com.alibaba.fastjson.annotation.JSONField;
 
 /**
  * 调取java getorder接口返回的实体
@@ -176,18 +176,38 @@ public class Order {
 	 */
 	private OrderVouchRule baseVouchRule;
 
-	public String getmRoomTypeId() {
-		return mRoomTypeId;
-	}
-
-	public void setmRoomTypeId(String mRoomTypeId) {
-		this.mRoomTypeId = mRoomTypeId;
-	}
-
 	// 预定距离
 	private Integer distanceFromHotelWhenBooking;
 
 	private String createName;
+
+    private Integer businessSystemId;
+
+    private Integer appClientType;
+
+    public Integer getBusinessSystemId() {
+        return businessSystemId;
+    }
+
+    public void setBusinessSystemId(Integer businessSystemId) {
+        this.businessSystemId = businessSystemId;
+    }
+
+    public Integer getAppClientType() {
+        return appClientType;
+    }
+
+    public void setAppClientType(Integer appClientType) {
+        this.appClientType = appClientType;
+    }
+
+    public String getmRoomTypeId() {
+        return mRoomTypeId;
+    }
+
+    public void setmRoomTypeId(String mRoomTypeId) {
+        this.mRoomTypeId = mRoomTypeId;
+    }
 
 	public Date getOrderTimestamp() {
 		return orderTimestamp;
