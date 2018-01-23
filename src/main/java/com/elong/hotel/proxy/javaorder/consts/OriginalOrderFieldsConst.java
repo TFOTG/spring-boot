@@ -11,7 +11,7 @@ public interface OriginalOrderFieldsConst {
 	/**
 	 * 入库
 	 */
-	String FIELDS_FOR_STORAGE = "status,hotelId,payment,checkInDate,checkOutDate,earlyCheckInTime,lateCheckInTime,otaType,orderFlag,supplierId,supplierType,supplierOtaType,supplierName,promotion,isUrgentVerify,modifyName,roomNo,groupId,additionalStatus,confirmNo,guestName,proxy,createTime,hotelName,gradeId,sumPrice,sumCost,confirmMethod,contactPhone,cardNo,contactMobile,orderFrom,mHotelName,ratePlanId,distanceFromHotelWhenBooking,cityId,modifyTime,notesToHotel,notesToGuest,notesToElong,cooperationOrderId,fullRoomRate,cooperationType";
+	String FIELDS_FOR_STORAGE = "status,hotelId,payment,checkInDate,checkOutDate,earlyCheckInTime,lateCheckInTime,otaType,orderFlag,supplierId,supplierType,supplierOtaType,supplierName,promotion,isUrgentVerify,modifyName,roomNo,groupId,additionalStatus,confirmNo,guestName,proxy,createTime,hotelName,gradeId,sumPrice,sumCost,confirmMethod,contactPhone,cardNo,contactMobile,orderFrom,mHotelName,ratePlanId,distanceFromHotelWhenBooking,cityId,modifyTime,notesToHotel,notesToGuest,notesToElong,cooperationOrderId,fullRoomRate,cooperationType,businessSystemId,appClientType";
 
 	/**
 	 * 确认ivr
@@ -58,5 +58,5 @@ public interface OriginalOrderFieldsConst {
 	/**
 	 * 代理订单 确认方式 短信确认 还是email  或不允许确认
 	 */
-	String ORDER_CONFIRMMETHOD = "confirmMethod";
+	String ORDER_CONFIRMMETHOD = "confirmMethod,businessSystemId,appClientType";
 }
