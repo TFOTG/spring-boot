@@ -87,7 +87,12 @@ public class SoaConfig {
 	private String messageId;
 
 	private String hotel3RoomInfoForQr;
-	
+
+	private String hotelIndexLibraryService;
+
+	private String hotelIndexLibraryMethod;
+
+	private int hotelIndexLibraryTimeOut;
 
 	public String getHotel3RoomInfoForQr() {
 		return hotel3RoomInfoForQr;
@@ -533,5 +538,29 @@ public class SoaConfig {
 
 	public void setHotel3IsFaxSent(String hotel3IsFaxSent) {
 		this.hotel3IsFaxSent = hotel3IsFaxSent;
+	}
+
+	public String getHotelIndexLibraryService() {
+		return hotelIndexLibraryService;
+	}
+
+	public void setHotelIndexLibraryService(String hotelIndexLibraryService) {
+		this.hotelIndexLibraryService = hotelIndexLibraryService;
+	}
+
+	public String getHotelIndexLibraryMethod() {
+		return hotelIndexLibraryMethod;
+	}
+
+	public void setHotelIndexLibraryMethod(String hotelIndexLibraryMethod) {
+		this.hotelIndexLibraryMethod = hotelIndexLibraryMethod;
+	}
+
+	public int getHotelIndexLibraryTimeOut() {
+		return hotelIndexLibraryTimeOut;
+	}
+
+	public void setHotelIndexLibraryTimeOut(int hotelIndexLibraryTimeOut) {
+		this.hotelIndexLibraryTimeOut = hotelIndexLibraryTimeOut;
 	}
 }
