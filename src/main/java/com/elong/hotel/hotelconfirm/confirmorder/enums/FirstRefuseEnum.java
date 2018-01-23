@@ -52,7 +52,17 @@ public enum FirstRefuseEnum {
     /**
      * 变价
      */
-    G("g", "变价");
+    G("g", "变价"),
+
+    /**
+     * 12-20新增  全满 行为 初拒
+     */
+    O7("o7", "全满"),
+
+    /**
+     * 12-20新增  部分满 行为 初拒
+     */
+    O8("o8", "部分满");
 
     private String key;
     private String value;
