@@ -58,5 +58,5 @@ public interface OriginalOrderFieldsConst {
 	/**
 	 * 代理订单 确认方式 短信确认 还是email  或不允许确认
 	 */
-	String ORDER_CONFIRMMETHOD = "confirmMethod,businessSystemId,appClientType";
+	String ORDER_CONFIRMMETHOD = "confirmMethod,businessSystemId,appClientType,orderFrom";
 }
