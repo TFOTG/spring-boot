@@ -129,19 +129,6 @@
             <version>1.16.0</version>
         </dependency>
 
-        <!-- SOA proxy组件  -->
-
-        <dependency>
-            <groupId>com.elong</groupId>
-            <artifactId>hotel-soa-client</artifactId>
-            <version>1.14.5</version><!--使用最新版本-->
-        </dependency>
-        <dependency>
-            <groupId>com.elong</groupId>
-            <artifactId>hotel-soa-server</artifactId>
-            <version>1.10.4</version>
-        </dependency>
-
         <dependency>
             <groupId>com.elong</groupId>
             <artifactId>hotswitch-client</artifactId>
