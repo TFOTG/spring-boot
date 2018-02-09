@@ -9,6 +9,7 @@ import com.elong.hotel.common.helper.StringUtils;
 import com.elong.hotel.hotelconfirm.confirmorder.bo.ConfirmOrderBo;
 import com.elong.hotel.hotelconfirm.confirmorder.enums.ConfirmType;
 import com.elong.hotel.hotelconfirm.confirmorder.po.ConfirmOrderPo;
+import com.elong.hotel.hotelconfirm.examorder.bo.ExamOrderBo;
 import com.elong.hotel.hotelconfirm.group.enums.DepartmentEnum;
 import com.elong.hotel.log.hotelconfirm.enums.ConfirmOpType;
 
@@ -166,6 +167,37 @@ public class ConfirmOpLogBo {
         FullRoomRateConfig fullRoomRateConfig = ConfigurationManager.getHotSwitchConfig("FullRoomRateConfig", FullRoomRateConfig.class);
         this.fullRoomRates = po.getFullRoomRates() + "," + fullRoomRateConfig.getMinrate() + "," + fullRoomRateConfig.getMaxrate() + "," + fullRoomRateConfig.getEnable();
     }
+
+
+
+    public ConfirmOpLogBo(ExamOrderBo confirmOrderBo, ConfirmOpType confirmOpType, String preReserStatus, String targetReserStatus, OperatorInfoBo operator) {
+        this.reserNo = confirmOrderBo.getReserNo();
+        this.hotelId = confirmOrderBo.getHotelId();
+        this.hotelName = confirmOrderBo.getHotelName();
+        this.supplierName = confirmOrderBo.getSupplierName();
+        this.cardNo = confirmOrderBo.getCardNo();
+        this.arriveDate = confirmOrderBo.getTimeEarly();
+        this.opType = confirmOpType.getKey()+"";
+        this.opDate = new Date();
+        this.department = DepartmentEnum.Confirm.getKey() + "";
+        this.groupId = confirmOrderBo.getGroupId();
+        this.priority = confirmOrderBo.getPriority();
+        this.sourceReserStatus = confirmOpType.equals(ConfirmOpType.STORAGE_IN) ? preReserStatus : confirmOrderBo.getReserStatus();
+        this.targetReserStatus = targetReserStatus;
+        this.confirmType = getConfirmType(operator.getOperatorName());                                // 重复字段
+        this.shouldConfirmType = confirmOrderBo.getConfirmType().longValue();        // 重复字段
+
+        this.staffName = confirmOrderBo.getStaffName();
+        this.operator = operator.getOperatorName();
+        this.enterTime = confirmOrderBo.getEnterTime();
+        this.respiteTime = confirmOrderBo.getRespiteTime();
+        this.distributeTime = confirmOrderBo.getDistributeTime();
+        this.bookingTime = confirmOrderBo.getBookingTime();
+        this.amendTime = confirmOrderBo.getAmendTime();
+        FullRoomRateConfig fullRoomRateConfig = ConfigurationManager.getHotSwitchConfig("FullRoomRateConfig", FullRoomRateConfig.class);
+    }
+
+
 
     public ConfirmOpLogBo()
     {}
