@@ -65,10 +65,13 @@ public class PendingHotelPo {
 	private String cooperationOrderId;
 
 	/**
-	 * 是否展示同程标识
+	 * 是否展示同程标识 originfrom=1
 	 */
-	private String originFrom;
+	private int originFrom;
 
+	/**
+	 * 是否展示同程标识 otatype=3
+	 */
 	private int otaType;
 
 	private List<PendingConfirmOrderPo> orderlist;
@@ -171,11 +174,12 @@ public class PendingHotelPo {
 		this.cooperationOrderId = cooperationOrderId;
 	}
 
-	public String getOriginFrom() {
+
+	public int getOriginFrom() {
 		return originFrom;
 	}
 
-	public void setOriginFrom(String originFrom) {
+	public void setOriginFrom(int originFrom) {
 		this.originFrom = originFrom;
 	}
 

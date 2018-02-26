@@ -188,7 +188,7 @@ public class Order {
 	/**
 	 * 订单来源 ；同程标展示字段
 	 */
-	private String originFrom;
+	private int originFrom;
 
     public Integer getBusinessSystemId() {
         return businessSystemId;
@@ -822,11 +822,12 @@ public class Order {
 		this.baseVouchRule = baseVouchRule;
 	}
 
-	public String getOriginFrom() {
+
+	public int getOriginFrom() {
 		return originFrom;
 	}
 
-	public void setOriginFrom(String originFrom) {
+	public void setOriginFrom(int originFrom) {
 		this.originFrom = originFrom;
 	}
 }
