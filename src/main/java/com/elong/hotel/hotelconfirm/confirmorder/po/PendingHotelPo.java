@@ -63,7 +63,14 @@ public class PendingHotelPo {
 	 * 供应商订单号
 	 */
 	private String cooperationOrderId;
-	
+
+	/**
+	 * 是否展示同程标识
+	 */
+	private String originFrom;
+
+	private int otaType;
+
 	private List<PendingConfirmOrderPo> orderlist;
 	
 	private int roomContactSwitch;
@@ -162,5 +169,21 @@ public class PendingHotelPo {
 
 	public void setCooperationOrderId(String cooperationOrderId) {
 		this.cooperationOrderId = cooperationOrderId;
+	}
+
+	public String getOriginFrom() {
+		return originFrom;
+	}
+
+	public void setOriginFrom(String originFrom) {
+		this.originFrom = originFrom;
+	}
+
+	public int getOtaType() {
+		return otaType;
+	}
+
+	public void setOtaType(int otaType) {
+		this.otaType = otaType;
 	}
 }

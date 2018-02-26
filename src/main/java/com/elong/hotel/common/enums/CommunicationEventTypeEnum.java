@@ -46,7 +46,11 @@ public enum CommunicationEventTypeEnum{
 	/**
 	 * 订单操作初拒,操作库存
 	 */
-	INITIALFULLREFUSEORDER("INITIALFULLREFUSEORDER", "订单操作初拒,操作库存");
+	INITIALFULLREFUSEORDER("INITIALFULLREFUSEORDER", "订单操作初拒,操作库存"),
+
+	FORCEGUARANTEE("FORCEGUARANTEE","直连调用强制担保"),
+
+	CONFIRMOVERTHROW("CONFIRMOVERTHROW","直连调用确认后推翻");
 
 	CommunicationEventTypeEnum(String status, String description) {
 		this.status = status;
