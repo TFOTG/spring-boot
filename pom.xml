@@ -3,7 +3,7 @@
     <groupId>com.elong.hotel</groupId>
     <artifactId>confirm-entity</artifactId>
     <packaging>jar</packaging>
-    <version>1.0.9-SNAPSHOT</version>
+    <version>1.0.10-SNAPSHOT</version>
     <name>confirm-entity</name>
     <url>http://maven.apache.org</url>
     <!-- scm git trunk -->
@@ -127,13 +127,6 @@
             <groupId>com.elong.hotel</groupId>
             <artifactId>elong-util</artifactId>
             <version>1.16.0</version>
-        </dependency>
-
-        <!-- SOA proxy组件  -->
-        <dependency>
-            <groupId>com.elong</groupId>
-            <artifactId>hotel-soa-client</artifactId>
-            <version>1.13.1</version>
         </dependency>
 
         <dependency>
