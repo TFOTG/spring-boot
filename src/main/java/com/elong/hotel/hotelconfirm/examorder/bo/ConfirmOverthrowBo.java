@@ -2,6 +2,7 @@ package com.elong.hotel.hotelconfirm.examorder.bo;
 
 import org.hibernate.validator.constraints.NotEmpty;
 
+import javax.validation.constraints.NotNull;
 import java.io.Serializable;
 
 /**
@@ -23,7 +24,7 @@ public class ConfirmOverthrowBo implements Serializable {
     /**
      * 艺龙订单号
      */
-    @NotEmpty(message = "艺龙订单号不能为空")
+    @NotNull(message = "艺龙订单号不能为空")
     private Integer elongOrderId;
 
     /**
