@@ -830,4 +830,12 @@ public class Order {
 	public void setOriginFrom(int originFrom) {
 		this.originFrom = originFrom;
 	}
+
+	/**
+	 * // ota type = 3 或者 originfrom = 1 则订单是同程艺龙
+	 * @return
+	 */
+	public int getTcyl() {
+		return (this.getOtaType() == 3 || this.getOriginFrom() == 1) ? 1 : 0;
+	}
 }
