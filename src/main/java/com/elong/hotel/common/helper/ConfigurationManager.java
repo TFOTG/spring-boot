@@ -5,6 +5,8 @@ import com.elong.hotswitch.client.HotSwitchConfigHelper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import java.util.ResourceBundle;
+
 /**
  * ConfigurationManager
  *
@@ -21,6 +23,23 @@ public class ConfigurationManager {
     @Autowired
     public void setHotSwitchConfigHelper(HotSwitchConfigHelper hotSwitchConfigHelper) {
         ConfigurationManager.hotSwitchConfigHelper = hotSwitchConfigHelper;
+    }
+
+    /**
+     * AppSettings
+     *
+     * @param key key
+     * @param confName confName
+     * @return string
+     */
+    public static String appSettings(String key, String confName) {
+        String result = "";
+
+        ResourceBundle bundle = ResourceBundle.getBundle(confName);
+
+        result = bundle.getString(key);
+
+        return result;
     }
 
     /**
