@@ -16,7 +16,7 @@ public interface OriginalOrderFieldsConst {
 	/**
 	 * 确认ivr
 	 */
-	String FIELDS_FOR_CONFIRMIVR = "status,hotelId,payment,checkInDate,roomCount,mRoomTypeName,checkOutDate,earlyCheckInTime,lateCheckInTime,additionalStatus,guestName,guestSex,hotelName,mHotelName,roomNightStayDate,roomNightIsSpecial,roomNightCost,roomNightSalePrice,roomNightRealSalePrice,roomNightRealCost,roomNightBreakfastCount,notesToHotel,notesToElong";
+	String FIELDS_FOR_CONFIRMIVR = "status,hotelId,payment,checkInDate,roomCount,mRoomTypeName,checkOutDate,earlyCheckInTime,lateCheckInTime,additionalStatus,guestName,guestSex,hotelName,mHotelName,roomNightStayDate,roomNightIsSpecial,roomNightCost,roomNightSalePrice,roomNightRealSalePrice,roomNightRealCost,roomNightBreakfastCount,notesToHotel,notesToElong,otaType,originFrom";
 
 	/**
 	 * 初拒调用查询字段
@@ -31,7 +31,7 @@ public interface OriginalOrderFieldsConst {
 	/**
 	 * 待处理／暂缓
 	 */
-	String FIELDS_FOR_PENDING = "hotelId,cooperationType,additionalStatus,confirmNo,roomTypeName,roomCount,payment,guestName,roomNightBreakfastCount,notesToHotel,notesToGuest,notesToElong,sumPrice,sumCost,cardNo,gradeId,contactPhone,contactMobile,createName,orderKeyValues,createTime,currencyCode,roomNo,roomNightInventoryType,ratePlanId,hotelfax,roomNightRealCost,roomNightRealSalePrice,status,roomNightStayDate,mHotelId,roomTypeId,checkInDate,checkOutDate,cooperationOrderId,proxy,baseRuleInfo,orderFlag,businessSystemId";
+	String FIELDS_FOR_PENDING = "hotelId,cooperationType,additionalStatus,confirmNo,roomTypeName,roomCount,payment,guestName,roomNightBreakfastCount,notesToHotel,notesToGuest,notesToElong,sumPrice,sumCost,cardNo,gradeId,contactPhone,contactMobile,createName,orderKeyValues,createTime,currencyCode,roomNo,roomNightInventoryType,ratePlanId,hotelfax,roomNightRealCost,roomNightRealSalePrice,status,roomNightStayDate,mHotelId,roomTypeId,checkInDate,checkOutDate,cooperationOrderId,proxy,baseRuleInfo,orderFlag,originFrom,otaType,businessSystemId";
 
 	/**
 	 * 联单，重单
