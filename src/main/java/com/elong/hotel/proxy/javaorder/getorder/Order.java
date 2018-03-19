@@ -190,6 +190,8 @@ public class Order {
 	 */
 	private int originFrom;
 
+    private Date ctripPromiseTime;
+
     public Integer getBusinessSystemId() {
         return businessSystemId;
     }
@@ -830,4 +832,12 @@ public class Order {
 	public void setOriginFrom(int originFrom) {
 		this.originFrom = originFrom;
 	}
+
+    public Date getCtripPromiseTime() {
+        return ctripPromiseTime;
+    }
+
+    public void setCtripPromiseTime(Date ctripPromiseTime) {
+        this.ctripPromiseTime = ctripPromiseTime;
+    }
 }

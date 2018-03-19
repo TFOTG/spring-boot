@@ -46,6 +46,7 @@ public class ConfirmOrderBo extends CompareEntityBase {
     private String staffName;
     private Date distributeTime;
     private Date promiseTime;
+    private Date ctripPromiseTime;
     private Integer promiseChangeTimes;
     private Integer isFaxReturn;
     private Integer isLinked;
@@ -144,6 +145,7 @@ public class ConfirmOrderBo extends CompareEntityBase {
             this.staffName = confirmOrder.getStaffName();
             this.distributeTime = confirmOrder.getDistributeTime();
             this.promiseTime = confirmOrder.getPromiseTime();
+            this.ctripPromiseTime=order.getCtripPromiseTime();
             this.promiseChangeTimes = confirmOrder.getPromiseChangeTimes();
             this.isFaxReturn = confirmOrder.getIsFaxReturn();
             this.isLinked = confirmOrder.getIsLinked();
@@ -190,6 +192,7 @@ public class ConfirmOrderBo extends CompareEntityBase {
             this.bookingTime = order.getCreateTime();
             this.additionalStatus = order.getAdditionalStatus();
             this.promiseTime = DateHelper.getMinDate();
+            this.ctripPromiseTime=order.getCtripPromiseTime();
             this.promiseChangeTimes = 0;
             this.staffName = "";
             this.orderTimestamp = order.getOrderTimestamp();
@@ -223,6 +226,7 @@ public class ConfirmOrderBo extends CompareEntityBase {
             this.staffName = confirmOrder.getStaffName();
             this.distributeTime = confirmOrder.getDistributeTime();
             this.promiseTime = confirmOrder.getPromiseTime();
+            this.promiseTime=confirmOrder.getCtripPromiseTime();
             this.promiseChangeTimes = confirmOrder.getPromiseChangeTimes();
             this.isFaxReturn = confirmOrder.getIsFaxReturn();
             this.isLinked = confirmOrder.getIsLinked();
@@ -695,5 +699,13 @@ public class ConfirmOrderBo extends CompareEntityBase {
 
     public void setIsStorageOutAndIn(Boolean isStorageOutAndIn) {
         this.isStorageOutAndIn = isStorageOutAndIn;
+    }
+
+    public Date getCtripPromiseTime() {
+        return ctripPromiseTime;
+    }
+
+    public void setCtripPromiseTime(Date ctripPromiseTime) {
+        this.ctripPromiseTime = ctripPromiseTime;
     }
 }
