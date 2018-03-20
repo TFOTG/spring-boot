@@ -145,7 +145,7 @@ public class ConfirmOrderBo extends CompareEntityBase {
             this.staffName = confirmOrder.getStaffName();
             this.distributeTime = confirmOrder.getDistributeTime();
             this.promiseTime = confirmOrder.getPromiseTime();
-            this.ctripPromiseTime=order.getCtripPromiseTime();
+            this.ctripPromiseTime=order.getPmsConfirmTime();
             this.promiseChangeTimes = confirmOrder.getPromiseChangeTimes();
             this.isFaxReturn = confirmOrder.getIsFaxReturn();
             this.isLinked = confirmOrder.getIsLinked();
@@ -192,7 +192,7 @@ public class ConfirmOrderBo extends CompareEntityBase {
             this.bookingTime = order.getCreateTime();
             this.additionalStatus = order.getAdditionalStatus();
             this.promiseTime = DateHelper.getMinDate();
-            this.ctripPromiseTime=order.getCtripPromiseTime();
+            this.ctripPromiseTime=order.getPmsConfirmTime();
             this.promiseChangeTimes = 0;
             this.staffName = "";
             this.orderTimestamp = order.getOrderTimestamp();
