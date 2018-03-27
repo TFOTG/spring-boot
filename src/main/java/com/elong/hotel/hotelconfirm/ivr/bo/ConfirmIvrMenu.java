@@ -141,7 +141,7 @@ public class ConfirmIvrMenu implements Serializable {
 		this.orderType = orderType;
 		this.hStatus = hStatus;
 		// ota type = 3 或者 originfrom = 1 则订单是同程艺龙
-		this.tcyl = order.getTcyl();
+		this.tcyl = order.checkTcyl();
 	}
 
 	private String getRoomNight(RoomNight roomNight,DateFormat dateFormat,String payment) {
