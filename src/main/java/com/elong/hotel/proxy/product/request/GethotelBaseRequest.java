@@ -10,7 +10,9 @@ public class GethotelBaseRequest implements Serializable {
 
 	private String logId;
 
-	private Map<String, Object> realRequest;
+	private Map<String, Object> body;
+
+    private Map<String, Object> realRequest;
 
 	public String getFrom() {
 		return from;
@@ -35,4 +37,12 @@ public class GethotelBaseRequest implements Serializable {
 	public void setRealRequest(Map<String, Object> realRequest) {
 		this.realRequest = realRequest;
 	}
+
+    public Map<String, Object> getBody() {
+        return body;
+    }
+
+    public void setBody(Map<String, Object> body) {
+        this.body = body;
+    }
 }
