@@ -9,7 +9,7 @@ import java.io.Serializable;
  * @Date 2018-02-09 16:52  下午4:52
  */
 
-public class ApiReturnResponse implements Serializable{
+public class ApiReturnResponse extends ServiceResponseBase implements Serializable{
 
     private static final long serialVersionUID = 3132327955780443053L;
 
