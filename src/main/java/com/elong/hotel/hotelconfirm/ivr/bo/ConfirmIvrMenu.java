@@ -19,6 +19,12 @@ import java.util.List;
 public class ConfirmIvrMenu implements Serializable {
 	private Integer orderId;
 
+	/**
+	 * 是否同程艺龙
+	 * 0：艺龙  1：同程艺龙
+	 */
+	private Integer tcyl;
+
 	private List<Guest> guest;
 
 	private Date checkInDate;
@@ -134,6 +140,8 @@ public class ConfirmIvrMenu implements Serializable {
 		}
 		this.orderType = orderType;
 		this.hStatus = hStatus;
+		// ota type = 3 或者 originfrom = 1 则订单是同程艺龙
+		this.tcyl = order.checkTcyl();
 	}
 
 	private String getRoomNight(RoomNight roomNight,DateFormat dateFormat,String payment) {
@@ -265,5 +273,13 @@ public class ConfirmIvrMenu implements Serializable {
 
 	public void setNights(List<String> nights) {
 		this.nights = nights;
+	}
+
+	public Integer getTcyl() {
+		return tcyl;
+	}
+
+	public void setTcyl(Integer tcyl) {
+		this.tcyl = tcyl;
 	}
 }

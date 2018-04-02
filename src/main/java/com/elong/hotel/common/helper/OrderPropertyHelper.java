@@ -46,6 +46,14 @@ public class OrderPropertyHelper {
                     result = 6;
                 }
                 break;
+            case 8:
+                //同程订单
+                result=2;
+                break;
+            case 9:
+                //同程订单
+                result=2;
+                break;
             default:
                 result = 6;
                 break;

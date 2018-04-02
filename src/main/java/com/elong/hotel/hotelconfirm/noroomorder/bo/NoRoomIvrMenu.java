@@ -1,5 +1,10 @@
 package com.elong.hotel.hotelconfirm.noroomorder.bo;
 
+import com.elong.hotel.common.enums.OrderAdditionalStatusEnum;
+import com.elong.hotel.proxy.javaorder.getorder.Guest;
+import com.elong.hotel.proxy.javaorder.getorder.Order;
+import com.elong.hotel.proxy.javaorder.getorder.RoomNight;
+
 import java.io.Serializable;
 import java.math.BigDecimal;
 import java.text.DateFormat;
@@ -7,11 +12,6 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
-
-import com.elong.hotel.common.enums.OrderAdditionalStatusEnum;
-import com.elong.hotel.proxy.javaorder.getorder.Guest;
-import com.elong.hotel.proxy.javaorder.getorder.Order;
-import com.elong.hotel.proxy.javaorder.getorder.RoomNight;
 
 /**
  * <p>
@@ -30,6 +30,12 @@ public class NoRoomIvrMenu implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	private Integer orderId;
+
+	/**
+	 * 是否同程艺龙
+	 * 0：艺龙  1：同程艺龙
+	 */
+	private Integer tcyl;
 
 	private List<Guest> guest;
 
@@ -150,6 +156,9 @@ public class NoRoomIvrMenu implements Serializable {
 		}
 		this.orderType = orderType;
 		this.hStatus = hStatus;
+
+		// ota type = 3 或者 originfrom = 1 则订单是同程艺龙
+		this.tcyl = order.checkTcyl();
 	}
 
 	private String getRoomNight(RoomNight roomNight, DateFormat dateFormat, String payment) {
@@ -281,5 +290,13 @@ public class NoRoomIvrMenu implements Serializable {
 
 	public void setNights(List<String> nights) {
 		this.nights = nights;
+	}
+
+	public Integer getTcyl() {
+		return tcyl;
+	}
+
+	public void setTcyl(Integer tcyl) {
+		this.tcyl = tcyl;
 	}
 }
