@@ -17,7 +17,7 @@ public class ApiReturnResponse extends ServiceResponseBase implements Serializab
 
     private String retdesc;
 
-    private String serverip;
+    private String serverIp;
 
     private Object body;
 
@@ -37,12 +37,12 @@ public class ApiReturnResponse extends ServiceResponseBase implements Serializab
         this.retdesc = retdesc;
     }
 
-    public String getServerip() {
-        return serverip;
+    public String getServerIp() {
+        return serverIp;
     }
 
-    public void setServerip(String serverip) {
-        this.serverip = serverip;
+    public void setServerIp(String serverIp) {
+        this.serverIp = serverIp;
     }
 
     public Object getBody() {

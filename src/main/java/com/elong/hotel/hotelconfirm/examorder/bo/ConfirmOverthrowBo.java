@@ -24,7 +24,7 @@ public class ConfirmOverthrowBo implements Serializable {
      * 艺龙订单号
      */
     @NotEmpty(message = "艺龙订单号不能为空")
-    private Integer elongOrderId;
+    private String elongOrderId;
 
     /**
      * 类别标识
@@ -63,11 +63,11 @@ public class ConfirmOverthrowBo implements Serializable {
         this.ctripOrderId = ctripOrderId;
     }
 
-    public Integer getElongOrderId() {
+    public String getElongOrderId() {
         return elongOrderId;
     }
 
-    public void setElongOrderId(Integer elongOrderId) {
+    public void setElongOrderId(String elongOrderId) {
         this.elongOrderId = elongOrderId;
     }
 
