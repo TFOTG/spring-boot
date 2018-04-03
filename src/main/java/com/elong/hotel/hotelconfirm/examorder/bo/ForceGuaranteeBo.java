@@ -25,7 +25,7 @@ public class ForceGuaranteeBo {
      * 艺龙订单号
      */
     @NotNull(message = "艺龙订单号不能为空")
-    private Integer elongOrderId;
+    private String elongOrderId;
 
     /**
      * 担保类别
@@ -50,11 +50,11 @@ public class ForceGuaranteeBo {
         this.ctripOrderId = ctripOrderId;
     }
 
-    public Integer getElongOrderId() {
+    public String getElongOrderId() {
         return elongOrderId;
     }
 
-    public void setElongOrderId(Integer elongOrderId) {
+    public void setElongOrderId(String elongOrderId) {
         this.elongOrderId = elongOrderId;
     }
 
