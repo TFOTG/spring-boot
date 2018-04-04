@@ -4,6 +4,7 @@ import com.elong.hotel.common.bo.OperatorInfoBo;
 import com.elong.hotel.hotelconfirm.confirmorder.bo.EBRefuseBo;
 import com.elong.hotel.hotelconfirm.confirmorder.enums.ServerRunningDomainEnum;
 import com.elong.hotel.hotelconfirm.confirmorder.po.ConfirmOrderPo;
+import com.elong.hotel.hotelconfirm.confirmorder.request.ConfirmHeChengRequest;
 import com.elong.hotel.proxy.javaorder.getorder.GetOrderStatusChangeTimeBo;
 import com.elong.hotel.proxy.javaorder.getorder.Order;
 import com.elong.hotel.storage.bo.OrderConsumerInfoBo;
@@ -36,6 +37,11 @@ public class ConfirmOrderDomainContext implements Serializable {
     private EBRefuseBo ebRefuseBo;
 
     private OrderStatusChangeRequest request;
+    
+    /**
+     * 赫程小修改请求参数
+     */
+    private ConfirmHeChengRequest hechengRequest;
 
     public ConfirmOrderDomainContext(){}
 
@@ -146,4 +152,13 @@ public class ConfirmOrderDomainContext implements Serializable {
     public void setRequest(OrderStatusChangeRequest request) {
         this.request = request;
     }
+
+	public ConfirmHeChengRequest getHechengRequest() {
+		return hechengRequest;
+	}
+
+	public void setHechengRequest(ConfirmHeChengRequest hechengRequest) {
+		this.hechengRequest = hechengRequest;
+	}
+    
 }
