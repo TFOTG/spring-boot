@@ -63,5 +63,5 @@ public interface OriginalOrderFieldsConst {
 	/**
 	 * 确认后推翻，强制担保原订单状态
 	 */
-	String OVERTHROW_STATUS = "status";
+	String OVERTHROW_STATUS = "status,notesToElong";
 }
