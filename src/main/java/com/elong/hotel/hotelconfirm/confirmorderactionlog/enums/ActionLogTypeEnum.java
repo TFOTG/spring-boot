@@ -44,10 +44,11 @@ public enum ActionLogTypeEnum {
      * 延迟承诺时间短信
      */
     MsgPromiseTime(9,"延迟承诺时间短信"),
+
     /**
-     * 赫程确认
+     * 赫程催携程
      */
-    HeChengConfirm(10,"赫程确认");
+    Urge4Ctrip(10, "赫程催确认");
 
     private int key;
     private String value;

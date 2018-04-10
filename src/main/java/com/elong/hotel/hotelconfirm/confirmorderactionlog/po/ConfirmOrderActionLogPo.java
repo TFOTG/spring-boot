@@ -160,7 +160,7 @@ public class ConfirmOrderActionLogPo {
 
     public ConfirmOrderActionLogPo( Order order,String sourceStatus,String targetStatus,OperatorInfoBo operatorInfoBo,ActionLogTypeEnum logTypeEnum,ActionOpFromEnum opFromEnum,String targetReason,Integer messageStatus,Integer messageType) {
         this.orderId = order.getOrderId().intValue();
-        this.hotelId = Long.getLong(order.getHotelId());
+        this.hotelId = Long.parseLong(order.getHotelId());
         this.logType = logTypeEnum.getKey();
         this.sourceStatus = sourceStatus;
         this.targetStatus = targetStatus;

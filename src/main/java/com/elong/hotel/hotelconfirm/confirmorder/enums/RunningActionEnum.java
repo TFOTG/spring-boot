@@ -43,7 +43,12 @@ public enum RunningActionEnum {
     /**
      * 修改订单类型
      */
-    CHANGE_ORDER_PRIORITY("修改订单优先级", 7);
+    CHANGE_ORDER_PRIORITY("修改订单优先级", 7),
+
+    /**
+     * 修改赫程承诺时间
+     */
+    CHANGE_CTRIP_PROMISE_TIME("修改赫程承诺时间", 8);
 
     RunningActionEnum(String name, int actionIndex) {
         this.name = name;

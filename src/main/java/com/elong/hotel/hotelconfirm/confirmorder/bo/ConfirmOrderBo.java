@@ -1,7 +1,5 @@
 package com.elong.hotel.hotelconfirm.confirmorder.bo;
 
-import java.util.Date;
-
 import com.elong.hotel.common.bo.OperatorInfoBo;
 import com.elong.hotel.common.config.ConfirmOrderConfig;
 import com.elong.hotel.common.enums.ElongOrderStatusEnum;
@@ -13,6 +11,8 @@ import com.elong.hotel.hotelconfirm.groupfilter.bo.CompareEntityBase;
 import com.elong.hotel.proxy.javaorder.consts.OrderFlagConst;
 import com.elong.hotel.proxy.javaorder.getorder.GetOrderStatusChangeTimeBo;
 import com.elong.hotel.proxy.javaorder.getorder.Order;
+
+import java.util.Date;
 
 /**
  * Created by yangboyu on 17/4/4.
@@ -46,6 +46,7 @@ public class ConfirmOrderBo extends CompareEntityBase {
 	private String staffName;
 	private Date distributeTime;
 	private Date promiseTime;
+    private Date ctripPromiseTime;
 	private Integer promiseChangeTimes;
 	private Integer isFaxReturn;
 	private Integer isLinked;
@@ -145,6 +146,7 @@ public class ConfirmOrderBo extends CompareEntityBase {
 			this.staffName = confirmOrder.getStaffName();
 			this.distributeTime = confirmOrder.getDistributeTime();
 			this.promiseTime = confirmOrder.getPromiseTime();
+            this.ctripPromiseTime=order.getPmsConfirmTime();
 			this.promiseChangeTimes = confirmOrder.getPromiseChangeTimes();
 			this.isFaxReturn = confirmOrder.getIsFaxReturn();
 			this.isLinked = confirmOrder.getIsLinked();
@@ -191,6 +193,7 @@ public class ConfirmOrderBo extends CompareEntityBase {
 			this.bookingTime = order.getCreateTime();
 			this.additionalStatus = order.getAdditionalStatus();
 			this.promiseTime = DateHelper.getMinDate();
+            this.ctripPromiseTime=order.getPmsConfirmTime();
 			this.promiseChangeTimes = 0;
 			this.staffName = "";
 			this.orderTimestamp = order.getOrderTimestamp();
@@ -224,6 +227,7 @@ public class ConfirmOrderBo extends CompareEntityBase {
 			this.staffName = confirmOrder.getStaffName();
 			this.distributeTime = confirmOrder.getDistributeTime();
 			this.promiseTime = confirmOrder.getPromiseTime();
+            this.ctripPromiseTime=confirmOrder.getCtripPromiseTime();
 			this.promiseChangeTimes = confirmOrder.getPromiseChangeTimes();
 			this.isFaxReturn = confirmOrder.getIsFaxReturn();
 			this.isLinked = confirmOrder.getIsLinked();
@@ -694,11 +698,19 @@ public class ConfirmOrderBo extends CompareEntityBase {
 		this.fullRoomRate = fullRoomRate;
 	}
 
-	public Boolean isStorageOutAndIn() {
-		return isStorageOutAndIn;
-	}
+    public Boolean isStorageOutAndIn() {
+        return isStorageOutAndIn;
+    }
 
-	public void setIsStorageOutAndIn(Boolean isStorageOutAndIn) {
-		this.isStorageOutAndIn = isStorageOutAndIn;
-	}
+    public void setIsStorageOutAndIn(Boolean isStorageOutAndIn) {
+        this.isStorageOutAndIn = isStorageOutAndIn;
+    }
+
+    public Date getCtripPromiseTime() {
+        return ctripPromiseTime;
+    }
+
+    public void setCtripPromiseTime(Date ctripPromiseTime) {
+        this.ctripPromiseTime = ctripPromiseTime;
+    }
 }
