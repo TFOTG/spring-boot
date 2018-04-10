@@ -50,7 +50,11 @@ public enum CommunicationEventTypeEnum{
 
 	FORCEGUARANTEE("FORCEGUARANTEE","直连调用强制担保"),
 
-	CONFIRMOVERTHROW("CONFIRMOVERTHROW","直连调用确认后推翻");
+	CONFIRMOVERTHROW("CONFIRMOVERTHROW","直连调用确认后推翻"),
+	/**
+	 * 直连小修改
+	 */
+	DCMINOREDIT("DCMINOREDIT","直连小修改");
 
 	CommunicationEventTypeEnum(String status, String description) {
 		this.status = status;

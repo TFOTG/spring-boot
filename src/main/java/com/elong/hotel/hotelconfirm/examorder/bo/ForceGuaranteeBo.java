@@ -3,6 +3,7 @@ package com.elong.hotel.hotelconfirm.examorder.bo;
 import com.elong.hotel.proxy.javaorder.request.OperatorInfo;
 import org.hibernate.validator.constraints.NotEmpty;
 
+import javax.validation.constraints.NotNull;
 import java.util.Date;
 
 /**
@@ -23,8 +24,8 @@ public class ForceGuaranteeBo {
     /**
      * 艺龙订单号
      */
-    @NotEmpty(message = "艺龙订单号不能为空")
-    private Integer elongOrderId;
+    @NotNull(message = "艺龙订单号不能为空")
+    private String elongOrderId;
 
     /**
      * 担保类别
@@ -38,8 +39,8 @@ public class ForceGuaranteeBo {
     @NotEmpty(message = "操作人不能为空")
     private String operatorName;
     // 操作时间
-    @NotEmpty(message = "操作时间不能为空")
-    private Date operatorTime;
+    @NotNull(message = "操作时间不能为空")
+    private String operatorTime;
 
     public String getCtripOrderId() {
         return ctripOrderId;
@@ -49,11 +50,11 @@ public class ForceGuaranteeBo {
         this.ctripOrderId = ctripOrderId;
     }
 
-    public Integer getElongOrderId() {
+    public String getElongOrderId() {
         return elongOrderId;
     }
 
-    public void setElongOrderId(Integer elongOrderId) {
+    public void setElongOrderId(String elongOrderId) {
         this.elongOrderId = elongOrderId;
     }
 
@@ -81,11 +82,11 @@ public class ForceGuaranteeBo {
         this.operatorName = operatorName;
     }
 
-    public Date getOperatorTime() {
+    public String getOperatorTime() {
         return operatorTime;
     }
 
-    public void setOperatorTime(Date operatorTime) {
+    public void setOperatorTime(String operatorTime) {
         this.operatorTime = operatorTime;
     }
 }

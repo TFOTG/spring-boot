@@ -9,7 +9,7 @@ import java.io.Serializable;
  * @Date 2018-02-09 16:52  下午4:52
  */
 
-public class ApiReturnResponse implements Serializable{
+public class ApiReturnResponse extends ServiceResponseBase implements Serializable{
 
     private static final long serialVersionUID = 3132327955780443053L;
 
@@ -17,7 +17,7 @@ public class ApiReturnResponse implements Serializable{
 
     private String retdesc;
 
-    private String serverip;
+    private String serverIp;
 
     private Object body;
 
@@ -37,12 +37,12 @@ public class ApiReturnResponse implements Serializable{
         this.retdesc = retdesc;
     }
 
-    public String getServerip() {
-        return serverip;
+    public String getServerIp() {
+        return serverIp;
     }
 
-    public void setServerip(String serverip) {
-        this.serverip = serverip;
+    public void setServerIp(String serverIp) {
+        this.serverIp = serverIp;
     }
 
     public Object getBody() {
