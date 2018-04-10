@@ -53,7 +53,7 @@ public enum ServerActionEnum {
     /**
      * 赫程确认
      */
-    HECHENG_CONFIRM("赫程确认",9);
+    CTRIP_CONFIRM("赫程确认",9);
 
     ServerActionEnum(String name, int actionIndex) {
         this.name = name;
