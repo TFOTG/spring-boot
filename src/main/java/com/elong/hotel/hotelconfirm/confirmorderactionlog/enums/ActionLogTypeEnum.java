@@ -46,9 +46,13 @@ public enum ActionLogTypeEnum {
     MsgPromiseTime(9,"延迟承诺时间短信"),
 
     /**
+     * 赫程确认
+     */
+    CtripConfirm(10,"赫程确认"),
+    /**
      * 赫程催携程
      */
-    Urge4Ctrip(10, "赫程催确认");
+    Urge4Ctrip(11, "赫程催确认");
 
     private int key;
     private String value;
