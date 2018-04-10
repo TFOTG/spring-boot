@@ -226,7 +226,7 @@ public class ConfirmOrderBo extends CompareEntityBase {
             this.staffName = confirmOrder.getStaffName();
             this.distributeTime = confirmOrder.getDistributeTime();
             this.promiseTime = confirmOrder.getPromiseTime();
-            this.promiseTime=confirmOrder.getCtripPromiseTime();
+            this.ctripPromiseTime=confirmOrder.getCtripPromiseTime();
             this.promiseChangeTimes = confirmOrder.getPromiseChangeTimes();
             this.isFaxReturn = confirmOrder.getIsFaxReturn();
             this.isLinked = confirmOrder.getIsLinked();

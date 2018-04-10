@@ -43,7 +43,12 @@ public enum ActionLogTypeEnum {
     /**
      * 延迟承诺时间短信
      */
-    MsgPromiseTime(9,"延迟承诺时间短信");
+    MsgPromiseTime(9,"延迟承诺时间短信"),
+
+    /**
+     * 催携程
+     */
+    Urge4Ctrip(10, "催确认");
 
     private int key;
     private String value;

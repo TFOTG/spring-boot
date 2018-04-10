@@ -21,7 +21,7 @@ public class UrgeCtripResponse extends ServiceResponseBase {
         this.realResponse = realResponse;
     }
 
-    private class RealResponse{
+    public class RealResponse{
 
         private List<UrgeCtripBo> reminderOrderRespItems;
 
