@@ -1,6 +1,7 @@
 package com.elong.hotel.hotelconfirm.confirmorder.request;
 
 import com.elong.hotel.common.bo.OperatorInfoBo;
+import com.elong.hotel.hotelconfirm.confirmorder.vo.ChangeOrderStatusVo;
 import com.elong.hotel.hotelconfirm.confirmorderactionlog.enums.ActionOpFromEnum;
 
 /**
@@ -29,6 +30,17 @@ public class ChangeOrderStatusRequest {
     private OperatorInfoBo operatorInfo;
 
     private ActionOpFromEnum actionOpFromEnum;
+
+    public ChangeOrderStatusRequest(ChangeOrderStatusVo vo) {
+
+        this.confirmNo=vo.getConfirmno();
+        this.note2Client=vo.getNote2client();
+        this.note2Elong=vo.getNote2elong();
+        this.note2Hotel=vo.getNote2hotel();
+        this.orderId=vo.getOrderid();
+        this.orderStatus=vo.getOrderstatus();
+
+    }
 
     public Integer getOrderId() {
         return orderId;
