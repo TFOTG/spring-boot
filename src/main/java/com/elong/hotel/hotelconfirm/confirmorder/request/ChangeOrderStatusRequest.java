@@ -42,6 +42,9 @@ public class ChangeOrderStatusRequest {
 
     }
 
+    public ChangeOrderStatusRequest() {
+    }
+
     public Integer getOrderId() {
         return orderId;
     }
