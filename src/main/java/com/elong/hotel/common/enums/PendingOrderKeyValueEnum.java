@@ -14,6 +14,8 @@ public enum PendingOrderKeyValueEnum {
 	HOURROOMSTAY("HourRoomStay","是否小时房"),
 	
 	PMSPROCESSINGSTATUS("PmsProcessingStatus","2"),
+
+    USENEWHCFLOW("UseNewHCFlow","使用赫程新流程"),
 	
 	RESPITETIMESTAMP("2000-01-01 00:00:00","待处理订单");
 	private String key;

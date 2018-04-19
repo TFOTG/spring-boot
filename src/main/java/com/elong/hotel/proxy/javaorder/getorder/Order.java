@@ -1,6 +1,7 @@
 package com.elong.hotel.proxy.javaorder.getorder;
 
 import com.alibaba.fastjson.annotation.JSONField;
+import com.elong.common.util.StringUtils;
 
 import java.math.BigDecimal;
 import java.util.Date;
@@ -848,4 +849,17 @@ public class Order {
 	public int checkTcyl() {
 		return (this.getOtaType() == 3 || this.getOriginFrom() == 1) ? 1 : 0;
 	}
+
+
+    public String getOrderValueByKey(String key) {
+        String value = null;
+        if(orderKeyValues!=null){
+            for (OrderKeyValue kv : orderKeyValues) {
+                if (StringUtils.equals(key, kv.getKey())) {
+                    value = kv.getValue();
+                }
+            }
+        }
+        return value;
+    }
 }
