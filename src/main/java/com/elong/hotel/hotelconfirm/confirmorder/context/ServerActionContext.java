@@ -4,6 +4,7 @@ import com.elong.hotel.common.bo.OperatorInfoBo;
 import com.elong.hotel.hotelconfirm.confirmorder.bo.ConfirmOrderBo;
 import com.elong.hotel.hotelconfirm.confirmorder.bo.EBRefuseBo;
 import com.elong.hotel.hotelconfirm.confirmorder.enums.ServerActionEnum;
+import com.elong.hotel.hotelconfirm.confirmorder.request.ConfirmHeChengRequest;
 import com.elong.hotel.hotelconfirm.confirmorderactionlog.enums.ActionOpFromEnum;
 import com.elong.hotel.proxy.javaorder.getorder.Order;
 
@@ -21,6 +22,11 @@ public class ServerActionContext implements Serializable {
 	Integer msdId;
 	String note2Action;
 	EBRefuseBo ebRefuseBo;
+    /**
+     * 赫程小修改请求参数
+     */
+    private ConfirmHeChengRequest hechengRequest;
+
 
 	public ServerActionEnum getActionEnum() {
 		return actionEnum;
@@ -101,4 +107,13 @@ public class ServerActionContext implements Serializable {
 	public void setMsdId(Integer msdId) {
 		this.msdId = msdId;
 	}
+
+	public ConfirmHeChengRequest getHechengRequest() {
+		return hechengRequest;
+	}
+
+	public void setHechengRequest(ConfirmHeChengRequest hechengRequest) {
+		this.hechengRequest = hechengRequest;
+	}
+	
 }

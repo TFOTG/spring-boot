@@ -25,6 +25,13 @@ public class OperatorInfoBo implements Serializable {
     public OperatorInfoBo() {
     }
 
+    public OperatorInfoBo(String opName,Date opDate,String operatorIP) {
+        this.operatorName=opName;
+        this.operatorTime=opDate;
+        this.operatorIP=operatorIP;
+
+    }
+
     public String getOperatorName() {
         return operatorName;
     }

@@ -190,6 +190,8 @@ public class Order {
 	 */
 	private int originFrom;
 
+    private Date pmsConfirmTime;
+
     public Integer getBusinessSystemId() {
         return businessSystemId;
     }
@@ -830,6 +832,14 @@ public class Order {
 	public void setOriginFrom(int originFrom) {
 		this.originFrom = originFrom;
 	}
+
+    public Date getPmsConfirmTime() {
+        return pmsConfirmTime;
+    }
+
+    public void setPmsConfirmTime(Date pmsConfirmTime) {
+        this.pmsConfirmTime = pmsConfirmTime;
+    }
 
 	/**
 	 * // ota type = 3 或者 originfrom = 1 则订单是同程艺龙

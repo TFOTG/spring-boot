@@ -1,8 +1,8 @@
 package com.elong.hotel.hotelconfirm.confirmorder.po;
 
-import java.util.Date;
-
 import com.elong.hotel.hotelconfirm.confirmorder.bo.ConfirmOrderBo;
+
+import java.util.Date;
 
 /**
  * Created by yangboyu on 17/4/6.
@@ -39,6 +39,7 @@ public class ConfirmOrderPo {
     //员工获取时间
     private Date distributeTime;
     private Date promiseTime;
+    private Date ctripPromiseTime;
     private Integer promiseChangeTimes;
     private Integer isFaxReturn;
     private Integer isLinked;
@@ -91,6 +92,7 @@ public class ConfirmOrderPo {
         this.staffName = bo.getStaffName();
         this.distributeTime = bo.getDistributeTime();
         this.promiseTime = bo.getPromiseTime();
+        this.ctripPromiseTime=bo.getCtripPromiseTime();
         this.promiseChangeTimes = bo.getPromiseChangeTimes();
         this.isFaxReturn = bo.getIsFaxReturn();
         this.isLinked = bo.getIsLinked();
@@ -469,5 +471,12 @@ public class ConfirmOrderPo {
 	public void setFullRoomRates(String fullRoomRates) {
 		this.fullRoomRates = fullRoomRates;
 	}
-    
+
+    public Date getCtripPromiseTime() {
+        return ctripPromiseTime;
+    }
+
+    public void setCtripPromiseTime(Date ctripPromiseTime) {
+        this.ctripPromiseTime = ctripPromiseTime;
+    }
 }

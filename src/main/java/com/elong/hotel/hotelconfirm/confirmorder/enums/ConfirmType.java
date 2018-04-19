@@ -5,16 +5,15 @@ package com.elong.hotel.hotelconfirm.confirmorder.enums;
  */
 public enum ConfirmType {
 
-
 	/**
 	 * EBooking
 	 */
-	EBooking(1,"EBooking"),
+	EBooking(1, "EBooking"),
 
 	/**
 	 * DC
 	 */
-	DC(2,"DC"),
+	DC(2, "DC"),
 
 	/**
 	 * 确认Task 执行出库
@@ -24,12 +23,16 @@ public enum ConfirmType {
 	/**
 	 * MIS
 	 */
-	MIS(4,"MIS"),
+	MIS(4, "MIS"),
 
 	/**
 	 * IVR
 	 */
-	IVR(5,"IVR");
+	IVR(5, "IVR"),
+	/**
+	 * 赫程
+	 */
+	HeCheng(6, "赫程");
 
 	private int key;
 	private String value;
@@ -49,8 +52,8 @@ public enum ConfirmType {
 
 	public static String getValue(int key) {
 		String value = "";
-		for(ConfirmType auditingTypeEnum: ConfirmType.values()) {
-			if(auditingTypeEnum.getKey() == key) {
+		for (ConfirmType auditingTypeEnum : ConfirmType.values()) {
+			if (auditingTypeEnum.getKey() == key) {
 				value = auditingTypeEnum.getValue();
 			}
 		}
