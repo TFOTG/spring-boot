@@ -28,11 +28,7 @@ public enum ConfirmType {
 	/**
 	 * IVR
 	 */
-	IVR(5, "IVR"),
-	/**
-	 * 赫程
-	 */
-	HeCheng(6, "赫程");
+	IVR(5, "IVR");
 
 	private int key;
 	private String value;

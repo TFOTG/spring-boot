@@ -48,13 +48,8 @@ public enum ServerActionEnum {
     /**
      * ivr 操作确认
      */
-    IVR_CONFIRM("ivr 确认",8),
-    
-    /**
-     * 赫程确认
-     */
-    CTRIP_CONFIRM("赫程确认",9);
-
+    IVR_CONFIRM("ivr 确认",8);
+   
     ServerActionEnum(String name, int actionIndex) {
         this.name = name;
         this.actionIndex = actionIndex;
