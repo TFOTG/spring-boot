@@ -679,10 +679,6 @@ public class ConfirmOrderBo extends CompareEntityBase {
 		// EB确认
 		else if ((orderFlag & OrderFlagConst.SHOULD_CONFIRMED_BY_EB) == OrderFlagConst.SHOULD_CONFIRMED_BY_EB) {
 			return ConfirmType.EBooking.getKey();
-		}
-		// 赫程确认
-		else if (otaType != null && otaType == 1) {
-			return ConfirmType.HeCheng.getKey();
 		} else {
 			// mis员工确认
 			return ConfirmType.MIS.getKey();
