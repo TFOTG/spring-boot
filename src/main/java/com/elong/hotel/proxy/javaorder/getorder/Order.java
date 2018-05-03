@@ -855,7 +855,7 @@ public class Order {
         String value = null;
         if(orderKeyValues!=null){
             for (OrderKeyValue kv : orderKeyValues) {
-                if (StringUtils.equals(key, kv.getKey())) {
+                if (StringUtils.equalsIgnoreCase(key, kv.getKey())) {
                     value = kv.getValue();
                 }
             }

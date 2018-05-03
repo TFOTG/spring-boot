@@ -1,10 +1,10 @@
 package com.elong.hotel.hotelconfirm.examorder.po;
 
+import com.elong.hotel.hotelconfirm.examorder.bo.ExamOrderBo;
+
 import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.Date;
-
-import com.elong.hotel.hotelconfirm.examorder.bo.ExamOrderBo;
 
 /**
  * 终拒订单表

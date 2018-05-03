@@ -50,6 +50,8 @@ public class ExamOrderBo extends CompareEntityBase {
 	private int isimmediately;
 	private int isnew;
 	private String phone;
+	//客人app选择马上到点(&OrderFlagConst.IS_ARRIVE_NOW_ORDER=1024)
+	private boolean userChoiceUrge4App;
 
 	public ExamOrderBo() {
 	}
@@ -63,14 +65,14 @@ public class ExamOrderBo extends CompareEntityBase {
 		if(order != null && po != null){
 			this.setExamOrder(po);
 			this.amendTime = operator.getOperatorTime();
-			
+
 		}else if(order != null && po == null){
-			
+
 		}else if(order == null && po != null){
-			this.setExamOrder(po);	
+			this.setExamOrder(po);
 		}
 	}
-	
+
 	public void setExamOrder(ExamOrderPo po){
 		this.reserNo = po.getReserNo();
 		this.reserStatus = po.getReserStatus();
@@ -468,5 +470,16 @@ public class ExamOrderBo extends CompareEntityBase {
 				+ ", ish=" + ish + ", isrepeat=" + isrepeat + ", isimmediately=" + isimmediately + ", isnew=" + isnew + ", phone=" + phone
 				+ "]";
 	}
+
+
+    public boolean getUserChoiceUrge4App() {
+        return userChoiceUrge4App;
+    }
+
+    public void setUserChoiceUrge4App(boolean userChoiceUrge4App) {
+        this.userChoiceUrge4App = userChoiceUrge4App;
+    }
+
+
 
 }
