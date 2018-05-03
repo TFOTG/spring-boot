@@ -42,14 +42,26 @@ public class ExamOrderBo extends CompareEntityBase {
 	private Date respiteTime;
 	private Date enterTime;
 	private Date orderTimestamp;
-	private int ordertype;
+	private int orderType;
 	private int ispms;
-	private int isconfirm;
+	private int isConfirm;
 	private int ish;
 	private int isrepeat;
 	private int isimmediately;
 	private int isnew;
 	private String phone;
+
+	private String memberLevel;
+
+    //拒单时长
+	private Integer rejectTime;
+
+	//是否赔付
+	private Integer isSupposed;
+
+	//是否超时
+    private Integer isOutTime;
+
 	//客人app选择马上到点(&OrderFlagConst.IS_ARRIVE_NOW_ORDER=1024)
 	private boolean userChoiceUrge4App;
 
@@ -106,15 +118,14 @@ public class ExamOrderBo extends CompareEntityBase {
 		this.respiteTime = po.getRespiteTime();
 		this.enterTime = po.getEnterTime();
 		this.orderTimestamp = new Date(po.getOrderTimeStampLong());
-		this.ordertype = po.getOrderType();
+		this.orderType = po.getOrderType();
 		this.ispms = po.getIsPms();
-		this.isconfirm = po.getIsConfirm();
+		this.isConfirm = po.getIsConfirm();
 		this.ish = po.getIsH();
 		this.isrepeat = po.getIsRepeat();
 		this.isimmediately = po.getIsImmediately();
 		this.isnew = po.getIsNew();
 		this.phone = po.getPhone();
-		this.ordertype = po.getOrderType();
 	}
 
 	public Integer getReserNo() {
@@ -382,12 +393,12 @@ public class ExamOrderBo extends CompareEntityBase {
 	}
 
 
-	public int getOrdertype() {
-		return ordertype;
+	public int getOrderType() {
+		return orderType;
 	}
 
-	public void setOrdertype(int ordertype) {
-		this.ordertype = ordertype;
+	public void setOrderType(int orderType) {
+		this.orderType = orderType;
 	}
 
 	public int getIspms() {
@@ -398,12 +409,12 @@ public class ExamOrderBo extends CompareEntityBase {
 		this.ispms = ispms;
 	}
 
-	public int getIsconfirm() {
-		return isconfirm;
+	public int getIsConfirm() {
+		return isConfirm;
 	}
 
-	public void setIsconfirm(int isconfirm) {
-		this.isconfirm = isconfirm;
+	public void setIsConfirm(int isConfirm) {
+		this.isConfirm = isConfirm;
 	}
 
 	public int getIsh() {
@@ -456,7 +467,48 @@ public class ExamOrderBo extends CompareEntityBase {
 
 
 
-	@Override
+    public boolean getUserChoiceUrge4App() {
+        return userChoiceUrge4App;
+    }
+
+    public void setUserChoiceUrge4App(boolean userChoiceUrge4App) {
+        this.userChoiceUrge4App = userChoiceUrge4App;
+    }
+
+
+    public String getMemberLevel() {
+        return memberLevel;
+    }
+
+    public void setMemberLevel(String memberLevel) {
+        this.memberLevel = memberLevel;
+    }
+
+    public Integer getRejectTime() {
+        return rejectTime;
+    }
+
+    public void setRejectTime(Integer rejectTime) {
+        this.rejectTime = rejectTime;
+    }
+
+    public Integer getIsSupposed() {
+        return isSupposed;
+    }
+
+    public void setIsSupposed(Integer isSupposed) {
+        this.isSupposed = isSupposed;
+    }
+
+    public Integer getIsOutTime() {
+        return isOutTime;
+    }
+
+    public void setIsOutTime(Integer isOutTime) {
+        this.isOutTime = isOutTime;
+    }
+
+    @Override
 	public String toString() {
 		return "ExamOrderBo [reserNo=" + reserNo + ", reserStatus=" + reserStatus + ", mod=" + mod + ", arriveDate=" + arriveDate
 				+ ", leaveDate=" + leaveDate + ", timeEarly=" + timeEarly + ", timeLate=" + timeLate + ", roomNum=" + roomNum
@@ -466,20 +518,10 @@ public class ExamOrderBo extends CompareEntityBase {
 				+ ", distance=" + distance + ", confirmType=" + confirmType + ", bookingTime=" + bookingTime + ", amendTime=" + amendTime
 				+ ", priority=" + priority + ", groupId=" + groupId + ", staffName=" + staffName + ", distributeTime=" + distributeTime
 				+ ", isFaxReturn=" + isFaxReturn + ", isLinked=" + isLinked + ", respiteTime=" + respiteTime + ", enterTime=" + enterTime
-				+ ", orderTimestamp=" + orderTimestamp + ", ordertype=" + ordertype + ", ispms=" + ispms + ", isconfirm=" + isconfirm
+				+ ", orderTimestamp=" + orderTimestamp + ", orderType=" + orderType + ", ispms=" + ispms + ", isConfirm=" + isConfirm
 				+ ", ish=" + ish + ", isrepeat=" + isrepeat + ", isimmediately=" + isimmediately + ", isnew=" + isnew + ", phone=" + phone
 				+ "]";
 	}
-
-
-    public boolean getUserChoiceUrge4App() {
-        return userChoiceUrge4App;
-    }
-
-    public void setUserChoiceUrge4App(boolean userChoiceUrge4App) {
-        this.userChoiceUrge4App = userChoiceUrge4App;
-    }
-
 
 
 }
