@@ -269,7 +269,7 @@ public class ExamOrderPo implements Serializable{
 		this.nightNum = bo.getNightNum();
 		this.phone = bo.getPhone();
 		this.orderMoney = new BigDecimal(bo.getOrderMoney());
-		this.orderType = bo.getOrdertype();
+		this.orderType = bo.getOrderType();
 		this.hotelId = bo.getHotelId();
 		this.hotelName = bo.getHotelName();
 		this.hotelStar = bo.getHotelStar();
@@ -287,7 +287,7 @@ public class ExamOrderPo implements Serializable{
 		this.isfaxReturn = bo.getIsFaxReturn();
 		this.isLinked = bo.getIsLinked();
 		this.isPms = bo.getIspms();
-		this.isConfirm = bo.getIsconfirm();
+		this.isConfirm = bo.getIsConfirm();
 		this.isH = bo.getIsh();
 		this.isRepeat = bo.getIsrepeat();
 		this.isImmediately = bo.getIsimmediately();
