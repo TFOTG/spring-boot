@@ -7,7 +7,9 @@ public enum DepartmentEnum {
     /**
      * 已审
      */
-    Confirm(1, "已审");
+    Confirm(1, "已审"),
+    
+    Amend(2,"终拒");
 
     private int key;
     private String value;
