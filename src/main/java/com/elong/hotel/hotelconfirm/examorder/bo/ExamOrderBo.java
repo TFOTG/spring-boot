@@ -39,27 +39,17 @@ public class ExamOrderBo extends CompareEntityBase {
 	private Date distributeTime;
 	private Integer isFaxReturn;
 	private Integer isLinked;
-	private Integer urge;
 	private Date respiteTime;
 	private Date enterTime;
-
 	private Date orderTimestamp;
-
-	private String reserStatus2End;
-	private String ratePlanId;
-	private Long additionalStatus;
-
-	private String note2Elong;
-	private String note2Hotel;
-	private String note2Client;
-	private String confirmNo;
-	private String delayReason;
-	private Integer isChangeOrder;
-
 	private int ordertype;
 	private int ispms;
 	private int isconfirm;
 	private int ish;
+	private int isrepeat;
+	private int isimmediately;
+	private int isnew;
+	private String phone;
 
 	public ExamOrderBo() {
 	}
@@ -311,14 +301,6 @@ public class ExamOrderBo extends CompareEntityBase {
 		this.isLinked = isLinked;
 	}
 
-	public Integer getUrge() {
-		return urge;
-	}
-
-	public void setUrge(Integer urge) {
-		this.urge = urge;
-	}
-
 	public Date getRespiteTime() {
 		return respiteTime;
 	}
@@ -343,77 +325,6 @@ public class ExamOrderBo extends CompareEntityBase {
 		this.orderTimestamp = orderTimestamp;
 	}
 
-	public String getReserStatus2End() {
-		return reserStatus2End;
-	}
-
-	public void setReserStatus2End(String reserStatus2End) {
-		this.reserStatus2End = reserStatus2End;
-	}
-
-	public String getRatePlanId() {
-		return ratePlanId;
-	}
-
-	public void setRatePlanId(String ratePlanId) {
-		this.ratePlanId = ratePlanId;
-	}
-
-	public Long getAdditionalStatus() {
-		return additionalStatus;
-	}
-
-	public void setAdditionalStatus(Long additionalStatus) {
-		this.additionalStatus = additionalStatus;
-	}
-
-	public String getNote2Elong() {
-		return note2Elong;
-	}
-
-	public void setNote2Elong(String note2Elong) {
-		this.note2Elong = note2Elong;
-	}
-
-	public String getNote2Hotel() {
-		return note2Hotel;
-	}
-
-	public void setNote2Hotel(String note2Hotel) {
-		this.note2Hotel = note2Hotel;
-	}
-
-	public String getNote2Client() {
-		return note2Client;
-	}
-
-	public void setNote2Client(String note2Client) {
-		this.note2Client = note2Client;
-	}
-
-	public String getConfirmNo() {
-		return confirmNo;
-	}
-
-	public void setConfirmNo(String confirmNo) {
-		this.confirmNo = confirmNo;
-	}
-
-	public String getDelayReason() {
-		return delayReason;
-	}
-
-	public void setDelayReason(String delayReason) {
-		this.delayReason = delayReason;
-	}
-
-	public Integer getIsChangeOrder() {
-		return isChangeOrder;
-	}
-
-	public void setIsChangeOrder(Integer isChangeOrder) {
-		this.isChangeOrder = isChangeOrder;
-	}
 
 	public int getOrdertype() {
 		return ordertype;
@@ -446,4 +357,45 @@ public class ExamOrderBo extends CompareEntityBase {
 	public void setIsh(int ish) {
 		this.ish = ish;
 	}
+
+
+	public int getIsrepeat() {
+		return isrepeat;
+	}
+
+
+	public void setIsrepeat(int isrepeat) {
+		this.isrepeat = isrepeat;
+	}
+
+
+	public int getIsimmediately() {
+		return isimmediately;
+	}
+
+
+	public void setIsimmediately(int isimmediately) {
+		this.isimmediately = isimmediately;
+	}
+
+
+	public int getIsnew() {
+		return isnew;
+	}
+
+
+	public void setIsnew(int isnew) {
+		this.isnew = isnew;
+	}
+
+
+	public String getPhone() {
+		return phone;
+	}
+
+
+	public void setPhone(String phone) {
+		this.phone = phone;
+	}
+	
 }
