@@ -60,10 +60,14 @@ public class ExamOrderBo extends CompareEntityBase {
 	}
 
 	public ExamOrderBo(Order order,ExamOrderPo po,OperatorInfoBo operator) {
-		if(po != null){
+		if(order != null && po != null){
 			this.setExamOrder(po);
-		}else{
+			this.amendTime = operator.getOperatorTime();
 			
+		}else if(order != null && po == null){
+			
+		}else if(order == null && po != null){
+			this.setExamOrder(po);	
 		}
 	}
 	
