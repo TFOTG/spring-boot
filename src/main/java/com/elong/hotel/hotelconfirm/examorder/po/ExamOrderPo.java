@@ -34,7 +34,7 @@ public class ExamOrderPo implements Serializable{
 	/**
 	 * 订单编号
 	 */
-	private Long reserNo;
+	private Integer reserNo;
 	
 	/**
 	 * 订单状态
@@ -109,7 +109,7 @@ public class ExamOrderPo implements Serializable{
 	/**
 	 * 供应商ID
 	 */
-	private Integer supplierId;
+	private String supplierId;
 	
 	/**
 	 * 供应商名称
@@ -260,6 +260,40 @@ public class ExamOrderPo implements Serializable{
 	}
 
 	public ExamOrderPo(ExamOrderBo bo) {
+		this.reserNo = bo.getReserNo();
+		this.reserStatus = bo.getReserStatus();
+		this.arriveDate = bo.getArriveDate();
+		this.leaveDate = bo.getLeaveDate();
+		this.cardNo = bo.getCardNo();
+		this.roomNum = bo.getRoomNum();
+		this.nightNum = bo.getNightNum();
+		this.phone = bo.getPhone();
+		this.orderMoney = new BigDecimal(bo.getOrderMoney());
+		this.orderType = bo.getOrdertype();
+		this.hotelId = bo.getHotelId();
+		this.hotelName = bo.getHotelName();
+		this.hotelStar = bo.getHotelStar();
+		this.supplierId = bo.getSupplierId();
+		this.supplierName = bo.getSupplierName();
+		this.supplierType = bo.getSupplierType();
+		this.supplierOtaType = bo.getSupplierOtaType();
+		this.proxyId = bo.getProxyId();
+		this.cityId = bo.getCityId();
+		this.distance = bo.getDistance();
+		this.bookingTime = bo.getBookingTime();
+		this.amendTime = bo.getAmendTime();
+		this.priority = bo.getPriority();
+		this.groupId = bo.getGroupId();
+		this.isfaxReturn = bo.getIsFaxReturn();
+		this.isLinked = bo.getIsLinked();
+		this.isPms = bo.getIspms();
+		this.isConfirm = bo.getIsconfirm();
+		this.isH = bo.getIsh();
+		this.isRepeat = bo.getIsrepeat();
+		this.isImmediately = bo.getIsimmediately();
+		this.isNew = bo.getIsnew();
+		this.orderTimeStampLong = bo.getOrderTimestamp().getTime();
+		
 	}
 
 	public Long getId() {
@@ -270,11 +304,11 @@ public class ExamOrderPo implements Serializable{
 		this.id = id;
 	}
 
-	public Long getReserNo() {
+	public Integer getReserNo() {
 		return reserNo;
 	}
 
-	public void setReserNo(Long reserNo) {
+	public void setReserNo(Integer reserNo) {
 		this.reserNo = reserNo;
 	}
 
@@ -390,11 +424,11 @@ public class ExamOrderPo implements Serializable{
 		this.hotelStar = hotelStar;
 	}
 
-	public Integer getSupplierId() {
+	public String getSupplierId() {
 		return supplierId;
 	}
 
-	public void setSupplierId(Integer supplierId) {
+	public void setSupplierId(String supplierId) {
 		this.supplierId = supplierId;
 	}
 
