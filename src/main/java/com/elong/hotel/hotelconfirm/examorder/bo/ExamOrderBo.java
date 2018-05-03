@@ -18,7 +18,7 @@ public class ExamOrderBo extends CompareEntityBase {
 	private Date timeLate;
 	private int roomNum;
 	private int nightNum;
-	private int orderMoney;
+	private double orderMoney;
 	private Long cardNo;
 	private String hotelId;
 	private String hotelName;
@@ -39,27 +39,17 @@ public class ExamOrderBo extends CompareEntityBase {
 	private Date distributeTime;
 	private Integer isFaxReturn;
 	private Integer isLinked;
-	private Integer urge;
 	private Date respiteTime;
 	private Date enterTime;
-
 	private Date orderTimestamp;
-
-	private String reserStatus2End;
-	private String ratePlanId;
-	private Long additionalStatus;
-
-	private String note2Elong;
-	private String note2Hotel;
-	private String note2Client;
-	private String confirmNo;
-	private String delayReason;
-	private Integer isChangeOrder;
-
 	private int ordertype;
 	private int ispms;
 	private int isconfirm;
 	private int ish;
+	private int isrepeat;
+	private int isimmediately;
+	private int isnew;
+	private String phone;
 	//客人app选择马上到点(&OrderFlagConst.IS_ARRIVE_NOW_ORDER=1024)
 	private boolean userChoiceUrge4App;
 
@@ -68,9 +58,63 @@ public class ExamOrderBo extends CompareEntityBase {
 
 
 	public ExamOrderBo(ExamOrderPo po) {
+		this.setExamOrder(po);
 	}
 
 	public ExamOrderBo(Order order,ExamOrderPo po,OperatorInfoBo operator) {
+		if(order != null && po != null){
+			this.setExamOrder(po);
+			this.amendTime = operator.getOperatorTime();
+
+		}else if(order != null && po == null){
+
+		}else if(order == null && po != null){
+			this.setExamOrder(po);
+		}
+	}
+
+	public void setExamOrder(ExamOrderPo po){
+		this.reserNo = po.getReserNo();
+		this.reserStatus = po.getReserStatus();
+		this.mod = po.getMod();
+		this.arriveDate = po.getArriveDate();
+		this.leaveDate = po.getLeaveDate();
+		this.timeEarly = po.getTimeEarly();
+		this.timeLate = po.getTimeLate();
+		this.roomNum = po.getRoomNum();
+		this.nightNum = po.getNightNum();
+		this.orderMoney = po.getOrderMoney().doubleValue();
+		this.cardNo = po.getCardNo();
+		this.hotelId = po.getHotelId();
+		this.hotelName = po.getHotelName();
+		this.hotelStar = po.getHotelStar();
+		this.supplierId = po.getSupplierId();
+		this.supplierName = po.getSupplierName();
+		this.supplierType = po.getSupplierType();
+		this.supplierOtaType = po.getSupplierOtaType();
+		this.proxyId = po.getProxyId();
+		this.cityId = po.getCityId();
+		this.distance = po.getDistance();
+		this.bookingTime = po.getBookingTime();
+		this.amendTime = po.getAmendTime();
+		this.priority = po.getPriority();
+		this.groupId = po.getGroupId();
+		this.staffName = po.getStaffName();
+		this.distributeTime = po.getDistributeTime();
+		this.isFaxReturn = po.getIsfaxReturn();
+		this.isLinked = po.getIsLinked();
+		this.respiteTime = po.getRespiteTime();
+		this.enterTime = po.getEnterTime();
+		this.orderTimestamp = new Date(po.getOrderTimeStampLong());
+		this.ordertype = po.getOrderType();
+		this.ispms = po.getIsPms();
+		this.isconfirm = po.getIsConfirm();
+		this.ish = po.getIsH();
+		this.isrepeat = po.getIsRepeat();
+		this.isimmediately = po.getIsImmediately();
+		this.isnew = po.getIsNew();
+		this.phone = po.getPhone();
+		this.ordertype = po.getOrderType();
 	}
 
 	public Integer getReserNo() {
@@ -145,11 +189,11 @@ public class ExamOrderBo extends CompareEntityBase {
 		this.nightNum = nightNum;
 	}
 
-	public int getOrderMoney() {
+	public double getOrderMoney() {
 		return orderMoney;
 	}
 
-	public void setOrderMoney(int orderMoney) {
+	public void setOrderMoney(double orderMoney) {
 		this.orderMoney = orderMoney;
 	}
 
@@ -313,14 +357,6 @@ public class ExamOrderBo extends CompareEntityBase {
 		this.isLinked = isLinked;
 	}
 
-	public Integer getUrge() {
-		return urge;
-	}
-
-	public void setUrge(Integer urge) {
-		this.urge = urge;
-	}
-
 	public Date getRespiteTime() {
 		return respiteTime;
 	}
@@ -345,77 +381,6 @@ public class ExamOrderBo extends CompareEntityBase {
 		this.orderTimestamp = orderTimestamp;
 	}
 
-	public String getReserStatus2End() {
-		return reserStatus2End;
-	}
-
-	public void setReserStatus2End(String reserStatus2End) {
-		this.reserStatus2End = reserStatus2End;
-	}
-
-	public String getRatePlanId() {
-		return ratePlanId;
-	}
-
-	public void setRatePlanId(String ratePlanId) {
-		this.ratePlanId = ratePlanId;
-	}
-
-	public Long getAdditionalStatus() {
-		return additionalStatus;
-	}
-
-	public void setAdditionalStatus(Long additionalStatus) {
-		this.additionalStatus = additionalStatus;
-	}
-
-	public String getNote2Elong() {
-		return note2Elong;
-	}
-
-	public void setNote2Elong(String note2Elong) {
-		this.note2Elong = note2Elong;
-	}
-
-	public String getNote2Hotel() {
-		return note2Hotel;
-	}
-
-	public void setNote2Hotel(String note2Hotel) {
-		this.note2Hotel = note2Hotel;
-	}
-
-	public String getNote2Client() {
-		return note2Client;
-	}
-
-	public void setNote2Client(String note2Client) {
-		this.note2Client = note2Client;
-	}
-
-	public String getConfirmNo() {
-		return confirmNo;
-	}
-
-	public void setConfirmNo(String confirmNo) {
-		this.confirmNo = confirmNo;
-	}
-
-	public String getDelayReason() {
-		return delayReason;
-	}
-
-	public void setDelayReason(String delayReason) {
-		this.delayReason = delayReason;
-	}
-
-	public Integer getIsChangeOrder() {
-		return isChangeOrder;
-	}
-
-	public void setIsChangeOrder(Integer isChangeOrder) {
-		this.isChangeOrder = isChangeOrder;
-	}
 
 	public int getOrdertype() {
 		return ordertype;
@@ -448,6 +413,64 @@ public class ExamOrderBo extends CompareEntityBase {
 	public void setIsh(int ish) {
 		this.ish = ish;
 	}
+
+
+	public int getIsrepeat() {
+		return isrepeat;
+	}
+
+
+	public void setIsrepeat(int isrepeat) {
+		this.isrepeat = isrepeat;
+	}
+
+
+	public int getIsimmediately() {
+		return isimmediately;
+	}
+
+
+	public void setIsimmediately(int isimmediately) {
+		this.isimmediately = isimmediately;
+	}
+
+
+	public int getIsnew() {
+		return isnew;
+	}
+
+
+	public void setIsnew(int isnew) {
+		this.isnew = isnew;
+	}
+
+
+	public String getPhone() {
+		return phone;
+	}
+
+
+	public void setPhone(String phone) {
+		this.phone = phone;
+	}
+
+
+
+	@Override
+	public String toString() {
+		return "ExamOrderBo [reserNo=" + reserNo + ", reserStatus=" + reserStatus + ", mod=" + mod + ", arriveDate=" + arriveDate
+				+ ", leaveDate=" + leaveDate + ", timeEarly=" + timeEarly + ", timeLate=" + timeLate + ", roomNum=" + roomNum
+				+ ", nightNum=" + nightNum + ", orderMoney=" + orderMoney + ", cardNo=" + cardNo + ", hotelId=" + hotelId + ", hotelName="
+				+ hotelName + ", supplierId=" + supplierId + ", supplierName=" + supplierName + ", hotelStar=" + hotelStar
+				+ ", supplierType=" + supplierType + ", supplierOtaType=" + supplierOtaType + ", proxyId=" + proxyId + ", cityId=" + cityId
+				+ ", distance=" + distance + ", confirmType=" + confirmType + ", bookingTime=" + bookingTime + ", amendTime=" + amendTime
+				+ ", priority=" + priority + ", groupId=" + groupId + ", staffName=" + staffName + ", distributeTime=" + distributeTime
+				+ ", isFaxReturn=" + isFaxReturn + ", isLinked=" + isLinked + ", respiteTime=" + respiteTime + ", enterTime=" + enterTime
+				+ ", orderTimestamp=" + orderTimestamp + ", ordertype=" + ordertype + ", ispms=" + ispms + ", isconfirm=" + isconfirm
+				+ ", ish=" + ish + ", isrepeat=" + isrepeat + ", isimmediately=" + isimmediately + ", isnew=" + isnew + ", phone=" + phone
+				+ "]";
+	}
+
 
     public boolean getUserChoiceUrge4App() {
         return userChoiceUrge4App;
