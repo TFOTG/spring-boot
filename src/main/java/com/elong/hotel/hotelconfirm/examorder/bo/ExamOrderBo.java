@@ -456,6 +456,14 @@ public class ExamOrderBo extends CompareEntityBase {
 
 
 
+    public boolean getUserChoiceUrge4App() {
+        return userChoiceUrge4App;
+    }
+
+    public void setUserChoiceUrge4App(boolean userChoiceUrge4App) {
+        this.userChoiceUrge4App = userChoiceUrge4App;
+    }
+
 	@Override
 	public String toString() {
 		return "ExamOrderBo [reserNo=" + reserNo + ", reserStatus=" + reserStatus + ", mod=" + mod + ", arriveDate=" + arriveDate
@@ -470,16 +478,6 @@ public class ExamOrderBo extends CompareEntityBase {
 				+ ", ish=" + ish + ", isrepeat=" + isrepeat + ", isimmediately=" + isimmediately + ", isnew=" + isnew + ", phone=" + phone
 				+ "]";
 	}
-
-
-    public boolean getUserChoiceUrge4App() {
-        return userChoiceUrge4App;
-    }
-
-    public void setUserChoiceUrge4App(boolean userChoiceUrge4App) {
-        this.userChoiceUrge4App = userChoiceUrge4App;
-    }
-
 
 
 }
