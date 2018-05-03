@@ -60,6 +60,8 @@ public class ExamOrderBo extends CompareEntityBase {
 	private int ispms;
 	private int isconfirm;
 	private int ish;
+	//客人app选择马上到点(&OrderFlagConst.IS_ARRIVE_NOW_ORDER=1024)
+	private boolean userChoiceUrge4App;
 
 	public ExamOrderBo() {
 	}
@@ -446,4 +448,15 @@ public class ExamOrderBo extends CompareEntityBase {
 	public void setIsh(int ish) {
 		this.ish = ish;
 	}
+
+    public boolean getUserChoiceUrge4App() {
+        return userChoiceUrge4App;
+    }
+
+    public void setUserChoiceUrge4App(boolean userChoiceUrge4App) {
+        this.userChoiceUrge4App = userChoiceUrge4App;
+    }
+
+
+
 }

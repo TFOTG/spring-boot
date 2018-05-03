@@ -1,10 +1,10 @@
 package com.elong.hotel.hotelconfirm.examorder.po;
 
+import com.elong.hotel.hotelconfirm.examorder.bo.ExamOrderBo;
+
 import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.Date;
-
-import com.elong.hotel.hotelconfirm.examorder.bo.ExamOrderBo;
 
 /**
  * 终拒订单表
@@ -34,7 +34,7 @@ public class ExamOrderPo implements Serializable{
 	/**
 	 * 订单编号
 	 */
-	private Long reserNo;
+	private Integer reserNo;
 	
 	/**
 	 * 订单状态
@@ -270,11 +270,11 @@ public class ExamOrderPo implements Serializable{
 		this.id = id;
 	}
 
-	public Long getReserNo() {
+	public Integer getReserNo() {
 		return reserNo;
 	}
 
-	public void setReserNo(Long reserNo) {
+	public void setReserNo(Integer reserNo) {
 		this.reserNo = reserNo;
 	}
 
