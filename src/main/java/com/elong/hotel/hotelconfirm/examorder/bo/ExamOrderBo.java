@@ -18,7 +18,7 @@ public class ExamOrderBo extends CompareEntityBase {
 	private Date timeLate;
 	private int roomNum;
 	private int nightNum;
-	private int orderMoney;
+	private double orderMoney;
 	private Long cardNo;
 	private String hotelId;
 	private String hotelName;
@@ -56,9 +56,59 @@ public class ExamOrderBo extends CompareEntityBase {
 
 
 	public ExamOrderBo(ExamOrderPo po) {
+		this.setExamOrder(po);
 	}
 
 	public ExamOrderBo(Order order,ExamOrderPo po,OperatorInfoBo operator) {
+		if(po != null){
+			this.setExamOrder(po);
+		}else{
+			
+		}
+	}
+	
+	public void setExamOrder(ExamOrderPo po){
+		this.reserNo = po.getReserNo();
+		this.reserStatus = po.getReserStatus();
+		this.mod = po.getMod();
+		this.arriveDate = po.getArriveDate();
+		this.leaveDate = po.getLeaveDate();
+		this.timeEarly = po.getTimeEarly();
+		this.timeLate = po.getTimeLate();
+		this.roomNum = po.getRoomNum();
+		this.nightNum = po.getNightNum();
+		this.orderMoney = po.getOrderMoney().doubleValue();
+		this.cardNo = po.getCardNo();
+		this.hotelId = po.getHotelId();
+		this.hotelName = po.getHotelName();
+		this.hotelStar = po.getHotelStar();
+		this.supplierId = po.getSupplierId();
+		this.supplierName = po.getSupplierName();
+		this.supplierType = po.getSupplierType();
+		this.supplierOtaType = po.getSupplierOtaType();
+		this.proxyId = po.getProxyId();
+		this.cityId = po.getCityId();
+		this.distance = po.getDistance();
+		this.bookingTime = po.getBookingTime();
+		this.amendTime = po.getAmendTime();
+		this.priority = po.getPriority();
+		this.groupId = po.getGroupId();
+		this.staffName = po.getStaffName();
+		this.distributeTime = po.getDistributeTime();
+		this.isFaxReturn = po.getIsfaxReturn();
+		this.isLinked = po.getIsLinked();
+		this.respiteTime = po.getRespiteTime();
+		this.enterTime = po.getEnterTime();
+		this.orderTimestamp = new Date(po.getOrderTimeStampLong());
+		this.ordertype = po.getOrderType();
+		this.ispms = po.getIsPms();
+		this.isconfirm = po.getIsConfirm();
+		this.ish = po.getIsH();
+		this.isrepeat = po.getIsRepeat();
+		this.isimmediately = po.getIsImmediately();
+		this.isnew = po.getIsNew();
+		this.phone = po.getPhone();
+		this.ordertype = po.getOrderType();
 	}
 
 	public Integer getReserNo() {
@@ -133,11 +183,11 @@ public class ExamOrderBo extends CompareEntityBase {
 		this.nightNum = nightNum;
 	}
 
-	public int getOrderMoney() {
+	public double getOrderMoney() {
 		return orderMoney;
 	}
 
-	public void setOrderMoney(int orderMoney) {
+	public void setOrderMoney(double orderMoney) {
 		this.orderMoney = orderMoney;
 	}
 
@@ -397,5 +447,22 @@ public class ExamOrderBo extends CompareEntityBase {
 	public void setPhone(String phone) {
 		this.phone = phone;
 	}
-	
+
+
+
+	@Override
+	public String toString() {
+		return "ExamOrderBo [reserNo=" + reserNo + ", reserStatus=" + reserStatus + ", mod=" + mod + ", arriveDate=" + arriveDate
+				+ ", leaveDate=" + leaveDate + ", timeEarly=" + timeEarly + ", timeLate=" + timeLate + ", roomNum=" + roomNum
+				+ ", nightNum=" + nightNum + ", orderMoney=" + orderMoney + ", cardNo=" + cardNo + ", hotelId=" + hotelId + ", hotelName="
+				+ hotelName + ", supplierId=" + supplierId + ", supplierName=" + supplierName + ", hotelStar=" + hotelStar
+				+ ", supplierType=" + supplierType + ", supplierOtaType=" + supplierOtaType + ", proxyId=" + proxyId + ", cityId=" + cityId
+				+ ", distance=" + distance + ", confirmType=" + confirmType + ", bookingTime=" + bookingTime + ", amendTime=" + amendTime
+				+ ", priority=" + priority + ", groupId=" + groupId + ", staffName=" + staffName + ", distributeTime=" + distributeTime
+				+ ", isFaxReturn=" + isFaxReturn + ", isLinked=" + isLinked + ", respiteTime=" + respiteTime + ", enterTime=" + enterTime
+				+ ", orderTimestamp=" + orderTimestamp + ", ordertype=" + ordertype + ", ispms=" + ispms + ", isconfirm=" + isconfirm
+				+ ", ish=" + ish + ", isrepeat=" + isrepeat + ", isimmediately=" + isimmediately + ", isnew=" + isnew + ", phone=" + phone
+				+ "]";
+	}
+
 }
