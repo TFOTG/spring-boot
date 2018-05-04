@@ -43,12 +43,12 @@ public class ExamOrderBo extends CompareEntityBase {
 	private Date enterTime;
 	private Date orderTimestamp;
 	private int orderType;
-	private int ispms;
+	private int isPms;
 	private int isConfirm;
-	private int ish;
-	private int isrepeat;
-	private int isimmediately;
-	private int isnew;
+	private int isH;
+	private int isRepeat;
+	private int isImmediately;
+	private int isNew;
 	private String phone;
 
 	private String memberLevel;
@@ -119,12 +119,12 @@ public class ExamOrderBo extends CompareEntityBase {
 		this.enterTime = po.getEnterTime();
 		this.orderTimestamp = new Date(po.getOrderTimeStampLong());
 		this.orderType = po.getOrderType();
-		this.ispms = po.getIsPms();
+		this.isPms = po.getIsPms();
 		this.isConfirm = po.getIsConfirm();
-		this.ish = po.getIsH();
-		this.isrepeat = po.getIsRepeat();
-		this.isimmediately = po.getIsImmediately();
-		this.isnew = po.getIsNew();
+		this.isH = po.getIsH();
+		this.isRepeat = po.getIsRepeat();
+		this.isImmediately = po.getIsImmediately();
+		this.isNew = po.getIsNew();
 		this.phone = po.getPhone();
 	}
 
@@ -401,14 +401,6 @@ public class ExamOrderBo extends CompareEntityBase {
 		this.orderType = orderType;
 	}
 
-	public int getIspms() {
-		return ispms;
-	}
-
-	public void setIspms(int ispms) {
-		this.ispms = ispms;
-	}
-
 	public int getIsConfirm() {
 		return isConfirm;
 	}
@@ -416,45 +408,6 @@ public class ExamOrderBo extends CompareEntityBase {
 	public void setIsConfirm(int isConfirm) {
 		this.isConfirm = isConfirm;
 	}
-
-	public int getIsh() {
-		return ish;
-	}
-
-	public void setIsh(int ish) {
-		this.ish = ish;
-	}
-
-
-	public int getIsrepeat() {
-		return isrepeat;
-	}
-
-
-	public void setIsrepeat(int isrepeat) {
-		this.isrepeat = isrepeat;
-	}
-
-
-	public int getIsimmediately() {
-		return isimmediately;
-	}
-
-
-	public void setIsimmediately(int isimmediately) {
-		this.isimmediately = isimmediately;
-	}
-
-
-	public int getIsnew() {
-		return isnew;
-	}
-
-
-	public void setIsnew(int isnew) {
-		this.isnew = isnew;
-	}
-
 
 	public String getPhone() {
 		return phone;
@@ -508,20 +461,54 @@ public class ExamOrderBo extends CompareEntityBase {
         this.isOutTime = isOutTime;
     }
 
-    @Override
-	public String toString() {
-		return "ExamOrderBo [reserNo=" + reserNo + ", reserStatus=" + reserStatus + ", mod=" + mod + ", arriveDate=" + arriveDate
-				+ ", leaveDate=" + leaveDate + ", timeEarly=" + timeEarly + ", timeLate=" + timeLate + ", roomNum=" + roomNum
-				+ ", nightNum=" + nightNum + ", orderMoney=" + orderMoney + ", cardNo=" + cardNo + ", hotelId=" + hotelId + ", hotelName="
-				+ hotelName + ", supplierId=" + supplierId + ", supplierName=" + supplierName + ", hotelStar=" + hotelStar
-				+ ", supplierType=" + supplierType + ", supplierOtaType=" + supplierOtaType + ", proxyId=" + proxyId + ", cityId=" + cityId
-				+ ", distance=" + distance + ", confirmType=" + confirmType + ", bookingTime=" + bookingTime + ", amendTime=" + amendTime
-				+ ", priority=" + priority + ", groupId=" + groupId + ", staffName=" + staffName + ", distributeTime=" + distributeTime
-				+ ", isFaxReturn=" + isFaxReturn + ", isLinked=" + isLinked + ", respiteTime=" + respiteTime + ", enterTime=" + enterTime
-				+ ", orderTimestamp=" + orderTimestamp + ", orderType=" + orderType + ", ispms=" + ispms + ", isConfirm=" + isConfirm
-				+ ", ish=" + ish + ", isrepeat=" + isrepeat + ", isimmediately=" + isimmediately + ", isnew=" + isnew + ", phone=" + phone
-				+ "]";
+
+	public int getIsPms() {
+		return isPms;
 	}
 
 
+	public void setIsPms(int isPms) {
+		this.isPms = isPms;
+	}
+
+
+	public int getIsH() {
+		return isH;
+	}
+
+
+	public void setIsH(int isH) {
+		this.isH = isH;
+	}
+
+
+	public int getIsRepeat() {
+		return isRepeat;
+	}
+
+
+	public void setIsRepeat(int isRepeat) {
+		this.isRepeat = isRepeat;
+	}
+
+
+	public int getIsImmediately() {
+		return isImmediately;
+	}
+
+
+	public void setIsImmediately(int isImmediately) {
+		this.isImmediately = isImmediately;
+	}
+
+
+	public int getIsNew() {
+		return isNew;
+	}
+
+
+	public void setIsNew(int isNew) {
+		this.isNew = isNew;
+	}
+    
 }

@@ -286,12 +286,12 @@ public class ExamOrderPo implements Serializable{
 		this.groupId = bo.getGroupId();
 		this.isfaxReturn = bo.getIsFaxReturn();
 		this.isLinked = bo.getIsLinked();
-		this.isPms = bo.getIspms();
+		this.isPms = bo.getIsPms();
 		this.isConfirm = bo.getIsConfirm();
-		this.isH = bo.getIsh();
-		this.isRepeat = bo.getIsrepeat();
-		this.isImmediately = bo.getIsimmediately();
-		this.isNew = bo.getIsnew();
+		this.isH = bo.getIsH();
+		this.isRepeat = bo.getIsRepeat();
+		this.isImmediately = bo.getIsImmediately();
+		this.isNew = bo.getIsNew();
 		this.orderTimeStampLong = bo.getOrderTimestamp().getTime();
 		
 	}
