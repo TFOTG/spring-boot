@@ -29,10 +29,26 @@ public enum LogTypeEnum {
 
 	CONFIRMV(6,"confirmV"),
 
-	/**
+    EXAMA(7,"examA"),
+
+    EXAMO(8,"examO"),
+
+    EXAMU(9,"examU"),
+
+    EXAMG(10,"examG"),
+
+    EXAMH(11,"examH"),
+
+    EXAMV(12,"examV"),
+
+    EXAMD(13,"examD"),
+
+    EXAME(14,"examE"),
+
+    /**
 	 * 临时添加状态
 	 */
-	TEMP(10,"temp");
+	TEMP(100,"temp");
 
 	private  int  value;
 	
