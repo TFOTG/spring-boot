@@ -3,6 +3,7 @@ package com.elong.hotel.hotelconfirm.examorder.po;
 import com.elong.hotel.hotelconfirm.examorder.bo.ExamOrderBo;
 
 import java.io.Serializable;
+import java.lang.reflect.Field;
 import java.math.BigDecimal;
 import java.util.Date;
 
@@ -679,5 +680,12 @@ public class ExamOrderPo implements Serializable{
 				+ ", smsStatus=" + smsStatus + ", smsCount=" + smsCount + ", smsSendTime=" + smsSendTime + ", orderTimeStampLong="
 				+ orderTimeStampLong + ", mod=" + mod + "]";
 	}
+
+    public static void main(String[] args) {
+        Field[] fields = ExamOrderPo.class.getDeclaredFields();
+        for (Field field : fields) {
+            System.out.println("<columnOverride column=\""+field.getName().toLowerCase()+"\" property=\""+field.getName()+"\" javaType=\""+field.getType().getName()+"\"/> ");
+        }
+    }
 	
 }
