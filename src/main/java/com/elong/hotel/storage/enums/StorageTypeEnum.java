@@ -9,9 +9,9 @@ public enum StorageTypeEnum {
 
 	NOROOM(2),
 
-	CREATEORDER(3),
+	CREATEORDER(3);
 	
-	EXAM(4);
+//	EXAM(4);
 
 	private int value;
 
