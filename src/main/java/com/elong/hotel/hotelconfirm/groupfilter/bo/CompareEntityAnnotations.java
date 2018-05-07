@@ -17,12 +17,24 @@ import java.lang.annotation.*;
 @Retention(RetentionPolicy.RUNTIME)
 public @interface CompareEntityAnnotations {
 
-	/**
-	 * 
-	  * name
-	  * @Title: 分组Tag表中Key 对应的名称
-	  * @Description:
-	  * @return
-	 */
-	String name();
+
+    /**
+     * 比较方式枚举（默认是相等，可以选择区间方式）
+     */
+    enum CompareTypeEnum{EQUAL,BETWEEN}
+    /**
+     *
+     * name
+     * @Title: 分组Tag表中Key 对应的名称
+     * @Description: TODO
+     * @return
+     */
+    String name();
+
+    /**
+     * 比较方式
+     * @return
+     */
+    CompareTypeEnum compareType() default CompareTypeEnum.EQUAL;
+
 }

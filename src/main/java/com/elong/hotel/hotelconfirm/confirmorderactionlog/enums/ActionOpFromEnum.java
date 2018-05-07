@@ -23,11 +23,7 @@ public enum ActionOpFromEnum {
 	/**
 	 * IVR
 	 */
-	Ivr("ivr", "ivr外呼"),
-	/**
-	 * 赫程
-	 */
-	HeCheng("hecheng", "赫程");
+	Ivr("ivr", "ivr外呼");
 
 	private String desc;
 	private String key;

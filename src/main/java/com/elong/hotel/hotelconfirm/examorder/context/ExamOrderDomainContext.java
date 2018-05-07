@@ -35,6 +35,7 @@ public class ExamOrderDomainContext implements Serializable {
 		this.order = order;
 		this.examOrderPo = examOrderPo;
 		this.orderConsumerInfoBo = orderConsumerInfoBo;
+		this.operator = orderConsumerInfoBo.getOperatorInfo();
 	}
 
 	public Integer getReserNo() {

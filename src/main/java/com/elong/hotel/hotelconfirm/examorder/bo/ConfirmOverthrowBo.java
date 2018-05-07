@@ -35,7 +35,6 @@ public class ConfirmOverthrowBo implements Serializable {
     /**
      * 携程订单详细页URL
      */
-    @NotEmpty(message = "携程订单详细页URL不能为空")
     private String ctripOrderDetailUrl;
 
     /**

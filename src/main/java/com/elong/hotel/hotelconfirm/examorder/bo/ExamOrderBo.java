@@ -18,7 +18,7 @@ public class ExamOrderBo extends CompareEntityBase {
 	private Date timeLate;
 	private int roomNum;
 	private int nightNum;
-	private int orderMoney;
+	private double orderMoney;
 	private Long cardNo;
 	private String hotelId;
 	private String hotelName;
@@ -39,36 +39,93 @@ public class ExamOrderBo extends CompareEntityBase {
 	private Date distributeTime;
 	private Integer isFaxReturn;
 	private Integer isLinked;
-	private Integer urge;
 	private Date respiteTime;
 	private Date enterTime;
-
 	private Date orderTimestamp;
+	private int orderType;
+	private int isPms;
+	private int isConfirm;
+	private int isH;
+	private int isRepeat;
+	private int isImmediately;
+	private int isNew;
+	private String phone;
 
-	private String reserStatus2End;
-	private String ratePlanId;
-	private Long additionalStatus;
+	private String memberLevel;
 
-	private String note2Elong;
-	private String note2Hotel;
-	private String note2Client;
-	private String confirmNo;
-	private String delayReason;
-	private Integer isChangeOrder;
+    //拒单时长
+	private Integer rejectTime;
 
-	private int ordertype;
-	private int ispms;
-	private int isconfirm;
-	private int ish;
+	//是否赔付
+	private Integer isSupposed;
+
+	//是否超时
+    private Integer isOutTime;
+
+	//客人app选择马上到点(&OrderFlagConst.IS_ARRIVE_NOW_ORDER=1024)
+	private boolean userChoiceUrge4App;
 
 	public ExamOrderBo() {
 	}
 
 
 	public ExamOrderBo(ExamOrderPo po) {
+		this.setExamOrder(po);
 	}
 
 	public ExamOrderBo(Order order,ExamOrderPo po,OperatorInfoBo operator) {
+		if(order != null && po != null){
+			this.setExamOrder(po);
+			this.amendTime = operator.getOperatorTime();
+
+		}else if(order != null && po == null){
+
+		}else if(order == null && po != null){
+			this.setExamOrder(po);
+		}
+	}
+
+	public void setExamOrder(ExamOrderPo po){
+		this.reserNo = po.getReserNo();
+		this.reserStatus = po.getReserStatus();
+		this.mod = po.getMod();
+		this.arriveDate = po.getArriveDate();
+		this.leaveDate = po.getLeaveDate();
+		this.timeEarly = po.getTimeEarly();
+		this.timeLate = po.getTimeLate();
+		this.roomNum = po.getRoomNum();
+		this.nightNum = po.getNightNum();
+		this.orderMoney = po.getOrderMoney().doubleValue();
+		this.cardNo = po.getCardNo();
+		this.hotelId = po.getHotelId();
+		this.hotelName = po.getHotelName();
+		this.hotelStar = po.getHotelStar();
+		this.supplierId = po.getSupplierId();
+		this.supplierName = po.getSupplierName();
+		this.supplierType = po.getSupplierType();
+		this.supplierOtaType = po.getSupplierOtaType();
+		this.proxyId = po.getProxyId();
+		this.cityId = po.getCityId();
+		this.distance = po.getDistance();
+		this.bookingTime = po.getBookingTime();
+		this.amendTime = po.getAmendTime();
+		this.priority = po.getPriority();
+		this.groupId = po.getGroupId();
+		this.staffName = po.getStaffName();
+		this.distributeTime = po.getDistributeTime();
+		this.isFaxReturn = po.getIsfaxReturn();
+		this.isLinked = po.getIsLinked();
+		this.respiteTime = po.getRespiteTime();
+		this.enterTime = po.getEnterTime();
+		this.orderTimestamp = new Date(po.getOrderTimeStampLong());
+		this.orderType = po.getOrderType();
+		this.isPms = po.getIsPms();
+		this.isConfirm = po.getIsConfirm();
+		this.isH = po.getIsH();
+		this.isRepeat = po.getIsRepeat();
+		this.isImmediately = po.getIsImmediately();
+		this.isNew = po.getIsNew();
+		this.phone = po.getPhone();
 	}
 
 	public Integer getReserNo() {
@@ -143,11 +200,11 @@ public class ExamOrderBo extends CompareEntityBase {
 		this.nightNum = nightNum;
 	}
 
-	public int getOrderMoney() {
+	public double getOrderMoney() {
 		return orderMoney;
 	}
 
-	public void setOrderMoney(int orderMoney) {
+	public void setOrderMoney(double orderMoney) {
 		this.orderMoney = orderMoney;
 	}
 
@@ -311,14 +368,6 @@ public class ExamOrderBo extends CompareEntityBase {
 		this.isLinked = isLinked;
 	}
 
-	public Integer getUrge() {
-		return urge;
-	}
-
-	public void setUrge(Integer urge) {
-		this.urge = urge;
-	}
-
 	public Date getRespiteTime() {
 		return respiteTime;
 	}
@@ -343,107 +392,123 @@ public class ExamOrderBo extends CompareEntityBase {
 		this.orderTimestamp = orderTimestamp;
 	}
 
-	public String getReserStatus2End() {
-		return reserStatus2End;
+
+	public int getOrderType() {
+		return orderType;
 	}
 
-	public void setReserStatus2End(String reserStatus2End) {
-		this.reserStatus2End = reserStatus2End;
+	public void setOrderType(int orderType) {
+		this.orderType = orderType;
 	}
 
-	public String getRatePlanId() {
-		return ratePlanId;
+	public int getIsConfirm() {
+		return isConfirm;
 	}
 
-	public void setRatePlanId(String ratePlanId) {
-		this.ratePlanId = ratePlanId;
+	public void setIsConfirm(int isConfirm) {
+		this.isConfirm = isConfirm;
 	}
 
-	public Long getAdditionalStatus() {
-		return additionalStatus;
+	public String getPhone() {
+		return phone;
 	}
 
-	public void setAdditionalStatus(Long additionalStatus) {
-		this.additionalStatus = additionalStatus;
+
+	public void setPhone(String phone) {
+		this.phone = phone;
 	}
 
-	public String getNote2Elong() {
-		return note2Elong;
+
+
+    public boolean getUserChoiceUrge4App() {
+        return userChoiceUrge4App;
+    }
+
+    public void setUserChoiceUrge4App(boolean userChoiceUrge4App) {
+        this.userChoiceUrge4App = userChoiceUrge4App;
+    }
+
+
+    public String getMemberLevel() {
+        return memberLevel;
+    }
+
+    public void setMemberLevel(String memberLevel) {
+        this.memberLevel = memberLevel;
+    }
+
+    public Integer getRejectTime() {
+        return rejectTime;
+    }
+
+    public void setRejectTime(Integer rejectTime) {
+        this.rejectTime = rejectTime;
+    }
+
+    public Integer getIsSupposed() {
+        return isSupposed;
+    }
+
+    public void setIsSupposed(Integer isSupposed) {
+        this.isSupposed = isSupposed;
+    }
+
+    public Integer getIsOutTime() {
+        return isOutTime;
+    }
+
+    public void setIsOutTime(Integer isOutTime) {
+        this.isOutTime = isOutTime;
+    }
+
+
+	public int getIsPms() {
+		return isPms;
 	}
 
-	public void setNote2Elong(String note2Elong) {
-		this.note2Elong = note2Elong;
+
+	public void setIsPms(int isPms) {
+		this.isPms = isPms;
 	}
 
-	public String getNote2Hotel() {
-		return note2Hotel;
+
+	public int getIsH() {
+		return isH;
 	}
 
-	public void setNote2Hotel(String note2Hotel) {
-		this.note2Hotel = note2Hotel;
+
+	public void setIsH(int isH) {
+		this.isH = isH;
 	}
 
-	public String getNote2Client() {
-		return note2Client;
+
+	public int getIsRepeat() {
+		return isRepeat;
 	}
 
-	public void setNote2Client(String note2Client) {
-		this.note2Client = note2Client;
+
+	public void setIsRepeat(int isRepeat) {
+		this.isRepeat = isRepeat;
 	}
 
-	public String getConfirmNo() {
-		return confirmNo;
+
+	public int getIsImmediately() {
+		return isImmediately;
 	}
 
-	public void setConfirmNo(String confirmNo) {
-		this.confirmNo = confirmNo;
+
+	public void setIsImmediately(int isImmediately) {
+		this.isImmediately = isImmediately;
 	}
 
-	public String getDelayReason() {
-		return delayReason;
+
+	public int getIsNew() {
+		return isNew;
 	}
 
-	public void setDelayReason(String delayReason) {
-		this.delayReason = delayReason;
-	}
 
-	public Integer getIsChangeOrder() {
-		return isChangeOrder;
+	public void setIsNew(int isNew) {
+		this.isNew = isNew;
 	}
-
-	public void setIsChangeOrder(Integer isChangeOrder) {
-		this.isChangeOrder = isChangeOrder;
-	}
-
-	public int getOrdertype() {
-		return ordertype;
-	}
-
-	public void setOrdertype(int ordertype) {
-		this.ordertype = ordertype;
-	}
-
-	public int getIspms() {
-		return ispms;
-	}
-
-	public void setIspms(int ispms) {
-		this.ispms = ispms;
-	}
-
-	public int getIsconfirm() {
-		return isconfirm;
-	}
-
-	public void setIsconfirm(int isconfirm) {
-		this.isconfirm = isconfirm;
-	}
-
-	public int getIsh() {
-		return ish;
-	}
-
-	public void setIsh(int ish) {
-		this.ish = ish;
-	}
+    
 }

@@ -1,5 +1,6 @@
 package com.elong.hotel.hotelconfirm.groupfilter.bo;
 
+import com.elong.hotel.common.exception.Init4GroupInfoException;
 import com.elong.hotel.hotelconfirm.groupfilter.enums.CompareFieldEnum;
 import com.elong.hotel.hotelconfirm.groupfilter.enums.CompareResultEnum;
 import edu.emory.mathcs.backport.java.util.Arrays;
@@ -38,7 +39,6 @@ public class GroupFilterEntity<T extends GroupBase, Y extends CompareEntityBase>
      * Constructor for GroupEntity.
      * <p>Title: </p>
      * <p>Description: 根据"自定义注释"方式进行反射对比字段处理
-     * DB当中存储的为对比字段源数据，字段包括有一审字段： audit（审核方式）、auditingType（审核确认方式）、supplierId（供应商id）、shotelId（shotel id）、provinceId（省id）、cityId（城id）
      * 通过反射机制依次对比源数据字段，如果DB中配置为All，或者是源数据与DB配置具体值对应上为:CompareResultEnum.On，否则为:CompareResultEnum.Off
      * </p>
      *
@@ -46,36 +46,55 @@ public class GroupFilterEntity<T extends GroupBase, Y extends CompareEntityBase>
      * @param compareDate
      * @throws Exception
      */
-    public GroupFilterEntity(T metaDate, Y compareDate) throws Exception {
+    public GroupFilterEntity(T metaDate, Y compareDate) throws Init4GroupInfoException {
         this.groupBaseInfo = metaDate;
         compareMetaDate = new HashMap<>();
         Map<String, String> tags = metaDate.getTags();
-        Field[] fileds = compareDate.getClass().getDeclaredFields();
+        Field[] fields = compareDate.getClass().getDeclaredFields();
 
-        for (Field field : fileds) {
+        for (Field field : fields) {
             if (field.isAnnotationPresent(CompareEntityAnnotations.class)) {
-                String tagValue = "", name = "";
+                String tagValue, name = "";
                 Object value;
-                List<String> tagStrings = new ArrayList<>();
+                List<String> tagStrings;
                 try {
                     CompareEntityAnnotations annotations = (CompareEntityAnnotations) field.getAnnotations()[0];
 
                     name = annotations.name();
                     tagValue = tags.get(name);
-                    if(null==tagValue){
-                    	compareMetaDate.put(name, CompareResultEnum.Off);
-                    	continue;
+                    if (null == tagValue) {
+                        compareMetaDate.put(name, CompareResultEnum.Off);
+                        continue;
                     }
-                    tagStrings = new ArrayList<String>(Arrays.asList(tagValue.toLowerCase().split(",")));
+                    tagStrings = new ArrayList<>(Arrays.asList(tagValue.toLowerCase().split(",")));
                     field.setAccessible(true);
                     value = field.get(compareDate);
+                    //如果比较方式是区间比较
+                    if (annotations.compareType().equals(CompareEntityAnnotations.CompareTypeEnum.BETWEEN)) {
+
+                        if ((tagValue.equalsIgnoreCase(CompareFieldEnum.All.toString()) || tagValue.equalsIgnoreCase(CompareFieldEnum.NL.toString()))) {
+                            compareMetaDate.put(name, CompareResultEnum.On);
+                        } else {
+                            int min = Integer.valueOf(tagStrings.get(0));
+                            int max = Integer.valueOf(tagStrings.get(1));
+                            boolean inNumInterval = (Integer.valueOf(value.toString()) >= min) && (Integer.valueOf(value.toString()) < max);
+                            if (inNumInterval) {
+                                compareMetaDate.put(name, CompareResultEnum.On);
+                            } else {
+                                compareMetaDate.put(name, CompareResultEnum.Off);
+                            }
+                        }
+                    } else {
+                        if ((tagValue.equalsIgnoreCase(CompareFieldEnum.All.toString()) || tagValue.equalsIgnoreCase(CompareFieldEnum.NL.toString()))
+                                || (null != value && tagStrings.contains(value.toString().toLowerCase()))) {
+                            compareMetaDate.put(name, CompareResultEnum.On);
+                        } else {
+                            compareMetaDate.put(name, CompareResultEnum.Off);
+                        }
+
+                    }
                 } catch (Exception e) {
-                    throw new Exception(name);
-                }
-                if ((tagValue.equalsIgnoreCase(CompareFieldEnum.All.toString()) || tagValue.equalsIgnoreCase(CompareFieldEnum.NL.toString())) || ( null!=value && tagStrings.contains(value.toString().toLowerCase()))) {
-                    compareMetaDate.put(name, CompareResultEnum.On);
-                } else {
-                    compareMetaDate.put(name, CompareResultEnum.Off);
+                    throw new Init4GroupInfoException(name);
                 }
             }
         }
