@@ -50,6 +50,17 @@ public class CompareOrder4GroupBo extends CompareEntityBase {
     @CompareEntityAnnotations(name = "cityId")
     private String cityId;
 
+    @CompareEntityAnnotations(name = "isNew")
+    private Integer isNew;
+
+    public Integer getIsNew() {
+        return isNew;
+    }
+
+    public void setIsNew(Integer isNew) {
+        this.isNew = isNew;
+    }
+
     public Integer getHotelStar() {
         return hotelStar;
     }
