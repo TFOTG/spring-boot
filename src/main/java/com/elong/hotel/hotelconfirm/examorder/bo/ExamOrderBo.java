@@ -59,13 +59,13 @@ public class ExamOrderBo extends CompareEntityBase {
 	private String memberLevel;
 
     //拒单时长
-	private Integer rejectTime;
+	private int rejectTime;
 
 	//是否赔付
-	private Integer isSupposed;
+	private int isSupposed;
 
 	//是否超时
-    private Integer isOutTime;
+    private int isOutTime;
 
 	//客人app选择马上到点(&OrderFlagConst.IS_ARRIVE_NOW_ORDER=1024)
 	private boolean userChoiceUrge4App;
@@ -81,11 +81,19 @@ public class ExamOrderBo extends CompareEntityBase {
 	public ExamOrderBo(Order order,ExamOrderPo po,OperatorInfoBo operator) {
 		if(order != null && po != null){
 			this.setExamOrder(po);
+			//终拒时间
 			this.amendTime = operator.getOperatorTime();
+			//会员等级
+			this.memberLevel = order.getGradeId();
 			if((order.getOrderFlag() & OrderFlagConst.IS_ARRIVE_NOW_ORDER) == OrderFlagConst.IS_ARRIVE_NOW_ORDER){
 				userChoiceUrge4App = true;
 			}
-
+			//计算拒单时长
+			calRejectTime();
+			//计算是否超时
+			calIsOutTime(order);
+			//计算是否赔付
+			calIsSupposed(order);
 		}else if(order != null && po == null){
 			this.reserNo = order.getOrderId().intValue();
 			this.reserStatus = order.getStatus();
@@ -488,27 +496,27 @@ public class ExamOrderBo extends CompareEntityBase {
         this.memberLevel = memberLevel;
     }
 
-    public Integer getRejectTime() {
+    public int getRejectTime() {
         return rejectTime;
     }
 
-    public void setRejectTime(Integer rejectTime) {
+    public void setRejectTime(int rejectTime) {
         this.rejectTime = rejectTime;
     }
 
-    public Integer getIsSupposed() {
+    public int getIsSupposed() {
         return isSupposed;
     }
 
-    public void setIsSupposed(Integer isSupposed) {
+    public void setIsSupposed(int isSupposed) {
         this.isSupposed = isSupposed;
     }
 
-    public Integer getIsOutTime() {
+    public int getIsOutTime() {
         return isOutTime;
     }
 
-    public void setIsOutTime(Integer isOutTime) {
+    public void setIsOutTime(int isOutTime) {
         this.isOutTime = isOutTime;
     }
 
@@ -582,5 +590,40 @@ public class ExamOrderBo extends CompareEntityBase {
 				}
 			}
 		}
+	}
+	
+	/**
+	 * 
+	 * 计算订单是否超时
+	 *
+	 */
+	public void calIsOutTime(Order order){
+		if(System.currentTimeMillis() > order.getLateCheckInTime().getTime()){
+			this.isOutTime = 1;
+		}
+	}
+	
+	/**
+	 * 
+	 * 判断是否赔付 
+	 *
+	 * @param order
+	 */
+	public void calIsSupposed(Order order){
+		/**
+		 * 1.订单状态为“O”，“G	”且发送过确认短信
+		 * 	1.1:固定代理ID
+		 * 	1.2:艺龙自有
+		 * 	1.3：非艺龙自有，且为预付/担保
+		 */
+	}
+	
+	/**
+	 * 
+	 * 计算拒单时长
+	 *
+	 */
+	public void calRejectTime(){
+		this.rejectTime = (int) ((System.currentTimeMillis() - this.amendTime.getTime()) / (1000 * 60 *60));
 	}
 }
