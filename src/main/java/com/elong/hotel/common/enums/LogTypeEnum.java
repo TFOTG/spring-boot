@@ -29,21 +29,9 @@ public enum LogTypeEnum {
 
 	CONFIRMV(6,"confirmV"),
 
-    EXAMA(7,"examA"),
+    EXAMD(7,"examD"),
 
-    EXAMO(8,"examO"),
-
-    EXAMU(9,"examU"),
-
-    EXAMG(10,"examG"),
-
-    EXAMH(11,"examH"),
-
-    EXAMV(12,"examV"),
-
-    EXAMD(13,"examD"),
-
-    EXAME(14,"examE"),
+    EXAME(8,"examE"),
 
     /**
 	 * 临时添加状态
