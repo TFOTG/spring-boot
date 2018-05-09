@@ -1,11 +1,16 @@
 package com.elong.hotel.hotelconfirm.examorder.bo;
 
 import com.elong.hotel.common.bo.OperatorInfoBo;
+import com.elong.hotel.hotelconfirm.examorder.enums.OorderTypeEnum;
 import com.elong.hotel.hotelconfirm.examorder.po.ExamOrderPo;
 import com.elong.hotel.hotelconfirm.groupfilter.bo.CompareEntityBase;
+import com.elong.hotel.proxy.javaorder.consts.OrderAdditionalStatusConst;
+import com.elong.hotel.proxy.javaorder.consts.OrderFlagConst;
 import com.elong.hotel.proxy.javaorder.getorder.Order;
 
 import java.util.Date;
+
+import org.apache.commons.lang.StringUtils;
 
 public class ExamOrderBo extends CompareEntityBase {
 
@@ -77,9 +82,55 @@ public class ExamOrderBo extends CompareEntityBase {
 		if(order != null && po != null){
 			this.setExamOrder(po);
 			this.amendTime = operator.getOperatorTime();
+			if((order.getOrderFlag() & OrderFlagConst.IS_ARRIVE_NOW_ORDER) == OrderFlagConst.IS_ARRIVE_NOW_ORDER){
+				userChoiceUrge4App = true;
+			}
 
 		}else if(order != null && po == null){
-
+			this.reserNo = order.getOrderId().intValue();
+			this.reserStatus = order.getStatus();
+			this.arriveDate = order.getCheckInDate();
+			this.leaveDate = order.getCheckOutDate();
+			this.timeEarly = order.getEarlyCheckInTime();
+			this.timeLate = order.getLateCheckInTime();
+			this.roomNum = order.getRoomCount();
+			this.nightNum = order.getRoomNights() == null ? 0 : order.getRoomNights().size();
+			this.orderMoney = order.getSumPrice().doubleValue();
+			this.cardNo = order.getCardNo();
+			this.hotelId = order.getHotelId();
+			this.hotelName = order.getHotelName();
+//			this.hotelStar = po.getHotelStar();
+			this.supplierId = String.valueOf(order.getSupplierId());
+			this.supplierName = order.getSupplierName();
+			this.supplierType = String.valueOf(order.getSupplierType());
+			this.supplierOtaType = String.valueOf(order.getSupplierOtaType());
+			this.proxyId = order.getProxy();
+			this.cityId = order.getCityId();
+			this.distance = order.getDistanceFromHotelWhenBooking();
+			this.bookingTime = order.getCreateTime();
+			//判断订单类型
+			setOrderType(order);
+			if(order.getContact() != null && order.getContact().getIsConfirmed()){
+				this.isConfirm = 1;
+			}
+//			this.isPms = po.getIsPms();
+			//查询历史属否出现“H”
+//			this.isH = po.getIsH();
+//			this.isFaxReturn = po.getIsfaxReturn();
+//			this.isLinked = po.getIsLinked();
+//			this.isRepeat = po.getIsRepeat();
+			if((order.getOrderFlag() & OrderFlagConst.IS_INSTANT_CONFIRM) == OrderFlagConst.IS_INSTANT_CONFIRM){
+				this.isImmediately = 1;
+			}
+			//新标识字段
+//			this.isNew = po.getIsNew();
+			
+			this.phone = order.getContact().getMobile();
+			this.orderTimestamp = order.getOrderTimestamp();
+			this.amendTime = operator.getOperatorTime();
+			if((order.getOrderFlag() & OrderFlagConst.IS_ARRIVE_NOW_ORDER) == OrderFlagConst.IS_ARRIVE_NOW_ORDER){
+				userChoiceUrge4App = true;
+			}
 		}else if(order == null && po != null){
 			this.setExamOrder(po);
 		}
@@ -511,4 +562,25 @@ public class ExamOrderBo extends CompareEntityBase {
 		this.isNew = isNew;
 	}
     
+	/**
+	 * 
+	 * 计算订单类型 
+	 *
+	 * @param order
+	 */
+	public void setOrderType(Order order){
+		this.orderType = OorderTypeEnum.Oridinary.getKey();
+		//判断担保订单
+		if((order.getAdditionalStatus() & OrderAdditionalStatusConst.CREDIT_CARD_VOUCH) == OrderAdditionalStatusConst.CREDIT_CARD_VOUCH){
+			//预付订单
+			if(StringUtils.equalsIgnoreCase("D", order.getPayment())){
+				this.orderType = OorderTypeEnum.Prepay.getKey();
+			}else if(StringUtils.equalsIgnoreCase("P", order.getPayment())){//现付订单
+				if((order.getAdditionalStatus() & OrderAdditionalStatusConst.FULL_PRICE_VOUCH) == OrderAdditionalStatusConst.FULL_PRICE_VOUCH ||
+						order.getBaseVouchRule() != null){
+					this.orderType = OorderTypeEnum.Voucher.getKey();
+				}
+			}
+		}
+	}
 }
