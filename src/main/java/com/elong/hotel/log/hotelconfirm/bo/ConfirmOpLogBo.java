@@ -170,30 +170,30 @@ public class ConfirmOpLogBo {
 
 
 
-    public ConfirmOpLogBo(ExamOrderBo confirmOrderBo, ConfirmOpType confirmOpType, String preReserStatus, String targetReserStatus, OperatorInfoBo operator) {
-        this.reserNo = confirmOrderBo.getReserNo();
-        this.hotelId = confirmOrderBo.getHotelId();
-        this.hotelName = confirmOrderBo.getHotelName();
-        this.supplierName = confirmOrderBo.getSupplierName();
-        this.cardNo = confirmOrderBo.getCardNo();
-        this.arriveDate = confirmOrderBo.getTimeEarly();
+    public ConfirmOpLogBo(ExamOrderBo examOrderBo, ConfirmOpType confirmOpType, String preReserStatus, String targetReserStatus, OperatorInfoBo operator) {
+        this.reserNo = examOrderBo.getReserNo();
+        this.hotelId = examOrderBo.getHotelId();
+        this.hotelName = examOrderBo.getHotelName();
+        this.supplierName = examOrderBo.getSupplierName();
+        this.cardNo = examOrderBo.getCardNo();
+        this.arriveDate = examOrderBo.getTimeEarly();
         this.opType = confirmOpType.getKey()+"";
         this.opDate = new Date();
-        this.department = DepartmentEnum.Confirm.getKey() + "";
-        this.groupId = confirmOrderBo.getGroupId();
-        this.priority = confirmOrderBo.getPriority();
-        this.sourceReserStatus = confirmOpType.equals(ConfirmOpType.STORAGE_IN) ? preReserStatus : confirmOrderBo.getReserStatus();
+        this.department = DepartmentEnum.Amend.getKey() + "";
+        this.groupId = examOrderBo.getGroupId();
+        this.priority = examOrderBo.getPriority();
+        this.sourceReserStatus = confirmOpType.equals(ConfirmOpType.STORAGE_IN) ? preReserStatus : examOrderBo.getReserStatus();
         this.targetReserStatus = targetReserStatus;
-        this.confirmType = getConfirmType(operator.getOperatorName());                                // 重复字段
-        this.shouldConfirmType = confirmOrderBo.getConfirmType().longValue();        // 重复字段
+  //      this.confirmType = getConfirmType(operator.getOperatorName());                                // 重复字段
+  //      this.shouldConfirmType = confirmOrderBo.getConfirmType().longValue();        // 重复字段
 
-        this.staffName = confirmOrderBo.getStaffName();
+        this.staffName = examOrderBo.getStaffName();
         this.operator = operator.getOperatorName();
-        this.enterTime = confirmOrderBo.getEnterTime();
-        this.respiteTime = confirmOrderBo.getRespiteTime();
-        this.distributeTime = confirmOrderBo.getDistributeTime();
-        this.bookingTime = confirmOrderBo.getBookingTime();
-        this.amendTime = confirmOrderBo.getAmendTime();
+        this.enterTime = examOrderBo.getEnterTime();
+        this.respiteTime = examOrderBo.getRespiteTime();
+        this.distributeTime = examOrderBo.getDistributeTime();
+        this.bookingTime = examOrderBo.getBookingTime();
+        this.amendTime = examOrderBo.getAmendTime();
         FullRoomRateConfig fullRoomRateConfig = ConfigurationManager.getHotSwitchConfig("FullRoomRateConfig", FullRoomRateConfig.class);
     }
 
