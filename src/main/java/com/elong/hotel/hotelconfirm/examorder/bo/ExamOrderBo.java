@@ -1,7 +1,7 @@
 package com.elong.hotel.hotelconfirm.examorder.bo;
 
 import com.elong.hotel.common.bo.OperatorInfoBo;
-import com.elong.hotel.hotelconfirm.examorder.enums.OorderTypeEnum;
+import com.elong.hotel.hotelconfirm.examorder.enums.OrderTypeEnum;
 import com.elong.hotel.hotelconfirm.examorder.po.ExamOrderPo;
 import com.elong.hotel.hotelconfirm.groupfilter.bo.CompareEntityBase;
 import com.elong.hotel.proxy.javaorder.consts.OrderAdditionalStatusConst;
@@ -102,7 +102,7 @@ public class ExamOrderBo extends CompareEntityBase {
 			this.timeEarly = order.getEarlyCheckInTime();
 			this.timeLate = order.getLateCheckInTime();
 			this.roomNum = order.getRoomCount();
-			this.nightNum = order.getRoomNights() == null ? 0 : order.getRoomNights().size();
+			this.nightNum = order.getRoomNightsCount();
 			this.orderMoney = order.getSumPrice().doubleValue();
 			this.cardNo = order.getCardNo();
 			this.hotelId = order.getHotelId();
@@ -116,6 +116,7 @@ public class ExamOrderBo extends CompareEntityBase {
 			this.cityId = order.getCityId();
 			this.distance = order.getDistanceFromHotelWhenBooking();
 			this.bookingTime = order.getCreateTime();
+			this.groupId = 5066;
 			//判断订单类型
 			setOrderType(order);
 			if(order.getContact() != null && order.getContact().getIsConfirmed()){
@@ -132,7 +133,7 @@ public class ExamOrderBo extends CompareEntityBase {
 			}
 			//新标识字段
 //			this.isNew = po.getIsNew();
-			
+			this.memberLevel = order.getGradeId();
 			this.phone = order.getContact().getMobile();
 			this.orderTimestamp = order.getOrderTimestamp();
 			this.amendTime = operator.getOperatorTime();
@@ -172,7 +173,7 @@ public class ExamOrderBo extends CompareEntityBase {
 		this.groupId = po.getGroupId();
 		this.staffName = po.getStaffName();
 		this.distributeTime = po.getDistributeTime();
-		this.isFaxReturn = po.getIsfaxReturn();
+		this.isFaxReturn = po.getIsFaxReturn();
 		this.isLinked = po.getIsLinked();
 		this.respiteTime = po.getRespiteTime();
 		this.enterTime = po.getEnterTime();
@@ -577,16 +578,16 @@ public class ExamOrderBo extends CompareEntityBase {
 	 * @param order
 	 */
 	public void setOrderType(Order order){
-		this.orderType = OorderTypeEnum.Oridinary.getKey();
+		this.orderType = OrderTypeEnum.Oridinary.getKey();
 		//判断担保订单
 		if((order.getAdditionalStatus() & OrderAdditionalStatusConst.CREDIT_CARD_VOUCH) == OrderAdditionalStatusConst.CREDIT_CARD_VOUCH){
 			//预付订单
 			if(StringUtils.equalsIgnoreCase("D", order.getPayment())){
-				this.orderType = OorderTypeEnum.Prepay.getKey();
+				this.orderType = OrderTypeEnum.Prepay.getKey();
 			}else if(StringUtils.equalsIgnoreCase("P", order.getPayment())){//现付订单
 				if((order.getAdditionalStatus() & OrderAdditionalStatusConst.FULL_PRICE_VOUCH) == OrderAdditionalStatusConst.FULL_PRICE_VOUCH ||
 						order.getBaseVouchRule() != null){
-					this.orderType = OorderTypeEnum.Voucher.getKey();
+					this.orderType = OrderTypeEnum.Voucher.getKey();
 				}
 			}
 		}

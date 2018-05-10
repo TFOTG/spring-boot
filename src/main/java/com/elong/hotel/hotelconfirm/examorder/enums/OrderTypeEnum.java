@@ -13,7 +13,7 @@ package com.elong.hotel.hotelconfirm.examorder.enums;
  * @version		1.0  
  * @since		JDK1.7
  */
-public enum OorderTypeEnum {
+public enum OrderTypeEnum {
 
     /**
      * 普通
@@ -38,7 +38,7 @@ public enum OorderTypeEnum {
     private int key;
     private String value;
 
-    OorderTypeEnum(int key, String value) {
+    OrderTypeEnum(int key, String value) {
         this.key = key;
         this.value = value;
     }
@@ -51,9 +51,9 @@ public enum OorderTypeEnum {
         return value;
     }
 
-    public static OorderTypeEnum getValue(int key) {
-    	OorderTypeEnum result = OorderTypeEnum.All;
-       for (OorderTypeEnum examOrderType : OorderTypeEnum.values()) {
+    public static OrderTypeEnum getValue(int key) {
+    	OrderTypeEnum result = OrderTypeEnum.All;
+       for (OrderTypeEnum examOrderType : OrderTypeEnum.values()) {
             if (examOrderType.getKey() == key) {
                 result = examOrderType;
                 break;
