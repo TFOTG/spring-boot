@@ -13,6 +13,11 @@ import java.util.List;
 
 public class ExamOrderDomainContext implements Serializable {
 
+	/** 
+	 * long ExamOrderDomainContext.java serialVersionUID
+	 */
+	private static final long serialVersionUID = 1L;
+
 	private Integer reserNo;
 
 	private ServerRunningDomainEnum serverRunningDomainEnum;
@@ -28,12 +33,16 @@ public class ExamOrderDomainContext implements Serializable {
 	private OrderStatusChangeRequest request;
 	
 	private  List<OrderHistory> orderHistory;
+	
+	private Integer refusedCancelNum;
+	
+	private Integer repeatRefusedNum;
 
 	public ExamOrderDomainContext() {
 	}
 
 	public ExamOrderDomainContext(Integer reserNo, ServerRunningDomainEnum serverRunningDomainEnum, Order order,
-			ExamOrderPo examOrderPo, OrderConsumerInfoBo orderConsumerInfoBo, List<OrderHistory> orderHistory) {
+			ExamOrderPo examOrderPo, OrderConsumerInfoBo orderConsumerInfoBo, List<OrderHistory> orderHistory,Integer refusedCancelNum, Integer repeatRefusedNum) {
 		this.reserNo = reserNo;
 		this.serverRunningDomainEnum = serverRunningDomainEnum;
 		this.order = order;
@@ -41,6 +50,8 @@ public class ExamOrderDomainContext implements Serializable {
 		this.orderConsumerInfoBo = orderConsumerInfoBo;
 		this.operator = orderConsumerInfoBo.getOperatorInfo();
 		this.orderHistory = orderHistory;
+		this.refusedCancelNum = refusedCancelNum;
+		this.repeatRefusedNum = repeatRefusedNum;
 	}
 
 	public Integer getReserNo() {
@@ -105,6 +116,22 @@ public class ExamOrderDomainContext implements Serializable {
 
 	public void setOrderHistory(List<OrderHistory> orderHistory) {
 		this.orderHistory = orderHistory;
+	}
+
+	public Integer getRefusedCancelNum() {
+		return refusedCancelNum;
+	}
+
+	public void setRefusedCancelNum(Integer refusedCancelNum) {
+		this.refusedCancelNum = refusedCancelNum;
+	}
+
+	public Integer getRepeatRefusedNum() {
+		return repeatRefusedNum;
+	}
+
+	public void setRepeatRefusedNum(Integer repeatRefusedNum) {
+		this.repeatRefusedNum = repeatRefusedNum;
 	}
 	
 }
