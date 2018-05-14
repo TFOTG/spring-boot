@@ -15,6 +15,15 @@ public class ExamOrderConfig {
      */
     private Integer priority4UrgeDistance;
 
+    /**
+     * 终拒取消数量查询间隔
+     */
+    private Integer refusedCancelNumSearchTimeInterval;
+    
+    /**
+     * 赔付代理ID
+     */
+    private String supposedProxyIds;
 
     public Integer getPriority4UrgeMinute() {
         return priority4UrgeMinute;
@@ -31,4 +40,21 @@ public class ExamOrderConfig {
     public void setPriority4UrgeDistance(Integer priority4UrgeDistance) {
         this.priority4UrgeDistance = priority4UrgeDistance;
     }
+
+	public Integer getRefusedCancelNumSearchTimeInterval() {
+		return refusedCancelNumSearchTimeInterval;
+	}
+
+	public void setRefusedCancelNumSearchTimeInterval(Integer refusedCancelNumSearchTimeInterval) {
+		this.refusedCancelNumSearchTimeInterval = refusedCancelNumSearchTimeInterval;
+	}
+
+	public String getSupposedProxyIds() {
+		return supposedProxyIds;
+	}
+
+	public void setSupposedProxyIds(String supposedProxyIds) {
+		this.supposedProxyIds = supposedProxyIds;
+	}
+    
 }

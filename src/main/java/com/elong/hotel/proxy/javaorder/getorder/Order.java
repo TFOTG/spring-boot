@@ -192,6 +192,21 @@ public class Order {
 	private int originFrom;
 
     private Date pmsConfirmTime;
+    
+    /**
+     * 直连是否有线下流程
+     */
+    private int isAcceptDcOfflineProcess;
+    
+    /**
+     * 星级
+     */
+    private Integer star;
+    
+    /**
+     * 星级类型
+     */
+    private Integer starType;
 
     public Integer getBusinessSystemId() {
         return businessSystemId;
@@ -862,4 +877,29 @@ public class Order {
         }
         return value;
     }
+
+	public int getIsAcceptDcOfflineProcess() {
+		return isAcceptDcOfflineProcess;
+	}
+
+	public void setIsAcceptDcOfflineProcess(int isAcceptDcOfflineProcess) {
+		this.isAcceptDcOfflineProcess = isAcceptDcOfflineProcess;
+	}
+
+	public Integer getStar() {
+		return star;
+	}
+
+	public void setStar(Integer star) {
+		this.star = star;
+	}
+
+	public Integer getStarType() {
+		return starType;
+	}
+
+	public void setStarType(Integer starType) {
+		this.starType = starType;
+	}
+    
 }
