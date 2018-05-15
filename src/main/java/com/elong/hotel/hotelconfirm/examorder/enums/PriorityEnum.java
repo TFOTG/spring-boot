@@ -57,6 +57,15 @@ public enum PriorityEnum {
         return value;
     }
 
-
+    public static String getValueDesc(int key) {
+        String result = "";
+        for (PriorityEnum examOrderOrderPriority : PriorityEnum.values()) {
+             if (examOrderOrderPriority.getKey() == key) {
+                 result = examOrderOrderPriority.value;
+                 break;
+             }
+         }
+         return result;
+     }
 
 }

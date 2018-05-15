@@ -6,7 +6,11 @@ package com.elong.hotel.hotelconfirm.group.enums;
 public enum  GettingTypeEnum {
     Hotel(0,"酒店"),
 
-    Supplier(1,"供应商");
+    Supplier(1,"供应商"),
+    
+    AmendAutomaticNotification(3, "终拒自动通知分组"),
+    
+    AmendStaffGroup(4, "终拒员工分组");
 
     private int key;
     private String value;
