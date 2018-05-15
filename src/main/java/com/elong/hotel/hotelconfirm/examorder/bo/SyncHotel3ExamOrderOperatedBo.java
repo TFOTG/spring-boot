@@ -4,6 +4,7 @@ import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
 
+import javax.validation.constraints.NotNull;
 
 import org.hibernate.validator.constraints.NotEmpty;
 
@@ -36,7 +37,7 @@ public class SyncHotel3ExamOrderOperatedBo implements Serializable{
 	/**
 	 * 操作类型
 	 */
-	@NotEmpty(message = "opType is null.")
+	@NotNull(message = "opType is null.")
 	private Integer opType;
 	
 	/**
@@ -54,7 +55,7 @@ public class SyncHotel3ExamOrderOperatedBo implements Serializable{
 	/**
 	 * 操作时间
 	 */
-	@NotEmpty(message = "opTime is null.")
+	@NotNull(message = "opTime is null.")
 	private Date opTime;
 
 	public List<String> getOrderIds() {
