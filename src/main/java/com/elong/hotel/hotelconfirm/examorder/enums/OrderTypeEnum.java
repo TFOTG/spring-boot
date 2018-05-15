@@ -50,12 +50,23 @@ public enum OrderTypeEnum {
     public String getValue() {
         return value;
     }
-
+    
     public static OrderTypeEnum getValue(int key) {
     	OrderTypeEnum result = OrderTypeEnum.All;
        for (OrderTypeEnum examOrderType : OrderTypeEnum.values()) {
             if (examOrderType.getKey() == key) {
                 result = examOrderType;
+                break;
+            }
+        }
+        return result;
+    }
+
+    public static String getValueDesc(int key) {
+    	String result = "";
+       for (OrderTypeEnum examOrderType : OrderTypeEnum.values()) {
+            if (examOrderType.getKey() == key) {
+                result = examOrderType.value;
                 break;
             }
         }
