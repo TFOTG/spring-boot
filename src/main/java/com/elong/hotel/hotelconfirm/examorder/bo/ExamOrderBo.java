@@ -110,7 +110,7 @@ public class ExamOrderBo extends CompareEntityBase {
 			this.cardNo = order.getCardNo();
 			this.hotelId = order.getHotelId();
 			this.hotelName = order.getHotelName();
-			this.hotelStar = order.getStar() != null ? HotelStarEnum.Default.getKey() : order.getStar();
+			this.hotelStar = HotelStarEnum.Default.getKey(); //order.getStar() != null ? HotelStarEnum.Default.getKey() : order.getStar();
 			this.supplierId = String.valueOf(order.getSupplierId());
 			this.supplierName = order.getSupplierName();
 			this.supplierType = String.valueOf(order.getSupplierType());
@@ -120,7 +120,7 @@ public class ExamOrderBo extends CompareEntityBase {
 			this.distance = order.getDistanceFromHotelWhenBooking();
 			this.bookingTime = order.getCreateTime();
 			this.isConfirm = order.getContact() != null && order.getContact().getIsConfirmed() ? 1 : 0;
-			this.isPms = order.getIsAcceptDcOfflineProcess();
+			this.isPms = 0;//order.getIsAcceptDcOfflineProcess();
 			this.isH = calOrderHistoryStatus("H", 1, orderHistory) >= 1 ? 1 : 0;
 			this.isRepeat = repeatRefusedNum == null ? 0 : repeatRefusedNum > 1 ? 1 : 0;
 			this.isImmediately = (order.getOrderFlag() & OrderFlagConst.IS_INSTANT_CONFIRM) == OrderFlagConst.IS_INSTANT_CONFIRM ? 1 : 0;
@@ -647,7 +647,16 @@ public class ExamOrderBo extends CompareEntityBase {
 	 *
 	 */
 	public Integer calRejectTime(){
-		return (int) ((System.currentTimeMillis() - this.amendTime.getTime()) / (1000 * 60 *60));
+		long timeDiff = System.currentTimeMillis() - this.amendTime.getTime();
+		if(timeDiff > 0){
+			int second = (int) timeDiff / (1000 * 60);
+			int minute = second / 60;
+			if((second % 60) > 0){
+				minute += 1;
+			}
+			return minute;
+		}
+		return 0;
 	}
 	
 	/**
