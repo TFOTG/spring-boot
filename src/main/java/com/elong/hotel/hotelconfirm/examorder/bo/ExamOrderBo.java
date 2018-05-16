@@ -1,8 +1,8 @@
 package com.elong.hotel.hotelconfirm.examorder.bo;
 
 import com.elong.hotel.common.bo.OperatorInfoBo;
+import com.elong.hotel.common.config.ExamOrderConfig;
 import com.elong.hotel.common.helper.ConfigurationManager;
-import com.elong.hotel.hotelconfirm.examorder.config.ExamOrderConfig;
 import com.elong.hotel.hotelconfirm.examorder.enums.HotelStarEnum;
 import com.elong.hotel.hotelconfirm.examorder.enums.OrderTypeEnum;
 import com.elong.hotel.hotelconfirm.examorder.po.ExamOrderPo;

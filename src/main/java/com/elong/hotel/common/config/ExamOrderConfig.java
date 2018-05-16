@@ -1,4 +1,4 @@
-package com.elong.hotel.hotelconfirm.examorder.config;
+package com.elong.hotel.common.config;
 
 /**
  * 终拒基础配置
