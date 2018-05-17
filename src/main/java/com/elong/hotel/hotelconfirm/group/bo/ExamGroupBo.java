@@ -6,6 +6,7 @@ import java.util.Date;
 import com.alibaba.fastjson.annotation.JSONField;
 import com.elong.common.util.StringUtils;
 import com.elong.hotel.hotelconfirm.examorder.enums.GroupOrderStatusEnum;
+import com.elong.hotel.hotelconfirm.examorder.enums.HotelStarEnum;
 import com.elong.hotel.hotelconfirm.examorder.enums.OrderTypeEnum;
 import com.elong.hotel.hotelconfirm.examorder.enums.PriorityEnum;
 import com.elong.hotel.hotelconfirm.group.po.ConfirmGroupPo;
@@ -72,6 +73,7 @@ public class ExamGroupBo implements Serializable{
 	
 	private String isNew = "";
 	
+	private Integer sort;
 
 	public ExamGroupBo() {
 		super();
@@ -79,14 +81,15 @@ public class ExamGroupBo implements Serializable{
 	
 	public ExamGroupBo(ConfirmGroupPo po) {
 		super();
-		this.groupId = po.getGroupguid();
+		this.groupId = po.getId();
 		this.groupName = po.getGroupname();
 		this.enable = po.isEnable();
 		this.operator = po.getOpname();
 		this.operatedTime = po.getOpdate();
+		this.sort = po.getSort();
 		
 		if(po.getGrouptags() != null && po.getGrouptags().size() != 0){
-			final String allZn = "全部";
+			final String allZn = "不限";
 			final String allEn = "ALL";
 			final String yes = "是";
 			final String no = "否";
@@ -116,7 +119,15 @@ public class ExamGroupBo implements Serializable{
 					}
 					break;
 				case "hotelStar":
-					this.hotelStar = tag.getTagvalue().equalsIgnoreCase(allEn) ? allZn : tag.getTagvalue();
+					if(tag.getTagvalue().equalsIgnoreCase(allEn)){
+						this.hotelStar = allZn;
+					}else{
+						sb = new StringBuilder();
+						for(String s : tag.getTagvalue().split(separator)){
+							sb.append(HotelStarEnum.getValueDesc(Integer.valueOf(s))).append(separator);
+						}
+						this.hotelStar = StringUtils.isEmpty(sb.toString()) ? allZn : sb.substring(0, sb.lastIndexOf(separator));
+					}
 					break;
 				case "memberLevel":
 					this.memberLevel = tag.getTagvalue().equalsIgnoreCase(allEn) ? allZn : tag.getTagvalue();
@@ -347,6 +358,14 @@ public class ExamGroupBo implements Serializable{
 
 	public void setIsNew(String isNew) {
 		this.isNew = isNew;
+	}
+
+	public Integer getSort() {
+		return sort;
+	}
+
+	public void setSort(Integer sort) {
+		this.sort = sort;
 	}
 	
 }

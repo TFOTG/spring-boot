@@ -20,7 +20,7 @@ public enum HotelStarEnum {
 	/**
      * 默认
      */
-    Default(0, "默认"),
+    Default(0, "无星级"),
 
     /**
      * 1星
@@ -73,6 +73,17 @@ public enum HotelStarEnum {
        for (HotelStarEnum hotelStarEnum : HotelStarEnum.values()) {
             if (hotelStarEnum.getKey() == key) {
                 result = hotelStarEnum;
+                break;
+            }
+        }
+        return result;
+    }
+    
+    public static String getValueDesc(int key) {
+    	String result = "";
+       for (HotelStarEnum hotelStarEnum : HotelStarEnum.values()) {
+            if (hotelStarEnum.getKey() == key) {
+                result = hotelStarEnum.getValue();
                 break;
             }
         }
