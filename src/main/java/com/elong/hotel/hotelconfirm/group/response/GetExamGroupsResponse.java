@@ -4,6 +4,7 @@ import java.util.List;
 
 import com.elong.hotel.common.response.ServiceResponseBase;
 import com.elong.hotel.hotelconfirm.group.bo.ExamGroupBo;
+import com.elong.hotel.hotelconfirm.group.po.ConfirmGroupPo;
 
 /**
  *
@@ -26,6 +27,8 @@ public class GetExamGroupsResponse extends ServiceResponseBase{
 	private static final long serialVersionUID = 1L;
 
 	private List<ExamGroupBo> body;
+	
+	private List<ConfirmGroupPo> groupPos;
 
 	public List<ExamGroupBo> getBody() {
 		return body;
@@ -33,6 +36,14 @@ public class GetExamGroupsResponse extends ServiceResponseBase{
 
 	public void setBody(List<ExamGroupBo> body) {
 		this.body = body;
+	}
+
+	public List<ConfirmGroupPo> getGroupPos() {
+		return groupPos;
+	}
+
+	public void setGroupPos(List<ConfirmGroupPo> groupPos) {
+		this.groupPos = groupPos;
 	}
 	
 }
