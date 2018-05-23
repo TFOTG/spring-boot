@@ -105,7 +105,7 @@ public class ExamGroupBo implements Serializable{
 						for(String s : tag.getTagvalue().split(separator)){
 							sb.append(GroupOrderStatusEnum.getValueDesc(s)).append(separator);
 						}
-						this.orderType = StringUtils.isEmpty(sb.toString()) ? allZn : sb.substring(0, sb.lastIndexOf(separator));
+						this.orderStatus = StringUtils.isEmpty(sb.toString()) ? allZn : sb.substring(0, sb.lastIndexOf(separator));
 					}
 					break;
 				case "cityId":
