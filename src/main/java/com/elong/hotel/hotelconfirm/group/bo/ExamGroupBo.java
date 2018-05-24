@@ -7,6 +7,7 @@ import com.alibaba.fastjson.annotation.JSONField;
 import com.elong.common.util.StringUtils;
 import com.elong.hotel.hotelconfirm.examorder.enums.GroupOrderStatusEnum;
 import com.elong.hotel.hotelconfirm.examorder.enums.HotelStarEnum;
+import com.elong.hotel.hotelconfirm.examorder.enums.MemberLevelEnum;
 import com.elong.hotel.hotelconfirm.examorder.enums.OrderTypeEnum;
 import com.elong.hotel.hotelconfirm.examorder.enums.PriorityEnum;
 import com.elong.hotel.hotelconfirm.group.po.ConfirmGroupPo;
@@ -130,7 +131,15 @@ public class ExamGroupBo implements Serializable{
 					}
 					break;
 				case "memberLevel":
-					this.memberLevel = tag.getTagvalue().equalsIgnoreCase(allEn) ? allZn : tag.getTagvalue();
+					if(tag.getTagvalue().equalsIgnoreCase(allEn)){
+						this.memberLevel = allZn;
+					}else{
+						sb = new StringBuilder();
+						for(String s : tag.getTagvalue().split(separator)){
+							sb.append(MemberLevelEnum.getValueDesc(s)).append(separator);
+						}
+						this.memberLevel = StringUtils.isEmpty(sb.toString()) ? allZn : sb.substring(0, sb.lastIndexOf(separator));
+					}
 					break;
 				case "proxyId":
 					this.proxyId = tag.getTagvalue().equalsIgnoreCase(allEn) ? allZn : tag.getTagvalue();
