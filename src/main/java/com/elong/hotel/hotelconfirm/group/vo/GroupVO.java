@@ -26,8 +26,16 @@ public class GroupVO {
 	 */
 	private int ehcacheEnbale;
 
+	/**
+	 * 员工姓名
+	 */
 	private String staffName;
-
+	
+	/**
+	 * 分组类型
+	 */
+	private Integer gettingType;
+	
 	public Integer getDeptment() {
 		return deptment;
 	}
@@ -57,6 +65,13 @@ public class GroupVO {
 		this.enable = enable;
 		this.ehcacheEnbale = ehcacheEnbale;
 	}
+	
+	public GroupVO(Integer deptment, Integer enable, int ehcacheEnbale, Integer gettingType) {
+		this.deptment = deptment;
+		this.enable = enable;
+		this.ehcacheEnbale = ehcacheEnbale;
+		this.gettingType = gettingType;
+	}
 
 	public GroupVO() {
 	}
@@ -68,4 +83,13 @@ public class GroupVO {
 	public void setStaffName(String staffName) {
 		this.staffName = staffName;
 	}
+
+	public Integer getGettingType() {
+		return gettingType;
+	}
+
+	public void setGettingType(Integer gettingType) {
+		this.gettingType = gettingType;
+	}
+	
 }
