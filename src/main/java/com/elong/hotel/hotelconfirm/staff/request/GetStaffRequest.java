@@ -23,6 +23,8 @@ public class GetStaffRequest {
     private int pageSize;
 
     private int startItem;
+    
+    private Integer gettingType;
 
     public String getStaffName() {
         return staffName;
@@ -71,4 +73,13 @@ public class GetStaffRequest {
     public void setDepartment(Integer department) {
         this.department = department;
     }
+
+	public Integer getGettingType() {
+		return gettingType;
+	}
+
+	public void setGettingType(Integer gettingType) {
+		this.gettingType = gettingType;
+	}
+    
 }

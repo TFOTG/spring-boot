@@ -7,6 +7,7 @@ public class GroupStaffRelationPo {
 	private Integer id;
 	private int groupId;
 	private String staffName;
+	private Integer department;
 	private String operator;
 	private String operaterIp;
 	private Date operaterTime;
@@ -34,8 +35,16 @@ public class GroupStaffRelationPo {
     public void setStaffName(String staffName) {
         this.staffName = staffName;
     }
+    
+    public Integer getDepartment() {
+		return department;
+	}
 
-    public String getOperator() {
+	public void setDepartment(Integer department) {
+		this.department = department;
+	}
+
+	public String getOperator() {
         return operator;
     }
 
