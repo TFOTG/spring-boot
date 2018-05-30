@@ -9,9 +9,9 @@ package com.elong.hotel.proxy.javaorder.consts;
 public interface OriginalOrderFieldsConst {
 
 	/**
-	 * 入库 isAcceptDcOfflineProcess,star,starType
+	 * 入库 
 	 */
-	String FIELDS_FOR_STORAGE = "status,hotelId,payment,checkInDate,checkOutDate,earlyCheckInTime,lateCheckInTime,otaType,orderFlag,supplierId,supplierType,supplierOtaType,supplierName,promotion,isUrgentVerify,modifyName,roomNo,groupId,additionalStatus,confirmNo,guestName,proxy,createTime,hotelName,gradeId,sumPrice,sumCost,confirmMethod,contactPhone,cardNo,contactMobile,orderFrom,mHotelName,ratePlanId,distanceFromHotelWhenBooking,cityId,modifyTime,notesToHotel,notesToGuest,notesToElong,cooperationOrderId,fullRoomRate,cooperationType,businessSystemId,appClientType,pmsConfirmTime,orderKeyValues,roomCount,roomNightsCount";
+	String FIELDS_FOR_STORAGE = "status,hotelId,payment,checkInDate,checkOutDate,earlyCheckInTime,lateCheckInTime,otaType,orderFlag,supplierId,supplierType,supplierOtaType,supplierName,promotion,isUrgentVerify,modifyName,roomNo,groupId,additionalStatus,confirmNo,guestName,proxy,createTime,hotelName,gradeId,sumPrice,sumCost,confirmMethod,contactPhone,cardNo,contactMobile,orderFrom,mHotelName,ratePlanId,distanceFromHotelWhenBooking,cityId,modifyTime,notesToHotel,notesToGuest,notesToElong,cooperationOrderId,fullRoomRate,cooperationType,businessSystemId,appClientType,pmsConfirmTime,orderKeyValues,roomCount,roomNightsCount,isAcceptDcOfflineProcess,star,starType";
 
 	/**
 	 * 确认ivr
