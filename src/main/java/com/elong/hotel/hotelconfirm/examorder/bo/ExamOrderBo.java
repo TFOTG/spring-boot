@@ -110,7 +110,7 @@ public class ExamOrderBo extends CompareEntityBase {
 			this.cardNo = order.getCardNo();
 			this.hotelId = order.getHotelId();
 			this.hotelName = order.getHotelName();
-			this.hotelStar = HotelStarEnum.Default.getKey(); //order.getStar() != null ? HotelStarEnum.Default.getKey() : order.getStar();
+			this.hotelStar = order.getStar() != null ? HotelStarEnum.Default.getKey() : order.getStar();
 			this.supplierId = String.valueOf(order.getSupplierId());
 			this.supplierName = order.getSupplierName();
 			this.supplierType = String.valueOf(order.getSupplierType());
@@ -120,7 +120,7 @@ public class ExamOrderBo extends CompareEntityBase {
 			this.distance = order.getDistanceFromHotelWhenBooking();
 			this.bookingTime = order.getCreateTime();
 			this.isConfirm = order.getContact() != null && order.getContact().getIsConfirmed() ? 1 : 0;
-			this.isPms = 0;//order.getIsAcceptDcOfflineProcess();
+			this.isPms = order.getIsAcceptDcOfflineProcess();
 			this.isH = calOrderHistoryStatus("H", 1, orderHistory) >= 1 ? 1 : 0;
 			this.isRepeat = repeatRefusedNum == null ? 0 : repeatRefusedNum > 1 ? 1 : 0;
 			this.isImmediately = (order.getOrderFlag() & OrderFlagConst.IS_INSTANT_CONFIRM) == OrderFlagConst.IS_INSTANT_CONFIRM ? 1 : 0;
