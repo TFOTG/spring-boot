@@ -10,6 +10,7 @@ import com.elong.hotel.hotelconfirm.confirmorder.bo.ConfirmOrderBo;
 import com.elong.hotel.hotelconfirm.confirmorder.enums.ConfirmType;
 import com.elong.hotel.hotelconfirm.confirmorder.po.ConfirmOrderPo;
 import com.elong.hotel.hotelconfirm.examorder.bo.ExamOrderBo;
+import com.elong.hotel.hotelconfirm.examorder.po.ExamOrderPo;
 import com.elong.hotel.hotelconfirm.group.enums.DepartmentEnum;
 import com.elong.hotel.log.hotelconfirm.enums.ConfirmOpType;
 
@@ -184,9 +185,6 @@ public class ConfirmOpLogBo {
         this.priority = examOrderBo.getPriority();
         this.sourceReserStatus = confirmOpType.equals(ConfirmOpType.STORAGE_IN) ? preReserStatus : examOrderBo.getReserStatus();
         this.targetReserStatus = targetReserStatus;
-  //      this.confirmType = getConfirmType(operator.getOperatorName());                                // 重复字段
-  //      this.shouldConfirmType = confirmOrderBo.getConfirmType().longValue();        // 重复字段
-
         this.staffName = examOrderBo.getStaffName();
         this.operator = operator.getOperatorName();
         this.enterTime = examOrderBo.getEnterTime();
@@ -194,9 +192,30 @@ public class ConfirmOpLogBo {
         this.distributeTime = examOrderBo.getDistributeTime();
         this.bookingTime = examOrderBo.getBookingTime();
         this.amendTime = examOrderBo.getAmendTime();
-        FullRoomRateConfig fullRoomRateConfig = ConfigurationManager.getHotSwitchConfig("FullRoomRateConfig", FullRoomRateConfig.class);
     }
 
+    public ConfirmOpLogBo(ExamOrderPo po,DepartmentEnum departmentEnum, ConfirmOpType confirmOpType, String operator) {
+        this.reserNo = po.getReserNo();
+        this.hotelId = po.getHotelId();
+        this.hotelName = po.getHotelName();
+        this.supplierName = po.getSupplierName();
+        this.cardNo = po.getCardNo();
+        this.arriveDate = po.getArriveDate();
+        this.opType = confirmOpType.getKey()+"";
+        this.opDate = new Date();
+        this.department = departmentEnum.getKey()+"";
+        this.groupId = po.getGroupId();
+        this.priority = po.getPriority();
+        this.sourceReserStatus = po.getReserStatus();
+        this.targetReserStatus = po.getReserStatus();
+        this.staffName = po.getStaffName();
+        this.operator = operator;
+        this.enterTime = po.getEnterTime();
+        this.respiteTime = po.getRespiteTime();
+        this.distributeTime = po.getDistributeTime();
+        this.bookingTime = po.getBookingTime();
+        this.amendTime = po.getAmendTime();
+    }
 
 
     public ConfirmOpLogBo()
