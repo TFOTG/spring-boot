@@ -5,6 +5,7 @@
  */
 package com.elong.hotel.hotelconfirm.group.vo;
 
+
 /**
  * @author jianjun.wang
  * @version 1.0.0
@@ -71,6 +72,12 @@ public class GroupVO {
 		this.enable = enable;
 		this.ehcacheEnbale = ehcacheEnbale;
 		this.gettingType = gettingType;
+	}
+	
+	public GroupVO(String staffName, Integer department, Integer enable){
+		this.staffName = staffName;
+		this.deptment = department;
+		this.enable = enable;
 	}
 
 	public GroupVO() {

@@ -32,7 +32,7 @@ public class SyncHotel3ExamOrderOperatedBo implements Serializable{
 	 * 订单ID集合
 	 */
 	@NotEmpty(message = "orderIds is null.")
-	private List<String> orderIds;
+	private List<Integer> orderIds;
 	
 	/**
 	 * 操作类型
@@ -58,11 +58,11 @@ public class SyncHotel3ExamOrderOperatedBo implements Serializable{
 	@NotNull(message = "opTime is null.")
 	private Date opTime;
 
-	public List<String> getOrderIds() {
+	public List<Integer> getOrderIds() {
 		return orderIds;
 	}
 
-	public void setOrderIds(List<String> orderIds) {
+	public void setOrderIds(List<Integer> orderIds) {
 		this.orderIds = orderIds;
 	}
 

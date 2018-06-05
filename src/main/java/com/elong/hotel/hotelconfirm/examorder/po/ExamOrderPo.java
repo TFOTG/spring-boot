@@ -265,6 +265,8 @@ public class ExamOrderPo implements Serializable{
 		this.reserStatus = bo.getReserStatus();
 		this.arriveDate = bo.getArriveDate();
 		this.leaveDate = bo.getLeaveDate();
+		this.timeEarly = bo.getTimeEarly();
+		this.timeLate = bo.getTimeLate();
 		this.cardNo = bo.getCardNo();
 		this.roomNum = bo.getRoomNum();
 		this.nightNum = bo.getNightNum();
