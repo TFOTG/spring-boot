@@ -38,7 +38,27 @@ public enum ConfirmOpType {
 	/**
 	 * ebk重发
 	 */
-	CALLEBOOKING_REFUSE(10,"取消Ebooking拒单");
+	CALLEBOOKING_REFUSE(10,"取消Ebooking拒单"),
+	
+	/**
+	 * 终拒原单追回
+	 */
+	AMEND_OREDER_RECOVER(11, "终拒原单追回"),
+	
+	/**
+	 * 终拒原酒店换房型
+	 */
+	AMEND_CHANGE_ROOMTYPE(12, "终拒原酒店换房型"),
+	
+	/**
+	 * 终拒换酒店
+	 */
+	AMEND_CHANGE_HOTEL(13, "终拒换酒店"),
+	
+	/**
+	 * 终拒取消
+	 */
+	AMEND_CANCEL(14, "终拒取消");
 
 	private int key;
 
