@@ -1,5 +1,6 @@
 package com.elong.hotel.hotelconfirm.groupfilter.bo;
 
+import com.elong.common.util.StringUtils;
 import com.elong.hotel.common.exception.Init4GroupInfoException;
 import com.elong.hotel.hotelconfirm.groupfilter.enums.CompareFieldEnum;
 import com.elong.hotel.hotelconfirm.groupfilter.enums.CompareResultEnum;
@@ -62,7 +63,7 @@ public class GroupFilterEntity<T extends GroupBase, Y extends CompareEntityBase>
 
                     name = annotations.name();
                     tagValue = tags.get(name);
-                    if (null == tagValue) {
+                    if (StringUtils.isEmpty(tagValue)) {
                         compareMetaDate.put(name, CompareResultEnum.Off);
                         continue;
                     }
