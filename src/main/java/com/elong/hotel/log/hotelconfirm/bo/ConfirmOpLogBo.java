@@ -215,6 +215,7 @@ public class ConfirmOpLogBo {
         this.distributeTime = po.getDistributeTime();
         this.bookingTime = po.getBookingTime();
         this.amendTime = po.getAmendTime();
+        this.staffName = po.getStaffName();
     }
 
 
