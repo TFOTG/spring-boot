@@ -48,7 +48,11 @@ public class GetExamOrdersRequest implements Serializable{
 	 */
 	private int startRow;
 	
-
+	/**
+	 * 排序方式
+	 */
+	private String orderBy;
+	
 	public int getType() {
 		return type;
 	}
@@ -87,6 +91,14 @@ public class GetExamOrdersRequest implements Serializable{
 
 	public void setStartRow(int startRow) {
 		this.startRow = startRow;
+	}
+
+	public String getOrderBy() {
+		return orderBy;
+	}
+
+	public void setOrderBy(String orderBy) {
+		this.orderBy = orderBy;
 	}
 	
 }
