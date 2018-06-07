@@ -31,6 +31,8 @@ public class GetPendingExamOrdersResponse extends ServiceResponseBase{
 	private List<PendingExamOrderBo> body;
 	
 	private int totalCount;
+	
+	private List<String> keys;
 
 	public List<PendingExamOrderBo> getBody() {
 		return body;
@@ -46,6 +48,14 @@ public class GetPendingExamOrdersResponse extends ServiceResponseBase{
 
 	public void setTotalCount(int totalCount) {
 		this.totalCount = totalCount;
+	}
+
+	public List<String> getKeys() {
+		return keys;
+	}
+
+	public void setKeys(List<String> keys) {
+		this.keys = keys;
 	}
 
 }
