@@ -198,7 +198,20 @@ public class ConfirmOrderConfig {
 	 */
 	private String updateAmendManagerTime;
 
-	public String getOpLogReserStatus() {
+    /**
+     * 追单库订单监控搜索可选择状态
+     */
+    private String examOrderStatus;
+
+    public String getExamOrderStatus() {
+        return examOrderStatus;
+    }
+
+    public void setExamOrderStatus(String examOrderStatus) {
+        this.examOrderStatus = examOrderStatus;
+    }
+
+    public String getOpLogReserStatus() {
 		return opLogReserStatus;
 	}
 
