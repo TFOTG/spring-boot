@@ -4,7 +4,9 @@ import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.Date;
 
+import com.alibaba.fastjson.annotation.JSONField;
 import com.elong.hotel.hotelconfirm.examorder.po.ExamOrderPo;
+import com.elong.hotel.proxy.javaorder.getorder.Order;
 
 /**
  * 待处理终拒订单BO
@@ -45,21 +47,25 @@ public class PendingExamOrderBo implements Serializable{
 	/**
 	 * 到店日期
 	 */
+	@JSONField(format = "yyyy-MM-dd(u)")
 	private Date arriveDate;
 	
 	/**
 	 * 离店日期
 	 */
+	@JSONField(format = "yyyy-MM-dd(u)")
 	private Date leaveDate;
 	
 	/**
 	 * 最早到店时间
 	 */
+	@JSONField(format="HH:mm")
 	private Date timeEarly;
 	
 	/**
 	 * 最晚到店时间
 	 */
+	@JSONField(format="HH:mm")
 	private Date timeLate;
 	
 	/**
@@ -165,6 +171,7 @@ public class PendingExamOrderBo implements Serializable{
 	/**
 	 * 入库时间
 	 */
+	@JSONField(format = "yyyy-MM-dd HH:mm:ss")
 	private Date enterTime;
 	
 	/**
@@ -175,6 +182,7 @@ public class PendingExamOrderBo implements Serializable{
 	/**
 	 * 获取时间
 	 */
+	@JSONField(format = "yyyy-MM-dd HH:mm:ss")
 	private Date distributeTime;
 	
 	/**
@@ -251,7 +259,27 @@ public class PendingExamOrderBo implements Serializable{
 	 * 聚合唯一key
 	 */
 	private String groupByKey;
-
+	
+	/**
+	 * 订单信息
+	 */
+	private Order order;
+	
+	/**
+	 * 订单状态中文
+	 */
+	private String orderStatusZn;
+	
+	/**
+	 * 进库时长（单位：分钟）
+	 */
+	private Integer enterTimeMinute;
+	
+	/**
+	 * 入屏时长（单位：分钟）
+	 */
+	private Integer enterScreenMinute;
+	
 	public PendingExamOrderBo() {
 		super();
 	}
@@ -651,6 +679,38 @@ public class PendingExamOrderBo implements Serializable{
 
 	public void setSmsSendTime(Date smsSendTime) {
 		this.smsSendTime = smsSendTime;
+	}
+
+	public Order getOrder() {
+		return order;
+	}
+
+	public void setOrder(Order order) {
+		this.order = order;
+	}
+
+	public String getOrderStatusZn() {
+		return orderStatusZn;
+	}
+
+	public void setOrderStatusZn(String orderStatusZn) {
+		this.orderStatusZn = orderStatusZn;
+	}
+
+	public Integer getEnterTimeMinute() {
+		return enterTimeMinute;
+	}
+
+	public void setEnterTimeMinute(Integer enterTimeMinute) {
+		this.enterTimeMinute = enterTimeMinute;
+	}
+
+	public Integer getEnterScreenMinute() {
+		return enterScreenMinute;
+	}
+
+	public void setEnterScreenMinute(Integer enterScreenMinute) {
+		this.enterScreenMinute = enterScreenMinute;
 	}
 	
 }
