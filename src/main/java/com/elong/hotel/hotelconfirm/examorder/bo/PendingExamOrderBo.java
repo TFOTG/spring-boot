@@ -188,6 +188,7 @@ public class PendingExamOrderBo implements Serializable{
 	/**
 	 * 暂缓时间
 	 */
+	@JSONField(format = "yyyy-MM-dd HH:mm")
 	private Date respiteTime;
 	
 	/**
