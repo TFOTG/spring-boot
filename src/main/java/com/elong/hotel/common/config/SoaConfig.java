@@ -93,6 +93,8 @@ public class SoaConfig {
 	private String hotelIndexLibraryMethod;
 
 	private int hotelIndexLibraryTimeOut;
+	
+	private String batchGetHotelContactNewRequest;
 
 	public String getHotel3RoomInfoForQr() {
 		return hotel3RoomInfoForQr;
@@ -563,4 +565,13 @@ public class SoaConfig {
 	public void setHotelIndexLibraryTimeOut(int hotelIndexLibraryTimeOut) {
 		this.hotelIndexLibraryTimeOut = hotelIndexLibraryTimeOut;
 	}
+
+	public String getBatchGetHotelContactNewRequest() {
+		return batchGetHotelContactNewRequest;
+	}
+
+	public void setBatchGetHotelContactNewRequest(String batchGetHotelContactNewRequest) {
+		this.batchGetHotelContactNewRequest = batchGetHotelContactNewRequest;
+	}
+	
 }

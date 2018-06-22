@@ -7,6 +7,7 @@ import java.util.Date;
 import com.alibaba.fastjson.annotation.JSONField;
 import com.elong.hotel.hotelconfirm.examorder.po.ExamOrderPo;
 import com.elong.hotel.proxy.javaorder.getorder.Order;
+import com.elong.hotel.proxy.platform.bo.ProxyInfoBo;
 
 /**
  * 待处理终拒订单BO
@@ -280,7 +281,7 @@ public class PendingExamOrderBo implements Serializable{
 	 * 入屏时长（单位：分钟）
 	 */
 	private Integer enterScreenMinute;
-	
+
 	public PendingExamOrderBo() {
 		super();
 	}
@@ -713,5 +714,4 @@ public class PendingExamOrderBo implements Serializable{
 	public void setEnterScreenMinute(Integer enterScreenMinute) {
 		this.enterScreenMinute = enterScreenMinute;
 	}
-	
 }
