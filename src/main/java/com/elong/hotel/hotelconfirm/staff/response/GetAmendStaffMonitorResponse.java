@@ -9,6 +9,7 @@ import com.elong.hotel.mis.common.model.response.ResponseBase;
  */
 public class GetAmendStaffMonitorResponse extends ResponseBase {
     private List<AmendStaffMonitorBo> amendStaffMonitorBoList;
+    private Date currentTime;
 
     public List<AmendStaffMonitorBo> getAmendStaffMonitorBoList() {
         return amendStaffMonitorBoList;
@@ -16,5 +17,13 @@ public class GetAmendStaffMonitorResponse extends ResponseBase {
 
     public void setAmendStaffMonitorBoList(List<AmendStaffMonitorBo> amendStaffMonitorBoList) {
         this.amendStaffMonitorBoList = amendStaffMonitorBoList;
+    }
+
+    public Date getCurrentTime() {
+        return currentTime;
+    }
+
+    public void setCurrentTime(Date currentTime) {
+        this.currentTime = currentTime;
     }
 }
