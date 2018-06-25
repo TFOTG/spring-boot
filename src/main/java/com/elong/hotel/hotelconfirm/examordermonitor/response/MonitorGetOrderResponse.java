@@ -13,6 +13,29 @@ public class MonitorGetOrderResponse extends ServiceResponseBase implements Seri
 
     private List<MonitOrorderBo> orderList ;
 
+    //当请页
+    private int thisPage;
+
+    //共找到多少订单
+    private int orderCount;
+
+    public int getOrderCount() {
+        return orderCount;
+    }
+
+    public void setOrderCount(int orderCount) {
+        this.orderCount = orderCount;
+    }
+
+    public int getThisPage() {
+        return thisPage;
+    }
+
+    public void setThisPage(int thisPage) {
+        this.thisPage = thisPage;
+    }
+
+
     public List<MonitOrorderBo> getOrderList() {
         return orderList;
     }
