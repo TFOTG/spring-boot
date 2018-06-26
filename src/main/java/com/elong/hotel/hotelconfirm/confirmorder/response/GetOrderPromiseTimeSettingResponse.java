@@ -15,6 +15,7 @@ public class GetOrderPromiseTimeSettingResponse extends ServerActionResponseBase
 
     private Integer orderType;
 
+    //还有多久确认，非即时订单大于0，即时为0
     private Integer promiseTime4Minute;
 
     public GetOrderPromiseTimeSettingResponse() {
