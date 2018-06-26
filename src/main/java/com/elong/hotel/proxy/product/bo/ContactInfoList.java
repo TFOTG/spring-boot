@@ -14,6 +14,10 @@ private String hotelPhone;
 
 private String hotelLobbyTel;
 
+private Integer ratePlanId;
+
+private String roomTypeId;
+
 private String roomContact;
 	public List<HotelContactList> getHotelContactList() {
 		return hotelContactList;
@@ -69,6 +73,22 @@ private String roomContact;
 
 	public void setRoomContact(String roomContact) {
 		this.roomContact = roomContact;
+	}
+
+	public Integer getRatePlanId() {
+		return ratePlanId;
+	}
+
+	public void setRatePlanId(Integer ratePlanId) {
+		this.ratePlanId = ratePlanId;
+	}
+
+	public String getRoomTypeId() {
+		return roomTypeId;
+	}
+
+	public void setRoomTypeId(String roomTypeId) {
+		this.roomTypeId = roomTypeId;
 	}
 	
 }

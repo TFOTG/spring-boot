@@ -213,6 +213,8 @@ public class Order {
      */
     private BigDecimal exchangedSumPrice;
     
+    private Long additionalStatusI;
+    
     public Integer getBusinessSystemId() {
         return businessSystemId;
     }
@@ -913,6 +915,14 @@ public class Order {
 
 	public void setExchangedSumPrice(BigDecimal exchangedSumPrice) {
 		this.exchangedSumPrice = exchangedSumPrice;
+	}
+
+	public Long getAdditionalStatusI() {
+		return additionalStatusI;
+	}
+
+	public void setAdditionalStatusI(Long additionalStatusI) {
+		this.additionalStatusI = additionalStatusI;
 	}
     
 }

@@ -2,12 +2,18 @@ package com.elong.hotel.hotelconfirm.examorder.bo;
 
 import java.io.Serializable;
 import java.math.BigDecimal;
+import java.util.Arrays;
 import java.util.Date;
 
 import com.alibaba.fastjson.annotation.JSONField;
+import com.elong.common.util.StringUtils;
+import com.elong.hotel.common.config.ExamOrderConfig;
+import com.elong.hotel.common.helper.ConfigurationManager;
+import com.elong.hotel.hotelconfirm.examorder.enums.OrderTypeEnum;
 import com.elong.hotel.hotelconfirm.examorder.po.ExamOrderPo;
 import com.elong.hotel.proxy.javaorder.getorder.Order;
-import com.elong.hotel.proxy.platform.bo.ProxyInfoBo;
+import com.elong.hotel.proxy.javaorder.getorder.OrderKeyValue;
+import com.elong.hotel.proxy.javaorder.getorder.RoomNight;
 
 /**
  * 待处理终拒订单BO
@@ -281,7 +287,52 @@ public class PendingExamOrderBo implements Serializable{
 	 * 入屏时长（单位：分钟）
 	 */
 	private Integer enterScreenMinute;
+	
+	/**
+	 * 是否直连订单
+	 */
+	private int isDCOrder;
+	
+	/**
+	 * 是否赔付
+	 */
+	private int isSupposed;
+	
+	/**
+	 * 是否国际
+	 */
+	private int isInternational;
+	
+	/**
+	 * 是否海外
+	 */
+	private int isOverSeas;
+	
+	/**
+	 * 是否华住
+	 */
+	private int isHuaZhu;
+	
+	/**
+	 * 是否确认后推翻
+	 */
+	private int isConfirmOverFlow;
 
+	/**
+	 * 是否小时房
+	 */
+	private int isHourRoom;
+	
+	/**
+	 * 买断
+	 */
+	private Integer buyOut;
+	
+	/**
+	 * 转让
+	 */
+	private Integer increaseCount;
+	
 	public PendingExamOrderBo() {
 		super();
 	}
@@ -689,6 +740,52 @@ public class PendingExamOrderBo implements Serializable{
 
 	public void setOrder(Order order) {
 		this.order = order;
+		if((order.getAdditionalStatus()&67108864) == 67108864){//判断是否直连订单
+			this.isDCOrder = 1;
+		}
+		this.isSupposed = calIsSupposed(order);//判断订单是否赔付
+		if((order.getAdditionalStatusI()&1073741824) == 1073741824){//判断订单是否国际
+			this.isInternational = 1;
+		}
+		if(order.getOrderKeyValues() != null){//判断订单是否华住
+			for(OrderKeyValue keyValue : order.getOrderKeyValues()){
+				if(keyValue.getKey().equalsIgnoreCase("FirstJoinPromotionType") && keyValue.getValue().equalsIgnoreCase("1001")){
+					this.isHuaZhu = 1;
+					continue;
+				}
+				if(keyValue.getKey().equalsIgnoreCase("HourRoomStay")){//判断小时房
+					this.isHourRoom = 1;
+					continue;
+				}
+			}
+		}
+		if(StringUtils.isNotEmpty(order.getProvinceId())){//判断是否海外
+			String overSeasProvinceIds = ConfigurationManager.getHotSwitchConfig("ExamOrderConfig", ExamOrderConfig.class).getOverSeasProvinceIds();
+			if(overSeasProvinceIds.matches(order.getProvinceId())){
+				this.isOverSeas = 1;
+			}
+		}
+		if((order.getOrderFlag()&144115188075855872L) == 144115188075855872L){//判断是否确认后推翻
+			this.isConfirmOverFlow = 1;
+		}
+		if(order.getRoomNights() != null && order.getRoomNights().size() != 0){//判断“转让”，买断
+			int buy = 0, increase = 0;
+			for(RoomNight room : order.getRoomNights()){
+				if(room.getInventoryType() != null){
+					if(room.getInventoryType() == 1){
+						increase += 1;
+					}else if(room.getInventoryType() == 3){
+						buy += 1;
+					}
+				}
+			}
+			if(buy != 0){
+				this.buyOut = buy;
+			}
+			if(increase != 0){
+				this.increaseCount = increase;
+			}
+		}
 	}
 
 	public String getOrderStatusZn() {
@@ -713,5 +810,110 @@ public class PendingExamOrderBo implements Serializable{
 
 	public void setEnterScreenMinute(Integer enterScreenMinute) {
 		this.enterScreenMinute = enterScreenMinute;
+	}
+
+	public int getIsDCOrder() {
+		return isDCOrder;
+	}
+
+	public void setIsDCOrder(int isDCOrder) {
+		this.isDCOrder = isDCOrder;
+	}
+	
+	public int getIsSupposed() {
+		return isSupposed;
+	}
+
+	public void setIsSupposed(int isSupposed) {
+		this.isSupposed = isSupposed;
+	}
+
+	public int getIsInternational() {
+		return isInternational;
+	}
+
+	public void setIsInternational(int isInternational) {
+		this.isInternational = isInternational;
+	}
+
+	public int getIsOverSeas() {
+		return isOverSeas;
+	}
+
+	public void setIsOverSeas(int isOverSeas) {
+		this.isOverSeas = isOverSeas;
+	}
+
+	public int getIsHuaZhu() {
+		return isHuaZhu;
+	}
+
+	public void setIsHuaZhu(int isHuaZhu) {
+		this.isHuaZhu = isHuaZhu;
+	}
+
+	public int getIsConfirmOverFlow() {
+		return isConfirmOverFlow;
+	}
+
+	public void setIsConfirmOverFlow(int isConfirmOverFlow) {
+		this.isConfirmOverFlow = isConfirmOverFlow;
+	}
+
+	public int getIsHourRoom() {
+		return isHourRoom;
+	}
+
+	public void setIsHourRoom(int isHourRoom) {
+		this.isHourRoom = isHourRoom;
+	}
+
+	public Integer getBuyOut() {
+		return buyOut;
+	}
+
+	public void setBuyOut(Integer buyOut) {
+		this.buyOut = buyOut;
+	}
+
+	public Integer getIncreaseCount() {
+		return increaseCount;
+	}
+
+	public void setIncreaseCount(Integer increaseCount) {
+		this.increaseCount = increaseCount;
+	}
+
+	/**
+	 * 
+	 * 判断是否赔付 
+	 *
+	 * @param order
+	 */
+	public int calIsSupposed(Order order){
+		/**
+		 * 1.订单状态为“O”，“G	”且发送过确认短信
+		 * 	1.1:固定代理ID
+		 * 	1.2:艺龙自有 （otaType = 1 && （supplierOtaType = 1 or cooperationType = 1））
+		 * 	1.3：非艺龙自有，且为预付/担保
+		 */
+		if((order.getStatus().equalsIgnoreCase("O") || order.getStatus().equalsIgnoreCase("G")) && order.getContact().getIsConfirmed()){
+			if(order.getOtaType() == 1){//艺龙自有
+				if(order.getSupplierOtaType() == 1){
+					return 1;
+				}
+			}else if (order.getCooperationType() == 1){
+				return 1;
+			}else{//非艺龙自有
+				 if(this.orderType == OrderTypeEnum.Prepay.getKey() || this.orderType == OrderTypeEnum.Voucher.getKey()){
+					 return 1;
+				 } 
+			}
+			String supposedProxyIds = ConfigurationManager.getHotSwitchConfig("ExamOrderConfig", ExamOrderConfig.class).getSupposedProxyIds();
+			if(Arrays.asList(supposedProxyIds).contains(order.getProxy())){
+				return 1;
+			}
+		}
+		return 0;
 	}
 }
