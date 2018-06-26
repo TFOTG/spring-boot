@@ -53,6 +53,7 @@ public class GetExamOrdersRequest implements Serializable{
 	 */
 	private String orderBy;
 	
+	
 	public int getType() {
 		return type;
 	}
@@ -99,6 +100,5 @@ public class GetExamOrdersRequest implements Serializable{
 
 	public void setOrderBy(String orderBy) {
 		this.orderBy = orderBy;
-	}
-	
+	}	
 }
