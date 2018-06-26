@@ -13,6 +13,10 @@ public class ProxyBaseBo {
 	private int serviceType;
 
 	private String smsTitle;
+	
+	private String callOutDiction;
+	
+	private String callInDiction;
 
 	public String getServiceName() {
 		return serviceName;
@@ -61,4 +65,21 @@ public class ProxyBaseBo {
 	public void setSmsTitle(String smsTitle) {
 		this.smsTitle = smsTitle;
 	}
+
+	public String getCallOutDiction() {
+		return callOutDiction;
+	}
+
+	public void setCallOutDiction(String callOutDiction) {
+		this.callOutDiction = callOutDiction;
+	}
+
+	public String getCallInDiction() {
+		return callInDiction;
+	}
+
+	public void setCallInDiction(String callInDiction) {
+		this.callInDiction = callInDiction;
+	}
+	
 }

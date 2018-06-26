@@ -35,6 +35,11 @@ public class ExamOrderConfig {
      */
     private Integer nonemergencyOrderLimit;
     
+    /**
+     * 海外省份ID
+     */
+    private String overSeasProvinceIds;
+    
     public ExamOrderConfig(){
     	super();
     	this.priority4UrgeMinute = 120;
@@ -43,6 +48,7 @@ public class ExamOrderConfig {
     	this.supposedProxyIds = "AP0022170,AP0019548,AP0015596,AP4004228,AP0019754,AP0017194,AP0037110,AP0037351,AP0022895,AP0020332,AP0020211,AP4052993,AP0024335,AP0017455,AP0043710,AP0001643,AP4000285,AP4000288,AP0023369,AP0016114";
     	this.urgencyOrderLimit = 4;
     	this.nonemergencyOrderLimit = 3;
+    	overSeasProvinceIds = "3200,3300,3400";
     }
 
     public Integer getPriority4UrgeMinute() {
@@ -91,6 +97,14 @@ public class ExamOrderConfig {
 
 	public void setNonemergencyOrderLimit(Integer nonemergencyOrderLimit) {
 		this.nonemergencyOrderLimit = nonemergencyOrderLimit;
+	}
+
+	public String getOverSeasProvinceIds() {
+		return overSeasProvinceIds;
+	}
+
+	public void setOverSeasProvinceIds(String overSeasProvinceIds) {
+		this.overSeasProvinceIds = overSeasProvinceIds;
 	}
     
 }
