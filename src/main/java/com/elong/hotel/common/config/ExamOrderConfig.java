@@ -33,13 +33,19 @@ public class ExamOrderConfig {
     /**
      * 员工获取非紧急数量上限
      */
-    private Integer nonemergencyOrderLimit;
+    private Integer normalOrderLimit;
     
     /**
      * 海外省份ID
      */
     private String overSeasProvinceIds;
-    
+
+    private String operatorName;
+
+    private String operatorTime;
+
+    private String operatorIp;
+
     public ExamOrderConfig(){
     	super();
     	this.priority4UrgeMinute = 120;
@@ -47,7 +53,7 @@ public class ExamOrderConfig {
     	this.refusedCancelNumSearchTimeInterval = 7;
     	this.supposedProxyIds = "AP0022170,AP0019548,AP0015596,AP4004228,AP0019754,AP0017194,AP0037110,AP0037351,AP0022895,AP0020332,AP0020211,AP4052993,AP0024335,AP0017455,AP0043710,AP0001643,AP4000285,AP4000288,AP0023369,AP0016114";
     	this.urgencyOrderLimit = 4;
-    	this.nonemergencyOrderLimit = 3;
+    	this.normalOrderLimit = 3;
     	overSeasProvinceIds = "3200,3300,3400";
     }
 
@@ -91,20 +97,43 @@ public class ExamOrderConfig {
 		this.urgencyOrderLimit = urgencyOrderLimit;
 	}
 
-	public Integer getNonemergencyOrderLimit() {
-		return nonemergencyOrderLimit;
-	}
+    public Integer getNormalOrderLimit() {
+        return normalOrderLimit;
+    }
 
-	public void setNonemergencyOrderLimit(Integer nonemergencyOrderLimit) {
-		this.nonemergencyOrderLimit = nonemergencyOrderLimit;
-	}
+    public void setNormalOrderLimit(Integer normalOrderLimit) {
+        this.normalOrderLimit = normalOrderLimit;
+    }
 
-	public String getOverSeasProvinceIds() {
+    public String getOverSeasProvinceIds() {
 		return overSeasProvinceIds;
 	}
 
 	public void setOverSeasProvinceIds(String overSeasProvinceIds) {
 		this.overSeasProvinceIds = overSeasProvinceIds;
 	}
-    
+
+    public String getOperatorName() {
+        return operatorName;
+    }
+
+    public void setOperatorName(String operatorName) {
+        this.operatorName = operatorName;
+    }
+
+    public String getOperatorTime() {
+        return operatorTime;
+    }
+
+    public void setOperatorTime(String operatorTime) {
+        this.operatorTime = operatorTime;
+    }
+
+    public String getOperatorIp() {
+        return operatorIp;
+    }
+
+    public void setOperatorIp(String operatorIp) {
+        this.operatorIp = operatorIp;
+    }
 }
