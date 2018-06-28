@@ -9,4 +9,6 @@ public interface EhcacheConst {
 	String CONFIRMRANKCACHE = "confirmRankCache";
 	
 	String CONFIRMRANKCACHE_KEY = "#root.methodName";
+
+	String CITYINFOCACHE="cityInfoCache";
 }
