@@ -16,24 +16,28 @@ public class MonitOrorderBo implements Serializable {
 
     private String staffName;
 
+    private int groupId;
+
+    private String groupName;
+
     private String hotelName;
 
     private String hotelId;
 
     private String checkInDate;
 
-    private int orderStatus;
+    private String orderStatus;
 
     private String leaderName;
 
-    //在屏时长
-    private Date getOrderTime;
+    //在屏时长 分钟
+    private long getOrderTime;
 
-    //拒单时长
-    private Date inExamTime;
+    //拒单时长 分钟
+    private long inExamTime;
 
     //预约时间
-    private Date followTime;
+    private String followTime;
 
     private int operatorId;
 
@@ -65,6 +69,22 @@ public class MonitOrorderBo implements Serializable {
         this.staffName = staffName;
     }
 
+    public int getGroupId() {
+        return groupId;
+    }
+
+    public void setGroupId(int groupId) {
+        this.groupId = groupId;
+    }
+
+    public String getGroupName() {
+        return groupName;
+    }
+
+    public void setGroupName(String groupName) {
+        this.groupName = groupName;
+    }
+
     public String getHotelName() {
         return hotelName;
     }
@@ -89,11 +109,11 @@ public class MonitOrorderBo implements Serializable {
         this.checkInDate = checkInDate;
     }
 
-    public int getOrderStatus() {
+    public String getOrderStatus() {
         return orderStatus;
     }
 
-    public void setOrderStatus(int orderStatus) {
+    public void setOrderStatus(String orderStatus) {
         this.orderStatus = orderStatus;
     }
 
@@ -105,27 +125,27 @@ public class MonitOrorderBo implements Serializable {
         this.leaderName = leaderName;
     }
 
-    public Date getGetOrderTime() {
+    public long getGetOrderTime() {
         return getOrderTime;
     }
 
-    public void setGetOrderTime(Date getOrderTime) {
+    public void setGetOrderTime(long getOrderTime) {
         this.getOrderTime = getOrderTime;
     }
 
-    public Date getInExamTime() {
+    public long getInExamTime() {
         return inExamTime;
     }
 
-    public void setInExamTime(Date inExamTime) {
+    public void setInExamTime(long inExamTime) {
         this.inExamTime = inExamTime;
     }
 
-    public Date getFollowTime() {
+    public String getFollowTime() {
         return followTime;
     }
 
-    public void setFollowTime(Date followTime) {
+    public void setFollowTime(String followTime) {
         this.followTime = followTime;
     }
 

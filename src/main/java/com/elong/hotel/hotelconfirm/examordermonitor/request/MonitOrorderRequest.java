@@ -11,9 +11,11 @@ public class MonitOrorderRequest implements Serializable {
 
     private int pageSize;
 
+    private int thisPage;
+
     private int orderId;
 
-    private int staffId;
+    private String staffName;
 
     private String leaderName;
 
@@ -33,6 +35,14 @@ public class MonitOrorderRequest implements Serializable {
 
     public int getPageIndex() {
         return pageIndex;
+    }
+
+    public int getThisPage() {
+        return thisPage;
+    }
+
+    public void setThisPage(int thisPage) {
+        this.thisPage = thisPage;
     }
 
     public void setPageIndex(int pageIndex) {
@@ -55,12 +65,12 @@ public class MonitOrorderRequest implements Serializable {
         this.orderId = orderId;
     }
 
-    public int getStaffId() {
-        return staffId;
+    public String getStaffName() {
+        return staffName;
     }
 
-    public void setStaffId(int staffId) {
-        this.staffId = staffId;
+    public void setStaffName(String staffName) {
+        this.staffName = staffName;
     }
 
     public String getLeaderName() {
