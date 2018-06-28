@@ -208,6 +208,13 @@ public class Order {
      */
     private Integer starType;
 
+    /**
+     * 房间卖价
+     */
+    private BigDecimal exchangedSumPrice;
+    
+    private Long additionalStatusI;
+    
     public Integer getBusinessSystemId() {
         return businessSystemId;
     }
@@ -900,6 +907,22 @@ public class Order {
 
 	public void setStarType(Integer starType) {
 		this.starType = starType;
+	}
+
+	public BigDecimal getExchangedSumPrice() {
+		return exchangedSumPrice;
+	}
+
+	public void setExchangedSumPrice(BigDecimal exchangedSumPrice) {
+		this.exchangedSumPrice = exchangedSumPrice;
+	}
+
+	public Long getAdditionalStatusI() {
+		return additionalStatusI;
+	}
+
+	public void setAdditionalStatusI(Long additionalStatusI) {
+		this.additionalStatusI = additionalStatusI;
 	}
     
 }

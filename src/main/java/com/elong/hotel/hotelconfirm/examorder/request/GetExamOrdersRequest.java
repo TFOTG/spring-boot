@@ -24,6 +24,11 @@ public class GetExamOrdersRequest implements Serializable{
 	private static final long serialVersionUID = 1L;
 
 	/**
+	 * 员工姓名
+	 */
+	private String staffName;
+	
+	/**
 	 * 类型 1:待处理，2:暂缓
 	 */
 	private int type;
@@ -37,7 +42,18 @@ public class GetExamOrdersRequest implements Serializable{
 	 * 每页条数
 	 */
 	private int size;
-
+	
+	/**
+	 * 查询起始行
+	 */
+	private int startRow;
+	
+	/**
+	 * 排序方式
+	 */
+	private String orderBy;
+	
+	
 	public int getType() {
 		return type;
 	}
@@ -61,5 +77,28 @@ public class GetExamOrdersRequest implements Serializable{
 	public void setSize(int size) {
 		this.size = size;
 	}
-	
+
+	public String getStaffName() {
+		return staffName;
+	}
+
+	public void setStaffName(String staffName) {
+		this.staffName = staffName;
+	}
+
+	public int getStartRow() {
+		return startRow;
+	}
+
+	public void setStartRow(int startRow) {
+		this.startRow = startRow;
+	}
+
+	public String getOrderBy() {
+		return orderBy;
+	}
+
+	public void setOrderBy(String orderBy) {
+		this.orderBy = orderBy;
+	}	
 }

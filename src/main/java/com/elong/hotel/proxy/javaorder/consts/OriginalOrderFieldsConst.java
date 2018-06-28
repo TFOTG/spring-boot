@@ -64,4 +64,9 @@ public interface OriginalOrderFieldsConst {
 	 * 确认后推翻，强制担保原订单状态
 	 */
 	String OVERTHROW_STATUS = "status,notesToElong";
+	
+	/**
+	 * 终拒/员工待处理查询
+	 */
+	String SEARCH_FOR_EXAM = "status,hotelId,payAmount,otaType,isUrgentVerify,additionalStatus,guestName,proxy,hotelName,gradeId,sumPrice,sumCost,contactPhone,contactMobile,orderFrom,ratePlanId,notesToHotel,notesToGuest,businessSystemId,roomCount,roomNightsCount,roomTypeId,roomTypeName,roomNightStayDate,roomNightIsSpecial,roomNightCost,roomNightSalePrice,roomNightRealSalePrice,roomNightRealCost,roomNightBreakfastCount,exchangedSumPrice,provinceId,orderKeyValues,additionalStatusI";
 }
