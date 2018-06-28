@@ -333,6 +333,11 @@ public class PendingExamOrderBo implements Serializable{
 	 */
 	private Integer increaseCount;
 	
+	/**
+	 * 是否超过暂缓时间
+	 */
+	private int isOverRespiteTime;
+	
 	public PendingExamOrderBo() {
 		super();
 	}
@@ -372,6 +377,9 @@ public class PendingExamOrderBo implements Serializable{
 		this.isRepeat = bo.getIsRepeat();
 		this.isImmediately = bo.getIsImmediately();
 		this.isNew = bo.getIsNew();
+		if(bo.getRespiteTime().getTime() >= System.currentTimeMillis()){
+			this.isOverRespiteTime = 1;
+		}
 	}
 	
 	public String getGroupByKey() {
@@ -882,6 +890,14 @@ public class PendingExamOrderBo implements Serializable{
 
 	public void setIncreaseCount(Integer increaseCount) {
 		this.increaseCount = increaseCount;
+	}
+	
+	public int getIsOverRespiteTime() {
+		return isOverRespiteTime;
+	}
+
+	public void setIsOverRespiteTime(int isOverRespiteTime) {
+		this.isOverRespiteTime = isOverRespiteTime;
 	}
 
 	/**
