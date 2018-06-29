@@ -63,10 +63,6 @@ public class GroupFilterEntity<T extends GroupBase, Y extends CompareEntityBase>
 
                     name = annotations.name();
                     tagValue = tags.get(name);
-                    if (StringUtils.isEmpty(tagValue)) {
-                        compareMetaDate.put(name, CompareResultEnum.Off);
-                        continue;
-                    }
                     tagStrings = new ArrayList<>(Arrays.asList(tagValue.toLowerCase().split(",")));
                     field.setAccessible(true);
                     value = field.get(compareDate);
