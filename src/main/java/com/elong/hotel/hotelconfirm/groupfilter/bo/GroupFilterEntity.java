@@ -76,9 +76,9 @@ public class GroupFilterEntity<T extends GroupBase, Y extends CompareEntityBase>
                         if ((tagValue.equalsIgnoreCase(CompareFieldEnum.All.toString()) || tagValue.equalsIgnoreCase(CompareFieldEnum.NL.toString()))) {
                             compareMetaDate.put(name, CompareResultEnum.On);
                         } else {
-                            int min = Integer.valueOf(tagStrings.get(0));
-                            int max = Integer.valueOf(tagStrings.get(1));
-                            boolean inNumInterval = (Integer.valueOf(value.toString()) >= min) && (Integer.valueOf(value.toString()) < max);
+                            double min = Double.valueOf(tagStrings.get(0));
+                            double max = Double.valueOf(tagStrings.get(1));
+                            boolean inNumInterval = (Double.valueOf(value.toString()) >= min) && (Double.valueOf(value.toString()) < max);
                             if (inNumInterval) {
                                 compareMetaDate.put(name, CompareResultEnum.On);
                             } else {
@@ -125,4 +125,5 @@ public class GroupFilterEntity<T extends GroupBase, Y extends CompareEntityBase>
 
         return CompareResultEnum.On;
     }
+    
 }
