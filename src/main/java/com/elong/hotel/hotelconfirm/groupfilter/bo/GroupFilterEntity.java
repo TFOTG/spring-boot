@@ -90,7 +90,7 @@ public class GroupFilterEntity<T extends GroupBase, Y extends CompareEntityBase>
 
                     }
                 } catch (Exception e) {
-                    throw new Init4GroupInfoException(String.format("初始化分组匹配信息失败:分组信息%s,匹配信息:%s,具体异常:%s", metaDate.toString(), compareDate.toString(), name+e.toString()));
+                    throw new Init4GroupInfoException(String.format("初始化分组匹配信息失败:分组id信息%s,匹配信息:%s,具体异常:%s", metaDate.getId().toString(), compareDate.toString(), name+e.toString()));
                 }
             }
         }
