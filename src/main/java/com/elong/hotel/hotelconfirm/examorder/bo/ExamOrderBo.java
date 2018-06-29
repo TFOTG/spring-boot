@@ -111,7 +111,7 @@ public class ExamOrderBo extends CompareEntityBase {
 			this.cardNo = order.getCardNo();
 			this.hotelId = order.getHotelId();
 			this.hotelName = order.getHotelName();
-			this.hotelStar = order.getStar() != null ? HotelStarEnum.Default.getKey() : order.getStar();
+			this.hotelStar = order.getStar() == null ? HotelStarEnum.Default.getKey() : order.getStar();
 			this.supplierId = String.valueOf(order.getSupplierId());
 			this.supplierName = order.getSupplierName();
 			this.supplierType = String.valueOf(order.getSupplierType());
