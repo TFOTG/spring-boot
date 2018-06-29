@@ -91,7 +91,7 @@ public class GroupFilterEntity<T extends GroupBase, Y extends CompareEntityBase>
 
                     }
                 } catch (Exception e) {
-                    throw new Init4GroupInfoException(name);
+                    throw new Init4GroupInfoException(name +" : "+ e.toString());
                 }
             }
         }
