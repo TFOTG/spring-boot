@@ -98,6 +98,7 @@ public class ExamOrderBo extends CompareEntityBase {
 			//计算是否赔付
 			this.isSupposed = calIsSupposed(order);
 			this.reserStatus = order.getStatus();
+			this.memberLevel = order.getGradeId();
 		}else if(order != null && po == null){
 			this.reserNo = order.getOrderId().intValue();
 			this.reserStatus = order.getStatus();
