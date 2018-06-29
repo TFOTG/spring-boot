@@ -85,4 +85,15 @@ public class CompareOrder4GroupBo extends CompareEntityBase {
     public void setInstantConfirm(Integer instantConfirm) {
         this.instantConfirm = instantConfirm;
     }
+
+    @Override
+    public String toString() {
+        return "CompareOrder4GroupBo{" +
+                "orderId=" + orderId +
+                ", reserStatus='" + reserStatus + '\'' +
+                ", supplierId='" + supplierId + '\'' +
+                ", cityId='" + cityId + '\'' +
+                ", instantConfirm=" + instantConfirm +
+                '}';
+    }
 }
