@@ -12,7 +12,7 @@ public enum DepartmentEnum {
     /**
      * 终拒
      */
-    Amend(2,"终拒");
+    Exam(2,"终拒");
 
     private int key;
     private String value;

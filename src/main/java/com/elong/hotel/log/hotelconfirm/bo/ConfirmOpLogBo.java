@@ -180,7 +180,7 @@ public class ConfirmOpLogBo {
         this.arriveDate = examOrderBo.getTimeEarly();
         this.opType = confirmOpType.getKey()+"";
         this.opDate = new Date();
-        this.department = DepartmentEnum.Amend.getKey() + "";
+        this.department = DepartmentEnum.Exam.getKey() + "";
         this.groupId = examOrderBo.getGroupId();
         this.priority = examOrderBo.getPriority();
         this.sourceReserStatus = confirmOpType.equals(ConfirmOpType.STORAGE_IN) ? preReserStatus : examOrderBo.getReserStatus();
