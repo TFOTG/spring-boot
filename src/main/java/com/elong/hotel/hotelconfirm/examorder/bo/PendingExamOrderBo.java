@@ -338,6 +338,11 @@ public class PendingExamOrderBo implements Serializable{
 	 */
 	private int isOverRespiteTime;
 	
+	/**
+	 * 携程支付历史URL
+	 */
+	private String ctripPayUrl;
+	
 	public PendingExamOrderBo() {
 		super();
 	}
@@ -898,6 +903,14 @@ public class PendingExamOrderBo implements Serializable{
 
 	public void setIsOverRespiteTime(int isOverRespiteTime) {
 		this.isOverRespiteTime = isOverRespiteTime;
+	}
+
+	public String getCtripPayUrl() {
+		return ctripPayUrl;
+	}
+
+	public void setCtripPayUrl(String ctripPayUrl) {
+		this.ctripPayUrl = ctripPayUrl;
 	}
 
 	/**

@@ -215,6 +215,21 @@ public class Order {
     
     private Long additionalStatusI;
     
+    /**
+     * 红包/返现信息
+     */
+    private List<OrderPromotionData> orderAllPromotionDataList;
+    
+    /**
+     * 酒店产品扩展信息
+     */
+    private OrderProductInfoExtend orderProductInfoExtend;
+    
+    /**
+     * 同程订单信息
+     */
+    private TcOrderInfo tcOrderInfo;
+    
     public Integer getBusinessSystemId() {
         return businessSystemId;
     }
@@ -923,6 +938,30 @@ public class Order {
 
 	public void setAdditionalStatusI(Long additionalStatusI) {
 		this.additionalStatusI = additionalStatusI;
+	}
+
+	public List<OrderPromotionData> getOrderAllPromotionDataList() {
+		return orderAllPromotionDataList;
+	}
+
+	public void setOrderAllPromotionDataList(List<OrderPromotionData> orderAllPromotionDataList) {
+		this.orderAllPromotionDataList = orderAllPromotionDataList;
+	}
+
+	public OrderProductInfoExtend getOrderProductInfoExtend() {
+		return orderProductInfoExtend;
+	}
+
+	public void setOrderProductInfoExtend(OrderProductInfoExtend orderProductInfoExtend) {
+		this.orderProductInfoExtend = orderProductInfoExtend;
+	}
+
+	public TcOrderInfo getTcOrderInfo() {
+		return tcOrderInfo;
+	}
+
+	public void setTcOrderInfo(TcOrderInfo tcOrderInfo) {
+		this.tcOrderInfo = tcOrderInfo;
 	}
     
 }
