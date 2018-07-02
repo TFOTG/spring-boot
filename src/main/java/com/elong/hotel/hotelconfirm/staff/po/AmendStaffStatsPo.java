@@ -8,7 +8,7 @@ import java.util.Date;
 public class AmendStaffStatsPo {
     private String staffName; //员工姓名
     private Date statsDate; //统计日期
-    private int statsHourRange; //统计小时范围，case：0的话，统计的就是00:00-01:00的数据
+    private int statsHour; //统计小时范围，case：0的话，统计的就是00:00-01:00的数据
     private int fetchCount; //获取量
     private int handleCount; //处理量
     private int timelyHandleCount; //及时处理量
@@ -32,12 +32,12 @@ public class AmendStaffStatsPo {
         this.statsDate = statsDate;
     }
 
-    public int getStatsHourRange() {
-        return statsHourRange;
+    public int getStatsHour() {
+        return statsHour;
     }
 
-    public void setStatsHourRange(int statsHourRange) {
-        this.statsHourRange = statsHourRange;
+    public void setStatsHour(int statsHour) {
+        this.statsHour = statsHour;
     }
 
     public int getFetchCount() {
