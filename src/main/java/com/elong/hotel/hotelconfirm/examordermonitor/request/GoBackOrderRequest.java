@@ -11,6 +11,16 @@ public class GoBackOrderRequest implements Serializable {
 
     private String staffName;
 
+    private String leaderName;
+
+    public String getLeaderName() {
+        return leaderName;
+    }
+
+    public void setLeaderName(String leaderName) {
+        this.leaderName = leaderName;
+    }
+
     public String getStaffName() {
         return staffName;
     }
