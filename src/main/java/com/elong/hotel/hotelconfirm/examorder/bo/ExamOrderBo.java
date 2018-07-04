@@ -141,6 +141,8 @@ public class ExamOrderBo extends CompareEntityBase {
 			this.isOutTime = calIsOutTime(order);
 			//计算是否赔付
 			this.isSupposed = calIsSupposed(order);
+			//计算mod
+			this.mod = order.getOrderId().intValue() % 10;
 		}else if(order == null && po != null){
 			this.setExamOrder(po);
 		}
