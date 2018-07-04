@@ -48,6 +48,21 @@ public class ExamOrderConfig {
     
     private String ctripOrderPayHisUrl;
 
+	/**
+	 * 异步执行最大时间
+	 */
+	private Integer executorMaxTimeOut;
+
+	/**
+	 * 异步并行线程数量
+	 */
+	private Integer executorThreads;
+
+	/**
+	 * 异步并行线程队列大小
+	 */
+	private Integer executorQueueSize;
+    
     public ExamOrderConfig(){
     	super();
     	this.priority4UrgeMinute = 120;
@@ -58,6 +73,9 @@ public class ExamOrderConfig {
     	this.normalOrderLimit = 3;
     	this.overSeasProvinceIds = "3200,3300,3400";
     	this.ctripOrderPayHisUrl = "http://htlint.fat2.qa.nt.ctripcorp.com/orderoperate/Order/ViewProcessLog/{ctripOrderId}/elong";
+		this.executorMaxTimeOut = 30;
+		this.executorThreads = 10;
+		this.executorQueueSize = 500;
     }
 
     public Integer getPriority4UrgeMinute() {
@@ -146,6 +164,30 @@ public class ExamOrderConfig {
 
 	public void setCtripOrderPayHisUrl(String ctripOrderPayHisUrl) {
 		this.ctripOrderPayHisUrl = ctripOrderPayHisUrl;
+	}
+
+	public Integer getExecutorMaxTimeOut() {
+		return executorMaxTimeOut;
+	}
+
+	public void setExecutorMaxTimeOut(Integer executorMaxTimeOut) {
+		this.executorMaxTimeOut = executorMaxTimeOut;
+	}
+
+	public Integer getExecutorThreads() {
+		return executorThreads;
+	}
+
+	public void setExecutorThreads(Integer executorThreads) {
+		this.executorThreads = executorThreads;
+	}
+
+	public Integer getExecutorQueueSize() {
+		return executorQueueSize;
+	}
+
+	public void setExecutorQueueSize(Integer executorQueueSize) {
+		this.executorQueueSize = executorQueueSize;
 	}
     
 }
