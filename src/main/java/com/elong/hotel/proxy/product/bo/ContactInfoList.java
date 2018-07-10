@@ -19,6 +19,17 @@ private Integer ratePlanId;
 private String roomTypeId;
 
 private String roomContact;
+
+private Long additionalStatus;
+
+private String fax;
+
+private String supplierId;
+
+private String supplierName;
+
+private Integer type;
+
 	public List<HotelContactList> getHotelContactList() {
 		return hotelContactList;
 	}
@@ -89,6 +100,46 @@ private String roomContact;
 
 	public void setRoomTypeId(String roomTypeId) {
 		this.roomTypeId = roomTypeId;
+	}
+
+	public Long getAdditionalStatus() {
+		return additionalStatus;
+	}
+
+	public void setAdditionalStatus(Long additionalStatus) {
+		this.additionalStatus = additionalStatus;
+	}
+
+	public String getFax() {
+		return fax;
+	}
+
+	public void setFax(String fax) {
+		this.fax = fax;
+	}
+
+	public String getSupplierId() {
+		return supplierId;
+	}
+
+	public void setSupplierId(String supplierId) {
+		this.supplierId = supplierId;
+	}
+
+	public String getSupplierName() {
+		return supplierName;
+	}
+
+	public void setSupplierName(String supplierName) {
+		this.supplierName = supplierName;
+	}
+
+	public Integer getType() {
+		return type;
+	}
+
+	public void setType(Integer type) {
+		this.type = type;
 	}
 	
 }
