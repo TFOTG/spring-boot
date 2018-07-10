@@ -12,6 +12,7 @@ import java.util.List;
 import com.elong.hotel.proxy.javaorder.getorder.Guest;
 import com.elong.hotel.proxy.javaorder.getorder.OrderVouchRule;
 import com.elong.hotel.proxy.javaorder.getorder.RoomNight;
+import com.elong.hotel.proxy.product.bo.ContactInfoList;
 
 /**
  * @author jianjun.wang
@@ -207,7 +208,23 @@ public class PendingConfirmOrderPo {
 	 * 新订单（新担保）：1，旧订单：0
 	 */
 	private int orderType;
-
+	
+	/**
+	 * 酒店联系电话信息
+	 */
+	private ContactInfoList hotelPhoneInfo;
+	
+	private Integer otaType;
+	
+	/**
+	 * 是否携程新流程订单
+	 */
+	private int isNewCtripOrder;
+	
+	public PendingConfirmOrderPo(){
+		super();
+	}
+	
 	public PendingOrderIconPo getPendingOrderIconPo() {
 		return pendingOrderIconPo;
 	}
@@ -542,6 +559,30 @@ public class PendingConfirmOrderPo {
 
 	public void setOrderType(int orderType) {
 		this.orderType = orderType;
+	}
+
+	public ContactInfoList getHotelPhoneInfo() {
+		return hotelPhoneInfo;
+	}
+
+	public void setHotelPhoneInfo(ContactInfoList hotelPhoneInfo) {
+		this.hotelPhoneInfo = hotelPhoneInfo;
+	}
+
+	public Integer getOtaType() {
+		return otaType;
+	}
+
+	public void setOtaType(Integer otaType) {
+		this.otaType = otaType;
+	}
+
+	public int getIsNewCtripOrder() {
+		return isNewCtripOrder;
+	}
+
+	public void setIsNewCtripOrder(int isNewCtripOrder) {
+		this.isNewCtripOrder = isNewCtripOrder;
 	}
 
 }
