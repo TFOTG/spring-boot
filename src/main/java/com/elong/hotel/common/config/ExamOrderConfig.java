@@ -62,6 +62,21 @@ public class ExamOrderConfig {
 	 * 异步并行线程队列大小
 	 */
 	private Integer executorQueueSize;
+
+    /**
+     * 自动通知分组发送邮件的代理id
+     */
+	private String autoNoticeGroupSendMailProxyIds;
+
+    /**
+     * 自动通知短信模板id
+     */
+    private String autoNoticeGroupSMSId;
+
+    /**
+     * 自动通知邮件模板id
+     */
+    private String autoNoticeGroupEmailId;
     
     public ExamOrderConfig(){
     	super();
@@ -76,6 +91,23 @@ public class ExamOrderConfig {
 		this.executorMaxTimeOut = 30;
 		this.executorThreads = 10;
 		this.executorQueueSize = 500;
+		this.autoNoticeGroupSendMailProxyIds="0";
+    }
+
+    public String getAutoNoticeGroupSMSId() {
+        return autoNoticeGroupSMSId;
+    }
+
+    public void setAutoNoticeGroupSMSId(String autoNoticeGroupSMSId) {
+        this.autoNoticeGroupSMSId = autoNoticeGroupSMSId;
+    }
+
+    public String getAutoNoticeGroupEmailId() {
+        return autoNoticeGroupEmailId;
+    }
+
+    public void setAutoNoticeGroupEmailId(String autoNoticeGroupEmailId) {
+        this.autoNoticeGroupEmailId = autoNoticeGroupEmailId;
     }
 
     public Integer getPriority4UrgeMinute() {
@@ -189,5 +221,12 @@ public class ExamOrderConfig {
 	public void setExecutorQueueSize(Integer executorQueueSize) {
 		this.executorQueueSize = executorQueueSize;
 	}
-    
+
+    public String getAutoNoticeGroupSendMailProxyIds() {
+        return autoNoticeGroupSendMailProxyIds;
+    }
+
+    public void setAutoNoticeGroupSendMailProxyIds(String autoNoticeGroupSendMailProxyIds) {
+        this.autoNoticeGroupSendMailProxyIds = autoNoticeGroupSendMailProxyIds;
+    }
 }
