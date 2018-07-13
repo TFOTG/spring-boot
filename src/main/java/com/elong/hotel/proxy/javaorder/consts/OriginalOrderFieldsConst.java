@@ -41,7 +41,7 @@ public interface OriginalOrderFieldsConst {
 	/**
 	 * 发短信
 	 */
-	String SEND_MSG = "cardNo,contactPhone,contactMobile";
+	String SEND_MSG = "cardNo,contactPhone,contactMobile,contactName,proxy,businessSystemId,appClientType,orderFrom,status,roomTypeName,hotelName,checkInDate,checkOutDate,guestName";
 
 	/**
 	 * 关房

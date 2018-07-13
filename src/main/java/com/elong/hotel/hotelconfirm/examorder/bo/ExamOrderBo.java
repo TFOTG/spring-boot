@@ -11,12 +11,11 @@ import com.elong.hotel.proxy.javaorder.consts.OrderAdditionalStatusConst;
 import com.elong.hotel.proxy.javaorder.consts.OrderFlagConst;
 import com.elong.hotel.proxy.javaorder.getorder.Order;
 import com.elong.hotel.proxy.javaorder.getorder.OrderHistory;
+import org.apache.commons.lang.StringUtils;
 
 import java.util.Arrays;
 import java.util.Date;
 import java.util.List;
-
-import org.apache.commons.lang.StringUtils;
 
 public class ExamOrderBo extends CompareEntityBase {
 
@@ -76,6 +75,9 @@ public class ExamOrderBo extends CompareEntityBase {
 	//客人app选择马上到点(&OrderFlagConst.IS_ARRIVE_NOW_ORDER=1024)
 	private boolean userChoiceUrge4App;
 
+	//自动通知状态
+	private int smsStatus;
+
 	public ExamOrderBo() {
 	}
 
@@ -99,6 +101,7 @@ public class ExamOrderBo extends CompareEntityBase {
 			this.isSupposed = calIsSupposed(order);
 			this.reserStatus = order.getStatus();
 			this.memberLevel = order.getGradeId();
+			this.smsStatus=po.getSmsStatus();
 		}else if(order != null && po == null){
 			this.reserNo = order.getOrderId().intValue();
 			this.reserStatus = order.getStatus();
@@ -189,6 +192,7 @@ public class ExamOrderBo extends CompareEntityBase {
 		this.isImmediately = po.getIsImmediately();
 		this.isNew = po.getIsNew();
 		this.phone = po.getPhone();
+		this.smsStatus=po.getSmsStatus();
 	}
 
 	public Integer getReserNo() {
@@ -573,8 +577,16 @@ public class ExamOrderBo extends CompareEntityBase {
 	public void setIsNew(int isNew) {
 		this.isNew = isNew;
 	}
-    
-	/**
+
+    public int getSmsStatus() {
+        return smsStatus;
+    }
+
+    public void setSmsStatus(int smsStatus) {
+        this.smsStatus = smsStatus;
+    }
+
+    /**
 	 * 
 	 * 计算订单类型 
 	 *

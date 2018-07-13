@@ -51,6 +51,8 @@ public enum CommunicationEventTypeEnum{
 	FORCEGUARANTEE("FORCEGUARANTEE","直连调用强制担保"),
 
 	CONFIRMOVERTHROW("CONFIRMOVERTHROW","直连调用确认后推翻"),
+
+    SENDMSG("SENDMSG","发送短信"),
 	/**
 	 * 直连小修改
 	 */
