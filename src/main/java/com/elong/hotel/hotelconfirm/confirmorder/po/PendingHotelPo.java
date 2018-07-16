@@ -294,10 +294,12 @@ public class PendingHotelPo {
 	 * @param info
 	 */
 	public void setHotelPhoneInfo(ContactInfoList info){
-		this.hotelContacter = info.getHotelContacter();
-		this.hotelLobbyTel = info.getHotelLobbyTel();
-		this.hotelPhone = info.getHotelPhone();
-		this.roomContact = info.getRoomContact();
+		if(info != null){
+			this.hotelContacter = info.getHotelContacter();
+			this.hotelLobbyTel = info.getHotelLobbyTel();
+			this.hotelPhone = info.getHotelPhone();
+			this.roomContact = info.getRoomContact();
+		}
 	}
 	
 }
