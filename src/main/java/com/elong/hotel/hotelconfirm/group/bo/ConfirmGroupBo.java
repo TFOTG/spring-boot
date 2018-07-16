@@ -1,14 +1,12 @@
 package com.elong.hotel.hotelconfirm.group.bo;
 
+import com.alibaba.fastjson.annotation.JSONField;
 import com.elong.common.util.StringUtils;
-import com.elong.hotel.common.enums.ConfirmOrderStatusEnum;
 import com.elong.hotel.hotelconfirm.group.enums.GettingTypeEnum;
 import com.elong.hotel.hotelconfirm.group.enums.GroupOrderStatusEnum;
 import com.elong.hotel.hotelconfirm.group.po.ConfirmGroupPo;
 import com.elong.hotel.hotelconfirm.group.po.ConfirmGroupTagPo;
-import scala.Int;
 
-import java.io.Serializable;
 import java.util.Date;
 
 /**
@@ -29,6 +27,15 @@ public class ConfirmGroupBo {
     private String isImmediatelyBo;
     private String isImmediatelyIdBo;
     private String orderStatusBo;
+    private String orderStatusIdBo;
+    private String orderStatusStrBo;
+    private String getTypeBo;
+    private String staffBo;
+    private String staffStrBo;
+    private String operatorBo;
+    @JSONField(format = "yyyy-MM-dd HH:mm:ss")
+    private Date opTimeBo;
+    private boolean enableBo;
 
     public String getCityIdBo() {
         return cityIdBo;
@@ -61,15 +68,6 @@ public class ConfirmGroupBo {
     public void setSupplierIdBo(String supplierIdBo) {
         this.supplierIdBo = supplierIdBo;
     }
-
-    private String orderStatusIdBo;
-    private String orderStatusStrBo;
-    private String getTypeBo;
-    private String staffBo;
-    private String staffStrBo;
-    private String operatorBo;
-    private Date opTimeBo;
-    private boolean enableBo;
 
     public String getCityStrBo() {
         return cityStrBo;
