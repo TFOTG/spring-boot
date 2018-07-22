@@ -78,6 +78,11 @@ public class ExamOrderConfig {
      */
     private String autoNoticeGroupEmailId;
     
+    /**
+     * 终拒员工暂缓上限
+     */
+    private Integer respitedCountUpperLimit;
+    
     public ExamOrderConfig(){
     	super();
     	this.priority4UrgeMinute = 120;
@@ -92,6 +97,7 @@ public class ExamOrderConfig {
 		this.executorThreads = 10;
 		this.executorQueueSize = 500;
 		this.autoNoticeGroupSendMailProxyIds="0";
+		this.respitedCountUpperLimit = 20;
     }
 
     public String getAutoNoticeGroupSMSId() {
@@ -229,4 +235,13 @@ public class ExamOrderConfig {
     public void setAutoNoticeGroupSendMailProxyIds(String autoNoticeGroupSendMailProxyIds) {
         this.autoNoticeGroupSendMailProxyIds = autoNoticeGroupSendMailProxyIds;
     }
+
+	public Integer getRespitedCountUpperLimit() {
+		return respitedCountUpperLimit;
+	}
+
+	public void setRespitedCountUpperLimit(Integer respitedCountUpperLimit) {
+		this.respitedCountUpperLimit = respitedCountUpperLimit;
+	}
+    
 }
