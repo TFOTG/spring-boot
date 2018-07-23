@@ -18,6 +18,11 @@ public class StaffLogPo {
 	 * 登陆（0）／登出（1）
 	 */
 	private int logFlag;
+	
+	/**
+	 * 部门
+	 */
+	private int department;
 
 	public String getStaffName() {
 		return staffName;
@@ -41,6 +46,14 @@ public class StaffLogPo {
 
 	public void setLogFlag(int logFlag) {
 		this.logFlag = logFlag;
+	}
+
+	public int getDepartment() {
+		return department;
+	}
+
+	public void setDepartment(int department) {
+		this.department = department;
 	}
 
 }
