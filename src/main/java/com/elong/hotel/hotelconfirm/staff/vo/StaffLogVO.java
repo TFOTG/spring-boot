@@ -31,6 +31,11 @@ public class StaffLogVO {
 	 * 时间
 	 */
 	private String opdate;
+	
+	/**
+	 * 部门
+	 */
+	private Integer department;
 
 	public String getStaffname() {
 		return staffname;
@@ -54,6 +59,14 @@ public class StaffLogVO {
 
 	public void setOpdate(String opdate) {
 		this.opdate = opdate;
+	}
+
+	public Integer getDepartment() {
+		return department;
+	}
+
+	public void setDepartment(Integer department) {
+		this.department = department;
 	}
 	
 }
