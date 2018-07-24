@@ -343,6 +343,12 @@ public class PendingExamOrderBo implements Serializable{
 	 */
 	private String ctripPayUrl;
 	
+	/**
+	 * 订单担保类型
+	 * -1：未知，0：预付，1：现付首晚，2：现付全额，3：现付部分, 4:现付非担保
+	 */
+	private int orderVoucherType;
+	
 	public PendingExamOrderBo() {
 		super();
 	}
@@ -911,6 +917,14 @@ public class PendingExamOrderBo implements Serializable{
 
 	public void setCtripPayUrl(String ctripPayUrl) {
 		this.ctripPayUrl = ctripPayUrl;
+	}
+	
+	public int getOrderVoucherType() {
+		return orderVoucherType;
+	}
+
+	public void setOrderVoucherType(int orderVoucherType) {
+		this.orderVoucherType = orderVoucherType;
 	}
 
 	/**
