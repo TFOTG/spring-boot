@@ -5,7 +5,11 @@
  */
 package com.elong.hotel.hotelconfirm.confirmorder.po;
 
+import java.util.ArrayList;
 import java.util.List;
+
+import com.elong.common.util.StringUtils;
+import com.elong.hotel.proxy.product.bo.ContactInfoList;
 
 /**
  * @author jianjun.wang
@@ -77,6 +81,53 @@ public class PendingHotelPo {
 	private List<PendingConfirmOrderPo> orderlist;
 	
 	private int roomContactSwitch;
+	
+	/**
+	 * 酒店电话
+	 */
+	private String hotelContacter;
+	
+	/**
+	 * 酒店前台电话
+	 */
+	private String hotelLobbyTel;
+	
+	/**
+	 * 联系人电话
+	 */
+	private String hotelPhone;
+	
+	/**
+	 * 房量确认联系人电话
+	 */
+	private String roomContact;
+	
+	public PendingHotelPo(){
+		super();
+	}
+	
+	public PendingHotelPo(PendingHotelPo po1, PendingConfirmOrderPo po2){
+		super();
+		this.cooperationOrderId = po1.getCooperationOrderId();
+		this.ebonline = po1.getEbonline();
+		this.hotelContacter = po1.getHotelContacter();
+		this.hotelid = po1.getHotelid();
+		this.hotelLobbyTel = po1.getHotelLobbyTel();
+		this.hotelname = po1.getHotelname();
+		this.hotelPhone = po1.getHotelPhone();
+		this.orderCount = po1.getOrderCount();
+		this.originFrom = po1.getOriginFrom();
+		this.otaType = po1.getOtaType();
+		this.roomContact = po1.getRoomContact();
+		this.roomContactSwitch = po1.getRoomContactSwitch();
+		this.shotelfax = po1.getShotelfax();
+		this.specialnote = po1.getSpecialnote();
+		this.supplierid = po1.getSupplierid();
+		this.suppliername = po1.getSuppliername();
+		this.suppliertype = po1.getSuppliertype();
+		this.orderlist = new ArrayList<>();
+		this.orderlist.add(po2);
+	}
 	
 	public String getHotelname() {
 		return hotelname;
@@ -190,4 +241,65 @@ public class PendingHotelPo {
 	public void setOtaType(int otaType) {
 		this.otaType = otaType;
 	}
+
+	public String getHotelContacter() {
+		return hotelContacter;
+	}
+
+	public void setHotelContacter(String hotelContacter) {
+		this.hotelContacter = hotelContacter;
+	}
+
+	public String getHotelLobbyTel() {
+		return hotelLobbyTel;
+	}
+
+	public void setHotelLobbyTel(String hotelLobbyTel) {
+		this.hotelLobbyTel = hotelLobbyTel;
+	}
+
+	public String getHotelPhone() {
+		return hotelPhone;
+	}
+
+	public void setHotelPhone(String hotelPhone) {
+		this.hotelPhone = hotelPhone;
+	}
+
+	public String getRoomContact() {
+		return roomContact;
+	}
+
+	public void setRoomContact(String roomContact) {
+		this.roomContact = roomContact;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		PendingHotelPo target = (PendingHotelPo) obj;
+		if(StringUtils.equalsIgnoreCase(this.hotelid, target.getHotelid()) && 
+				StringUtils.equalsIgnoreCase(this.hotelContacter, target.getHotelContacter()) && 
+				StringUtils.equalsIgnoreCase(this.hotelPhone, target.getHotelPhone()) && 
+				StringUtils.equalsIgnoreCase(this.roomContact, target.getRoomContact())){
+			
+			return true;
+			
+		}
+		return false;
+	}
+	
+	/**
+	 * 初始化酒店电话信息
+	 *
+	 * @param info
+	 */
+	public void setHotelPhoneInfo(ContactInfoList info){
+		if(info != null){
+			this.hotelContacter = info.getHotelContacter();
+			this.hotelLobbyTel = info.getHotelLobbyTel();
+			this.hotelPhone = info.getHotelPhone();
+			this.roomContact = info.getRoomContact();
+		}
+	}
+	
 }

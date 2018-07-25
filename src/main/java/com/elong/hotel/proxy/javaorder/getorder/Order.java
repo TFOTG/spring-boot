@@ -192,7 +192,44 @@ public class Order {
 	private int originFrom;
 
     private Date pmsConfirmTime;
+    
+    /**
+     * 直连是否有线下流程
+     */
+    private int isAcceptDcOfflineProcess;
+    
+    /**
+     * 星级
+     */
+    private Integer star;
+    
+    /**
+     * 星级类型
+     */
+    private Integer starType;
 
+    /**
+     * 房间卖价
+     */
+    private BigDecimal exchangedSumPrice;
+    
+    private Long additionalStatusI;
+    
+    /**
+     * 红包/返现信息
+     */
+    private List<OrderPromotionData> orderAllPromotionDataList;
+    
+    /**
+     * 酒店产品扩展信息
+     */
+    private OrderProductInfoExtend orderProductInfoExtend;
+    
+    /**
+     * 同程订单信息
+     */
+    private TcOrderInfo tcOrderInfo;
+    
     public Integer getBusinessSystemId() {
         return businessSystemId;
     }
@@ -862,4 +899,69 @@ public class Order {
         }
         return value;
     }
+
+	public int getIsAcceptDcOfflineProcess() {
+		return isAcceptDcOfflineProcess;
+	}
+
+	public void setIsAcceptDcOfflineProcess(int isAcceptDcOfflineProcess) {
+		this.isAcceptDcOfflineProcess = isAcceptDcOfflineProcess;
+	}
+
+	public Integer getStar() {
+		return star;
+	}
+
+	public void setStar(Integer star) {
+		this.star = star;
+	}
+
+	public Integer getStarType() {
+		return starType;
+	}
+
+	public void setStarType(Integer starType) {
+		this.starType = starType;
+	}
+
+	public BigDecimal getExchangedSumPrice() {
+		return exchangedSumPrice;
+	}
+
+	public void setExchangedSumPrice(BigDecimal exchangedSumPrice) {
+		this.exchangedSumPrice = exchangedSumPrice;
+	}
+
+	public Long getAdditionalStatusI() {
+		return additionalStatusI;
+	}
+
+	public void setAdditionalStatusI(Long additionalStatusI) {
+		this.additionalStatusI = additionalStatusI;
+	}
+
+	public List<OrderPromotionData> getOrderAllPromotionDataList() {
+		return orderAllPromotionDataList;
+	}
+
+	public void setOrderAllPromotionDataList(List<OrderPromotionData> orderAllPromotionDataList) {
+		this.orderAllPromotionDataList = orderAllPromotionDataList;
+	}
+
+	public OrderProductInfoExtend getOrderProductInfoExtend() {
+		return orderProductInfoExtend;
+	}
+
+	public void setOrderProductInfoExtend(OrderProductInfoExtend orderProductInfoExtend) {
+		this.orderProductInfoExtend = orderProductInfoExtend;
+	}
+
+	public TcOrderInfo getTcOrderInfo() {
+		return tcOrderInfo;
+	}
+
+	public void setTcOrderInfo(TcOrderInfo tcOrderInfo) {
+		this.tcOrderInfo = tcOrderInfo;
+	}
+    
 }

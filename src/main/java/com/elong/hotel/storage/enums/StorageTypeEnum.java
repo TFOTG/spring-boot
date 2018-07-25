@@ -1,5 +1,8 @@
 package com.elong.hotel.storage.enums;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * Created by Hualong.Li on 17/4/24.
  */
@@ -9,9 +12,11 @@ public enum StorageTypeEnum {
 
 	NOROOM(2),
 
-	CREATEORDER(3);
+	CREATEORDER(3),
 	
-//	EXAM(4);
+	EXAM(4),
+
+    CANCEL(5);
 
 	private int value;
 
@@ -22,4 +27,12 @@ public enum StorageTypeEnum {
 	public int getValue() {
 		return value;
 	}
+
+	public static List<StorageTypeEnum> getEnumList(){
+        List<StorageTypeEnum> list =new ArrayList<>();
+        for (StorageTypeEnum storageTypeEnum : StorageTypeEnum.values()) {
+            list.add(storageTypeEnum);
+        }
+        return list;
+    }
 }

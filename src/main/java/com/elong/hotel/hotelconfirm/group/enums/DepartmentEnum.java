@@ -9,7 +9,10 @@ public enum DepartmentEnum {
      */
     Confirm(1, "已审"),
     
-    Amend(2,"终拒");
+    /**
+     * 终拒
+     */
+    Exam(2,"终拒");
 
     private int key;
     private String value;
@@ -23,6 +26,10 @@ public enum DepartmentEnum {
         return key;
     }
 
+    public String getValue() {
+        return value;
+    }
+    
     public static String getValue(int key) {
         String result = "";
         for (DepartmentEnum departmentEnum : DepartmentEnum.values()) {
@@ -33,8 +40,15 @@ public enum DepartmentEnum {
         }
         return result;
     }
-
-    public String getValue() {
-        return value;
+    
+    public static DepartmentEnum getDepartment(int key) {
+    	DepartmentEnum result = null;
+        for (DepartmentEnum departmentEnum : DepartmentEnum.values()) {
+            if (departmentEnum.getKey() == key) {
+                result = departmentEnum;
+                break;
+            }
+        }
+        return result;
     }
 }

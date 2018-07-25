@@ -185,7 +185,7 @@ public class ExamOrderPo implements Serializable{
 	/**
 	 * 是否传真回传
 	 */
-	private Integer isfaxReturn;
+	private Integer isFaxReturn;
 	
 	/**
 	 * 是否联单
@@ -265,6 +265,8 @@ public class ExamOrderPo implements Serializable{
 		this.reserStatus = bo.getReserStatus();
 		this.arriveDate = bo.getArriveDate();
 		this.leaveDate = bo.getLeaveDate();
+		this.timeEarly = bo.getTimeEarly();
+		this.timeLate = bo.getTimeLate();
 		this.cardNo = bo.getCardNo();
 		this.roomNum = bo.getRoomNum();
 		this.nightNum = bo.getNightNum();
@@ -285,7 +287,7 @@ public class ExamOrderPo implements Serializable{
 		this.amendTime = bo.getAmendTime();
 		this.priority = bo.getPriority();
 		this.groupId = bo.getGroupId();
-		this.isfaxReturn = bo.getIsFaxReturn();
+		this.isFaxReturn = bo.getIsFaxReturn();
 		this.isLinked = bo.getIsLinked();
 		this.isPms = bo.getIsPms();
 		this.isConfirm = bo.getIsConfirm();
@@ -545,12 +547,12 @@ public class ExamOrderPo implements Serializable{
 		this.respiteTime = respiteTime;
 	}
 
-	public Integer getIsfaxReturn() {
-		return isfaxReturn;
+	public Integer getIsFaxReturn() {
+		return isFaxReturn;
 	}
 
-	public void setIsfaxReturn(Integer isfaxReturn) {
-		this.isfaxReturn = isfaxReturn;
+	public void setIsFaxReturn(Integer isFaxReturn) {
+		this.isFaxReturn = isFaxReturn;
 	}
 
 	public Integer getIsLinked() {
@@ -674,7 +676,7 @@ public class ExamOrderPo implements Serializable{
 				+ ", supplierName=" + supplierName + ", supplierType=" + supplierType + ", supplierOtaType=" + supplierOtaType
 				+ ", proxyId=" + proxyId + ", cityId=" + cityId + ", distance=" + distance + ", bookingTime=" + bookingTime + ", amendTime="
 				+ amendTime + ", priority=" + priority + ", groupId=" + groupId + ", enterTime=" + enterTime + ", staffName=" + staffName
-				+ ", distributeTime=" + distributeTime + ", respiteTime=" + respiteTime + ", isfaxReturn=" + isfaxReturn + ", isLinked="
+				+ ", distributeTime=" + distributeTime + ", respiteTime=" + respiteTime + ", isfaxReturn=" + isFaxReturn + ", isLinked="
 				+ isLinked + ", isPms=" + isPms + ", isConfirm=" + isConfirm + ", isH=" + isH + ", isRepeat=" + isRepeat
 				+ ", isImmediately=" + isImmediately + ", isNew=" + isNew + ", isDelay=" + isDelay + ", smsTraceId=" + smsTraceId
 				+ ", smsStatus=" + smsStatus + ", smsCount=" + smsCount + ", smsSendTime=" + smsSendTime + ", orderTimeStampLong="

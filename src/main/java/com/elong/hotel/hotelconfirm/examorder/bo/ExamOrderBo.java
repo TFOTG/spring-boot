@@ -1,11 +1,21 @@
 package com.elong.hotel.hotelconfirm.examorder.bo;
 
 import com.elong.hotel.common.bo.OperatorInfoBo;
+import com.elong.hotel.common.config.ExamOrderConfig;
+import com.elong.hotel.common.helper.ConfigurationManager;
+import com.elong.hotel.hotelconfirm.examorder.enums.HotelStarEnum;
+import com.elong.hotel.hotelconfirm.examorder.enums.OrderTypeEnum;
 import com.elong.hotel.hotelconfirm.examorder.po.ExamOrderPo;
 import com.elong.hotel.hotelconfirm.groupfilter.bo.CompareEntityBase;
+import com.elong.hotel.proxy.javaorder.consts.OrderAdditionalStatusConst;
+import com.elong.hotel.proxy.javaorder.consts.OrderFlagConst;
 import com.elong.hotel.proxy.javaorder.getorder.Order;
+import com.elong.hotel.proxy.javaorder.getorder.OrderHistory;
+import org.apache.commons.lang.StringUtils;
 
+import java.util.Arrays;
 import java.util.Date;
+import java.util.List;
 
 public class ExamOrderBo extends CompareEntityBase {
 
@@ -54,16 +64,19 @@ public class ExamOrderBo extends CompareEntityBase {
 	private String memberLevel;
 
     //拒单时长
-	private Integer rejectTime;
+	private int rejectTime;
 
 	//是否赔付
-	private Integer isSupposed;
+	private int isSupposed;
 
 	//是否超时
-    private Integer isOutTime;
+    private int isOutTime;
 
 	//客人app选择马上到点(&OrderFlagConst.IS_ARRIVE_NOW_ORDER=1024)
 	private boolean userChoiceUrge4App;
+
+	//自动通知状态
+	private int smsStatus;
 
 	public ExamOrderBo() {
 	}
@@ -73,13 +86,66 @@ public class ExamOrderBo extends CompareEntityBase {
 		this.setExamOrder(po);
 	}
 
-	public ExamOrderBo(Order order,ExamOrderPo po,OperatorInfoBo operator) {
+	public ExamOrderBo(Order order,ExamOrderPo po,OperatorInfoBo operator,List<OrderHistory> orderHistory, Integer refusedCancelNum, Integer repeatRefusedNum) {
 		if(order != null && po != null){
 			this.setExamOrder(po);
+			//终拒时间
 			this.amendTime = operator.getOperatorTime();
-
+			//是否选择马上到店
+			userChoiceUrge4App = (order.getOrderFlag() & OrderFlagConst.IS_ARRIVE_NOW_ORDER) == OrderFlagConst.IS_ARRIVE_NOW_ORDER;
+			//计算拒单时长
+			this.rejectTime = calRejectTime();
+			//计算是否超时
+			this.isOutTime = calIsOutTime(order);
+			//计算是否赔付
+			this.isSupposed = calIsSupposed(order);
+			this.reserStatus = order.getStatus();
+			this.memberLevel = order.getGradeId();
+			this.smsStatus=po.getSmsStatus();
 		}else if(order != null && po == null){
-
+			this.reserNo = order.getOrderId().intValue();
+			this.reserStatus = order.getStatus();
+			this.arriveDate = order.getCheckInDate();
+			this.leaveDate = order.getCheckOutDate();
+			this.timeEarly = order.getEarlyCheckInTime();
+			this.timeLate = order.getLateCheckInTime();
+			this.roomNum = order.getRoomCount();
+			this.nightNum = order.getRoomNightsCount();
+			this.orderMoney = order.getSumPrice().doubleValue();
+			this.cardNo = order.getCardNo();
+			this.hotelId = order.getHotelId();
+			this.hotelName = order.getHotelName();
+			this.hotelStar = order.getStar() == null ? HotelStarEnum.Default.getKey() : order.getStar();
+			this.supplierId = String.valueOf(order.getSupplierId());
+			this.supplierName = order.getSupplierName();
+			this.supplierType = String.valueOf(order.getSupplierType());
+			this.supplierOtaType = String.valueOf(order.getSupplierOtaType());
+			this.proxyId = order.getProxy();
+			this.cityId = order.getCityId();
+			this.distance = order.getDistanceFromHotelWhenBooking();
+			this.bookingTime = order.getCreateTime();
+			this.isConfirm = order.getContact() != null && order.getContact().getIsConfirmed() ? 1 : 0;
+			this.isPms = order.getIsAcceptDcOfflineProcess();
+			this.isH = calOrderHistoryStatus("H", 1, orderHistory) >= 1 ? 1 : 0;
+			this.isRepeat = repeatRefusedNum == null ? 0 : repeatRefusedNum > 1 ? 1 : 0;
+			this.isImmediately = (order.getOrderFlag() & OrderFlagConst.IS_INSTANT_CONFIRM) == OrderFlagConst.IS_INSTANT_CONFIRM ? 1 : 0;
+			this.isNew = refusedCancelNum != null ? refusedCancelNum > 0 ? 1 : 0 : 0;
+			this.memberLevel = order.getGradeId();
+			this.phone = order.getContact().getMobile();
+			this.orderTimestamp = order.getOrderTimestamp();
+			setOrderType(order);
+			//终拒时间
+			this.amendTime = operator.getOperatorTime();
+			//是否选择马上到店
+			userChoiceUrge4App = (order.getOrderFlag() & OrderFlagConst.IS_ARRIVE_NOW_ORDER) == OrderFlagConst.IS_ARRIVE_NOW_ORDER;
+			//计算拒单时长
+			this.rejectTime = calRejectTime();
+			//计算是否超时
+			this.isOutTime = calIsOutTime(order);
+			//计算是否赔付
+			this.isSupposed = calIsSupposed(order);
+			//计算mod
+			this.mod = order.getOrderId().intValue() % 10;
 		}else if(order == null && po != null){
 			this.setExamOrder(po);
 		}
@@ -113,7 +179,7 @@ public class ExamOrderBo extends CompareEntityBase {
 		this.groupId = po.getGroupId();
 		this.staffName = po.getStaffName();
 		this.distributeTime = po.getDistributeTime();
-		this.isFaxReturn = po.getIsfaxReturn();
+		this.isFaxReturn = po.getIsFaxReturn();
 		this.isLinked = po.getIsLinked();
 		this.respiteTime = po.getRespiteTime();
 		this.enterTime = po.getEnterTime();
@@ -126,6 +192,7 @@ public class ExamOrderBo extends CompareEntityBase {
 		this.isImmediately = po.getIsImmediately();
 		this.isNew = po.getIsNew();
 		this.phone = po.getPhone();
+		this.smsStatus=po.getSmsStatus();
 	}
 
 	public Integer getReserNo() {
@@ -437,27 +504,27 @@ public class ExamOrderBo extends CompareEntityBase {
         this.memberLevel = memberLevel;
     }
 
-    public Integer getRejectTime() {
+    public int getRejectTime() {
         return rejectTime;
     }
 
-    public void setRejectTime(Integer rejectTime) {
+    public void setRejectTime(int rejectTime) {
         this.rejectTime = rejectTime;
     }
 
-    public Integer getIsSupposed() {
+    public int getIsSupposed() {
         return isSupposed;
     }
 
-    public void setIsSupposed(Integer isSupposed) {
+    public void setIsSupposed(int isSupposed) {
         this.isSupposed = isSupposed;
     }
 
-    public Integer getIsOutTime() {
+    public int getIsOutTime() {
         return isOutTime;
     }
 
-    public void setIsOutTime(Integer isOutTime) {
+    public void setIsOutTime(int isOutTime) {
         this.isOutTime = isOutTime;
     }
 
@@ -510,5 +577,126 @@ public class ExamOrderBo extends CompareEntityBase {
 	public void setIsNew(int isNew) {
 		this.isNew = isNew;
 	}
-    
+
+    public int getSmsStatus() {
+        return smsStatus;
+    }
+
+    public void setSmsStatus(int smsStatus) {
+        this.smsStatus = smsStatus;
+    }
+
+    /**
+	 * 
+	 * 计算订单类型 
+	 *
+	 * @param order
+	 */
+	public void setOrderType(Order order){
+		this.orderType = OrderTypeEnum.Oridinary.getKey();
+		//判断担保订单
+		if((order.getAdditionalStatus() & OrderAdditionalStatusConst.CREDIT_CARD_VOUCH) == OrderAdditionalStatusConst.CREDIT_CARD_VOUCH){
+			//预付订单
+			if(StringUtils.equalsIgnoreCase("D", order.getPayment())){
+				this.orderType = OrderTypeEnum.Prepay.getKey();
+			}else if(StringUtils.equalsIgnoreCase("P", order.getPayment())){//现付订单
+				if((order.getAdditionalStatus() & OrderAdditionalStatusConst.FULL_PRICE_VOUCH) == OrderAdditionalStatusConst.FULL_PRICE_VOUCH ||
+						order.getBaseVouchRule() != null){
+					this.orderType = OrderTypeEnum.Voucher.getKey();
+				}
+			}
+		}
+	}
+	
+	/**
+	 * 
+	 * 计算订单是否超时
+	 *
+	 */
+	public int calIsOutTime(Order order){
+		if(System.currentTimeMillis() > order.getLateCheckInTime().getTime()){
+			return 1;
+		}
+		return 0;
+	}
+	
+	/**
+	 * 
+	 * 判断是否赔付 
+	 *
+	 * @param order
+	 */
+	public int calIsSupposed(Order order){
+		/**
+		 * 1.订单状态为“O”，“G	”且发送过确认短信
+		 * 	1.1:固定代理ID
+		 * 	1.2:艺龙自有 （otaType = 1 && （supplierOtaType = 1 or cooperationType = 1））
+		 * 	1.3：非艺龙自有，且为预付/担保
+		 */
+		if((order.getStatus().equalsIgnoreCase("O") || order.getStatus().equalsIgnoreCase("G")) && order.getContact().getIsConfirmed()){
+
+			if(order.getOtaType() == 1){//艺龙自有
+				if(order.getSupplierOtaType() == 1){
+					return 1;
+				}
+			}else if (order.getCooperationType() == 1){
+				return 1;
+			}else{//非艺龙自有
+				 if(this.orderType == OrderTypeEnum.Prepay.getKey() || this.orderType == OrderTypeEnum.Voucher.getKey()){
+					 return 1;
+				 } 
+			}
+			
+			String supposedProxyIds = ConfigurationManager.getHotSwitchConfig("ExamOrderConfig", ExamOrderConfig.class).getSupposedProxyIds();
+			if(Arrays.asList(supposedProxyIds).contains(order.getProxy())){
+				return 1;
+			}
+		}
+		
+		return 0;
+	
+	}
+	
+	/**
+	 * 
+	 * 计算拒单时长
+	 *
+	 */
+	public Integer calRejectTime(){
+		long timeDiff = System.currentTimeMillis() - this.amendTime.getTime();
+		if(timeDiff > 0){
+			int second = (int) timeDiff / (1000 * 60);
+			int minute = second / 60;
+			if((second % 60) > 0){
+				minute += 1;
+			}
+			return minute;
+		}
+		return 0;
+	}
+	
+	/**
+	 * 
+	 * 计算订单状态出现次数
+	 *
+	 * @return
+	 */
+	public int calOrderHistoryStatus(String targetStatus, int count, List<OrderHistory> orderHistory){
+		int c = 0;
+		
+		if(orderHistory != null && orderHistory.size() != 0){
+			for(OrderHistory his: orderHistory){
+				
+				if(targetStatus.equalsIgnoreCase(his.getReserveStatus())){
+					c++;
+				}
+				
+				if(c >= count){
+					break;
+				}
+			}
+		}
+		
+		return c;
+	}
 }

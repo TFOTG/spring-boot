@@ -88,7 +88,7 @@ public class ContactUtils {
 		return "";
 	}
 
-	public static String getValidMoblieNum(String mobileNums) {
+	public static String getValidMobileNum(String mobileNums) {
 		if(StringUtils.isNotEmpty(getValidTelNum(mobileNums))){
 			String mobile=getValidTelNum(mobileNums);
 			if(mobile.startsWith("86")){
@@ -99,4 +99,24 @@ public class ContactUtils {
 		}
 		return "";
 	}
+
+    /**
+     *
+     * 获取有效邮箱
+     *
+     * @param telNums
+     * @return
+     */
+    public static String getValidEmail(String email){
+
+        if(StringUtils.isNotEmpty(email)){
+            String regEx = "^([a-z0-9A-Z]+[-|\\.]?)+[a-z0-9A-Z]@([a-z0-9A-Z]+(-[a-z0-9A-Z]+)?\\.)+[a-zA-Z]{2,}$";
+            Pattern p = Pattern.compile(regEx);
+            Matcher mc = p.matcher(email);
+            if(mc.find()){
+                return mc.group(0);
+            }
+        }
+        return "";
+    }
 }

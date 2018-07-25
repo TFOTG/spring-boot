@@ -62,10 +62,6 @@ public class GroupFilterEntity<T extends GroupBase, Y extends CompareEntityBase>
 
                     name = annotations.name();
                     tagValue = tags.get(name);
-                    if (null == tagValue) {
-                        compareMetaDate.put(name, CompareResultEnum.Off);
-                        continue;
-                    }
                     tagStrings = new ArrayList<>(Arrays.asList(tagValue.toLowerCase().split(",")));
                     field.setAccessible(true);
                     value = field.get(compareDate);
@@ -75,9 +71,9 @@ public class GroupFilterEntity<T extends GroupBase, Y extends CompareEntityBase>
                         if ((tagValue.equalsIgnoreCase(CompareFieldEnum.All.toString()) || tagValue.equalsIgnoreCase(CompareFieldEnum.NL.toString()))) {
                             compareMetaDate.put(name, CompareResultEnum.On);
                         } else {
-                            int min = Integer.valueOf(tagStrings.get(0));
-                            int max = Integer.valueOf(tagStrings.get(1));
-                            boolean inNumInterval = (Integer.valueOf(value.toString()) >= min) && (Integer.valueOf(value.toString()) < max);
+                            double min = Double.valueOf(tagStrings.get(0));
+                            double max = Double.valueOf(tagStrings.get(1));
+                            boolean inNumInterval = (Double.valueOf(value.toString()) >= min) && (Double.valueOf(value.toString()) < max);
                             if (inNumInterval) {
                                 compareMetaDate.put(name, CompareResultEnum.On);
                             } else {
@@ -94,7 +90,7 @@ public class GroupFilterEntity<T extends GroupBase, Y extends CompareEntityBase>
 
                     }
                 } catch (Exception e) {
-                    throw new Init4GroupInfoException(name);
+                    throw new Init4GroupInfoException(String.format("初始化分组匹配信息失败:分组id信息%s,匹配信息:%s,具体异常:%s", metaDate.getId().toString(), compareDate.toString(), name+e.toString()));
                 }
             }
         }
@@ -124,4 +120,5 @@ public class GroupFilterEntity<T extends GroupBase, Y extends CompareEntityBase>
 
         return CompareResultEnum.On;
     }
+    
 }

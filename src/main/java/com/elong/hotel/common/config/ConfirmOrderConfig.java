@@ -182,8 +182,36 @@ public class ConfirmOrderConfig {
 	 * 看板监控数据采集组ID集合
 	 */
 	private String mBoardMonitorDataCollectGroupIDs;
+	
+	/**
+	 * 终拒主管名称
+	 */
+	private String amendManagerName;
+	
+	/**
+	 * 更新终拒主管名称操作人
+	 */
+	private String updateAmendManagerOperator;
+	
+	/**
+	 * 更新终拒主管操作时间
+	 */
+	private String updateAmendManagerTime;
 
-	public String getOpLogReserStatus() {
+    /**
+     * 追单库订单监控搜索可选择状态
+     */
+    private String examOrderStatus;
+
+    public String getExamOrderStatus() {
+        return examOrderStatus;
+    }
+
+    public void setExamOrderStatus(String examOrderStatus) {
+        this.examOrderStatus = examOrderStatus;
+    }
+
+    public String getOpLogReserStatus() {
 		return opLogReserStatus;
 	}
 
@@ -602,4 +630,29 @@ public class ConfirmOrderConfig {
 	public void setmBoardMonitorDataCollectGroupIDs(String mBoardMonitorDataCollectGroupIDs) {
 		this.mBoardMonitorDataCollectGroupIDs = mBoardMonitorDataCollectGroupIDs;
 	}
+
+	public String getAmendManagerName() {
+		return amendManagerName;
+	}
+
+	public void setAmendManagerName(String amendManagerName) {
+		this.amendManagerName = amendManagerName;
+	}
+
+	public String getUpdateAmendManagerOperator() {
+		return updateAmendManagerOperator;
+	}
+
+	public void setUpdateAmendManagerOperator(String updateAmendManagerOperator) {
+		this.updateAmendManagerOperator = updateAmendManagerOperator;
+	}
+
+	public String getUpdateAmendManagerTime() {
+		return updateAmendManagerTime;
+	}
+
+	public void setUpdateAmendManagerTime(String updateAmendManagerTime) {
+		this.updateAmendManagerTime = updateAmendManagerTime;
+	}
+	
 }

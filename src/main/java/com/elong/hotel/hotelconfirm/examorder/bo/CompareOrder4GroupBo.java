@@ -50,6 +50,17 @@ public class CompareOrder4GroupBo extends CompareEntityBase {
     @CompareEntityAnnotations(name = "cityId")
     private String cityId;
 
+    @CompareEntityAnnotations(name = "isNew")
+    private Integer isNew;
+
+    public Integer getIsNew() {
+        return isNew;
+    }
+
+    public void setIsNew(Integer isNew) {
+        this.isNew = isNew;
+    }
+
     public Integer getHotelStar() {
         return hotelStar;
     }
@@ -160,5 +171,26 @@ public class CompareOrder4GroupBo extends CompareEntityBase {
 
     public void setCityId(String cityId) {
         this.cityId = cityId;
+    }
+
+    @Override
+    public String toString() {
+        return "CompareOrder4GroupBo{" +
+                "hotelStar=" + hotelStar +
+                ", memberLevel='" + memberLevel + '\'' +
+                ", proxyId='" + proxyId + '\'' +
+                ", isConfirmed=" + isConfirmed +
+                ", isOutTime=" + isOutTime +
+                ", orderType=" + orderType +
+                ", isSupposed=" + isSupposed +
+                ", orderMoney=" + orderMoney +
+                ", roomNight=" + roomNight +
+                ", rejectTime=" + rejectTime +
+                ", priority=" + priority +
+                ", orderStatus='" + orderStatus + '\'' +
+                ", supplierId='" + supplierId + '\'' +
+                ", cityId='" + cityId + '\'' +
+                ", isNew=" + isNew +
+                '}';
     }
 }
