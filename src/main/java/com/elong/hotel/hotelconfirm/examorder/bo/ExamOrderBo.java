@@ -102,6 +102,7 @@ public class ExamOrderBo extends CompareEntityBase {
 			this.reserStatus = order.getStatus();
 			this.memberLevel = order.getGradeId();
 			this.smsStatus=po.getSmsStatus();
+			this.mod = order.getOrderId().intValue() % 10;
 		}else if(order != null && po == null){
 			this.reserNo = order.getOrderId().intValue();
 			this.reserStatus = order.getStatus();
@@ -193,6 +194,7 @@ public class ExamOrderBo extends CompareEntityBase {
 		this.isNew = po.getIsNew();
 		this.phone = po.getPhone();
 		this.smsStatus=po.getSmsStatus();
+		this.mod = po.getMod();
 	}
 
 	public Integer getReserNo() {
