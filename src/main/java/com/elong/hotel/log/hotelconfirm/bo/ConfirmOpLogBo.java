@@ -187,7 +187,7 @@ public class ConfirmOpLogBo {
         this.targetReserStatus = targetReserStatus;
         this.staffName = examOrderBo.getStaffName();
         this.operator = operator.getOperatorName();
-        this.enterTime = examOrderBo.getEnterTime();
+        this.enterTime = confirmOpType.equals(ConfirmOpType.STORAGE_IN) ? examOrderBo.getEnterTime() == null ? new Date() : examOrderBo.getEnterTime() : examOrderBo.getEnterTime();
         this.respiteTime = examOrderBo.getRespiteTime();
         this.distributeTime = examOrderBo.getDistributeTime();
         this.bookingTime = examOrderBo.getBookingTime();
