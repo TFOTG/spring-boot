@@ -1,14 +1,14 @@
-package com.elong.hotel.hotelconfirm.cancel.po;
+package com.elong.hotel.hotelconfirm.cancel.bo;
 
-import com.elong.hotel.hotelconfirm.cancel.bo.CancelOrderBo;
-import sun.util.calendar.BaseCalendar;
+import com.elong.hotel.hotelconfirm.cancel.po.CancelOrderPo;
+import com.elong.hotel.hotelconfirm.groupfilter.bo.CompareEntityBase;
 
 import java.util.Date;
 
 /**
- * Created by liujunjie on 2018/7/18.
+ * Created by liujunjie on 2018/7/27.
  */
-public class CancelOrderPo {
+public class CancelOrderBo extends CompareEntityBase {
 
     /**
      * 主键
@@ -79,46 +79,35 @@ public class CancelOrderPo {
      */
     private Date cancelTime;
 
-    public CancelOrderPo()
-    {}
+    public CancelOrderBo(CancelOrderPo po){
 
-    public CancelOrderPo(CancelOrderBo bo){
+        this.reserNo = po.getReserNo();
 
-        this.reserNo = bo.getReserNo();
+        this.arriveDate = po.getArriveDate();
 
-        this.arriveDate = bo.getArriveDate();
+        this.leaveDate = po.getLeaveDate();
 
-        this.leaveDate = bo.getLeaveDate();
+        this.enterTime = po.getEnterTime();
 
-        this.enterTime = bo.getEnterTime();
+        this.sHotelId = po.getsHotelId();
 
-        this.sHotelId = bo.getsHotelId();
+        this.hotelName = po.getHotelName();
 
-        this.hotelName = bo.getHotelName();
+        this.orderPayType = po.getOrderPayType();
 
-        this.orderPayType = bo.getOrderPayType();
+        this.canCancelTime = po.getCanCancelTime();
 
-        this.canCancelTime = bo.getCanCancelTime();
+        this.isDC = po.getIsDC();
 
-        this.isDC = bo.getIsDC();
+        this.supplierOtaType = po.getSupplierOtaType();
 
-        this.supplierOtaType = bo.getSupplierOtaType();
+        this.isSupplier = po.getIsSupplier();
 
-        this.isSupplier = bo.getIsSupplier();
+        this.supplierId = po.getsHotelId();
 
-        this.supplierId = bo.getsHotelId();
+        this.supplierName = po.getSupplierName();
 
-        this.supplierName = bo.getSupplierName();
-
-        this.cancelTime = bo.getCancelTime();
-    }
-
-    public long getId() {
-        return id;
-    }
-
-    public void setId(long id) {
-        this.id = id;
+        this.cancelTime = po.getCancelTime();
     }
 
     public Integer getReserNo() {
