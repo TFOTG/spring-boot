@@ -68,7 +68,7 @@ public interface OriginalOrderFieldsConst {
 	/**
 	 * 终拒/员工待处理查询
 	 */
-	String SEARCH_FOR_EXAM = "status,hotelId,payment,payAmount,otaType,isUrgentVerify,additionalStatus,guestName,proxy,hotelName,gradeId,sumPrice,sumCost,contactPhone,contactMobile,orderFrom,ratePlanId,notesToHotel,notesToGuest,notesToElong,businessSystemId,roomCount,roomNightsCount,roomTypeId,roomTypeName,roomNightStayDate,roomNightIsSpecial,roomNightCost,roomNightSalePrice,roomNightRealSalePrice,roomNightRealCost,roomNightBreakfastCount,exchangedSumPrice,provinceId,orderKeyValues,additionalStatusI,promotionSettlementType,cityName,promotionChannelCode,tcOrderId,tcSubOrderId,tcCardNo,baiduLatitude,baiduLongitude,cooperationOrderId,baseRuleInfo,roomNightCurrencyCode,roomNightInventoryType";
+	String SEARCH_FOR_EXAM = "status,hotelId,payment,payAmount,otaType,isUrgentVerify,additionalStatus,guestName,proxy,hotelName,gradeId,sumPrice,sumCost,contactPhone,contactMobile,orderFrom,ratePlanId,notesToHotel,notesToGuest,notesToElong,businessSystemId,roomCount,roomNightsCount,roomTypeId,roomTypeName,roomNightStayDate,roomNightIsSpecial,roomNightCost,roomNightSalePrice,roomNightRealSalePrice,roomNightRealCost,roomNightBreakfastCount,exchangedSumPrice,provinceId,orderKeyValues,additionalStatusI,promotionSettlementType,cityName,promotionChannelCode,tcOrderId,tcSubOrderId,tcCardNo,baiduLatitude,baiduLongitude,cooperationOrderId,baseRuleInfo,roomNightCurrencyCode,roomNightInventoryType,originFrom";
 	
 	/**
 	 * 终拒查询备注信息
