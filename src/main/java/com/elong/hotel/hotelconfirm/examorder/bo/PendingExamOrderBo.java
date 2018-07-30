@@ -8,6 +8,7 @@ import java.util.Date;
 import com.alibaba.fastjson.annotation.JSONField;
 import com.elong.common.util.StringUtils;
 import com.elong.hotel.common.config.ExamOrderConfig;
+import com.elong.hotel.common.enums.PendingOrderKeyValueEnum;
 import com.elong.hotel.common.helper.ConfigurationManager;
 import com.elong.hotel.hotelconfirm.examorder.enums.OrderTypeEnum;
 import com.elong.hotel.hotelconfirm.examorder.po.ExamOrderPo;
@@ -759,21 +760,23 @@ public class PendingExamOrderBo implements Serializable{
 
 	public void setOrder(Order order) {
 		this.order = order;
-		if((order.getAdditionalStatus()&67108864) == 67108864){//判断是否直连订单
-			this.isDCOrder = 1;
-		}
 		this.isSupposed = calIsSupposed(order);//判断订单是否赔付
 		if((order.getAdditionalStatusI()&1073741824) == 1073741824){//判断订单是否国际
 			this.isInternational = 1;
 		}
 		if(order.getOrderKeyValues() != null){//判断订单是否华住
 			for(OrderKeyValue keyValue : order.getOrderKeyValues()){
-				if(keyValue.getKey().equalsIgnoreCase("FirstJoinPromotionType") && keyValue.getValue().equalsIgnoreCase("1001")){
+				if(keyValue.getKey().equalsIgnoreCase(PendingOrderKeyValueEnum.FIRSTJOINPROMOTIONTYPE.getKey()) && 
+						keyValue.getValue().equalsIgnoreCase(PendingOrderKeyValueEnum.FIRSTJOINPROMOTIONTYPE.getValue())){
 					this.isHuaZhu = 1;
 					continue;
 				}
-				if(keyValue.getKey().equalsIgnoreCase("HourRoomStay")){//判断小时房
+				if(keyValue.getKey().equalsIgnoreCase(PendingOrderKeyValueEnum.HOURROOMSTAY.getKey())){//判断小时房
 					this.isHourRoom = 1;
+					continue;
+				}
+				if(keyValue.getKey().equalsIgnoreCase(PendingOrderKeyValueEnum.PMSPROCESSINGSTATUS.getKey())){
+					this.isDCOrder = 1;
 					continue;
 				}
 			}
