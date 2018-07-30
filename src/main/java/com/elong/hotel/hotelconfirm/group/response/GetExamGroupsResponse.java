@@ -29,6 +29,11 @@ public class GetExamGroupsResponse extends ServiceResponseBase{
 	private List<ExamGroupBo> body;
 	
 	private List<ConfirmGroupPo> groupPos;
+	
+	/**
+	 * 兜底分组ID
+	 */
+	private int defaultGroupId;
 
 	public List<ExamGroupBo> getBody() {
 		return body;
@@ -44,6 +49,14 @@ public class GetExamGroupsResponse extends ServiceResponseBase{
 
 	public void setGroupPos(List<ConfirmGroupPo> groupPos) {
 		this.groupPos = groupPos;
+	}
+
+	public int getDefaultGroupId() {
+		return defaultGroupId;
+	}
+
+	public void setDefaultGroupId(int defaultGroupId) {
+		this.defaultGroupId = defaultGroupId;
 	}
 	
 }

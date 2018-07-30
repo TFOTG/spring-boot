@@ -83,6 +83,11 @@ public class ExamOrderConfig {
      */
     private Integer respitedCountUpperLimit;
     
+    /**
+     * 终拒兜底分组ID
+     */
+    private Integer defaultGroupId;
+    
     public ExamOrderConfig(){
     	super();
     	this.priority4UrgeMinute = 120;
@@ -98,6 +103,7 @@ public class ExamOrderConfig {
 		this.executorQueueSize = 500;
 		this.autoNoticeGroupSendMailProxyIds="0";
 		this.respitedCountUpperLimit = 20;
+		this.defaultGroupId = 64;
     }
 
     public String getAutoNoticeGroupSMSId() {
@@ -242,6 +248,14 @@ public class ExamOrderConfig {
 
 	public void setRespitedCountUpperLimit(Integer respitedCountUpperLimit) {
 		this.respitedCountUpperLimit = respitedCountUpperLimit;
+	}
+
+	public Integer getDefaultGroupId() {
+		return defaultGroupId;
+	}
+
+	public void setDefaultGroupId(Integer defaultGroupId) {
+		this.defaultGroupId = defaultGroupId;
 	}
     
 }
