@@ -330,11 +330,6 @@ public class PendingExamOrderBo implements Serializable{
 	private Integer buyOut;
 	
 	/**
-	 * 转让
-	 */
-	private Integer increaseCount;
-	
-	/**
 	 * 是否超过暂缓时间
 	 */
 	private int isOverRespiteTime;
@@ -790,22 +785,17 @@ public class PendingExamOrderBo implements Serializable{
 		if((order.getOrderFlag()&144115188075855872L) == 144115188075855872L){//判断是否确认后推翻
 			this.isConfirmOverFlow = 1;
 		}
-		if(order.getRoomNights() != null && order.getRoomNights().size() != 0){//判断“转让”，买断
-			int buy = 0, increase = 0;
+		if(order.getRoomNights() != null && order.getRoomNights().size() != 0){//判断标识：买断
+			int buy = 0;
 			for(RoomNight room : order.getRoomNights()){
 				if(room.getInventoryType() != null){
-					if(room.getInventoryType() == 1){
-						increase += 1;
-					}else if(room.getInventoryType() == 3){
+					if(room.getInventoryType() == 3){
 						buy += 1;
 					}
 				}
 			}
 			if(buy != 0){
 				this.buyOut = buy;
-			}
-			if(increase != 0){
-				this.increaseCount = increase;
 			}
 		}
 	}
@@ -896,14 +886,6 @@ public class PendingExamOrderBo implements Serializable{
 
 	public void setBuyOut(Integer buyOut) {
 		this.buyOut = buyOut;
-	}
-
-	public Integer getIncreaseCount() {
-		return increaseCount;
-	}
-
-	public void setIncreaseCount(Integer increaseCount) {
-		this.increaseCount = increaseCount;
 	}
 	
 	public int getIsOverRespiteTime() {
