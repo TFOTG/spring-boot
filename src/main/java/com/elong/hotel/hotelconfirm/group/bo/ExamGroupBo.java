@@ -125,7 +125,9 @@ public class ExamGroupBo implements Serializable{
 					}else{
 						sb = new StringBuilder();
 						for(String s : tag.getTagvalue().split(separator)){
-							sb.append(HotelStarEnum.getValueDesc(Integer.valueOf(s))).append(separator);
+							if(StringUtils.isNotEmpty(s) && StringUtils.isNumeric(s)){
+								sb.append(HotelStarEnum.getValueDesc(Integer.valueOf(s))).append(separator);
+							}
 						}
 						this.hotelStar = StringUtils.isEmpty(sb.toString()) ? allZn : sb.substring(0, sb.lastIndexOf(separator));
 					}
@@ -157,7 +159,9 @@ public class ExamGroupBo implements Serializable{
 					}else{
 						sb = new StringBuilder();
 						for(String s : tag.getTagvalue().split(separator)){
-							sb.append(OrderTypeEnum.getValueDesc(Integer.valueOf(s))).append(separator);
+							if(StringUtils.isNotEmpty(s) && StringUtils.isNumeric(s)){
+								sb.append(OrderTypeEnum.getValueDesc(Integer.valueOf(s))).append(separator);
+							}
 						}
 						
 						this.orderType = StringUtils.isEmpty(sb.toString()) ? allZn : sb.substring(0, sb.lastIndexOf(separator));
@@ -188,7 +192,9 @@ public class ExamGroupBo implements Serializable{
 					}else{
 						sb = new StringBuilder();
 						for(String s : tag.getTagvalue().split(separator)){
-							sb.append(PriorityEnum.getValueDesc(Integer.valueOf(s))).append(separator);
+							if(StringUtils.isNotEmpty(s) && StringUtils.isNumeric(s)){
+								sb.append(PriorityEnum.getValueDesc(Integer.valueOf(s))).append(separator);
+							}
 						}
 						
 						this.priority = StringUtils.isEmpty(sb.toString()) ? allZn : sb.substring(0, sb.lastIndexOf(separator));
