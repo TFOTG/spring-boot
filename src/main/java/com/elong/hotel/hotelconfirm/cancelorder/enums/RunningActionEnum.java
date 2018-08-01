@@ -1,4 +1,4 @@
-package com.elong.hotel.hotelconfirm.cancel.enums;
+package com.elong.hotel.hotelconfirm.cancelorder.enums;
 
 /**
  * Created by liujunjie on 2018/7/27.

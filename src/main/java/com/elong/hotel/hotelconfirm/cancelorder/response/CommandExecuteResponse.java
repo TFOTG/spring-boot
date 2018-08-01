@@ -1,4 +1,4 @@
-package com.elong.hotel.hotelconfirm.cancel.response;
+package com.elong.hotel.hotelconfirm.cancelorder.response;
 
 import com.elong.hotel.common.response.ServiceResponseBase;
 

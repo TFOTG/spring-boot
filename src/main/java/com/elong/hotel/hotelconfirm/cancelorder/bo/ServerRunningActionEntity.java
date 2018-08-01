@@ -1,7 +1,7 @@
-package com.elong.hotel.hotelconfirm.cancel.bo;
+package com.elong.hotel.hotelconfirm.cancelorder.bo;
 
 import com.elong.hotel.common.bo.OperatorInfoBo;
-import com.elong.hotel.hotelconfirm.cancel.po.CancelOrderPo;
+import com.elong.hotel.hotelconfirm.cancelorder.po.CancelOrderPo;
 import com.elong.hotel.proxy.javaorder.getorder.Order;
 
 /**

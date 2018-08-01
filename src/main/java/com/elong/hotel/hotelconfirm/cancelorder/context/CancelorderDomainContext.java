@@ -1,16 +1,14 @@
-package com.elong.hotel.hotelconfirm.cancel.context;
+package com.elong.hotel.hotelconfirm.cancelorder.context;
 
 import com.elong.hotel.common.bo.OperatorInfoBo;
-import com.elong.hotel.hotelconfirm.cancel.po.CancelOrderPo;
+import com.elong.hotel.hotelconfirm.cancelorder.po.CancelOrderPo;
 import com.elong.hotel.hotelconfirm.confirmorder.enums.ServerRunningDomainEnum;
+import com.elong.hotel.proxy.javaorder.getorder.GetOrderStatusChangeTimeBo;
 import com.elong.hotel.proxy.javaorder.getorder.Order;
-import com.elong.hotel.proxy.javaorder.getorder.OrderHistory;
 import com.elong.hotel.storage.bo.OrderConsumerInfoBo;
 import com.elong.hotel.storage.request.OrderStatusChangeRequest;
 
-import javax.annotation.Resource;
 import java.io.Serializable;
-import java.util.List;
 
 /**
  * Created by liujunjie on 2018/7/20.
@@ -31,14 +29,20 @@ public class CancelorderDomainContext implements Serializable {
 
     private OrderStatusChangeRequest request;
 
+    private GetOrderStatusChangeTimeBo orderStatusChange;
+
+    // -1：未知，0：预付，1：现付首晚，2：现付全额，3：现付部分, 4:现付非担保
+    private int vouchType;
+
     public CancelorderDomainContext(Integer reserNo, ServerRunningDomainEnum serverRunningDomainEnum, Order order,
-                                    CancelOrderPo cancelOrderPo, OrderConsumerInfoBo orderConsumerInfoBo)
+                                    CancelOrderPo cancelOrderPo, OrderConsumerInfoBo orderConsumerInfoBo,int vouchType)
     {
         this.reserNo = reserNo;
         this.serverRunningDomainEnum = serverRunningDomainEnum;
         this.order = order;
         this.cancelOrderPo = cancelOrderPo;
         this.orderConsumerInfoBo = orderConsumerInfoBo;
+        this.vouchType = vouchType;
     }
 
 
@@ -96,5 +100,21 @@ public class CancelorderDomainContext implements Serializable {
 
     public void setRequest(OrderStatusChangeRequest request) {
         this.request = request;
+    }
+
+    public GetOrderStatusChangeTimeBo getOrderStatusChange() {
+        return orderStatusChange;
+    }
+
+    public void setOrderStatusChange(GetOrderStatusChangeTimeBo orderStatusChange) {
+        this.orderStatusChange = orderStatusChange;
+    }
+
+    public int getVouchType() {
+        return vouchType;
+    }
+
+    public void setVouchType(int vouchType) {
+        this.vouchType = vouchType;
     }
 }

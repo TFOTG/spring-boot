@@ -1,6 +1,6 @@
 package com.elong.hotel.storage.context;
 
-import com.elong.hotel.hotelconfirm.cancel.po.CancelOrderPo;
+import com.elong.hotel.hotelconfirm.cancelorder.po.CancelOrderPo;
 import com.elong.hotel.hotelconfirm.confirmorder.enums.ServerRunningDomainEnum;
 import com.elong.hotel.hotelconfirm.confirmorder.po.ConfirmOrderPo;
 import com.elong.hotel.hotelconfirm.examorder.po.ExamOrderPo;

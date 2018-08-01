@@ -1,14 +1,13 @@
-package com.elong.hotel.hotelconfirm.cancel.bo;
+package com.elong.hotel.hotelconfirm.cancelorder.po;
 
-import com.elong.hotel.hotelconfirm.cancel.po.CancelOrderPo;
-import com.elong.hotel.hotelconfirm.groupfilter.bo.CompareEntityBase;
+import com.elong.hotel.hotelconfirm.cancelorder.bo.CancelOrderBo;
 
 import java.util.Date;
 
 /**
- * Created by liujunjie on 2018/7/27.
+ * Created by liujunjie on 2018/7/18.
  */
-public class CancelOrderBo extends CompareEntityBase {
+public class CancelOrderPo {
 
     /**
      * 主键
@@ -79,35 +78,58 @@ public class CancelOrderBo extends CompareEntityBase {
      */
     private Date cancelTime;
 
-    public CancelOrderBo(CancelOrderPo po){
+    private Date _timeStamp;
 
-        this.reserNo = po.getReserNo();
+    private Long orderTimeStampLong;
 
-        this.arriveDate = po.getArriveDate();
+    private String reserStatus;
 
-        this.leaveDate = po.getLeaveDate();
+    public CancelOrderPo()
+    {}
 
-        this.enterTime = po.getEnterTime();
+    public CancelOrderPo(CancelOrderBo bo){
 
-        this.sHotelId = po.getsHotelId();
+        this.reserNo = bo.getReserNo();
 
-        this.hotelName = po.getHotelName();
+        this.arriveDate = bo.getArriveDate();
 
-        this.orderPayType = po.getOrderPayType();
+        this.leaveDate = bo.getLeaveDate();
 
-        this.canCancelTime = po.getCanCancelTime();
+        this.enterTime = bo.getEnterTime();
 
-        this.isDC = po.getIsDC();
+        this.sHotelId = bo.getsHotelId();
 
-        this.supplierOtaType = po.getSupplierOtaType();
+        this.hotelName = bo.getHotelName();
 
-        this.isSupplier = po.getIsSupplier();
+        this.orderPayType = bo.getOrderPayType();
 
-        this.supplierId = po.getsHotelId();
+        this.canCancelTime = bo.getCanCancelTime();
 
-        this.supplierName = po.getSupplierName();
+        this.isDC = bo.getIsDC();
 
-        this.cancelTime = po.getCancelTime();
+        this.supplierOtaType = bo.getSupplierOtaType();
+
+        this.isSupplier = bo.getIsSupplier();
+
+        this.supplierId = bo.getsHotelId();
+
+        this.supplierName = bo.getSupplierName();
+
+        this.cancelTime = bo.getCancelTime();
+
+        this._timeStamp = bo.get_timeStamp();
+
+        this.orderTimeStampLong = this._timeStamp.getTime();
+
+        this.reserStatus = bo.getReserStatus();
+    }
+
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
     }
 
     public Integer getReserNo() {
@@ -220,5 +242,29 @@ public class CancelOrderBo extends CompareEntityBase {
 
     public void setCancelTime(Date cancelTime) {
         this.cancelTime = cancelTime;
+    }
+
+    public Date get_timeStamp() {
+        return _timeStamp;
+    }
+
+    public void set_timeStamp(Date _timeStamp) {
+        this._timeStamp = _timeStamp;
+    }
+
+    public Long getOrderTimeStampLong() {
+        return orderTimeStampLong;
+    }
+
+    public void setOrderTimeStampLong(Long orderTimeStampLong) {
+        this.orderTimeStampLong = orderTimeStampLong;
+    }
+
+    public String getReserStatus() {
+        return reserStatus;
+    }
+
+    public void setReserStatus(String reserStatus) {
+        this.reserStatus = reserStatus;
     }
 }
