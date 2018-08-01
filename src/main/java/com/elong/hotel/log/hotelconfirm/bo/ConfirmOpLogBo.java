@@ -177,7 +177,7 @@ public class ConfirmOpLogBo {
         this.hotelName = examOrderBo.getHotelName();
         this.supplierName = examOrderBo.getSupplierName();
         this.cardNo = examOrderBo.getCardNo();
-        this.arriveDate = examOrderBo.getTimeEarly();
+        this.arriveDate = examOrderBo.getArriveDate();
         this.opType = confirmOpType.getKey()+"";
         this.opDate = new Date();
         this.department = DepartmentEnum.Exam.getKey() + "";
