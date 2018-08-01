@@ -12,7 +12,6 @@ import com.elong.hotel.proxy.javaorder.consts.OrderFlagConst;
 import com.elong.hotel.proxy.javaorder.getorder.Order;
 import com.elong.hotel.proxy.javaorder.getorder.OrderHistory;
 import org.apache.commons.lang.StringUtils;
-import org.apache.commons.lang.time.DateUtils;
 
 import java.util.Arrays;
 import java.util.Date;
@@ -90,8 +89,6 @@ public class ExamOrderBo extends CompareEntityBase {
 	public ExamOrderBo(Order order,ExamOrderPo po,OperatorInfoBo operator,List<OrderHistory> orderHistory, Integer refusedCancelNum, Integer repeatRefusedNum) {
 		if(order != null && po != null){
 			this.setExamOrder(po);
-			//终拒时间
-			this.amendTime = operator.getOperatorTime();
 			//是否选择马上到店
 			userChoiceUrge4App = (order.getOrderFlag() & OrderFlagConst.IS_ARRIVE_NOW_ORDER) == OrderFlagConst.IS_ARRIVE_NOW_ORDER;
 			//计算拒单时长
