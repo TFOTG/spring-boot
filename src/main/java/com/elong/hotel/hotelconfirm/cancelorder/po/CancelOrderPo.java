@@ -82,6 +82,8 @@ public class CancelOrderPo {
 
     private Long orderTimeStampLong;
 
+    private String reserStatus;
+
     public CancelOrderPo()
     {}
 
@@ -118,6 +120,8 @@ public class CancelOrderPo {
         this._timeStamp = bo.get_timeStamp();
 
         this.orderTimeStampLong = this._timeStamp.getTime();
+
+        this.reserStatus = bo.getReserStatus();
     }
 
     public long getId() {
@@ -254,5 +258,13 @@ public class CancelOrderPo {
 
     public void setOrderTimeStampLong(Long orderTimeStampLong) {
         this.orderTimeStampLong = orderTimeStampLong;
+    }
+
+    public String getReserStatus() {
+        return reserStatus;
+    }
+
+    public void setReserStatus(String reserStatus) {
+        this.reserStatus = reserStatus;
     }
 }
