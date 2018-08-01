@@ -16,7 +16,7 @@ public enum StorageTypeEnum {
 	
 	EXAM(4),
 
-   CANCEL(5);
+    CANCEL(5);
 
 	private int value;
 
