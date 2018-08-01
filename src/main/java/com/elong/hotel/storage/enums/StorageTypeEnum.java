@@ -14,9 +14,9 @@ public enum StorageTypeEnum {
 
 	CREATEORDER(3),
 	
-	EXAM(4),
+	EXAM(4);
 
-    CANCEL(5);
+//    CANCEL(5);
 
 	private int value;
 
