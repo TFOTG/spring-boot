@@ -12,6 +12,7 @@ import com.elong.hotel.proxy.javaorder.consts.OrderFlagConst;
 import com.elong.hotel.proxy.javaorder.getorder.Order;
 import com.elong.hotel.proxy.javaorder.getorder.OrderHistory;
 import org.apache.commons.lang.StringUtils;
+import org.apache.commons.lang.time.DateUtils;
 
 import java.util.Arrays;
 import java.util.Date;
@@ -103,6 +104,7 @@ public class ExamOrderBo extends CompareEntityBase {
 			this.memberLevel = order.getGradeId();
 			this.smsStatus=po.getSmsStatus();
 			this.mod = order.getOrderId().intValue() % 10;
+			this.isConfirm = order.getContact() != null && order.getContact().getIsConfirmed() ? 1 : 0;
 		}else if(order != null && po == null){
 			this.reserNo = order.getOrderId().intValue();
 			this.reserStatus = order.getStatus();
