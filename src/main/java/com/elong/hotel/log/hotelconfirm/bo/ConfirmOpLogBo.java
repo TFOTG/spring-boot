@@ -6,6 +6,7 @@ import com.elong.hotel.common.bo.OperatorInfoBo;
 import com.elong.hotel.common.config.FullRoomRateConfig;
 import com.elong.hotel.common.helper.ConfigurationManager;
 import com.elong.hotel.common.helper.StringUtils;
+import com.elong.hotel.hotelconfirm.cancelorder.bo.CancelOrderBo;
 import com.elong.hotel.hotelconfirm.confirmorder.bo.ConfirmOrderBo;
 import com.elong.hotel.hotelconfirm.confirmorder.enums.ConfirmType;
 import com.elong.hotel.hotelconfirm.confirmorder.po.ConfirmOrderPo;
@@ -192,6 +193,29 @@ public class ConfirmOpLogBo {
         this.distributeTime = examOrderBo.getDistributeTime();
         this.bookingTime = examOrderBo.getBookingTime();
         this.amendTime = examOrderBo.getAmendTime();
+    }
+
+    public ConfirmOpLogBo(CancelOrderBo cancelOrderBo, ConfirmOpType confirmOpType, String preReserStatus, String targetReserStatus, OperatorInfoBo operator) {
+        this.reserNo = cancelOrderBo.getReserNo();
+        this.hotelId = cancelOrderBo.getsHotelId();
+        this.hotelName = cancelOrderBo.getHotelName();
+        this.supplierName = cancelOrderBo.getSupplierName();
+        //this.cardNo = examOrderBo.getCardNo();
+        this.arriveDate = cancelOrderBo.getArriveDate();
+        this.opType = confirmOpType.getKey()+"";
+        this.opDate = new Date();
+        this.department = DepartmentEnum.Cancel.getKey() + "";
+        //this.groupId = cancelOrderBo.getGroupId();
+        //this.priority = cancelOrderBo.getPriority();
+        this.sourceReserStatus = confirmOpType.equals(ConfirmOpType.STORAGE_IN) ? preReserStatus : cancelOrderBo.getReserStatus();
+        this.targetReserStatus = targetReserStatus;
+        //this.staffName = cancelOrderBo.getStaffName();
+        this.operator = operator.getOperatorName();
+        this.enterTime = confirmOpType.equals(ConfirmOpType.STORAGE_IN) ? cancelOrderBo.getEnterTime() == null ? new Date() : cancelOrderBo.getEnterTime() : cancelOrderBo.getEnterTime();
+        //this.respiteTime = cancelOrderBo.getRespiteTime();
+        //this.distributeTime = cancelOrderBo.getDistributeTime();
+        //this.bookingTime = cancelOrderBo.getBookingTime();
+        this.amendTime = cancelOrderBo.getCancelTime();
     }
 
     public ConfirmOpLogBo(ExamOrderPo po,DepartmentEnum departmentEnum, ConfirmOpType confirmOpType, String operator) {

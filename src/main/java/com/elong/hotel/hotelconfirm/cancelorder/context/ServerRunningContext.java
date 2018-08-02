@@ -15,7 +15,9 @@ public class ServerRunningContext implements Serializable {
 
     private Integer reserNo;
 
-    private CancelOrderBo cancelOrderBo;
+    private CancelOrderBo originCancelOrderBo;
+
+    private CancelOrderBo targetCancelOrderBo;
 
     private ServerRunningDomainEnum serverRunningDomainEnum;
 
@@ -33,12 +35,20 @@ public class ServerRunningContext implements Serializable {
         this.reserNo = reserNo;
     }
 
-    public CancelOrderBo getCancelOrderBo() {
-        return cancelOrderBo;
+    public CancelOrderBo getOriginCancelOrderBo() {
+        return originCancelOrderBo;
     }
 
-    public void setCancelOrderBo(CancelOrderBo cancelOrderBo) {
-        this.cancelOrderBo = cancelOrderBo;
+    public void setOriginCancelOrderBo(CancelOrderBo originCancelOrderBo) {
+        this.originCancelOrderBo = originCancelOrderBo;
+    }
+
+    public CancelOrderBo getTargetCancelOrderBo() {
+        return targetCancelOrderBo;
+    }
+
+    public void setTargetCancelOrderBo(CancelOrderBo targetCancelOrderBo) {
+        this.targetCancelOrderBo = targetCancelOrderBo;
     }
 
     public ServerRunningDomainEnum getServerRunningDomainEnum() {
