@@ -113,6 +113,7 @@ public class LinkAndRepeatBo implements Serializable{
 		this.checkInDate = sdf.format(order.getCheckInDate());
 		this.checkOutDate = sdf.format(order.getCheckOutDate());
 		this.hotelId = order.getHotelId();
+		this.hotelName = order.getHotelName();
 		this.originFrom = order.getOriginFrom();
 		this.otaType = order.getOtaType();
 		this.proxyId = order.getProxy();
