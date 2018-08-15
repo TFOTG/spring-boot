@@ -247,8 +247,20 @@ public class ConfirmOpLogBo {
     public ConfirmOpLogBo()
     {}
 
-    public ConfirmOpLogBo(SpecialOrderBo targetSpecialOrderBo, ConfirmOpType storageIn, String preStatus, OperatorInfoBo operator) {
-
+    public ConfirmOpLogBo(SpecialOrderBo bo,ConfirmOpType confirmOpType,String preReserStatus, String targetReserStatus, String operator) {
+        this.reserNo = bo.getReserNo();
+        this.hotelId = bo.getHotelId();
+        this.hotelName = bo.getHotelName();
+        this.cardNo = bo.getCardNo();
+        this.arriveDate = bo.getArriveDate();
+        this.opType = confirmOpType.getKey()+"";
+        this.opDate = new Date();
+        this.department = DepartmentEnum.Special.getKey()+"";
+        this.priority = bo.getArriveType();
+        this.sourceReserStatus = preReserStatus;
+        this.targetReserStatus = targetReserStatus;
+        this.operator = operator;
+        this.enterTime = bo.getEnterTime();
     }
 
     public String getLogDBName() {
