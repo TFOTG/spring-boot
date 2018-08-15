@@ -4,6 +4,7 @@ import com.elong.hotel.hotelconfirm.cancelorder.po.CancelOrderPo;
 import com.elong.hotel.hotelconfirm.confirmorder.enums.ServerRunningDomainEnum;
 import com.elong.hotel.hotelconfirm.confirmorder.po.ConfirmOrderPo;
 import com.elong.hotel.hotelconfirm.examorder.po.ExamOrderPo;
+import com.elong.hotel.hotelconfirm.specialorder.po.SpecialOrderPo;
 import com.elong.hotel.proxy.javaorder.getorder.GetOrderStatusChangeTimeBo;
 import com.elong.hotel.proxy.javaorder.getorder.Order;
 import com.elong.hotel.storage.bo.OrderConsumerInfoBo;
@@ -50,6 +51,8 @@ public class StorageContext implements Serializable{
 	private ExamOrderPo examOrderPo;
 
     private CancelOrderPo cancelOrderPo;
+
+    private SpecialOrderPo specialOrderPo;
 
 	public StorageTypeEnum getFromEnum() {
 		return fromEnum;
@@ -153,5 +156,13 @@ public class StorageContext implements Serializable{
 
     public void setCancelOrderPo(CancelOrderPo cancelOrderPo) {
         this.cancelOrderPo = cancelOrderPo;
+    }
+
+    public SpecialOrderPo getSpecialOrderPo() {
+        return specialOrderPo;
+    }
+
+    public void setSpecialOrderPo(SpecialOrderPo specialOrderPo) {
+        this.specialOrderPo = specialOrderPo;
     }
 }

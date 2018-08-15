@@ -1,7 +1,5 @@
 package com.elong.hotel.log.hotelconfirm.bo;
 
-import java.util.Date;
-
 import com.elong.hotel.common.bo.OperatorInfoBo;
 import com.elong.hotel.common.config.FullRoomRateConfig;
 import com.elong.hotel.common.helper.ConfigurationManager;
@@ -13,7 +11,10 @@ import com.elong.hotel.hotelconfirm.confirmorder.po.ConfirmOrderPo;
 import com.elong.hotel.hotelconfirm.examorder.bo.ExamOrderBo;
 import com.elong.hotel.hotelconfirm.examorder.po.ExamOrderPo;
 import com.elong.hotel.hotelconfirm.group.enums.DepartmentEnum;
+import com.elong.hotel.hotelconfirm.specialorder.bo.SpecialOrderBo;
 import com.elong.hotel.log.hotelconfirm.enums.ConfirmOpType;
+
+import java.util.Date;
 
 /**
  * Created by peng.wang on 17/5/12.
@@ -245,6 +246,10 @@ public class ConfirmOpLogBo {
 
     public ConfirmOpLogBo()
     {}
+
+    public ConfirmOpLogBo(SpecialOrderBo targetSpecialOrderBo, ConfirmOpType storageIn, String preStatus, OperatorInfoBo operator) {
+
+    }
 
     public String getLogDBName() {
         return logDBName;

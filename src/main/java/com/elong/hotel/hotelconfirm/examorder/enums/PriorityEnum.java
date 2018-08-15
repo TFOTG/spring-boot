@@ -11,7 +11,7 @@ public enum PriorityEnum {
     None(0, "none"),
 
     /**
-     * 紧急
+     * 紧急,马上到店
      */
     Urge(1, "当天紧急"),
 

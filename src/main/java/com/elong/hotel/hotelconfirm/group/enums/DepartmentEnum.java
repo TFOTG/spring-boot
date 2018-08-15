@@ -17,7 +17,12 @@ public enum DepartmentEnum {
     /**
      * 取消库
      */
-    Cancel(3,"取消");
+    Cancel(3,"取消"),
+
+    /**
+     * 特岗
+     */
+    Special(4,"特岗");
 
     private int key;
     private String value;

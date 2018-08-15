@@ -1,6 +1,7 @@
 package com.elong.hotel.hotelconfirm.specialorder.po;
 
-import java.lang.reflect.Field;
+import com.elong.hotel.hotelconfirm.specialorder.bo.SpecialOrderBo;
+
 import java.util.Date;
 
 /**
@@ -23,12 +24,31 @@ public class SpecialOrderPo {
     private String proxyId;
     private Date enterTime;
 
+    /**
+     * 订单时间戳
+     */
+    private Long orderTimeStampLong;
 
-    public static void main(String[] args) {
-        Field[] fields = SpecialOrderPo.class.getDeclaredFields();
-        for (Field field : fields) {
-            System.out.println("<columnOverride column=\""+field.getName().toLowerCase()+"\" property=\""+field.getName()+"\" javaType=\""+field.getType().getName()+"\"/> ");
-        }
+    public SpecialOrderPo() {
+    }
+
+    public SpecialOrderPo(SpecialOrderBo specialOrderBo) {
+
+        this.reserNo=specialOrderBo.getReserNo();
+        this.reserStatus=specialOrderBo.getReserStatus();
+        this.cardNo=specialOrderBo.getCardNo();
+        this.contactMobile=specialOrderBo.getContactMobile();
+        this.hotelId=specialOrderBo.getHotelId();
+        this.hotelName=specialOrderBo.getHotelName();
+        this.arriveDate=specialOrderBo.getArriveDate();
+        this.leaveDate=specialOrderBo.getLeaveDate();
+        this.interceptReason=specialOrderBo.getInterceptReason();
+        this.orderType=specialOrderBo.getOrderType();
+        this.arriveType=specialOrderBo.getArriveType();
+        this.proxyId=specialOrderBo.getProxyId();
+        this.enterTime=specialOrderBo.getEnterTime();
+        this.orderTimeStampLong=specialOrderBo.getOrderTimeStampLong();
+
     }
 
     public long getId() {
@@ -141,5 +161,13 @@ public class SpecialOrderPo {
 
     public void setEnterTime(Date enterTime) {
         this.enterTime = enterTime;
+    }
+
+    public Long getOrderTimeStampLong() {
+        return orderTimeStampLong;
+    }
+
+    public void setOrderTimeStampLong(Long orderTimeStampLong) {
+        this.orderTimeStampLong = orderTimeStampLong;
     }
 }

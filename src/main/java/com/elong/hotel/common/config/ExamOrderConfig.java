@@ -11,6 +11,11 @@ public class ExamOrderConfig {
     private Integer priority4UrgeMinute;
 
     /**
+     * 特岗紧急到店时间
+     */
+    private Integer priority4SpecialUrgeMinute;
+
+    /**
      * 紧急订单到店距离
      */
     private Integer priority4UrgeDistance;
@@ -87,7 +92,7 @@ public class ExamOrderConfig {
      * 终拒兜底分组ID
      */
     private Integer defaultGroupId;
-    
+
     public ExamOrderConfig(){
     	super();
     	this.priority4UrgeMinute = 120;
@@ -257,5 +262,12 @@ public class ExamOrderConfig {
 	public void setDefaultGroupId(Integer defaultGroupId) {
 		this.defaultGroupId = defaultGroupId;
 	}
-    
+
+    public Integer getPriority4SpecialUrgeMinute() {
+        return priority4SpecialUrgeMinute;
+    }
+
+    public void setPriority4SpecialUrgeMinute(Integer priority4SpecialUrgeMinute) {
+        this.priority4SpecialUrgeMinute = priority4SpecialUrgeMinute;
+    }
 }
