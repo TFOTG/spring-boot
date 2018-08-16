@@ -345,6 +345,11 @@ public class PendingExamOrderBo implements Serializable{
 	 */
 	private int orderVoucherType;
 	
+	/**
+	 * 是否赫程新流程
+	 */
+	private int isNewFlow;
+	
 	public PendingExamOrderBo() {
 		super();
 	}
@@ -754,6 +759,10 @@ public class PendingExamOrderBo implements Serializable{
 	}
 
 	public void setOrder(Order order) {
+		this.arriveDate = order.getCheckInDate();
+		this.leaveDate = order.getCheckOutDate();
+		this.timeEarly = order.getEarlyCheckInTime();
+		this.timeLate = order.getLateCheckInTime();
 		this.order = order;
 		this.isSupposed = calIsSupposed(order);//判断订单是否赔付
 		if((order.getAdditionalStatusI()&1073741824) == 1073741824){//判断订单是否国际
@@ -772,6 +781,10 @@ public class PendingExamOrderBo implements Serializable{
 				}
 				if(keyValue.getKey().equalsIgnoreCase(PendingOrderKeyValueEnum.PMSPROCESSINGSTATUS.getKey())){
 					this.isDCOrder = 1;
+					continue;
+				}
+				if(keyValue.getKey().equalsIgnoreCase(PendingOrderKeyValueEnum.USENEWHCFLOW.getKey())){
+					this.isNewFlow = 1;
 					continue;
 				}
 			}
@@ -912,6 +925,14 @@ public class PendingExamOrderBo implements Serializable{
 		this.orderVoucherType = orderVoucherType;
 	}
 
+	public int getIsNewFlow() {
+		return isNewFlow;
+	}
+
+	public void setIsNewFlow(int isNewFlow) {
+		this.isNewFlow = isNewFlow;
+	}
+	
 	/**
 	 * 
 	 * 判断是否赔付 
@@ -944,4 +965,5 @@ public class PendingExamOrderBo implements Serializable{
 		}
 		return 0;
 	}
+	
 }
