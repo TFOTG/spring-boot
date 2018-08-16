@@ -1,8 +1,11 @@
 package com.elong.hotel.hotelconfirm.confirmorderactionlog.bo;
 
 import com.alibaba.fastjson.annotation.JSONField;
+import com.elong.hotel.common.helper.StringUtils;
+import com.elong.hotel.hotelconfirm.confirmorder.request.GetInOutHistoryDataRequest;
 
 import java.sql.Date;
+import java.text.SimpleDateFormat;
 import java.util.List;
 
 /**
@@ -52,6 +55,26 @@ public class ConfirmOrderActionLogBo {
     private String operatorName;
 
     private String operatorIp;
+
+    public String getLogDBName(GetInOutHistoryDataRequest request){
+        String logName="";
+
+        if(request!=null){
+            StringBuilder fileDBName = new StringBuilder("confirmorderactionlog");
+            fileDBName.append("_");
+            if (StringUtils.isNotBlank(request.getStartTime())) {
+                fileDBName.append(request.getStartTime().substring(2, 4) + "_" + request.getStartTime().substring(5, 7));
+            } else if (StringUtils.isNotBlank(request.getEndTime())) {
+                fileDBName.append(request.getEndTime().substring(2, 4) + "_" + request.getEndTime().substring(5, 7));
+            } else {
+                SimpleDateFormat format = new SimpleDateFormat("yy_MM");
+                fileDBName.append(format.format(new java.util.Date()));
+            }
+            logName=fileDBName.toString();
+        }
+
+        return logName;
+    }
 
     public List<String> getLogStatusList() {
         return logStatusList;
