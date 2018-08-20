@@ -229,7 +229,58 @@ public class Order {
      * 同程订单信息
      */
     private TcOrderInfo tcOrderInfo;
-    
+    /**
+     * WN0标
+     */
+    private String statusExt;
+
+    /**
+     * WN0原因
+     */
+    private String failureFlag;
+
+    /**
+     * 是否恶意单
+     */
+    private Integer orderTag;
+
+    /**
+     * 恶意单原因id
+     */
+    private String fraudReasonIDs;
+
+    public String getStatusExt() {
+        return statusExt;
+    }
+
+    public void setStatusExt(String statusExt) {
+        this.statusExt = statusExt;
+    }
+
+    public String getFailureFlag() {
+        return failureFlag;
+    }
+
+    public void setFailureFlag(String failureFlag) {
+        this.failureFlag = failureFlag;
+    }
+
+    public Integer getOrderTag() {
+        return orderTag;
+    }
+
+    public void setOrderTag(Integer orderTag) {
+        this.orderTag = orderTag;
+    }
+
+    public String getFraudReasonIDs() {
+        return fraudReasonIDs;
+    }
+
+    public void setFraudReasonIDs(String fraudReasonIDs) {
+        this.fraudReasonIDs = fraudReasonIDs;
+    }
+
     public Integer getBusinessSystemId() {
         return businessSystemId;
     }
