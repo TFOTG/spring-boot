@@ -296,6 +296,7 @@ public class ExamOrderPo implements Serializable{
 		this.isImmediately = bo.getIsImmediately();
 		this.isNew = bo.getIsNew();
 		this.orderTimeStampLong = bo.getOrderTimestamp().getTime();
+		this.mod = bo.getMod();
 		
 	}
 

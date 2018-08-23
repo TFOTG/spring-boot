@@ -34,7 +34,6 @@ public class RoomNight {
 	private BigDecimal salePrice;
 	@JSONField(format = "yyyy-MM-dd")
 	private Date stayDate;
-	private String roomNightHotelDcRateCode;
 	
 	public String getCurrencyCode() {
 		return currencyCode;
@@ -202,13 +201,5 @@ public class RoomNight {
 
 	public void setStayDate(Date stayDate) {
 		this.stayDate = stayDate;
-	}
-
-	public String getRoomNightHotelDcRateCode() {
-		return roomNightHotelDcRateCode;
-	}
-
-	public void setRoomNightHotelDcRateCode(String roomNightHotelDcRateCode) {
-		this.roomNightHotelDcRateCode = roomNightHotelDcRateCode;
 	}
 }

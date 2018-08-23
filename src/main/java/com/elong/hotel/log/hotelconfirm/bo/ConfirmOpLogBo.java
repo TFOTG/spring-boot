@@ -1,18 +1,20 @@
 package com.elong.hotel.log.hotelconfirm.bo;
 
-import java.util.Date;
-
 import com.elong.hotel.common.bo.OperatorInfoBo;
 import com.elong.hotel.common.config.FullRoomRateConfig;
 import com.elong.hotel.common.helper.ConfigurationManager;
 import com.elong.hotel.common.helper.StringUtils;
+import com.elong.hotel.hotelconfirm.cancelorder.bo.CancelOrderBo;
 import com.elong.hotel.hotelconfirm.confirmorder.bo.ConfirmOrderBo;
 import com.elong.hotel.hotelconfirm.confirmorder.enums.ConfirmType;
 import com.elong.hotel.hotelconfirm.confirmorder.po.ConfirmOrderPo;
 import com.elong.hotel.hotelconfirm.examorder.bo.ExamOrderBo;
 import com.elong.hotel.hotelconfirm.examorder.po.ExamOrderPo;
 import com.elong.hotel.hotelconfirm.group.enums.DepartmentEnum;
+import com.elong.hotel.hotelconfirm.specialorder.bo.SpecialOrderBo;
 import com.elong.hotel.log.hotelconfirm.enums.ConfirmOpType;
+
+import java.util.Date;
 
 /**
  * Created by peng.wang on 17/5/12.
@@ -177,7 +179,7 @@ public class ConfirmOpLogBo {
         this.hotelName = examOrderBo.getHotelName();
         this.supplierName = examOrderBo.getSupplierName();
         this.cardNo = examOrderBo.getCardNo();
-        this.arriveDate = examOrderBo.getTimeEarly();
+        this.arriveDate = examOrderBo.getArriveDate();
         this.opType = confirmOpType.getKey()+"";
         this.opDate = new Date();
         this.department = DepartmentEnum.Exam.getKey() + "";
@@ -187,11 +189,34 @@ public class ConfirmOpLogBo {
         this.targetReserStatus = targetReserStatus;
         this.staffName = examOrderBo.getStaffName();
         this.operator = operator.getOperatorName();
-        this.enterTime = examOrderBo.getEnterTime();
+        this.enterTime = confirmOpType.equals(ConfirmOpType.STORAGE_IN) ? examOrderBo.getEnterTime() == null ? new Date() : examOrderBo.getEnterTime() : examOrderBo.getEnterTime();
         this.respiteTime = examOrderBo.getRespiteTime();
         this.distributeTime = examOrderBo.getDistributeTime();
         this.bookingTime = examOrderBo.getBookingTime();
         this.amendTime = examOrderBo.getAmendTime();
+    }
+
+    public ConfirmOpLogBo(CancelOrderBo cancelOrderBo, ConfirmOpType confirmOpType, String preReserStatus, String targetReserStatus, OperatorInfoBo operator) {
+        this.reserNo = cancelOrderBo.getReserNo();
+        this.hotelId = cancelOrderBo.getsHotelId();
+        this.hotelName = cancelOrderBo.getHotelName();
+        this.supplierName = cancelOrderBo.getSupplierName();
+        //this.cardNo = examOrderBo.getCardNo();
+        this.arriveDate = cancelOrderBo.getArriveDate();
+        this.opType = confirmOpType.getKey()+"";
+        this.opDate = new Date();
+        this.department = DepartmentEnum.Cancel.getKey() + "";
+        //this.groupId = cancelOrderBo.getGroupId();
+        //this.priority = cancelOrderBo.getPriority();
+        this.sourceReserStatus = confirmOpType.equals(ConfirmOpType.STORAGE_IN) ? preReserStatus : cancelOrderBo.getReserStatus();
+        this.targetReserStatus = targetReserStatus;
+        //this.staffName = cancelOrderBo.getStaffName();
+        this.operator = operator.getOperatorName();
+        this.enterTime = confirmOpType.equals(ConfirmOpType.STORAGE_IN) ? cancelOrderBo.getEnterTime() == null ? new Date() : cancelOrderBo.getEnterTime() : cancelOrderBo.getEnterTime();
+        //this.respiteTime = cancelOrderBo.getRespiteTime();
+        //this.distributeTime = cancelOrderBo.getDistributeTime();
+        //this.bookingTime = cancelOrderBo.getBookingTime();
+        this.amendTime = cancelOrderBo.getCancelTime();
     }
 
     public ConfirmOpLogBo(ExamOrderPo po,DepartmentEnum departmentEnum, ConfirmOpType confirmOpType, String operator) {
@@ -221,6 +246,22 @@ public class ConfirmOpLogBo {
 
     public ConfirmOpLogBo()
     {}
+
+    public ConfirmOpLogBo(SpecialOrderBo bo,ConfirmOpType confirmOpType,String preReserStatus, String targetReserStatus, String operator) {
+        this.reserNo = bo.getReserNo();
+        this.hotelId = bo.getHotelId();
+        this.hotelName = bo.getHotelName();
+        this.cardNo = bo.getCardNo();
+        this.arriveDate = bo.getArriveDate();
+        this.opType = confirmOpType.getKey()+"";
+        this.opDate = new Date();
+        this.department = DepartmentEnum.Special.getKey()+"";
+        this.priority = bo.getArriveType();
+        this.sourceReserStatus = preReserStatus;
+        this.targetReserStatus = targetReserStatus;
+        this.operator = operator;
+        this.enterTime = bo.getEnterTime();
+    }
 
     public String getLogDBName() {
         return logDBName;

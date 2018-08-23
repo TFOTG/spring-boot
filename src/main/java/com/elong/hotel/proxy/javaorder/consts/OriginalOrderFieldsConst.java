@@ -11,7 +11,7 @@ public interface OriginalOrderFieldsConst {
 	/**
 	 * 入库 
 	 */
-	String FIELDS_FOR_STORAGE = "status,hotelId,payment,checkInDate,checkOutDate,earlyCheckInTime,lateCheckInTime,otaType,orderFlag,supplierId,supplierType,supplierOtaType,supplierName,promotion,isUrgentVerify,modifyName,roomNo,groupId,additionalStatus,confirmNo,guestName,proxy,createTime,hotelName,gradeId,sumPrice,sumCost,confirmMethod,contactPhone,cardNo,contactMobile,orderFrom,mHotelName,ratePlanId,distanceFromHotelWhenBooking,cityId,modifyTime,notesToHotel,notesToGuest,notesToElong,cooperationOrderId,fullRoomRate,cooperationType,businessSystemId,appClientType,pmsConfirmTime,orderKeyValues,roomCount,roomNightsCount,isAcceptDcOfflineProcess,star,starType,roomTypeName";
+	String FIELDS_FOR_STORAGE = "status,hotelId,payment,checkInDate,checkOutDate,earlyCheckInTime,lateCheckInTime,otaType,orderFlag,supplierId,supplierType,supplierOtaType,supplierName,promotion,isUrgentVerify,modifyName,roomNo,groupId,additionalStatus,confirmNo,guestName,proxy,createTime,hotelName,gradeId,sumPrice,sumCost,confirmMethod,contactPhone,cardNo,contactMobile,orderFrom,mHotelName,ratePlanId,distanceFromHotelWhenBooking,cityId,modifyTime,notesToHotel,notesToGuest,notesToElong,cooperationOrderId,fullRoomRate,cooperationType,businessSystemId,appClientType,pmsConfirmTime,orderKeyValues,roomCount,roomNightsCount,isAcceptDcOfflineProcess,star,starType,roomTypeName,isConfirmed,baseRuleInfo";
 
 	/**
 	 * 确认ivr
@@ -68,7 +68,7 @@ public interface OriginalOrderFieldsConst {
 	/**
 	 * 终拒/员工待处理查询
 	 */
-	String SEARCH_FOR_EXAM = "status,hotelId,payAmount,otaType,isUrgentVerify,additionalStatus,guestName,proxy,hotelName,gradeId,sumPrice,sumCost,contactPhone,contactMobile,orderFrom,ratePlanId,notesToHotel,notesToGuest,notesToElong,businessSystemId,roomCount,roomNightsCount,roomTypeId,roomTypeName,roomNightStayDate,roomNightIsSpecial,roomNightCost,roomNightSalePrice,roomNightRealSalePrice,roomNightRealCost,roomNightBreakfastCount,exchangedSumPrice,provinceId,orderKeyValues,additionalStatusI,promotionSettlementType,cityName,promotionChannelCode,tcOrderId,tcSubOrderId,tcCardNo,baiduLatitude,baiduLongitude,cooperationOrderId,baseRuleInfo";
+	String SEARCH_FOR_EXAM = "status,cardNo,hotelId,checkInDate,checkOutDate,earlyCheckInTime,lateCheckInTime,payment,payAmount,otaType,isUrgentVerify,additionalStatus,guestName,proxy,hotelName,gradeId,sumPrice,sumCost,contactPhone,contactMobile,orderFrom,ratePlanId,notesToHotel,notesToGuest,notesToElong,businessSystemId,roomCount,roomNightsCount,roomTypeId,roomTypeName,roomNightStayDate,roomNightIsSpecial,roomNightCost,roomNightSalePrice,roomNightRealSalePrice,roomNightRealCost,roomNightBreakfastCount,exchangedSumPrice,provinceId,orderKeyValues,additionalStatusI,promotionSettlementType,cityName,promotionChannelCode,tcOrderId,tcSubOrderId,tcCardNo,baiduLatitude,baiduLongitude,cooperationOrderId,baseRuleInfo,roomNightCurrencyCode,roomNightInventoryType";
 	
 	/**
 	 * 终拒查询备注信息

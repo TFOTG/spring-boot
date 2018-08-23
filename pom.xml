@@ -3,7 +3,7 @@
     <groupId>com.elong.hotel</groupId>
     <artifactId>confirm-entity</artifactId>
     <packaging>jar</packaging>
-    <version>1.0.15-SNAPSHOT</version>
+    <version>1.0.16-SNAPSHOT</version>
     <name>confirm-entity</name>
     <url>http://maven.apache.org</url>
     <!-- scm git trunk -->

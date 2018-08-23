@@ -1,6 +1,6 @@
-package com.elong.hotel.hotelconfirm.cancel.po;
+package com.elong.hotel.hotelconfirm.cancelorder.po;
 
-import sun.util.calendar.BaseCalendar;
+import com.elong.hotel.hotelconfirm.cancelorder.bo.CancelOrderBo;
 
 import java.util.Date;
 
@@ -59,7 +59,7 @@ public class CancelOrderPo {
      */
     private Integer isDC;
 
-    private String supplierOtaType;
+    private Integer supplierOtaType;
 
     //是否供应商订单
     private Integer isSupplier;
@@ -77,6 +77,52 @@ public class CancelOrderPo {
      * 置为取消状态时间
      */
     private Date cancelTime;
+
+    private Date _timeStamp;
+
+    private Long orderTimeStampLong;
+
+    private String reserStatus;
+
+    public CancelOrderPo()
+    {}
+
+    public CancelOrderPo(CancelOrderBo bo){
+
+        this.reserNo = bo.getReserNo();
+
+        this.arriveDate = bo.getArriveDate();
+
+        this.leaveDate = bo.getLeaveDate();
+
+        this.enterTime = bo.getEnterTime();
+
+        this.sHotelId = bo.getsHotelId();
+
+        this.hotelName = bo.getHotelName();
+
+        this.orderPayType = bo.getOrderPayType();
+
+        this.canCancelTime = bo.getCanCancelTime();
+
+        this.isDC = bo.getIsDC();
+
+        this.supplierOtaType = bo.getSupplierOtaType();
+
+        this.isSupplier = bo.getIsSupplier();
+
+        this.supplierId = bo.getsHotelId();
+
+        this.supplierName = bo.getSupplierName();
+
+        this.cancelTime = bo.getCancelTime();
+
+        this._timeStamp = bo.get_timeStamp();
+
+        this.orderTimeStampLong = this._timeStamp.getTime();
+
+        this.reserStatus = bo.getReserStatus();
+    }
 
     public long getId() {
         return id;
@@ -158,11 +204,11 @@ public class CancelOrderPo {
         this.isDC = isDC;
     }
 
-    public String getSupplierOtaType() {
+    public Integer getSupplierOtaType() {
         return supplierOtaType;
     }
 
-    public void setSupplierOtaType(String supplierOtaType) {
+    public void setSupplierOtaType(Integer supplierOtaType) {
         this.supplierOtaType = supplierOtaType;
     }
 
@@ -196,5 +242,29 @@ public class CancelOrderPo {
 
     public void setCancelTime(Date cancelTime) {
         this.cancelTime = cancelTime;
+    }
+
+    public Date get_timeStamp() {
+        return _timeStamp;
+    }
+
+    public void set_timeStamp(Date _timeStamp) {
+        this._timeStamp = _timeStamp;
+    }
+
+    public Long getOrderTimeStampLong() {
+        return orderTimeStampLong;
+    }
+
+    public void setOrderTimeStampLong(Long orderTimeStampLong) {
+        this.orderTimeStampLong = orderTimeStampLong;
+    }
+
+    public String getReserStatus() {
+        return reserStatus;
+    }
+
+    public void setReserStatus(String reserStatus) {
+        this.reserStatus = reserStatus;
     }
 }

@@ -8,6 +8,7 @@ import java.util.Date;
 import com.alibaba.fastjson.annotation.JSONField;
 import com.elong.common.util.StringUtils;
 import com.elong.hotel.common.config.ExamOrderConfig;
+import com.elong.hotel.common.enums.PendingOrderKeyValueEnum;
 import com.elong.hotel.common.helper.ConfigurationManager;
 import com.elong.hotel.hotelconfirm.examorder.enums.OrderTypeEnum;
 import com.elong.hotel.hotelconfirm.examorder.po.ExamOrderPo;
@@ -329,11 +330,6 @@ public class PendingExamOrderBo implements Serializable{
 	private Integer buyOut;
 	
 	/**
-	 * 转让
-	 */
-	private Integer increaseCount;
-	
-	/**
 	 * 是否超过暂缓时间
 	 */
 	private int isOverRespiteTime;
@@ -348,6 +344,11 @@ public class PendingExamOrderBo implements Serializable{
 	 * -1：未知，0：预付，1：现付首晚，2：现付全额，3：现付部分, 4:现付非担保
 	 */
 	private int orderVoucherType;
+	
+	/**
+	 * 是否赫程新流程
+	 */
+	private int isNewFlow;
 	
 	public PendingExamOrderBo() {
 		super();
@@ -758,22 +759,32 @@ public class PendingExamOrderBo implements Serializable{
 	}
 
 	public void setOrder(Order order) {
+		this.arriveDate = order.getCheckInDate();
+		this.leaveDate = order.getCheckOutDate();
+		this.timeEarly = order.getEarlyCheckInTime();
+		this.timeLate = order.getLateCheckInTime();
 		this.order = order;
-		if((order.getAdditionalStatus()&67108864) == 67108864){//判断是否直连订单
-			this.isDCOrder = 1;
-		}
 		this.isSupposed = calIsSupposed(order);//判断订单是否赔付
 		if((order.getAdditionalStatusI()&1073741824) == 1073741824){//判断订单是否国际
 			this.isInternational = 1;
 		}
 		if(order.getOrderKeyValues() != null){//判断订单是否华住
 			for(OrderKeyValue keyValue : order.getOrderKeyValues()){
-				if(keyValue.getKey().equalsIgnoreCase("FirstJoinPromotionType") && keyValue.getValue().equalsIgnoreCase("1001")){
+				if(keyValue.getKey().equalsIgnoreCase(PendingOrderKeyValueEnum.FIRSTJOINPROMOTIONTYPE.getKey()) && 
+						keyValue.getValue().equalsIgnoreCase(PendingOrderKeyValueEnum.FIRSTJOINPROMOTIONTYPE.getValue())){
 					this.isHuaZhu = 1;
 					continue;
 				}
-				if(keyValue.getKey().equalsIgnoreCase("HourRoomStay")){//判断小时房
+				if(keyValue.getKey().equalsIgnoreCase(PendingOrderKeyValueEnum.HOURROOMSTAY.getKey())){//判断小时房
 					this.isHourRoom = 1;
+					continue;
+				}
+				if(keyValue.getKey().equalsIgnoreCase(PendingOrderKeyValueEnum.PMSPROCESSINGSTATUS.getKey())){
+					this.isDCOrder = 1;
+					continue;
+				}
+				if(keyValue.getKey().equalsIgnoreCase(PendingOrderKeyValueEnum.USENEWHCFLOW.getKey())){
+					this.isNewFlow = 1;
 					continue;
 				}
 			}
@@ -787,22 +798,17 @@ public class PendingExamOrderBo implements Serializable{
 		if((order.getOrderFlag()&144115188075855872L) == 144115188075855872L){//判断是否确认后推翻
 			this.isConfirmOverFlow = 1;
 		}
-		if(order.getRoomNights() != null && order.getRoomNights().size() != 0){//判断“转让”，买断
-			int buy = 0, increase = 0;
+		if(order.getRoomNights() != null && order.getRoomNights().size() != 0){//判断标识：买断
+			int buy = 0;
 			for(RoomNight room : order.getRoomNights()){
 				if(room.getInventoryType() != null){
-					if(room.getInventoryType() == 1){
-						increase += 1;
-					}else if(room.getInventoryType() == 3){
+					if(room.getInventoryType() == 3){
 						buy += 1;
 					}
 				}
 			}
 			if(buy != 0){
 				this.buyOut = buy;
-			}
-			if(increase != 0){
-				this.increaseCount = increase;
 			}
 		}
 	}
@@ -894,14 +900,6 @@ public class PendingExamOrderBo implements Serializable{
 	public void setBuyOut(Integer buyOut) {
 		this.buyOut = buyOut;
 	}
-
-	public Integer getIncreaseCount() {
-		return increaseCount;
-	}
-
-	public void setIncreaseCount(Integer increaseCount) {
-		this.increaseCount = increaseCount;
-	}
 	
 	public int getIsOverRespiteTime() {
 		return isOverRespiteTime;
@@ -927,6 +925,14 @@ public class PendingExamOrderBo implements Serializable{
 		this.orderVoucherType = orderVoucherType;
 	}
 
+	public int getIsNewFlow() {
+		return isNewFlow;
+	}
+
+	public void setIsNewFlow(int isNewFlow) {
+		this.isNewFlow = isNewFlow;
+	}
+	
 	/**
 	 * 
 	 * 判断是否赔付 
@@ -959,4 +965,5 @@ public class PendingExamOrderBo implements Serializable{
 		}
 		return 0;
 	}
+	
 }

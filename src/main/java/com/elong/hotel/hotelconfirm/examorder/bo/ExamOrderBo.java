@@ -89,8 +89,6 @@ public class ExamOrderBo extends CompareEntityBase {
 	public ExamOrderBo(Order order,ExamOrderPo po,OperatorInfoBo operator,List<OrderHistory> orderHistory, Integer refusedCancelNum, Integer repeatRefusedNum) {
 		if(order != null && po != null){
 			this.setExamOrder(po);
-			//终拒时间
-			this.amendTime = operator.getOperatorTime();
 			//是否选择马上到店
 			userChoiceUrge4App = (order.getOrderFlag() & OrderFlagConst.IS_ARRIVE_NOW_ORDER) == OrderFlagConst.IS_ARRIVE_NOW_ORDER;
 			//计算拒单时长
@@ -102,6 +100,8 @@ public class ExamOrderBo extends CompareEntityBase {
 			this.reserStatus = order.getStatus();
 			this.memberLevel = order.getGradeId();
 			this.smsStatus=po.getSmsStatus();
+			this.mod = order.getOrderId().intValue() % 10;
+			this.isConfirm = order.getContact() != null && order.getContact().getIsConfirmed() ? 1 : 0;
 		}else if(order != null && po == null){
 			this.reserNo = order.getOrderId().intValue();
 			this.reserStatus = order.getStatus();
@@ -193,6 +193,7 @@ public class ExamOrderBo extends CompareEntityBase {
 		this.isNew = po.getIsNew();
 		this.phone = po.getPhone();
 		this.smsStatus=po.getSmsStatus();
+		this.mod = po.getMod();
 	}
 
 	public Integer getReserNo() {

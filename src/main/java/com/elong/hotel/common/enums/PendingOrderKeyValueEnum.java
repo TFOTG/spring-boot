@@ -17,7 +17,10 @@ public enum PendingOrderKeyValueEnum {
 
     USENEWHCFLOW("UseNewHCFlow","使用赫程新流程"),
 	
-	RESPITETIMESTAMP("2000-01-01 00:00:00","待处理订单");
+	RESPITETIMESTAMP("2000-01-01 00:00:00","待处理订单"),
+	
+	FIRSTJOINPROMOTIONTYPE("FirstJoinPromotionType","1001");
+	
 	private String key;
 	
 	private String value;
