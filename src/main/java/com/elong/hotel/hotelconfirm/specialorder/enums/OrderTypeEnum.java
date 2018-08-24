@@ -8,7 +8,7 @@ public enum OrderTypeEnum {
 
     None(0,"默认"),
 
-    MaliciousOrder(1,"恶意"),
+    FraudChange(1,"恶意"),
 
     NewOrder(2,"新单"),
 
