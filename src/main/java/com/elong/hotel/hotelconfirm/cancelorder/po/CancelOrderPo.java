@@ -119,7 +119,7 @@ public class CancelOrderPo {
 
         this._timeStamp = bo.get_timeStamp();
 
-        this.orderTimeStampLong = this._timeStamp.getTime();
+        this.orderTimeStampLong = bo.getOrderTimestamp().getTime();
 
         this.reserStatus = bo.getReserStatus();
     }
