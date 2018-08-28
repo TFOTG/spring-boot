@@ -63,6 +63,8 @@ public class CancelOrderBo extends CompareEntityBase {
      */
     private Integer isDC;
 
+    private Integer isElongOrder;
+
     private Integer supplierOtaType;
 
     //是否供应商订单
@@ -108,6 +110,8 @@ public class CancelOrderBo extends CompareEntityBase {
             this.sHotelId = order.getHotelId();
             this.hotelName = order.getHotelName();
 
+            //关于直连和直签
+
             this.supplierId = String.valueOf(order.getSupplierId());
             this.supplierName = order.getSupplierName();
             this.supplierOtaType = order.getSupplierOtaType();
@@ -145,6 +149,8 @@ public class CancelOrderBo extends CompareEntityBase {
         this.canCancelTime = po.getCanCancelTime();
 
         this.isDC = po.getIsDC();
+
+        this.isElongOrder = po.getIsElongOrder();
 
         this.supplierOtaType = po.getSupplierOtaType();
 
@@ -229,6 +235,14 @@ public class CancelOrderBo extends CompareEntityBase {
 
     public void setIsDC(Integer isDC) {
         this.isDC = isDC;
+    }
+
+    public Integer getIsElongOrder() {
+        return isElongOrder;
+    }
+
+    public void setIsElongOrder(Integer isElongOrder) {
+        this.isElongOrder = isElongOrder;
     }
 
     public Integer getSupplierOtaType() {
