@@ -181,12 +181,6 @@ public class SoaConfig {
 	private String batchGetHotelContactRequest;
 	private String productGetHotelContactMethod;
 
-	private String xworkflowService;
-
-	private String xworkflowMethod;
-
-	private int xworkflowTimeout;
-
 	/**
 	 * 调用ebk延迟接口service
 	 */
@@ -416,29 +410,6 @@ public class SoaConfig {
 		this.confirmOrder = confirmOrder;
 	}
 
-	public String getXworkflowService() {
-		return xworkflowService;
-	}
-
-	public void setXworkflowService(String xworkflowService) {
-		this.xworkflowService = xworkflowService;
-	}
-
-	public String getXworkflowMethod() {
-		return xworkflowMethod;
-	}
-
-	public void setXworkflowMethod(String xworkflowMethod) {
-		this.xworkflowMethod = xworkflowMethod;
-	}
-
-	public int getXworkflowTimeout() {
-		return xworkflowTimeout;
-	}
-
-	public void setXworkflowTimeout(int xworkflowTimeout) {
-		this.xworkflowTimeout = xworkflowTimeout;
-	}
 
 	public String getProductGetHotelContactMethod() {
 		return productGetHotelContactMethod;
