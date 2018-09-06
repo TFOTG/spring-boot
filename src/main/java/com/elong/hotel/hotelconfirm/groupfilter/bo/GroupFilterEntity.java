@@ -74,6 +74,7 @@ public class GroupFilterEntity<T extends GroupBase, Y extends CompareEntityBase>
                             double min = Double.valueOf(tagStrings.get(0));
                             double max = Double.valueOf(tagStrings.get(1));
                             boolean inNumInterval = (Double.valueOf(value.toString()) >= min) && (Double.valueOf(value.toString()) < max);
+                            System.out.println(name+"区间：["+min+","+max+"]"+" value:"+value);
                             if (inNumInterval) {
                                 compareMetaDate.put(name, CompareResultEnum.On);
                             } else {
