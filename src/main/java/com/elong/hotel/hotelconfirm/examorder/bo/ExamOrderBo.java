@@ -667,11 +667,12 @@ public class ExamOrderBo extends CompareEntityBase {
 		long timeDiff = System.currentTimeMillis() - this.amendTime.getTime();
 		System.out.println(this.reserNo+" 拒单时长："+timeDiff+"系统当前时间："+new Date(System.currentTimeMillis())+"拒单时间："+this.amendTime);
 		if(timeDiff > 0){
-			int second = (int) timeDiff / (1000 * 60);
+			int second = (int) (timeDiff / (1000 * 60));
 			int minute = second / 60;
 			if((second % 60) > 0){
 				minute += 1;
 			}
+			System.out.println(this.reserNo+" 拒单时长："+minute+"系统当前时间："+new Date(System.currentTimeMillis())+"拒单时间："+this.amendTime);
 			return minute;
 		}
 		return 0;
@@ -701,4 +702,5 @@ public class ExamOrderBo extends CompareEntityBase {
 		
 		return c;
 	}
+	
 }
