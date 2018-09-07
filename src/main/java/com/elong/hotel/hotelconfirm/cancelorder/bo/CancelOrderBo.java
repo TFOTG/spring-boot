@@ -63,6 +63,8 @@ public class CancelOrderBo extends CompareEntityBase {
      */
     private Integer isDC;
 
+    private Integer isElongOrder;
+
     private Integer supplierOtaType;
 
     //是否供应商订单
@@ -86,35 +88,12 @@ public class CancelOrderBo extends CompareEntityBase {
 
     private String reserStatus;
 
+    private Date orderTimestamp;
+
     public CancelOrderBo(CancelOrderPo po){
 
-        this.reserNo = po.getReserNo();
+        this.setCancelOrder(po);
 
-        this.arriveDate = po.getArriveDate();
-
-        this.leaveDate = po.getLeaveDate();
-
-        this.enterTime = po.getEnterTime();
-
-        this.sHotelId = po.getsHotelId();
-
-        this.hotelName = po.getHotelName();
-
-        this.orderPayType = po.getOrderPayType();
-
-        this.canCancelTime = po.getCanCancelTime();
-
-        this.isDC = po.getIsDC();
-
-        this.supplierOtaType = po.getSupplierOtaType();
-
-        this.isSupplier = po.getIsSupplier();
-
-        this.supplierId = po.getsHotelId();
-
-        this.supplierName = po.getSupplierName();
-
-        this.cancelTime = po.getCancelTime();
     }
 
     public CancelOrderBo(Order order,CancelOrderPo po, GetOrderStatusChangeTimeBo orderStatusChange, OperatorInfoBo operator,int vouchType){
@@ -131,6 +110,8 @@ public class CancelOrderBo extends CompareEntityBase {
             this.sHotelId = order.getHotelId();
             this.hotelName = order.getHotelName();
 
+            //关于直连和直签
+
             this.supplierId = String.valueOf(order.getSupplierId());
             this.supplierName = order.getSupplierName();
             this.supplierOtaType = order.getSupplierOtaType();
@@ -142,6 +123,8 @@ public class CancelOrderBo extends CompareEntityBase {
             else if(vouchType > 0){
                 this.orderPayType = 2;
             }
+
+            this.orderTimestamp = order.getOrderTimestamp();
         }
         else if(order == null && po != null){
             this.setCancelOrder(po);
@@ -166,6 +149,8 @@ public class CancelOrderBo extends CompareEntityBase {
         this.canCancelTime = po.getCanCancelTime();
 
         this.isDC = po.getIsDC();
+
+        this.isElongOrder = po.getIsElongOrder();
 
         this.supplierOtaType = po.getSupplierOtaType();
 
@@ -252,6 +237,14 @@ public class CancelOrderBo extends CompareEntityBase {
         this.isDC = isDC;
     }
 
+    public Integer getIsElongOrder() {
+        return isElongOrder;
+    }
+
+    public void setIsElongOrder(Integer isElongOrder) {
+        this.isElongOrder = isElongOrder;
+    }
+
     public Integer getSupplierOtaType() {
         return supplierOtaType;
     }
@@ -306,5 +299,13 @@ public class CancelOrderBo extends CompareEntityBase {
 
     public void setReserStatus(String reserStatus) {
         this.reserStatus = reserStatus;
+    }
+
+    public Date getOrderTimestamp() {
+        return orderTimestamp;
+    }
+
+    public void setOrderTimestamp(Date orderTimestamp) {
+        this.orderTimestamp = orderTimestamp;
     }
 }

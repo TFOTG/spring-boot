@@ -26,6 +26,9 @@ public class ServerRunningContext implements Serializable {
     private OperatorInfoBo operator;
 
     private OrderStatusChangeRequest request;
+    
+    // -1：未知，0：预付，1：现付首晚，2：现付全额，3：现付部分, 4:现付非担保
+    private int vouchType;
 
     public Integer getReserNo() {
         return reserNo;
@@ -82,4 +85,13 @@ public class ServerRunningContext implements Serializable {
     public void setRequest(OrderStatusChangeRequest request) {
         this.request = request;
     }
+
+	public int getVouchType() {
+		return vouchType;
+	}
+
+	public void setVouchType(int vouchType) {
+		this.vouchType = vouchType;
+	}
+    
 }

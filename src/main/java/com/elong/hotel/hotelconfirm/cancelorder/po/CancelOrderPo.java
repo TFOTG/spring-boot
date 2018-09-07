@@ -59,6 +59,11 @@ public class CancelOrderPo {
      */
     private Integer isDC;
 
+    /**
+     * 是否艺龙直签
+     */
+    private Integer isElongOrder;
+
     private Integer supplierOtaType;
 
     //是否供应商订单
@@ -107,6 +112,8 @@ public class CancelOrderPo {
 
         this.isDC = bo.getIsDC();
 
+        this.isElongOrder = bo.getIsElongOrder();
+
         this.supplierOtaType = bo.getSupplierOtaType();
 
         this.isSupplier = bo.getIsSupplier();
@@ -119,7 +126,7 @@ public class CancelOrderPo {
 
         this._timeStamp = bo.get_timeStamp();
 
-        this.orderTimeStampLong = this._timeStamp.getTime();
+        this.orderTimeStampLong = bo.getOrderTimestamp().getTime();
 
         this.reserStatus = bo.getReserStatus();
     }
@@ -202,6 +209,14 @@ public class CancelOrderPo {
 
     public void setIsDC(Integer isDC) {
         this.isDC = isDC;
+    }
+
+    public Integer getIsElongOrder() {
+        return isElongOrder;
+    }
+
+    public void setIsElongOrder(Integer isElongOrder) {
+        this.isElongOrder = isElongOrder;
     }
 
     public Integer getSupplierOtaType() {

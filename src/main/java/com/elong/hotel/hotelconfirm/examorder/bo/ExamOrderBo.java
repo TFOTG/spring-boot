@@ -666,7 +666,7 @@ public class ExamOrderBo extends CompareEntityBase {
 	public Integer calRejectTime(){
 		long timeDiff = System.currentTimeMillis() - this.amendTime.getTime();
 		if(timeDiff > 0){
-			int second = (int) timeDiff / (1000 * 60);
+			int second = (int) (timeDiff / (1000 * 60));
 			int minute = second / 60;
 			if((second % 60) > 0){
 				minute += 1;
@@ -700,4 +700,5 @@ public class ExamOrderBo extends CompareEntityBase {
 		
 		return c;
 	}
+	
 }

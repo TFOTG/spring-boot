@@ -20,6 +20,8 @@ public class ServerRunningContext implements Serializable {
 	private OrderConsumerInfoBo orderConsumerInfoBo;
 
 	private OperatorInfoBo operator;
+	
+	private int vouchType;
 
     public ServerRunningContext() {
     }
@@ -82,4 +84,13 @@ public class ServerRunningContext implements Serializable {
     public void setOperator(OperatorInfoBo operator) {
         this.operator = operator;
     }
+
+	public int getVouchType() {
+		return vouchType;
+	}
+
+	public void setVouchType(int vouchType) {
+		this.vouchType = vouchType;
+	}
+    
 }

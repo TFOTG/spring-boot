@@ -92,6 +92,11 @@ public class ExamOrderConfig {
      * 终拒兜底分组ID
      */
     private Integer defaultGroupId;
+    
+    /**
+     * 外拨电话开关
+     */
+	private int citySwitch;
 
     public ExamOrderConfig(){
     	super();
@@ -270,4 +275,13 @@ public class ExamOrderConfig {
     public void setPriority4SpecialUrgeMinute(Integer priority4SpecialUrgeMinute) {
         this.priority4SpecialUrgeMinute = priority4SpecialUrgeMinute;
     }
+
+	public int getCitySwitch() {
+		return citySwitch;
+	}
+
+	public void setCitySwitch(int citySwitch) {
+		this.citySwitch = citySwitch;
+	}
+    
 }
