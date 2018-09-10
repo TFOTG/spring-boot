@@ -82,6 +82,11 @@ public class PendingExamOrderBo implements Serializable{
 	private Long cardNo;
 	
 	/**
+	 * 预定卡号（String）
+	 */
+	private String cardNoStr;
+	
+	/**
 	 * 房间数量
 	 */
 	private Integer roomNum;
@@ -964,6 +969,14 @@ public class PendingExamOrderBo implements Serializable{
 			}
 		}
 		return 0;
+	}
+
+	public String getCardNoStr() {
+		return cardNoStr;
+	}
+
+	public void setCardNoStr(String cardNoStr) {
+		this.cardNoStr = cardNoStr;
 	}
 	
 }
