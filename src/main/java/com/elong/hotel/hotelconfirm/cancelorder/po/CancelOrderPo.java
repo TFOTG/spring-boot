@@ -64,9 +64,14 @@ public class CancelOrderPo {
      */
     private Integer isElongOrder;
 
+    /**
+     * 供应商类型
+     */
     private Integer supplierOtaType;
 
-    //是否供应商订单
+    /**
+     * 是否供应商订单
+     */
     private Integer isSupplier;
     /**
      * 供应商Id

@@ -13,7 +13,12 @@ import java.io.Serializable;
  */
 public class ServerRunningContext implements Serializable {
 
-    private Integer reserNo;
+    /** 
+	 * long ServerRunningContext.java serialVersionUID
+	 */
+	private static final long serialVersionUID = 1L;
+
+	private Integer reserNo;
 
     private CancelOrderBo originCancelOrderBo;
 

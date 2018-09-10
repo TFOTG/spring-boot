@@ -35,7 +35,7 @@ public class CancelorderDomainContext implements Serializable {
     private int vouchType;
 
     public CancelorderDomainContext(Integer reserNo, ServerRunningDomainEnum serverRunningDomainEnum, Order order,
-                                    CancelOrderPo cancelOrderPo, OrderConsumerInfoBo orderConsumerInfoBo,int vouchType)
+                                    CancelOrderPo cancelOrderPo, OrderConsumerInfoBo orderConsumerInfoBo,int vouchType, OperatorInfoBo operator)
     {
         this.reserNo = reserNo;
         this.serverRunningDomainEnum = serverRunningDomainEnum;
@@ -43,6 +43,7 @@ public class CancelorderDomainContext implements Serializable {
         this.cancelOrderPo = cancelOrderPo;
         this.orderConsumerInfoBo = orderConsumerInfoBo;
         this.vouchType = vouchType;
+        this.operator = operator;
     }
 
 
