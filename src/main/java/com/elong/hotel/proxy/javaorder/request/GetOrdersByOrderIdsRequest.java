@@ -22,6 +22,11 @@ public class GetOrdersByOrderIdsRequest implements Serializable {
 	// 要查询的字段
 	private List<String> fields;
 
+	public GetOrdersByOrderIdsRequest(List<Integer> orderIds, String fields){
+		this.orderIds = orderIds;
+		this.fields = Arrays.asList(fields.split(","));
+	}
+	
 	public GetOrdersByOrderIdsRequest(List<Integer> orderIds, String... fields) {
 		this.orderIds = orderIds;
 		this.addFields(fields);

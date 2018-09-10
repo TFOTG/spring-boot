@@ -106,7 +106,7 @@ public class CancelOrderBo extends CompareEntityBase {
             this.reserStatus = order.getStatus();
             this.arriveDate = order.getCheckInDate();
             this.leaveDate = order.getCheckOutDate();
-
+            this.enterTime = new Date();
             this.sHotelId = order.getHotelId();
             this.hotelName = order.getHotelName();
 

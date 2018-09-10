@@ -74,4 +74,9 @@ public interface OriginalOrderFieldsConst {
 	 * 终拒查询备注信息
 	 */
 	String SEARCH_NOTES_FOR_EXAM = "notesToElong,notesToHotel";
+	
+	/**
+	 * 取消待处理列表
+	 */
+	String SEARCH_FOR_CANCEL_PENDING = "hotelId,checkInDate,checkOutDate";
 }
