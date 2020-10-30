@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="booking-entity" />
+        <module name="booking-service" />
+        <module name="booking-web" />
+        <module name="confirm-api" />
+        <module name="confirm-entity" />
+        <module name="confirm-schedule" />
+        <module name="confirm-service" />
+        <module name="confirm-web" />
+        <module name="CustomerService-API" />
+        <module name="CustomerService-Entity" />
+        <module name="CustomerService-Schedule" />
+        <module name="CustomerService-Web" />
+        <module name="hotel-mis-common" />
+        <module name="verify-api" />
+        <module name="verify-entity" />
+        <module name="verify-schedule" />
+        <module name="verify-service" />
+        <module name="verify-web" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="booking-entity" target="1.7" />
+      <module name="booking-service" target="1.7" />
+      <module name="booking-web" target="1.7" />
+      <module name="confirm-api" target="1.7" />
+      <module name="confirm-entity" target="1.7" />
+      <module name="confirm-schedule" target="1.7" />
+      <module name="confirm-service" target="1.7" />
+      <module name="confirm-web" target="1.7" />
+      <module name="CustomerService-API" target="1.7" />
+      <module name="CustomerService-Entity" target="1.7" />
+      <module name="CustomerService-Schedule" target="1.7" />
+      <module name="CustomerService-Web" target="1.7" />
+      <module name="hotel-mis-common" target="1.7" />
+      <module name="verify-api" target="1.7" />
+      <module name="verify-entity" target="1.7" />
+      <module name="verify-schedule" target="1.7" />
+      <module name="verify-service" target="1.7" />
+      <module name="verify-web" target="1.7" />
+    </bytecodeTargetLevel>
+  </component>
+</project>

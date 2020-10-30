@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: com.elong:hotel-soa-client:1.12.9">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/../../repository/com/elong/hotel-soa-client/1.12.9/hotel-soa-client-1.12.9.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$PROJECT_DIR$/../../repository/com/elong/hotel-soa-client/1.12.9/hotel-soa-client-1.12.9-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$PROJECT_DIR$/../../repository/com/elong/hotel-soa-client/1.12.9/hotel-soa-client-1.12.9-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

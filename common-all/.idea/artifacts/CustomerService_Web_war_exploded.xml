@@ -1,0 +1,165 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="CustomerService-Web:war exploded">
+    <output-path>$PROJECT_DIR$/../customerservice-web/target/CustomerService-Web</output-path>
+    <root id="root">
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="CustomerService-Web" />
+        </element>
+        <element id="directory" name="lib">
+          <element id="library" level="project" name="Maven: com.elong.hotel:file-storage-client:1.0.0" />
+          <element id="library" level="project" name="Maven: org.apache.httpcomponents:httpclient:4.3.3" />
+          <element id="library" level="project" name="Maven: commons-codec:commons-codec:1.6" />
+          <element id="library" level="project" name="Maven: org.apache.httpcomponents:httpmime:4.3.3" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-aop:3.2.3.RELEASE" />
+          <element id="library" level="project" name="Maven: aopalliance:aopalliance:1.0" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-aspects:3.2.3.RELEASE" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-beans:3.2.3.RELEASE" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-context:3.2.3.RELEASE" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-context-support:3.2.3.RELEASE" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-core:3.2.3.RELEASE" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-expression:3.2.3.RELEASE" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-jdbc:3.2.3.RELEASE" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-orm:3.2.3.RELEASE" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-web:3.2.3.RELEASE" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-test:3.2.3.RELEASE" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-tx:3.2.3.RELEASE" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-webmvc:3.2.3.RELEASE" />
+          <element id="library" level="project" name="Maven: org.hibernate:hibernate-validator:4.1.0.Final" />
+          <element id="library" level="project" name="Maven: javax.validation:validation-api:1.0.0.GA" />
+          <element id="library" level="project" name="Maven: org.hibernate:hibernate:3.2.5.ga" />
+          <element id="library" level="project" name="Maven: net.sf.ehcache:ehcache:1.2.3" />
+          <element id="library" level="project" name="Maven: asm:asm-attrs:1.5.3" />
+          <element id="library" level="project" name="Maven: antlr:antlr:2.7.6" />
+          <element id="library" level="project" name="Maven: cglib:cglib:2.1_3" />
+          <element id="library" level="project" name="Maven: asm:asm:1.5.3" />
+          <element id="library" level="project" name="Maven: javax.transaction:jta:1.1" />
+          <element id="library" level="project" name="Maven: org.mybatis:mybatis-spring:1.2.0" />
+          <element id="library" level="project" name="Maven: org.mybatis:mybatis:3.2.0" />
+          <element id="library" level="project" name="Maven: dom4j:dom4j:1.6" />
+          <element id="library" level="project" name="Maven: xml-apis:xml-apis:1.0.b2" />
+          <element id="library" level="project" name="Maven: mysql:mysql-connector-java:5.1.27" />
+          <element id="library" level="project" name="Maven: org.codehaus.groovy:groovy-all:1.7.6" />
+          <element id="library" level="project" name="Maven: backport-util-concurrent:backport-util-concurrent:3.1" />
+          <element id="library" level="project" name="Maven: commons-dbcp:commons-dbcp:1.4" />
+          <element id="library" level="project" name="Maven: commons-pool:commons-pool:1.5.4" />
+          <element id="library" level="project" name="Maven: commons-logging:commons-logging:1.1.1" />
+          <element id="library" level="project" name="Maven: org.apache.directory.studio:org.apache.commons.logging:1.1.1" />
+          <element id="library" level="project" name="Maven: org.apache.directory.studio:org.apache.commons.lang:2.6" />
+          <element id="library" level="project" name="Maven: org.apache.directory.studio:org.apache.commons.io:2.4" />
+          <element id="library" level="project" name="Maven: org.apache.directory.studio:org.apache.commons.collections:3.2.1" />
+          <element id="library" level="project" name="Maven: org.apache.directory.studio:org.apache.commons.pool:1.6" />
+          <element id="library" level="project" name="Maven: commons-beanutils:commons-beanutils:1.8.3" />
+          <element id="library" level="project" name="Maven: log4j:log4j:1.2.17" />
+          <element id="library" level="project" name="Maven: org.apache.velocity:velocity:1.7" />
+          <element id="library" level="project" name="Maven: org.apache.velocity:velocity-tools:2.0" />
+          <element id="library" level="project" name="Maven: commons-digester:commons-digester:1.8" />
+          <element id="library" level="project" name="Maven: commons-chain:commons-chain:1.1" />
+          <element id="library" level="project" name="Maven: commons-validator:commons-validator:1.3.1" />
+          <element id="library" level="project" name="Maven: sslext:sslext:1.2-0" />
+          <element id="library" level="project" name="Maven: org.apache.struts:struts-core:1.3.8" />
+          <element id="library" level="project" name="Maven: org.apache.struts:struts-taglib:1.3.8" />
+          <element id="library" level="project" name="Maven: org.apache.struts:struts-tiles:1.3.8" />
+          <element id="library" level="project" name="Maven: org.slf4j:slf4j-log4j12:1.7.6" />
+          <element id="library" level="project" name="Maven: com.elong.hotel:spring-mvc-enhance:1.10.7" />
+          <element id="library" level="project" name="Maven: commons-lang:commons-lang:2.6" />
+          <element id="library" level="project" name="Maven: com.elong.hotel:commons-util:1.1.0" />
+          <element id="library" level="project" name="Maven: org.aspectj:aspectjweaver:1.8.0" />
+          <element id="library" level="project" name="Maven: org.slf4j:slf4j-api:1.7.7" />
+          <element id="archive" name="CustomerService-Entity-3.21.0-SNAPSHOT.jar">
+            <element id="module-output" name="CustomerService-Entity" />
+          </element>
+          <element id="library" level="project" name="Maven: org.mockito:mockito-all:1.9.5" />
+          <element id="library" level="project" name="Maven: javax.mail:mail:1.4.1" />
+          <element id="library" level="project" name="Maven: javax.activation:activation:1.1" />
+          <element id="library" level="project" name="Maven: com.elong:hotswitch-client:1.9.0" />
+          <element id="library" level="project" name="Maven: joda-time:joda-time:2.7" />
+          <element id="library" level="project" name="Maven: jackson:jackson-all:1.9.0" />
+          <element id="file-copy" path="$PROJECT_DIR$/../../repository/com/elong/pb/remit/pb-remit-constant/0.0.1.0-SNAPSHOT/pb-remit-constant-0.0.1.0-20180104.060920-9.jar" output-file-name="pb-remit-constant-0.0.1.0-SNAPSHOT.jar" />
+          <element id="archive" name="hotel-mis-common-1.2.0-SNAPSHOT.jar">
+            <element id="module-output" name="hotel-mis-common" />
+          </element>
+          <element id="library" level="project" name="Maven: com.elong:hotel-soa-server:1.10.4" />
+          <element id="file-copy" path="$PROJECT_DIR$/../../repository/com/ly/dsf/dsf-client-support/2.2.0-SNAPSHOT/dsf-client-support-2.2.0-20180703.164138-2.jar" output-file-name="dsf-client-support-2.2.0-SNAPSHOT.jar" />
+          <element id="library" level="project" name="Maven: com.google.code.gson:gson:2.2.4" />
+          <element id="library" level="project" name="Maven: org.zeromq:jeromq:0.3.5" />
+          <element id="library" level="project" name="Maven: com.squareup.okhttp3:okhttp:3.3.1" />
+          <element id="library" level="project" name="Maven: com.squareup.okio:okio:1.8.0" />
+          <element id="library" level="project" name="Maven: com.ly.tcbase:configcenterclient:6.0.2.4" />
+          <element id="library" level="project" name="Maven: com.ly.tcbase.cache:utilitytools:1.0.1.2" />
+          <element id="library" level="project" name="Maven: com.elong.hotel:elong-util:1.16.0" />
+          <element id="library" level="project" name="Maven: org.freemarker:freemarker:2.3.21" />
+          <element id="library" level="project" name="Maven: org.apache.servicemix.bundles:org.apache.servicemix.bundles.commons-httpclient:3.1_7" />
+          <element id="library" level="project" name="Maven: org.apache.servicemix.bundles:org.apache.servicemix.bundles.commons-codec:1.3_2" />
+          <element id="library" level="project" name="Maven: net.sf.json-lib:json-lib:jdk15:2.2.3" />
+          <element id="library" level="project" name="Maven: net.sf.ezmorph:ezmorph:1.0.6" />
+          <element id="library" level="project" name="Maven: javax.servlet:javax.servlet-api:3.1.0" />
+          <element id="library" level="project" name="Maven: com.rabbitmq:amqp-client:3.0.4" />
+          <element id="library" level="project" name="Maven: com.google.guava:guava:16.0.1" />
+          <element id="library" level="project" name="Maven: org.apache.axis:axis:1.4" />
+          <element id="library" level="project" name="Maven: javax.xml.rpc:javax.xml.rpc-api:1.1.1" />
+          <element id="library" level="project" name="Maven: com.thoughtworks.xstream:xstream:1.4.7" />
+          <element id="library" level="project" name="Maven: xmlpull:xmlpull:1.1.3.1" />
+          <element id="library" level="project" name="Maven: xpp3:xpp3_min:1.1.4c" />
+          <element id="library" level="project" name="Maven: commons-collections:commons-collections:3.2" />
+          <element id="file-copy" path="$PROJECT_DIR$/../../repository/com/elong/hotel/hotelmis-common/1.2.0-SNAPSHOT/hotelmis-common-1.2.0-20160518.060117-3.jar" output-file-name="hotelmis-common-1.2.0-SNAPSHOT.jar" />
+          <element id="library" level="project" name="Maven: org.apache.poi:poi:3.7" />
+          <element id="library" level="project" name="Maven: org.apache.poi:poi-ooxml-schemas:3.7" />
+          <element id="library" level="project" name="Maven: org.apache.xmlbeans:xmlbeans:2.3.0" />
+          <element id="library" level="project" name="Maven: stax:stax-api:1.0.1" />
+          <element id="library" level="project" name="Maven: org.apache.geronimo.specs:geronimo-stax-api_1.0_spec:1.0" />
+          <element id="library" level="project" name="Maven: org.apache.poi:poi-ooxml:3.7" />
+          <element id="library" level="project" name="Maven: com.elong:JMSG-Client:1.10.0" />
+          <element id="library" level="project" name="Maven: com.elong:JMSG:1.10.0" />
+          <element id="library" level="project" name="Maven: com.elong.hotel:JAMQP:1.10.0" />
+          <element id="library" level="project" name="Maven: org.logicalcobwebs:proxool:0.9.1" />
+          <element id="library" level="project" name="Maven: org.codehaus.jackson:jackson-mapper-asl:1.9.13" />
+          <element id="library" level="project" name="Maven: org.codehaus.jackson:jackson-core-asl:1.9.13" />
+          <element id="library" level="project" name="Maven: jstl:jstl:1.2" />
+          <element id="library" level="project" name="Maven: velocity:velocity:1.5" />
+          <element id="library" level="project" name="Maven: oro:oro:2.0.8" />
+          <element id="library" level="project" name="Maven: velocity-tools:velocity-tools-generic:2.0-beta1" />
+          <element id="library" level="project" name="Maven: commons-fileupload:commons-fileupload:1.3.1" />
+          <element id="library" level="project" name="Maven: commons-io:commons-io:2.2" />
+          <element id="library" level="project" name="Maven: com.elong.hotel:healthcheck:1.24.1" />
+          <element id="library" level="project" name="Maven: commons-configuration:commons-configuration:1.10" />
+          <element id="library" level="project" name="Maven: commons-httpclient:commons-httpclient:3.1" />
+          <element id="library" level="project" name="Maven: com.elong:config-reader:1.2.0" />
+          <element id="library" level="project" name="Maven: org.springframework.data:spring-data-mongodb:1.3.0.RELEASE" />
+          <element id="library" level="project" name="Maven: org.springframework.data:spring-data-commons:1.6.0.RELEASE" />
+          <element id="library" level="project" name="Maven: org.mongodb:mongo-java-driver:2.10.1" />
+          <element id="library" level="project" name="Maven: org.slf4j:jcl-over-slf4j:1.7.1" />
+          <element id="library" level="project" name="Maven: com.elong:hotel-soa-client:1.14.5" />
+          <element id="library" level="project" name="Maven: org.apache.zookeeper:zookeeper:3.4.6" />
+          <element id="library" level="project" name="Maven: jline:jline:0.9.94" />
+          <element id="library" level="project" name="Maven: io.netty:netty:3.7.0.Final" />
+          <element id="library" level="project" name="Maven: org.apache.curator:curator-recipes:2.6.0" />
+          <element id="library" level="project" name="Maven: org.apache.curator:curator-framework:2.6.0" />
+          <element id="library" level="project" name="Maven: org.apache.curator:curator-client:2.6.0" />
+          <element id="library" level="project" name="Maven: org.apache.httpcomponents:httpasyncclient:4.0.1" />
+          <element id="library" level="project" name="Maven: org.apache.httpcomponents:httpcore-nio:4.3.2" />
+          <element id="library" level="project" name="Maven: org.apache.httpcomponents:httpclient-cache:4.3.5" />
+          <element id="library" level="project" name="Maven: org.apache.httpcomponents:httpcore:4.3.2" />
+          <element id="library" level="project" name="Maven: org.apache.kafka:kafka_2.10:0.8.0" />
+          <element id="library" level="project" name="Maven: org.scala-lang:scala-library:2.10.1" />
+          <element id="library" level="project" name="Maven: net.sf.jopt-simple:jopt-simple:3.2" />
+          <element id="library" level="project" name="Maven: org.scala-lang:scala-compiler:2.10.1" />
+          <element id="library" level="project" name="Maven: org.scala-lang:scala-reflect:2.10.1" />
+          <element id="library" level="project" name="Maven: com.101tec:zkclient:0.3" />
+          <element id="library" level="project" name="Maven: org.xerial.snappy:snappy-java:1.0.4.1" />
+          <element id="library" level="project" name="Maven: com.yammer.metrics:metrics-core:2.2.0" />
+          <element id="library" level="project" name="Maven: com.yammer.metrics:metrics-annotation:2.2.0" />
+          <element id="library" level="project" name="Maven: org.apache.thrift:libthrift:0.9.2" />
+          <element id="library" level="project" name="Maven: org.apache.commons:commons-pool2:2.3" />
+          <element id="library" level="project" name="Maven: com.alibaba:fastjson:1.2.58" />
+          <element id="library" level="project" name="Maven: com.elong.mobile.commons:commons-util:1.1.6" />
+          <element id="file-copy" path="$PROJECT_DIR$/../../repository/com/elong/hotel/ReapalAgent/1.2.0-SNAPSHOT/ReapalAgent-1.2.0-20150324.030726-1.jar" output-file-name="ReapalAgent-1.2.0-SNAPSHOT.jar" />
+        </element>
+      </element>
+      <element id="directory" name="META-INF">
+        <element id="file-copy" path="$PROJECT_DIR$/../customerservice-web/target/CustomerService-Web/META-INF/MANIFEST.MF" />
+      </element>
+      <element id="javaee-facet-resources" facet="CustomerService-Web/web/Web" />
+    </root>
+  </artifact>
+</component>

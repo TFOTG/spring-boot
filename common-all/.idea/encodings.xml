@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/../booking-entity" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../booking-service" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../booking-web" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../confirm-api" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../confirm-entity" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../confirm-schedule" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../confirm-service" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../confirm-web" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../customerservice-api" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../customerservice-entity" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../customerservice-schedule" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../customerservice-web" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../hotel-mis-common" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../verify-api" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../verify-entity" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../verify-schedule" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../verify-service" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../verify-web" charset="UTF-8" />
+  </component>
+</project>
