@@ -1,8 +1,0 @@
-<component name="ArtifactManager">
-  <artifact type="war" name="CustomerService-Schedule:war">
-    <output-path>$PROJECT_DIR$/../customerservice-schedule/target</output-path>
-    <root id="archive" name="CustomerService-Schedule.war">
-      <element id="artifact" artifact-name="CustomerService-Schedule:war exploded" />
-    </root>
-  </artifact>
-</component>

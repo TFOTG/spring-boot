@@ -1,8 +1,0 @@
-<component name="ArtifactManager">
-  <artifact type="war" name="confirm-schedule:war">
-    <output-path>$PROJECT_DIR$/../confirm-schedule/target</output-path>
-    <root id="archive" name="confirm-schedule.war">
-      <element id="artifact" artifact-name="confirm-schedule:war exploded" />
-    </root>
-  </artifact>
-</component>

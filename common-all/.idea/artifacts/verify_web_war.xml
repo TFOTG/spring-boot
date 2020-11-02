@@ -1,8 +1,0 @@
-<component name="ArtifactManager">
-  <artifact type="war" name="verify-web:war">
-    <output-path>$PROJECT_DIR$/../verify-web/target</output-path>
-    <root id="archive" name="verify-web.war">
-      <element id="artifact" artifact-name="verify-web:war exploded" />
-    </root>
-  </artifact>
-</component>

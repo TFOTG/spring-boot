@@ -1,8 +1,0 @@
-<component name="ArtifactManager">
-  <artifact type="war" name="confirm-web:war">
-    <output-path>$PROJECT_DIR$/../confirm-web/target</output-path>
-    <root id="archive" name="confirm-web.war">
-      <element id="artifact" artifact-name="confirm-web:war exploded" />
-    </root>
-  </artifact>
-</component>

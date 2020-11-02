@@ -1,8 +1,0 @@
-<component name="ArtifactManager">
-  <artifact type="war" name="verify-schedule:war">
-    <output-path>$PROJECT_DIR$/../verify-schedule/target</output-path>
-    <root id="archive" name="verify-schedule.war">
-      <element id="artifact" artifact-name="verify-schedule:war exploded" />
-    </root>
-  </artifact>
-</component>
